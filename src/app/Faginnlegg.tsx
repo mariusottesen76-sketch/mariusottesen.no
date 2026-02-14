@@ -56,7 +56,7 @@ const Faginnlegg = ({ onNavigate }: { onNavigate?: (tab: string) => void }) => {
           <Image src="/images/blogg.jpg" alt="Innsikt og tankeledelse — Marius Ottesen" width={400} height={500} className="w-full h-auto rounded-2xl shadow-xl border border-slate-800" />
         </div>
         <div className="flex-1 min-w-0 pt-2">
-          <h1 className="text-5xl md:text-7xl font-black mb-6 tracking-tighter leading-none text-white uppercase italic">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-black mb-6 tracking-tighter leading-tight text-white uppercase italic break-words max-w-full [overflow-wrap:anywhere]">
             {tr("fag.title.1")} <br />
             <span className="text-indigo-500">{tr("fag.title.2")}</span>
           </h1>
@@ -122,10 +122,10 @@ const Faginnlegg = ({ onNavigate }: { onNavigate?: (tab: string) => void }) => {
         </div>
       </div>
 
-      {/* KOLONNER MED INNLEGG */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mt-6">
-        <section className="flex flex-col">
-          <div className="border-b-2 border-indigo-500/30 mb-4">
+      {/* KOLONNER MED INNLEGG - like høyde på header slik at første kort aligner */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mt-6 items-start">
+        <section className="flex flex-col w-full">
+          <div className="border-b-2 border-indigo-500/30 mb-4 min-h-[4.5rem] flex flex-col justify-end">
             <h2 className="text-2xl font-bold tracking-tight text-white uppercase mb-2">{tr("fag.kat.ledelse")}</h2>
           </div>
           <div className="flex flex-col gap-4">
@@ -139,8 +139,8 @@ const Faginnlegg = ({ onNavigate }: { onNavigate?: (tab: string) => void }) => {
           </div>
         </section>
 
-        <section className="flex flex-col">
-          <div className="border-b-2 border-indigo-500/30 mb-4">
+        <section className="flex flex-col w-full">
+          <div className="border-b-2 border-indigo-500/30 mb-4 min-h-[4.5rem] flex flex-col justify-end">
             <h2 className="text-2xl font-bold tracking-tight text-white uppercase mb-2">{tr("fag.kat.ai")}</h2>
           </div>
           <div className="flex flex-col gap-4">

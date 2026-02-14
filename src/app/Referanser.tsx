@@ -25,7 +25,7 @@ export default function Referanser() {
 
         <div className="flex-1 min-w-0 space-y-6">
           <div className="space-y-2">
-            <h2 className="text-5xl md:text-6xl font-black text-white tracking-tighter uppercase italic">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-white tracking-tighter uppercase italic break-words max-w-full [overflow-wrap:anywhere]">
               {lang === "no" ? (<>Referanser & <span className="text-indigo-500">Anbefalinger</span></>) : (<>References & <span className="text-indigo-500">Recommendations</span></>)}
             </h2>
             <p className="text-base text-indigo-400 font-black uppercase tracking-widest italic">

@@ -12,7 +12,7 @@ export default function Kontakt() {
   return (
     <div className="py-4 flex flex-col items-center space-y-8 w-full overflow-x-hidden">
       <div className="text-center space-y-2">
-        <h2 className="text-5xl md:text-6xl font-black text-white uppercase tracking-tighter italic">{tr("kontakt.title")}</h2>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-white uppercase tracking-tighter italic break-words max-w-full [overflow-wrap:anywhere]">{tr("kontakt.title")}</h2>
         <p className="text-lg text-indigo-400 uppercase tracking-widest font-black italic">Marius Ottesen</p>
       </div>
 

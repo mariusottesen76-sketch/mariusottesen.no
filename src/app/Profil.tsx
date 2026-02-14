@@ -46,7 +46,7 @@ export default function Profil({ onNavigate }: { onNavigate?: (tab: string) => v
         {/* INNHOLD */}
         <div className="flex-1 min-w-0 space-y-6">
           <div className="space-y-2">
-            <h1 className="text-5xl md:text-6xl font-black text-white tracking-tighter uppercase italic">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-white tracking-tighter uppercase italic break-words max-w-full [overflow-wrap:anywhere]">
               Marius <span className="text-indigo-500">Ottesen</span>
             </h1>
             <p className="text-lg text-indigo-400 font-black uppercase tracking-widest italic">

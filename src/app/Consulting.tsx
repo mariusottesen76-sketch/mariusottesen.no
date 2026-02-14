@@ -190,7 +190,7 @@ export default function Consulting() {
 
           {/* TEKST */}
           <div className="flex-1 min-w-0">
-            <h1 className="text-5xl md:text-7xl font-black tracking-tighter leading-none text-white uppercase italic mb-4">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-black tracking-tighter leading-tight text-white uppercase italic mb-4 break-words max-w-full [overflow-wrap:anywhere]">
               {tr("cons.title.1")} <br />
               <span className="text-indigo-500">{tr("cons.title.2")}</span>
             </h1>
