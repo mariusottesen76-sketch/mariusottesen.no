@@ -52,18 +52,18 @@ export default function Kontakt() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
-        <a href="mailto:marius.ottesen.76@gmail.com" className="group p-8 bg-slate-900/40 rounded-2xl border border-slate-800 shadow-xl hover:border-indigo-500/50 transition-all flex flex-col items-center gap-3 text-center">
-          <Mail size={28} className="text-indigo-500" />
-          <p className="text-white font-black text-base md:text-lg break-all">marius.ottesen.76@gmail.com</p>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full min-w-0">
+        <a href="mailto:marius.ottesen.76@gmail.com" className="group p-6 sm:p-8 bg-slate-900/40 rounded-2xl border border-slate-800 shadow-xl hover:border-indigo-500/50 transition-all flex flex-col items-center gap-3 text-center min-w-0">
+          <Mail size={28} className="text-indigo-500 shrink-0" />
+          <p className="text-white font-black text-sm sm:text-base md:text-sm lg:text-base xl:text-lg break-words min-w-0 max-w-full [overflow-wrap:anywhere]">marius.ottesen.76@gmail.com</p>
         </a>
-        <a href="https://www.mariusottesen.no" target="_blank" rel="noopener noreferrer" className="group p-8 bg-slate-900/40 rounded-2xl border border-slate-800 shadow-xl hover:border-indigo-500/50 transition-all flex flex-col items-center gap-3 text-center">
-          <Globe size={28} className="text-indigo-500" />
-          <p className="text-white font-black text-base md:text-lg">www.mariusottesen.no</p>
+        <a href="https://www.mariusottesen.no" target="_blank" rel="noopener noreferrer" className="group p-6 sm:p-8 bg-slate-900/40 rounded-2xl border border-slate-800 shadow-xl hover:border-indigo-500/50 transition-all flex flex-col items-center gap-3 text-center min-w-0">
+          <Globe size={28} className="text-indigo-500 shrink-0" />
+          <p className="text-white font-black text-sm sm:text-base md:text-sm lg:text-base xl:text-lg break-words min-w-0 max-w-full">www.mariusottesen.no</p>
         </a>
-        <a href="tel:+4747012005" className="group p-8 bg-slate-900/40 rounded-2xl border border-slate-800 shadow-xl hover:border-indigo-500/50 transition-all flex flex-col items-center gap-3 text-center">
-          <Smartphone size={28} className="text-indigo-500" />
-          <p className="text-white font-black text-base md:text-lg">+47 470 12 005</p>
+        <a href="tel:+4747012005" className="group p-6 sm:p-8 bg-slate-900/40 rounded-2xl border border-slate-800 shadow-xl hover:border-indigo-500/50 transition-all flex flex-col items-center gap-3 text-center min-w-0">
+          <Smartphone size={28} className="text-indigo-500 shrink-0" />
+          <p className="text-white font-black text-sm sm:text-base md:text-sm lg:text-base xl:text-lg min-w-0 max-w-full">+47 470 12 005</p>
         </a>
       </div>
 

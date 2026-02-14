@@ -149,8 +149,8 @@ export default function Profil({ onNavigate }: { onNavigate?: (tab: string) => v
             {/* KOMPETANSE OG STYRKER */}
             <div className="grid md:grid-cols-2 gap-5">
               <div className="p-8 bg-slate-900/25 backdrop-blur-sm border border-slate-800 rounded-2xl shadow-xl space-y-4">
-                <h3 className="text-white font-black flex items-center gap-3 text-lg uppercase italic">
-                  <Target className="text-indigo-500" size={24} /> {tr("profil.kompetanse.title")}
+                <h3 className="text-white font-black flex items-center gap-3 text-lg uppercase italic break-words max-w-full min-w-0 [overflow-wrap:anywhere]">
+                  <Target className="text-indigo-500 shrink-0" size={24} /> <span className="min-w-0">{tr("profil.kompetanse.title.1")}<br className="sm:hidden" />{tr("profil.kompetanse.title.2")}</span>
                 </h3>
                 <ul className="space-y-2 text-left">
                   {profilData.kompetanse.map((item, i) => (

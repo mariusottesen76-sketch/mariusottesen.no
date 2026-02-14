@@ -70,7 +70,7 @@ const Faginnlegg = ({ onNavigate }: { onNavigate?: (tab: string) => void }) => {
 
       {/* INNHOLDSFORTEGNELSE */}
       <div className="mt-6 mb-6">
-        <h2 className="text-2xl font-bold tracking-tight text-white uppercase mb-4">{tr("fag.toc.title")}</h2>
+        <h2 className="text-2xl font-bold tracking-tight text-white uppercase mb-4 break-words max-w-full [overflow-wrap:anywhere]">{tr("fag.toc.title.1")}<br className="sm:hidden" />{tr("fag.toc.title.2")}</h2>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Strategisk Ledelse & Transformasjon */}
           <div>

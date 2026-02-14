@@ -24,7 +24,7 @@ export default function Erfaring() {
         <div className="flex-1 min-w-0 space-y-6">
           <div className="space-y-4 text-left">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-white tracking-tighter uppercase italic break-words max-w-full [overflow-wrap:anywhere]">
-              {lang === "no" ? (<>Karriere<span className="text-indigo-500">høydepunkter</span></>) : (<>Career <span className="text-indigo-500">Highlights</span></>)}
+              {lang === "no" ? (<>Karriere<br className="sm:hidden" /><span className="text-indigo-500">høydepunkter</span></>) : (<>Career<br className="sm:hidden" /> <span className="text-indigo-500">Highlights</span></>)}
             </h2>
             <div className="text-lg text-slate-300 border-l-4 border-indigo-600 pl-6 italic font-medium leading-relaxed">
               {CONTENT.intro}
