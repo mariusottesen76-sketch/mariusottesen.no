@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import Image from "next/image";
 import { Brain, Cog, Network, Users, Send, ChevronDown, Loader2, AlertTriangle, CheckCircle2, ArrowRight } from "lucide-react";
 import { useLanguage } from "./LanguageContext";
 import { getTranslation } from "./data/translations";
@@ -189,12 +190,24 @@ export default function Consulting() {
           </div>
 
           {/* TEKST */}
-          <div className="flex-1 min-w-0">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-black tracking-tighter leading-tight text-white uppercase italic mb-4 break-words max-w-full [overflow-wrap:anywhere]">
-              {tr("cons.title.1")} <br />
-              <span className="text-indigo-500">{tr("cons.title.2")}</span>
-            </h1>
-            <div className="max-w-3xl space-y-6 mt-8">
+          <div className="flex-1 min-w-0 flex flex-col">
+            <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-4">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-black tracking-tighter leading-tight text-white uppercase italic break-words max-w-full [overflow-wrap:anywhere] shrink-0">
+                {tr("cons.title.1")} <br />
+                <span className="text-indigo-500">{tr("cons.title.2")}</span>
+              </h1>
+              <div className="rounded-lg overflow-hidden border border-slate-700/50 shadow bg-white p-2 w-fit shrink-0 sm:ml-4">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/images/moc-avlang-logo.png"
+                  alt="Marius Ottesen Consulting — Commercial Strategy & AI Leadership"
+                  className="h-auto block object-contain object-left max-w-[18rem] sm:max-w-[21rem] w-[18rem] sm:w-[21rem]"
+                  width={480}
+                  height={150}
+                />
+              </div>
+            </div>
+            <div className="max-w-3xl space-y-6 mt-4">
               <p className="text-xl md:text-2xl text-slate-300 leading-relaxed font-light">
                 {tr("cons.intro.1")}
               </p>
@@ -468,6 +481,25 @@ export default function Consulting() {
               </button>
             </div>
           </form>
+        </div>
+      </section>
+
+      {/* ——— LEVERT AV MOC (seksjonsaccent) ——— */}
+      <section className="mt-12 pt-8 border-t border-slate-800/60">
+        <div className="flex flex-wrap items-center justify-center gap-4 py-4 px-6 bg-slate-900/30 rounded-2xl border border-slate-800/50">
+          <div className="rounded-xl overflow-hidden border border-slate-700/50 bg-white p-px shrink-0 w-14 h-14 flex items-center justify-center">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/moc.logo.png"
+              alt="MOC"
+              width={56}
+              height={56}
+              className="w-full h-full object-contain"
+            />
+          </div>
+          <span className="text-slate-500 text-sm font-bold uppercase tracking-widest italic">
+            {tr("cons.levert")}
+          </span>
         </div>
       </section>
     </div>

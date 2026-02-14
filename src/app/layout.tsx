@@ -68,6 +68,11 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  icons: {
+    icon: "/images/moc.logo.png",
+    shortcut: "/images/moc.logo.png",
+    apple: "/images/moc.logo.png",
+  },
 };
 
 export default function RootLayout({
@@ -78,6 +83,9 @@ export default function RootLayout({
   return (
     <html lang="no" suppressHydrationWarning>
       <head>
+        {/* Favicon — MOC-logo i nettleserfanen */}
+        <link rel="icon" href="/images/moc.logo.png" type="image/png" sizes="any" />
+        <link rel="shortcut icon" href="/images/moc.logo.png" type="image/png" />
         {/* hreflang — signaliserer begge språkversjoner til søkemotorer */}
         <link rel="alternate" hrefLang="no" href="https://www.mariusottesen.no" />
         <link rel="alternate" hrefLang="en" href="https://www.mariusottesen.no" />

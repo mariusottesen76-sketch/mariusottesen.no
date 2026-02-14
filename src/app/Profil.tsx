@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import { ShieldCheck, Zap, Globe, Target, Star, Building2, Brain, Users, ArrowRight } from "lucide-react";
+import { ShieldCheck, Zap, Globe, Target, Star, Brain, Users, ArrowRight } from "lucide-react";
 import { getProfilData } from "./data/profil";
 import { useLanguage } from "./LanguageContext";
 import { getTranslation } from "./data/translations";
@@ -71,8 +71,9 @@ export default function Profil({ onNavigate }: { onNavigate?: (tab: string) => v
           {/* SELSKAP */}
           <div className="p-8 bg-slate-900/25 backdrop-blur-sm border border-indigo-500/20 rounded-2xl shadow-xl space-y-5">
             <div className="flex items-start gap-4">
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-400 shrink-0">
-                <Building2 size={24} />
+              <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-white border border-slate-700/50 p-1 shrink-0 overflow-hidden">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/images/moc.logo.png" alt="MOC" width={48} height={48} className="w-full h-full object-contain" />
               </div>
               <div>
                 <h3 className="text-white font-black text-xl uppercase italic tracking-tight">
@@ -185,14 +186,15 @@ export default function Profil({ onNavigate }: { onNavigate?: (tab: string) => v
                 {[
                   { src: "/images/Franzefoss.png", alt: "Franzefoss", h: "max-h-[26px]" },
                   { src: "/images/Norengros.png", alt: "Norengros", h: "max-h-[30px]" },
-                  { src: "/images/Mundipharma.png", alt: "Mundipharma", h: "max-h-[26px]" },
                   { src: "/images/Nilfisk.png", alt: "Nilfisk", h: "max-h-[42px]" },
                   { src: "/images/Pelagia.png", alt: "Pelagia", h: "max-h-[32px]" },
                   { src: "/images/Falck%20Nutec.png", alt: "Falck Nutec", h: "max-h-[42px]" },
                   { src: "/images/Assessit.png", alt: "Assessit", h: "max-h-[32px]" },
+                  { src: "/images/Mundipharma.png", alt: "Mundipharma", h: "max-h-[26px]" },
                 ].map((logo) => (
                   <div key={logo.alt} className="flex-1 min-w-[80px] h-[44px] flex items-center justify-center bg-white rounded-lg p-1.5 shrink-0">
-                    <Image src={logo.src} alt={`${logo.alt} logo`} width={100} height={44} className={`${logo.h} max-w-full w-auto h-auto object-contain`} unoptimized />
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={logo.src} alt={`${logo.alt} logo`} width={100} height={44} className={`${logo.h} max-w-full w-auto h-auto object-contain`} />
                   </div>
                 ))}
               </div>
@@ -206,7 +208,8 @@ export default function Profil({ onNavigate }: { onNavigate?: (tab: string) => v
                   { src: "/images/Uio.png", alt: "Universitetet i Oslo" },
                 ].map((logo) => (
                   <div key={logo.alt} className="w-[120px] h-[48px] flex items-center justify-center bg-white rounded-lg p-2">
-                    <Image src={logo.src} alt={`${logo.alt} logo`} width={100} height={28} className="max-h-[28px] max-w-[100px] w-auto h-auto object-contain" unoptimized />
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={logo.src} alt={`${logo.alt} logo`} width={100} height={28} className="max-h-[28px] max-w-[100px] w-auto h-auto object-contain" />
                   </div>
                 ))}
               </div>

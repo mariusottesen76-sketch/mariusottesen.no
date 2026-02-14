@@ -122,6 +122,7 @@ const translations: Translations = {
   "cons.send": { no: "Send forespørsel", en: "Submit Inquiry" },
   "cons.sender": { no: "Sender...", en: "Submitting..." },
   "cons.sendt": { no: "Forespørsel sendt! Sjekk din e-post for bekreftelse.", en: "Inquiry submitted successfully. Please check your email for confirmation." },
+  "cons.levert": { no: "Levert av Marius Ottesen Consulting", en: "Delivered by Marius Ottesen Consulting" },
 
   // Kontakt
   "kontakt.title": { no: "Kontakt", en: "Contact" },

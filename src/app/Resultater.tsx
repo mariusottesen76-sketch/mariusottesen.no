@@ -20,6 +20,13 @@ const ikonMap: Record<string, React.ReactNode> = {
   amber:   <ArrowUpRight size={22} />,
 };
 
+const selskapLogo: Record<string, string> = {
+  "Franzefoss Gjenvinning": "/images/Franzefoss.png",
+  "Norengros Johs. Olsen": "/images/Norengros.png",
+  "Mundipharma": "/images/Mundipharma.png",
+  "Nilfisk": "/images/Nilfisk.png",
+};
+
 export default function Resultater() {
   const { lang } = useLanguage();
   const tr = (key: string) => getTranslation(key, lang);
@@ -117,8 +124,13 @@ export default function Resultater() {
                 <div key={i} className={`p-8 bg-slate-900/40 rounded-2xl border ${f.border} shadow-xl`}>
                   <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 mb-5">
                     <div className="flex items-center gap-3">
-                      <div className={`inline-flex items-center justify-center w-10 h-10 rounded-xl ${f.bg} ${f.text}`}>
-                        {ikonMap[s.farge]}
+                      <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center p-1.5 shrink-0">
+                        {selskapLogo[s.selskap] ? (
+                          // eslint-disable-next-line @next/next/no-img-element
+                          <img src={selskapLogo[s.selskap]} alt={`${s.selskap} logo`} width={48} height={48} className="max-h-9 max-w-full w-auto h-auto object-contain" />
+                        ) : (
+                          <span className={`${f.text}`}>{ikonMap[s.farge]}</span>
+                        )}
                       </div>
                       <div>
                         <h3 className="text-lg font-black text-white uppercase italic tracking-tight">{s.selskap}</h3>
@@ -140,6 +152,34 @@ export default function Resultater() {
                 </div>
               );
             })}
+          </div>
+
+          {/* Selskapslogoer */}
+          <div className="space-y-3">
+            <p className="text-[10px] text-slate-500 uppercase tracking-widest font-bold">{tr("profil.logoer.erfaring")}</p>
+            <div className="flex flex-wrap items-center gap-2">
+              {[
+                { src: "/images/Franzefoss.png", alt: "Franzefoss", h: "max-h-[26px]" },
+                { src: "/images/Norengros.png", alt: "Norengros", h: "max-h-[30px]" },
+                { src: "/images/Nilfisk.png", alt: "Nilfisk", h: "max-h-[42px]" },
+                { src: "/images/Pelagia.png", alt: "Pelagia", h: "max-h-[32px]" },
+                { src: "/images/Falck%20Nutec.png", alt: "Falck Nutec", h: "max-h-[42px]" },
+                { src: "/images/Assessit.png", alt: "Assessit", h: "max-h-[32px]" },
+                { src: "/images/Mundipharma.png", alt: "Mundipharma", h: "max-h-[26px]" },
+                { alt: "MedDrop", placeholder: true as const },
+              ].map((logo) =>
+                "placeholder" in logo && logo.placeholder ? (
+                  <div key={logo.alt} className="min-w-[80px] h-[44px] flex items-center justify-center bg-slate-800/60 border border-slate-700 rounded-lg px-3 shrink-0">
+                    <span className="text-slate-400 text-xs font-bold uppercase tracking-wider">{logo.alt}</span>
+                  </div>
+                ) : (
+                  <div key={(logo as { src: string; alt: string; h: string }).alt} className="flex-1 min-w-[80px] h-[44px] flex items-center justify-center bg-white rounded-lg p-1.5 shrink-0">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={(logo as { src: string; alt: string; h: string }).src} alt={`${(logo as { src: string; alt: string; h: string }).alt} logo`} width={100} height={44} className={`${(logo as { src: string; alt: string; h: string }).h} max-w-full w-auto h-auto object-contain`} />
+                  </div>
+                )
+              )}
+            </div>
           </div>
         </div>
       </div>

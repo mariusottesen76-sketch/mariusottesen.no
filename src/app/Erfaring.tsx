@@ -6,6 +6,14 @@ import { getErfaringData } from "./data/erfaringInnhold";
 import { useLanguage } from "./LanguageContext";
 import { getTranslation } from "./data/translations";
 
+const selskapLogo: Record<string, string | null> = {
+  "Franzefoss Gjenvinning": "/images/Franzefoss.png",
+  "Norengros Johs. Olsen": "/images/Norengros.png",
+  "MedDrop": null,
+  "Mundipharma": "/images/Mundipharma.png",
+  "Nilfisk": "/images/Nilfisk.png",
+};
+
 export default function Erfaring() {
   const { lang } = useLanguage();
   const tr = (key: string) => getTranslation(key, lang);
@@ -35,9 +43,19 @@ export default function Erfaring() {
             {CONTENT.jobs.map((j: any, i: number) => (
               <div key={i} className="bg-slate-900/40 border border-slate-800 p-8 rounded-2xl shadow-xl text-left">
                 <div className="flex flex-col md:flex-row justify-between gap-4 mb-6">
-                  <div>
-                    <h3 className="text-xl font-black text-white uppercase italic leading-tight tracking-tight">{j.title}</h3>
-                    <p className="text-indigo-400 uppercase text-sm mt-2 italic font-black flex items-center gap-2"><Briefcase size={14}/>{j.company}</p>
+                  <div className="flex items-start gap-3">
+                    <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center p-1.5 shrink-0">
+                      {selskapLogo[j.company] ? (
+                        // eslint-disable-next-line @next/next/no-img-element
+                        <img src={selskapLogo[j.company]!} alt={`${j.company} logo`} width={48} height={48} className="max-h-9 max-w-full w-auto h-auto object-contain" />
+                      ) : (
+                        <span className="text-slate-500 text-[10px] font-bold uppercase tracking-wider">{j.company.replace(/ .*/, "")}</span>
+                      )}
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-black text-white uppercase italic leading-tight tracking-tight">{j.title}</h3>
+                      <p className="text-indigo-400 uppercase text-sm mt-2 italic font-black flex items-center gap-2"><Briefcase size={14}/>{j.company}</p>
+                    </div>
                   </div>
                   <div className="text-slate-400 text-[10px] bg-slate-950 px-4 py-2 rounded-full border border-slate-800 self-start shrink-0 font-black">
                     <Calendar size={12} className="mr-1 inline" />{j.period}
@@ -59,6 +77,34 @@ export default function Erfaring() {
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Selskapslogoer */}
+          <div className="space-y-3">
+            <p className="text-[10px] text-slate-500 uppercase tracking-widest font-bold">{tr("profil.logoer.erfaring")}</p>
+            <div className="flex flex-wrap items-center gap-2">
+              {[
+                { src: "/images/Franzefoss.png", alt: "Franzefoss", h: "max-h-[26px]" },
+                { src: "/images/Norengros.png", alt: "Norengros", h: "max-h-[30px]" },
+                { src: "/images/Nilfisk.png", alt: "Nilfisk", h: "max-h-[42px]" },
+                { src: "/images/Pelagia.png", alt: "Pelagia", h: "max-h-[32px]" },
+                { src: "/images/Falck%20Nutec.png", alt: "Falck Nutec", h: "max-h-[42px]" },
+                { src: "/images/Assessit.png", alt: "Assessit", h: "max-h-[32px]" },
+                { src: "/images/Mundipharma.png", alt: "Mundipharma", h: "max-h-[26px]" },
+                { alt: "MedDrop", placeholder: true as const },
+              ].map((logo) =>
+                "placeholder" in logo && logo.placeholder ? (
+                  <div key={logo.alt} className="min-w-[80px] h-[44px] flex items-center justify-center bg-slate-800/60 border border-slate-700 rounded-lg px-3 shrink-0">
+                    <span className="text-slate-400 text-xs font-bold uppercase tracking-wider">{logo.alt}</span>
+                  </div>
+                ) : (
+                  <div key={(logo as { src: string; alt: string; h: string }).alt} className="flex-1 min-w-[80px] h-[44px] flex items-center justify-center bg-white rounded-lg p-1.5 shrink-0">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={(logo as { src: string; alt: string; h: string }).src} alt={`${(logo as { src: string; alt: string; h: string }).alt} logo`} width={100} height={44} className={`${(logo as { src: string; alt: string; h: string }).h} max-w-full w-auto h-auto object-contain`} />
+                  </div>
+                )
+              )}
+            </div>
           </div>
 
           <div className="p-8 bg-slate-950 rounded-2xl border border-slate-800 space-y-4 text-left font-black">
