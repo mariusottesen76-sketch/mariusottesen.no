@@ -1,0 +1,6 @@
+# robots.txt for www.mariusottesen.no
+User-agent: *
+Allow: /
+Disallow: /api/
+
+Sitemap: https://www.mariusottesen.no/sitemap.xml
