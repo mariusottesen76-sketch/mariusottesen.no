@@ -12,6 +12,8 @@ export const tennisLedelse = [
 
 Dette er ikke takket være mine kodeferdigheter, men kraften i strategisk bruk av AI. Ved å kombinere <strong>Cursor</strong>, <strong>Claude 3.5 Sonnet</strong>, <strong>Opus 4.6</strong> og <strong>Gemini 1.5 Pro</strong>, har jeg fungert som arkitekt mens AI-systemene har stått for kodingen.
 
+Prosessen har også inkludert å sette opp versjonskontroll med 𝗚𝗶𝘁 og 𝗚𝗶𝘁𝗛𝘂𝗯, deploye via 𝗩𝗲𝗿𝗰𝗲𝗹 og koble til 𝗲𝗴𝗲𝘁 𝗱𝗼𝗺𝗲𝗻𝗲 – slik at jeg både kan iterere trygt og ha full kontroll på hvordan nettsiden publiseres og oppdateres.
+
 Men prosjektet handler om mer enn teknologi. Det handler om <strong>Brobygging</strong>.
 
 Mange ledere opplever at gapet mellom AI-teori og kommersiell verdi er for stort. Etter en periode med fokus på teori og rammeverk, har jeg nå etablert <strong>Marius Ottesen Consulting</strong>. Min misjon er å være brobyggeren mellom strategi og praktisk AI-implementering.

@@ -1,6 +1,7 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import Profil from "./Profil";
 import Erfaring from "./Erfaring";
 import Resultater from "./Resultater";
@@ -15,8 +16,38 @@ import { getTranslation } from "./data/translations";
 import BackToTop from "./components/BackToTop";
 import MobileNav from "./components/MobileNav";
 
-function AppContent() {
-  const [activeTab, setActiveTab] = useState("Profil");
+const TAB_TO_SLUG: Record<string, string> = {
+  Profil: "",
+  Erfaring: "erfaring",
+  Resultater: "resultater",
+  Referanser: "referanser",
+  Faginnlegg: "faginnlegg",
+  Consulting: "consulting",
+  "CV & Åpen søknad": "cv",
+  Kontakt: "kontakt",
+};
+
+const SLUG_TO_TAB: Record<string, string> = Object.fromEntries(
+  (Object.entries(TAB_TO_SLUG) as [string, string][]).filter(([, slug]) => slug !== "").map(([tab, slug]) => [slug, tab])
+);
+
+function AppContent({ initialTab = "Profil" }: { initialTab?: string }) {
+  const router = useRouter();
+  const [activeTab, setActiveTabState] = useState(initialTab);
+
+  useEffect(() => {
+    setActiveTabState(initialTab);
+  }, [initialTab]);
+
+  const setActiveTab = useCallback(
+    (tab: string) => {
+      setActiveTabState(tab);
+      const slug = TAB_TO_SLUG[tab];
+      if (slug) router.push("/" + slug);
+      else router.push("/");
+    },
+    [router]
+  );
   const { lang, t } = useLanguage();
 
   const tabKeys = [
@@ -129,10 +160,10 @@ function AppContent() {
   );
 }
 
-export default function Page() {
+export default function Page({ initialTab }: { initialTab?: string } = {}) {
   return (
     <LanguageProvider>
-      <AppContent />
+      <AppContent initialTab={initialTab} />
     </LanguageProvider>
   );
 }
