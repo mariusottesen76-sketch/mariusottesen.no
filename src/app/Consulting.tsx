@@ -196,12 +196,12 @@ export default function Consulting() {
                 {tr("cons.title.1")} <br />
                 <span className="text-indigo-500">{tr("cons.title.2")}</span>
               </h1>
-              <div className="rounded-lg overflow-hidden border border-slate-700/50 shadow bg-white p-2 w-fit shrink-0 sm:ml-4">
+              <div className="rounded-lg overflow-hidden border border-slate-700/50 shadow bg-white p-2 min-w-0 max-w-full sm:max-w-[21rem] sm:ml-4">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/images/moc-avlang-logo.png"
                   alt="Marius Ottesen Consulting — Commercial Strategy & AI Leadership"
-                  className="h-auto block object-contain object-left max-w-[18rem] sm:max-w-[21rem] w-[18rem] sm:w-[21rem]"
+                  className="h-auto w-full max-w-full block object-contain object-left"
                   width={480}
                   height={150}
                 />
