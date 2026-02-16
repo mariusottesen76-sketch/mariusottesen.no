@@ -9,7 +9,7 @@ import { getTranslation } from "./data/translations";
 const selskapLogo: Record<string, string | null> = {
   "Franzefoss Gjenvinning": "/images/Franzefoss.png",
   "Norengros Johs. Olsen": "/images/Norengros.png",
-  "MedDrop": null,
+  "MedDrop": "/images/meddrop-logo.png",
   "Mundipharma": "/images/Mundipharma.png",
   "Nilfisk": "/images/Nilfisk.png",
 };
@@ -25,14 +25,14 @@ export default function Erfaring() {
         {/* BILDE */}
         <div className="w-full md:w-60 shrink-0">
           <div className="rounded-2xl overflow-hidden border border-slate-800 shadow-xl bg-slate-900">
-            <Image src="/images/resultater.jpg" alt="Karrierehøydepunkter og profesjonell erfaring" width={240} height={320} className="w-full h-auto" />
+            <Image src="/images/resultater.jpg" alt="Karriere høydepunkter og profesjonell erfaring" width={240} height={320} className="w-full h-auto" />
           </div>
         </div>
 
         <div className="flex-1 min-w-0 space-y-6">
           <div className="space-y-4 text-left">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-white tracking-tighter uppercase italic break-words max-w-full [overflow-wrap:anywhere]">
-              {lang === "no" ? (<>Karriere<br className="sm:hidden" /><span className="text-indigo-500">høydepunkter</span></>) : (<>Career<br className="sm:hidden" /> <span className="text-indigo-500">Highlights</span></>)}
+              {lang === "no" ? (<>Karriere <span className="text-indigo-500">høydepunkter</span></>) : (<>Career <span className="text-indigo-500">Highlights</span></>)}
             </h2>
             <div className="text-lg text-slate-300 border-l-4 border-indigo-600 pl-6 italic font-medium leading-relaxed">
               {CONTENT.intro}
@@ -91,19 +91,13 @@ export default function Erfaring() {
                 { src: "/images/Falck%20Nutec.png", alt: "Falck Nutec", h: "max-h-[42px]" },
                 { src: "/images/Assessit.png", alt: "Assessit", h: "max-h-[32px]" },
                 { src: "/images/Mundipharma.png", alt: "Mundipharma", h: "max-h-[26px]" },
-                { alt: "MedDrop", placeholder: true as const },
-              ].map((logo) =>
-                "placeholder" in logo && logo.placeholder ? (
-                  <div key={logo.alt} className="min-w-[80px] h-[44px] flex items-center justify-center bg-slate-800/60 border border-slate-700 rounded-lg px-3 shrink-0">
-                    <span className="text-slate-400 text-xs font-bold uppercase tracking-wider">{logo.alt}</span>
-                  </div>
-                ) : (
-                  <div key={(logo as { src: string; alt: string; h: string }).alt} className="flex-1 min-w-[80px] h-[44px] flex items-center justify-center bg-white rounded-lg p-1.5 shrink-0">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={(logo as { src: string; alt: string; h: string }).src} alt={`${(logo as { src: string; alt: string; h: string }).alt} logo`} width={100} height={44} className={`${(logo as { src: string; alt: string; h: string }).h} max-w-full w-auto h-auto object-contain`} />
-                  </div>
-                )
-              )}
+                { src: "/images/meddrop-logo.png", alt: "MedDrop", h: "max-h-[32px]" },
+              ].map((logo) => (
+                <div key={logo.alt} className="flex-1 min-w-[80px] h-[44px] flex items-center justify-center bg-white rounded-lg p-1.5 shrink-0">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={logo.src} alt={`${logo.alt} logo`} width={100} height={44} className={`${logo.h} max-w-full w-auto h-auto object-contain`} />
+                </div>
+              ))}
             </div>
           </div>
 

@@ -47,7 +47,7 @@ const translations: Translations = {
   "profil.logoer.utdanning": { no: "Utdanning", en: "Education" },
 
   // Erfaring
-  "erfaring.title": { no: "Karrierehøydepunkter", en: "Career Highlights" },
+  "erfaring.title": { no: "Karriere høydepunkter", en: "Career Highlights" },
   "erfaring.mandat": { no: "Mandat", en: "Mandate" },
   "erfaring.strategi": { no: "Strategi", en: "Approach" },
   "erfaring.resultater": { no: "Resultater", en: "Key Outcomes" },

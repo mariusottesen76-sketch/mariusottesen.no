@@ -83,9 +83,11 @@ export default function RootLayout({
   return (
     <html lang="no" suppressHydrationWarning>
       <head>
-        {/* Favicon — MOC-logo i nettleserfanen */}
+        {/* Favicon — MOC-logo (nettleserfane, bokmerker, mobil) */}
+        <link rel="icon" href="/images/moc.logo.png" type="image/png" sizes="32x32" />
         <link rel="icon" href="/images/moc.logo.png" type="image/png" sizes="any" />
         <link rel="shortcut icon" href="/images/moc.logo.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/images/moc.logo.png" sizes="180x180" />
         {/* hreflang — signaliserer begge språkversjoner til søkemotorer */}
         <link rel="alternate" hrefLang="no" href="https://www.mariusottesen.no" />
         <link rel="alternate" hrefLang="en" href="https://www.mariusottesen.no" />

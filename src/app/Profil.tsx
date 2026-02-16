@@ -191,6 +191,7 @@ export default function Profil({ onNavigate }: { onNavigate?: (tab: string) => v
                   { src: "/images/Falck%20Nutec.png", alt: "Falck Nutec", h: "max-h-[42px]" },
                   { src: "/images/Assessit.png", alt: "Assessit", h: "max-h-[32px]" },
                   { src: "/images/Mundipharma.png", alt: "Mundipharma", h: "max-h-[26px]" },
+                  { src: "/images/meddrop-logo.png", alt: "MedDrop", h: "max-h-[32px]" },
                 ].map((logo) => (
                   <div key={logo.alt} className="flex-1 min-w-[80px] h-[44px] flex items-center justify-center bg-white rounded-lg p-1.5 shrink-0">
                     {/* eslint-disable-next-line @next/next/no-img-element */}

@@ -166,19 +166,13 @@ export default function Resultater() {
                 { src: "/images/Falck%20Nutec.png", alt: "Falck Nutec", h: "max-h-[42px]" },
                 { src: "/images/Assessit.png", alt: "Assessit", h: "max-h-[32px]" },
                 { src: "/images/Mundipharma.png", alt: "Mundipharma", h: "max-h-[26px]" },
-                { alt: "MedDrop", placeholder: true as const },
-              ].map((logo) =>
-                "placeholder" in logo && logo.placeholder ? (
-                  <div key={logo.alt} className="min-w-[80px] h-[44px] flex items-center justify-center bg-slate-800/60 border border-slate-700 rounded-lg px-3 shrink-0">
-                    <span className="text-slate-400 text-xs font-bold uppercase tracking-wider">{logo.alt}</span>
-                  </div>
-                ) : (
-                  <div key={(logo as { src: string; alt: string; h: string }).alt} className="flex-1 min-w-[80px] h-[44px] flex items-center justify-center bg-white rounded-lg p-1.5 shrink-0">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={(logo as { src: string; alt: string; h: string }).src} alt={`${(logo as { src: string; alt: string; h: string }).alt} logo`} width={100} height={44} className={`${(logo as { src: string; alt: string; h: string }).h} max-w-full w-auto h-auto object-contain`} />
-                  </div>
-                )
-              )}
+                { src: "/images/meddrop-logo.png", alt: "MedDrop", h: "max-h-[32px]" },
+              ].map((logo) => (
+                <div key={logo.alt} className="flex-1 min-w-[80px] h-[44px] flex items-center justify-center bg-white rounded-lg p-1.5 shrink-0">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={logo.src} alt={`${logo.alt} logo`} width={100} height={44} className={`${logo.h} max-w-full w-auto h-auto object-contain`} />
+                </div>
+              ))}
             </div>
           </div>
         </div>
