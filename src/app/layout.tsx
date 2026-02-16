@@ -69,8 +69,11 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/images/moc.logo.png",
-    shortcut: "/images/moc.logo.png",
+    icon: [
+      { url: "/favicon.ico", type: "image/x-icon" },
+      { url: "/images/moc.logo.png", sizes: "32x32", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
     apple: "/images/moc.logo.png",
   },
 };
@@ -83,11 +86,13 @@ export default function RootLayout({
   return (
     <html lang="no" suppressHydrationWarning>
       <head>
-        {/* Favicon — MOC-logo */}
-        <link rel="icon" href="/icon.png" type="image/png" />
+        {/* Favicon — MOC-logo (flere fallbacks for maksimal kompatibilitet) */}
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="/images/moc.logo.png" type="image/png" sizes="32x32" />
+        <link rel="icon" href="/images/moc.logo.png" type="image/png" sizes="16x16" />
         <link rel="icon" href="/images/moc.logo.png" type="image/png" />
-        <link rel="shortcut icon" href="/images/moc.logo.png" />
-        <link rel="apple-touch-icon" href="/images/moc.logo.png" />
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="apple-touch-icon" href="/images/moc.logo.png" sizes="180x180" />
         {/* hreflang — signaliserer begge språkversjoner til søkemotorer */}
         <link rel="alternate" hrefLang="no" href="https://www.mariusottesen.no" />
         <link rel="alternate" hrefLang="en" href="https://www.mariusottesen.no" />
