@@ -58,7 +58,7 @@ const translations: Translations = {
   "resultater.title": { no: "Dokumenterte Resultater", en: "Proven Track Record" },
   "resultater.sub": { no: "Nøkkeltall fra karrieren", en: "Career performance metrics" },
   "resultater.salgsvekst": { no: "Salgsvekst", en: "Revenue Growth" },
-  "resultater.omsetning": { no: "Omsetningsansvar", en: "P&L Accountability" },
+  "resultater.omsetning": { no: "Bidrag til selskapets mål", en: "Contribution to company target" },
   "resultater.ranking": { no: "Global Ranking", en: "Global Ranking" },
   "resultater.intro": {
     no: "Gjennomgående dokumenterte resultater med vekst, transformasjon og lønnsomhet — levert i roller med helhetlig kommersiellt ansvar.",

@@ -32,7 +32,7 @@ export default function Resultater() {
   const tr = (key: string) => getTranslation(key, lang);
   
   const counter67 = useCounter(67, 2000, "%");
-  const counter1 = useCounter(1, 2000, " MRD+");
+  const counter1 = useCounter(1, 2000, " MRD mål");
 
   const nokkeltall = [
     { verdi: counter67.count, label: tr("resultater.salgsvekst"), ikon: <BarChart3 size={20} />, ref: counter67.ref },
@@ -48,7 +48,7 @@ export default function Resultater() {
     },
     {
       selskap: "Norengros Johs. Olsen", rolle: "Salgssjef Forbruksvarer", periode: "2019 – 2023",
-      resultater: ["Leverte eksepsjonell salgsvekst på 67 % i perioden", "Ledet team i nøkkelprosjekt mot mål på NOK 1 mrd.", "Bygget høytytende team gjennom transformasjonsprosjektet «Forbruk Oslo 2.0»", "Moderniserte salgsprosesser i et marked preget av tøff konkurranse"],
+      resultater: ["Leverte eksepsjonell salgsvekst på 67 % i perioden", "Ledet team i ett av prosjektene som bidro til selskapets mål om 1 mrd. NOK", "Bygget høytytende team gjennom transformasjonsprosjektet «Forbruk Oslo 2.0»", "Moderniserte salgsprosesser i et marked preget av tøff konkurranse"],
       farge: "sky",
     },
     {
@@ -69,7 +69,7 @@ export default function Resultater() {
     },
     {
       selskap: "Norengros Johs. Olsen", rolle: "Sales Manager, Consumer Goods", periode: "2019 – 2023",
-      resultater: ["Achieved exceptional 67% revenue growth over the period", "Spearheaded team contribution toward NOK 1 billion revenue target", "Built a high-performing team through the 'Forbruk Oslo 2.0' transformation programme", "Modernised commercial processes in a fiercely competitive market"],
+      resultater: ["Achieved exceptional 67% revenue growth over the period", "Led one of the projects that contributed to the company's NOK 1 billion revenue target", "Built a high-performing team through the 'Forbruk Oslo 2.0' transformation programme", "Modernised commercial processes in a fiercely competitive market"],
       farge: "sky",
     },
     {

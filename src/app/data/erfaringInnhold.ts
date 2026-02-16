@@ -18,7 +18,7 @@ const data = {
         period: "2019 – 2023",
         mandate: "Totalansvar for selskapets største avdeling med mandat om å drive aggressiv regional vekst og lede transformasjonsprosjektet «Forbruk Oslo 2.0».",
         strategy: "Ledet transformasjon innen bemanning, IT og logistikk. Fungerte som CRM-superbruker og endringsagent for å modernisere salgsprosessene i et marked preget av tøff konkurranse.",
-        results: "Leverte en eksepsjonell salgsvekst på 67 % i perioden. Bygget et høytytende team som leverte kritiske bidrag mot målet om 1 mrd. NOK i omsetning.",
+        results: "Leverte en eksepsjonell salgsvekst på 67 % i perioden. Bygget et høytytende team som leverte kritiske bidrag i prosjekter mot selskapets mål om 1 mrd. NOK i omsetning.",
       },
       {
         title: "Gründer & Utvikler",
@@ -60,7 +60,7 @@ const data = {
         period: "2019 – 2023",
         mandate: "Full P&L accountability for the company's largest division, with a mandate to drive aggressive regional growth and spearhead the strategic transformation initiative 'Forbruk Oslo 2.0'.",
         strategy: "Led end-to-end transformation encompassing workforce planning, IT infrastructure, and logistics. Served as CRM superuser and change agent to modernise commercial processes in a fiercely competitive marketplace.",
-        results: "Delivered exceptional revenue growth of 67% over the period. Built a high-performing team that made mission-critical contributions toward the NOK 1 billion revenue target.",
+        results: "Delivered exceptional revenue growth of 67% over the period. Built a high-performing team that made mission-critical contributions in projects toward the company's NOK 1 billion revenue target.",
       },
       {
         title: "Founder & Product Developer",
