@@ -69,10 +69,7 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: [
-      { url: "/images/moc.logo.png", sizes: "32x32", type: "image/png" },
-      { url: "/images/moc.logo.png", sizes: "any", type: "image/png" },
-    ],
+    icon: "/images/moc.logo.png",
     shortcut: "/images/moc.logo.png",
     apple: "/images/moc.logo.png",
   },
@@ -86,7 +83,11 @@ export default function RootLayout({
   return (
     <html lang="no" suppressHydrationWarning>
       <head>
-        {/* Favicon håndteres automatisk av Next.js via icon.png i app-mappen og metadata.icons */}
+        {/* Favicon — MOC-logo */}
+        <link rel="icon" href="/icon.png" type="image/png" />
+        <link rel="icon" href="/images/moc.logo.png" type="image/png" />
+        <link rel="shortcut icon" href="/images/moc.logo.png" />
+        <link rel="apple-touch-icon" href="/images/moc.logo.png" />
         {/* hreflang — signaliserer begge språkversjoner til søkemotorer */}
         <link rel="alternate" hrefLang="no" href="https://www.mariusottesen.no" />
         <link rel="alternate" hrefLang="en" href="https://www.mariusottesen.no" />
