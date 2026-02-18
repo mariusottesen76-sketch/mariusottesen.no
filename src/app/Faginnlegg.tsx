@@ -170,7 +170,7 @@ const InnleggsKort = ({ innlegg, onClick, lesLabel }: { innlegg: InnleggType; on
       className="group bg-slate-900/40 rounded-2xl border border-indigo-500/20 p-4 sm:p-6 hover:bg-slate-900/60 transition-all duration-300 shadow-xl flex flex-col sm:flex-row items-start gap-4 sm:gap-6 w-full text-left min-h-[200px] cursor-pointer"
     >
       <div className="w-full sm:w-[105px] h-[120px] sm:h-[160px] shrink-0 rounded-lg overflow-hidden bg-slate-800 border border-slate-800">
-        <Image key={innlegg.bildeUrl} src={`${innlegg.bildeUrl}?v=${innlegg.dato}`} alt={innlegg.tittel} width={105} height={160} className="w-full h-full object-cover transition-all duration-500" unoptimized />
+        <Image key={`${innlegg.bildeUrl}-${innlegg.dato}`} src={`${innlegg.bildeUrl}?v=${innlegg.dato}`} alt={innlegg.tittel} width={105} height={160} className="w-full h-full object-cover transition-all duration-500" unoptimized />
       </div>
       <div className="flex-1 min-w-0 flex flex-col justify-between overflow-hidden">
         <div className="overflow-hidden">
@@ -241,7 +241,7 @@ const InnleggModal = ({ innlegg, onClose, onNavigate, linkedinLabel, ctaText, ct
         </button>
 
         <div className="w-full flex justify-center bg-slate-900/50 p-6">
-          <Image key={innlegg.bildeUrl} src={`${innlegg.bildeUrl}?v=${innlegg.dato}`} alt={innlegg.tittel} width={280} height={400} className="max-w-[280px] max-h-[400px] w-auto h-auto object-contain rounded-lg" unoptimized />
+          <Image key={`${innlegg.bildeUrl}-${innlegg.dato}`} src={`${innlegg.bildeUrl}?v=${innlegg.dato}`} alt={innlegg.tittel} width={280} height={400} className="max-w-[280px] max-h-[400px] w-auto h-auto object-contain rounded-lg" unoptimized />
         </div>
 
         <div className="p-8 md:p-12 space-y-6">

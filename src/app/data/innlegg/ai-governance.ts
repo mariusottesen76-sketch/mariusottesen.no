@@ -560,5 +560,43 @@ Samtidig blir det stadig tydeligere at kampen om disse frontløperne – både v
 Min viktigste takeaway er nok en gang at AI i liten grad er et IT-prosjekt. Det er et ledelses- og endringsprosjekt. Og nettopp her treffer rapporten godt med mye av det jeg selv er opptatt av: verdiskaping skjer ikke gjennom verktøy alene, men gjennom tydelige valg, prioriteringer og måten vi organiserer arbeidet på.
 
 Skal AI bli et reelt konkurransefortrinn, må vi bevege oss fra nysgjerrig utforsking til bevisst integrasjon.`
+    },
+    {
+      id: "ai-governance-i-praksis-01",
+      tittel: "AI-governance i praksis – fem styringsgrep som avgjør hvor makten ligger",
+      teaser: "De fleste ledergrupper har kontroll på budsjett, marginer og forecast. Likevel ser jeg at mange mister oversikten når AI begynner å påvirke hvilke kunder som prioriteres, hvilke rabatter som anbefales og hvilke muligheter som vurderes som risiko.",
+      bildeUrl: "/images/ai-governance-i-praksis.jpg",
+      dato: "2026-02-16",
+      visningsDato: "16.02.2026",
+      kategori: "AI / KI",
+      link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
+      innhold: `De fleste ledergrupper har kontroll på budsjett, marginer og forecast. Likevel ser jeg at mange mister oversikten når AI begynner å påvirke hvilke kunder som prioriteres, hvilke rabatter som anbefales og hvilke muligheter som vurderes som risiko. Utfordringen ligger sjelden i teknologien, men i at beslutningskraft forskyves uten at det er tydelig definert hvor makten faktisk ligger.
+
+Tenk deg en kommersiell organisasjon som innfører en AI-agent i salgsprosessen. Den analyserer CRM-data, historiske avtaler og kundeadferd og gir anbefalinger om neste beste handling. Presisjonen øker, prioriteringene blir skarpere og forecast mer treffsikker.
+
+Spørsmålet er ikke bare hvem som tar beslutningen. Spørsmålet er hvem som har makt over beslutningen når anbefalingen påvirker strategisk retning og lønnsomhet.
+
+Skillet går ikke mellom virksomheter som bruker AI og de som ikke gjør det. Det går mellom dem som har definert sitt beslutningsrom – og dermed maktstrukturen – og dem som lar den utvikle seg implisitt.
+
+<strong>Fem forhold er avgjørende:</strong>
+
+<strong>1. Beslutningsrommet må avklares før teknologien tas i bruk.</strong>
+Hvilke beslutninger skal påvirkes, og hvilke skal forbli menneskelige? Uten en eksplisitt avklaring skjer maktforskyvningen gradvis og uten tydelig forankring.
+
+<strong>2. "Human in the loop" må innebære reelt mandat.</strong>
+Det er ikke nok med formell godkjenning. Noen må ha myndighet til å overstyre og stå ansvarlig dersom anbefalingen følges.
+
+<strong>3. Sporbarhet er et lederverktøy.</strong>
+Når styret spør om en prioritering, må svaret være konkret: hvilke data, hvilke terskler, hvilke kriterier. Forklarbarhet er en del av virksomhetens styring.
+
+<strong>4. Det må finnes tydelige justerings- og stoppepunkter.</strong>
+Marked, regulering og strategi endrer seg raskt. Autonome systemer uten kontrollmekanismer skaper sårbarhet.
+
+<strong>5. Eierskapet må være entydig.</strong>
+Når noe går galt, skal det være klart hvor ansvaret ligger. IT kan ikke eie forretningsbeslutninger, og salg kan ikke fraskrive seg modellens anbefalinger. Ledergruppen må definere rammene.
+
+<strong>AI-governance handler i bunn og grunn om klassisk ledelse:</strong> å definere ansvar, mandat og kontroll før kompleksiteten øker.
+
+Dette handler ikke om å bremse utviklingen, men om å sikre at tempo og autonomi ikke løper fra ansvar og legitimitet. AI blir ikke risikabel fordi den er intelligent. Den blir risikabel når organisasjonen ikke har tatt bevisste valg om hvordan beslutningskraft skal forvaltes.`
     }
   ];
