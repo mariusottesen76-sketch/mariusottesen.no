@@ -566,8 +566,8 @@ Skal AI bli et reelt konkurransefortrinn, må vi bevege oss fra nysgjerrig utfor
       tittel: "AI-governance i praksis – fem styringsgrep som avgjør hvor makten ligger",
       teaser: "De fleste ledergrupper har kontroll på budsjett, marginer og forecast. Likevel ser jeg at mange mister oversikten når AI begynner å påvirke hvilke kunder som prioriteres, hvilke rabatter som anbefales og hvilke muligheter som vurderes som risiko.",
       bildeUrl: "/images/ai-governance-i-praksis.jpg",
-      dato: "2026-02-16",
-      visningsDato: "16.02.2026",
+      dato: "2026-02-18",
+      visningsDato: "18.02.2026",
       kategori: "AI / KI",
       link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
       innhold: `De fleste ledergrupper har kontroll på budsjett, marginer og forecast. Likevel ser jeg at mange mister oversikten når AI begynner å påvirke hvilke kunder som prioriteres, hvilke rabatter som anbefales og hvilke muligheter som vurderes som risiko. Utfordringen ligger sjelden i teknologien, men i at beslutningskraft forskyves uten at det er tydelig definert hvor makten faktisk ligger.
