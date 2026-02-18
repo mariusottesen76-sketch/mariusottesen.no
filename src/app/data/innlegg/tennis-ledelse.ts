@@ -6,7 +6,7 @@ export const tennisLedelse = [
       bildeUrl: "/images/nettside-bilde.gif",
       dato: "2026-02-16",
       visningsDato: "16.02.2026",
-      kategori: "Kommersiell Ledelse",
+      kategori: "AI / KI",
       link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
       innhold: `Sist jeg bygde en nettside fra bunnen, var som student i USA i 1999. Da skrev jeg hver linje HTML manuelt. De siste 48 timene har vært en øyeåpner: Jeg har nettopp lansert <strong>min nye hjemmeside</strong> – bygget på bare to dager!
 
