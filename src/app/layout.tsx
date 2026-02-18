@@ -38,12 +38,13 @@ export const metadata: Metadata = {
     alternateLocale: "en_GB",
     url: "https://www.mariusottesen.no",
     siteName: "Marius Ottesen",
+    // Default verdier - kan overstyres av child routes
     title: "Marius Ottesen | Kommersiell Leder & AI-Strateg",
     description:
       "25+ års kommersiell ledererfaring — nå kombinert med AI-kompetanse (kunstig intelligens) for virksomheter som vil skape konkret verdi av ny teknologi.",
     images: [
       {
-        url: "/images/profil.jpg",
+        url: "https://www.mariusottesen.no/images/profil.jpg",
         width: 1200,
         height: 630,
         alt: "Marius Ottesen — Kommersiell Leder & AI-Strateg",
@@ -52,10 +53,11 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
+    // Default verdier - kan overstyres av child routes
     title: "Marius Ottesen | Kommersiell Leder & AI-Strateg",
     description:
       "25+ års kommersiell ledererfaring — nå kombinert med AI-kompetanse for virksomheter som vil skape konkret verdi av ny teknologi.",
-    images: ["/images/profil.jpg"],
+    images: ["https://www.mariusottesen.no/images/profil.jpg"],
   },
   robots: {
     index: true,

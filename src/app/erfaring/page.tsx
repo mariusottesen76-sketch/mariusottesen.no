@@ -1,19 +1,25 @@
 import type { Metadata } from "next";
+import type { ResolvingMetadata } from "next";
 import Page from "../page";
 
-export const metadata: Metadata = {
-  title: "Erfaring | Karriere høydepunkter — Marius Ottesen",
+export async function generateMetadata(
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  return {
+    title: "Erfaring | Karriere høydepunkter — Marius Ottesen",
   description:
     "Karriere høydepunkter og profesjonell erfaring. 25+ års kommersiell ledererfaring fra B2B-markeder med dokumenterte resultater innen salg, transformasjon og vekst.",
+  metadataBase: new URL("https://www.mariusottesen.no"),
   openGraph: {
     title: "Erfaring | Karriere høydepunkter — Marius Ottesen",
     description:
       "25+ års kommersiell ledererfaring fra B2B-markeder. Karriere høydepunkter med dokumenterte resultater innen salg, transformasjon og vekst.",
     url: "https://www.mariusottesen.no/erfaring",
     type: "website",
+    siteName: "Marius Ottesen",
     images: [
       {
-        url: "/images/resultater.jpg",
+        url: "https://www.mariusottesen.no/images/resultater.jpg",
         width: 1200,
         height: 630,
         alt: "Karriere høydepunkter og profesjonell erfaring — Marius Ottesen",
@@ -25,9 +31,10 @@ export const metadata: Metadata = {
     title: "Erfaring | Karriere høydepunkter — Marius Ottesen",
     description:
       "25+ års kommersiell ledererfaring fra B2B-markeder med dokumenterte resultater.",
-    images: ["/images/resultater.jpg"],
+    images: ["https://www.mariusottesen.no/images/resultater.jpg"],
   },
-};
+  };
+}
 
 export default function ErfaringPage() {
   return <Page initialTab="Erfaring" />;
