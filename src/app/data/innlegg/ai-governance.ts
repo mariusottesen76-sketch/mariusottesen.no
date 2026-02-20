@@ -598,5 +598,42 @@ Når noe går galt, skal det være klart hvor ansvaret ligger. IT kan ikke eie f
 <strong>AI-governance handler i bunn og grunn om klassisk ledelse:</strong> å definere ansvar, mandat og kontroll før kompleksiteten øker.
 
 Dette handler ikke om å bremse utviklingen, men om å sikre at tempo og autonomi ikke løper fra ansvar og legitimitet. AI blir ikke risikabel fordi den er intelligent. Den blir risikabel når organisasjonen ikke har tatt bevisste valg om hvordan beslutningskraft skal forvaltes.`
+    },
+    {
+      id: "ai-kompetanse-2030-01",
+      tittel: "AI er ikke trusselen i 2030. Kompetanseegapet er.",
+      teaser: "AI-debatten preges ofte av tempo, børsbevegelser og usikkerhet. For meg er spørsmålet mer hvilken kompetanse som faktisk vil avgjøre konkurransekraft fremover? Fremtidens kjernekompetanse er en integrasjon av teknologi, kognitiv styrke og relasjonell kapasitet.",
+      bildeUrl: "/images/core-skills.jfif",
+      dato: "2026-02-20",
+      visningsDato: "20.02.2026",
+      kategori: "AI / KI",
+      link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
+      innhold: `AI-debatten preges ofte av tempo, børsbevegelser og usikkerhet. For meg er spørsmålet mer hvilken kompetanse som faktisk vil avgjøre konkurransekraft fremover?
+
+Diagrammet jeg legger ved visualiserer dette tydelig. Den <em>horisontale</em> aksen viser andelen arbeidsgivere som i dag anser en ferdighet som en kjernekompetanse (2025). Den <em>vertikale</em> aksen viser andelen arbeidsgivere som forventer at denne ferdigheten vil øke i betydning frem mot 2030.
+
+Øverst til høyre, der både dagens viktighet og forventet vekst er høy, finner vi AI og big data. Tett rundt ligger teknologisk forståelse, analytisk tenkning, kreativ problemløsning, resiliens, læringsevne og lederskap.
+
+Det mest interessante er ikke enkeltpunktene. Det er helheten!
+
+Fremtidens kjernekompetanse er ikke bare teknisk. Den er en integrasjon av teknologi, kognitiv styrke og relasjonell kapasitet. Evnen til å forstå systemer, stille bedre spørsmål, tolke data, ta beslutninger under usikkerhet og lede mennesker gjennom endring.
+
+Dette bildet støttes også av analyser fra bla. World Economic Forum, McKinsey og OECD: Teknologiforståelse øker i verdi, men det gjør også analytisk dømmekraft, kreativitet og evnen til kontinuerlig læring. Dette gjelder på to nivåer:
+
+<strong>Individnivå:</strong>
+Vi kan ikke outsource vår egen utvikling. Å forstå hvordan AI påvirker beslutningsprosesser, maktbalanse og verdiskaping er i ferd med å bli grunnkompetanse, uavhengig av rolle. For min del betyr det å investere systematisk i riktig kompetanse nå, ikke når markedet krever det.
+
+<strong>Selskapsnivå:</strong>
+AI er ikke noe man "tar i bruk" og er ferdig med. Det er en kapasitet som må bygges, gjennom strategi, styring, datafundament, struktur og ledelse. Gevinstene tilfaller dem som kobler teknologi med forretningsforståelse og gjennomføringsevne.
+
+Historisk har teknologiske skifter ikke belønnet de som testet mest, men de som forberedte seg best. De som forsto hva endringen betydde for forretningsmodell, kompetansebehov, organisering og beslutningsprosesser – og handlet deretter.
+
+Elektrifisering, digitalisering og internett skapte ikke verdi av seg selv. Verdien oppsto hos virksomheter som bygde kapasitet før endringen tvang dem til det.
+
+Således vil ikke AI automatisk gi konkurransefortrinn. Den vil forsterke forskjellene mellom dem som bygger kompetanse strukturert og dem som utsetter det.
+
+Derfor ser jeg frem til mandagens samling på mitt Exec. Master i Generative AI for Business studie. For meg handler det om å styrke det teoretiske fundamentet, forstå rammeverkene dypere og koble dette enda tydeligere til strategi og kommersiell verdiskaping.
+
+Samtidig bistår jeg nå virksomheter innen AI og digital transformasjon – i skjæringspunktet mellom strategi, ledelse og implementering. Ønsker du å diskutere hvordan dette kan struktureres i din virksomhet, tar jeg gjerne en prat. Link til min consultingside finner du i første kommentarfelt.`
     }
   ];
