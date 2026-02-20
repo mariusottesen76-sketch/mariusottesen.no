@@ -2,7 +2,7 @@ export const tennisLedelse = [
     {
       id: "nettside-lansering-2026-01",
       tittel: "Fra koding i 1999 til AI-revolusjon i 2026 – ny hjemmeside og nytt consultingselskap!",
-      teaser: "Sist jeg bygde en nettside fra bunnen, var som student i USA i 1999. Da skrev jeg hver linje HTML manuelt. De siste 48 timene har vært en øyeåpner: Jeg har nettopp lansert min nye hjemmeside – bygget på bare to dager!",
+      teaser: "Ny hjemmeside bygget med AI-verktøy på to dager – og lansering av Marius Ottesen Consulting som brobygger mellom strategi og AI-implementering.",
       bildeUrl: "/images/nettside-bilde.gif",
       dato: "2026-02-16",
       visningsDato: "16.02.2026",
@@ -43,7 +43,7 @@ Hva fungerer og hva mangler? Jeg setter stor pris på alle tilbakemeldinger!
     {
       id: "attitude-2016-01",
       tittel: "Did you know?!? It's all about ATTITUDE!",
-      teaser: "Did you know?!? It's all about ATTITUDE!",
+      teaser: "Kort innlegg om holdning og attitude.",
       bildeUrl: "/images/attitude.jfif",
       dato: "2016-10-08",
       visningsDato: "08.10.2016",
@@ -54,7 +54,7 @@ Hva fungerer og hva mangler? Jeg setter stor pris på alle tilbakemeldinger!
     {
       id: "visindi-rekruttering-2024-01",
       tittel: "Hyggelig gest av Visindi som kjørte en god og profesjonell rekrutteringsprosess da jeg ble headhuntet til Franzefoss Gjenvinning AS!",
-      teaser: "Hyggelig gest av Visindi som kjørte en god og profesjonell rekrutteringsprosess da jeg ble headhuntet til Franzefoss Gjenvinning AS!",
+      teaser: "Takker Visindi for en god og profesjonell rekrutteringsprosess ved headhunting til Franzefoss Gjenvinning.",
       bildeUrl: "/images/visindi.jfif",
       dato: "2024-01-03",
       visningsDato: "03.01.2024",
@@ -65,7 +65,7 @@ Hva fungerer og hva mangler? Jeg setter stor pris på alle tilbakemeldinger!
     {
       id: "obf-klar-2025-01",
       tittel: "Klar for to dager med inspirasjon på Oslo Business Forum 2025 – The Big Shift!",
-      teaser: "Jeg ser frem til et tettpakket program med sterke foredragsholdere, nye perspektiver og mye faglig påfyll. Like viktig er møtene med både gamle og nye bekjentskaper – alltid spennende å dele erfaringer og bygge relasjoner på tvers av bransjer.",
+      teaser: "Foran Oslo Business Forum 2025 – The Big Shift: forventninger til to dager med læring, refleksjon og nettverk.",
       bildeUrl: "/images/obf-deltakelse.jfif",
       dato: "2025-09-23",
       visningsDato: "23.09.2025",
@@ -82,7 +82,7 @@ https://www.obforum.com/`
     {
       id: "obf-2025-big-shift-01",
       tittel: "Oslo Business Forum 2025 – The Big Shift",
-      teaser: "To inspirerende og lærerike dager er over – fylt med sterke foredrag, viktige perspektiver og energi rundt strategi, ledelse, teknologi og fremtidens muligheter. I tillegg markerte årets konferanse 10-årsjubileet til Oslo Business Forum – en milepæl som viser hvilken betydning arenaen har fått for ledere.",
+      teaser: "Takeaways fra Oslo Business Forum 2025: strategi, AI, ledelse og menneskelig kraft. OBF 10-årsjubileum.",
       bildeUrl: "/images/obf.jfif",
       dato: "2025-09-26",
       visningsDato: "26.09.2025",
@@ -123,7 +123,7 @@ En stor takk til Christoffer Omberg og hele det dyktige og hyggelige(!) OBF-team
     {
       id: "kjeft-psykologisk-trygghet-01",
       tittel: "Er det greit å gi 'kjeft' som leder – og hva betyr det for psykologisk trygghet?",
-      teaser: "På mandag deltok jeg på et innsiktsfullt foredrag i regi av Econa med professor Henning Bang. Temaet var psykologisk trygghet, og hva som faktisk bygger den – eller undergraver den. Foredraget traff, spesielt fordi det utfordrer både ledere og medarbeidere.",
+      teaser: "Psykologisk trygghet, tydelighet og anonym kritikk. Refleksjoner fra foredrag med Henning Bang (Econa).",
       bildeUrl: "/images/kjeft.jfif",
       dato: "2025-12-04",
       visningsDato: "04.12.2025",
@@ -175,7 +175,7 @@ Jeg lærer mest når andre tenker høyt sammen med meg.`
     {
       id: "kapasitet-maraton-01",
       tittel: "Kapasitet bygges over tid – og kan hentes fram når det gjelder, på flere arenaer",
-      teaser: "På lørdag deltok jeg i Marakez Pyramids Half Marathon i Kairo, Egypt. 10.000 løpere fra 122 land på startstreken – det ble 18. plass i min klasse. Prestasjon handler sjelden om kortsiktig innsats, men om grunntrening – fysisk og mentalt – bygget over tid.",
+      teaser: "Halvmaraton i Kairo og refleksjon om kapasitet: prestasjon bygges over tid og kan hentes fram på flere arenaer.",
       bildeUrl: "/images/maraton.jfif",
       dato: "2025-12-16",
       visningsDato: "16.12.2025",
@@ -208,7 +208,7 @@ En påminnelse om hva langsiktig innsats, hardt arbeid, utholdenhet og styring k
     {
       id: "videre-franzefoss-2026-01",
       tittel: "Etter 2 år som Nasjonal Salgssjef i Franzefoss Gjenvinning har jeg valgt å gå videre",
-      teaser: "Bakgrunnen er ulike strategiske syn på veien videre – og et bevisst valg om å investere tid i videre utvikling og kompetanse før endringene tvinger seg frem, blant annet innen AI.",
+      teaser: "Avslutning som Nasjonal Salgssjef i Franzefoss. Videre til interim, consulting og investering i AI-kompetanse.",
       bildeUrl: "/images/videre.jfif",
       dato: "2026-01-21",
       visningsDato: "21.01.2026",
@@ -243,7 +243,7 @@ Ta gjerne kontakt for en uformell samtale.`
     {
       id: "brains-not-included-01",
       tittel: "Brains not included – og nettopp derfor blir autentisiteten lederens viktigste fortrinn",
-      teaser: "Når KI gjør det ekstremt enkelt å produsere tekst, blir mening, tydelighet og menneskelig avsender viktigere enn noen gang. Når alle kan skrive «greit», blir det avgjørende å skrive noe som faktisk står for noe.",
+      teaser: "I KI-tiden blir autentisitet lederens fortrinn: skriv noe som står for noe. Refleksjoner fra BI-frokost om CTRL+ALT.",
       bildeUrl: "/images/brains.jfif",
       dato: "2026-01-15",
       visningsDato: "15.01.2026",
@@ -275,7 +275,7 @@ Jeg spurte om <strong>tankestrek</strong> – og fikk klar beskjed om å fortset
     {
       id: "frastotende-salg-2026-01",
       tittel: "Med referanse til artikkelen fra ASD Group setter Espen Hellman ord på noe svært viktig for salgsfaget",
-      teaser: "Tilliten til selgere er lav, og få kunder opplever reell verdi i første møte. Samtidig viser artikkelen at det er enkle prinsipper som skiller de beste: Lytt, vær ærlig – og ikke press.",
+      teaser: "Espen Hellman og ASD: hva skiller de beste selgerne – lytt, vær ærlig, ta ansvar for fremdrift.",
       bildeUrl: "/images/frastøtende.jfif",
       dato: "2025-12-18",
       visningsDato: "18.12.2025",
@@ -300,7 +300,7 @@ For meg er en god selger en rådgiver og partner – en som lytter aktivt, er æ
     {
       id: "skalering-01",
       tittel: "Hva som faktisk avgjør om skalering lykkes – og hvorfor mennesker, timing og valg er utslagsgivende",
-      teaser: "Mange snakker om skalering som om det først og fremst handler om tempo, ambisjoner og vekst i tall. Min erfaring er at utfordringene oftere oppstår i overgangen fra det som fungerte i går til neste fase.",
+      teaser: "Hva som avgjør om skalering lykkes: plan, livssyklus, mennesker og timing. Fra webinaret Skalering i praksis.",
       bildeUrl: "/images/skalering.jfif",
       dato: "2026-01-26",
       visningsDato: "26.01.2026",
@@ -328,7 +328,7 @@ Min viktigste påminnelse etter webinaret er enkel, men krevende:
     {
       id: "tennis-01",
       tittel: "Tennis og Ledelse: Strategi under press",
-      teaser: "Hva kan næringslivsledere lære av mentaliteten på tennisbanen? Om å fokusere på neste poeng, håndtere upresise baller og beholde roen når settet skal avgjøres.",
+      teaser: "Tennis og ledelse: Djokovic, Alcaraz og overføringsverdi til arbeidsliv – strategi og holdning under press.",
       bildeUrl: "/images/tennis-ledelse.jpg",
       dato: "2026-02-10",
       visningsDato: "10.02.2026",
@@ -369,7 +369,7 @@ Overføringsverdien til arbeidsliv og ledelse er større enn mange tror.`
     {
       id: "landet-rikt-01",
       tittel: "Din virksomhet kan være langt inne i forfall – men du merker det ikke",
-      teaser: "Overflod fjerner behovet for prioritering, og varsellampene ignoreres fordi tallene fortsatt er grønne. Hva skjer når rikdomsfellen slår til?",
+      teaser: "Landet som ble for rikt: hvordan overflod skjuler forfall i virksomheter – og hva ledere kan gjøre annerledes.",
       bildeUrl: "/images/landet-rikt.png",
       dato: "2026-02-05",
       visningsDato: "05.02.2026",
@@ -401,15 +401,13 @@ Spørsmålet er ikke om dette kan snus. Historien viser at det kan det. Hva må 
     {
       id: "norge-virksomhet-01",
       tittel: "Hvis Norge var en virksomhet – hva måtte ledelsen gjort nå?",
-      teaser: "I Landet som ble for rikt beskrives hvordan Norge gradvis har mistet fart. Hva kan vi som leder virksomheter lære av mønsteret – og gjøre annerledes?",
+      teaser: "Hvis Norge var en virksomhet: læring fra Bech Holte om disiplin, ressursallokering og AI som styringsverktøy.",
       bildeUrl: "/images/norge-virksomhet.jpg",
       dato: "2026-02-07",
       visningsDato: "07.02.2026",
       kategori: "Kommersiell Ledelse",
       link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
-      innhold: `Hvis Norge var en virksomhet – hva måtte ledelsen gjort nå?
-
-I <em>Landet som ble for rikt</em> beskriver Martin Bech Holte hvordan Norge gradvis har mistet fart, ikke fordi vi mangler ressurser, men fordi de brukes feil. Det interessante spørsmålet for oss som leder virksomheter er ikke om analysen er helt presis, men hva vi kan lære av mønsteret – og gjøre annerledes.
+      innhold: `I <em>Landet som ble for rikt</em> beskriver Martin Bech Holte hvordan Norge gradvis har mistet fart, ikke fordi vi mangler ressurser, men fordi de brukes feil. Det interessante spørsmålet for oss som leder virksomheter er ikke om analysen er helt presis, men hva vi kan lære av mønsteret – og gjøre annerledes.
 
 <strong>Læring for virksomhetsledelse</strong>
 

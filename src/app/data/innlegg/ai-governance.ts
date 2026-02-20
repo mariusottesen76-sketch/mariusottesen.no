@@ -2,7 +2,7 @@ export const aiGovernance = [
     {
       id: "strategi-ai-master-01",
       tittel: "Strategi uten AI er som å se bakover i speilet mens du kjører fremover",
-      teaser: "For noen uker siden deltok jeg på Oslo Business Forum 2025. Et gjennomgående tema fra scenen var klart: AI er ikke lenger et «nice to have» — det er en strategisk nødvendighet. Jeg har meldt meg på masterkurset «Generativ AI for Business» med oppstart i februar.",
+      teaser: "AI er ikke lenger «nice to have» — det er en strategisk nødvendighet. Refleksjoner fra Oslo Business Forum og beslutningen om å melde seg på masterkurset Generativ AI for Business ved BI.",
       bildeUrl: "/images/strategi-ai.jfif",
       dato: "2025-11-11",
       visningsDato: "11.11.2025",
@@ -34,7 +34,7 @@ Hva med deg? Ser du AI som en strategisk game-changer i din virksomhet der du ak
     {
       id: "ai-learning-google-skills-01",
       tittel: "Det er fascinerende hvor enkelt det har blitt å tilegne seg AI-kompetanse gjennom helt nye og moderne metoder",
-      teaser: "Google har samlet et imponerende læringsunivers som gjør det mulig å bygge solid AI-kompetanse, uavhengig av teknisk bakgrunn. To plattformer skiller seg spesielt ut: Google Skills og Google Cloud YouTube-seriene.",
+      teaser: "Anbefaling av Googles læringsunivers for AI-kompetanse: Google Skills og Google Cloud YouTube-serier, med konkrete moduler å starte med.",
       bildeUrl: "/images/ai-learning.jfif",
       dato: "2025-11-27",
       visningsDato: "27.11.2025",
@@ -71,7 +71,7 @@ For deg som vil utforske mulighetene:
     {
       id: "ai-ikke-intelligent-01",
       tittel: "AI er ikke intelligent — det er vi som må være det",
-      teaser: "Refleksjoner fra gårsdagens BI-webinar «More Than Words: How to Know How AI Can (and Can't) Help You». AI skaper stor verdi – men bare når vi forstår begrensningene. Og jeg fikk erfare det selv, samme dag.",
+      teaser: "AI skaper verdi bare når vi forstår begrensningene. Refleksjoner fra BI-webinaret om når AI passer og når menneskelig dømmekraft må ta over.",
       bildeUrl: "/images/ikke-intelligent.jfif",
       dato: "2025-12-11",
       visningsDato: "11.12.2025",
@@ -138,7 +138,7 @@ Det er en <strong>kjernkompetanse</strong> å:
     {
       id: "alle-snakker-ai-01",
       tittel: "Alle snakker om AI – men hva er det egentlig vi driver med?",
-      teaser: "Året som har gått har vært preget av høyt tempo, spennende opplevelser og raske teknologiske endringer. Dette innlegget markerer starten på en serie der jeg i 2026 vil dele refleksjoner, rammeverk og erfaringer rundt hva AI faktisk betyr i praksis.",
+      teaser: "Innledning til en serie om hva AI faktisk betyr i praksis — ikke bare som teknologi, men som ledelses- og forretningsdisiplin.",
       bildeUrl: "/images/snakk-ai.jfif",
       dato: "2025-12-22",
       visningsDato: "22.12.2025",
@@ -163,7 +163,7 @@ Dette blir mitt siste innlegg i 2025. Takk for i år – jeg håper året har gi
     {
       id: "ai-foles-nytt-01",
       tittel: "AI føles nytt – men dette er ikke starten på historien",
-      teaser: "I mitt siste innlegg i 2025 stilte jeg spørsmålet: Alle snakker om AI – men hva er det egentlig vi driver med? Dette innlegget er neste steg i samme serie. I 2026 vil jeg dele refleksjoner, rammeverk og erfaringer rundt hva AI faktisk betyr i praksis.",
+      teaser: "AI oppleves som nytt, men er kulminasjonen av tiår med utvikling. Ser fremover mot rammeverket De fem A-ene (Access til Agents).",
       bildeUrl: "/images/nytt.jfif",
       dato: "2026-01-05",
       visningsDato: "05.01.2026",
@@ -197,7 +197,7 @@ Jeg håper flere vil dele egne erfaringer, perspektiver og spørsmål underveis 
     {
       id: "access-til-agents-01",
       tittel: "Fra Access til Agents – hvorfor mange stopper tidlig",
-      teaser: "I forrige innlegg skrev jeg om at AI ofte oppleves som nytt, selv om det i realiteten bygger på flere tiår med teknologisk utvikling. Her ser jeg nærmere på hvordan AI tas i bruk i mange virksomheter i dag, og hvorfor mange stopper tidligere enn de selv tror.",
+      teaser: "Rammeverket De fem A-ene: hvordan AI tas i bruk i virksomheter i dag, og hvorfor mange stopper tidligere enn de tror.",
       bildeUrl: "/images/access-agents.jfif",
       dato: "2026-01-08",
       visningsDato: "08.01.2026",
@@ -237,7 +237,7 @@ Derfor er også AI og strategisk bruk og implementering i liten grad et IT-prosj
     {
       id: "fra-verktoy-til-system-01",
       tittel: "Fra verktøy til system – API-er, integrasjon og ledervalg",
-      teaser: "I forrige innlegg i denne AI-serien skrev jeg om De fem A-ene og hvorfor mange organisasjoner stopper tidligere i AI-bruken enn de selv tror. Dette innlegget bygger videre og ser nærmere på hva som skiller enkel AI-bruk fra mer moden og integrert anvendelse.",
+      teaser: "Verdien av AI skjer først når den kobles til systemer og prosesser via integrasjon — ikke som frittstående verktøy. API-er og ledervalg.",
       bildeUrl: "/images/til-system.jfif",
       dato: "2026-01-12",
       visningsDato: "12.01.2026",
@@ -260,7 +260,7 @@ I en tid der teknologien fungerer, skalerer og blir stadig rimeligere, er det ik
     {
       id: "fra-pilot-til-skalering-01",
       tittel: "Fra pilot til skalering – hvorfor så mange AI-initiativer stopper",
-      teaser: "I de siste innleggene har jeg skrevet om hvordan mange organisasjoner tar i bruk AI, men stopper tidligere enn de selv tror. Hvorfor skalerer så få AI-initiativer, selv når teknologien fungerer?",
+      teaser: "Hvorfor så få AI-initiativer skalerer selv når teknologien fungerer. Om eierskap, prosessendring og governance.",
       bildeUrl: "/images/fra-pilot.jfif",
       dato: "2026-01-15",
       visningsDato: "15.01.2026",
@@ -300,7 +300,7 @@ Det er her AI går fra eksperiment til strategisk kjernekompetanse.`
     {
       id: "praktisk-oppskrift-skalering-01",
       tittel: "Fra pilot til skalering – en praktisk oppskrift for ledere",
-      teaser: "I forrige innlegg skrev jeg om hvorfor så mange AI-initiativer stopper på pilotstadiet, selv når teknologien fungerer. I dette innlegget vil jeg være mer konkret: Hva må faktisk på plass for at AI skal gå fra lovende forsøk til reell, skalerbar verdiskaping?",
+      teaser: "Fem ting virksomheter som lykkes med AI-skalering gjør riktig: eierskap, prosessendring, beslutningskobling, governance og data.",
       bildeUrl: "/images/praktisk-oppskrift.jfif",
       dato: "2026-01-12",
       visningsDato: "12.01.2026",
@@ -336,7 +336,7 @@ Mange snakker nå om agenter og autonome løsninger. Men realiteten er at de fle
     {
       id: "data-kontekst-rag-01",
       tittel: "Data, kontekst og RAG – hvorfor AI uten kontekst ikke er intelligens",
-      teaser: "I de siste innleggene har jeg skrevet om hvorfor mange AI-initiativer stopper i pilot, selv når teknologien fungerer. I dag vil jeg zoome inn på et avgjørende, men ofte undervurdert punkt: AI er ikke intelligent uten kontekst.",
+      teaser: "AI uten kontekst er ikke intelligens. Hvorfor RAG og virksomhetens egne data er forutsetning for moden AI-bruk.",
       bildeUrl: "/images/data-kontekst.jfif",
       dato: "2026-01-19",
       visningsDato: "19.01.2026",
@@ -368,7 +368,7 @@ AI blir strategisk først når den ikke bare gir svar, men bidrar til <strong>be
     {
       id: "rag-innsikt-handling-01",
       tittel: "Fra innsikt til handling – RAG som bro mellom AI og kjerneprosesser",
-      teaser: "I forrige innlegg skrev jeg om hvorfor AI uten kontekst ikke er intelligens. Nå vil jeg gå ett steg videre: Hva betyr dette i praksis for virksomheter som ønsker å bevege seg fra testing til faktisk verdiskaping?",
+      teaser: "RAG som bro mellom AI og kjerneprosesser: hvordan virksomheter beveger seg fra testing til reell verdiskaping. Eksempel fra salg.",
       bildeUrl: "/images/innsikt-til-handling.jfif",
       dato: "2026-01-23",
       visningsDato: "23.01.2026",
@@ -400,7 +400,7 @@ Dette er også grunnen til at mange snakker om agenter før de er klare for dem.
     {
       id: "ai-agenter-hva-01",
       tittel: "AI-agenter – hva de er (og hva de ikke er)",
-      teaser: "I de siste innleggene har jeg skrevet om hvorfor mange AI-initiativer stopper før de skaper reell verdi. Nå er det på tide å rydde i et begrep som stadig dukker opp i AI-debatten: AI-agenter.",
+      teaser: "Hva AI-agenter er — og hva de ikke er. Rydding i begrepet og hvorfor det er et ledertema, ikke bare IT.",
       bildeUrl: "/images/ai-agenter-hva.jfif",
       dato: "2026-01-27",
       visningsDato: "27.01.2026",
@@ -419,7 +419,7 @@ Her ligger også et viktig varsel til ledere. Jo mer autonom AI blir, desto vikt
     {
       id: "ai-agenter-feil-01",
       tittel: "AI-agenter – hvorfor mange går feil når de vil bli mer autonome",
-      teaser: "Jeg ser et tydelig mønster i AI-samtaler. AI gir gode svar, analyser og demoer, men beslutningene tas fortsatt som før. Når gapet mellom innsikt og handling blir for stort, dukker ett begrep nesten alltid opp: agenter.",
+      teaser: "Hvorfor mange går feil når de jager autonomi: agenter handler om struktur og ansvar, ikke bare «slå på»-autonomi.",
       bildeUrl: "/images/ai-agenter.jfif",
       dato: "2026-01-31",
       visningsDato: "31.01.2026",
@@ -450,7 +450,7 @@ Agenter forsterker organisasjonen. Er strukturen uklar, forsterkes uklarheten. E
     {
       id: "ai-agenter-praksis-01",
       tittel: "AI-agenter i praksis – når, hvor og hvordan de faktisk gir verdi",
-      teaser: "Flere ledere merker et tydelig dilemma: enten ser man potensialet i AI-agenter, eller så er man usikker på hvor det er forsvarlig å slippe dem til. Når gir det faktisk mening å bruke dem – og når bør man la være?",
+      teaser: "Når gir AI-agenter faktisk verdi — og når bør man la være? Praktiske kriterier for ledere.",
       bildeUrl: "/images/agenter-i-praksis.jfif",
       dato: "2026-02-03",
       visningsDato: "03.02.2026",
@@ -493,7 +493,7 @@ Agenter er kraftige verktøy som markerer et skifte i hva som flyttes fra mennes
     {
       id: "ai-governance-01",
       tittel: "Når AI får mer makt – hva skal ledere faktisk styre?",
-      teaser: "Når AI beveger seg fra støtte til beslutningspåvirkning, oppstår et nytt lederansvar. Spørsmålet er ikke lenger om AI skaper verdi, men hvor og innenfor hvilke rammer styringen må ligge.",
+      teaser: "Når AI påvirker beslutninger: hvem har ansvaret? EDGE, 5A og governance som ledelsens svar på økt autonomi.",
       bildeUrl: "/images/governance.jpg",
       dato: "2026-02-12",
       visningsDato: "12.02.2026",
@@ -541,7 +541,7 @@ Governance avgjør om dette blir et konkurransefortrinn – eller en risiko.`
     {
       id: "ki-norsk-virksomheter-01",
       tittel: "KI i norske virksomheter – fra testing til verdiskaping",
-      teaser: "I går deltok jeg online på en konferanse i regi av NHO, der Samfunnsøkonomisk Analyse presenterte sin ferske rapport om bruk av kunstig intelligens i norsk næringsliv. Over halvparten bruker AI i dag, men bruken handler fortsatt i stor grad om testing og individuell effektivisering – ikke om reell endring.",
+      teaser: "Over halvparten av norske virksomheter bruker AI — men få har integrert det i kjerneprosesser. NHO-rapportens budskap.",
       bildeUrl: "/images/ki-norsk-virksomheter.jfif",
       dato: "2026-01-09",
       visningsDato: "09.01.2026",
@@ -564,7 +564,7 @@ Skal AI bli et reelt konkurransefortrinn, må vi bevege oss fra nysgjerrig utfor
     {
       id: "ai-governance-i-praksis-01",
       tittel: "AI-governance i praksis – fem styringsgrep som avgjør hvor makten ligger",
-      teaser: "De fleste ledergrupper har kontroll på budsjett, marginer og forecast. Likevel ser jeg at mange mister oversikten når AI begynner å påvirke hvilke kunder som prioriteres, hvilke rabatter som anbefales og hvilke muligheter som vurderes som risiko.",
+      teaser: "Fem styringsgrep som avgjør hvor makten ligger når AI påvirker kunder, rabatter og prioriteringer.",
       bildeUrl: "/images/ai-governance-i-praksis.jpg",
       dato: "2026-02-18",
       visningsDato: "18.02.2026",
@@ -602,7 +602,7 @@ Dette handler ikke om å bremse utviklingen, men om å sikre at tempo og autonom
     {
       id: "ai-kompetanse-2030-01",
       tittel: "AI er ikke trusselen i 2030. Kompetanseegapet er.",
-      teaser: "AI-debatten preges ofte av tempo, børsbevegelser og usikkerhet. For meg er spørsmålet mer hvilken kompetanse som faktisk vil avgjøre konkurransekraft fremover? Fremtidens kjernekompetanse er en integrasjon av teknologi, kognitiv styrke og relasjonell kapasitet.",
+      teaser: "Konkurransekraft i 2030 avgjøres av kompetanse — ikke av AI som trussel. Perspektiver fra WEF, McKinsey og OECD.",
       bildeUrl: "/images/core-skills.jfif",
       dato: "2026-02-20",
       visningsDato: "20.02.2026",
