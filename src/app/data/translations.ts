@@ -9,6 +9,7 @@ const translations: Translations = {
   "tab.resultater": { no: "Resultater", en: "Results" },
   "tab.referanser": { no: "Referanser", en: "References" },
   "tab.faginnlegg": { no: "Faginnlegg", en: "Articles" },
+  "tab.prosjekter": { no: "Prosjekter", en: "Projects" },
   "tab.consulting": { no: "Consulting", en: "Consulting" },
   "tab.cv": { no: "CV & Åpen søknad", en: "CV & Application" },
   "tab.kontakt": { no: "Kontakt", en: "Contact" },
@@ -99,6 +100,19 @@ const translations: Translations = {
   "fag.linkedin": { no: "Les på LinkedIn", en: "Read on LinkedIn" },
   "fag.cta": { no: "Trenger din bedrift hjelp med å sette dette i system?", en: "Does your organisation need help turning these insights into action?" },
   "fag.cta.link": { no: "Gå til Consulting", en: "Explore Consulting Services" },
+
+  // Prosjekter
+  "prosjekter.title.1": { no: "AI-prosjekter &", en: "AI Projects &" },
+  "prosjekter.title.2": { no: "Utvikling", en: "Development" },
+  "prosjekter.intro.1": {
+    no: "Her samler jeg konkrete prosjekter der AI og utvikling møter kommersiell verdi. Fra prototyper til produksjon – ideer som er satt i system.",
+    en: "A collection of hands-on projects where AI and development meet commercial impact. From prototypes to production — ideas put into practice.",
+  },
+  "prosjekter.intro.2": {
+    no: "Hvert prosjekt er knyttet til reelle utfordringer: bedre salgstrening, smartere beslutningsstøtte eller mer effektive prosesser. Dette er hvor strategi blir kode.",
+    en: "Each project is tied to real challenges: better sales training, smarter decision support, or more effective processes. This is where strategy becomes code.",
+  },
+  "prosjekter.les": { no: "Les mer", en: "Read more" },
 
   // Consulting
   "cons.title.1": { no: "Marius Ottesen", en: "Marius Ottesen" },

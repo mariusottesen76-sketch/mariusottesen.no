@@ -5,6 +5,7 @@ const SLUG_TO_TAB: Record<string, string> = {
   resultater: "Resultater",
   referanser: "Referanser",
   faginnlegg: "Faginnlegg",
+  prosjekter: "Prosjekter",
   consulting: "Consulting",
   cv: "CV & Åpen søknad",
   kontakt: "Kontakt",

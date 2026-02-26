@@ -6,6 +6,7 @@ import Profil from "./Profil";
 import Erfaring from "./Erfaring";
 import Resultater from "./Resultater";
 import Faginnlegg from "./Faginnlegg";
+import Prosjekter from "./Prosjekter";
 import Dokumentasjon from "./Dokumentasjon";
 import Kontakt from "./Kontakt";
 import Consulting from "./Consulting";
@@ -22,6 +23,7 @@ const TAB_TO_SLUG: Record<string, string> = {
   Resultater: "resultater",
   Referanser: "referanser",
   Faginnlegg: "faginnlegg",
+  Prosjekter: "prosjekter",
   Consulting: "consulting",
   "CV & Åpen søknad": "cv",
   Kontakt: "kontakt",
@@ -56,6 +58,7 @@ function AppContent({ initialTab = "Profil" }: { initialTab?: string }) {
     "Resultater",
     "Referanser",
     "Faginnlegg",
+    "Prosjekter",
     "Consulting",
     "CV & Åpen søknad",
     "Kontakt",
@@ -67,6 +70,7 @@ function AppContent({ initialTab = "Profil" }: { initialTab?: string }) {
     "Resultater": getTranslation("tab.resultater", lang),
     "Referanser": getTranslation("tab.referanser", lang),
     "Faginnlegg": getTranslation("tab.faginnlegg", lang),
+    "Prosjekter": getTranslation("tab.prosjekter", lang),
     "Consulting": getTranslation("tab.consulting", lang),
     "CV & Åpen søknad": getTranslation("tab.cv", lang),
     "Kontakt": getTranslation("tab.kontakt", lang),
@@ -74,7 +78,7 @@ function AppContent({ initialTab = "Profil" }: { initialTab?: string }) {
 
   return (
     <main className="min-h-screen bg-slate-950 text-slate-200 px-16 sm:px-24 md:px-32 lg:px-40 xl:px-48 2xl:px-56 py-4 md:py-8 relative overflow-x-hidden w-full">
-      <div className={`${activeTab === "Faginnlegg" || activeTab === "Consulting" ? "max-w-7xl" : "max-w-6xl"} mx-auto relative z-10 transition-all duration-500 w-full`}>
+      <div className={`${activeTab === "Faginnlegg" || activeTab === "Prosjekter" || activeTab === "Consulting" ? "max-w-7xl" : "max-w-6xl"} mx-auto relative z-10 transition-all duration-500 w-full`}>
 
         {/* NAVIGASJONSLINJE */}
         <nav className="flex items-center gap-1 sm:gap-2 md:gap-3 mb-8 border-b border-slate-800/40 pb-3 w-full">
@@ -133,6 +137,7 @@ function AppContent({ initialTab = "Profil" }: { initialTab?: string }) {
           {activeTab === "Resultater" && <Resultater />}
           {activeTab === "Referanser" && <Referanser />}
           {activeTab === "Faginnlegg" && <Faginnlegg onNavigate={(tab) => setActiveTab(tab)} />}
+          {activeTab === "Prosjekter" && <Prosjekter onNavigate={(tab) => setActiveTab(tab)} />}
           {activeTab === "CV & Åpen søknad" && <Dokumentasjon />}
           {activeTab === "Consulting" && <Consulting />}
           {activeTab === "Kontakt" && <Kontakt />}
