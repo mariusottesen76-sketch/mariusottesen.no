@@ -104,18 +104,19 @@ function AppContent({ initialTab = "Profil" }: { initialTab?: string }) {
             </div>
           </button>
 
-          {/* ARKFANER – sentrert (desktop) */}
-          <div className="hidden md:flex flex-1 justify-center min-w-0">
-            <div className="flex flex-nowrap justify-center items-center gap-x-1 md:gap-x-1.5 lg:gap-x-2 max-w-full">
+          {/* ARKFANER – sentrert (desktop), tilpasset størrelse så de ikke overlapper logo/flagg */}
+          <div className="hidden md:flex flex-1 justify-center min-w-0 overflow-hidden">
+            <div className="flex flex-nowrap justify-center items-center gap-x-0.5 md:gap-x-1 lg:gap-x-1.5 xl:gap-x-2 min-w-0 max-w-full overflow-hidden">
               {tabKeys.map((tab) => (
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
-                  className={`text-[8px] md:text-[9px] lg:text-[10px] xl:text-[11px] font-black tracking-tight md:tracking-wider lg:tracking-widest uppercase transition-all whitespace-nowrap pb-0.5 px-0.5 focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:outline-none rounded-sm shrink-0 ${
+                  className={`text-[7px] md:text-[8px] lg:text-[9px] xl:text-[10px] 2xl:text-[11px] font-black tracking-tight uppercase transition-all whitespace-nowrap pb-0.5 px-0.5 focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:outline-none rounded-sm shrink min-w-0 truncate ${
                     activeTab === tab
                       ? "text-indigo-400 border-b-2 border-indigo-400"
                       : "text-slate-400 hover:text-white"
                   }`}
+                  title={tabLabels[tab]}
                 >
                   {tabLabels[tab]}
                 </button>
@@ -123,8 +124,8 @@ function AppContent({ initialTab = "Profil" }: { initialTab?: string }) {
             </div>
           </div>
 
-          {/* MOBIL NAV + SPRÅKVELGER */}
-          <div className="flex items-center gap-2 shrink-0">
+          {/* MOBIL NAV + SPRÅKVELGER – fast plass så faner ikke overlapper */}
+          <div className="flex items-center gap-2 shrink-0 pl-2 md:pl-3">
             <MobileNav tabs={tabKeys} tabLabels={tabLabels} activeTab={activeTab} onTabClick={setActiveTab} />
             <LanguageToggle />
           </div>
