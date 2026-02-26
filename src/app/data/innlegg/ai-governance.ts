@@ -635,5 +635,101 @@ Således vil ikke AI automatisk gi konkurransefortrinn. Den vil forsterke forskj
 Derfor ser jeg frem til mandagens samling på mitt Exec. Master i Generative AI for Business studie. For meg handler det om å styrke det teoretiske fundamentet, forstå rammeverkene dypere og koble dette enda tydeligere til strategi og kommersiell verdiskaping.
 
 Samtidig bistår jeg nå virksomheter innen AI og digital transformasjon – i skjæringspunktet mellom strategi, ledelse og implementering. Ønsker du å diskutere hvordan dette kan struktureres i din virksomhet, tar jeg gjerne en prat. Link til min consultingside finner du i første kommentarfelt.`
+    },
+    {
+      id: "bi-master-oppstart-01",
+      tittel: "Tilbake på BI – og på jakt etter en virksomhet å bygge AI-verdi med",
+      teaser: "Tilbake på BI: masterkurset Generative AI for Business og jakten på en virksomhet å bygge AI-app og implementeringsplan med.",
+      bildeUrl: "/images/bi-oppstart.jfif",
+      dato: "2026-02-23",
+      visningsDato: "23.02.2026",
+      kategori: "AI / KI",
+      link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
+      innhold: `Tilbake på BI – og på jakt etter en virksomhet å bygge AI-verdi med (og en app du får stemme på).
+
+For 11 år siden fullførte jeg Exec. Master of Management ved Handelshøyskolen BI, med fordypning i strategi og kommunikasjon. Nå er jeg tilbake på masterkurset <em>Generative AI for Business</em>, ledet av professor og AI-ekspert Shubin Yu.
+
+Dette er ikke et kurs der vi kun diskuterer teori. Vi skal bygge AI i praksis, inkludert utvikling av en fungerende applikasjon og en strategisk implementeringsplan for generativ AI.
+
+Vi har første fysiske samling denne uken, men jeg har allerede brukt de siste månedene på pensum, verktøytesting, praktiske prosjekter (ja, det kodes) og sparring med både tekniske og kommersielle miljøer. Ambisjonen er å koble teknologi til konkret forretningsverdi og gjennomføringskraft.
+
+Dette henger tett sammen med det jeg nå bruker tid på mht. å bygge bro mellom ledelse og AI-teknologi. Jeg ønsker å hjelpe virksomheter med å omsette teknologiske muligheter til kommersiell verdi, uten behov for et stort internt tech-team. Sammen med flere tekniske eksperter leverer jeg rådgivning og implementering forankret i forretningsforståelse og ledererfaring.
+
+Som del av kurset skal jeg bygge en AI-app. Jeg har skissert tre egenutviklede konsepter som adresserer konkrete utfordringer i næringslivet, og trenger nå innspill:
+
+1️⃣ <strong>The “North Star” – AI Strategy Alignment Engine</strong><br />
+Strategier dør ofte i dokumenter. Appen lar virksomheten laste opp strategien, og AI bryter den ned til konkrete, målbare OKR-er for avdelinger. Den sikrer operativ forankring og felles retning.
+
+2️⃣ <strong>The “Predictive Sales Coach”</strong><br />
+En always-on AI-trener for salgsteam. Selgere kan simulere krevende kundemøter mot en skreddersydd persona, for eksempel en skeptisk CFO, og få konkret feedback på struktur, argumentasjon og håndtering av innvendinger. Målet er redusert time-to-competence og økt win-rate.
+
+3️⃣ <strong>The “Churn Sentinel” – Revenue Retention</strong><br />
+Appen analyserer kundedialog og CRM-logg for å avdekke tidlige signaler på churn-risiko. Den gir risikovurdering med forklaring og foreslåtte tiltak før inntekten forsvinner.
+
+Hvilken ville du sett meg bygge – 1, 2 eller 3?
+
+I tillegg skal jeg gjennomføre en større strategisk prosjektoppgave. Jeg ønsker å koble denne til en reell virksomhet.
+
+Har din virksomhet en prosess som kan optimaliseres med generativ AI, men mangler kapasitet til å utforske det? Da kan jeg bygge prosjektoppgaven rundt deres case og levere en konkret implementeringsplan med prioriteringer, gevinstvurderinger, risikoanalyse og roadmap.
+
+Ta gjerne kontakt på DM dersom dette er aktuelt.`
+    },
+    {
+      id: "predictive-sales-coach-01",
+      tittel: "Jeg bestemte meg for å bygge – ikke bare mene noe om AI",
+      teaser: "Fra analyse til bygging: refleksjoner fra BI-kurset og prototypen The Predictive Sales Coach.",
+      bildeUrl: "/images/predictive-sales-coach.png",
+      dato: "2026-02-26",
+      visningsDato: "26.02.2026",
+      kategori: "AI / KI",
+      link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
+      innhold: `Jeg bestemte meg for å bygge – ikke bare mene noe om AI.
+
+Uken på masterkurset <em>Generative AI for Business</em> ved BI har vært særdeles interessant og lærerik. Det som gjør dette relevant er ikke bare rammeverkene, men det praktiske arbeidet. Vi har jobbet i Google-økosystemet med Gemini, Google AI Studio og Workspace-integrasjoner, testet modellvalg, strukturert prompt-arkitektur og evaluert output mot konkrete forretningscase. Når man selv må styre kontekst, parametere og datagrunnlag, får man en helt annen forståelse av presisjon og begrensninger.
+
+Samtidig har jeg brukt mye tid på å teste og utforske AI-verktøy i praksis. Innen skriving og analyse er det tydelige forskjeller mellom løsninger som Claude, ChatGPT og Perplexity når det gjelder kontekstforståelse og strukturert resonnering. På utviklingssiden har verktøy som Cursor, Replit, Lovable og AI Studio gjort det mulig å gå fra idé til fungerende prototype raskt, gjennom AI-assistert koding, modelltesting og effektiv arbeidsflyt. Innen kunnskapsstrukturering har NotebookLM og lokale LLM-løsninger vist hvor avgjørende kontekst og datakvalitet er.
+
+Poenget er ikke verktøyene i seg selv, men å forstå hva de faktisk kan og ikke kan gjøre, og hvordan de kan kobles til verdiskaping.
+
+WEF peker i <em>Future of Jobs</em>-rapporten på at analytisk tenkning, kreativ problemløsning og teknologiforståelse er blant de viktigste ferdighetene frem mot 2030, samtidig som virksomheter rapporterer et betydelig kompetansegap. Dataene viser at effekten av generativ AI ikke er lineær, men divergerende: forskjellen mellom de som adopterer og de som ligger etter øker over tid. Kompetansegapet er med andre ord eskalerende, ikke statisk.
+
+Arbeidet denne uken har allerede resultert i videreutvikling av et tidligere rammeverk til en konkret applikasjon: <strong>The Predictive Sales Coach</strong>. En løsning der selgere kan trene mot en dynamisk, virtuell kunde basert på DISC-psykologi og konkrete salgsfaser, mens systemet analyserer dialogen objektivt og gir presise forbedringspunkter. Hovedmålet er å trene for økt win-rate gjennom strukturert og målrettet trening før du møter kunden.
+
+Før kurset lanserte jeg også egen hjemmeside (lenke i første kommentarfelt). Samlet opplever jeg at jeg har tatt et tydelig steg videre, fra analyse til faktisk bygging. AI handler i bunn og grunn ikke om teknologi alene, men om ledelse, prioritering og evnen til å koble innsikt til gjennomføring.
+
+Er du nysgjerrig på app-løsningen, eller ønsker å diskutere praktisk anvendelse av AI i din kommersielle virksomhet, tar jeg gjerne en prat. Dagene brukes også til møter med spennende ressurspersoner og fagmiljøer innen AI, teknologi og kommersiell utvikling – noe som både gir perspektiv og nye ideer til videre prosjekter.
+
+Motivasjonen er stor – inspirasjonen større!`
+    },
+    {
+      id: "ai-etikk-norden-01",
+      tittel: "AI, makt, etikk og legitimitet – hva krever nordisk AI-ledelse?",
+      teaser: "Hva krever nordisk AI-ledelse? Om makt, etikk, legitimitet og ansvarlig styring.",
+      bildeUrl: "/images/etikk.jfif",
+      dato: "2026-02-24",
+      visningsDato: "24.02.2026",
+      kategori: "AI / KI",
+      link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
+      innhold: `I forrige innlegg i min AI-serie skrev jeg om styringsgrepene som avgjør hvor makten ligger når AI påvirker beslutninger. Neste nivå handler om etikk. Når beslutningsmakt forskyves fra mennesker til systemer, oppstår ikke bare et styringsspørsmål, men også et legitimitetsspørsmål.
+
+Hvem oppleves som ansvarlig når en algoritme prioriterer én kunde foran en annen? Hvem forklarer hvorfor en risikomodell gir ulike utslag? Hva skjer når en dynamisk prismodell differensierer priser basert på betalingsvillighet – og marginen øker, men rettferdighetsopplevelsen svekkes? Hva skjer med tilliten dersom beslutningen er effektiv, men oppleves urimelig?
+
+Etikk i AI-ledelse handler ikke primært om regelverk, men om hvordan makt utøves og oppfattes. Her ser vi tydelige regionale forskjeller.
+
+I USA belønnes tempo, skalering og markedsmakt. Innovasjon rulles raskt ut, og korreksjoner skjer ofte i etterkant. I deler av Asia kombineres høy teknologisk fremdrift med sterk sentral styring, der retning og ansvar defineres ovenfra.
+
+I Norden står vi i en annen tradisjon. Høy institusjonell tillit (OECD, World Values Survey) og sterke arbeidstakerrettigheter gjør at legitimitet ikke kan tas for gitt. EU-regulering, herunder AI Act, forsterker kravene til ansvarlighet og forklarbarhet. Beslutningssystemer må tåle juridisk og sosial prøving.
+
+Debatten rundt Oljefondets AI-satsing illustrerer dette spenningsfeltet. Ambisjoner om produktivitetsløft og milliardbesparelser er forståelige, men reiser spørsmål om systemisk risiko, tap av institusjonell kompetanse og «alfa decay» når mange bruker like modeller. Spørsmålet er ikke om AI skal brukes, men om tempoet ledsages av tilstrekkelig risikovurdering og etisk forankring.
+
+Det kan oppleves som et tempo-handicap, men også som et konkurransefortrinn. Virksomheter som kombinerer teknologisk fremdrift med etisk forankring, vil stå sterkere over tid. Uten legitimitet svekkes tilliten, og dermed handlingsrommet og konkurransekraften.
+
+AI-ledelse handler derfor ikke bare om styring, men om ansvarlig maktutøvelse. Det dreier seg ikke bare om hva systemene kan gjøre, men om hva de bør gjøre og hvordan det forklares.
+
+Den virkelige testen på modenhet er ikke hvor avansert modellen er, men om organisasjonen tåler konsekvensene av beslutningene den påvirker, også når de utfordres.
+
+Neste steg i serien handler om lederens dømmekraft. Når AI blir en del av beslutningsgrunnlaget, holder det ikke å forstå styringsstrukturene. Ledere må forstå hvordan modeller responderer på kontekst, hvordan hallusinasjoner oppstår, og hvordan anbefalinger skal vurderes kritisk.
+
+AI-dømmekraft er ikke en teknisk nisjeferdighet. Det er en lederkompetanse.`
     }
   ];
