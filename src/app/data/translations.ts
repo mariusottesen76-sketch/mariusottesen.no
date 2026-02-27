@@ -112,6 +112,10 @@ const translations: Translations = {
     no: "Hvert prosjekt er knyttet til reelle utfordringer: bedre salgstrening, smartere beslutningsstøtte eller mer effektive prosesser. Dette er hvor strategi blir kode.",
     en: "Each project is tied to real challenges: better sales training, smarter decision support, or more effective processes. This is where strategy becomes code.",
   },
+  "prosjekter.bilde.hint": {
+    no: "Klikk på bildet for å se The Predictive Sales Coach i større format.",
+    en: "Click the image to view The Predictive Sales Coach in a larger format.",
+  },
   "prosjekter.les": { no: "Les mer", en: "Read more" },
 
   // Consulting

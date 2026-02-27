@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { useLanguage } from "./LanguageContext";
 import { getTranslation } from "./data/translations";
@@ -12,6 +12,7 @@ const alleProsjekter: ProsjektType[] = [predictiveSalesCoach].sort(
 export default function Prosjekter({ onNavigate }: { onNavigate?: (tab: string) => void }) {
   const { lang } = useLanguage();
   const tr = (key: string) => getTranslation(key, lang);
+  const [activeImage, setActiveImage] = useState<ProsjektType | null>(null);
 
   return (
     <div className="py-4 text-left w-full overflow-x-hidden min-w-0">
@@ -38,6 +39,9 @@ export default function Prosjekter({ onNavigate }: { onNavigate?: (tab: string) 
             <p className="text-lg md:text-xl text-slate-400 italic leading-relaxed font-light break-words">
               {tr("prosjekter.intro.2")}
             </p>
+            <p className="mt-3 text-sm text-slate-500">
+              {tr("prosjekter.bilde.hint")}
+            </p>
           </div>
         </div>
       </div>
@@ -51,15 +55,20 @@ export default function Prosjekter({ onNavigate }: { onNavigate?: (tab: string) 
           >
             <div className="flex flex-col md:flex-row gap-0 min-w-0">
               {/* Smalere bildekolonne – predictive / predictive-sales-coach */}
-              <div className="w-full md:w-[220px] lg:w-[260px] shrink-0 h-48 md:h-auto md:min-h-[260px] relative bg-slate-800 overflow-hidden">
+              <button
+                type="button"
+                onClick={() => setActiveImage(prosjekt)}
+                className="w-full md:w-[220px] lg:w-[260px] shrink-0 h-48 md:h-auto md:min-h-[260px] relative bg-slate-800 overflow-hidden group cursor-zoom-in focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:outline-none"
+                aria-label={tr("prosjekter.bilde.hint")}
+              >
                 <Image
                   src={prosjekt.bildeUrl}
                   alt={prosjekt.tittel}
                   fill
-                  className="object-contain object-center"
+                  className="object-contain object-center transition-transform duration-300 group-hover:scale-[1.03]"
                   sizes="(max-width: 768px) 100vw, 260px"
                 />
-              </div>
+              </button>
               <div className="flex-1 min-w-0 p-6 md:p-8 flex flex-col justify-center overflow-hidden">
                 <span className="text-[10px] font-mono text-indigo-400 uppercase tracking-widest font-bold block mb-2">
                   {prosjekt.visningsDato}
@@ -80,6 +89,38 @@ export default function Prosjekter({ onNavigate }: { onNavigate?: (tab: string) 
           </article>
         ))}
       </div>
+
+      {activeImage && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm"
+          onClick={() => setActiveImage(null)}
+        >
+          <div
+            className="relative max-w-[90vw] max-h-[90vh] bg-slate-950 border border-slate-800 rounded-2xl shadow-2xl overflow-hidden"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              type="button"
+              onClick={() => setActiveImage(null)}
+              className="absolute top-3 right-3 z-10 px-3 py-1.5 rounded-full bg-slate-900/80 text-xs font-black uppercase tracking-widest text-slate-300 hover:text-white hover:bg-slate-800 transition-all"
+            >
+              Lukk
+            </button>
+            <div className="w-full h-full flex flex-col items-center justify-center p-4 overflow-auto">
+              <Image
+                src={activeImage.bildeUrl}
+                alt={activeImage.tittel}
+                width={800}
+                height={600}
+                className="max-w-full max-h-[80vh] w-auto h-auto object-contain mx-auto"
+              />
+              <p className="mt-3 text-xs text-slate-400 uppercase tracking-widest font-black text-center">
+                {activeImage.tittel}
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
