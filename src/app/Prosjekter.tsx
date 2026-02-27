@@ -20,11 +20,11 @@ export default function Prosjekter({ onNavigate }: { onNavigate?: (tab: string) 
       <div className="flex flex-col md:flex-row gap-6 items-start border-b border-slate-800/40 pb-6 min-w-0">
         <div className="w-full md:w-[400px] shrink-0 min-w-0">
           <Image
-            src="/images/prosjekt-bilde.jpg"
-            alt="AI-prosjekter og utvikling — Marius Ottesen"
+            src="/images/etikk.jfif"
+            alt="Etikk og ansvarlig bruk av AI — illustrasjon"
             width={400}
             height={500}
-            className="w-full h-auto rounded-2xl shadow-xl border border-slate-800 object-cover max-w-full"
+            className="w-full h-auto rounded-2xl shadow-2xl border border-slate-800 object-cover max-w-full"
           />
         </div>
         <div className="flex-1 min-w-0 pt-2 overflow-hidden">
