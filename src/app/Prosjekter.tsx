@@ -55,20 +55,25 @@ export default function Prosjekter({ onNavigate }: { onNavigate?: (tab: string) 
           >
             <div className="flex flex-col md:flex-row gap-0 min-w-0">
               {/* Smalere bildekolonne – predictive / predictive-sales-coach */}
-              <button
-                type="button"
-                onClick={() => setActiveImage(prosjekt)}
-                className="w-full md:w-[220px] lg:w-[260px] shrink-0 h-48 md:h-auto md:min-h-[260px] relative bg-slate-800 overflow-hidden group cursor-zoom-in focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:outline-none"
-                aria-label={tr("prosjekter.bilde.hint")}
-              >
-                <Image
-                  src={prosjekt.bildeUrl}
-                  alt={prosjekt.tittel}
-                  fill
-                  className="object-contain object-center transition-transform duration-300 group-hover:scale-[1.03]"
-                  sizes="(max-width: 768px) 100vw, 260px"
-                />
-              </button>
+              <div className="w-full md:w-[220px] lg:w-[260px] shrink-0 md:min-h-[260px] flex flex-col items-center gap-2">
+                <button
+                  type="button"
+                  onClick={() => setActiveImage(prosjekt)}
+                  className="w-full h-48 md:h-full relative bg-slate-800 overflow-hidden group cursor-zoom-in focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:outline-none rounded-lg border border-slate-700/60"
+                  aria-label={tr("prosjekter.bilde.hint")}
+                >
+                  <Image
+                    src={prosjekt.bildeUrl}
+                    alt={prosjekt.tittel}
+                    fill
+                    className="object-contain object-center transition-transform duration-300 group-hover:scale-[1.03]"
+                    sizes="(max-width: 768px) 100vw, 260px"
+                  />
+                </button>
+                <p className="text-[10px] text-slate-500 uppercase tracking-widest font-black text-center px-1">
+                  {tr("prosjekter.bilde.hint")}
+                </p>
+              </div>
               <div className="flex-1 min-w-0 p-6 md:p-8 flex flex-col justify-center overflow-hidden">
                 <span className="text-[10px] font-mono text-indigo-400 uppercase tracking-widest font-bold block mb-2">
                   {prosjekt.visningsDato}
@@ -96,7 +101,7 @@ export default function Prosjekter({ onNavigate }: { onNavigate?: (tab: string) 
           onClick={() => setActiveImage(null)}
         >
           <div
-            className="relative max-w-[90vw] max-h-[90vh] bg-slate-950 border border-slate-800 rounded-2xl shadow-2xl overflow-hidden"
+            className="relative max-w-[96vw] max-h-[96vh] bg-slate-950 border border-slate-800 rounded-2xl shadow-2xl overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
             <button
@@ -110,9 +115,9 @@ export default function Prosjekter({ onNavigate }: { onNavigate?: (tab: string) 
               <Image
                 src={activeImage.bildeUrl}
                 alt={activeImage.tittel}
-                width={800}
-                height={600}
-                className="max-w-full max-h-[80vh] w-auto h-auto object-contain mx-auto"
+                width={1400}
+                height={900}
+                className="max-w-[1400px] max-h-[90vh] w-auto h-auto object-contain mx-auto"
               />
               <p className="mt-3 text-xs text-slate-400 uppercase tracking-widest font-black text-center">
                 {activeImage.tittel}
