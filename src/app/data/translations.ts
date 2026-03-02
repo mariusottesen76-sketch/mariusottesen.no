@@ -126,7 +126,7 @@ const translations: Translations = {
     en: "The bridge between executive leadership and AI technology. I help organisations translate technological opportunity into commercial value — without the need for an in-house tech team from day one.",
   },
   "cons.intro.2": {
-    no: "I samarbeid med et nettverk av tekniske eksperter leverer jeg rådgivning og implementering som er forankret i forretningsforståelse og praktisk ledererfaring.",
+    no: "I samarbeid med flere tekniske eksperter leverer jeg rådgivning og implementering som er forankret i forretningsforståelse og praktisk ledererfaring.",
     en: "In partnership with a vetted network of technical experts, I deliver advisory and implementation services anchored in business acumen and hands-on leadership experience.",
   },
   "cons.tjenester": { no: "Tjenester", en: "Service Offering" },

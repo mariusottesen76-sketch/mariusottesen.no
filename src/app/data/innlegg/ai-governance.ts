@@ -1,5 +1,30 @@
 export const aiGovernance = [
     {
+      id: "ai-dommekraft-kontekst-01",
+      tittel: "AI-dømmekraft i praksis – fra prompt til kontekst",
+      teaser: "Hvorfor context engineering – ikke bare prompt engineering – avgjør kvaliteten på AI-svar i praksis.",
+      bildeUrl: "/images/context.png",
+      dato: "2026-03-02",
+      visningsDato: "02.03.2026",
+      kategori: "AI / KI",
+      link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
+      innhold: `I arbeidet mitt med generativ AI har én ting blitt tydelig: <strong>Kvaliteten på svaret avgjøres lenge før modellen begynner å skrive.</strong> Små justeringer i kontekst, instruksjoner eller parametere kan gi markant forskjell i presisjon og struktur, enten man bygger egne GPT-er med dokumenter eller bruker standardmodeller i åpne arbeidsprosesser.
+
+Vi snakker ofte om prompt engineering. I praksis er det <strong>context engineering</strong> som avgjør kvaliteten. Et AI-svar påvirkes ikke bare av selve spørsmålet, men av systeminstruksjoner, tidligere dialog, dokumenter som hentes inn, modellvalg og parametere som temperatur og top-p. Temperatur styrer balansen mellom kreativitet og konsistens. I idéutvikling kan variasjon være nyttig. I kommersielle beslutningsprosesser kan det være en risikofaktor.
+
+Struktureringen av selve prompten har også stor betydning. En enkel formel løfter kvaliteten betydelig: persona, kontekst, oppgave, format, eksempler og tone. Forskjellen mellom ustrukturert og strukturert input er ofte dramatisk.
+
+Det viktigste skillet går likevel mellom å optimalisere én interaksjon og å designe hele beslutningsmiljøet. Prompt engineering forbedrer svaret her og nå. Context engineering definerer rammene modellen arbeider innenfor over tid.
+
+Hallusinasjoner illustrerer hvorfor dette er kritisk. Modellen optimaliserer for sannsynlig tekst, ikke sannhet. Når konteksten er uklar eller problemformuleringen upresis, kan svaret fremstå overbevisende og samtidig være feil. I en kommersiell sammenheng kan konsekvensen være betydelig. En modell kan analysere pipeline og foreslå neste beste handling. Den kan vekte sannsynlighet og margin. Men uten tydelig definert strategisk kontekst kan anbefalingen være teknisk presis og forretningsmessig feil.
+
+MIT Sloan og McKinsey peker på det samme: Organisasjoner som lykkes med AI, kombinerer teknologi med tydelig menneskelig vurdering og ansvar. Modellen kan analysere mønstre. Den kan ikke forstå strategisk retning eller kontekst uten at vi definerer den.
+
+AI-dømmekraft handler derfor om mer enn å mestre et verktøy. Det handler om å strukturere beslutningsgrunnlaget, designe informasjonsrammen modellen arbeider innenfor, forstå begrensningene og vurdere output kritisk før implementering. Yu beskriver i 5A-modellen hvordan kravene til kompetanse øker jo nærmere vi beveger oss mot automation og agents. McKinsey peker på det samme: Teknologien er tilgjengelig for mange. Evnen til å integrere den i beslutningsprosesser er det som differensierer. Strategisk sett er det context engineering som gir varig konkurransefortrinn.
+
+For virksomheter som ønsker å bevege seg fra AI-diskusjon til faktisk verdiskaping, bistår jeg gjennom mitt selskap med både strategisk avklaring og praktisk implementering, i samarbeid med tekniske spesialister der det er nødvendig.`
+    },
+    {
       id: "strategi-ai-master-01",
       tittel: "Strategi uten AI er som å se bakover i speilet mens du kjører fremover",
       teaser: "AI er ikke lenger «nice to have» — det er en strategisk nødvendighet. Refleksjoner fra Oslo Business Forum og beslutningen om å melde seg på masterkurset Generativ AI for Business ved BI.",
