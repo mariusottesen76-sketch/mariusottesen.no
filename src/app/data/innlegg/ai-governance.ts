@@ -1,5 +1,91 @@
 export const aiGovernance = [
     {
+      id: "ai-ready-virksomhet-01",
+      tittel: "Når er en virksomhet AI-ready?",
+      teaser: "Mange investerer i AI, men færre forbereder organisasjonen. En gjennomgang av de fire områdene som avgjør om en virksomhet er rigget for å hente ut verdi fra teknologien.",
+      bildeUrl: "/images/ai-ready.jpg",
+      dato: "2026-03-09",
+      visningsDato: "09.03.2026",
+      kategori: "AI / KI",
+      link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
+      innhold: `Mange virksomheter sier de jobber med AI. Færre har forberedt organisasjonen på hva det innebærer. 
+
+Teknologien er tilgjengelig for alle. Den virkelige forskjellen ligger i hvordan virksomheten organiserer beslutninger, data og ansvar rundt den.
+
+McKinsey peker på at mange selskaper investerer tungt i AI, men får begrenset effekt fordi organisasjonen ikke er rigget for å bruke dem. Problemet er sjelden modellen. Det er strukturen rundt den.
+
+MIT Sloan beskriver at mange organisasjoner starter AI-arbeidet med teknologi. De som lykkes, starter med beslutninger. Først når man vet hvilke beslutninger som skal forbedres, gir det mening å bygge AI-løsninger.
+
+Et kommersielt eksempel illustrerer poenget: En AI-modell kan analysere salgsdata og foreslå hvilke kunder som bør prioriteres. Den kan rangere sannsynlighet for kjøp, margin og neste handling. Men dersom organisasjonen ikke har avklart hvem som eier beslutningen, hvilke kriterier som gjelder eller hvordan anbefalingen skal brukes, blir resultatet ofte mer analyse og ikke bedre beslutninger.
+
+Gjennom arbeidet med generativ AI ser jeg fire områder som avgjør om en virksomhet er AI-ready:
+
+<strong>1. Datagrunnlaget</strong>
+AI forsterker kvaliteten på input. Gode data gir bedre analyser. Fragmenterte eller ustrukturerte data gir bare raskere feil. I mange kommersielle organisasjoner ligger nøkkelinformasjon spredt i CRM, presentasjoner, e-poster og notater. Før AI kan gi verdi, må dette struktureres.
+
+<strong>2. Beslutningsstruktur</strong>
+AI fungerer best når beslutninger er tydelig definert. Hvem eier vurderingen? Hvilke kriterier gjelder? Hva er mandatet? Uten dette risikerer man at modellen leverer anbefalinger som ingen egentlig eier.
+
+<strong>3. Kompetanse</strong>
+Verktøy alene skaper ikke verdi. Ledere og medarbeidere må forstå hvordan modellene fungerer, hvilke begrensninger de har og hvordan output vurderes kritisk. Det handler ikke om å bli teknolog. Det handler om å utvikle AI-dømmekraft.
+
+<strong>4. Ansvarsforankring</strong>
+Jo mer AI påvirker beslutninger, desto viktigere blir styring. Hvem er ansvarlig dersom modellen gir en feil anbefaling? Hvem justerer konteksten eller stopper bruken? Dette er ledelsesspørsmål, ikke teknologispørsmål.
+
+Yu beskriver i 5A-modellen hvordan kravene til organisasjon og kompetanse øker når vi beveger oss fra access og assistants til applications, automation og agents. Jo mer autonomi vi gir systemene, desto viktigere blir strukturen rundt dem.
+
+Derfor er spørsmålet ikke bare om en virksomhet bruker AI. Det er om organisasjonen er rigget for å bruke den.
+
+For virksomheter som vil bevege seg fra AI-eksperimentering til verdiskaping, bistår jeg gjennom Marius Ottesen Consulting med strategisk avklaring og praktisk implementering i samarbeid med tekniske spesialister.
+
+👉 I neste innlegg ser jeg på hvordan organisasjoner bygger AI-kompetanse i praksis, uten å bli avhengige av et stort internt tech-miljø.`
+    },
+    {
+      id: "ai-arkitektur-beslutningsstotte-01",
+      tittel: "Jeg bygger AI-arkitektur for beslutningsstøtte",
+      teaser: "Hvordan generativ AI kan strukturere komplekse problemstillinger og gi kommersielle ledere et bedre beslutningsgrunnlag gjennom AI-dekonstruksjon.",
+      bildeUrl: "/images/analyse.gif",
+      dato: "2026-03-05",
+      visningsDato: "05.03.2026",
+      kategori: "AI / KI",
+      link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
+      innhold: `Som kommersiell leder har jeg flere ganger deltatt i strategiprosesser der målet er å koble ambisjoner til faktisk gjennomføring. Slike prosesser involverer ofte mange ansatte, eksterne konsulenter og fagmiljøer med ulike perspektiver og agendaer. Resultatet kan bli omfattende analyser og presentasjoner før man forstår hva virksomheten må gjøre annerledes.
+
+Utfordringen er velkjent: Strategien er tydelig formulert, men koblingen til operativ handling er langt svakere. Strategidokumenter, KPI-strukturer, salgsprosesser, anbudsdokumenter og regulatoriske krav skaper store informasjonsmengder som er krevende å analysere systematisk.
+
+Jeg arbeider derfor med en metode for å bruke generativ AI til å strukturere og analysere slike problemstillinger mer effektivt. Den grunnleggende logikken er enkel:
+
+<strong>Dokumenter og data → AI-dekonstruksjon → strategisk innsikt → beslutningsstøtte</strong>
+
+AI analyserer tekst, struktur og sammenhenger, identifiserer mulige gap og formulerer hypoteser som gir ledelsen et bedre utgangspunkt for vurderinger og beslutninger.
+
+Gjennom vibe-coding og verktøy som GPT-4o, Claude, Gemini, Cursor og Streamlit har jeg utviklet et teknisk fundament som gjør det mulig å bygge flere typer beslutningsverktøy på samme arkitektur.
+
+<strong>Fra idé til verktøy</strong>
+Den samme analysemodellen kan brukes på flere områder innen kommersiell ledelse:
+
+• <strong>Strategi og gjennomføring</strong>
+AI kan analysere strategidokumenter opp mot operative planer, KPI-strukturer og sales dashboards for å identifisere hvor strategien bryter sammen i overgangen til drift.
+
+• <strong>Commercial excellence og salg</strong>
+Dynamiske battlecards kan genereres ved å analysere konkurrentinformasjon og koble dette til egne verdiforslag, slik at salgsteamet selger kommersiell verdi fremfor rene produktfunksjoner.
+
+• <strong>Anbud og RFP-prosesser</strong>
+Store kravdokumenter kan dekonstrueres slik at organisasjonen raskt identifiserer hvilke krav som krever strategiske svar.
+
+• <strong>Governance og compliance</strong>
+AI kan overvåke regulatoriske endringer og koble disse mot interne prosedyrer slik at virksomheten raskere identifiserer hva som må oppdateres.
+
+• <strong>Onboarding og kapabilitetsutvikling</strong>
+Samme logikk kan brukes til å strukturere kommersielle rammeverk slik at nye ansatte raskere forstår hvordan virksomheten arbeider med strategi, salg og prestasjonsstyring.
+
+Et konkret eks. er løsningen "The Predictive Sales Coach", hvor selgere trener mot en dynamisk virtuell kunde basert på DISC og konkrete salgsfaser, mens systemet analyserer dialogen og gir forbedringspunkter for å øke win-rate i reelle kundemøter.
+
+Fellesnevneren er arkitekturen bak og hvordan Gen. AI kan analysere komplekse problemstillinger, identifisere strukturelle gap og gi ledere et bedre beslutningsgrunnlag.
+
+👉 Jeg arbeider med å utvikle og anvende slike løsninger i praksis. Dersom du er nysgjerrig på hvordan dette kan brukes i egen virksomhet tar jeg gjerne en prat.`
+    },
+    {
       id: "ai-dommekraft-kontekst-01",
       tittel: "AI-dømmekraft i praksis – fra prompt til kontekst",
       teaser: "Hvorfor context engineering – ikke bare prompt engineering – avgjør kvaliteten på AI-svar i praksis.",
