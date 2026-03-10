@@ -13,7 +13,7 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/sales-coach",
-        destination: "https://predictive-sales-coach-v2.vercel.app",
+        destination: "https://salescoach.mariusottesen.no",
         permanent: false,
       },
     ];

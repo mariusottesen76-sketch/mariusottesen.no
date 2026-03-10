@@ -9,7 +9,7 @@ const translations: Translations = {
   "tab.resultater": { no: "Resultater", en: "Results" },
   "tab.referanser": { no: "Referanser", en: "References" },
   "tab.faginnlegg": { no: "Faginnlegg", en: "Articles" },
-  "tab.prosjekter": { no: "Prosjekter", en: "Projects" },
+  "tab.prosjekter": { no: "AI-prosjekter", en: "AI Projects" },
   "tab.consulting": { no: "Consulting", en: "Consulting" },
   "tab.cv": { no: "CV & Åpen søknad", en: "CV & Application" },
   "tab.kontakt": { no: "Kontakt", en: "Contact" },
