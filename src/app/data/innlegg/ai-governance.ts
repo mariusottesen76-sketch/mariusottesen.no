@@ -110,7 +110,9 @@ Vi er tidlig ute. Vi bygger, ikke bare prater. I dobbel forstand. Ser frem til f
       visningsDato: "22.03.2026",
       kategori: "AI / KI",
       link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
-      innhold: `Etter å ha fulgt <strong>Debatten</strong> på <strong>NRK1</strong> denne uken sitter jeg igjen med to tydelige refleksjoner.
+      innhold: `Men det virkelige skillet skjer et annet sted.
+
+Etter å ha fulgt <strong>Debatten</strong> på <strong>NRK1</strong> denne uken sitter jeg igjen med to tydelige refleksjoner.
 
 For det første:
 <strong>AI er ikke lenger noe vi diskuterer på avstand.</strong> Det er allerede i ferd med å endre hvordan virksomheter opererer.
@@ -118,8 +120,6 @@ For det første:
 Eksemplene fra blant annet Oljefondet er tydelige. Nicolai Tangen viste hvordan de har allerede dokumentert betydelige gevinster. De har økt produktiviteten med rundt 20 prosent og spart milliarder gjennom bedre analyse, overvåkning og beslutningsstøtte.
 
 Dette er ikke eksperimentering, men reell verdiskaping i praksis.
-
-Men det virkelige skillet skjer et annet sted.
 
 For det andre:
 Som også løftes frem i diskusjonen rundt AI i Norge, trenger vi flere perspektiver inn. AI er ikke ett fag, men det spenner fra teknologi og matematikk til forretning, ledelse, sikkerhet og samfunn.
