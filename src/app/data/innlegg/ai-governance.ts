@@ -1,5 +1,64 @@
 export const aiGovernance = [
     {
+      id: "ai-value-lab-01",
+      tittel: "Vi har startet noe igjen: AI Value Lab",
+      teaser:
+        "Et uformelt fellesskap for å bygge, dele og utfordre hverandre med AI — for reell forretningsverdi.",
+      bildeUrl: "/images/ai-value-lab.jpeg",
+      dato: "2026-03-20",
+      visningsDato: "20.03.2026",
+      kategori: "AI / KI",
+      link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
+      innhold: `Vi har startet noe igjen men ikke riktig for å flere ledere burde gjøre.
+
+For min del har dette blitt en arena hvor jeg både lærer raskere og får testet egne hypoteser i praksis.
+
+Vi er tre personer med én felles ambisjon:
+Å skape reell forretningsverdi med AI.
+
+Vi har etablert et uformelt samarbeid vi kaller "𝗔𝗜 𝗩𝗮𝗹𝘂𝗲 𝗟𝗮𝗯".
+
+Ikke bare for å teste verktøy, men for faktisk å bygge, dele og utfordre hverandre systematisk.
+
+Vi møtes jevnlig til det vi kaller “𝗦𝗵𝗼𝘄 & 𝗧𝗲𝗹𝗹”.
+
+Her deler vi konkret hva vi har jobbet med siden sist:
+• AI-agenter, applikasjoner og nettsider vi har utviklet
+• Eksperimenter på tvers av modeller og verktøy. Hva fungerer, hva fungerer ikke
+• Sammenlikning av styrker og svakheter mellom ulike AI-løsninger
+• Innsikt fra møter, workshops og kurs vi deltar på, samt innspill og tips til andre og nye fagarenaer og tema
+
+Men det som gjør dette spesielt, er dybden i diskusjonene. Vi bruker også tid på det mange hopper over:
+• Hvordan bruke data som gir konkurransefortrinn
+• Governance – hvordan sikre kontroll, kvalitet og ansvarlighet
+• Rammeverk som ADDDD (Align, Discover, Define, Develop, Deliver) – og hvordan det brukes i praksis
+• Hvordan gå fra pilot til skalerbar verdi
+
+Samtidig jobber vi ikke bare med eksperimenter. Vi tar for oss reelle problemstillinger og use-cases.
+
+Vår hypotese er enkel. AI skaper ikke verdi i siloer. Den skaper verdi når ulike enheter jobber sammen. Akkurat som avdelinger i virksomheter må gjøre.
+
+Det jeg sitter igjen med så langt, er en ganske tydelig erkjennelse. Mange jobber med AI på individnivå. Få klarer å bygge strukturer som skaper verdi på selskapsnivå.
+
+Vår tilnærming er derfor bevisst:
+👉 Kombinere praktisk bygging med strategisk forståelse
+👉 Koble AI direkte til kommersielle use-cases
+👉 Lære raskere sammen enn hver for oss
+
+Neste steg? Vi skal bygge noe sammen som gir reell effekt – og som kan skaleres.
+
+For meg handler dette minst like mye om ledelse som teknologi.
+
+Ledelse som evner å koble eksperimentering med retning.
+Ledelse som forstår både data, governance og verdiskaping.
+Ledelse som leverer effekt og resultat.
+
+Vi er tidlig ute. Vi bygger, ikke bare prater. I dobbel forstand.
+Ser frem til fortsettelsen Ole Mjelde og Tatiana Hanecakova!
+
+𝗦𝗸𝘆 𝗶𝘀 𝘁𝗵𝗲 𝗹𝗶𝗺𝗶𝘁. 𝗠𝗲𝗻 𝗸𝘂𝗻 𝗳𝗼𝗿 𝗱𝗲 𝘀𝗼𝗺 𝗼𝗺𝘀𝗲𝘁𝘁𝗲𝗿 𝗔𝗜 𝘁𝗶𝗹 𝘃𝗲𝗿𝗱𝗶.`,
+    },
+    {
       id: "ai-debatten-hype-vs-frykt-01",
       tittel: "AI-debatten går fortsatt i to spor: hype vs frykt",
       teaser: "Når debatten låser seg til «hype» og «frykt», blir det vanskelig å se verdiskaping i praksis. Det er adopsjon som flytter drift.",
