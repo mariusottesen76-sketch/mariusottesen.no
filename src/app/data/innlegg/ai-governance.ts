@@ -53,7 +53,7 @@ Takk til NOVA Consulting Groupfor et svært godt gjennomført arrangement – og
       visningsDato: "20.03.2026",
       kategori: "AI / KI",
       link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
-      innhold: `Vi har startet noe igjen men ikke riktig for å flere ledere burde gjøre.
+      innhold: `𝗩𝗶 𝗵𝗮𝗿 𝘀𝘁𝗮𝗿𝘁𝗲𝘁 𝗻𝗼𝗲 𝗷𝗲𝗴 𝗺𝗲𝗻𝗲𝗿 𝗳𝗹𝗲𝗿𝗲 𝗹𝗲𝗱𝗲𝗿𝗲 𝗯𝘂𝗿𝗱𝗲 𝗴𝗷ø𝗿𝗲.
 
 For min del har dette blitt en arena hvor jeg både lærer raskere og får testet egne hypoteser i praksis.
 
@@ -97,8 +97,7 @@ Ledelse som evner å koble eksperimentering med retning.
 Ledelse som forstår både data, governance og verdiskaping.
 Ledelse som leverer effekt og resultat.
 
-Vi er tidlig ute. Vi bygger, ikke bare prater. I dobbel forstand.
-Ser frem til fortsettelsen Ole Mjelde og Tatiana Hanecakova!
+Vi er tidlig ute. Vi bygger, ikke bare prater. I dobbel forstand. Ser frem til fortsettelsen Ole Mjelde og Tatiana Hanecakova!
 
 𝗦𝗸𝘆 𝗶𝘀 𝘁𝗵𝗲 𝗹𝗶𝗺𝗶𝘁. 𝗠𝗲𝗻 𝗸𝘂𝗻 𝗳𝗼𝗿 𝗱𝗲 𝘀𝗼𝗺 𝗼𝗺𝘀𝗲𝘁𝘁𝗲𝗿 𝗔𝗜 𝘁𝗶𝗹 𝘃𝗲𝗿𝗱𝗶.`,
     },
