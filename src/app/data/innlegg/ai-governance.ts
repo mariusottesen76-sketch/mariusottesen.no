@@ -1,5 +1,43 @@
 export const aiGovernance = [
     {
+      id: "ai-debatten-hype-vs-frykt-01",
+      tittel: "AI-debatten går fortsatt i to spor: hype vs frykt",
+      teaser: "Når debatten låser seg til «hype» og «frykt», blir det vanskelig å se verdiskaping i praksis. Det er adopsjon som flytter drift.",
+      bildeUrl: "/images/debatten.jfif",
+      dato: "2026-03-22",
+      visningsDato: "22.03.2026",
+      kategori: "AI / KI",
+      link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
+      innhold: `Etter å ha fulgt <strong>Debatten</strong> på <strong>NRK1</strong> denne uken sitter jeg igjen med to tydelige refleksjoner.
+
+For det første:
+<strong>AI er ikke lenger noe vi diskuterer på avstand.</strong> Det er allerede i ferd med å endre hvordan virksomheter opererer.
+
+Eksemplene fra blant annet Oljefondet er tydelige. Nicolai Tangen viste hvordan de har allerede dokumentert betydelige gevinster. De har økt produktiviteten med rundt 20 prosent og spart milliarder gjennom bedre analyse, overvåkning og beslutningsstøtte.
+
+Dette er ikke eksperimentering, men reell verdiskaping i praksis.
+
+For det andre:
+Som også løftes frem i diskusjonen rundt AI i Norge, trenger vi flere perspektiver inn. AI er ikke ett fag, men det spenner fra teknologi og matematikk til forretning, ledelse, sikkerhet og samfunn.
+
+Hvis debatten låser seg til hvem som har “rett” til å mene noe, risikerer vi å snevre inn forståelsen og samtidig forsinke nødvendig utvikling. Denne bredden i perspektiver er avgjørende for å ta bedre beslutninger og sikre ansvarlig bruk av AI.
+
+Nicolai Tangen var tydelig på at virksomheter som ikke tar dette i bruk risikerer å falle bak.
+
+👉 De som adopterer raskt får et strukturelt fortrinn. Dette gjelder både individer og organisasjoner.
+
+På individnivå ser vi at de som tar i bruk AI utvikler seg raskere. De jobber mer effektivt, tar bedre beslutninger og øker sin egen verdi i arbeidsmarkedet.
+
+På organisasjonsnivå handler det ikke om enkeltverktøy, men om hvordan man jobber. AI må integreres i kjerneprosesser, kompetanse må bygges bredt, og arbeidsformer må endres. Fra pilotprosjekter til faktisk drift og beslutningstaking.
+
+Det er her forskjellen skapes, samtidig som vi må unngå to ytterpunkter. Naivitet, der man ukritisk kaster seg på alt. Eller handlingslammelse, der debatten blir viktigere enn fremdriften. Begge deler svekker evnen til å skape verdi.
+
+Min refleksjon er at AI ikke først og fremst vil skape vinnere. Den vil tydeliggjøre hvem som evner å utvikle seg raskest og omsette teknologi til konkret verdi.
+
+Spørsmålet er ikke hvem som har rett i AI-debatten.
+Det reelle spørsmålet er hvem som klarer å skape reell verdi av den.`,
+    },
+    {
       id: "ai-dommekraft-bias-01",
       tittel: "Når AI gir råd – hvem stoler vi egentlig på?",
       teaser: "AI fjerner ikke menneskelig bias, den kan forsterke den. Refleksjoner rundt hvordan vi tolker og bruker AI-anbefalinger i kommersielle beslutninger.",
