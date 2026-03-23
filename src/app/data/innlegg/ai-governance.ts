@@ -3,7 +3,7 @@ export const aiGovernance = [
       id: "nova-day-data-forst-01",
       tittel: "NOVA Day: Data først – alltid",
       teaser:
-        "Jeg deltok på NOVA Day og fikk fem tydelige takeaways: data først, dømmekraft, og governance som grunnmur.",
+        "Jeg deltok på NOVA Day og fikk tydelige takeaways om data først, dømmekraft og governance som grunnmur.",
       bildeUrl: "/images/nova-day.jpg",
       dato: "2026-03-19",
       visningsDato: "19.03.2026",
@@ -13,7 +13,7 @@ export const aiGovernance = [
 
 Dagen ble ledet av Morten Blomfeldt, og samlet sterke foredragsholdere.
 
-𝗠𝗶𝗻𝗲 𝘃𝗶𝗸𝘁𝗶𝗴𝘀𝘁𝗲 𝘁𝗮𝗸𝗲𝗮𝘄𝗮𝘆𝗥:
+𝗠𝗶𝗻𝗲 𝘃𝗶𝗸𝘁𝗶𝗴𝘀𝘁𝗲 𝘁𝗮𝗸𝗲𝗮𝘄𝗮𝘆𝘀:
 1. Data først – ikke AI først
 Gjennomgående budskap var at uten riktig datagrunnlag uteblir gevinstene. AI er forretningskritisk, men data er fundamentet for skalering og verdiskaping.
 
@@ -45,7 +45,7 @@ Takk til NOVA Consulting Groupfor et svært godt gjennomført arrangement – og
     },
     {
       id: "ai-value-lab-01",
-      tittel: "Vi har startet noe igjen: AI Value Lab",
+      tittel: "Vi har startet noe jeg mener flere ledere burde gjøre",
       teaser:
         "Et uformelt fellesskap for å bygge, dele og utfordre hverandre med AI — for reell forretningsverdi.",
       bildeUrl: "/images/ai-value-lab.jpeg",
@@ -118,6 +118,8 @@ For det første:
 Eksemplene fra blant annet Oljefondet er tydelige. Nicolai Tangen viste hvordan de har allerede dokumentert betydelige gevinster. De har økt produktiviteten med rundt 20 prosent og spart milliarder gjennom bedre analyse, overvåkning og beslutningsstøtte.
 
 Dette er ikke eksperimentering, men reell verdiskaping i praksis.
+
+Men det virkelige skillet skjer et annet sted.
 
 For det andre:
 Som også løftes frem i diskusjonen rundt AI i Norge, trenger vi flere perspektiver inn. AI er ikke ett fag, men det spenner fra teknologi og matematikk til forretning, ledelse, sikkerhet og samfunn.
