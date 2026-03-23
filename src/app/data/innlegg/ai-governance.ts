@@ -1,5 +1,49 @@
 export const aiGovernance = [
     {
+      id: "nova-day-data-forst-01",
+      tittel: "NOVA Day: Data først – alltid",
+      teaser:
+        "Jeg deltok på NOVA Day og fikk fem tydelige takeaways: data først, dømmekraft, og governance som grunnmur.",
+      bildeUrl: "/images/nova-day.jpg",
+      dato: "2026-03-19",
+      visningsDato: "19.03.2026",
+      kategori: "AI / KI",
+      link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
+      innhold: `Jeg deltok i går på 𝗡𝗢𝗩𝗔 𝗗𝗮𝘆 på Hotel Bristol – et svært relevant og innsiktsfullt heldagsseminar med temaet “𝗗𝗮𝘁𝗮 𝗳ø𝗿𝘀𝘁 – 𝗮𝗹𝗹𝘁𝗶𝗱”, med fokus på AI, data og fremtidens forretningsmodeller.
+
+Dagen ble ledet av Morten Blomfeldt, og samlet sterke foredragsholdere.
+
+𝗠𝗶𝗻𝗲 𝘃𝗶𝗸𝘁𝗶𝗴𝘀𝘁𝗲 𝘁𝗮𝗸𝗲𝗮𝘄𝗮𝘆𝗥:
+1. Data først – ikke AI først
+Gjennomgående budskap var at uten riktig datagrunnlag uteblir gevinstene. AI er forretningskritisk, men data er fundamentet for skalering og verdiskaping.
+
+2. Fremtiden formes nå – men ikke av teknologi alene
+Gerd Leonhard løftet viktigheten av menneskelig dømmekraft, etikk og ansvar. Teknologi gir muligheter, men det er ledelse som avgjør retning og konsekvenser.
+
+3. Datakvalitet, risiko og governance er kritisk
+Iselin Paulsen viste hvordan geopolitikk, sikkerhet og regulering påvirker teknologivalg. Datakvalitet, kontroll og tydelig eierskap i ledelsen er avgjørende.
+
+4. Fra hype til håndverk – der de fleste feiler
+Ørjan Segtnan Clausen var tydelig: De fleste AI-initiativer stopper på pilotstadiet. Årsaken er manglende problemforståelse, svakt datagrunnlag og fravær av tydelig verdidefinisjon. Han viste blant annet til ADDDD-rammeverket (Align, Discover, Define, Develop, Deliver) som en struktur for å sikre at AI-initiativer går fra idé til forretningsverdi.
+
+5. AI går fra verktøy til aktør
+Det mest spennende for meg var innsikten fra Lars Alexander Jakobsen rundt MCP (Model Context Protocol) og utviklingen mot A2A (Agent-to-Agent). Når AI kobles direkte til systemer og agenter samhandler, beveger vi oss mot operative “digitale kollegaer”. Dette vil fundamentalt endre hvordan vi organiserer arbeid og skaper verdi.
+
+Midt på dagen var det også en paneldebatt som bandt sammen perspektivene. Diskusjonen handlet om geopolitikk, avhengighet til globale teknologileverandører, digital suverenitet og behovet for tydeligere strategiske valg. Dette er ikke lenger et IT-spørsmål, men et lederansvar.
+
+𝗠𝗶𝗻 𝗿𝗲𝗳𝗹𝗲𝗸𝘀𝗷𝗼𝗻:
+“Data først – alltid” er ikke et teknologivalg. Det er et strategisk valg – og et tydelig lederansvar.
+
+Det som traff meg mest, er at mange fortsatt jobber med AI som et verktøy, mens gevinstene først kommer når man redesigner prosesser og ansvar.
+For meg er dette også et kommersielt skifte, der AI vil påvirke salg, kundeopplevelse og verdiskaping i praksis.
+
+Når vi ser fremveksten av MCP og A2A, beveger vi oss mot en ny operativ modell der AI-agenter ikke bare støtter, men utfører arbeid på tvers av systemer. Vi snakker ny arkitektur for hvordan arbeid utføres!
+
+👉 Dette jobber jeg også aktivt med nå da jeg anser det som viktig å forstå hvordan dette implementeres i praksis, ikke bare på nivå med teoretiske rammeverk.
+
+Takk til NOVA Consulting Groupfor et svært godt gjennomført arrangement – og ikke minst hyggelig å møte mange nye bekjentskaper og ha gode faglige diskusjoner gjennom dagen!`,
+    },
+    {
       id: "ai-value-lab-01",
       tittel: "Vi har startet noe igjen: AI Value Lab",
       teaser:
