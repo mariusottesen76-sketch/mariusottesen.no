@@ -1,5 +1,37 @@
 export const aiGovernance = [
     {
+      id: "ai-tech-frokost-rebel-01",
+      tittel: "𝐓𝐞𝐜𝐡-𝐟𝐫𝐨𝐤𝐨𝐬𝐭: 𝐍å 𝐡𝐚𝐧𝐝𝐥𝐞𝐫 𝐝𝐞𝐭 𝐨𝐦 𝐡𝐯𝐚 𝐀𝐈-𝐚𝐠𝐞𝐧𝐭𝐞𝐫 𝐤𝐚𝐧 𝐠𝐣ø𝐫𝐞 𝐟𝐨𝐫 𝐯𝐢𝐫𝐤𝐬𝐨𝐦𝐡𝐞𝐭",
+      teaser:
+        "AI-agenter skaper verdi når de kobles til systemer, data og prosesser — med kontroll, tydelige instruksjoner og human in the loop.",
+      bildeUrl: "/images/rebel.jpg",
+      dato: "2026-03-25",
+      visningsDato: "25.03.2026",
+      kategori: "AI / KI",
+      link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
+      innhold: `På AI-agent møte hos Digital Norway i går fikk vi et godt bilde av hvor agentfeltet står nå, fra begrepsforståelse, via offentlig sektor og governance, til startup, skalering og konkret bygging.
+
+Mange snakker fortsatt om AI som bedre tekst, raskere søk og smartere assistenter. Det er ikke der verdien ligger. Verdien oppstår når AI kobles til systemer, data og prosesser – og utfører arbeid.
+
+Alexander Haneng fra Digital Norway satte rammen godt. En chatbot svarer. En assistent hjelper. En agent handler. Den kan trigge prosesser, hente data, sende email og jobbe i bakgrunnen. Samtidig øker risikoen. Tilgang til systemer og data krever kontroll, tydelige instrukser og begrensede rettigheter.
+
+Kjetil Ringstad fra Statens Vegvesen viste hvordan dette implementeres i en stor virksomhet. Ikke som teknologi alene, men som struktur og styring. En modell som fungerte godt var hvordan ansatte bygger egne agenter, eksperter bygger fellesløsninger og utviklere bygger plattform.
+
+Caset med dokumentkontroll var konkret. Agenter identifiserer sensitiv informasjon, foreslår endringer og reduserer manuelt arbeid. Samtidig er to prinsipper avgjørende: håndtering av sensitive data må være kontrollert, og human in the loop må være på plass før noe publiseres. Det er her mange møter den reelle kompleksiteten.
+
+Einar Michaelsen fra Circular viste hvordan dette ser ut når det kobles direkte til verdikjeden. Produkter kan digitaliseres, kategoriseres, prises og publiseres på sekunder. Salgsagenter finner leads, scorer dem og setter neste steg i prosess. Når 4 mennesker jobber sammen med 40 agenter, sier det noe om retningen!
+
+Stacken bak var bla. Linear, Claude Code, Cursor, GitHub, Supabase, Vercel, Gemini, mm. Verdien ligger i hvordan dette kobles sammen til en produksjonslinje. For min del var det gøy å se dette, da jeg har erfaring med flere av verktøyene og nå jobber med å bygge egne agentløsninger.
+
+Det som skiller de som får effekt nå er hvordan de starter. Ikke med teknologi, men med konkrete oppgaver. Repetitivt arbeid på tvers av systemer, med tydelige regler og målbar verdi. Deretter bygges en enkel agent med begrenset tilgang inkl. menneskelig kontroll. Når dette fungerer, skaleres det.
+
+Min take er enkel. Spørsmålet er ikke hvilke modeller man skal bruke. Spørsmålet er hvilket arbeid som kan delegeres, hvilke prosesser som bør redesignes og hvor dette faktisk gir verdi.
+
+Det er også bakgrunnen for at jeg nå jobber konkret med å bygge agenter, med ambisjon om målbar effekt i en virksomhet jeg samarbeider med.
+
+Inne i lokalet stod det en DeLorean med “REBEL”-skilt. I filmen 𝐵𝑎𝑐𝑘 𝑡𝑜 𝑡ℎ𝑒 𝐹𝑢𝑡𝑢𝑟𝑒 handlet det om å reise frem i tid. Med AI føles det mer som vi bygger den. AI-agenter er retningen fremover!`,
+    },
+    {
       id: "nova-day-data-forst-01",
       tittel: "NOVA Day: Data først – alltid",
       teaser:
