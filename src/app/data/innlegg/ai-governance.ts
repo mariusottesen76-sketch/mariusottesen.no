@@ -1,5 +1,47 @@
 export const aiGovernance = [
     {
+      id: "iteam-operativ-modell-2026-01",
+      tittel: "Er din kommersielle operative modell rigget for 2026?",
+      teaser:
+        "Refleksjoner fra iteam sitt frokostseminar: AI som nytt operativsystem, cybersikkerhet som fundament og agenter som faktisk utfører arbeid.",
+      bildeUrl: "/images/iteam.jpg",
+      dato: "2026-03-11",
+      visningsDato: "11.03.2026",
+      kategori: "AI / KI",
+      link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
+      innhold: `𝗘𝗿 𝗱𝗶𝗻 𝗸𝗼𝗺𝗺𝗲𝗿𝘀𝗶𝗲𝗹𝗹𝗲 𝗼𝗽𝗲𝗿𝗮𝘁𝗶𝘃𝗲 𝗺𝗼𝗱𝗲𝗹𝗹 𝗿𝗶𝗴𝗴𝗲𝘁 𝗳𝗼𝗿 𝟮𝟬𝟮𝟲?
+
+I går deltok jeg på iteam og Michael Jacobs sitt frokostseminar på Saga Kino i Oslo – et arrangement med over 800 deltakere fordelt på 29 lokasjoner. Budskapet var krystallklart: Vi står i et teknologisk skifte som krever en fundamental rekalibrering av hvordan vi leder, sikrer og skalerer virksomheter.
+
+I møtet ble det fremhevet at gapet mellom de som kun ser på AI som et verktøy, og de som forstår det som et nytt kommersielt operativsystem, øker raskt. Å investere i dyp AI-forståelse og endringsledelse nå er ikke bare en fordel, men en kritisk kapabilitet for enhver leder som skal navigere i årene som kommer.
+
+Her er min strategiske oppsummering av de viktigste driverne for 2026:
+
+<strong>1. Det teknologiske paradigmeskiftet</strong>
+Vi har beveget oss fra 90-tallets fokus på programvare til 2000-tallets skytjenester. Nå trer vi inn i de autonome agentenes tidsalder.
+• Fra verktøy til digital arbeidsstyrke: AI går fra å være en passiv assistent til å bli en aktiv agent som automatiserer rutineoppgaver, analyserer enorme datasett og støtter strategiske beslutninger.
+• Global teknologi – lokale konsekvenser: Teknologien er tilgjengelig for alle, men konkurransefortrinnet skapes lokalt av de lederne som evner å operasjonalisere AI i sin verdikjede.
+
+<strong>2. Cybersikkerhet som strategisk fundament</strong>
+Roar Thon fra NSM leverte en dyster realitetsorientering: Trusselbildet er preget av statlige aktører og organiserte kriminelle.
+• Identitet er den nye angrepsflaten: Angripere hacker sjelden systemer. De logger seg inn via misbrukte brukeridentiteter.
+• Breddesikkerhet: En helhetlig tilnærming krever kontroll på teknologi, mennesker og prosesser.
+• Fire kritiske kapabiliteter: Enhver moderne virksomhet må kunne forebygge, detektere, håndtere og normalisere drift etter et angrep.
+
+<strong>3. AI i operativ praksis: Microsoft Copilot</strong>
+Daniel Horgmo fra Microsoft demonstrerte hvordan vi går fra enkel chat til faktiske autonome agenter som fungerer som en digital arbeidsstyrke.
+• Presis delegring: Suksess med AI krever \"Prompting 101\" – evnen til å gi mål, kontekst og kilder som om du delegerer til et teammedlem.
+• Agent Mode: Gjennom Copilot ser vi nå agenter som utfører flerstegsoppgaver autonomt direkte i våre kjernesystemer.
+
+<strong>Min strategiske konklusjon:</strong>
+Jeg at suksess krever at vi slutter å se på sikkerhet og AI som IT-prosjekter. Kulturelle og strukturelle endringer må til.
+• Start smått, tenk stort. Test i liten skala, men ha en klar strategi fra ledelsen.
+• Datadisplin: Gode data og streng tilgangsstyring er forutsetningen for AI-effekt.
+• Sikkerhet by design: Integrer sikkerhet fra start da det er betydelig billigere enn å håndtere en krise.
+
+Takk til iteam for et profesjonelt dypdykk inn i fremtiden.`,
+    },
+    {
       id: "ai-tech-frokost-rebel-01",
       tittel: "Tech-frokost: Nå handler det om hva AI-agenter kan gjøre for virksomheten",
       teaser:
