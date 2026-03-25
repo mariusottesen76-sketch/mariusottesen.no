@@ -1,7 +1,7 @@
 export const aiGovernance = [
     {
       id: "ai-tech-frokost-rebel-01",
-      tittel: "𝐓𝐞𝐜𝐡-𝐟𝐫𝐨𝐤𝐨𝐬𝐭: 𝐍å 𝐡𝐚𝐧𝐝𝐥𝐞𝐫 𝐝𝐞𝐭 𝐨𝐦 𝐡𝐯𝐚 𝐀𝐈-𝐚𝐠𝐞𝐧𝐭𝐞𝐫 𝐤𝐚𝐧 𝐠𝐣ø𝐫𝐞 𝐟𝐨𝐫 𝐯𝐢𝐫𝐤𝐬𝐨𝐦𝐡𝐞𝐭",
+      tittel: "Tech-frokost: Nå handler det om hva AI-agenter kan gjøre for virksomheten",
       teaser:
         "AI-agenter skaper verdi når de kobles til systemer, data og prosesser — med kontroll, tydelige instruksjoner og human in the loop.",
       bildeUrl: "/images/rebel.jpg",
@@ -29,7 +29,7 @@ Min take er enkel. Spørsmålet er ikke hvilke modeller man skal bruke. Spørsm�
 
 Det er også bakgrunnen for at jeg nå jobber konkret med å bygge agenter, med ambisjon om målbar effekt i en virksomhet jeg samarbeider med.
 
-Inne i lokalet stod det en DeLorean med “REBEL”-skilt. I filmen 𝐵𝑎𝑐𝑘 𝑡𝑜 𝑡ℎ𝑒 𝐹𝑢𝑡𝑢𝑟𝑒 handlet det om å reise frem i tid. Med AI føles det mer som vi bygger den. AI-agenter er retningen fremover!`,
+Inne i lokalet stod det en DeLorean med “REBEL”-skilt. I filmen Back to the Future handlet det om å reise frem i tid. Med AI føles det mer som vi bygger den. AI-agenter er retningen fremover!`,
     },
     {
       id: "nova-day-data-forst-01",
