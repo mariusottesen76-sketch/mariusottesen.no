@@ -1,5 +1,42 @@
 export const tennisLedelse = [
     {
+      id: "econa-innovasjon-ideer-verdi-01",
+      tittel: "Slik bygger du en organisasjon hvor idéer blir til verdi",
+      teaser:
+        "Refleksjoner fra Econa om innovasjon: struktur, fasilitering og kultur som gjør at gode idéer faktisk blir til verdi.",
+      bildeUrl: "/images/innovasjon.jpg",
+      dato: "2026-03-28",
+      visningsDato: "28.03.2026",
+      kategori: "Kommersiell Ledelse",
+      link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
+      innhold: `𝗦𝗹𝗶𝗸 𝗯𝘆𝗴𝗴𝗲𝗿 𝗱𝘂 𝗲𝗻 𝗼𝗿𝗴𝗮𝗻𝗶𝘀𝗮𝘀𝗷𝗼𝗻 𝗵𝘃𝗼𝗿 𝗶𝗱𝗲𝗲𝗿 𝗯𝗹𝗶𝗿 𝘁𝗶𝗹 𝘃𝗲𝗿𝗱𝗶
+
+På torsdag deltok jeg på Econa-arrangementet “𝘐𝘯𝘯𝘰𝘷𝘢𝘴𝘫𝘰𝘯 𝘰𝘨 𝘶𝘵𝘷𝘪𝘬𝘭𝘪𝘯𝘨 – 𝘣𝘭𝘪 𝘮𝘦𝘳 𝘮𝘶𝘭𝘪𝘨𝘩𝘦𝘵𝘴𝘰𝘳𝘪𝘦𝘯𝘵𝘦𝘳𝘵”, med foredrag og workshops ledet av Nina Prestegard.
+
+Noe av det mest interessante, var ikke hvor mange idéer som finnes i en organisasjon, men hvordan de blir håndtert. Mange virksomheter har ansatte som kommer med gode innspill, men idéene dukker ofte opp i gangen, mellom møter eller i ustrukturerte settinger. De blir gjerne møtt med et “bra innspill”, men uten tydelig videre oppfølging. Over tid svekker det både initiativ og engasjement.
+
+Kurset var tydelig på at innovasjon ikke skjer tilfeldig. Det må designes, både gjennom struktur og kultur.
+
+Tre ting peker seg spesielt ut:
+• Struktur slår tilfeldighet. Idéarbeid må ha tydelige rammer, problemstillinger og eierskap. Hvis ikke, blir det tilfeldig hva som tas videre.
+
+• Grupper må fasiliteres. Uten struktur får man gruppetenkning, dominans og tidlig kritikk. La folk tenke individuelt først, og bygg videre sammen.
+
+• Skille mellom utforskning og beslutning. Mange går for raskt til vurdering. Da stopper idéene før de har fått utvikle seg.
+
+Et annet viktig poeng var at kreativitet ikke er en egenskap noen har, men en ferdighet som kan trenes. Vi er ofte trent til å finne riktige svar, ikke til å utforske flere muligheter. Derfor må ledere bevisst legge til rette for divergent tenkning, hvor målet er å åpne opp før man snevrer inn. Nysgjerrighet og spørsmål som “hva hvis?” og “kan du utdype?” er en forutsetning for bedre beslutninger.
+
+Samtidig handler dette ikke bare om ledelse, men også om eierskap. Det kan ikke forventes at lederen alene skal drive frem alle idéer som kommer inn. Ekte innovasjon skjer når ansatte selv tar ansvar for å videreutvikle forslag, teste dem og stå i usikkerheten. Autonomi bygger eierskap, og eierskap skaper fremdrift.
+
+Erfaringsmessig er det smart å etablere faste innovasjonsmøter med tydelig struktur. Der presenteres idéer kort, én person eier videre utvikling, og det avklares neste steg før møtet avsluttes. Det gir både retning og ansvar, samtidig som det signaliserer at idéer tas på alvor.
+
+For ledere betyr dette at man må gå fra å etterspørre idéer til å bygge systemer som faktisk håndterer dem. Det handler om å skape rom for utforskning, men også tydelig ansvar for gjennomføring.
+
+Koblingen til kommersiell ledelse er direkte. Skal man utvikle nye tjenester, forbedre kundeopplevelser eller ta i bruk AI, holder det ikke med gode intensjoner. Man må ha en organisasjon som evner å utvikle, prioritere og realisere idéer i praksis.
+
+Min viktigste takeaway er derfor enkel: Innovasjon handler ikke først og fremst om flere idéer, men om å bygge en struktur og en kultur hvor idéer blir til verdi.`,
+    },
+    {
       id: "nettside-lansering-2026-01",
       tittel: "Fra koding i 1999 til AI-revolusjon i 2026 – ny hjemmeside og nytt consultingselskap!",
       teaser: "Ny hjemmeside bygget med AI-verktøy på to dager – og lansering av Marius Ottesen Consulting som brobygger mellom strategi og AI-implementering.",
