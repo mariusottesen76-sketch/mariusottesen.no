@@ -64,9 +64,10 @@ export default function Profil({ onNavigate }: { onNavigate?: (tab: string) => v
             </p>
           </div>
 
-          <div className="text-lg text-slate-300 border-l-4 border-indigo-600 pl-6 italic font-medium leading-relaxed whitespace-pre-line">
-            {profilData.hoved}
-          </div>
+          <div
+            className="text-lg text-slate-300 border-l-4 border-indigo-600 pl-6 italic font-medium leading-relaxed [&_a]:text-indigo-400 [&_a]:underline [&_a]:underline-offset-2 [&_a]:decoration-indigo-500/70 [&_a]:hover:text-indigo-200 [&_a]:transition-colors [&_a]:focus-visible:outline [&_a]:focus-visible:outline-2 [&_a]:focus-visible:outline-offset-2 [&_a]:focus-visible:outline-indigo-400"
+            dangerouslySetInnerHTML={{ __html: profilData.hoved }}
+          />
 
           {/* SELSKAP */}
           <div className="p-8 bg-slate-900/25 backdrop-blur-sm border border-indigo-500/20 rounded-2xl shadow-xl space-y-5">

@@ -28,8 +28,8 @@ const translations: Translations = {
     en: "Commercial Executive & AI Strategist",
   },
   "profil.selskap.desc": {
-    no: "Gjennom mitt eget selskap leverer jeg rådgivning og implementering innen AI-strategi, prosessoptimalisering og digital transformasjon — som brobygger mellom ledelse og teknologi. I samarbeid med et nettverk av tekniske eksperter hjelper jeg virksomheter med å omsette AI-muligheter til konkret kommersiell verdi.",
-    en: "Through my consultancy I deliver advisory and implementation services spanning AI strategy, process optimisation, and digital transformation — serving as the critical link between executive leadership and technology. In partnership with a curated network of technical specialists, I help organisations convert AI opportunities into tangible commercial outcomes.",
+    no: "Jeg leverer rådgivning og implementering innen AI-strategi, prosessoptimalisering og digital transformasjon — som brobygger mellom ledelse og teknologi. I samarbeid med et nettverk av tekniske eksperter hjelper jeg virksomheter med å omsette AI-muligheter til konkret kommersiell verdi.",
+    en: "I deliver advisory and implementation services spanning AI strategy, process optimisation, and digital transformation — serving as the critical link between executive leadership and technology. In partnership with a curated network of technical specialists, I help organisations convert AI opportunities into tangible commercial outcomes.",
   },
   "profil.chip.ai": { no: "AI-Strategi & Rådgivning", en: "AI Strategy & Advisory" },
   "profil.chip.prosess": { no: "Prosess-optimalisering", en: "Process Optimisation" },
@@ -112,10 +112,6 @@ const translations: Translations = {
     no: "Hvert prosjekt er knyttet til reelle utfordringer: bedre salgstrening, smartere beslutningsstøtte eller mer effektive prosesser. Dette er hvor strategi blir kode.",
     en: "Each project is tied to real challenges: better sales training, smarter decision support, or more effective processes. This is where strategy becomes code.",
   },
-  "prosjekter.bilde.hint": {
-    no: "Klikk på bildet for å se The Predictive Sales Coach i større format.",
-    en: "Click the image to view The Predictive Sales Coach in a larger format.",
-  },
   "prosjekter.les": { no: "Les mer", en: "Read more" },
 
   // Consulting
@@ -130,6 +126,21 @@ const translations: Translations = {
     en: "In partnership with a vetted network of technical experts, I deliver advisory and implementation services anchored in business acumen and hands-on leadership experience.",
   },
   "cons.tjenester": { no: "Tjenester", en: "Service Offering" },
+  "cons.initiatives.title": { no: "Utvalgte initiativer", en: "Selected initiatives" },
+  "cons.initiatives.intro": {
+    no: "Eksempler på pågående arbeid og virksomhetsnære utviklingsinitiativer inkluderer:",
+    en: "Examples of current work and business-near development initiatives include:",
+  },
+  "cons.initiatives.avl.title": { no: "AI Value Lab Oslo", en: "AI Value Lab Oslo" },
+  "cons.initiatives.avl.text": {
+    no: "Utvikling og testing av AI-drevne konsepter, prototyper og virksomhetsnære anvendelser med fokus på reell verdiskaping og implementering.",
+    en: "Development and testing of AI-driven concepts, prototypes, and business-near applications with a focus on real value creation and implementation.",
+  },
+  "cons.initiatives.stk.title": { no: "Skøyenåsen Tannklinikk", en: "Skøyenåsen Tannklinikk" },
+  "cons.initiatives.stk.text": {
+    no: "Utviklingsarbeid knyttet til modernisering av pasientreisen, inkludert booking, oppfølging, kundeopplevelse, forbedring av arbeidsflyt og vurdering av relevante AI- og digitale muligheter.",
+    en: "Development-oriented work related to modernization of the patient journey, including booking, follow-up, customer experience, workflow improvement, and assessment of relevant AI and digital opportunities.",
+  },
   "cons.kjenner": { no: "Kjenner du deg igjen?", en: "Does this resonate?" },
   "cons.prosess": { no: "Slik jobber vi sammen", en: "Our Engagement Model" },
   "cons.dialog": { no: "Start Dialogen", en: "Start the Conversation" },

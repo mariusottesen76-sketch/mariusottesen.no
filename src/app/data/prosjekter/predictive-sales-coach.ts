@@ -6,6 +6,10 @@ export interface ProsjektType {
   dato: string;
   visningsDato: string;
   innhold: string;
+  /** Kort undertekst under prosjektbildet (språkversjoner). */
+  bildeHint?: { no: string; en: string };
+  /** Valgfrie ekstra bilder som vises under teksten i kortet. */
+  ekstraBilder?: { src: string; alt: string }[];
 }
 
 export const predictiveSalesCoach: ProsjektType = {
@@ -16,6 +20,10 @@ export const predictiveSalesCoach: ProsjektType = {
   bildeUrl: "/images/predictive.png",
   dato: "2026-02-26",
   visningsDato: "26.02.2026",
+  bildeHint: {
+    no: "Klikk på bildet for å se The Predictive Sales Coach i større format.",
+    en: "Click the image to view The Predictive Sales Coach in a larger format.",
+  },
   innhold: `The Predictive Sales Coach tar gjettingen ut av kundemøtene dine ved å la deg trene målrettet mot en dynamisk, virtuell kunde. Du setter premissene og konfigurerer «motstanderen» for neste rollespill basert på anerkjent DISC-psykologi, spesifikke salgsfaser og reelle salgsscenarier.
 
 Mens du gjennomfører samtalen, håndterer appen den tunge, objektive analysen i bakgrunnen. Den gir deg presise scorer på valgte parametere, samt konkrete tips for videreutvikling. Dette er kompetanseutvikling satt i system, slik at du kan fokusere utelukkende på å tette egne blindsoner.

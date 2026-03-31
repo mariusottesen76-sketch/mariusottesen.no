@@ -2,9 +2,7 @@ import { Lang } from "../LanguageContext";
 
 const data = {
   no: {
-    hoved: `Kommersiell leder som skaper fremdrift, tillit og resultater — der strategi må omsettes til praksis og mennesker, drift og teknologi må fungere sammen.
-
-Jeg har bygget og ledet nasjonale salgsorganisasjoner med helhetlig P/L-ansvar, og kombinerer i dag denne erfaringen med AI-kompetanse for å hjelpe virksomheter med å ta bedre beslutninger raskere.`,
+    hoved: `Kommersiell leder som skaper fremdrift, tillit og resultater — der strategi må omsettes til praksis og mennesker, drift og teknologi må fungere sammen.<br /><br />Jeg har bygget og ledet nasjonale salgsorganisasjoner med helhetlig P/L-ansvar, og kombinerer i dag denne erfaringen med AI-kompetanse for å hjelpe virksomheter med å ta bedre beslutninger raskere.<br /><br />Gjennom <a href="https://www.mariusottesen.no/consulting">Marius Ottesen Consulting</a> utvikler jeg virksomhetsnære AI-initiativer og konkrete case innen kundereise, prosessforbedring og operativ modernisering.<br /><br />Jeg har tatt initiativ til, og etablert, gruppen <a href="https://www.linkedin.com/company/aivaluelaboslo/" target="_blank" rel="noopener noreferrer">AI Value Lab Oslo</a>, hvilket er et praktisk utviklings- og innovasjonsmiljø for testing av AI-konsepter og anvendelser med tydelig kobling til forretningsverdi.`,
 
     lederskap: `Blir ofte brukt i situasjoner der struktur, kapasitet og gjennomføringskraft er avgjørende. Bidrar til å styrke kommersiell slagkraft, forbedre samspill mellom marked, salg og drift, og bygge team som leverer over tid gjennom styrkebasert ledelse.
 
@@ -34,9 +32,7 @@ Jeg er utdannet *Master of Science in Business Administration (Siviløkonom)* fr
     ],
   },
   en: {
-    hoved: `A commercially driven executive who builds momentum, earns trust, and delivers results — where strategy must be translated into execution and people, operations, and technology must converge.
-
-I have built and led national sales organisations with full P&L accountability, and today combine that track record with AI expertise to help businesses make sharper decisions, faster.`,
+    hoved: `A commercially driven executive who builds momentum, earns trust, and delivers results — where strategy must be translated into execution and people, operations, and technology must converge.<br /><br />I have built and led national sales organisations with full P&L accountability, and today combine that track record with AI expertise to help businesses make sharper decisions, faster.<br /><br />Through <a href="https://www.mariusottesen.no/consulting">Marius Ottesen Consulting</a>, I develop business-near AI initiatives and practical cases related to customer journeys, process improvement, and operational modernization.<br /><br /><a href="https://www.linkedin.com/company/aivaluelaboslo/" target="_blank" rel="noopener noreferrer">AI Value Lab Oslo</a> is one of these initiatives: a practical development and innovation environment for testing AI concepts and applications with a clear link to business value. I initiated the establishment of the group.`,
 
     lederskap: `Frequently engaged in situations where organisational structure, capacity, and execution capability are paramount. I strengthen commercial firepower, improve the interplay between marketing, sales, and operations, and build high-performing teams that deliver sustained results through strengths-based leadership.
 

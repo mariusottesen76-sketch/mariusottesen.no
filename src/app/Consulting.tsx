@@ -250,6 +250,65 @@ export default function Consulting() {
         </div>
       </section>
 
+      {/* ——— UTVALGTE INITIATIVER ——— */}
+      <section className="mb-12">
+        <div className="border-b-2 border-indigo-500/30 mb-6">
+          <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-white uppercase mb-2">
+            {tr("cons.initiatives.title")}
+          </h2>
+        </div>
+
+        <p className="text-slate-400 italic font-light text-lg mb-6 max-w-3xl">
+          {tr("cons.initiatives.intro")}
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div className="p-6 bg-slate-900/40 rounded-2xl border border-slate-800 shadow-xl">
+            <div className="flex items-start gap-4">
+              <div className="w-[72px] h-[72px] shrink-0 rounded-xl bg-white border border-slate-700/50 p-2 flex items-center justify-center overflow-hidden">
+                <Image
+                  src="/images/ai-value-lab-logo.png"
+                  alt="AI Value Lab Oslo"
+                  width={72}
+                  height={72}
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <div className="min-w-0 space-y-2">
+                <h3 className="text-white font-black uppercase italic tracking-tight">
+                  {tr("cons.initiatives.avl.title")}
+                </h3>
+                <p className="text-slate-400 text-sm leading-relaxed font-light">
+                  {tr("cons.initiatives.avl.text")}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="p-6 bg-slate-900/40 rounded-2xl border border-slate-800 shadow-xl">
+            <div className="flex items-start gap-4">
+              <div className="w-[72px] h-[72px] shrink-0 rounded-xl bg-white border border-slate-700/50 p-2 flex items-center justify-center overflow-hidden">
+                <Image
+                  src="/images/skoyenasen-tk-logo.png"
+                  alt="Skøyenåsen Tannklinikk"
+                  width={72}
+                  height={72}
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <div className="min-w-0 space-y-2">
+                <h3 className="text-white font-black uppercase italic tracking-tight">
+                  {tr("cons.initiatives.stk.title")}
+                </h3>
+                <p className="text-slate-400 text-sm leading-relaxed font-light">
+                  {tr("cons.initiatives.stk.text")}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ——— PROBLEM VS. LØSNING ——— */}
       <section className="mb-12">
         <div className="border-b-2 border-indigo-500/30 mb-6">
