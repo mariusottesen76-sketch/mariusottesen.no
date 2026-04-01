@@ -1,5 +1,52 @@
 export const aiGovernance = [
     {
+      id: "april-ai-kompetanse-praksis-01",
+      tittel: "Vi har nå funnet en enkel måte å bygge AI-kompetanse i organisasjonen",
+      teaser:
+        "AI-kompetanse bygges ikke på kurs alene, men i beslutninger og praksis tett på kjernearbeidet.",
+      bildeUrl: "/images/easter-ai.jfif",
+      dato: "2026-04-01",
+      visningsDato: "01.04.2026",
+      kategori: "AI / KI",
+      link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
+      innhold: `𝐕𝐢 𝐡𝐚𝐫 𝐧𝐚̊ 𝐟𝐮𝐧𝐧𝐞𝐭 𝐞𝐧 𝐞𝐧𝐤𝐞𝐥 𝐦𝐚̊𝐭𝐞 å 𝐛𝐲𝐠𝐠𝐞 𝐀𝐈-𝐤𝐨𝐦𝐩𝐞𝐭𝐚𝐧𝐬𝐞 𝐢 𝐨𝐫𝐠𝐚𝐧𝐢𝐬𝐚𝐬𝐣𝐨𝐧𝐞𝐧
+
+Send alle på kurs!
+
+Eller kanskje ikke. Dette var forsøk på en dårlig 𝐀𝐩𝐫𝐢𝐥𝐬𝐧𝐚𝐫𝐫:
+
+Mange ledere venter med AI – kan du tenke deg hvorfor? Det handler ikke om fordi de ikke vil, men fordi de ikke ser hvor de skal starte. Det er i stor grad forståelig.
+
+De siste månedene har jeg vært på flere kurs og samlinger om AI. Jeg liker det. Det gir energi, nye perspektiver og et språk for å forstå hva som skjer.
+
+Men én ting har blitt veldig tydelig: utviklingen skjer ikke der. Den skjer først når AI flyttes inn i arbeidshverdagen og kobles til beslutninger som faktisk betyr noe.
+
+Så langt i denne AI-serien har jeg skrevet om dømmekraft, struktur og hvordan mennesker reagerer når AI begynner å gi råd. Nå går jeg over til det mange ledere faktisk er opptatt av:
+
+Hvordan skapes verdi i praksis?
+
+I kommersielle team ser jeg et tydelig skille. Noen tester AI på siden. Lager tekster, oppsummerer dokumenter, prøver litt frem. Det er nyttig, men det flytter lite. Andre kobler AI direkte til kjernebeslutninger:
+ • Hvilke kunder skal prioriteres?
+ • Hvilke tilbud skal følges opp nå?
+ • Hvor er det reell sannsynlighet for å vinne?
+
+Det er DER forskjellen oppstår.
+
+En modell kan analysere pipeline og foreslå neste beste handling. Men verdien ligger ikke i svaret. Den ligger i hva teamet gjør med det. Tester de anbefalingen? Utfordrer de den? Justerer de beslutningen?
+
+Det er der KOMPETANSEN bygges. Ikke i verktøyet, men i samspillet mellom erfaring, data og vurdering.
+
+Jeg merker det selv når jeg bygger og tester AI-verktøy. Små endringer i kontekst eller input gir ulike anbefalinger. Det gjør én ting tydelig i form av at dette ikke er noe du “lærer ferdig”. Du utvikler det gjennom bruk. Derfor tror jeg mange overvurderer behovet for å starte med teknologi. Det viktigste i startfasen er ikke nye systemer, men å koble AI til beslutninger som allerede tas i dag.
+
+De virksomhetene som lykkes best, bygger ikke AI-kompetanse ved siden av driften. De bygger den i linjen.
+
+Den neste uken skal jeg bygge og teste AI-agenter. Det innebærer bruk av ulike verktøy, men først og fremst læring, testing og å utfordre det jeg gjør og de svarene som gis.
+
+👉 I neste innlegg ser jeg nærmere på hvordan man identifiserer de riktige AI-use casene å starte med.
+
+God påske!`,
+    },
+    {
       id: "iteam-operativ-modell-2026-01",
       tittel: "Er din kommersielle operative modell rigget for 2026?",
       teaser:
