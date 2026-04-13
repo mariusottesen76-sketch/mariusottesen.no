@@ -1,5 +1,35 @@
 export const aiGovernance = [
     {
+      id: "ai-value-lab-munch-kickoff-01",
+      tittel: "Kick off på Munch med AI Value Lab Oslo",
+      teaser:
+        "Påske-lunsj på Munch: utforske ansvarlig AI der kommunikasjon, forventninger og trygghet betyr mye – fra sterke følelser til tannlegebesøk.",
+      bildeUrl: "/images/ai-dental-lab.png",
+      dato: "2026-04-07",
+      visningsDato: "07.04.2026",
+      kategori: "AI / KI",
+      link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
+      innhold: `I påsken hadde vi kick off lunsj, og vi i AI Value Lab Oslo møttes på 𝘔𝘜𝘕𝘊𝘏.
+
+Det føltes egentlig som et ganske passende sted å starte.
+
+Munchs univers handler om sterke følelser, uro og menneskelige reaksjoner. Det gjør også mange menneskers møte med helsetjenester. For noen kan et tannlegebesøk være forbundet med usikkerhet, friksjon og i noen tilfeller tannlegefrykt. Da er det ikke så vanskelig å forstå hvorfor slike opplevelser er verdt å lære mer om.
+
+I denne fasen bruker vi tid på å utforske hvordan AI kan brukes på en ansvarlig og gjennomtenkt måte i situasjoner der kommunikasjon, forventninger og trygghet betyr mye.
+
+Det vi er særlig opptatt av nå, er hva som faktisk skjer i møtet mellom mennesker, informasjon og teknologi. Hvor oppstår usikkerhet? Hva skaper trygghet? Og hvor kan AI være nyttig, uten at det går på bekostning av personvern, vurderingsevne eller menneskelig nærhet?
+
+For oss handler dette ikke bare om teknologi. Det handler også om læring underveis, om å bygge bedre forståelse, utvikle ferdigheter og dele refleksjoner på tvers av fagområder.
+
+Noe av det mest interessante med AI er kanskje ikke tempoet eller effekten i seg selv, men hvordan teknologien kan brukes mer varsomt, mer presist og mer menneskelig.
+
+Fra Munchs tid til vår egen har verktøyene endret seg mye. Behovet for å forstå mennesker er fortsatt det samme.
+
+Kanskje er noe av den mest interessante AI utforskningen nettopp dette: ikke å gjøre det menneskelige mindre viktig, men å forstå bedre hva som gjør en opplevelse tryggere og mer sammenhengende.
+
+Det blir spennende å utforske dette sammen videre, Tatiana Hanecakova og Ole Mjelde!`,
+    },
+    {
       id: "april-ai-kompetanse-praksis-01",
       tittel: "Vi har nå funnet en enkel måte å bygge AI-kompetanse i organisasjonen",
       teaser:
