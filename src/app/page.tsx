@@ -33,27 +33,41 @@ const SLUG_TO_TAB: Record<string, string> = Object.fromEntries(
   (Object.entries(TAB_TO_SLUG) as [string, string][]).filter(([, slug]) => slug !== "").map(([tab, slug]) => [slug, tab])
 );
 
-/** Finner største fontstørrelse slik at faneraden ikke er bredere enn midtkolonnen (unngår overlap mot logo/flagg). */
-function fitDesktopTabFontPx(mid: HTMLElement, row: HTMLElement, minPx: number, maxPx: number): number {
-  const maxW = mid.clientWidth;
-  if (maxW <= 0) return minPx;
+/**
+ * Finner største fontstørrelse slik at faneraden får plass i midtkolonnen.
+ * `safetyPx` trekkes fra tilgjengelig bredde (aktiv border, subpiksler, små layout-endringer).
+ */
+function fitDesktopTabFontPx(
+  mid: HTMLElement,
+  row: HTMLElement,
+  minPx: number,
+  maxPx: number,
+  safetyPx: number
+): number {
+  const raw = mid.clientWidth;
+  if (raw <= 0) return minPx;
+  const maxW = Math.max(0, raw - safetyPx);
+  if (maxW < 24) return minPx;
+
   let lo = minPx;
   let hi = maxPx;
   let best = minPx;
-  for (let i = 0; i < 28; i++) {
+  for (let i = 0; i < 32; i++) {
     const test = (lo + hi) / 2;
     row.style.fontSize = `${test}px`;
     const sw = row.scrollWidth;
-    if (sw <= maxW + 0.5) {
+    if (sw <= maxW) {
       best = test;
       lo = test;
     } else {
       hi = test;
     }
-    if (hi - lo < 0.06) break;
+    if (hi - lo < 0.05) break;
   }
   row.style.fontSize = "";
-  return Math.round(Math.max(minPx, Math.min(maxPx, best)) * 10) / 10;
+  const capped = Math.max(minPx, Math.min(maxPx, best));
+  const nudged = Math.max(minPx, capped - 0.35);
+  return Math.round(nudged * 10) / 10;
 }
 
 function AppContent({ initialTab = "Profil" }: { initialTab?: string }) {
@@ -101,7 +115,7 @@ function AppContent({ initialTab = "Profil" }: { initialTab?: string }) {
 
   const tabBarMidRef = useRef<HTMLDivElement>(null);
   const tabBarRowRef = useRef<HTMLDivElement>(null);
-  const [desktopTabFontPx, setDesktopTabFontPx] = useState(11);
+  const [desktopTabFontPx, setDesktopTabFontPx] = useState(7.5);
 
   useLayoutEffect(() => {
     const mid = tabBarMidRef.current;
@@ -111,19 +125,27 @@ function AppContent({ initialTab = "Profil" }: { initialTab?: string }) {
     const run = () => {
       if (typeof window !== "undefined" && window.innerWidth < 768) return;
       if (mid.clientWidth < 2) return;
-      const next = fitDesktopTabFontPx(mid, row, 4.5, 14);
-      setDesktopTabFontPx((prev) => (Math.abs(prev - next) < 0.11 ? prev : next));
+      const vw = window.innerWidth;
+      const maxPx = vw < 920 ? 8.25 : vw < 1080 ? 9.25 : vw < 1280 ? 10.25 : 11.75;
+      const safetyPx = vw < 1000 ? 28 : vw < 1280 ? 22 : 18;
+      const next = fitDesktopTabFontPx(mid, row, 4, maxPx, safetyPx);
+      setDesktopTabFontPx((prev) => (Math.abs(prev - next) < 0.08 ? prev : next));
     };
 
-    run();
-    const ro = new ResizeObserver(() => {
-      requestAnimationFrame(run);
-    });
+    const runQueued = () => requestAnimationFrame(run);
+
+    runQueued();
+    const ro = new ResizeObserver(runQueued);
     ro.observe(mid);
-    window.addEventListener("resize", run);
+    window.addEventListener("resize", runQueued);
+    let cancelled = false;
+    document.fonts?.ready?.then(() => {
+      if (!cancelled) requestAnimationFrame(() => requestAnimationFrame(run));
+    });
     return () => {
+      cancelled = true;
       ro.disconnect();
-      window.removeEventListener("resize", run);
+      window.removeEventListener("resize", runQueued);
     };
   }, [lang, activeTab]);
 
@@ -137,7 +159,7 @@ function AppContent({ initialTab = "Profil" }: { initialTab?: string }) {
           {/* HJEM-KNAPP / LOGO */}
           <button
             onClick={() => setActiveTab("Profil")}
-            className="relative z-20 flex items-center gap-1 sm:gap-1.5 group transition-all shrink-0 rounded-full bg-slate-950 pr-1 sm:pr-2"
+            className="relative z-20 flex items-center gap-2 sm:gap-2.5 group transition-all shrink-0 rounded-full bg-slate-950 pr-2 sm:pr-3"
           >
             <div className="w-[36px] h-[36px] sm:w-[44px] sm:h-[44px] rounded-full overflow-hidden shrink-0 bg-slate-800">
               <Image
@@ -158,19 +180,19 @@ function AppContent({ initialTab = "Profil" }: { initialTab?: string }) {
           {/* ARKFANER – én linje; fontstørrelse settes via ResizeObserver + binærsøk så alt får plass uten overlap */}
           <div
             ref={tabBarMidRef}
-            className="hidden min-w-0 max-w-full justify-center overflow-x-clip px-0.5 md:flex md:w-full"
+            className="hidden min-w-0 max-w-full justify-center overflow-x-visible px-0 md:flex md:w-full"
           >
             <div
               ref={tabBarRowRef}
-              style={{ fontSize: `${desktopTabFontPx}px`, lineHeight: 1.15 }}
-              className="inline-flex max-w-full min-w-0 flex-nowrap items-end justify-center gap-x-0 font-black tracking-tight [letter-spacing:-0.04em] uppercase md:gap-x-0.5 lg:gap-x-1 xl:gap-x-1.5"
+              style={{ fontSize: `${desktopTabFontPx}px`, lineHeight: 1.12 }}
+              className="inline-flex max-w-full min-w-0 flex-nowrap items-end justify-center gap-x-0 font-black tracking-tight [letter-spacing:-0.05em] uppercase md:gap-x-0.5 lg:gap-x-0.5 xl:gap-x-1"
             >
               {tabKeys.map((tab) => (
                 <button
                   key={tab}
                   type="button"
                   onClick={() => setActiveTab(tab)}
-                  className={`shrink-0 whitespace-nowrap pb-0.5 px-px transition-colors md:px-0.5 focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:outline-none rounded-sm ${
+                  className={`shrink-0 whitespace-nowrap pb-0.5 px-0 transition-colors md:px-0.5 focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:outline-none rounded-sm ${
                     activeTab === tab
                       ? "text-indigo-400 border-b-2 border-indigo-400"
                       : "text-slate-400 hover:text-white"
@@ -184,7 +206,7 @@ function AppContent({ initialTab = "Profil" }: { initialTab?: string }) {
           </div>
 
           {/* MOBIL NAV + SPRÅKVELGER */}
-          <div className="relative z-20 flex shrink-0 items-center gap-2 rounded-lg bg-slate-950 pl-2 md:pl-3">
+          <div className="relative z-20 flex shrink-0 items-center gap-2 rounded-lg bg-slate-950 pl-3 md:pl-4">
             <MobileNav tabs={tabKeys} tabLabels={tabLabels} activeTab={activeTab} onTabClick={setActiveTab} />
             <LanguageToggle />
           </div>
