@@ -104,14 +104,17 @@ function AppContent({ initialTab = "Profil" }: { initialTab?: string }) {
             </div>
           </button>
 
-          {/* ARKFANER – fra md; flex-wrap + ingen truncate så hele etiketter vises på nettbrett (unngår «P…», «FAGIN…») */}
-          <div className="hidden md:flex flex-1 justify-center min-w-0">
-            <div className="flex flex-wrap justify-center items-center gap-x-0.5 md:gap-x-1 lg:gap-x-1.5 xl:gap-x-2 gap-y-2 min-w-0 max-w-full">
+          {/* ARKFANER – én linje; font skalerer med tilgjengelig bredde (cqi) så ingenting bryter til rad 2 */}
+          <div
+            className="hidden md:flex flex-1 justify-center min-w-0"
+            style={{ containerType: "inline-size" }}
+          >
+            <div className="flex flex-nowrap justify-center items-end gap-x-px sm:gap-x-0.5 md:gap-x-1 lg:gap-x-1.5 min-w-0 max-w-full">
               {tabKeys.map((tab) => (
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
-                  className={`text-[clamp(11px,0.85vw+7px,16px)] font-black tracking-tight uppercase transition-all whitespace-nowrap pb-0.5 px-0.5 focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:outline-none rounded-sm shrink-0 ${
+                  className={`text-[clamp(6px,min(2.85cqi,calc(0.52vw + 5px)),15px)] font-black tracking-tight [letter-spacing:-0.02em] uppercase transition-all whitespace-nowrap pb-0.5 px-px sm:px-0.5 focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:outline-none rounded-sm shrink-0 ${
                     activeTab === tab
                       ? "text-indigo-400 border-b-2 border-indigo-400"
                       : "text-slate-400 hover:text-white"
