@@ -10,6 +10,8 @@ export interface ProsjektType {
   bildeHint?: { no: string; en: string };
   /** Valgfrie ekstra bilder som vises under teksten i kortet. */
   ekstraBilder?: { src: string; alt: string }[];
+  /** Valgfri knapp som bytter til en hovedfane (SPA), f.eks. Faginnlegg. */
+  navigasjonsCta?: { tab: string; label: { no: string; en: string } };
 }
 
 export const predictiveSalesCoach: ProsjektType = {

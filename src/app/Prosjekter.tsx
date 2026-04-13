@@ -6,8 +6,9 @@ import { getTranslation } from "./data/translations";
 import { predictiveSalesCoach, type ProsjektType } from "./data/prosjekter/predictive-sales-coach";
 import { aiValueLabOslo } from "./data/prosjekter/ai-value-lab-oslo";
 import { skoyenasenTannklinikk } from "./data/prosjekter/skoyenasen-tannklinikk";
+import { aiFaginnleggHub } from "./data/prosjekter/ai-faginnlegg-hub";
 
-const alleProsjekter: ProsjektType[] = [predictiveSalesCoach, aiValueLabOslo, skoyenasenTannklinikk].sort(
+const alleProsjekter: ProsjektType[] = [predictiveSalesCoach, aiValueLabOslo, skoyenasenTannklinikk, aiFaginnleggHub].sort(
   (a, b) => new Date(b.dato).getTime() - new Date(a.dato).getTime()
 );
 
@@ -128,6 +129,16 @@ export default function Prosjekter({ onNavigate }: { onNavigate?: (tab: string) 
                     />
                   ))}
                 </div>
+                {prosjekt.navigasjonsCta && onNavigate && (
+                  <button
+                    type="button"
+                    onClick={() => onNavigate(prosjekt.navigasjonsCta!.tab)}
+                    className="mt-5 inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-indigo-500/15 border border-indigo-500/35 text-indigo-300 text-xs font-black uppercase tracking-widest hover:bg-indigo-500/25 hover:text-white hover:border-indigo-400/50 transition-all focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:outline-none"
+                  >
+                    {prosjekt.navigasjonsCta.label[lang]}
+                    <span aria-hidden>→</span>
+                  </button>
+                )}
               </div>
             </div>
           </article>
