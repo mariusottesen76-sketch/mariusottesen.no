@@ -1,5 +1,65 @@
 export const aiGovernance = [
     {
+      id: "ai-needs-first-tannklinikk-case-01",
+      tittel: "𝐃𝐞 𝐟𝐥𝐞𝐬𝐭𝐞 𝐬𝐭𝐚𝐫𝐭𝐞𝐫 𝐟𝐞𝐢𝐥 𝐦𝐞𝐝 𝐀𝐈 – 𝐞𝐫𝐟𝐚𝐫𝐢𝐧𝐠𝐞𝐫 𝐟𝐫𝐚 𝐞𝐭 𝐫𝐞𝐞𝐥𝐭 𝐜𝐚𝐬𝐞",
+      teaser:
+        "Fra AI Value Lab Oslo og et reelt tannklinikk-case: start med virksomheten og behov — ikke med «hvilken AI-løsning?» Nettside, chatbot og booking i riktig rekkefølge.",
+      bildeUrl: "/images/ai-to-needs.jfif",
+      dato: "2026-04-14",
+      visningsDato: "14.04.2026",
+      kategori: "AI / KI",
+      link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
+      innhold: `I påsken og i forrige uke har jeg jobbet videre med et konkret case gjennom min gruppe AI Value Lab Oslo, der vi bruker en reell tannklinikk som læringsarena for å teste hvordan AI kan brukes i praksis.
+
+Vi startet ikke med teknologi. Vi startet med virksomheten.
+
+Gjennom analyse, research, intervjuer og diskusjoner jobbet vi oss frem til ett kjernepunkt: Hvor oppleves friksjon i hverdagen?
+
+Hva fungerer godt i dag?
+Hvor er flaskehalsene?
+Hvor taper klinikken tid, kapasitet eller potensielle inntekter?
+
+Vi så også på hva konkurrentene gjør bedre, særlig i hvordan de møter pasientene digitalt og operativt.
+
+Bildet som tegnet seg var tydelig:
+Den faglige kvaliteten og pasientopplevelsen er sterk, men det er et gap i det digitale og kommersielle rundt. Altså ikke i kjerneleveransen, men i det som skjer før og etter.
+
+Det er derfor vi nå jobber med å modernisere pasientreisen, og vurderer hvordan AI og digitale løsninger kan styrke:
+🦷 booking og tilgjengelighet
+🦷 oppfølging og gjenkjøp
+🦷 tydelig informasjon og pasientkommunikasjon
+🦷 mer effektive arbeidsprosesser
+🦷 bedre operativ støtte i hverdagen
+
+Helt konkret jobber vi nå med:
+– videreutvikling av nettside (bedre struktur og mer relevant informasjon)
+– ny chatbot (ikke hatt tidligere)
+– ny online bookingløsning (ikke hatt tidligere)
+
+Alt utvikles med utgangspunkt i faktiske behov hos pasientene. Poenget er ikke verktøyene i seg selv, men rekkefølgen.
+
+De fleste virksomheter starter derimot med spørsmålet:
+"Hvilken AI-løsning skal vi velge?"
+
+I praksis bør man starte et helt annet sted ved å spørre:
+"Hvilke beslutninger og prosesser påvirker resultatet?"
+
+Dette gjenkjenner jeg fra kommersielle organisasjoner:
+Prioritering av kunder gjøres ulikt fra person til person.
+Oppfølging av tilbud styres like mye av kapasitet som av potensial.
+Pipeline og forecast preges ofte mer av optimisme enn struktur.
+
+Det betyr ikke at det gjøres dårlig, men at det finnes et betydelig forbedringspotensial. Det er her AI kan bidra!
+
+En modell kan analysere mønstre og foreslå neste beste handling. Men verdien oppstår først når det brukes til å ta bedre beslutninger i praksis.
+
+Siden disse AI-postene er ment som kompetansedeling, nevner jeg også kort verktøyene vi tester. Løsninger er utviklet med Claude og Claude Code, med innhold fra FAQ-er og dagens nettside bygget på localhost, med videre plan for deployment via Vercel. Nettsidearbeid parallelt i Lovable. Ikke fordi verktøyene er av betydning, men fordi flere spør hva som faktisk brukes i praksis.
+
+👉 I neste innlegg ser jeg på hvorfor mange AI-initiativer stopper opp, selv når de starter riktig.
+
+PS. Påsken ble ellers brukt på Røros og Svalbard med opplevelser som minner meg på noe viktig: Ikke alt skal optimaliseres. Langrenn, alpint, snøscooter, hundeslede, villdyr og tid med familie og venner slår fortsatt det meste – det reelle er ikke kunstig.`,
+    },
+    {
       id: "ai-value-lab-munch-kickoff-01",
       tittel: "Kick off på Munch med AI Value Lab Oslo",
       teaser:
