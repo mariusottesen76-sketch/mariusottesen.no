@@ -49,12 +49,29 @@ function fitDesktopTabFontPx(
   const maxW = Math.max(0, raw - safetyPx);
   if (maxW < 24) return minPx;
 
+  const tabs = row.querySelectorAll<HTMLButtonElement>("button");
+  if (tabs.length === 0) return minPx;
+
+  /** <button> arver ikke font-size i de fleste nettlesere — må settes eksplisitt for korrekt scrollWidth under måling. */
+  const applyPx = (px: number) => {
+    const s = `${px}px`;
+    row.style.fontSize = s;
+    tabs.forEach((b) => {
+      b.style.fontSize = s;
+      b.style.lineHeight = "1.12";
+    });
+  };
+
+  const clearRowFont = () => {
+    row.style.fontSize = "";
+  };
+
   let lo = minPx;
   let hi = maxPx;
   let best = minPx;
   for (let i = 0; i < 32; i++) {
     const test = (lo + hi) / 2;
-    row.style.fontSize = `${test}px`;
+    applyPx(test);
     const sw = row.scrollWidth;
     if (sw <= maxW) {
       best = test;
@@ -64,7 +81,7 @@ function fitDesktopTabFontPx(
     }
     if (hi - lo < 0.05) break;
   }
-  row.style.fontSize = "";
+  clearRowFont();
   const capped = Math.max(minPx, Math.min(maxPx, best));
   const nudged = Math.max(minPx, capped - 0.35);
   return Math.round(nudged * 10) / 10;
@@ -115,7 +132,7 @@ function AppContent({ initialTab = "Profil" }: { initialTab?: string }) {
 
   const tabBarMidRef = useRef<HTMLDivElement>(null);
   const tabBarRowRef = useRef<HTMLDivElement>(null);
-  const [desktopTabFontPx, setDesktopTabFontPx] = useState(7.5);
+  const [desktopTabFontPx, setDesktopTabFontPx] = useState(9);
 
   useLayoutEffect(() => {
     const mid = tabBarMidRef.current;
@@ -124,12 +141,15 @@ function AppContent({ initialTab = "Profil" }: { initialTab?: string }) {
 
     const run = () => {
       if (typeof window !== "undefined" && window.innerWidth < 768) return;
-      if (mid.clientWidth < 2) return;
-      const vw = window.innerWidth;
-      const maxPx = vw < 920 ? 8.25 : vw < 1080 ? 9.25 : vw < 1280 ? 10.25 : 11.75;
-      const safetyPx = vw < 1000 ? 28 : vw < 1280 ? 22 : 18;
-      const next = fitDesktopTabFontPx(mid, row, 4, maxPx, safetyPx);
-      setDesktopTabFontPx((prev) => (Math.abs(prev - next) < 0.08 ? prev : next));
+      const cw = mid.clientWidth;
+      if (cw < 2) return;
+
+      /* Tak og margin ut fra faktisk bannerbredde (midtkolonne): bred sone → større bokstaver mulig, smal → lavere tak. */
+      const maxPx = Math.min(15, Math.max(6.5, cw * 0.026));
+      const safetyPx = Math.min(26, Math.max(12, Math.round(10 + cw * 0.024)));
+
+      const next = fitDesktopTabFontPx(mid, row, 4.25, maxPx, safetyPx);
+      setDesktopTabFontPx((prev) => (Math.abs(prev - next) < 0.05 ? prev : next));
     };
 
     const runQueued = () => requestAnimationFrame(run);
@@ -177,14 +197,13 @@ function AppContent({ initialTab = "Profil" }: { initialTab?: string }) {
             </div>
           </button>
 
-          {/* ARKFANER – én linje; fontstørrelse settes via ResizeObserver + binærsøk så alt får plass uten overlap */}
+          {/* ARKFANER – én linje; font skalerer med midtkolonnens bredde (større tak når bredt, mindre når trangt) + binærsøk så ingenting kuttes */}
           <div
             ref={tabBarMidRef}
             className="hidden min-w-0 max-w-full justify-center overflow-x-visible px-0 md:flex md:w-full"
           >
             <div
               ref={tabBarRowRef}
-              style={{ fontSize: `${desktopTabFontPx}px`, lineHeight: 1.12 }}
               className="inline-flex max-w-full min-w-0 flex-nowrap items-end justify-center gap-x-0 font-black tracking-tight [letter-spacing:-0.05em] uppercase md:gap-x-0.5 lg:gap-x-0.5 xl:gap-x-1"
             >
               {tabKeys.map((tab) => (
@@ -192,6 +211,7 @@ function AppContent({ initialTab = "Profil" }: { initialTab?: string }) {
                   key={tab}
                   type="button"
                   onClick={() => setActiveTab(tab)}
+                  style={{ fontSize: `${desktopTabFontPx}px`, lineHeight: 1.12 }}
                   className={`shrink-0 whitespace-nowrap pb-0.5 px-0 transition-colors md:px-0.5 focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:outline-none rounded-sm ${
                     activeTab === tab
                       ? "text-indigo-400 border-b-2 border-indigo-400"
