@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useState, useCallback, useEffect, useLayoutEffect, useRef } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import Profil from "./Profil";
@@ -32,6 +32,29 @@ const TAB_TO_SLUG: Record<string, string> = {
 const SLUG_TO_TAB: Record<string, string> = Object.fromEntries(
   (Object.entries(TAB_TO_SLUG) as [string, string][]).filter(([, slug]) => slug !== "").map(([tab, slug]) => [slug, tab])
 );
+
+/** Finner største fontstørrelse slik at faneraden ikke er bredere enn midtkolonnen (unngår overlap mot logo/flagg). */
+function fitDesktopTabFontPx(mid: HTMLElement, row: HTMLElement, minPx: number, maxPx: number): number {
+  const maxW = mid.clientWidth;
+  if (maxW <= 0) return minPx;
+  let lo = minPx;
+  let hi = maxPx;
+  let best = minPx;
+  for (let i = 0; i < 28; i++) {
+    const test = (lo + hi) / 2;
+    row.style.fontSize = `${test}px`;
+    const sw = row.scrollWidth;
+    if (sw <= maxW + 0.5) {
+      best = test;
+      lo = test;
+    } else {
+      hi = test;
+    }
+    if (hi - lo < 0.06) break;
+  }
+  row.style.fontSize = "";
+  return Math.round(Math.max(minPx, Math.min(maxPx, best)) * 10) / 10;
+}
 
 function AppContent({ initialTab = "Profil" }: { initialTab?: string }) {
   const router = useRouter();
@@ -76,17 +99,45 @@ function AppContent({ initialTab = "Profil" }: { initialTab?: string }) {
     "Kontakt": getTranslation("tab.kontakt", lang),
   };
 
+  const tabBarMidRef = useRef<HTMLDivElement>(null);
+  const tabBarRowRef = useRef<HTMLDivElement>(null);
+  const [desktopTabFontPx, setDesktopTabFontPx] = useState(11);
+
+  useLayoutEffect(() => {
+    const mid = tabBarMidRef.current;
+    const row = tabBarRowRef.current;
+    if (!mid || !row) return;
+
+    const run = () => {
+      if (typeof window !== "undefined" && window.innerWidth < 768) return;
+      if (mid.clientWidth < 2) return;
+      const next = fitDesktopTabFontPx(mid, row, 4.5, 14);
+      setDesktopTabFontPx((prev) => (Math.abs(prev - next) < 0.11 ? prev : next));
+    };
+
+    run();
+    const ro = new ResizeObserver(() => {
+      requestAnimationFrame(run);
+    });
+    ro.observe(mid);
+    window.addEventListener("resize", run);
+    return () => {
+      ro.disconnect();
+      window.removeEventListener("resize", run);
+    };
+  }, [lang, activeTab]);
+
   return (
     <main className="min-h-screen bg-slate-950 text-slate-200 px-16 sm:px-24 md:px-32 lg:px-40 xl:px-48 2xl:px-56 py-4 md:py-8 relative overflow-x-hidden w-full">
       <div className={`${activeTab === "Faginnlegg" || activeTab === "Prosjekter" || activeTab === "Consulting" ? "max-w-7xl" : "max-w-6xl"} mx-auto relative z-10 transition-all duration-500 w-full`}>
 
-        {/* NAVIGASJONSLINJE */}
-        <nav className="flex items-center gap-1 sm:gap-2 md:gap-3 mb-8 border-b border-slate-800/40 pb-3 w-full">
+        {/* NAVIGASJONSLINJE — md+: grid slik faneraden aldri overlapper logo (v.) eller språk (h.) */}
+        <nav className="mb-8 flex w-full items-center justify-between gap-2 border-b border-slate-800/40 pb-3 md:grid md:grid-cols-[auto_minmax(0,1fr)_auto] md:items-center md:gap-x-3">
 
           {/* HJEM-KNAPP / LOGO */}
           <button
             onClick={() => setActiveTab("Profil")}
-            className="flex items-center gap-1 sm:gap-1.5 group transition-all shrink-0"
+            className="relative z-20 flex items-center gap-1 sm:gap-1.5 group transition-all shrink-0 rounded-full bg-slate-950 pr-1 sm:pr-2"
           >
             <div className="w-[36px] h-[36px] sm:w-[44px] sm:h-[44px] rounded-full overflow-hidden shrink-0 bg-slate-800">
               <Image
@@ -98,23 +149,28 @@ function AppContent({ initialTab = "Profil" }: { initialTab?: string }) {
                 priority
               />
             </div>
-            <div className="hidden sm:flex items-center gap-0.5 shrink-0">
+            <div className="hidden items-center gap-0.5 shrink-0 sm:flex md:hidden lg:flex">
               <span className="text-white font-black uppercase text-[9px] sm:text-[11px] md:text-[13px] tracking-tight italic">Marius</span>
               <span className="text-indigo-500 font-black uppercase text-[9px] sm:text-[11px] md:text-[13px] tracking-tight italic">Ottesen</span>
             </div>
           </button>
 
-          {/* ARKFANER – én linje; font skalerer med tilgjengelig bredde (cqi) så ingenting bryter til rad 2 */}
+          {/* ARKFANER – én linje; fontstørrelse settes via ResizeObserver + binærsøk så alt får plass uten overlap */}
           <div
-            className="hidden md:flex flex-1 justify-center min-w-0"
-            style={{ containerType: "inline-size" }}
+            ref={tabBarMidRef}
+            className="hidden min-w-0 max-w-full justify-center overflow-x-clip px-0.5 md:flex md:w-full"
           >
-            <div className="flex flex-nowrap justify-center items-end gap-x-px sm:gap-x-0.5 md:gap-x-1 lg:gap-x-1.5 min-w-0 max-w-full">
+            <div
+              ref={tabBarRowRef}
+              style={{ fontSize: `${desktopTabFontPx}px`, lineHeight: 1.15 }}
+              className="inline-flex max-w-full min-w-0 flex-nowrap items-end justify-center gap-x-0 font-black tracking-tight [letter-spacing:-0.04em] uppercase md:gap-x-0.5 lg:gap-x-1 xl:gap-x-1.5"
+            >
               {tabKeys.map((tab) => (
                 <button
                   key={tab}
+                  type="button"
                   onClick={() => setActiveTab(tab)}
-                  className={`text-[clamp(6px,min(2.85cqi,calc(0.52vw + 5px)),15px)] font-black tracking-tight [letter-spacing:-0.02em] uppercase transition-all whitespace-nowrap pb-0.5 px-px sm:px-0.5 focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:outline-none rounded-sm shrink-0 ${
+                  className={`shrink-0 whitespace-nowrap pb-0.5 px-px transition-colors md:px-0.5 focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:outline-none rounded-sm ${
                     activeTab === tab
                       ? "text-indigo-400 border-b-2 border-indigo-400"
                       : "text-slate-400 hover:text-white"
@@ -127,8 +183,8 @@ function AppContent({ initialTab = "Profil" }: { initialTab?: string }) {
             </div>
           </div>
 
-          {/* MOBIL NAV + SPRÅKVELGER – fast plass så faner ikke overlapper */}
-          <div className="flex items-center gap-2 shrink-0 pl-2 md:pl-3">
+          {/* MOBIL NAV + SPRÅKVELGER */}
+          <div className="relative z-20 flex shrink-0 items-center gap-2 rounded-lg bg-slate-950 pl-2 md:pl-3">
             <MobileNav tabs={tabKeys} tabLabels={tabLabels} activeTab={activeTab} onTabClick={setActiveTab} />
             <LanguageToggle />
           </div>
