@@ -1,7 +1,7 @@
 export const aiGovernance = [
     {
       id: "ai-needs-first-tannklinikk-case-01",
-      tittel: "𝐃𝐞 𝐟𝐥𝐞𝐬𝐭𝐞 𝐬𝐭𝐚𝐫𝐭𝐞𝐫 𝐟𝐞𝐢𝐥 𝐦𝐞𝐝 𝐀𝐈 – 𝐞𝐫𝐟𝐚𝐫𝐢𝐧𝐠𝐞𝐫 𝐟𝐫𝐚 𝐞𝐭 𝐫𝐞𝐞𝐥𝐭 𝐜𝐚𝐬𝐞",
+      tittel: "De fleste starter feil med AI – erfaringer fra et reelt case",
       teaser:
         "Fra AI Value Lab Oslo og et reelt tannklinikk-case: start med virksomheten og behov — ikke med «hvilken AI-løsning?» Nettside, chatbot og booking i riktig rekkefølge.",
       bildeUrl: "/images/ai-to-needs.jfif",
