@@ -6,11 +6,15 @@ import { getTranslation } from "./data/translations";
 import { predictiveSalesCoach, type ProsjektType } from "./data/prosjekter/predictive-sales-coach";
 import { aiValueLabOslo } from "./data/prosjekter/ai-value-lab-oslo";
 import { skoyenasenTannklinikk } from "./data/prosjekter/skoyenasen-tannklinikk";
+import { aiArkitekturBeslutningsstotte } from "./data/prosjekter/ai-arkitektur-beslutningsstotte";
 import { aiFaginnleggHub } from "./data/prosjekter/ai-faginnlegg-hub";
 
-const alleProsjekter: ProsjektType[] = [predictiveSalesCoach, aiValueLabOslo, skoyenasenTannklinikk, aiFaginnleggHub].sort(
+const prosjektKort: ProsjektType[] = [predictiveSalesCoach, aiValueLabOslo, skoyenasenTannklinikk, aiArkitekturBeslutningsstotte].sort(
   (a, b) => new Date(b.dato).getTime() - new Date(a.dato).getTime()
 );
+
+// Legges bevisst nederst: dette er mer en løpende innsiktshub enn et konkret prosjekt.
+const alleProsjekter: ProsjektType[] = [...prosjektKort, aiFaginnleggHub];
 
 function getProsjektBildeHint(prosjekt: ProsjektType, lang: Lang) {
   const custom = prosjekt.bildeHint?.[lang];
@@ -106,9 +110,11 @@ export default function Prosjekter({ onNavigate }: { onNavigate?: (tab: string) 
                 </p>
               </div>
               <div className="flex-1 min-w-0 p-6 md:p-8 flex flex-col justify-center overflow-hidden">
-                <span className="text-[10px] font-mono text-indigo-400 uppercase tracking-widest font-bold block mb-2">
-                  {prosjekt.visningsDato}
-                </span>
+                {prosjekt.visningsDato?.trim() && (
+                  <span className="text-[10px] font-mono text-indigo-400 uppercase tracking-widest font-bold block mb-2">
+                    {prosjekt.visningsDato}
+                  </span>
+                )}
                 <h2 className="text-xl md:text-2xl font-black text-white tracking-tight leading-tight uppercase italic mb-4 break-words [overflow-wrap:anywhere]">
                   {prosjekt.tittel}
                 </h2>
@@ -180,3 +186,4 @@ export default function Prosjekter({ onNavigate }: { onNavigate?: (tab: string) 
     </div>
   );
 }
+

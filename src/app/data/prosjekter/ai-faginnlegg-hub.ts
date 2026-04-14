@@ -8,7 +8,7 @@ export const aiFaginnleggHub: ProsjektType = {
     "Teori, rammeverk og master fra BI, utdrag fra rapporter, verktøy og praksis — pluss konkrete tips fra reelle caser. Løpende oppdatert.",
   bildeUrl: "/images/nova-day.jpg",
   dato: "2026-04-13",
-  visningsDato: "13.04.2026",
+  visningsDato: "",
   bildeHint: {
     no: "Klikk på bildet for å se illustrasjonen i større format.",
     en: "Click the image to view the illustration in a larger format.",
@@ -28,3 +28,4 @@ Jeg tar også inn ulike verktøy og erfaringer fra egen bruk og testing, i tille
 
 Innleggene oppdateres fortløpende. Der finner du også lenke til videre lesning på <a href="https://www.linkedin.com/in/mariusottesen/recent-activity/all/" target="_blank" rel="noopener noreferrer">LinkedIn</a> for hvert tema.`,
 };
+
