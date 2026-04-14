@@ -4,7 +4,7 @@ export const aiValueLabOslo: ProsjektType = {
   id: "ai-value-lab-oslo-2026",
   tittel: "AI Value Lab Oslo",
   teaser:
-    "Tverrfaglig læringsinitiativ der teknologi, forretning og praktisk utvikling møtes for å utforske hvordan AI kan forstås, testes og anvendes på en ansvarlig måte.",
+    "Tverrfaglig læringsinitiativ der teknologi, forretning og praktisk utvikling møtes for å utforske hvordan AI kan forstås, testes og brukes på en ansvarlig måte.",
   bildeUrl: "/images/ai-value-lab.jpeg",
   dato: "2026-03-29",
   visningsDato: "29.03.2026",
@@ -16,11 +16,11 @@ export const aiValueLabOslo: ProsjektType = {
     { src: "/images/ai-value-lab-banner.png", alt: "AI Value Lab Oslo — deltakere" },
     { src: "/images/ai-value-lab-logo.png", alt: "AI Value Lab Oslo — logo" },
   ],
-  innhold: `AI Value Lab Oslo er et tverrfaglig læringsinitiativ der teknologi, forretning og praktisk utvikling møtes for å utforske hvordan AI kan forstås, testes og brukes på en ansvarlig måte. Gjennom case, refleksjon og praktisk utprøving bygger vi kompetanse, deler erfaringer og utvikler en mer anvendbar forståelse av hvordan AI kan brukes i virkelige arbeidssituasjoner.
+  innhold: `AI Value Lab Oslo er et tverrfaglig læringsinitiativ der ulike perspektiver og komplementære styrker møtes for å bygge praktisk AI-forståelse gjennom samarbeid. Gjennom case, testing, refleksjon og praktisk utprøving utvikler vi kompetanse, deler erfaringer og lærer raskere på tvers av fagområder.
 
-Det som kjennetegner initiativet, er kombinasjonen av ulike perspektiver og komplementære styrker. Målet er ikke først og fremst å snakke om AI, men å lære raskere gjennom samarbeid, testing og systematisk utforsking av relevante problemstillinger og use cases.
+Det som kjennetegner initiativet, er at vi ikke bare diskuterer AI som teknologi, men bruker konkrete problemstillinger og use cases som læringsarena. Målet er å utvikle en mer anvendbar forståelse av hvordan AI, data, governance og forretningsverdi henger sammen i virkelige arbeidssituasjoner.
 
-Fokus ligger på læring i praksis, ansvarlig bruk av AI og utvikling av bedre forståelse for hvordan teknologi, data, governance og forretningsverdi henger sammen.
+Fokus ligger på læring i praksis, ansvarlig bruk av AI og utvikling av innsikt som er relevant også utenfor enkeltverktøy og hype.
 
 Jeg var initiativtaker til etableringen av AI Value Lab Oslo.
 
