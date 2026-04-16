@@ -1,5 +1,46 @@
 export const tennisLedelse = [
     {
+      id: "to-parallelle-spor-ledelse-ai-01",
+      tittel: "Jeg har skrevet mye om AI. Nå vil jeg også skrive mer om ledelse, strategi og transformasjon",
+      teaser:
+        "To tydelige spor videre: AI, teknologi og fremtidig arbeidsliv - samt ledelse, strategi og transformasjon i praksis.",
+      bildeUrl: "/images/tegneserie.jfif",
+      dato: "2026-04-16",
+      visningsDato: "16.04.2026",
+      kategori: "Kommersiell Ledelse",
+      link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
+      innhold: `Den siste tiden har jeg skrevet mest om AI, fremtidens teknologiledelse og hvordan nye verktøy vil påvirke arbeidslivet. Det kommer jeg til å fortsette med.
+
+Men jeg har også kjent på behovet for å løfte frem en større del av min egen kjerne. For jeg er først og fremst en kommersiell leder som har jobbet med salg, markedsføring, personalledelse, strategi, endring og resultatansvar i kunnskapsintensive bransjer.
+
+Jeg liker å jobbe strategisk, men også operativt og tett på. Tett på mennesker, kunder, drift og det som faktisk skjer når planer skal omsettes til handling. Det er ofte der ledelse blir testet på ordentlig.
+
+Derfor kommer jeg fremover til å bygge tydeligere i to parallelle spor:
+• AI, teknologi og fremtidig arbeidsliv
+• Ledelse, strategisk ledelse, kommersiell ledelse og transformasjon i praksis
+
+Gjennom to masterutdannelser, inkludert Executive Master of Management fra BI, har jeg fordypet meg i flere temaer jeg mener er minst like aktuelle i dag:
+• Hva skaper egentlig motivasjon?
+• Hvorfor blir gode intensjoner så ofte stående som nettopp det?
+• Hvordan får ledere mennesker til å bevege seg, ikke bare nikke?
+• Hva bygger tillit, eierskap og psykologisk trygghet?
+• Hvordan påvirker kultur, autonomi og anerkjennelse faktisk prestasjon?
+• Hvorfor ser noen transformasjoner riktige ut på papiret, men blir krevende i virkeligheten?
+
+Og her kommer koblingen til dagens bilde. 💡
+
+Tegneserien traff meg fordi det viser en klassisk feil i mange virksomheter: Vi tar i bruk ny teknologi, men lar gamle vaner, kontrollbehov og symbolhandlinger styre hvordan den brukes. Resultatet er at vi ikke digitaliserer arbeidet. Vi digitaliserer bare friksjonen!
+
+Vi snakker mye om «human in the loop» i AI. Jeg mener det er like relevant i ledelse.
+
+Mange tror motstand mot endring først og fremst handler om holdning. Ofte handler den like mye om uklarhet. Folk beveger seg sjelden fordi de har hørt budskapet én gang. De beveger seg når de forstår hva som faktisk forventes annerledes av dem i praksis.
+
+For mange organisasjoner mangler ikke strategi, planer eller ambisjoner. De mangler evnen til å omsette intensjon til faktisk atferd, eierskap og gjennomføring.
+
+Derfor kommer neste innlegg til å ta utgangspunkt i en av titlene fra mitt BI-arbeid:
+👉 “The road to hell is paved with good intentions.”`
+    },
+    {
       id: "econa-innovasjon-ideer-verdi-01",
       tittel: "Slik bygger du en organisasjon hvor idéer blir til verdi",
       teaser:

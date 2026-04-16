@@ -240,8 +240,16 @@ const InnleggModal = ({ innlegg, onClose, onNavigate, linkedinLabel, ctaText, ct
           <X size={20} />
         </button>
 
-        <div className="w-full flex justify-center bg-slate-900/50 p-6">
-          <Image key={`${innlegg.bildeUrl}-${innlegg.dato}`} src={`${innlegg.bildeUrl}?v=${innlegg.dato}`} alt={innlegg.tittel} width={280} height={400} className="max-w-[280px] max-h-[400px] w-auto h-auto object-contain rounded-lg" unoptimized />
+        <div className="w-full flex justify-center bg-slate-900/50 p-4 sm:p-6">
+          <Image
+            key={`${innlegg.bildeUrl}-${innlegg.dato}`}
+            src={`${innlegg.bildeUrl}?v=${innlegg.dato}`}
+            alt={innlegg.tittel}
+            width={420}
+            height={600}
+            className="max-w-[420px] md:max-w-[520px] max-h-[68vh] md:max-h-[75vh] w-auto h-auto object-contain rounded-lg"
+            unoptimized
+          />
         </div>
 
         <div className="p-8 md:p-12 space-y-6">
