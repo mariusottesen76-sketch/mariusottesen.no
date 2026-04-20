@@ -8,8 +8,9 @@ import { aiValueLabOslo } from "./data/prosjekter/ai-value-lab-oslo";
 import { skoyenasenTannklinikk } from "./data/prosjekter/skoyenasen-tannklinikk";
 import { aiArkitekturBeslutningsstotte } from "./data/prosjekter/ai-arkitektur-beslutningsstotte";
 import { aiFaginnleggHub } from "./data/prosjekter/ai-faginnlegg-hub";
+import { aiAssistertInnsiktsagent } from "./data/prosjekter/ai-assistert-innsiktsagent";
 
-const prosjektKort: ProsjektType[] = [predictiveSalesCoach, aiValueLabOslo, skoyenasenTannklinikk, aiArkitekturBeslutningsstotte].sort(
+const prosjektKort: ProsjektType[] = [aiAssistertInnsiktsagent, predictiveSalesCoach, aiValueLabOslo, skoyenasenTannklinikk, aiArkitekturBeslutningsstotte].sort(
   (a, b) => new Date(b.dato).getTime() - new Date(a.dato).getTime()
 );
 
