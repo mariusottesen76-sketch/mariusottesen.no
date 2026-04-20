@@ -1,4 +1,17 @@
-export const tennisLedelse = [
+type LocalizedText = {
+  no: string;
+  en: string;
+};
+
+type LocalizedTextMap = {
+  tittel: string;
+  teaser: string;
+  innhold: string;
+};
+
+const localize = (no: string, en: string = no): LocalizedText => ({ no, en });
+
+const tennisLedelseRaw = [
     {
       id: "alle-enige-ingen-gjor-noe-01",
       tittel: "Alle er enige. Ingen gjør noe.",
@@ -9,7 +22,7 @@ export const tennisLedelse = [
       visningsDato: "20.04.26",
       kategori: "Kommersiell Ledelse",
       link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
-      innhold: `𝐀𝐥𝐥𝐞 𝐞𝐫 𝐞𝐧𝐢𝐠𝐞. 𝐈𝐧𝐠𝐞𝐧 𝐠𝐣ø𝐫 𝐧𝐨𝐞.
+      innhold: `<strong>Alle er enige. Ingen gjør noe.</strong>
 
 De fleste virksomheter jeg møter har ikke mangel på ambisjoner, strategier eller vilje til endring. De har et annet problem hvilket er at det som besluttes i møterommet, skjer ikke i markedet.
 
@@ -23,7 +36,7 @@ Det som hjelper, er ikke mer kommunikasjon av visjonen. Det er implementeringsin
 
 Den vanskeligste samtalen i mange ledergrupper er ikke om retning. Den er om hva vi slutter å gjøre, hva vi begynner å gjøre annerledes i morgen, og hvem som er ansvarlig for å følge opp at det skjer. Enighet er komfortabelt. Konkret adferdsendring er ubehagelig, fordi det avslører hvem som leverer og hvem som ikke gjør det.
 
-𝑇ℎ𝑒 𝑟𝑜𝑎𝑑 𝑡𝑜 ℎ𝑒𝑙𝑙 𝑖𝑠 𝑝𝑎𝑣𝑒𝑑 𝑤𝑖𝑡ℎ 𝑔𝑜𝑜𝑑 𝑖𝑛𝑡𝑒𝑛𝑡𝑖𝑜𝑛𝑠. I ledelse er det ikke et ordtak — det er en driftsrisiko. Veien videre bygges ikke av intensjoner alene, men av handling, ansvar og oppfølging.
+<em>The road to hell is paved with good intentions.</em> I ledelse er det ikke et ordtak — det er en driftsrisiko. Veien videre bygges ikke av intensjoner alene, men av handling, ansvar og oppfølging.
 
 👉 Neste innlegg i serien om ledelse, strategisk gjennomføring og transformasjon i praksis: Hva er det som faktisk motiverer mennesker i kunnskapsarbeid? Forskningen svarer ikke alltid det ledere forventer.`
     },
@@ -538,3 +551,445 @@ Norge ble ikke svakere fordi vi manglet ressurser.
 Virksomheter feiler ofte av samme grunn.`
     }
   ];
+
+const tennisLedelseEn: Record<string, LocalizedTextMap> = {
+  "alle-enige-ingen-gjor-noe-01": {
+    tittel: `Everyone agrees. Nobody does anything.`,
+    teaser: `When strategy does not become behaviour: why agreement is not enough, and what is actually needed to succeed with transformation in practice.`,
+    innhold: `<strong>Everyone agrees. Nobody does anything.</strong>
+
+Most businesses I meet do not lack ambition, strategies or the will to change. They have another problem, which is that what is decided in the meeting room does not happen in the market.
+
+It is not sabotage or laziness. There is a gap that research has thoroughly documented, and which managers systematically underestimate: the distance between intention and actual behaviour. In my master's thesis on precisely this gap — rooted in the Theory of Planned Behavior — one of the clearest findings is that a high degree of agreement and a positive attitude are not sufficient to predict action. People can mean what they say. They may want to change. And yet don't do it.
+
+In commercial management and sales management, the consequences are directly measurable. The priorities are clear, the KPIs are set, and everyone nods in the kickoff meeting. Three months later, the behavior in the customer dialogue is the same as before. Not because the strategy was wrong, but because no one translated it into concrete patterns of action: who does what, in what situation, and what is the first step? This is where transformations run aground. Not in the planning phase, but in the transition from intention to routine.
+
+McKinsey's research on organizational transformation shows that 70% of change initiatives do not achieve their goals. The most frequently reported reason is not the wrong strategy or lack of resources, but the inability to change actual behavior across the organization. What separates the 30% who succeed is not better plans, but that managers at all levels actively model the new behavior themselves, rather than delegating the implementation downwards.
+
+What helps is not more communication of the vision. There are implementation intentions — concrete if-then plans that link desired behavior to specific situations and triggers. Research consistently shows that this type of concretization significantly increases the likelihood of implementation, compared to general goal statements alone. In practice, this means that managers must go further than communicating what should happen, and into the more demanding work of designing the behavior that will carry the strategy.
+
+The most difficult conversation in many leadership groups is not about direction. It is about what we stop doing, what we start doing differently tomorrow, and who is responsible for following up that it happens. Agreement is comfortable. Concrete behavior change is uncomfortable, because it reveals who delivers and who doesn't.
+
+<em>The road to hell is paved with good intentions.</em> In management, it is not a proverb — it is an operational risk. The way forward is not built by intentions alone, but by action, responsibility and follow-up.
+
+👉 Next post in the series on management, strategic implementation and transformation in practice: What actually motivates people in knowledge work? The research does not always answer what managers expect.`,
+  },
+  "to-parallelle-spor-ledelse-ai-01": {
+    tittel: `I have written a lot about AI. Now I also want to write more about management, strategy and transformation`,
+    teaser: `Two clear tracks ahead: AI, technology and future working life - as well as management, strategy and transformation in practice.`,
+    innhold: `Recently, I have written mostly about AI, future technology management and how new tools will affect working life. I will continue with that.
+
+But I have also felt the need to lift up a larger part of my own core. Because I am primarily a commercial manager who has worked with sales, marketing, personnel management, strategy, change and responsibility for results in knowledge-intensive industries.
+
+I like to work strategically, but also operationally and closely. Close to people, customers, operations and what actually happens when plans are to be translated into action. It is often where leadership is really tested.
+
+Therefore, in the future I will build more clearly in two parallel tracks:
+• AI, technology and future working life
+• Management, strategic management, commercial management and transformation in practice
+
+Through two master's degrees, including an Executive Master of Management from BI, I have delved into several topics that I believe are at least as relevant today:
+• What actually creates motivation?
+• Why do good intentions so often remain just that?
+• How do leaders get people to move, not just nod?
+• What builds trust, ownership and psychological security?
+• How do culture, autonomy and recognition affect actual performance?
+• Why do some transformations look right on paper, but become demanding in reality?
+
+And here is the link to today's picture. 💡
+
+The cartoon struck me because it shows a classic mistake in many businesses: We adopt new technology, but let old habits, control needs and symbolic actions control how it is used. The result is that we do not digitize the work. We just digitize the friction!
+
+We talk a lot about "human in the loop" in AI. I believe it is equally relevant in management.
+
+Many people think that resistance to change is primarily about attitude. Often it is just as much about obscurity. People rarely move because they have heard the message once. They move when they understand what is actually expected of them differently in practice.
+
+Too many organizations do not lack strategy, plans or ambitions. They lack the ability to translate intention into actual behaviour, ownership and implementation.
+
+Therefore, the next post will be based on one of the titles from my BI work:
+👉 “The road to hell is paved with good intentions.”`,
+  },
+  "econa-innovasjon-ideer-verdi-01": {
+    tittel: `This is how you build an organization where ideas turn into value`,
+    teaser: `Reflections from Econa on innovation: structure, facilitation and culture that make good ideas actually turn into value.`,
+    innhold: `This is how you build an organization where ideas turn into value
+
+On Thursday I participated in the Econa event "Innovation and development - become more opportunity-oriented", with lectures and workshops led by Nina Prestegard.
+
+One of the most interesting things was not how many ideas there are in an organization, but how they are handled. Many businesses have employees who come up with good ideas, but the ideas often appear in the hallway, between meetings or in unstructured settings. They are often met with a "good input", but without clear follow-up. Over time, it weakens both initiative and commitment.
+
+The course was clear that innovation does not happen by chance. It must be designed, both through structure and culture.
+
+Three things stand out in particular:
+• Structure beats randomness. Idea work must have clear frameworks, issues and ownership. If not, it will be random what is taken next.
+
+• Groups must be facilitated. Without structure, you get groupthink, dominance and early criticism. Let people think individually first, and build further together.
+
+• Distinguish between exploration and decision. Many go to assessment too quickly. Then the ideas stop before they have had a chance to develop.
+
+Another important point was that creativity is not a quality someone has, but a skill that can be trained. We are often trained to find correct answers, not to explore multiple possibilities. Therefore, managers must consciously facilitate divergent thinking, where the aim is to open up before narrowing down. Curiosity and questions like “what if?” and "can you elaborate?" is a prerequisite for better decisions.
+
+At the same time, this is not only about management, but also about ownership. It cannot be expected that the manager alone will drive forward all ideas that come in. Real innovation happens when employees themselves take responsibility for further developing proposals, testing them and facing the uncertainty. Autonomy builds ownership, and ownership creates progress.
+
+In terms of experience, it is smart to establish regular innovation meetings with a clear structure. Ideas are presented briefly, one person owns further development, and the next step is clarified before the meeting ends. It provides both direction and responsibility, while at the same time signaling that ideas are taken seriously.
+
+For managers, this means that you have to go from asking for ideas to building systems that actually handle them. It is about creating space for exploration, but also clear responsibility for implementation.
+
+The link to commercial management is direct. If you want to develop new services, improve customer experiences or use AI, good intentions are not enough. You must have an organization that is capable of developing, prioritizing and realizing ideas in practice.
+
+My most important takeaway is therefore simple: Innovation is not primarily about more ideas, but about building a structure and a culture where ideas become valuable.`,
+  },
+  "nettside-lansering-2026-01": {
+    tittel: `From coding in 1999 to AI revolution in 2026 - new website and new consulting company!`,
+    teaser: `New website built with AI tools in two days - and launch of Marius Ottesen Consulting as a bridge between strategy and AI implementation.`,
+    innhold: `The last time I built a website from scratch was as a student in the USA in 1999. Then I wrote each line of HTML manually. The last 48 hours have been an eye-opener: I just launched <strong>my new website</strong> - built in just two days!
+
+This is not thanks to my coding skills, but the power of strategic use of AI. Combining <strong>Cursor</strong>, <strong>Claude 3.5 Sonnet</strong>, <strong>Opus 4.6</strong> and <strong>Gemini 1.5 Pro</strong>, I have served as the architect while the AI ​​systems have handled the coding.
+
+The process has also included setting up version control with Git and GitHub, deploying via Cell and connecting to my own domain - so that I can both iterate safely and have full control over how the website is published and updated.
+
+But the project is about more than technology. It is about <strong>Bridge building</strong>.
+
+Many managers feel that the gap between AI theory and commercial value is too large. After a period of focusing on theory and frameworks, I have now established <strong>Marius Ottesen Consulting</strong>. My mission is to be the bridge builder between strategy and practical AI implementation.
+
+On the website you can dive into my professional toolbox:
+• <strong>Profile, Experience, references & Results</strong>: Background and proof of value creation
+• <strong>Subject posts</strong>: My LinkedIn posts that provide insight into "Strategic Management & Transformation" and "AI & Future Technology Management"
+• <strong>Consulting</strong>: For those who need assistance to implement AI
+• <strong>CV, Application & Contact</strong>: For informal or formal enquiries
+
+I help businesses move AI from frameworks to core tasks:
+• <strong>AI strategy</strong>: Link to business goals and ROI
+• <strong>Process optimization</strong>: Removal of friction in operations
+• <strong>Digital Transformation</strong>: Rigs the organization for a new everyday life
+• <strong>Workshops</strong>: From theory to practical mastery
+
+<strong>I am now moving from only theory to actual construction</strong>.
+
+Together with technical partners, I go straight into companies' core processes to implement concrete AI projects - whether it's workflow automation or intelligent tools for decision support. AI should not be a side project, but the engine of their growth.
+
+<strong>Take a look</strong> - and feel free to share! Under the tab "Consulting" you will find a contact form. Do you have challenges that we should look at together? Describe them there, and we will take the dialogue further.
+
+What works and what is missing? I really appreciate all feedback!
+
+<strong>Link to the website:</strong> www.mariusottesen.no`,
+  },
+  "attitude-2016-01": {
+    tittel: `Did you know?!? It's all about ATTITUDE!`,
+    teaser: `Short post about attitude and attitude.`,
+    innhold: `Did you know?!? It's all about ATTITUDE!`,
+  },
+  "visindi-rekruttering-2024-01": {
+    tittel: `Nice gesture by Visindi who ran a good and professional recruitment process when I was headhunted to Franzefoss Gjenvinning AS!`,
+    teaser: `Thanks Visindi for a good and professional recruitment process in headhunting for Franzefoss Gjenvinning.`,
+    innhold: `Nice gesture by Visindi who ran a good and professional recruitment process when I was headhunted to Franzefoss Gjenvinning AS! :-)`,
+  },
+  "obf-klar-2025-01": {
+    tittel: `Ready for two days of inspiration at Oslo Business Forum 2025 - The Big Shift!`,
+    teaser: `Ahead of Oslo Business Forum 2025 – The Big Shift: expectations for two days of learning, reflection and networking.`,
+    innhold: `🚀 Ready for two days of inspiration at Oslo Business Forum 2025 - The Big Shift!
+
+I am looking forward to a packed program with strong speakers, new perspectives and lots of professional additions. Equally important are the meetings with both old and new acquaintances – it's always exciting to share experiences and build relationships across industries.
+
+These will be two days of learning, reflection and networking that I am really looking forward to! 💪 🙋‍♂️
+
+https://www.obforum.com/`,
+  },
+  "obf-2025-big-shift-01": {
+    tittel: `Oslo Business Forum 2025 – The Big Shift`,
+    teaser: `Takeaways from Oslo Business Forum 2025: strategy, AI, management and human power. OBF 10th anniversary.`,
+    innhold: `✨ Oslo Business Forum 2025 - The Big Shift ✨
+
+Two inspiring and educational days are over - filled with strong lectures, important perspectives and energy around strategy, management, technology and the possibilities of the future. In addition, this year's conference marked the 10th anniversary of the Oslo Business Forum – a milestone that shows the importance the arena has taken on for managers.
+
+🔑 <strong>My most important takeaways:</strong>
+
+🎯 <strong>Strategy and growth:</strong>
+B. Sternfels reminded us that future winners must aim high, move fast and build organizations that continuously adapt to change. He highlighted the importance of learning, humour, warmth and resilience – and emphasized growth and AI as top management priorities. M. Buckingham delivered a strong message: "Love is the most powerful force in business" – real value creation is about meaning and belonging.
+
+🤖 <strong>AI and technology:</strong>
+P. Lakhani showed how AI can be used strategically to create competitive advantage, while T. Mauri introduced "Agility is the new stability" and raised the importance of ethical reflection. P. Malmgren encouraged more creativity: "The big things that matter need better imagination from us."
+
+👩‍💻 <strong>Generations and culture:</strong>
+Dr. E. Filby showed how younger generations are constantly driving development forward, while Gen. X is most positive about AI and tech. She also pointed out why physical interaction and shared arenas are still crucial for learning, culture and innovation – even in a hybrid everyday life.
+
+❤️ <strong>Leadership and human power:</strong>
+S. Sinek reminded us of "What you search for, you will find" – leadership starts with meaning and optimism.
+D. Kander delivered some of the conference's most concrete and powerful messages: "Never goal alone" - "Always ask: Who can help me do this?" – and "Success can be your biggest blind spot." She challenged us to cut low-value tasks and focus on value vs. effort.
+
+🏆 <strong>Team and trust:</strong>
+Aksel L. Svindal showed how winners are built through openness and collaboration: "Trust your team, share all good data – and don't forget the 7 o'clock dinner. Celebrate together."
+
+🧭 <strong>Change as a driving force:</strong>
+A. Rinne introduced the Flux mindset and showed how uncertainty can be used strategically, while G. Petriglieri reminded us that emotions are a competitive advantage in management.
+
+💡 <strong>The common denominator from the stage was clear:</strong> The leaders of the future must combine strategy, technology and human insight - and the ability to create culture, pace, curiosity and trust in a time characterized by major changes.
+
+<strong>Next Chapter – The Human Edge (2026):</strong>
+OBF 2026 builds on this year's learning as it is about unlocking the strengths that no machine can replace. In an age of disruption, leaders must rely on creativity, courage, trust and persistence, and build cultures where people and ideas can flourish.
+
+A big thank you to Christoffer Omberg and the entire skilled and pleasant(!) OBF team for an impressive, professional and inspiring event - both professionally and personally strong from start to finish! 🙏`,
+  },
+  "kjeft-psykologisk-trygghet-01": {
+    tittel: `Is it okay to 'shut up' as a leader - and what does that mean for psychological security?`,
+    teaser: `Psychological security, clarity and anonymous criticism. Reflections from a lecture with Henning Bang (Econa).`,
+    innhold: `On Monday, I attended an insightful lecture organized by Econa with professor <strong>Henning Bang</strong>. The topic was <strong>psychological security</strong>, and what actually builds it - or undermines it.
+The lecture hit home, especially because it challenges both managers and employees.
+
+<strong>The point that really created reactions and discussion in the room was Bang's claim that:</strong>
+"Sometimes you have to be able to speak clearly. 'Jeft' can be tolerated by adults - as long as it is not person-focused, not humiliating and the language is proper. When boundaries are broken, it must be allowed to react clearly - even if it creates legitimate discomfort."
+
+For the record:
+<strong>I don't strive to 'shut up' as a leader.</strong>
+But I share the principle of clarity: management requires that you actually speak up when something doesn't work.
+
+Another important point that was discussed was <strong>anonymous criticism</strong>.
+Anonymous input can pick up signals - but they are rarely developmental. When the sender is unknown:
+🔹 the dialogue stops before it starts
+🔹 misunderstandings spread in the team
+🔹 the wrong people can be associated with the criticism
+🔹 the culture is moving from courage to caution
+
+In short: <strong>anonymity can be a safety net, but not a tool for development.</strong>
+
+<strong>My most important takeaways from the lecture:</strong>
+🔹 Psychological security does not mean the absence of demands.
+🔹 Learning requires us to tolerate discomfort - also when it comes to ourselves.
+🔹 Safety is not only created by the manager - employees also have responsibility.
+🔹 Inside-out reflection is maturity: "What could I have done differently?"
+🔹 Too little security → silence, defense and anonymous criticism.
+🔹 Too much security → buddy club, low accountability and little development.
+🔹 Clear expectations and correction are not "shouting" when given respectfully.
+🔹 Explain - Invite - Respond: Actions that can increase psychological security.
+
+Henning also referred to <strong>Amy C. Edmondson</strong>, Harvard professor and global leader in psychological safety. Her research shows that teams with high confidence:
+✔ perform better
+✔ learn faster
+✔ share errors earlier
+But she is as clear as Bang:
+<strong>Safety without responsibility gives comfort - not quality.</strong>
+
+💬 <strong>What do you think?</strong>
+1. When is clear feedback perceived as help - and when as criticism?
+2. How do we balance psychological security with demands and responsibilities?
+3. What are the characteristics of employees who take ownership - also when something goes against them?
+
+I learn most when others think out loud with me.`,
+  },
+  "kapasitet-maraton-01": {
+    tittel: `Capacity is built over time - and can be retrieved when relevant, in several arenas`,
+    teaser: `Half marathon in Cairo and reflection on capacity: performance is built over time and can be retrieved in several arenas.`,
+    innhold: `On Saturday I took part in the Marakez Pyramids Half Marathon in Cairo, Egypt.
+10,000 runners from 122 countries at the starting line - I was 18th in my class.
+
+Despite increased and targeted specific race training beforehand, it was not enough to extract full potential this time. At the same time, I am convinced that my performance and capacity are largely connected to what I have invested in over many years earlier in my life.
+
+I am genuinely pleased with the result. Not just as a number, but as a personal victory and a confirmation of just this.
+
+Performance is rarely about short-term effort, but about basic training – physically and mentally – built over time. Experience and capacity from cross-country skiing, running, tennis, strength and other training still remains. Today, I train variedly and particularly enjoy tennis, both training and competitions. It provides both strength, robustness and the inner drive – the motivation that makes you train when no one is watching.
+
+The same applies in working life.
+Education, professional development and experience from previous roles and companies provide capacity that you can call upon when it is relevant.
+
+At a recent professional seminar, age discrimination in working life was discussed. A representative from NAV pointed out that many people already experience this from the age of 50. I'm not there yet, but the reflection is important: the solution is to continue investing in competence, development and learning.
+
+This race was a clear "Big Hairy Goal" – something to train for and look forward to – a goal that provided direction, energy and boosted motivation. The social community made the experience even stronger. Being part of an environment means a lot, professionally and socially. We performed as a team, supported each other before, right up to, and after the race. There was a lot of reflection, training theory and development - and not least: it was fun.
+
+Through roles as tennis coach and manager, I have experienced how rewarding it is to contribute to the development of others - and to succeed together as a group. Fellow players, the public, supporters, colleagues, family and friends who cheer, lift the performance even further.
+
+Now we enter the winter - with more focus on other types of training, new sessions on snow and arenas that continue to build capacity. What about investments on the skills side? I consciously choose what builds value – for example, playing more with AI, as today's picture illustrates. Made at the airport on the way home to Norway.
+
+Fun facts:
+The Pyramid of Cheops was built over 5,000 years ago - approx. 2.5 million stone blocks, 2.5–5 tons each. Stone on stone. Of people. We still don't quite know how.
+A reminder of what long-term effort, hard work, perseverance and management can create - whether it's about buildings, performance, competence or people.`,
+  },
+  "videre-franzefoss-2026-01": {
+    tittel: `After 2 years as National Sales Manager in Franzefoss Gjenvinning, I have chosen to move on`,
+    teaser: `Completion as National Sales Manager in Franzefoss. Further to interim, consulting and investment in AI expertise.`,
+    innhold: `After 2 years as National Sales Manager in Franzefoss Gjenvinning, I have chosen to move on
+
+The background is different strategic views on the way forward - and a conscious choice to invest time in further development and expertise before the changes force themselves forward, including in the field of AI.
+
+The time in Franzefoss has given me further solid experience in commercial management, sales development and implementation in a complex and socially critical industry. At the same time, I have gained a deeper understanding of circular economy and recycling, as well as what is actually required to succeed with change in practice.
+
+I would like to thank my colleagues for an exciting and intensive period, during which both the company and the people developed significantly.
+
+<strong>Today I used the experiences actively</strong>, i.a. as interim manager and consultant in dentistry at Skøyenåsen Tannklinikk. This is growing strongly, with more dentists, more specialized treatments and a clear focus on both existing patients and new customer groups. At the same time, the clinic has been renovated and modernized to meet the requirements forward-looking clinics must deliver on – professionally, technologically and in terms of patient experience.
+
+AI is also on its way into dentistry – not only in examinations and treatment, but in the areas of efficiency, decision support and development. Here I am now concretely working on how technology can contribute to better quality, flow and results.
+
+Also, I continue to develop MedDrop. This is a med-tech start-up and an IoT-based medicine dispenser - with a focus on patient safety, compliance and clinical needs. The project deals with innovation at the intersection of technology, health, regulatory frameworks and clinical practice.
+
+<strong>At the same time, I invest heavily in my own development:</strong>
+• Master's course in <em>Generative AI for Business</em> (BI)
+• Practical application and testing beyond the syllabus
+• Active learning and sharing in the network (the AI posts I publish are part of this)
+• Courses, networks and dialogue with exciting professional environments - to learn and contribute where relevant
+
+The period I am in now is not a break, but an active investment in development, ability to implement and relevance for forward-looking organisations. I still want to stand strong as a commercial manager, where AI is one of my key management skills.
+
+<strong>Curious about dialogue - not necessarily a new job tomorrow!</strong>
+
+Feel free to get in touch for an informal conversation.`,
+  },
+  "brains-not-included-01": {
+    tittel: `Brains not included - and that is precisely why authenticity becomes the leader's most important advantage`,
+    teaser: `In the age of AI, authenticity becomes the leader's advantage: write something that stands for something. Reflections from BI breakfast about CTRL+ALT.`,
+    innhold: `Yesterday I attended a breakfast meeting at BI Executive. The theme was "How authenticity will become the manager's strategic advantage in 2026", with a clear link to the use of AI.
+
+The starting point was the book <em>CTRL+ALT. Strategic, creative and practical - the art of writing for businesses</em> by i.a. Øystein Bonvik, who was a speaker in dialogue with Hanne Kjærnes. The conversation dealt with management, language, brand and technology.
+
+The main point was clear:
+When AI makes it extremely easy to produce text, meaning, clarity and the human sender become more important than ever. When everyone can write "okay", it becomes crucial to write something that actually stands for something.
+
+AI should therefore not be used to write for us, but to help us. As a structural partner, challenger of ideas and editor - not as a voice. Used correctly, AI works very well, even for demanding tasks. Used incorrectly, the communication is correct, but empty.
+
+A central concept in the discussion was unconsciousness. AI makes it easy to be neutral, cautious and indistinct. The quest not to offend anyone can quickly end in texts that in practice say nothing. Authenticity is therefore not about "being yourself", but about matching who we are, what we do and how we express ourselves.
+
+This is closely related to tone of voice. Many businesses are aware of their logo and colours, but far less so of how they actually sound. Language is perhaps the most important carrier of the brand's personality – internally and externally.
+
+An important management point was the risk when managers bypass professional environments and employees by using AI to get quick answers. It can weaken both quality and trust. AI lacks judgment and empathy – and neither understands context, nuances or puns as humans do. A good pun can be obviously powerful to us, but completely incomprehensible to a machine.
+
+We are still in the playroom. Just like when PPT and ClipArt arrived, we test, fail and learn. AI is the future, but mature use requires awareness. AI won't take your job – but the person who can use AI wisely will.
+
+There was also an interesting reflection on academia and plagiarism. Plagiarism is the worst thing you can do, and at the same time the methods for revealing AI-generated text are far from accurate. Among other things, AI detectors have failed on texts written 20 years ago. It says something important that technology is not the challenge, but more about responsibility and judgement.
+
+I asked about <strong>line of thought</strong> - and was clearly told to continue using it. It is a deliberate linguistic move, not an AI stamp.
+
+"<strong>Brains not included</strong>" – a bit like "batteries not included". AI can help us a long way, but it is never an exemption from thinking for ourselves.`,
+  },
+  "frastotende-salg-2026-01": {
+    tittel: `With reference to the article from ASD Group, Espen Hellman puts into words something very important for the sales profession`,
+    teaser: `Espen Hellman and ASD: what sets the best salespeople apart - listen, be honest, take responsibility for progress.`,
+    innhold: `With reference to this article (<a href="https://www.linkedin.com/feed/update/urn:li:activity:7407361511905452033/" target="_blank" rel="noopener noreferrer">https://www.linkedin.com/feed/update/urn:li:activity:7407361511905452033/</a> ) from the ASD Group, Espen sets Hellman's words on something very important for the sales profession. Trust in salespeople is low, and few customers experience real value in the first meeting. At the same time, the article shows that there are simple principles that distinguish the best: Listen, be honest - and don't pressure.
+
+I completely agree with this, and at the same time it is worth clarifying what "do not press" actually means. Good sales are also about taking responsibility for progress. Without clear next steps, even good dialogues run the risk of being postponed, forgotten or never realized. Each sales process lives its own life, but professional salespeople follow up with the right timing and clarity - in a way that feels natural to the customer.
+
+The article also shares an interesting fun fact:
+The best sellers ask an average of 32 questions in the analysis phase - 39% more than the average.
+For me, this is not about the number of questions, but which questions are asked. It requires thoughtful situational and reflective questions - and the ability to listen with empathy. In professional language, we call this active listening. When the salesperson understands both how the customer works today and why, the dialogue moves from price to actual value.
+
+Much of this resembles good coaching. When the customer himself formulates the challenge – and often parts of the solution – the decision becomes both easier and stronger than when the solution is presented ready-made. It provides both better relationships and more robust sales processes.
+
+This is also the reason why I have great respect for the expertise in ASD. I myself have used them as a supplier of coaching services in sales, and find that they are particularly strong in developing the role of adviser - where methodology, behavior and reflection are closely linked.
+
+So finally:
+What do you think of when you hear the word "salesman"?
+For me, a good salesperson is an advisor and partner – someone who listens actively, is honest, takes responsibility for progress and is strong at (also latent) needs mapping and the interpersonal aspects.`,
+  },
+  "skalering-01": {
+    tittel: `What actually determines whether scaling is successful - and why people, timing and choices are decisive`,
+    teaser: `What determines whether scaling succeeds: plan, life cycle, people and timing. From the webinar Scaling in practice.`,
+    innhold: `Many people talk about scaling as if it is primarily about pace, ambitions and growth in numbers. My experience is that the challenges more often arise in the transition from what worked yesterday to the next phase.
+
+On Wednesday, I participated in the webinar <em>Scaling in practice</em> with Annette Sveen, and several perspectives resonated well with my own managerial everyday life.
+
+A key point was the importance of having <strong>a clear plan and direction</strong>. Scaling without a clear understanding of why you are growing - and where you are going - makes the organization reactive. Is the goal further growth, internationalization or sale of the company? Without an explicit answer, priorities become unclear, and management loses control.
+
+Furthermore, it became clear how crucial it is to know <strong>where the business is in the life cycle</strong>. Start-up, growth, maturation and saturation make completely different demands on structure, management and people. Measures that work in one phase can become inhibiting in the next. Scaling is as much about timing and adaptation as it is about execution.
+
+A consistent theme was <strong>people as the most critical factor in scaling</strong>. The focus often ends up on technology, systems and finance, while the ability to implement is determined by how people interact, make decisions and handle increased complexity. Mismatch between people, roles and phase creates friction - which costs speed and energy.
+
+I recognize this very well, and myself have experience with the use of <strong>profile identification and analysis tools</strong> at management level and employee level. This has been particularly valuable in work with sales advisors and customers. When we understand behaviour, drivers and communication style - in ourselves and others - management, collaboration and sales become more precise.
+
+The webinar also highlighted <strong>AI as a practical tool in scaling</strong>, not as a replacement for humans, but as a way to free up capacity. The advice was clear: start controlled, test yourself first, integrate into existing systems and identify bottlenecks before rolling widely. Used correctly, AI can contribute to better resource utilization - in line with own experiences from management and sales.
+
+Finally, some <strong>pervasive errors in scaling</strong> were pointed out: missing plan, wrong people in key roles, wrong priorities, too little understanding of technology and absence of good sparring partners.
+
+My most important reminder after the webinar is simple but demanding:
+<strong>Scaling doesn't start with doing more – but with doing the right things, in the right order, with the right people.</strong>`,
+  },
+  "tennis-01": {
+    tittel: `Tennis and Management: Strategy under pressure`,
+    teaser: `Tennis and management: Djokovic, Alcaraz and transfer value to working life – strategy and attitude under pressure.`,
+    innhold: `Working purposefully does not always mean winning.
+Sometimes you win. Other times you lose the final.
+
+More often than we like to admit, you don't even get there.
+
+In December, I wrote about the half-marathon in Egypt and how capacity is built over time, stone by stone, and can be retrieved when needed. I also took that reflection here with me.
+
+During the Australian Open recently, I got to see Novak Djokovic knock out Jannik Sinner in the semi-finals. A new generation at full speed - and the "old" champion who still finds a way to victory. Great as a winner.
+
+Two years ago, I sat close to the court in Paris during the Olympics and watched Djokovic win over arch-rival Carlos Alcaraz in the final. Gold. The only medal he was missing. The culmination of a life's work.
+
+This year, in Melbourne, I experienced much of the same, but with the opposite outcome. In the final, Djoko lost to "Carlitos" after a brutal, close and physical match.
+Two moments. Same performers. Two completely different results.
+
+What made the strongest impression this time was not just the tennis – it is in a league of its own – but what came after the match.
+
+In a sport where "only victories count", at least for Djokovic, he delivered an interview characterized by dignity, gratitude and respect. For his team. For the opponent. For the audience. For the journey. Great - even as a loser.
+
+Djokovic er av mange regnet som the GOAT. Samtidig er han en av de mest kontroversielle skikkelsene i moderne tennis. Emotional. Stubborn. Principled. Kritisk til systemer og rammer, som blandt annet kostet ham dyrt som under covid-perioden og boikotten av Australian Open. Likevel er det slående hvor elsket og respektert han er, også nettopp i Australia. For the game. For mental strength. For viljen til å stå i motvind. Jeg kjenner ingen annen som er mer rå på dette enn han.
+
+As an active tennis player myself – and this is the sport I love most, out of many – this hits particularly well. I recognize the work behind it: the hours on the field, the adjustments, the frustration, the repetitions. Tennis is brutally honest. You stand alone on the field with the responsibility, but you never succeed alone over time.
+
+This is something the tennis world is often good at showing off. Many players on the tour are good at lifting the team around them and showing respect for competitors. In other sports, unfortunately, we often see the opposite, where this disappears when the pressure becomes great.
+
+And Alcaraz. What a performer!
+An artist. Creative, brave and playful - at the same time extremely purposeful. He creates enthusiasm and love for the sport. It is also a form of achievement.
+
+For me, this is not just about tennis.
+It's about the path to becoming number one - in sport, work and life. About enduring the contrasts between victory and defeat. And about continuing to invest in the process - as I also experienced in the marathon.
+
+The transfer value to working life and management is greater than many people think.`,
+  },
+  "landet-rikt-01": {
+    tittel: `Your business may be well into decline - but you don't notice it`,
+    teaser: `The Land That Got Too Rich: How Abundance Hides Decay in Business—and What Leaders Can Do Differently.`,
+    innhold: `Your business may be well into decline.
+But you don't notice it - because the account is full.
+
+On a recent holiday in Australia, I read Martin Bech Holte's book <em>The Land that Got Too Rich</em>. It started as a book about the Norwegian economy. It ended up being the most uncomfortable mirror I have held up to my own leadership experiences.
+
+<strong>This is Norway's fault - and probably yours too.</strong>
+
+What makes this extra unpleasant is that this is not new. History is full of countries and companies that built enormous values ​​- and lost them. Not because the crisis came suddenly, but because discipline disappeared. Abundance removed the need for prioritization, and the warning lights were ignored because the numbers were still green.
+
+The decay does not happen dramatically, but gradually. The pace slows down a bit. Decisions take a little longer. Responsibility is pulverized. On paper, everything looks fine, but in practice the organization loses momentum. Just like this, Norway's productivity has fallen by 11% since 2013, at the same time as the oil fund grew to over NOK 21,000 billion.
+
+In management groups, I see the same pattern: "We can afford it", therefore inefficiency is tolerated. In sales, we hire more salespeople instead of improving the conversion rate. We increase the marketing budget rather than work systematically with sales enablement, process improvement and smarter use of support functions. Artificial scarcity, even with funds, is often the key to higher productivity.
+
+Then the next thing happens. The best managers and value creators lose patience. When support functions, processes and internal considerations gradually take precedence over actual value creation, I know the wealth trap has struck. Those who create results experience increasing friction and look away. Again, those who are comfortable with the status quo sit. Revenue per employee is falling, but no one is reacting – because the absolute numbers are still growing.
+
+The system produces what you incentivize. Bonus on activities. Pipeline without quality requirements. Sales that are rewarded regardless of margin, customer satisfaction or retention. The result is predictable: sales to the wrong customers.
+
+"We have plenty of time" is perhaps the most dangerous illusion of all. Sweden took around 20 years from top to bottom. Norway may be well into a similar development, but does not notice it as the oil fund masks the pain. The focus shifts away from the core competence. The changes happen slowly at first - and then at an accelerating pace.
+
+In sales, it looks like this: ACV gradually falls. The sales cycle is getting longer. Win rate against primary competitor goes from 60% to 45%. But absolute turnover is still growing 10% annually, so no one is sounding the alarm.
+
+The question is not whether this can be reversed. History shows that it can. What needs to change before the numbers also start to point in the wrong direction?`,
+  },
+  "norge-virksomhet-01": {
+    tittel: `If Norway were a business - what would the management have to do now?`,
+    teaser: `If Norway were a business: learning from Bech Holte about discipline, resource allocation and AI as a management tool.`,
+    innhold: `In <em>The country that became too rich</em>, Martin Bech Holte describes how Norway has gradually lost momentum, not because we lack resources, but because they are used incorrectly. The interesting question for us who manage businesses is not whether the analysis is completely precise, but what we can learn from the pattern - and do differently.
+
+<strong>Learning for business management</strong>
+
+The core of the book is simple and unpleasant: Abundance removes pressure. When the pain threshold is never reached, the priorities are not met. In businesses, it often looks like this: Capital is allocated based on history and internal impact, not effect. Budgets grow, while output per employee falls. More initiatives are started than finished. "We have plenty of time" becomes a guiding principle. The result is rarely a crisis, but stagnation – such as at the national level.
+
+<strong>Solution for businesses</strong>
+
+Businesses that break this pattern do some fundamental things differently. They introduce artificial scarcity even when the account is full, and do not allow everything that is possible to live. They move resources based on effect, not intent. They manage by productivity and outcome rather than activity and headcount. And they adjust incentives so that long-term value creation is rewarded more than volume and visibility.
+
+Here, AI can be a tool, but only when used correctly. Not as an individual productivity tool, but as support for better prioritization, more objective resource allocation and earlier warnings about what is actually not working. 88% of organizations will use AI in at least one function by 2025, according to McKinsey. Nevertheless, the gains are often not realized, because the technology is not built into the core processes.
+
+The experiences from the study Generative AI for Business at BI have made one thing clear to me: AI transformation is about governance, not licences. IBM reports $4.5 billion in annual productivity gains from end-to-end process automation, not individual tools. In sales, this means, among other things, real-time analysis of deals, automated lead scoring, more precise pricing and forecasting that can actually be used for management. But this must be led from the top. AI is not an IT project, it is a core competence.
+
+<strong>First 90 days – a practical start</strong>
+
+If this were operationalized, I would start with a thorough review of where the money goes, what is rewarded in incentives, and whether the measurements say anything about real value creation. Then, resource allocation, KPIs and decision models must be designed for effect, not activity. Only in the last phase is it about consistent implementation, also when it means stopping initiatives that do not deliver.
+
+The point is not to become more efficient.
+The point is to restore discipline before it is imposed.
+
+Norway did not become weaker because we lacked resources.
+Businesses often fail for the same reason.`,
+  },
+};
+export const tennisLedelse = tennisLedelseRaw.map((innlegg) => ({
+  ...innlegg,
+  tittel: localize(innlegg.tittel, tennisLedelseEn[innlegg.id].tittel),
+  teaser: localize(innlegg.teaser, tennisLedelseEn[innlegg.id].teaser),
+  innhold: localize(innlegg.innhold, tennisLedelseEn[innlegg.id].innhold),
+}));

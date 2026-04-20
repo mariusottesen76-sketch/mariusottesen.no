@@ -20,8 +20,8 @@ function getProsjektBildeHint(prosjekt: ProsjektType, lang: Lang) {
   const custom = prosjekt.bildeHint?.[lang];
   if (custom) return custom;
   return lang === "no"
-    ? `Klikk på bildet for å se ${prosjekt.tittel} i større format.`
-    : `Click the image to view ${prosjekt.tittel} in a larger format.`;
+    ? `Klikk på bildet for å se ${prosjekt.tittel.no} i større format.`
+    : `Click the image to view ${prosjekt.tittel.en} in a larger format.`;
 }
 
 export default function Prosjekter({ onNavigate }: { onNavigate?: (tab: string) => void }) {
@@ -72,13 +72,13 @@ export default function Prosjekter({ onNavigate }: { onNavigate?: (tab: string) 
               <div className="w-full md:w-[220px] lg:w-[260px] shrink-0 md:min-h-[260px] flex flex-col items-center gap-2">
                 <button
                   type="button"
-                  onClick={() => setActiveImage({ src: prosjekt.bildeUrl, alt: prosjekt.tittel })}
+                  onClick={() => setActiveImage({ src: prosjekt.bildeUrl, alt: prosjekt.tittel[lang] })}
                   className="w-full h-48 md:h-full relative bg-slate-800 overflow-hidden group cursor-zoom-in focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:outline-none rounded-lg border border-slate-700/60"
                   aria-label={bildeHintKort}
                 >
                   <Image
                     src={prosjekt.bildeUrl}
-                    alt={prosjekt.tittel}
+                    alt={prosjekt.tittel[lang]}
                     fill
                     className="object-contain object-center transition-transform duration-300 group-hover:scale-[1.03]"
                     sizes="(max-width: 768px) 100vw, 260px"
@@ -90,13 +90,13 @@ export default function Prosjekter({ onNavigate }: { onNavigate?: (tab: string) 
                       <button
                         key={img.src}
                         type="button"
-                        onClick={() => setActiveImage({ src: img.src, alt: img.alt })}
+                        onClick={() => setActiveImage({ src: img.src, alt: img.alt[lang] })}
                         className="relative h-12 flex-1 rounded-lg overflow-hidden border border-slate-700/60 bg-slate-800 cursor-zoom-in focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:outline-none"
-                        aria-label={img.alt}
+                        aria-label={img.alt[lang]}
                       >
                         <Image
                           src={img.src}
-                          alt={img.alt}
+                          alt={img.alt[lang]}
                           fill
                           className="object-contain object-center"
                           sizes="(max-width: 768px) 50vw, 120px"
@@ -112,22 +112,22 @@ export default function Prosjekter({ onNavigate }: { onNavigate?: (tab: string) 
               <div className="flex-1 min-w-0 p-6 md:p-8 flex flex-col justify-center overflow-hidden">
                 {prosjekt.visningsDato?.trim() && (
                   <span className="text-[10px] font-mono text-indigo-400 uppercase tracking-widest font-bold block mb-2">
-                    {prosjekt.visningsDato}
+                  {prosjekt.visningsDato}
                   </span>
                 )}
                 <h2 className="text-xl md:text-2xl font-black text-white tracking-tight leading-tight uppercase italic mb-4 break-words [overflow-wrap:anywhere]">
-                  {prosjekt.tittel}
+                  {prosjekt.tittel[lang]}
                 </h2>
                 <p className="text-slate-400 text-sm leading-relaxed mb-4 font-light break-words">
-                  {prosjekt.teaser}
+                  {prosjekt.teaser[lang]}
                 </p>
                 <div
                   className="text-slate-300 text-base leading-relaxed space-y-3 font-light break-words overflow-hidden
                   [&_a]:text-indigo-300 [&_a]:underline [&_a]:underline-offset-2
                   [&_a]:decoration-indigo-500/70 [&_a]:hover:text-indigo-200
-                  [&_a]:transition-colors"
+                  [&_a]:transition-colors [&_strong]:font-semibold [&_em]:italic"
                 >
-                  {prosjekt.innhold.split("\n\n").map((avsnitt, i) => (
+                  {prosjekt.innhold[lang].split("\n\n").map((avsnitt, i) => (
                     <p
                       key={i}
                       className="min-w-0"
@@ -166,7 +166,7 @@ export default function Prosjekter({ onNavigate }: { onNavigate?: (tab: string) 
               onClick={() => setActiveImage(null)}
               className="absolute top-3 right-3 z-10 px-3 py-1.5 rounded-full bg-slate-900/80 text-xs font-black uppercase tracking-widest text-slate-300 hover:text-white hover:bg-slate-800 transition-all"
             >
-              Lukk
+              {lang === "no" ? "Lukk" : "Close"}
             </button>
             <div className="w-full h-full flex flex-col items-center justify-center p-4 overflow-auto">
               <Image

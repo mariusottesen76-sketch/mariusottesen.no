@@ -9,14 +9,14 @@ import { getTranslation } from './data/translations';
 
 interface InnleggType {
   id: string;
-  tittel: string;
-  teaser: string;
+  tittel: { no: string; en: string };
+  teaser: { no: string; en: string };
   bildeUrl: string;
   dato: string;
   visningsDato: string;
   kategori: string;
   link: string;
-  innhold?: string;
+  innhold?: { no: string; en: string };
 }
 
 const Faginnlegg = ({ onNavigate }: { onNavigate?: (tab: string) => void }) => {
@@ -87,7 +87,7 @@ const Faginnlegg = ({ onNavigate }: { onNavigate?: (tab: string) => void }) => {
                       className="border-b border-slate-800/40 hover:bg-slate-900/40 cursor-pointer transition-colors"
                     >
                       <td className="py-1.5 px-2 text-sm text-slate-300 hover:text-indigo-300">
-                        {innlegg.tittel}
+                        {innlegg.tittel[lang]}
                       </td>
                     </tr>
                   ))}
@@ -111,7 +111,7 @@ const Faginnlegg = ({ onNavigate }: { onNavigate?: (tab: string) => void }) => {
                       className="border-b border-slate-800/40 hover:bg-slate-900/40 cursor-pointer transition-colors"
                     >
                       <td className="py-1.5 px-2 text-sm text-slate-300 hover:text-indigo-300">
-                        {innlegg.tittel}
+                        {innlegg.tittel[lang]}
                       </td>
                     </tr>
                   ))}
@@ -131,7 +131,7 @@ const Faginnlegg = ({ onNavigate }: { onNavigate?: (tab: string) => void }) => {
           <div className="flex flex-col gap-4">
             {ledelseInnlegg.length > 0 ? (
               ledelseInnlegg.map((innlegg) => (
-                <InnleggsKort key={innlegg.id} innlegg={innlegg} onClick={() => setAktivtInnlegg(innlegg)} lesLabel={tr("fag.les")} />
+                <InnleggsKort key={innlegg.id} innlegg={innlegg} lang={lang} onClick={() => setAktivtInnlegg(innlegg)} lesLabel={tr("fag.les")} />
               ))
             ) : (
               <div className="p-12 rounded-2xl border border-slate-800 bg-slate-900/40 italic text-slate-500 text-center font-light">{tr("fag.nye")}</div>
@@ -146,7 +146,7 @@ const Faginnlegg = ({ onNavigate }: { onNavigate?: (tab: string) => void }) => {
           <div className="flex flex-col gap-4">
             {aiInnlegg.length > 0 ? (
               aiInnlegg.map((innlegg) => (
-                <InnleggsKort key={innlegg.id} innlegg={innlegg} onClick={() => setAktivtInnlegg(innlegg)} lesLabel={tr("fag.les")} />
+                <InnleggsKort key={innlegg.id} innlegg={innlegg} lang={lang} onClick={() => setAktivtInnlegg(innlegg)} lesLabel={tr("fag.les")} />
               ))
             ) : (
               <div className="p-12 rounded-2xl border border-slate-800 bg-slate-900/40 italic text-slate-500 text-center font-light">{tr("fag.nye")}</div>
@@ -156,27 +156,27 @@ const Faginnlegg = ({ onNavigate }: { onNavigate?: (tab: string) => void }) => {
       </div>
 
       {aktivtInnlegg && (
-        <InnleggModal innlegg={aktivtInnlegg} onClose={lukkModal} onNavigate={onNavigate} linkedinLabel={tr("fag.linkedin")} ctaText={tr("fag.cta")} ctaLink={tr("fag.cta.link")} />
+        <InnleggModal innlegg={aktivtInnlegg} lang={lang} onClose={lukkModal} onNavigate={onNavigate} linkedinLabel={tr("fag.linkedin")} ctaText={tr("fag.cta")} ctaLink={tr("fag.cta.link")} />
       )}
     </div>
   );
 };
 
 /* ——— KORT ——— */
-const InnleggsKort = ({ innlegg, onClick, lesLabel }: { innlegg: InnleggType; onClick: () => void; lesLabel: string }) => {
+const InnleggsKort = ({ innlegg, lang, onClick, lesLabel }: { innlegg: InnleggType; lang: "no" | "en"; onClick: () => void; lesLabel: string }) => {
   return (
     <div
       onClick={onClick}
       className="group bg-slate-900/40 rounded-2xl border border-indigo-500/20 p-4 sm:p-6 hover:bg-slate-900/60 transition-all duration-300 shadow-xl flex flex-col sm:flex-row items-start gap-4 sm:gap-6 w-full text-left min-h-[200px] cursor-pointer"
     >
       <div className="w-full sm:w-[105px] h-[120px] sm:h-[160px] shrink-0 rounded-lg overflow-hidden bg-slate-800 border border-slate-800">
-        <Image key={`${innlegg.bildeUrl}-${innlegg.dato}`} src={`${innlegg.bildeUrl}?v=${innlegg.dato}`} alt={innlegg.tittel} width={105} height={160} className="w-full h-full object-cover transition-all duration-500" unoptimized />
+        <Image key={`${innlegg.bildeUrl}-${innlegg.dato}`} src={`${innlegg.bildeUrl}?v=${innlegg.dato}`} alt={innlegg.tittel[lang]} width={105} height={160} className="w-full h-full object-cover transition-all duration-500" unoptimized />
       </div>
       <div className="flex-1 min-w-0 flex flex-col justify-between overflow-hidden">
         <div className="overflow-hidden">
           <span className="text-[9px] font-mono text-indigo-400 uppercase tracking-widest font-bold block mb-1">{innlegg.visningsDato}</span>
-          <h3 className="text-lg font-bold text-white leading-tight truncate mb-1 group-hover:text-indigo-300 transition-colors">{innlegg.tittel}</h3>
-          <p className="text-slate-400 text-[13px] leading-relaxed line-clamp-3 font-light">{innlegg.teaser}</p>
+          <h3 className="text-lg font-bold text-white leading-tight truncate mb-1 group-hover:text-indigo-300 transition-colors">{innlegg.tittel[lang]}</h3>
+          <p className="text-slate-400 text-[13px] leading-relaxed line-clamp-3 font-light">{innlegg.teaser[lang]}</p>
         </div>
         <div className="mt-auto pt-2 flex items-center gap-4">
           <span className="inline-flex items-center gap-1 text-[9px] font-black uppercase tracking-widest text-indigo-400">
@@ -229,9 +229,9 @@ function stripDuplicateTitle(innhold: string, tittel: string): string {
 }
 
 /* ——— MODAL ——— */
-const InnleggModal = ({ innlegg, onClose, onNavigate, linkedinLabel, ctaText, ctaLink }: { innlegg: InnleggType; onClose: () => void; onNavigate?: (tab: string) => void; linkedinLabel: string; ctaText: string; ctaLink: string }) => {
-  const bodyRaw = innlegg.innhold || innlegg.teaser;
-  const bodyWithoutTitle = innlegg.innhold ? stripDuplicateTitle(innlegg.innhold, innlegg.tittel) : bodyRaw;
+const InnleggModal = ({ innlegg, lang, onClose, onNavigate, linkedinLabel, ctaText, ctaLink }: { innlegg: InnleggType; lang: "no" | "en"; onClose: () => void; onNavigate?: (tab: string) => void; linkedinLabel: string; ctaText: string; ctaLink: string }) => {
+  const bodyRaw = innlegg.innhold?.[lang] || innlegg.teaser[lang];
+  const bodyWithoutTitle = innlegg.innhold ? stripDuplicateTitle(innlegg.innhold[lang], innlegg.tittel[lang]) : bodyRaw;
 
   return (
     <div className="fixed inset-0 z-50 flex items-start justify-center bg-black/80 backdrop-blur-sm overflow-y-auto py-8 px-2 sm:px-4 modal-enter" onClick={onClose}>
@@ -244,7 +244,7 @@ const InnleggModal = ({ innlegg, onClose, onNavigate, linkedinLabel, ctaText, ct
           <Image
             key={`${innlegg.bildeUrl}-${innlegg.dato}`}
             src={`${innlegg.bildeUrl}?v=${innlegg.dato}`}
-            alt={innlegg.tittel}
+            alt={innlegg.tittel[lang]}
             width={420}
             height={600}
             className="max-w-[420px] md:max-w-[520px] max-h-[68vh] md:max-h-[75vh] w-auto h-auto object-contain rounded-lg"
@@ -259,11 +259,11 @@ const InnleggModal = ({ innlegg, onClose, onNavigate, linkedinLabel, ctaText, ct
             <span className="text-[10px] font-bold text-indigo-400 uppercase tracking-widest">{innlegg.kategori}</span>
           </div>
 
-          <h2 id="modal-title" className="text-3xl md:text-4xl font-black text-white tracking-tight leading-tight uppercase italic">{innlegg.tittel}</h2>
+          <h2 id="modal-title" className="text-3xl md:text-4xl font-black text-white tracking-tight leading-tight uppercase italic">{innlegg.tittel[lang]}</h2>
           <div className="w-16 h-0.5 bg-indigo-500/40" />
 
           <div
-            className="text-slate-300 text-base leading-relaxed space-y-0"
+            className="text-slate-300 text-base leading-relaxed space-y-0 [&_strong]:font-semibold [&_em]:italic"
             dangerouslySetInnerHTML={{
               __html: (bodyWithoutTitle || bodyRaw)
                 .split("\n\n")

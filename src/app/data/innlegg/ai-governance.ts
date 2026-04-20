@@ -1,4 +1,17 @@
-export const aiGovernance = [
+type LocalizedText = {
+  no: string;
+  en: string;
+};
+
+type LocalizedTextMap = {
+  tittel: string;
+  teaser: string;
+  innhold: string;
+};
+
+const localize = (no: string, en: string = no): LocalizedText => ({ no, en });
+
+const aiGovernanceRaw = [
     {
       id: "ai-needs-first-tannklinikk-case-01",
       tittel: "De fleste starter feil med AI – erfaringer fra et reelt case",
@@ -1208,3 +1221,1047 @@ Neste steg i serien handler om lederens dømmekraft. Når AI blir en del av besl
 AI-dømmekraft er ikke en teknisk nisjeferdighet. Det er en lederkompetanse.`
     }
   ];
+
+const aiGovernanceEn: Record<string, LocalizedTextMap> = {
+  "ai-needs-first-tannklinikk-case-01": {
+    tittel: `Most people start wrong with AI - lessons from a real case`,
+    teaser: `From AI Value Lab Oslo and a real dental clinic case: start with the business and needs — not with "which AI solution?" Website, chatbot and booking in the correct order.`,
+    innhold: `At Easter and last week, I continued to work on a concrete case through my group AI Value Lab Oslo, where we use a real dental clinic as a learning arena to test how AI can be used in practice.
+
+We didn't start with technology. We started the business.
+
+Through analysis, research, interviews and discussions, we worked our way to one core point: Where is friction experienced in everyday life?
+
+What works well today?
+Where are the bottlenecks?
+Where does the clinic lose time, capacity or potential income?
+
+We also looked at what the competitors do better, particularly in how they meet patients digitally and operationally.
+
+The picture that emerged was clear:
+The professional quality and patient experience are strong, but there is a gap in the digital and commercial areas around. So not in the core delivery, but in what happens before and after.
+
+That is why we are now working to modernize the patient journey, and consider how AI and digital solutions can strengthen:
+🦷 booking and availability
+🦷 follow-up and repurchase
+🦷 clear information and patient communication
+🦷 more efficient work processes
+🦷 better operational support in everyday life
+
+Specifically, we are now working with:
+- further development of the website (better structure and more relevant information)
+– new chatbot (never had before)
+- new online booking solution (not previously available)
+
+Everything is developed based on the actual needs of the patients. The point is not the tools themselves, but the order.
+
+Most businesses, on the other hand, start with the question:
+"Which AI solution should we choose?"
+
+In practice, one should start in a completely different place by asking:
+"Which decisions and processes affect the outcome?"
+
+I recognize this from commercial organisations:
+Prioritization of customers is done differently from person to person.
+Follow-up of offers is governed as much by capacity as by potential.
+Pipeline and forecast are often characterized more by optimism than structure.
+
+This does not mean that it is done poorly, but that there is considerable potential for improvement. This is where AI can help!
+
+A model can analyze patterns and suggest the next best course of action. But the value only arises when it is used to make better decisions in practice.
+
+Since these AI posts are meant as expertise sharing, I also briefly mention the tools we are testing. Solutions have been developed with Claude and Claude Code, with content from FAQs and today's website built on localhost, with further plans for deployment via Vercel. Website work in parallel in Lovable. Not because the tools are important, but because more people are asking what is actually used in practice.
+
+👉 In the next post, I look at why many AI initiatives stall, even when they get off to a good start.
+
+PS. Easter was otherwise spent in Røros and Svalbard with experiences that remind me of something important: Not everything should be optimized. Cross-country skiing, alpine skiing, snowmobiling, dog sledding, wild animals and time with family and friends still beat most - the real is not artificial.`,
+  },
+  "ai-value-lab-munch-kickoff-01": {
+    tittel: `Kick off at Munch with AI Value Lab Oslo`,
+    teaser: `Easter lunch at Munch: explore responsible AI where communication, expectations and security matter a lot - from strong emotions to visits to the dentist.`,
+    innhold: `At Easter we had a kick off lunch, and we in AI Value Lab Oslo met at 𝘔𝘜𝘕𝘊𝘏.
+
+It really felt like a pretty appropriate place to start.
+
+Munch's universe is about strong emotions, unrest and human reactions. So do many people's encounters with health services. For some, a visit to the dentist can be associated with uncertainty, friction and, in some cases, dental fear. Then it is not so difficult to understand why such experiences are worth learning more about.
+
+In this phase, we spend time exploring how AI can be used in a responsible and thoughtful way in situations where communication, expectations and security matter a lot.
+
+What we are particularly concerned about now is what actually happens in the meeting between people, information and technology. Where does uncertainty arise? What creates security? And where can AI be useful, without compromising privacy, judgment or human proximity?
+
+For us, this is not just about technology. It is also about learning along the way, about building better understanding, developing skills and sharing reflections across disciplines.
+
+Perhaps one of the most interesting things about AI is not the pace or the effect itself, but how the technology can be used more carefully, more precisely and more humanely.
+
+From Munch's time to our own, the tools have changed a lot. The need to understand people remains the same.
+
+Perhaps some of the most interesting AI exploration is precisely this: not to make the human less important, but to better understand what makes an experience safer and more coherent.
+
+It will be exciting to explore this together further, Tatiana Hanecakova and Ole Mjelde!`,
+  },
+  "april-ai-kompetanse-praksis-01": {
+    tittel: `We have now found a simple way to build AI competence in the organisation`,
+    teaser: `AI competence is not built on courses alone, but in decisions and practice close to the core work.`,
+    innhold: `We haven't found a simple way to build 𝐀𝐈 competence in the organization zone
+
+Send everyone on a course!
+
+Or maybe not. This was an attempt at a bad 𝐀𝐩𝐫𝐢𝐥𝐬𝐧𝐫𝐫𝐫:
+
+Many managers are waiting for AI – can you imagine why? It's not about because they don't want to, but because they don't see where to start. It is largely understandable.
+
+In recent months, I have attended several courses and gatherings about AI. I like it. It provides energy, new perspectives and a language to understand what is happening.
+
+But one thing has become very clear: development is not happening there. It only happens when AI is moved into everyday working life and connected to decisions that actually matter.
+
+So far in this AI series, I've written about judgment, structure, and how humans react when AI starts giving advice. Now I move on to what many managers are actually concerned with:
+
+How is value created in practice?
+
+In commercial teams, I see a clear distinction. Someone is testing AI on the site. Create texts, summarize documents, try things out. It's useful, but it doesn't move much. Others connect AI directly to core decisions:
+ • Which customers should be prioritized?
+ • Which offers should be followed up now?
+ • Where is the real probability of winning?
+
+That is WHERE the difference occurs.
+
+A model can analyze the pipeline and suggest the next best course of action. But the value is not in the answer. It lies in what the team does with it. Do they test the recommendation? Do they challenge it? Do they adjust the decision?
+
+That is where the COMPETENCE is built. Not in the tool, but in the interaction between experience, data and assessment.
+
+I notice it myself when I build and test AI tools. Small changes in context or input produce different recommendations. It makes one thing clear in the form that this is not something you "completely learn". You develop it through use. Therefore, I think many people overestimate the need to start with technology. The most important thing in the initial phase is not new systems, but connecting AI to decisions that are already made today.
+
+The businesses that are most successful do not build AI expertise alongside their operations. They build it in the line.
+
+For the next week I will be building and testing AI agents. It involves the use of various tools, but primarily learning, testing and challenging what I do and the answers that are given.
+
+👉 In the next post, I look more closely at how to identify the right AI use cases to start with.
+
+Happy Easter!`,
+  },
+  "iteam-operativ-modell-2026-01": {
+    tittel: `Is your commercial operating model rigged for 2026?`,
+    teaser: `Reflections from iteam's breakfast seminar: AI as a new operating system, cyber security as a foundation and agents that actually do work.`,
+    innhold: `Is your commercial operating model rigged for 2024?
+
+Yesterday I attended iteam and Michael Jacobs' breakfast seminar at Saga Kino in Oslo - an event with over 800 participants spread over 29 locations. The message was crystal clear: We are in a technological shift that requires a fundamental recalibration of how we lead, secure and scale businesses.
+
+In the meeting, it was highlighted that the gap between those who only see AI as a tool, and those who understand it as a new commercial operating system, is increasing rapidly. Investing in deep AI understanding and change management now is not just an advantage, but a critical capability for any leader navigating the years ahead.
+
+Here is my strategic summary of the most important drivers for 2026:
+
+<strong>1. The technological paradigm shift</strong>
+We have moved from the 90s focus on software to the 2000s cloud services. We are now entering the age of autonomous agents.
+• From tool to digital workforce: AI is moving from being a passive assistant to becoming an active agent that automates routine tasks, analyzes huge data sets and supports strategic decisions.
+• Global technology - local consequences: The technology is available to everyone, but the competitive advantage is created locally by those managers who are able to operationalize AI in their value chain.
+
+<strong>2. Cyber security as a strategic foundation</strong>
+Roar Thon from NSM delivered a grim reality orientation: The threat picture is characterized by state actors and organized criminals.
+• Identity is the new attack surface: Attackers rarely hack systems. They log in via misused user identities.
+• Broad security: A holistic approach requires control over technology, people and processes.
+• Four critical capabilities: Any modern business must be able to prevent, detect, manage and normalize operations after an attack.
+
+<strong>3. AI in operational practice: Microsoft Copilot</strong>
+Daniel Horgmo from Microsoft demonstrated how we are moving from simple chat to actual autonomous agents that act as a digital workforce.
+• Precise delegation: Success with AI requires “Prompting 101” – the ability to provide goals, context and sources as if delegating to a team member.
+• Agent Mode: Through Copilot, we now see agents that perform multi-step tasks autonomously directly in our core systems.
+
+<strong>My strategic conclusion:</strong>
+I believe that success requires us to stop looking at security and AI as IT projects. Cultural and structural changes are needed.
+• Start small, think big. Test on a small scale, but have a clear strategy from management.
+• Data discipline: Good data and strict access management are the prerequisites for AI effect.
+• Security by design: Integrate security from the start as it is significantly cheaper than dealing with a crisis.
+
+Thanks to iteam for a professional deep dive into the future.`,
+  },
+  "ai-tech-frokost-rebel-01": {
+    tittel: `Tech breakfast: Now it's about what AI agents can do for business`,
+    teaser: `AI agents create value when connected to systems, data and processes — with control, clear instructions and human in the loop.`,
+    innhold: `At the AI ​​agent meeting at Digital Norway yesterday, we got a good picture of where the agent field stands now, from conceptual understanding, via the public sector and governance, to startup, scaling and concrete construction.
+
+Many still talk about AI as better text, faster searches and smarter assistants. That is not where the value lies. The value arises when AI connects to systems, data and processes – and performs work.
+
+Alexander Haneng from Digital Norway set the scene well. A chatbot answers. An assistant helps. An agent acts. It can trigger processes, retrieve data, send email and work in the background. At the same time, the risk increases. Access to systems and data requires control, clear instructions and limited rights.
+
+Kjetil Ringstad from the Norwegian Road Administration showed how this is implemented in a large company. Not as technology alone, but as structure and management. A model that worked well was how employees build their own agents, experts build joint solutions and developers build platforms.
+
+The case with document control was concrete. Agents identify sensitive information, suggest changes and reduce manual work. At the same time, two principles are crucial: the handling of sensitive data must be controlled, and human in the loop must be in place before anything is published. This is where many encounter the real complexity.
+
+Einar Michaelsen from Circular showed how this looks when it is connected directly to the value chain. Products can be digitized, categorized, priced and published in seconds. Sales agents find leads, score them and set the next step in the process. When 4 people work together with 40 agents, that says something about the direction!
+
+The stack behind was, among other things, Linear, Claude Code, Cursor, GitHub, Supabase, Vercel, Gemini, etc. The value lies in how this is connected to a production line. For me, it was fun to see this, as I have experience with several of the tools and am now working on building my own agent solutions.
+
+What distinguishes those who are having an effect now is how they start. Not with technology, but with concrete tasks. Repetitive work across systems, with clear rules and measurable value. A simple agent with limited access including human control is then built. When this works, it scales.
+
+My take is simple. The question is not which models to use. The question is which work can be delegated, which processes should be redesigned and where this actually adds value.
+
+It is also the background to the fact that I am now concretely working on building agents, with the ambition of a measurable effect in a business I collaborate with.
+
+Inside the venue was a DeLorean with a "REBEL" license plate. In the film Back to the Future, it was about traveling forward in time. With AI, it feels more like we build it. AI agents are the way forward!`,
+  },
+  "nova-day-data-forst-01": {
+    tittel: `NOVA Day: Data first – always`,
+    teaser: `I attended NOVA Day and got clear takeaways about data first, judgment and governance as a foundation.`,
+    innhold: `Yesterday I attended 𝗡𝗢𝗩𝗔 𝗿𝗿 at Hotel Bristol - a very relevant and insightful full-day seminar with the theme "𝐗𝐮𝐮 first - 𝑅 all time", with a focus on AI, data and the business models of the future.
+
+The day was led by Morten Blomfeldt, and brought together strong speakers.
+
+My most important takeaways:
+1. Data first – not AI first
+The overall message was that without the right data base, the gains will not materialise. AI is business-critical, but data is the foundation for scaling and value creation.
+
+2. The future is being shaped now – but not by technology alone
+Gerd Leonhard highlighted the importance of human judgement, ethics and responsibility. Technology provides opportunities, but it is management that determines direction and consequences.
+
+3. Data quality, risk and governance are critical
+Iselin Paulsen showed how geopolitics, security and regulation affect technology choices. Data quality, control and clear ownership in management are essential.
+
+4. From hype to craftsmanship – where most fail
+Ørjan Segtnan Clausen was clear: Most AI initiatives stop at the pilot stage. The reason is a lack of understanding of the problem, a weak data base and the absence of a clear value definition. Among other things, he pointed to the ADDDD framework (Align, Discover, Define, Develop, Deliver) as a structure to ensure that AI initiatives go from idea to business value.
+
+5. AI goes from tool to actor
+The most exciting thing for me was the insight from Lars Alexander Jakobsen about MCP (Model Context Protocol) and the development towards A2A (Agent-to-Agent). When AI is connected directly to systems and agents interact, we are moving towards operational "digital colleagues". This will fundamentally change how we organize work and create value.
+
+In the middle of the day, there was also a panel debate that linked the perspectives together. The discussion was about geopolitics, dependence on global technology suppliers, digital sovereignty and the need for clearer strategic choices. This is no longer an IT issue, but a managerial responsibility.
+
+My reflection:
+"Data first - always" is not a technology choice. It is a strategic choice - and a clear managerial responsibility.
+
+What struck me the most is that many people still work with AI as a tool, while the gains only come when processes and responsibilities are redesigned.
+For me, this is also a commercial shift, where AI will affect sales, customer experience and value creation in practice.
+
+As we see the rise of MCP and A2A, we are moving towards a new operational model where AI agents not only support but perform work across systems. We are talking new architecture for how work is done!
+
+👉 I am also actively working on this now as I consider it important to understand how this is implemented in practice, not just at the level of theoretical frameworks.
+
+Thank you to NOVA Consulting Group for a very well-executed event - and not least nice to meet many new acquaintances and have good professional discussions throughout the day!`,
+  },
+  "ai-value-lab-01": {
+    tittel: `We have started something that I believe more managers should do`,
+    teaser: `An informal community to build, share and challenge each other with AI — for real business value.`,
+    innhold: `We have started something that I think more leaders should do.
+
+For me, this has become an arena where I both learn faster and get to test my own hypotheses in practice.
+
+We are three people with one common ambition:
+Creating real business value with AI.
+
+We have established an informal collaboration we call "𝗔𝗜 𝗩𝗮𝗮𝗺 𝗗𝗮𝗮𝗮𝗮𝗮𝗮𝗮𝗮𝗮𝗼𝗮𝗮𝗮𝗮𝗮𝗮𝗶𝗮𝗮𝓁
+
+Not just to test tools, but to actually build, share and challenge each other systematically.
+
+We meet regularly for what we call "Shock & Shout".
+
+Here we share concretely what we have been working on since the last time:
+• AI agents, applications and websites we have developed
+• Experiment across models and tools. What works, what doesn't
+• Comparison of strengths and weaknesses between different AI solutions
+• Insights from meetings, workshops and courses we attend, as well as input and tips for other and new subject areas and themes
+
+But what makes this special is the depth of the discussions. We also spend time on what many skip:
+• How to use data that provides competitive advantage
+• Governance – how to ensure control, quality and accountability
+• Frameworks such as ADDDD (Align, Discover, Define, Develop, Deliver) - and how it is used in practice
+• How to go from pilot to scalable value
+
+At the same time, we do not only work with experiments. We deal with real problems and use cases.
+
+Our hypothesis is simple. AI does not create value in silos. It creates value when different units work together. Just as departments in businesses have to do.
+
+What I'm left with so far is a pretty clear realization. Many work with AI on an individual level. Few manage to build structures that create value at company level.
+
+Our approach is therefore deliberate:
+👉 Combine practical construction with strategic understanding
+👉 Connect AI directly to commercial use-cases
+👉 Learn faster together than individually
+
+Next step? We will build something together that has a real effect - and that can be scaled.
+
+For me, this is at least as much about management as technology.
+
+Management that is able to connect experimentation with direction.
+Management that understands both data, governance and value creation.
+Management that delivers effect and results.
+
+We are early. We build, not just talk. In a double sense. Looking forward to the continuation Ole Mjelde and Tatiana Hanecakova!
+
+Sky is the limit. But only for those who convert AI into value.`,
+  },
+  "ai-debatten-hype-vs-frykt-01": {
+    tittel: `The AI ​​debate still runs in two tracks: hype vs fear`,
+    teaser: `When the debate locks onto "hype" and "fear", it becomes difficult to see value creation in practice. It is adoption that moves operations.`,
+    innhold: `But the real distinction happens elsewhere.
+
+After following <strong>The Debate</strong> on <strong>NRK1</strong> this week, I am left with two clear reflections.
+
+Firstly:
+<strong>AI is no longer something we discuss from a distance.</strong> It is already changing how businesses operate.
+
+The examples from, among others, the Oil Fund are clear. Nicolai Tangen showed how they have already documented significant gains. They have increased productivity by around 20 per cent and saved billions through better analysis, monitoring and decision support.
+
+This is not experimentation, but real value creation in practice.
+
+Secondly:
+As is also highlighted in the discussion around AI in Norway, we need more perspectives. AI is not one subject, but it ranges from technology and mathematics to business, management, security and society.
+
+If the debate is limited to who has the "right" to say something, we risk narrowing understanding and at the same time delaying necessary development. This breadth of perspectives is crucial for making better decisions and ensuring the responsible use of AI.
+
+Nicolai Tangen was clear that businesses that do not use this risk falling behind.
+
+👉 Those who adopt quickly get a structural advantage. This applies to both individuals and organisations.
+
+On an individual level, we see that those who adopt AI develop faster. They work more efficiently, make better decisions and increase their own value in the labor market.
+
+At organizational level, it is not about individual tools, but about how you work. AI must be integrated into core processes, expertise must be built broadly, and working methods must change. From pilot projects to actual operation and decision-making.
+
+This is where the difference is created, while at the same time we must avoid two extremes. Naivety, where you uncritically throw yourself into everything. Or action paralysis, where the debate becomes more important than progress. Both parts weaken the ability to create value.
+
+My reflection is that AI will not primarily create winners. It will clarify who is able to develop the fastest and convert technology into concrete value.
+
+The question is not who is right in the AI ​​debate.
+The real question is who manages to create real value from it.`,
+  },
+  "ai-dommekraft-bias-01": {
+    tittel: `When AI gives advice - who do we really trust?`,
+    teaser: `AI doesn't remove human bias, it can amplify it. Reflections on how we interpret and use AI recommendations in commercial decisions.`,
+    innhold: `This week I am participating in NOVA Day. Many of the conversations there are naturally about what AI can do for businesses. It is important, but one issue that I believe receives too little attention is how people react when the systems start giving advice.
+
+AI does not eliminate human bias, but rather can amplify it.
+
+Part of the explanation lies in how generative AI actually works. The models do not respond because they "know". They statistically calculate what is the most likely next word based on large amounts of training data and the context they are given. This means that the models reflect patterns in the data and are influenced by how we frame the question.
+
+But bias does not only occur in the model. It also occurs in the meeting between model and human.
+
+Research from, among others, MIT Sloan, Harvard Business School and Stanford points to several mechanisms that can weaken decision-making quality when AI is used in practice:
+
+<strong>Automation bias</strong>
+When people attach too much importance to the recommendation from the system, because it comes from a model and is perceived as objective.
+
+<strong>Algorithm aversion</strong>
+When people lose confidence in the model after one visible error, and then reject it entirely, even though over time it may be better than gut feeling alone.
+
+<strong>Data bias</strong>
+If the data base is skewed, so will the analyses.
+
+<strong>Confirmation bias</strong>
+We like to interpret AI responses in a way that confirms what we already believe.
+
+In practice, I see this clearly in commercial situations. An AI model can analyze sales data and suggest which customers should be prioritized, which offers should be followed up or which accounts have the greatest growth potential. The salesperson or manager can make two mistakes by either following the recommendation blindly, or ignoring it completely.
+
+If the recommendation is followed uncritically, biases in the data or model can be reinforced. If it is rejected because it "feels wrong", you simultaneously lose the value of the pattern recognition the model can actually add.
+
+This is where the management challenge lies.
+
+The mature organization does not ask people to choose between technology and discretion. It builds processes where recommendations are tested, model limitations are understood, and analysis is combined with judgment. In other words, a culture is being built where people still ask questions, even when the system seems secure. It is only then that AI becomes decision support in the true sense of the word.
+
+To me, this is one of the most interesting things about AI right now. Not just what the model can produce, but what happens to our judgment ability when the answer comes quickly, looks convincing, and is wrapped with high confidence.
+
+In the work of building and testing my own AI models and tools, I notice this clearly. Small adjustments in data, context or instructions can produce different recommendations. It constantly reminds me that the model gives suggestions and not definitive answers. Testing is a necessity on an ongoing basis.`,
+  },
+  "ai-ready-virksomhet-01": {
+    tittel: `When is a business AI-ready?`,
+    teaser: `Many invest in AI, but fewer prepare the organization. A review of the four areas that determine whether a business is equipped to extract value from technology.`,
+    innhold: `Many businesses say they are working with AI. Fewer have prepared the organization for what it entails.
+
+The technology is available to everyone. The real difference lies in how the business organizes decisions, data and responsibilities around it.
+
+McKinsey points out that many companies invest heavily in AI, but get limited effect because the organization is not equipped to use them. The problem is rarely the model. It's the structure around it.
+
+MIT Sloan describes that many organizations start their AI work with technology. Those who succeed start with decisions. Only when you know which decisions need to be improved does it make sense to build AI solutions.
+
+A commercial example illustrates the point: An AI model can analyze sales data and suggest which customers should be prioritized. It can rank probability of purchase, margin and next action. But if the organization has not clarified who owns the decision, which criteria apply or how the recommendation is to be used, the result is often more analysis and not better decisions.
+
+Through the work with generative AI, I see four areas that determine whether a business is AI-ready:
+
+<strong>1. The data base</strong>
+AI enhances the quality of input. Good data leads to better analyses. Fragmented or unstructured data only makes errors faster. In many commercial organizations, key information is scattered in CRM, presentations, emails and memos. Before AI can provide value, this must be structured.
+
+<strong>2. Decision Structure</strong>
+AI works best when decisions are clearly defined. Who owns the assessment? Which criteria apply? What is the mandate? Without this, you run the risk that the model delivers recommendations that no one really owns.
+
+<strong>3. Competence</strong>
+Tools alone do not create value. Managers and employees must understand how the models work, what limitations they have and how the output is critically assessed. It's not about becoming a technologist. It's about developing AI judgement.
+
+<strong>4. Anchoring responsibility</strong>
+The more AI influences decisions, the more important governance becomes. Who is responsible if the model gives an incorrect recommendation? Who adjusts the context or stops the use? This is a management issue, not a technology issue.
+
+Yu describes in the 5A model how the requirements for organization and competence increase when we move from access and assistants to applications, automation and agents. The more autonomy we give the systems, the more important the structure around them becomes.
+
+Therefore, the question is not just whether a business uses AI. It is whether the organization is equipped to use it.
+
+For businesses that want to move from AI experimentation to value creation, I assist through Marius Ottesen Consulting with strategic clarification and practical implementation in collaboration with technical specialists.
+
+👉 In the next post, I look at how organizations build AI competence in practice, without becoming dependent on a large internal tech environment.`,
+  },
+  "ai-arkitektur-beslutningsstotte-01": {
+    tittel: `I build AI architecture for decision support`,
+    teaser: `How generative AI can structure complex issues and give commercial managers a better decision-making basis through AI deconstruction.`,
+    innhold: `As a commercial manager, I have several times participated in strategy processes where the goal is to link ambitions to actual implementation. Such processes often involve many employees, external consultants and professional environments with different perspectives and agendas. The result can be extensive analyzes and presentations before you understand what the business needs to do differently.
+
+The challenge is well known: the strategy is clearly formulated, but the link to operational action is far weaker. Strategy documents, KPI structures, sales processes, tender documents and regulatory requirements create large amounts of information that are demanding to analyze systematically.
+
+I am therefore working on a method for using generative AI to structure and analyze such issues more effectively. The basic logic is simple:
+
+<strong>Documents and data → AI deconstruction → strategic insight → decision support</strong>
+
+AI analyzes text, structure and connections, identifies possible gaps and formulates hypotheses that give management a better starting point for assessments and decisions.
+
+Through vibe-coding and tools such as GPT-4o, Claude, Gemini, Cursor and Streamlit, I have developed a technical foundation that makes it possible to build several types of decision-making tools on the same architecture.
+
+<strong>From idea to tool</strong>
+The same analysis model can be used in several areas within commercial management:
+
+• <strong>Strategy and implementation</strong>
+AI can analyze strategy documents against operational plans, KPI structures and sales dashboards to identify where the strategy breaks down in the transition to operations.
+
+• <strong>Commercial excellence and sales</strong>
+Dynamic battlecards can be generated by analyzing competitor information and linking this to own value propositions, so that the sales team sells commercial value rather than pure product features.
+
+• <strong>Tenders and RFP processes</strong>
+Large requirements documents can be deconstructed so that the organization quickly identifies which requirements require strategic responses.
+
+• <strong>Governance and compliance</strong>
+AI can monitor regulatory changes and connect these to internal procedures so that the business can more quickly identify what needs to be updated.
+
+• <strong>Onboarding and capability development</strong>
+The same logic can be used to structure commercial frameworks so that new employees more quickly understand how the business works with strategy, sales and performance management.
+
+A concrete example. is the solution "The Predictive Sales Coach", where salespeople train against a dynamic virtual customer based on DISC and concrete sales phases, while the system analyzes the dialogue and provides improvement points to increase the win-rate in real customer meetings.
+
+The common denominator is the architecture behind and how Gen. AI can analyze complex issues, identify structural gaps and provide managers with a better decision-making basis.
+
+👉 I work on developing and applying such solutions in practice. If you are curious about how this can be used in your own business, I would be happy to have a chat.`,
+  },
+  "ai-dommekraft-kontekst-01": {
+    tittel: `AI judgment in practice – from prompt to context`,
+    teaser: `Why context engineering – not just prompt engineering – determines the quality of AI responses in practice.`,
+    innhold: `In my work with generative AI, one thing has become clear: <strong>The quality of the answer is decided long before the model starts writing.</strong> Small adjustments in context, instructions or parameters can make a marked difference in precision and structure, whether you build your own GPTs with documents or use standard models in open work processes.
+
+We often talk about prompt engineering. In practice, it is <strong>context engineering</strong> that determines the quality. An AI response is influenced not only by the question itself, but by system instructions, previous dialogue, documents retrieved, model selection and parameters such as temperature and top-p. Temperature controls the balance between creativity and consistency. In idea development, variety can be useful. In commercial decision-making processes it can be a risk factor.
+
+The structuring of the prompt itself is also of great importance. A simple formula raises quality significantly: persona, context, task, format, examples and tone. The difference between unstructured and structured input is often dramatic.
+
+The most important distinction, however, is between optimizing one interaction and designing the entire decision-making environment. Prompt engineering improves the answer here and now. Context engineering defines the framework within which the model works over time.
+
+Hallucinations illustrate why this is critical. The model optimizes for probable text, not truth. When the context is unclear or the problem formulation imprecise, the answer may appear convincing and at the same time be wrong. In a commercial context, the consequence can be significant. A model can analyze the pipeline and suggest the next best course of action. It can weight probability and margin. But without a clearly defined strategic context, the recommendation can be technically precise and business-wise wrong.
+
+MIT Sloan and McKinsey point to the same thing: Organizations that succeed with AI combine technology with clear human judgment and responsibility. The model can analyze patterns. It cannot understand strategic direction or context without us defining it.
+
+AI judgment is therefore about more than mastering a tool. It is about structuring the decision-making basis, designing the information framework within which the model works, understanding the limitations and evaluating the output critically before implementation. Yu describes in the 5A model how the requirements for competence increase the closer we move towards automation and agents. McKinsey points to the same thing: The technology is available to many. The ability to integrate it into decision-making processes is what differentiates it. Strategically, it is context engineering that provides lasting competitive advantage.
+
+For businesses that want to move from AI discussion to actual value creation, I assist through my company with both strategic clarification and practical implementation, in collaboration with technical specialists where necessary.`,
+  },
+  "strategi-ai-master-01": {
+    tittel: `Strategy without AI is like looking backwards in the mirror while driving forward`,
+    teaser: `AI is no longer a "nice to have" — it is a strategic necessity. Reflections from the Oslo Business Forum and the decision to enroll in the master's course Generative AI for Business at BI.`,
+    innhold: `A few weeks ago I attended the Oslo Business Forum 2025. A consistent theme from the stage was clear: <strong>AI is no longer a "nice to have" — it is a strategic necessity.</strong> 🤖
+
+🧠 <em>The message I particularly took with me was:</em>
+• Strategy must be developed in step with technology, not afterwards.
+• The businesses that manage to combine strategic thinking with new technology will be tomorrow's winners.
+• AI works not only as a tool, but as a catalyst for innovation and competitiveness.
+
+🎯 I have extensive experience with strategy, strategic management and development. Among other things, I have an Executive Master of Management from BI Norwegian Business School with specialization in strategic management and strategic communication.
+At work, responsibility for strategic management, development and business growth and results has been a common thread.
+AI, on the other hand, is an area in which I do not have the same background — but which I cannot afford to ignore.
+
+That's why I visited BI's stand at OBF, and last week I had an inspiring conversation with an adviser about how I can build this competence further. <strong>The result?</strong>
+👉 I have signed up for the master's course "<em>Generative AI for Business</em>" starting in February.
+
+Not for the credits. But because I want to explore how AI can be used strategically to drive innovation, open up new business opportunities and strengthen operational efficiency. 📈
+And because I sincerely believe that <strong>it is never too late to develop professionally</strong> — ambition is not just about performing more, but learning more. Those who are able to renew themselves are the strongest in tomorrow's competition. 🚀
+
+📚 The books have already been ordered — now I'm looking forward to learning more and "jump-starting" the study, and to combining strategic experience with new technology.
+
+What about you? Do you see AI as a strategic game-changer in your business where you actively take action — or as something you "take when it comes"? Hang on, then! 💪
+
+📌 PS. For the record: The image is AI-generated.</em>`,
+  },
+  "ai-learning-google-skills-01": {
+    tittel: `It is fascinating how easy it has become to acquire AI expertise through completely new and modern methods`,
+    teaser: `Recommendation of Google's learning universe for AI competence: Google Skills and Google Cloud YouTube series, with concrete modules to start with.`,
+    innhold: `It is fascinating how easy it has become to acquire AI expertise through completely new and modern methods. <strong>Google has assembled an impressive learning universe that makes it possible to build solid AI competence, regardless of technical background.</strong>
+
+Two platforms stand out in particular:
+
+✅ <strong>Google Skills</strong> – a complete learning platform with courses, practical lab tasks, progress tracking and certifications you can show directly on LinkedIn.
+
+✅ The <strong>Google Cloud YouTube Series</strong> – short, educational videos that provide a solid foundation before you get down to the more practical parts.
+
+I have now completed my first course, "<strong>Gen AI: Beyond the Chatbot</strong>", and am attaching the badge here in the mail. These are clear, academically strong courses - not a "low-level correspondence course", but comprehensive, relevant and practical learning.
+
+The inspiration to explore this came from the sharings of Morten Johnsen which really opened my eyes to the breadth of topics and possibilities in this "AI universe". Thank you very much, Morten!
+
+<strong>My recommendation:</strong>
+
+These YouTube modules are an effective place to start and gave me a good framework before diving deeper into the Google Skills courses:
+
+🎥 Introduction to Generative AI - part of AI Essentials
+🎥 Introduction to Large Language Models – basic module before Vertex AI
+🎥 Introduction to Responsible AI - mandatory in all races
+🎥 Introduction to AI Agents - explores how intelligent agent systems build and automate actions in complex environments
+🎥 Intro to Generative AI training course - clear overview of the learning course
+🎥 Introduction to Vertex AI Studio - useful for the practical labs
+
+For my part, this is also the perfect warm-up before I start the <strong>Master's program "Generative AI for Business"</strong> at BI in February. But first several AI-related courses from the Google Skills universe are due.
+
+For those who want to explore the possibilities:
+👉 https://lnkd.in/dM7WrkEe`,
+  },
+  "ai-ikke-intelligent-01": {
+    tittel: `AI is not intelligent — we have to be`,
+    teaser: `AI creates value only when we understand its limitations. Reflections from the BI webinar on when AI fits and when human judgment must take over.`,
+    innhold: `Reflections from yesterday's BI webinar "More Than Words: How to Know How AI Can (and Can't) Help You"
+
+Yesterday's webinar from BI with Auke Hunneman and Jan Ketil hit an important point:
+<strong>AI creates great value – but only when we understand the limitations.</strong>
+
+And I got to experience it myself, <em>the same day</em>:
+
+I asked an AI model to create a picture of me in an office setting. The result?
+It became "me"… but not me.
+Something was off. The face, the expression, the form - everything was somehow almost right, but not right enough. And precisely this is the core of what many who use AI should understand and challenge:
+
+<strong>1️⃣ AI predicts - it does not understand</strong>
+LLMs (and image generators) guess the most likely outcome based on huge amounts of data. They don't know what I look like. They don't understand identity
+
+Therefore, there is often something that looks similar, but does not match.
+
+<strong>2️⃣ AI gives poor ROI when the problem does not fit</strong>
+A distinction is made between three types of challenges:
+• <strong>Problems</strong> (predictable): forecasts → AI is strong
+• <strong>Secrets</strong> (hidden patterns): channel drivers → AI + expertise
+• <strong>Mysteries</strong> (unpredictable): interdisciplinary campaigns → people must coordinate
+
+To create a real picture of me?
+It falls between Secret and Mystery:
+AI does not have enough information → the result is uncertain → the human must evaluate
+
+<strong>3️⃣ The Cynefin framework</strong>
+<strong>Clear:</strong> Tasks with summary → automate
+<strong>Complicated:</strong> Analyzable, but demanding → AI + experts
+<strong>Complex:</strong> Must be tried out → experiment
+<strong>Chaotic:</strong> crisis, little time → act fast
+<strong>Aporetic:</strong> unclear problem → stop and ask new questions
+
+Getting the AI ​​to "understand Marius"?
+→ Aporetic + Secret: There is no facit for my face in the model
+
+<strong>4️⃣ Intelligence is more than words - and more than pixels</strong>
+AI can deliver text and images. But it cannot:
+- read the room
+– understand motivation
+- build teams
+- create culture
+- recognize me in a picture
+Here man is superior.
+
+<strong>5️⃣ Trust determines the result</strong>
+When people see a picture that is "supposed to be me" but doesn't look like it, they lose confidence. The same applies in organisations:
+Without trust in both numbers and each other, collaboration stops - no matter how advanced the AI model is
+
+<strong>What does this mean for managers – and for everyone who uses AI?</strong>
+It is a <strong>core competence</strong> to:
+• understand when AI fits
+• understand when human judgment must take over
+• combine data + people for real value
+• challenge inconsistent AI results
+
+<strong>If AI can't recognize my face - why should I blindly trust what it suggests?</strong>`,
+  },
+  "alle-snakker-ai-01": {
+    tittel: `Everyone is talking about AI – but what are we really doing?`,
+    teaser: `Introduction to a series on what AI actually means in practice — not just as a technology, but as a management and business discipline.`,
+    innhold: `The past year has – like many others – been characterized by a fast pace, exciting experiences, great expectations and rapid technological changes. For my part, it has also provided room for reflection, professional deepening and new opportunities, particularly in the field of AI and strategy. This deepening takes, among other things, the framework and curriculum literature from the master's course <em>Generative AI for Business</em> at BI, combined with practical exploration of various AI models and areas of application.
+
+<strong>This post marks the start of a series</strong> where in 2026 I will share reflections, frameworks and experiences around what AI actually means in practice – not just as technology, but as a management and business discipline.
+
+The background is simple: AI is often referred to as either a miracle tool or as something diffuse and technical. At the same time, I find that many managers – quite naturally – reduce AI to what they see in everyday life: ChatGPT, Copilot, a bit of automation. It gives a feeling of being "in progress", but also an uncertainty about what this really means strategically.
+
+The curriculum book "Generative AI for Business - a guide book" by Shubin Yu has been a good starting point for clearing this up. Not because it provides all the answers, but because it puts AI into a clear business and management context: value creation, decisions, organization, risk and people.
+
+At the same time, working with AI has made me see previous experiences in a new light. Much of what we previously called IoT, sensor technology, automation and robotisation, now appear as parts of the same ecosystem - where AI acts as a powerful accelerating layer.
+
+I hope this series can contribute to reflection, discussion - and some necessary realizations. For me, this is also an exciting journey of sharing, where I explore an area of ​​expertise that is still new to me, but which I find very inspiring to build my own expertise in. The ambition is both to learn further myself, and hopefully to contribute useful insight to others.
+
+I am happy to have the dialogue here on LinkedIn, or over an informal coffee conversation, with others who are curious about how AI can actually create value in practice.
+
+This will be my last post in 2025. Thank you for this year - I hope the year has provided room for both development, learning and good conversations. We will continue in 2026.`,
+  },
+  "ai-foles-nytt-01": {
+    tittel: `AI feels new – but this is not the start of the story`,
+    teaser: `AI is experienced as new, but is the culmination of decades of development. Looking ahead to the framework The five A's (Access to Agents).`,
+    innhold: `In my last post in 2025, I asked the question: <em>Everyone is talking about AI – but what are we really doing?</em>
+
+<strong>This post is the next step in the same series.</strong> In 2026, I will share reflections, frameworks and experiences around what AI actually means in practice - starting from the syllabus book <em>Generative AI for Business</em> by Shubin Yu, which is part of my master's study, combined with my own experiences and practical observations.
+
+Christmas has given room for quieter days, reflection and self-study. For me, this period has been an opportunity to further immerse myself in AI and strategy - both through the subject matter in the study and practical exploration of various AI models and areas of use.
+
+AI is experienced as new for many, but is in reality the culmination of several decades of technological development. Already in the 1950s and 1960s, the term artificial intelligence was introduced. Since then, we have been through several waves - from expert systems and neural networks, via machine learning, to deep learning and today's generative models.
+
+The breakthrough around 2020–2023 therefore did not mark the start of AI, but a clear shift in availability and application. Large language models made the technology practical, scalable and relevant in a business context.
+
+At the same time, I feel that many organizations are falling apart - something the book also addresses. We test the tools and see quick benefits, but often lack the strategic understanding: What is really new now, and what is required to create lasting value?
+
+In this series, I will use the book as a structured starting point and extract the main lines further along some clear tracks. Among other things, I will take a closer look at:
+• the transition from simple AI use to strategic transformation
+• the importance of data, context and own sources of information
+• what is required to implement AI in practice – from exploration to scaling
+• how AI affects management, people and commercial processes
+• as well as ethics, governance and responsibility
+
+Where it is natural, I will also connect this to my own experiences from previous roles - particularly within IoT, automation, robotization and data-driven ecosystems - which I see today more clearly in the context of AI.
+
+<strong>The next post comes on Wednesday</strong>, where I go into more detail about a central framework from the book: <strong>The five A's (from Access to Agents)</strong> - and why most organizations stop earlier than they think.
+
+I hope more people will share their own experiences, perspectives and questions along the way - either here in the comments section, in direct dialogue, or over an informal cup of coffee. This is a field where we are all still learning. Join me on my little "journey".`,
+  },
+  "access-til-agents-01": {
+    tittel: `From Access to Agents - why many stop early`,
+    teaser: `The framework The five A's: how AI is being used in businesses today, and why many stop earlier than they think.`,
+    innhold: `In the previous post, I wrote about how AI is often perceived as new, even though it is in reality based on several decades of technological development. This post is part of the AI ​​series I'm sharing this winter, where I explore what AI actually means in practice for management, organizations and value creation.
+
+Here I take a closer look at <em>how AI is being used in many businesses today</em>, and why many stop earlier than they themselves think.
+
+In the curriculum book <em>Generative AI for Business</em>, Shubin Yu introduces a framework that I find particularly useful for clearing this up: <strong>The five A's for applied generative AI in working life</strong>. The framework describes a spectrum of maturity levels – from simple use of AI to more integrated and autonomous systems.
+
+Simplified, the levels can be understood as follows, with examples many will recognize in:
+
+<strong>Access</strong>
+Using general AI tools such as ChatGPT, Gemini or Copilot to write, summarize and analyze. The value is often quick and visible, but primarily individual.
+
+<strong>Assistants</strong>
+More customized assistants with role or business context, for example a sales or HR assistant who knows internal data and working methods.
+
+<strong>Application</strong>
+AI is built into specific solutions for specific tasks, such as decision support, analysis or customer dialogue in limited systems.
+
+<strong>Automation</strong>
+AI is connected to workflows across systems, so that processes are connected from start to finish - with clear efficiency and scaling gains.
+
+<strong>Agents</strong>
+More autonomous systems that can plan, prioritize and carry out tasks within defined frameworks, with clear responsibility and control.
+
+The decisive point is not the levels themselves, but the transition between them. And this is precisely where many people stop.
+
+In many social media AI environments, I see a strong focus on "learning many models" or mastering as many AI tools as possible. It can be useful at the Access level, but provides limited value further up the pyramid. The higher one moves, the less it is about tools - and the more about structure, integration, management and responsibility.
+
+When AI is connected to data, processes and decisions, one goes from individual efficiency gains to organizational core competence. It is only then that AI becomes truly strategic.
+
+Therefore, AI and strategic use and implementation are also to a small extent an IT project. It is a managerial responsibility - in line with other strategic choices related to organisation, risk and value creation.`,
+  },
+  "fra-verktoy-til-system-01": {
+    tittel: `From tool to system – APIs, integration and manager selection`,
+    teaser: `The value of AI only occurs when it is connected to systems and processes via integration — not as a stand-alone tool. APIs and manager selection.`,
+    innhold: `In the previous post in this AI series, I wrote about <em>The five A's</em> and why many organizations stop using AI earlier than they think. This post builds on the same framework, and takes a closer look at what distinguishes simple AI use from more mature and integrated use.
+
+A term many have heard of, but few put into a strategic context, is <strong>API - Application Programming Interface</strong>. In the curriculum book <em>Generative AI for Business</em>, an API is described simply as a bridge that allows systems to talk to each other. It sounds technical, but the consequences are primarily organizational.
+
+As long as AI is used as a stand-alone tool, value creation occurs mainly at the individual level. You use ChatGPT, Copilot or similar, experience quick benefits and get a feeling of being "up and running". However, the figures show a clear paradox: Millions use generative AI, while only a small proportion of businesses have integrated the technology into their core processes. At the same time, studies estimate that around 95% of AI pilots have not produced a measurable financial gain, and can be interpreted as AI being overhyped. I think that is a fallacy.
+
+This pattern is well documented in analyzes from, among others, MIT, Gartner and Forrester: AI only creates value when it moves from experiments to operations. A lack of return is rarely about weak technology, but about the organization not being equipped to use it. Blue. Itera points out that many organizations stop at <strong>Access or Assistants level</strong>.
+
+Only when AI is connected via APIs to the company's systems, data and processes does a real shift take place - from <em>using AI</em> to <em>building with AI</em>. From the <strong>Application level upwards</strong> this is absolutely crucial. Without integrations, there will be no real automation, and no scalable value either.
+
+When I look back on my experiences with IoT, sensor technology, automation and robotics, this is very recognizable. The value was never in the technology in isolation, but in how data was connected to systems, decisions and work processes.
+
+In an age where technology works, scales and becomes increasingly affordable, it is not the tools that separate businesses from each other, but the ability to set good priorities, take ownership of decisions and translate AI into lasting value creation. This is where the difference between <strong>AI AWARE</strong> and <strong>AI READY</strong> becomes clear.`,
+  },
+  "fra-pilot-til-skalering-01": {
+    tittel: `From pilot to scaling – why so many AI initiatives stall`,
+    teaser: `Why so few AI initiatives scale even when the technology works. About ownership, process change and governance.`,
+    innhold: `In recent posts, I have written about how many organizations adopt AI, but stop earlier than they themselves think. Today I want to go one level deeper - to the question many managers actually have:
+
+<strong>Why do so few AI initiatives scale, even when the technology works?</strong>
+
+Several analyzes point in the same direction: AI is in use everywhere, but to a limited extent integrated into companies' core processes. The effect is often real, but fragmented and difficult to see as a whole (e.g. MIT, Gartner).
+
+This is not because AI "doesn't work".
+That's because the organization is often not equipped for scaling.
+
+Based on both research and practice, I see some recurring reasons why pilots stop:
+
+• <strong>Unclear ownership</strong> – many AI initiatives lack clear accountability when moving from pilot to operation (Gartner)
+• <strong>Lack of process change</strong> – new technology is added to old ways of working, without changing how the work is actually carried out (MIT Sloan)
+• <strong>Weak decision-making mandate</strong> – AI provides insight, but the decision-making flow remains unchanged (Forrester)
+• <strong>Immature governance</strong> – responsibility, risk and quality control are not clarified before solutions are scaled (Shubin Yu)
+• <strong>Data base without context</strong> – lots of data, but too little connection to actual decisions and business goals (Gartner, The Economist)
+
+<strong>A good starting point is to choose a concrete process, a clear decision and a responsible owner - and build from there.</strong>
+
+We often see the result of a lack of scaling now - AI helps individuals, but does not change how the business actually works.
+
+And here is an important point:
+Agents and more autonomous solutions do not come first. Scaling must come first.
+
+Many people talk about agents. Few have scaled a simple AI solution in a robust way.
+
+Scaling is therefore less about technology – and more about management:
+to make conscious choices about which processes to change, which decisions to support, and which responsibility the organization is willing to take (Yu; Gartner).
+
+This is where AI goes from experiment to core strategic competence.`,
+  },
+  "praktisk-oppskrift-skalering-01": {
+    tittel: `From pilot to scaling – a practical recipe for managers`,
+    teaser: `Five things businesses that succeed in AI scaling do right: ownership, process change, decision linking, governance and data.`,
+    innhold: `In the previous post, I wrote about why so many AI initiatives stop at the pilot stage, even when the technology works. In this post I will be more specific:
+What actually needs to be in place for AI to go from promising experiments to real, scalable value creation?
+
+Based on both research (e.g. MIT, Gartner, Forrester, Yu, The Economist) and experience from practice, I see that businesses that succeed in scaling often do five things right:
+
+<strong>1. They clearly define ownership</strong>
+AI cannot be "owned by IT alone". It must be clear who is responsible for profit, risk and further development when the solution goes from pilot to operation.
+
+<strong>2. They change processes – not just tool</strong>s
+Scaling only happens when workflow actually changes. Superimposing AI on top of old forms of work provides local efficiency, but rarely a structural effect.
+
+<strong>3. They connect AI to decision</strong>s
+AI that only produces insights but is not integrated into decision-making flows quickly stalls. The most mature use AI as support before decisions are made, not just as a post-check.
+
+<strong>4. They have governance before they scale</strong>
+Questions about responsibility, quality, data, privacy and risk must be clarified early. Lack of governance is one of the most common reasons why pilots are never taken on.
+
+<strong>5. They work systematically with data and context</strong>
+Data without business context provides limited value. Scaling requires data to be relevant to actual decisions and goals – not just technically available.
+
+This picture is also supported by recent findings from <em>Socioeconomic Analysis</em> (2026), which show that the majority of Norwegian businesses still use AI as a single tool, while the gains only become apparent in those that have integrated AI into core processes. The report also points out that wider and more mature use of AI produces clearly greater productivity and income effects.
+
+An important point is therefore this:
+Scaling is far less about advanced technology and more about management.
+
+Many are now talking about agents and autonomous solutions. But the reality is that most organizations have yet to robustly scale a simple AI solution. Without ownership, process change and management, more autonomy becomes a risk, not a gain.`,
+  },
+  "data-kontekst-rag-01": {
+    tittel: `Data, context and RAG – why AI without context is not intelligence`,
+    teaser: `AI without context is not intelligence. Why RAG and the company's own data are prerequisites for mature AI use.`,
+    innhold: `In recent posts, I have written about why many AI initiatives stop in pilot, even when the technology works. Today I want to zoom in on a crucial but often underestimated point:
+
+👉 AI is not intelligent without context.
+
+Generative models are strong in language, patterns and probability. What they do not have is an understanding of the business's actual situation, which data is relevant for this particular decision - or responsibility for the consequences of their recommendations.
+
+This is where <strong>RAG (Retrieval-Augmented Generation)</strong> comes in. Not as a technical buzzword, but as a principle for mature AI use.
+
+In practice, RAG is about connecting AI to the company's own data, giving the model relevant context in real time and ensuring that answers are based on actual sources – not general assumptions.
+
+This is also supported by analyzes from, among others, McKinsey, which point out that generative AI only provides reliable decision support when models are connected to the business's own data and context. Without such anchoring, AI will be good at language - but weak at judgment and relevance.
+
+Many people recognize this from using Copilot or ChatGPT:
+Without access to the right documents, decision-making bases or internal guidelines, the answers often become generic. When, on the other hand, AI gains access to strategy documents, process descriptions or customer data, a clear shift occurs – from textual help to actual decision support.
+
+We see the same in management meetings. Without context, AI can make persuasive arguments. With RAG, it can refer to actual figures, previous decisions and relevant frameworks - and thus sharpen the decision instead of simply streamlining the preparatory work.
+
+This is also why <strong>agents without context are a risk</strong>. They can be fast and convincing, but at the same time wrong, inconsistent or poorly grounded in the reality of the business. Autonomous systems without ownership do not become intelligent - they only become effective on the wrong premises.
+
+Before more autonomous solutions are even realistic, the business must have control over which data is used and why, how insights are linked to decision flow, and who owns the outcome when something goes wrong. This is not primarily a technical issue – it is a leadership and management issue.
+
+AI only becomes strategic when it not only provides answers, but contributes to <strong>better decisions</strong>. It requires data with meaning, context with ownership - and managers who understand the difference.`,
+  },
+  "rag-innsikt-handling-01": {
+    tittel: `From insight to action – RAG as a bridge between AI and core processes`,
+    teaser: `RAG as a bridge between AI and core processes: how businesses move from testing to real value creation. Example from sales.`,
+    innhold: `In the previous post, I wrote about why AI without context is not intelligence. Now I want to go one step further:
+What does this mean in practice for businesses that want to move from testing to actual value creation?
+
+Many AI initiatives stop because the insight is left on the sidelines of operations. AI provides good answers, but does not influence how decisions are actually made. RAG is one of the most important measures to break this pattern.
+
+<strong>Take sales as an example.</strong>
+Without RAG, AI often answers in general terms: advice on good meeting management, suggestions for e-mails or general sales advice. It is useful - but detached from the customer's actual situation.
+
+With RAG, on the other hand, AI can retrieve relevant context in real time: customer history from CRM such as history, purchases and pipeline, existing agreements, price level, previous offers and hit rate, service and support dialogue, as well as strategic guidelines such as internal frameworks for discounting and prioritization. When a salesperson asks "what should I focus on when meeting this customer?", AI can answer based on its own data and real assumptions - not general sales advice. Examples could be that AI responds that the customer has had increased use of service A in the last 6 months, or that the customer may need solution B. That is the difference between text support and actual decision support in commercial processes.
+
+This is where many pilots fail. The technology works, but the AI ​​never connects to real decision points. However, when AI is built into workflow and decision-making processes, how the organization actually works changes.
+
+This corresponds well with analyzes from, among others, McKinsey, Gartner and MIT Sloan, who point out that value creation only occurs when AI is integrated into core processes and decision-making flows – not when it is used as a side tool. Societal Economic Analysis also shows that Norwegian businesses that are most successful with AI are those that have built the technology into daily operations and clear ownership.
+
+An important point in both research and practice is that value creation does not occur when AI is put into use - but when it is <strong>taken into account</strong>. RAG is therefore not just a data solution, but a way to clarify ownership, frameworks and decision logic.
+
+This is also why many talk about agents before they are ready for them. Without context, governance and integration, autonomy becomes just speed – not quality.
+
+Succeeding with AI at this level is less about more tools and more about clear choices:
+• Which processes are to be supported?
+• Which decisions should be improved?
+• Who owns the consequences?`,
+  },
+  "ai-agenter-hva-01": {
+    tittel: `AI agents – what they are (and what they are not)`,
+    teaser: `What AI agents are — and what they are not. Clearing up the term and why it is a management topic, not just IT.`,
+    innhold: `In recent posts, I have written about why many AI initiatives stop before they create real value - and why data, context and RAG are prerequisites for mature AI use. Now it's time to clear up a term that keeps popping up in the AI ​​debate: <strong>AI agents</strong>.
+
+Let's start precisely. In <em>Generative AI for Business</em>, Shubin Yu describes agents as systems that not only respond to requests, but can plan, execute and follow up tasks over time - within defined frameworks. An agent has a clear goal, access to relevant data and tools, ability to make sequential decisions, and clear boundaries for responsibility and control. It also says a lot about what an agent is not: it is not just ChatGPT in a new wrapper, it is not automation without context, and it is not "autonomous" without governance. Agents are workflows with intelligence – not magic.
+
+A commercial example that many will recognize is sales. Without agents, salespeople use AI to write emails, summarize meetings and get suggestions for offer texts. Useful, yes – but still individual and fragmented. With an agent, the picture can look completely different. A sales agent can follow the entire pipeline automatically, analyze CRM data, previous deals and customer behaviour, suggest the next best course of action per customer, notify when risk in a deal increases and prepare management decisions before forecast meetings. Here we have moved from AI as a tool to AI as operational support in a core process. The value is not in the text, but in the decisions that are improved.
+
+That is also why this is primarily a <strong>leadership theme</strong>, not an IT project. Most organizations are not ready for agents, even if the technology exists. McKinsey describes in 2026 how they themselves use tens of thousands of AI agents internally, with an ambition that each consultant should have at least one agent to support the work. Not because the agents are "smart", but because the processes are clear, the ownership is defined and the decision-making space is clarified. Agents require maturity in governance, not just maturity in technology.
+
+There is also an important notice to managers here. The more autonomous AI becomes, the more important the answers to some fundamental questions become: Which decisions can be delegated – and which cannot? Who owns the consequences when something goes wrong? And how do we stop an agent – ​​and when? Agents reinforce the organization as it is. If the structure is unclear, the ambiguity is amplified.`,
+  },
+  "ai-agenter-feil-01": {
+    tittel: `AI agents - why many go wrong when they want to become more autonomous`,
+    teaser: `Why many go wrong chasing autonomy: agents are about structure and responsibility, not just “turn on” autonomy.`,
+    innhold: `I see a clear pattern in AI conversations. AI provides good answers, analyzes and demos, but the decisions are still made as before. When the gap between insight and action becomes too large, one term almost always appears: <strong>agents</strong>.
+
+They are often referred to as the next natural step - an upgrade you "turn on" when you are tired of manual processes. This is where many go wrong.
+
+In the previous post, I wrote about what AI agents actually are. Now it is important to clear up common misunderstandings. The biggest mistake is to think that agents are primarily about autonomy. In practice, they are more about structure, responsibility and interaction in the organisation.
+
+In <em>Generative AI for Business</em>, Shubin Yu describes agents as systems that can plan, act and follow up tasks over time, within clear frameworks. It requires clear goals, a good data base, room for decision-making and clarified ownership. Without this, there is no autonomy – just automated noise.
+
+Typical mistakes are that agents are introduced before processes are clear, autonomy is given without a mandate, responsibility is unclear when something goes wrong, and that the agent is not connected to real workflow. The result is often impressive demos, but uncertainty in operation.
+
+Let's take a commercial example:
+
+Many sales organizations today talk about "AI agents in the pipeline". Without agent logic, AI is used to write emails, summarize meetings and suggest offer texts. Useful, but still individual and fragmented.
+
+With an actual agent, a clear shift occurs. A sales agent can monitor the entire pipeline, analyze CRM data, historical deals and customer behavior, warn of increased risk, suggest the next best course of action and prepare decisions before forecast meetings. The value is not in the text, but in better decisions and timing.
+
+This is why many organizations are not ready for agents – even though the technology exists. Agents assume that you have decided which decisions can be delegated, which frameworks apply, and who owns the consequences.
+
+McKinsey has described how it uses a large number of internal AI agents to support consultants. Not because the agents are "self-thinking", but because processes, data and responsibilities are clarified. The value comes from governance, not autonomy alone. This is also supported by research from MIT Sloan, which shows that AI has the greatest effect when it is built into decision-making and work processes.
+
+Agents reinforce the organization. If the structure is unclear, the ambiguity is amplified. If responsibility is diffused, the risk - not the value - increases. Therefore, this is a management topic, not an IT project.`,
+  },
+  "ai-agenter-praksis-01": {
+    tittel: `AI agents in practice – when, where and how they actually provide value`,
+    teaser: `When do AI agents actually provide value — and when should you not? Practical criteria for managers.`,
+    innhold: `Several managers notice a clear dilemma.
+
+Either you see the potential in AI agents, or you are unsure where it is safe to release them. The result is often either excessive caution – or too rapid autonomy.
+
+Both parts are risky.
+
+In my last two AI posts, I have cleared up what agents are and why many go wrong when they chase autonomy too soon. Then the most important question remains:
+
+<strong>When does it actually make sense to use AI agents - and when should you not?</strong>
+
+In practice, agents only provide real value when three conditions are in place at the same time: clear frameworks, clarified responsibilities and clearly defined decision points. Without this, autonomy becomes just pace – without governance.
+
+Some patterns repeat themselves where agents actually work well:
+
+• <strong>Decision-making processes with many signals</strong>
+For example, risk assessment, portfolio management, capacity planning or forecast work. Here, agents can monitor developments over time, connect data from multiple sources and notify when thresholds are breached – without making the final decision.
+
+• <strong>Follow-up where the consequences are known and reversible</strong>
+Agents are well suited to propose actions, prioritize cases, follow up deviations and escalate when something deviates from the norm. They are not suitable where the consequences are irreversible and the decision-making responsibility is unclear.
+
+• <strong>People clearly "in the loop"</strong>
+The best solutions use agents as cognitive enhancers. The person owns the decision, the agent structures, warns and makes recommendations within defined frameworks.
+
+At the same time, there are many areas where agents should not be used, even if the technology allows it. Processes with political trade-offs, unclear goals, high regulatory risk or weak ownership are not improved by autonomy, but rather more vulnerable.
+
+A trait I see in several industries now is that many organizations suffer more from a culture of caution than from technological limitations. One analyzes for a long time, and waits for "the right moment". The result is often stagnation.
+
+Agents should therefore not be introduced widely - but tested in a controlled manner where:
+• the value is clear
+• the risk is manageable
+• responsibilities are clarified in advance
+
+Agents are powerful tools that mark a shift in what is being moved from people to systems – from efficiency to decisions. Only when agents are used at the Decisions level of the EDGE framework (Efficiency, Decisions, Growth, Empowerment) do they become a strategic competitive advantage – and a clear leadership responsibility.`,
+  },
+  "ai-governance-01": {
+    tittel: `When AI gains more power – what should managers actually manage?`,
+    teaser: `When AI affects decisions: who is responsible? EDGE, 5A and governance as management's response to increased autonomy.`,
+    innhold: `Several managers I speak to describe the same dilemma:
+AI is helping us more and more – but we're not quite sure where the limit is.
+
+As AI moves from support to decision influence, a new managerial responsibility arises. Not technically. Not legal. But in terms of governance.
+
+In the last posts in my AI series, and through experiences from my master's course at BI, I have written about AI agents. The common denominator is clear: the more decision-making power is moved from people to systems, the more important responsibility and control become.
+
+In this post, I stop and zoom out. This becomes more of a framework and theory, because this is where many organizations lose track as AI moves towards decision influence.
+
+The reasoning is largely based on <em>Generative AI for Business</em> by Shubin Yu, combined with patterns I see in managers in this transition.
+
+As AI begins to influence decisions, one question always pops up in the executive room:
+
+<strong>Who is really responsible when AI gets more power?</strong>
+
+This is where <strong>governance</strong> comes in. Not as bureaucracy, but as management's response to increased autonomy. When AI affects decisions, the nature of managerial responsibility also changes: the question is not whether AI creates value, but where and within what framework.
+
+To understand this, it is useful to clear up two frameworks that are often mixed up:
+
+The <strong>EDGE framework</strong> describes where the value from AI is extracted:
+• <strong>Efficiency</strong> – make existing work faster and cheaper
+• <strong>Decisions</strong> – improve decision quality and timing
+• <strong>Growth</strong> – develop new products, services and business models
+• <strong>Empowerment</strong> – empowering people in complex roles
+
+In parallel, the <strong>5A model</strong> (Access → Assistants → Applications → Automation → Agents) shows the maturity journey in how AI is used. The higher up one moves, the more responsibility is shifted from individuals to systems.
+
+Governance is not part of EDGE, but a superstructure that becomes crucial when AI is used at the Decisions level in EDGE and when the organization moves towards Automation and Agents in the 5A model. Without governance, pace and autonomy increase faster than responsibility and control.
+
+In practice, AI governance is about basic management choices:
+• Which decisions can AI influence – and which can it not?
+• Who owns the consequences when recommendations are used?
+• How do we stop, adjust or override the systems when reality changes?
+
+In other words:
+EDGE explains where the value lies.
+5A explains the journey to maturity.
+Governance determines whether this becomes a competitive advantage - or a risk.`,
+  },
+  "ki-norsk-virksomheter-01": {
+    tittel: `AI in Norwegian businesses - from testing to value creation`,
+    teaser: `Over half of Norwegian businesses use AI — but few have integrated it into core processes. The NHO report's message.`,
+    innhold: `Yesterday I participated online in a conference under the auspices of <strong>NHO</strong>, where <strong>Social Economic Analysis</strong> presented its recent report on the use of artificial intelligence in Norwegian business.
+
+My main impression is that AI/CI has now seriously become part of everyday life in many businesses. Over half use AI today, a sharp increase in just the last two years. At the same time, it is clear that the use is still largely about testing, support tools and individual efficiency - not about real change in how businesses are run and create value.
+
+The report shows significant potential: AI can free up around 15 percent of working time in the economy. That in itself is startling, especially in light of the labor shortage Norway is facing. But the point that was clearly emphasized is that these gains do not come by themselves. They only arise when AI is integrated into core processes, clearly prioritized by management and directly linked to business goals.
+
+Only around one in five businesses are considered real "frontrunners". It is these who see the greatest productivity and income effects. For the rest, the barriers are less about technology and more about a lack of insight, competence and direction. The question is no longer whether to use AI, but how and why.
+
+At the same time, it is becoming increasingly clear that the battle for these frontrunners – both businesses and people – is underway, and that the ability to combine technological understanding, business and the responsible use of AI is becoming an increasingly important competitive advantage.
+
+My most important takeaway is once again that AI is to a small extent an IT project. It is a management and change project. And precisely here the report hits home with much of what I myself am concerned with: value creation does not happen through tools alone, but through clear choices, priorities and the way we organize our work.
+
+If AI is to become a real competitive advantage, we must move from curious exploration to conscious integration.`,
+  },
+  "ai-governance-i-praksis-01": {
+    tittel: `AI governance in practice – five management measures that determine where the power lies`,
+    teaser: `Five management measures that determine where the power lies when AI affects customers, discounts and priorities.`,
+    innhold: `Most management groups have control over the budget, margins and forecast. Nevertheless, I see that many people lose track when AI begins to influence which customers are prioritized, which discounts are recommended and which opportunities are assessed as risks. The challenge rarely lies in the technology, but in the fact that decision-making power is shifted without it being clearly defined where the power actually lies.
+
+Imagine a commercial organization that introduces an AI agent into the sales process. It analyzes CRM data, historical deals and customer behavior and makes recommendations on the next best course of action. The precision increases, the priorities become sharper and the forecast more accurate.
+
+The question is not just who makes the decision. The question is who has power over the decision when the recommendation affects strategic direction and profitability.
+
+There is no distinction between businesses that use AI and those that do not. It is between those who have defined their decision-making space - and thus the power structure - and those who allow it to develop implicitly.
+
+<strong>Five conditions are decisive:</strong>
+
+<strong>1. The decision room must be clarified before the technology is put into use.</strong>
+Which decisions should be influenced and which should remain human? Without an explicit clarification, the shift in power happens gradually and without clear anchoring.
+
+<strong>2. "Human in the loop" must involve a real mandate.</strong>
+Formal approval is not enough. Someone must have the authority to override and be responsible if the recommendation is followed.
+
+<strong>3. Traceability is a management tool.</strong>
+When the board asks about prioritization, the answer must be concrete: which data, which thresholds, which criteria. Explainability is part of the company's management.
+
+<strong>4. There must be clear adjustment and stopping points.</strong>
+The market, regulation and strategy are changing rapidly. Autonomous systems without control mechanisms create vulnerability.
+
+<strong>5. Ownership must be unambiguous.</strong>
+When something goes wrong, it must be clear where the responsibility lies. IT cannot own business decisions, and sales cannot opt ​​out of the model's recommendations. The management group must define the framework.
+
+<strong>AI governance is fundamentally about classic management:</strong> defining responsibility, mandate and control before complexity increases.
+
+This is not about slowing down development, but about ensuring that pace and autonomy do not run away from responsibility and legitimacy. AI does not become risky because it is intelligent. It becomes risky when the organization has not made conscious choices about how decision-making power is to be managed.`,
+  },
+  "ai-kompetanse-2030-01": {
+    tittel: `AI is not the threat in 2030. The skills gap is.`,
+    teaser: `Competitiveness in 2030 will be determined by competence — not by AI as a threat. Perspectives from the WEF, McKinsey and OECD.`,
+    innhold: `The AI ​​debate is often characterized by pace, stock market movements and uncertainty. For me, the question is more which skills will actually determine competitiveness in the future?
+
+The diagram I am attaching visualizes this clearly. The <em>horizontal</em> axis shows the proportion of employers who today consider a skill a core competence (2025). The <em>vertical</em> axis shows the proportion of employers who expect this skill to increase in importance towards 2030.
+
+At the top right, where both today's importance and expected growth are high, we find AI and big data. Close by are technological understanding, analytical thinking, creative problem solving, resilience, learning ability and leadership.
+
+The most interesting thing is not the individual points. That's the big picture!
+
+The core competence of the future is not just technical. It is an integration of technology, cognitive strength and relational capacity. The ability to understand systems, ask better questions, interpret data, make decisions under uncertainty and lead people through change.
+
+This picture is also supported by analyzes from, among others, World Economic Forum, McKinsey and OECD: Technological understanding increases in value, but so does analytical judgement, creativity and the ability to continuously learn. This applies on two levels:
+
+<strong>Individual level:</strong>
+We cannot outsource our own development. Understanding how AI affects decision-making processes, balance of power and value creation is becoming basic competence, regardless of role. For me, this means investing systematically in the right skills now, not when the market demands it.
+
+<strong>Company level:</strong>
+AI is not something you "take into use" and be done with. It is a capacity that must be built, through strategy, management, data foundation, structure and management. The gains accrue to those who connect technology with business understanding and execution ability.
+
+Historically, technological shifts have not rewarded those who tested the most, but those who prepared the best. Those who understood what the change meant for the business model, competence needs, organization and decision-making processes - and acted accordingly.
+
+Electrification, digitization and the internet did not create value by themselves. The value arose in businesses that built capacity before the change forced them to do so.
+
+Thus, AI will not automatically provide a competitive advantage. It will reinforce the differences between those who build competence in a structured way and those who postpone it.
+
+That's why I'm looking forward to Monday's meeting at my Exec. Master in Generative AI for Business study. For me, it's about strengthening the theoretical foundation, understanding the frameworks more deeply and linking this even more clearly to strategy and commercial value creation.
+
+At the same time, I now assist companies in AI and digital transformation - at the intersection between strategy, management and implementation. If you would like to discuss how this can be structured in your business, I would be happy to have a chat. The link to my consulting page can be found in the first comment field.`,
+  },
+  "bi-master-oppstart-01": {
+    tittel: `Back at BI - and looking for a business to build AI value with`,
+    teaser: `Back at BI: the master's course Generative AI for Business and the search for a business to build an AI app and implementation plan with.`,
+    innhold: `Back at BI - and looking for a business to build AI value with (and an app you get to vote on).
+
+11 years ago I completed the Exec. Master of Management at BI School of Economics, with specialization in strategy and communication. Now I'm back on the master's course <em>Generative AI for Business</em>, led by professor and AI expert Shubin Yu.
+
+This is not a course where we only discuss theory. We will build AI in practice, including the development of a working application and a strategic implementation plan for generative AI.
+
+We have our first physical meeting this week, but I've already spent the last few months on curriculum, tool testing, hands-on projects (yes, it's coded) and sparring with both technical and commercial environments. The ambition is to connect technology to concrete business value and execution power.
+
+This is closely related to what I now spend time on. to bridge the gap between management and AI technology. I want to help businesses turn technological opportunities into commercial value, without the need for a large internal tech team. Together with several technical experts, I deliver consultancy and implementation based on business understanding and management experience.
+
+As part of the course, I will build an AI app. I have outlined three self-developed concepts that address concrete challenges in the business world, and now need input:
+
+1️⃣ <strong>The “North Star” – AI Strategy Alignment Engine</strong><br />
+Strategies often die in documents. The app allows the business to upload the strategy, and AI breaks it down into concrete, measurable OKRs for departments. It ensures operational anchoring and common direction.
+
+2️⃣ <strong>The “Predictive Sales Coach”</strong><br />
+An always-on AI trainer for sales teams. Salespeople can simulate demanding customer meetings against a tailored persona, for example a skeptical CFO, and get concrete feedback on structure, argumentation and handling of objections. The aim is reduced time-to-competence and increased win-rate.
+
+3️⃣ <strong>The “Churn Sentinel” – Revenue Retention</strong><br />
+The app analyzes customer dialogue and CRM log to uncover early signals of churn risk. It provides a risk assessment with explanation and suggested measures before the income disappears.
+
+Which one would you like to see me build – 1, 2 or 3?
+
+In addition, I will carry out a larger strategic project assignment. I want to connect this to a real business.
+
+Does your business have a process that can be optimized with generative AI, but lacks the capacity to explore it? Then I can build the project assignment around your case and deliver a concrete implementation plan with priorities, benefit assessments, risk analysis and roadmap.
+
+Feel free to contact us via DM if this is relevant.`,
+  },
+  "predictive-sales-coach-01": {
+    tittel: `I decided to build – not just think about AI`,
+    teaser: `From analysis to construction: reflections from the BI course and the prototype The Predictive Sales Coach.`,
+    innhold: `I decided to build – not just think about AI.
+
+The week on the master's course <em>Generative AI for Business</em> at BI has been particularly interesting and educational. What makes this relevant is not just the frameworks, but the practical work. We have worked in the Google ecosystem with Gemini, Google AI Studio and Workspace integrations, tested model selection, structured prompt architecture and evaluated output against concrete business cases. When you have to manage the context, parameters and data base yourself, you get a completely different understanding of precision and limitations.
+
+At the same time, I have spent a lot of time testing and exploring AI tools in practice. Within writing and analysis, there are clear differences between solutions such as Claude, ChatGPT and Perplexity when it comes to understanding context and structured reasoning. On the development side, tools such as Cursor, Replit, Lovable and AI Studio have made it possible to go from idea to working prototype quickly, through AI-assisted coding, model testing and efficient workflow. Within knowledge structuring, NotebookLM and local LLM solutions have shown how crucial context and data quality are.
+
+The point is not the tools themselves, but to understand what they actually can and cannot do, and how they can be linked to value creation.
+
+The WEF points out in the <em>Future of Jobs</em> report that analytical thinking, creative problem solving and technological understanding are among the most important skills up to 2030, while companies report a significant skills gap. The data shows that the effect of generative AI is not linear, but divergent: the difference between adopters and laggards increases over time. In other words, the skills gap is escalating, not static.
+
+The work this week has already resulted in further development of an earlier framework into a concrete application: <strong>The Predictive Sales Coach</strong>. A solution where salespeople can train against a dynamic, virtual customer based on DISC psychology and concrete sales phases, while the system analyzes the dialogue objectively and provides precise points for improvement. The main goal is to train for an increased win-rate through structured and targeted training before you meet the customer.
+
+Before the course, I also launched my own website (link in the first comment field). Overall, I feel that I have taken a clear step forward, from analysis to actual construction. AI is fundamentally not about technology alone, but about management, prioritization and the ability to connect insight to execution.
+
+If you are curious about the app solution, or want to discuss the practical application of AI in your commercial business, I would be happy to have a chat. The days are also used for meetings with exciting resource persons and professional environments within AI, technology and commercial development - which both provides perspective and new ideas for further projects.
+
+The motivation is great - the inspiration is greater!`,
+  },
+  "ai-etikk-norden-01": {
+    tittel: `AI, power, ethics and legitimacy – what does Nordic AI leadership require?`,
+    teaser: `What does Nordic AI leadership require? About power, ethics, legitimacy and responsible governance.`,
+    innhold: `In the previous post in my AI series, I wrote about the controls that determine where the power lies when AI influences decisions. The next level is about ethics. When decision-making power is shifted from people to systems, not only a governance issue arises, but also a legitimacy issue.
+
+Who is perceived as responsible when an algorithm prioritizes one customer over another? Who explains why a risk model gives different results? What happens when a dynamic pricing model differentiates prices based on willingness to pay - and the margin increases, but the experience of fairness weakens? What happens to the trust if the decision is effective, but is perceived as unreasonable?
+
+Ethics in AI management is not primarily about regulations, but about how power is exercised and perceived. Here we see clear regional differences.
+
+In the US, speed, scaling and market power are rewarded. Innovation is rolled out quickly, and corrections often take place afterwards. In parts of Asia, high technological progress is combined with strong central management, where direction and responsibility are defined from above.
+
+In the Nordic countries, we stand in a different tradition. High institutional trust (OECD, World Values ​​Survey) and strong employee rights mean that legitimacy cannot be taken for granted. EU regulation, including the AI ​​Act, reinforces the requirements for accountability and explainability. Decision-making systems must withstand legal and social testing.
+
+The debate surrounding the Norwegian Oil Fund's AI investment illustrates this field of tension. Ambitions to boost productivity and save billions are understandable, but raise questions about systemic risk, loss of institutional competence and "alpha decay" when many people use similar models. The question is not whether AI should be used, but whether the pace is accompanied by sufficient risk assessment and ethical grounding.
+
+It can be experienced as a pace handicap, but also as a competitive advantage. Businesses that combine technological progress with ethical grounding will stand stronger over time. Without legitimacy, trust is weakened, and thus room for action and competitiveness.
+
+AI management is therefore not only about governance, but about the responsible exercise of power. It is not just about what the systems can do, but about what they should do and how it is explained.
+
+The real test of maturity is not how advanced the model is, but whether the organization can withstand the consequences of the decisions it influences, even when they are challenged.
+
+The next step in the series is about the manager's judgement. When AI becomes part of the decision-making basis, it is no longer enough to understand the governance structures. Managers must understand how models respond to context, how hallucinations occur, and how recommendations should be critically assessed.
+
+AI judgment is not a niche technical skill. It is a leadership skill.`,
+  },
+};
+export const aiGovernance = aiGovernanceRaw.map((innlegg) => ({
+  ...innlegg,
+  tittel: localize(innlegg.tittel, aiGovernanceEn[innlegg.id].tittel),
+  teaser: localize(innlegg.teaser, aiGovernanceEn[innlegg.id].teaser),
+  innhold: localize(innlegg.innhold, aiGovernanceEn[innlegg.id].innhold),
+}));
