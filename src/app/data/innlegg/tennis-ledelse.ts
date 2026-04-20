@@ -1,5 +1,33 @@
 export const tennisLedelse = [
     {
+      id: "alle-enige-ingen-gjor-noe-01",
+      tittel: "Alle er enige. Ingen gjør noe.",
+      teaser:
+        "Når strategi ikke blir adferd: hvorfor enighet ikke er nok, og hva som faktisk skal til for å lykkes med transformasjon i praksis.",
+      bildeUrl: "/images/intentions.png",
+      dato: "2026-04-20",
+      visningsDato: "20.04.26",
+      kategori: "Kommersiell Ledelse",
+      link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
+      innhold: `𝐀𝐥𝐥𝐞 𝐞𝐫 𝐞𝐧𝐢𝐠𝐞. 𝐈𝐧𝐠𝐞𝐧 𝐠𝐣ø𝐫 𝐧𝐨𝐞.
+
+De fleste virksomheter jeg møter har ikke mangel på ambisjoner, strategier eller vilje til endring. De har et annet problem hvilket er at det som besluttes i møterommet, skjer ikke i markedet.
+
+Det er ikke sabotasje eller latskap. Det er et gap som forskning har dokumentert grundig, og som ledere systematisk undervurderer: Avstanden mellom intensjon og faktisk adferd. I min masteroppgave om nettopp dette gapet — forankret i Theory of Planned Behavior — er ett av de tydeligste funnene at høy grad av enighet og positiv innstilling ikke er tilstrekkelig for å predikere handling. Folk kan mene det de sier. De kan ønske å endre seg. Og likevel ikke gjøre det.
+
+I kommersiell ledelse og salgsledelse er konsekvensene direkte målbare. Prioriteringene er klare, KPI-ene er satt, og alle nikker i kickoff-møtet. Tre måneder senere er adferden i kundedialogen den samme som før. Ikke fordi strategien var feil, men fordi ingen oversatte den til konkrete handlingsmønstre: hvem gjør hva, i hvilken situasjon, og hva er det første steget? Det er her transformasjoner strander. Ikke i planfasen, men i overgangen fra intensjon til rutine.
+
+McKinseys forskning på organisatorisk transformasjon viser at 70 % av endringsinitiativ ikke når sine mål. Den hyppigst rapporterte årsaken er ikke feil strategi eller manglende ressurser, men manglende evne til å endre faktisk adferd på tvers av organisasjonen. Det som skiller de 30 % som lykkes, er ikke bedre planer, men at ledere på alle nivåer aktivt modellerer den nye adferden selv, fremfor å delegere gjennomføringen nedover.
+
+Det som hjelper, er ikke mer kommunikasjon av visjonen. Det er implementeringsintensjoner — konkrete hvis-så-planer som kobler ønsket adferd til spesifikke situasjoner og triggere. Forskning viser konsistent at denne typen konkretisering øker sannsynligheten for gjennomføring betydelig, sammenlignet med generelle målsetninger alene. I praksis betyr det at ledere må gå lenger enn å kommunisere hva som skal skje, og inn i det mer krevende arbeidet med å designe adferden som skal bære strategien.
+
+Den vanskeligste samtalen i mange ledergrupper er ikke om retning. Den er om hva vi slutter å gjøre, hva vi begynner å gjøre annerledes i morgen, og hvem som er ansvarlig for å følge opp at det skjer. Enighet er komfortabelt. Konkret adferdsendring er ubehagelig, fordi det avslører hvem som leverer og hvem som ikke gjør det.
+
+𝑇ℎ𝑒 𝑟𝑜𝑎𝑑 𝑡𝑜 ℎ𝑒𝑙𝑙 𝑖𝑠 𝑝𝑎𝑣𝑒𝑑 𝑤𝑖𝑡ℎ 𝑔𝑜𝑜𝑑 𝑖𝑛𝑡𝑒𝑛𝑡𝑖𝑜𝑛𝑠. I ledelse er det ikke et ordtak — det er en driftsrisiko. Veien videre bygges ikke av intensjoner alene, men av handling, ansvar og oppfølging.
+
+👉 Neste innlegg i serien om ledelse, strategisk gjennomføring og transformasjon i praksis: Hva er det som faktisk motiverer mennesker i kunnskapsarbeid? Forskningen svarer ikke alltid det ledere forventer.`
+    },
+    {
       id: "to-parallelle-spor-ledelse-ai-01",
       tittel: "Jeg har skrevet mye om AI. Nå vil jeg også skrive mer om ledelse, strategi og transformasjon",
       teaser:
