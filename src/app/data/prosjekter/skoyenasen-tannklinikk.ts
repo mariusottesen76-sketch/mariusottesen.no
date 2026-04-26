@@ -18,13 +18,11 @@ export const skoyenasenTannklinikk: ProsjektType = {
     en: "Click the image to view Skøyenåsen Tannklinikk in a larger format.",
   },
   innhold: {
-    no: `Skøyenåsen Tannklinikk er et virksomhetsnært utviklingscase med fokus på hvordan AI og digitale løsninger kan forbedre pasientreisen før og etter behandling. Arbeidet tar utgangspunkt i konkrete behov knyttet til behovsavklaring, riktigere booking, tydeligere informasjon, bedre oppfølging og en mer moderne digital pasientflyt.
+    no: `Skøyenåsen Tannklinikk er et konkret utviklingscase med fokus på hvordan AI og digitale løsninger kan forbedre pasientreisen fra første kontakt til oppfølging. Arbeidet tar utgangspunkt i konkrete behov knyttet til behovsavklaring, riktigere booking, tydeligere informasjon og mer systematisk oppfølging.
 
-I første fase vurderes særlig løsninger som smart intake, veiledet booking, mer relevant kommunikasjon samt videreutvikling av nettside og chatbot som del av en sterkere front-end. Målet er å forbedre flyt, tilgjengelighet og oppfølging uten å miste det personlige preget som er en viktig del av klinikkens styrke.
+I første fase vurderes særlig løsninger for smart intake, veiledet booking, mer relevant kommunikasjon og en sterkere digital front-end. Målet er å forbedre flyt, tilgjengelighet og oppfølging uten å miste det personlige preget som er en viktig del av klinikkens styrke.
 
-Prosjektet er valgt fordi det kombinerer tydelig forretningsverdi, høy pasientverdi, moderat teknisk kompleksitet og håndterbar governance. Fokus i første fase ligger derfor på front-end og pasientreise, ikke på journalnære og mer sensitive AI-løsninger.
-
-Prosjektet er under utvikling. Løsningene som omtales her er ikke deployet på klinikkens nettside ennå.
+Prosjektet er valgt fordi det kombinerer tydelig forretningsverdi, høy pasientverdi og håndterbar governance. Fokus ligger derfor foreløpig på front-end og pasientreise, ikke på journalnære og mer sensitive AI-løsninger.
 
 Besøk klinikkens nettside: <a href="https://xn--skyensentannklinikk-4wb90b.no/" target="_blank" rel="noopener noreferrer">Skøyenåsen Tannklinikk</a>.`,
     en: `Skoyenasen Dental Clinic is a business-near development case focused on how AI and digital solutions can improve the patient journey before and after treatment. The work is based on concrete needs related to needs clarification, more accurate booking, clearer information, better follow-up, and a more modern digital patient flow.

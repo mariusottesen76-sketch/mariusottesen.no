@@ -18,19 +18,13 @@ export const aiArkitekturBeslutningsstotte: ProsjektType = {
     en: "Click the image to view AI architecture for decision support in a larger format.",
   },
   innhold: {
-    no: `Som kommersiell leder har jeg flere ganger deltatt i strategiprosesser der ambisjonene er tydelige, men koblingen til faktisk gjennomføring er svakere. Strategidokumenter, KPI-strukturer, salgsprosesser, anbudsdokumenter og regulatoriske krav skaper store informasjonsmengder som er krevende å analysere systematisk.
+    no: `Som kommersiell leder har jeg flere ganger sett hvor krevende det er å omsette store informasjonsmengder til tydelige prioriteringer og konkret handling. Strategidokumenter, KPI-strukturer, salgsprosesser, anbudsdokumenter og regulatoriske krav skaper ofte mer kompleksitet enn fremdrift.
 
-Jeg arbeider derfor med en metode for å bruke generativ AI til å strukturere og analysere slike problemstillinger mer effektivt. Målet er å identifisere gap, mønstre og handlingsalternativer tidligere, slik at ledere får et tydeligere grunnlag for prioriteringer og gjennomføring. Den grunnleggende logikken er enkel:
+Jeg bygger derfor en arkitektur for å bruke generativ AI til å bryte ned slike problemstillinger mer systematisk. Målet er å identifisere gap, mønstre og handlingsalternativer tidligere, slik at ledere får et tydeligere grunnlag for prioritering og gjennomføring.
 
-Dokumenter og data -> AI-dekonstruksjon -> strategisk innsikt -> beslutningsstøtte.
+Den samme logikken brukes nå som teknisk fundament i flere praktiske spor, blant annet The Predictive Sales Coach og en mer agentisk innsikts- og opportunity-flyt. Det gjør arkitekturen relevant som byggestein for flere typer leder- og beslutningsverktøy.
 
-Målet er ikke å erstatte ledelse, men å gi ledere et bedre grunnlag for vurderinger og beslutninger. Gjennom bruk av blant annet GPT-4o, Claude, Gemini, Cursor og Streamlit har jeg utviklet et teknisk fundament som gjør det mulig å prototype og bygge flere typer beslutningsverktøy på samme arkitektur.
-
-Den samme logikken kan brukes på områder som strategi og gjennomføring, commercial excellence og salg, anbud og RFP-prosesser, governance og compliance, samt onboarding og kapabilitetsutvikling.
-
-<em>The Predictive Sales Coach</em> er et konkret eksempel på hvordan denne arkitekturen kan omsettes til et målrettet produkt med tydelig virksomhetsverdi.
-
-Et praktisk AI-spor for virksomheter som ønsker bedre innsikt, tydeligere prioriteringer og mer operativ gjennomføring.`,
+<em>Et praktisk AI-spor for virksomheter som ønsker bedre innsikt, tydeligere prioriteringer og mer operativ gjennomføring.</em>`,
     en: `As a commercial leader, I have repeatedly participated in strategy processes where ambitions are clear, but the link to actual execution is weaker. Strategy documents, KPI structures, sales processes, RFP documents, and regulatory requirements create large volumes of information that are demanding to analyse systematically.
 
 I am therefore developing a method to use generative AI to structure and analyse these challenges more effectively. The goal is to identify gaps, patterns, and action alternatives earlier, so leaders gain a clearer basis for prioritisation and execution. The core logic is simple:

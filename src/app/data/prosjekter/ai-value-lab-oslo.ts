@@ -7,7 +7,7 @@ export const aiValueLabOslo: ProsjektType = {
     en: "AI Value Lab Oslo",
   },
   teaser: {
-    no: "Tverrfaglig læringsinitiativ der teknologi, forretning og praktisk utvikling møtes for å utforske hvordan AI kan forstås, testes og brukes på en ansvarlig måte.",
+    no: "Tverrfaglig lærings- og byggeinitiativ der teknologi, forretning og praktisk utvikling møtes for å utforske ansvarlig bruk av AI gjennom reelle case.",
     en: "A cross-disciplinary learning initiative where technology, business, and practical development meet to explore how AI can be understood, tested, and used responsibly.",
   },
   bildeUrl: "/images/ai-value-lab.jpeg",
@@ -28,11 +28,11 @@ export const aiValueLabOslo: ProsjektType = {
     },
   ],
   innhold: {
-    no: `AI Value Lab Oslo er et tverrfaglig læringsinitiativ der ulike perspektiver og komplementære styrker møtes for å bygge praktisk AI-forståelse gjennom samarbeid. Gjennom case, testing, refleksjon og praktisk utprøving utvikler vi kompetanse, deler erfaringer og lærer raskere på tvers av fagområder.
+    no: `AI Value Lab Oslo er et initiativ jeg tok for å skape en mer praktisk arena for læring og bygging på tvers av fagområder. Gjennom case, testing og iterasjon utvikler vi en mer anvendbar forståelse av hvordan AI kan brukes i virkelige arbeidssituasjoner.
 
-Det som kjennetegner initiativet, er at vi ikke bare diskuterer AI som teknologi, men bruker konkrete problemstillinger og use cases som læringsarena. Målet er å utvikle en mer anvendbar forståelse av hvordan AI, data, governance og forretningsverdi henger sammen i virkelige arbeidssituasjoner.
+Det som kjennetegner initiativet, er at vi ikke bare diskuterer AI som teknologi, men bruker konkrete problemstillinger som læringsarena. Målet er å lære raskere, dele erfaringer og bygge kompetanse som er relevant også utenfor enkeltverktøy og hype.
 
-Fokus ligger på læring i praksis, ansvarlig bruk av AI og utvikling av innsikt som er relevant også utenfor enkeltverktøy og hype.
+Fokus ligger på ansvarlig bruk av AI, praktisk læring og utvikling av løsninger som kan gi reell verdi i virksomheter.
 
 Jeg var initiativtaker til etableringen av AI Value Lab Oslo.
 

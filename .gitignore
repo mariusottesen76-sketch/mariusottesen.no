@@ -42,3 +42,5 @@ next-env.d.ts
 
 # ignore unwanted HTML save folders
 public/images/predictive-sales-coach-app_files/
+
+.vercel

@@ -105,11 +105,11 @@ const translations: Translations = {
   "prosjekter.title.1": { no: "AI-prosjekter &", en: "AI Projects &" },
   "prosjekter.title.2": { no: "Utvikling", en: "Development" },
   "prosjekter.intro.1": {
-    no: "Her samler jeg konkrete prosjekter der AI og utvikling møter kommersiell verdi. Fra prototyper til produksjon – ideer som er satt i system.",
+    no: "Her samler jeg AI-prosjekter der teknologi kobles til kommersiell verdi, beslutningsstøtte og mer operativ gjennomføring. Fra salgstrening og virksomhetsnære case til agentiske arbeidsflyter – dette er prosjekter bygget for å gjøre AI nyttig i praksis.",
     en: "A collection of hands-on projects where AI and development meet commercial impact. From prototypes to production — ideas put into practice.",
   },
   "prosjekter.intro.2": {
-    no: "Hvert prosjekt er knyttet til reelle utfordringer: bedre salgstrening, smartere beslutningsstøtte eller mer effektive prosesser. Dette er hvor strategi blir kode.",
+    no: "Fellesnevneren er ikke teknologi alene, men hvordan AI kan brukes til å strukturere kompleksitet, styrke prioriteringer og flytte arbeid fra analyse til handling. Dette er der strategi blir arbeidsflyt.",
     en: "Each project is tied to real challenges: better sales training, smarter decision support, or more effective processes. This is where strategy becomes code.",
   },
   "prosjekter.les": { no: "Les mer", en: "Read more" },

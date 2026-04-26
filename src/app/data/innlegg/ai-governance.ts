@@ -13,6 +13,50 @@ const localize = (no: string, en: string = no): LocalizedText => ({ no, en });
 
 const aiGovernanceRaw = [
     {
+      id: "econa-ai-kundereise-arbeidsflyt-01",
+      tittel: "Det mest interessante med AI nå er hva den gjør med kundereisen, arbeidsflyten og tilgjengeligheten",
+      teaser:
+        "Refleksjoner fra Econa-arrangementet: AI skaper verdi når den kobles til kundereise, arbeidsflyt og konkrete behov.",
+      bildeUrl: "/images/econa-ai.jpg",
+      dato: "2026-04-22",
+      visningsDato: "22.04.26",
+      kategori: "AI / KI",
+      link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
+      innhold: `Det mest interessante med AI nå er hva den gjør med kundereisen, arbeidsflyten og tilgjengeligheten.
+
+Det traff meg tydelig på Econa-arrangementet i går.
+
+Selv jobber jeg nå med å bygge både AI-basert chatbot, agenter og smartere bookingflyt i en privat klinikk, med mål om bedre behovsavklaring og en mer presis kunde-/pasientreise. Derfor ble dette ekstra relevant for meg:
+
+AI skaper verdi først når den kobles til kundereisen, arbeidsflyten og konkrete behov.
+
+Når jeg selv jobber kommersielt, er det spesielt spennende å se hvor veien går nå, og samtidig få være med på å bygge noe av det i praksis.
+
+Synne Christiansen og Jens Fredrik Allworthy fra Sprint løftet et viktig poeng: Kundeopplevelse er ikke lenger bare kommunikasjon eller kundeservice. Det er summen av alle interaksjoner, og AI er i ferd med å endre dem alle.
+Et illustrerende eksempel var hvordan kjøpsopplevelser kan gå fra klassisk navigasjon og filtrering til at kunden bare beskriver behovet sitt i naturlig språk, og får en relevant løsning generert derfra. Det er et stort skifte å gå fra menylogikk til intensjonslogikk.
+
+Hanna Vodopic fra Devoteam satte ord på noe mange undervurderer: AI er blitt "den stille kollegaen".
+Et konkret eksempel var hvordan ansatte i større grad spør AI før de spør sidemannen. Det gir fart, men kan også svekke læring, kunnskapsdeling og den friksjonen som ofte skaper bedre løsninger. Hun løftet også begrepet hollow intelligence: at vi kan fremstå mer kapable fordi AI hjelper oss å levere, uten at vi nødvendigvis bygger dyp nok forståelse selv.
+Det var en viktig påminnelse: AI må ikke bare gjøre oss raskere. Den må brukes slik at vi også blir bedre, klokere og mer samkjørte.
+
+Daniel Kirkenær Mathisen fra IGM viste den mest operative siden av dette: digitale kolleger og agenter som tar en rolle i frontlinjen.
+Det ble veldig konkret da han viste hvordan AI-resepsjonisten svarer umiddelbart, håndterer flere henvendelser samtidig og setter over til menneske når det trengs.
+Det er interessant fordi det flytter AI fra støtteverktøy til arbeidskapasitet. Det resonerer godt med noe av det jeg selv bygger nå, der agenter ikke bare skal svare, men bidra inn i flyt, tilgjengelighet og oppfølging.
+
+Det som står sterkest igjen hos meg etter kvelden er at vi går fra AI som noe ansatte "tester litt", til AI som bygges langt inn i kjerneprosesser.
+
+Da endres også kravene til oss som bygger:
+ • Vi må forstå kundereisen
+ • Vi må forstå prosessene
+ • Vi må forstå hvor friksjonen faktisk er
+ • Og bygge med tydelig human in the loop
+
+Det er også her jeg mener noe av det mest oppsiktsvekkende skjer nå:
+Virksomheter som klarer å koble AI til førstelinje, booking, behovsavklaring og oppfølging, bygger ikke bare effektivitet. De bygger en helt annen tilgjengelighet og presisjon i kundemøtet.
+
+Det er der mye av konkurransekraften kommer til å ligge fremover.`,
+    },
+    {
       id: "ai-needs-first-tannklinikk-case-01",
       tittel: "De fleste starter feil med AI – erfaringer fra et reelt case",
       teaser:
@@ -1223,6 +1267,43 @@ AI-dømmekraft er ikke en teknisk nisjeferdighet. Det er en lederkompetanse.`
   ];
 
 const aiGovernanceEn: Record<string, LocalizedTextMap> = {
+  "econa-ai-kundereise-arbeidsflyt-01": {
+    tittel: `What is most interesting about AI now is what it does to the customer journey, workflow and availability`,
+    teaser: `Reflections from the Econa event: AI creates value when connected to the customer journey, workflow and concrete needs.`,
+    innhold: `What is most interesting about AI now is what it does to the customer journey, workflow and availability.
+
+This struck me clearly at the Econa event yesterday.
+
+I am currently working on building both an AI-based chatbot, agents and a smarter booking flow in a private clinic, with the goal of better clarification of needs and a more precise customer/patient journey. That made this especially relevant to me:
+
+AI creates value only when it is connected to the customer journey, workflow and concrete needs.
+
+When I work commercially myself, it is especially exciting to see where the road is heading now, while also being able to help build some of it in practice.
+
+Synne Christiansen and Jens Fredrik Allworthy from Sprint raised an important point: Customer experience is no longer just communication or customer service. It is the sum of all interactions, and AI is in the process of changing them all.
+An illustrative example was how buying experiences can move from classic navigation and filtering to the customer simply describing their need in natural language, and getting a relevant solution generated from that. It is a major shift from menu logic to intention logic.
+
+Hanna Vodopic from Devoteam put words to something many underestimate: AI has become "the quiet colleague."
+A concrete example was how employees increasingly ask AI before they ask the colleague next to them. It gives speed, but can also weaken learning, knowledge sharing and the friction that often creates better solutions. She also raised the concept of hollow intelligence: that we can appear more capable because AI helps us deliver, without necessarily building deep enough understanding ourselves.
+It was an important reminder: AI must not only make us faster. It must be used in a way that also makes us better, wiser and more aligned.
+
+Daniel Kirkenær Mathisen from IGM showed the most operational side of this: digital colleagues and agents that take a role in the frontline.
+It became very concrete when he showed how the AI receptionist responds immediately, handles several inquiries at once and transfers to a human when needed.
+This is interesting because it moves AI from a support tool to work capacity. It resonates well with something I am building myself now, where agents should not only answer, but contribute to flow, availability and follow-up.
+
+What stands out strongest for me after the evening is that we are moving from AI as something employees "test a little" to AI being built deep into core processes.
+
+That also changes the requirements for us who build:
+ • We must understand the customer journey
+ • We must understand the processes
+ • We must understand where the friction actually is
+ • And build with a clear human in the loop
+
+This is also where I believe something of the most remarkable is happening now:
+Businesses that manage to connect AI to frontline work, booking, needs clarification and follow-up are not only building efficiency. They are building a completely different level of availability and precision in the customer encounter.
+
+That is where much of the competitive strength will lie going forward.`,
+  },
   "ai-needs-first-tannklinikk-case-01": {
     tittel: `Most people start wrong with AI - lessons from a real case`,
     teaser: `From AI Value Lab Oslo and a real dental clinic case: start with the business and needs — not with "which AI solution?" Website, chatbot and booking in the correct order.`,

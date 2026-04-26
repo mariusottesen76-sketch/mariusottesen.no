@@ -34,11 +34,9 @@ export const predictiveSalesCoach: ProsjektType = {
   innhold: {
     no: `The Predictive Sales Coach er et konkret AI-basert trenings- og beslutningsstøtteverktøy for B2B-salg, bygget for å trene selgere i realistiske kundesituasjoner før de møter kunden i virkeligheten. Løsningen kombinerer DISC-psykologi med et strukturert fire-fasers salgsrammeverk, og lar brukeren simulere krevende kundemøter med ulik motstand, vanskelighetsgrad og fokusfase.
 
-Etter hver simulering får brukeren fasebasert evaluering, objektiv scoring med tydelig score breakdown og konkrete forbedringspunkter. V3-logikken er videreutviklet med historikk og analytics-dashboard, slik at både selger og leder kan følge progresjon over tid, identifisere mønstre og se hvilke salgsfaser og kundetyper som bør trenes mer på.
+Etter hver simulering får brukeren fasebasert evaluering, tydelig score breakdown og konkrete forbedringspunkter. Videreutviklingen har også hatt fokus på progresjon over tid, slik at både selger og leder kan se mønstre, identifisere hvor det trenes for lite og styrke kvaliteten i kundeaktiviteten.
 
-Løsningen er særlig relevant for onboarding, møteforberedelse, salgsledelse og løpende kompetanseutvikling i team. Resultatet er redusert time-to-competence, høyere kvalitet i kundedialoger og et bedre grunnlag for økt win-rate over tid.
-
-Den underliggende logikken kan også videreutvikles til nærliggende trenings- og simuleringssituasjoner, som forhandlingstrening, rollebytte for bedre motpartsforståelse og mer avansert teaminnsikt for salgsledere.`,
+Løsningen er særlig relevant for onboarding, møteforberedelse, salgsledelse og løpende kapabilitetsutvikling i team.`,
     en: `The Predictive Sales Coach is a practical AI-based training and decision-support tool for B2B sales, built to train sales professionals in realistic customer situations before they meet real clients. The solution combines DISC psychology with a structured four-phase sales framework and lets users simulate demanding customer meetings with varying resistance, difficulty, and focus phases.
 
 After each simulation, users receive phase-based feedback, objective scoring with a clear score breakdown, and concrete improvement actions. The V3 logic is further developed with history and an analytics dashboard, enabling both sales reps and leaders to track progress over time, identify patterns, and see which sales phases and customer types require more training.
