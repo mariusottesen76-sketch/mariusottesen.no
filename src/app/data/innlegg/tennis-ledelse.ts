@@ -13,6 +13,52 @@ const localize = (no: string, en: string = no): LocalizedText => ({ no, en });
 
 const tennisLedelseRaw = [
     {
+      id: "hva-motiverer-kunnskapsarbeid-2026-01",
+      tittel: "Hva motiverer DEG og mennesker i kunnskapsarbeid?",
+      teaser:
+        "Bonus kan drive aktivitet, men kvalitet, læring og ansvar bygges oftere gjennom mening, mestring, autonomi og inspirasjon.",
+      bildeUrl: "/images/bonus.png",
+      dato: "2026-04-28",
+      visningsDato: "28.04.26",
+      kategori: "Kommersiell Ledelse",
+      link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
+      innhold: `𝐇𝐯𝐚 𝐦𝐨𝐭𝐢𝐯𝐞𝐫𝐞𝐫 𝐃𝐄𝐆 og 𝐦𝐞𝐧𝐧𝐞𝐬𝐤𝐞𝐫 𝐢 𝐤𝐮𝐧𝐧𝐬𝐤𝐚𝐩𝐬𝐚𝐫𝐛𝐞𝐢𝐝?
+
+I forrige innlegg skrev jeg at gode intensjoner ikke er nok. Men mellom intensjon og handling ligger også et annet spørsmål:
+
+Hva er det som får mennesker til å ville bidra, utvikle seg og ta ansvar over tid?
+
+Mange ledere svarer fortsatt raskt: bonus, insentiver og prestasjonslønn.
+
+Forskningen svarer mer nyansert. I masteroppgaven min for endel år siden skrev jeg om belønning og arbeidsmotivasjon i kunnskapsbedrifter. Der fant jeg et tydelig spenningsfelt: Prestasjonsbasert belønning kan øke kvantitet, men ikke nødvendigvis kvalitet. I noen tilfeller kan den også fortrenge det indre drivet som kunnskapsarbeid er avhengig av.
+
+I kunnskapsarbeid er ikke spørsmålet bare om folk jobber mer. Det er om de tenker bedre, lærer raskere, samarbeider klokere og tar ansvar også når ingen følger med.
+
+Derfor tror jeg mange ledere overvurderer effekten av bonus, og undervurderer betydningen av mening, mestring, autonomi, anerkjennelse og utvikling. Oppgaven min peker særlig på kompetansehevende tiltak som en sterk motivasjonsfaktor.
+
+Et kommersielt eksempel:
+To selgere kan ha samme bonusordning. Den ene jager kortsiktig volum. Den andre bruker tid på å forstå kundens behov, bygger tillit, utvikler egen kompetanse og skaper høyere verdi over tid.
+
+Begge kan levere aktivitet. Men ikke nødvendigvis samme kvalitet.
+Det er derfor belønning er mer enn et lønnsspørsmål. Det er et ledelsesspørsmål. For det du måler, premierer og gir oppmerksomhet til, former ikke bare innsatsen. Det former kulturen.
+
+Jeg tror også det finnes et nivå 𝑜𝑣𝑒𝑟 motivasjon som ledere snakker for lite om: inspirasjon.
+
+Motivasjon kan få folk til å stille. Inspirasjon får dem til å ville mer enn minimum.
+
+Motivasjon kan være knyttet til mål. Inspirasjon er oftere knyttet til mening.
+Kanskje er det derfor videreutdanning, faglig vekst og muligheten til å mestre nye områder ofte virker sterkere enn ledere tror.
+
+For meg ligger motivasjon og inspirasjon ofte i læring, utvikling og det å forstå nye sammenhenger. Derfor opplever jeg også videreutdanningen jeg nå tar ved BI i 'Generative AI for Business' som mer enn faglig påfyll, den gir ny energi, nye perspektiver og større handlingsrom.
+
+Et nyttig perspektiv fra forskningen er også de tre C-ene for arbeidsmotivasjon: Content, Context og Change. Altså hva arbeidet inneholder, hvilken kontekst folk jobber i, og hvordan motivasjon endrer seg over tid.
+
+Og det leder naturlig til neste tema:
+Selv sterk motivasjon er ikke nok hvis mennesker ikke har tillit til retningen, beslutningene eller lederne som kommuniserer dem.
+
+👉 Neste innlegg vil derfor handle om at tillit ikke er "mykt". Det er gjennomføringskraft.`,
+    },
+    {
       id: "alle-enige-ingen-gjor-noe-01",
       tittel: "Alle er enige. Ingen gjør noe.",
       teaser:
@@ -553,6 +599,45 @@ Virksomheter feiler ofte av samme grunn.`
   ];
 
 const tennisLedelseEn: Record<string, LocalizedTextMap> = {
+  "hva-motiverer-kunnskapsarbeid-2026-01": {
+    tittel: `What motivates YOU and people in knowledge work?`,
+    teaser: `Bonuses can drive activity, but quality, learning and ownership are more often built through meaning, mastery, autonomy and inspiration.`,
+    innhold: `𝐇𝐯𝐚 𝐦𝐨𝐭𝐢𝐯𝐞𝐫𝐞𝐫 𝐃𝐄𝐆 og 𝐦𝐞𝐧𝐧𝐞𝐬𝐤𝐞𝐫 𝐢 𝐤𝐮𝐧𝐧𝐬𝐤𝐚𝐩𝐬𝐚𝐫𝐛𝐞𝐢𝐝?
+
+I forrige innlegg skrev jeg at gode intensjoner ikke er nok. Men mellom intensjon og handling ligger også et annet spørsmål:
+
+Hva er det som får mennesker til å ville bidra, utvikle seg og ta ansvar over tid?
+
+Mange ledere svarer fortsatt raskt: bonus, insentiver og prestasjonslønn.
+
+Forskningen svarer mer nyansert. I masteroppgaven min for endel år siden skrev jeg om belønning og arbeidsmotivasjon i kunnskapsbedrifter. Der fant jeg et tydelig spenningsfelt: Prestasjonsbasert belønning kan øke kvantitet, men ikke nødvendigvis kvalitet. I noen tilfeller kan den også fortrenge det indre drivet som kunnskapsarbeid er avhengig av.
+
+I kunnskapsarbeid er ikke spørsmålet bare om folk jobber mer. Det er om de tenker bedre, lærer raskere, samarbeider klokere og tar ansvar også når ingen følger med.
+
+Derfor tror jeg mange ledere overvurderer effekten av bonus, og undervurderer betydningen av mening, mestring, autonomi, anerkjennelse og utvikling. Oppgaven min peker særlig på kompetansehevende tiltak som en sterk motivasjonsfaktor.
+
+Et kommersielt eksempel:
+To selgere kan ha samme bonusordning. Den ene jager kortsiktig volum. Den andre bruker tid på å forstå kundens behov, bygger tillit, utvikler egen kompetanse og skaper høyere verdi over tid.
+
+Begge kan levere aktivitet. Men ikke nødvendigvis samme kvalitet.
+Det er derfor belønning er mer enn et lønnsspørsmål. Det er et ledelsesspørsmål. For det du måler, premierer og gir oppmerksomhet til, former ikke bare innsatsen. Det former kulturen.
+
+Jeg tror også det finnes et nivå 𝑜𝑣𝑒𝑟 motivasjon som ledere snakker for lite om: inspirasjon.
+
+Motivasjon kan få folk til å stille. Inspirasjon får dem til å ville mer enn minimum.
+
+Motivasjon kan være knyttet til mål. Inspirasjon er oftere knyttet til mening.
+Kanskje er det derfor videreutdanning, faglig vekst og muligheten til å mestre nye områder ofte virker sterkere enn ledere tror.
+
+For meg ligger motivasjon og inspirasjon ofte i læring, utvikling og det å forstå nye sammenhenger. Derfor opplever jeg også videreutdanningen jeg nå tar ved BI i 'Generative AI for Business' som mer enn faglig påfyll, den gir ny energi, nye perspektiver og større handlingsrom.
+
+Et nyttig perspektiv fra forskningen er også de tre C-ene for arbeidsmotivasjon: Content, Context og Change. Altså hva arbeidet inneholder, hvilken kontekst folk jobber i, og hvordan motivasjon endrer seg over tid.
+
+Og det leder naturlig til neste tema:
+Selv sterk motivasjon er ikke nok hvis mennesker ikke har tillit til retningen, beslutningene eller lederne som kommuniserer dem.
+
+👉 Neste innlegg vil derfor handle om at tillit ikke er "mykt". Det er gjennomføringskraft.`,
+  },
   "alle-enige-ingen-gjor-noe-01": {
     tittel: `Everyone agrees. Nobody does anything.`,
     teaser: `When strategy does not become behaviour: why agreement is not enough, and what is actually needed to succeed with transformation in practice.`,

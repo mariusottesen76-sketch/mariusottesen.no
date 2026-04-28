@@ -64,6 +64,8 @@ export default function Prosjekter({ onNavigate }: { onNavigate?: (tab: string) 
       <div className="mt-8 space-y-8 min-w-0">
         {alleProsjekter.map((prosjekt) => {
           const bildeHintKort = getProsjektBildeHint(prosjekt, lang);
+          const erPsc = prosjekt.id === "predictive-sales-coach-2026";
+          const pscQr = erPsc ? prosjekt.ekstraBilder?.[0] : undefined;
           return (
           <article
             key={prosjekt.id}
@@ -123,19 +125,42 @@ export default function Prosjekter({ onNavigate }: { onNavigate?: (tab: string) 
                 <p className="text-slate-400 text-sm leading-relaxed mb-4 font-light break-words">
                   {prosjekt.teaser[lang]}
                 </p>
-                <div
-                  className="text-slate-300 text-base leading-relaxed space-y-3 font-light break-words overflow-hidden
-                  [&_a]:text-indigo-300 [&_a]:underline [&_a]:underline-offset-2
-                  [&_a]:decoration-indigo-500/70 [&_a]:hover:text-indigo-200
-                  [&_a]:transition-colors [&_strong]:font-semibold [&_em]:italic"
-                >
-                  {prosjekt.innhold[lang].split("\n\n").map((avsnitt, i) => (
-                    <p
-                      key={i}
-                      className="min-w-0"
-                      dangerouslySetInnerHTML={{ __html: avsnitt.trim() }}
-                    />
-                  ))}
+                <div className={erPsc ? "md:flex md:items-start md:gap-6" : ""}>
+                  <div
+                    className="text-slate-300 text-base leading-relaxed space-y-3 font-light break-words overflow-hidden flex-1
+                    [&_a]:text-indigo-300 [&_a]:underline [&_a]:underline-offset-2
+                    [&_a]:decoration-indigo-500/70 [&_a]:hover:text-indigo-200
+                    [&_a]:transition-colors [&_strong]:font-semibold [&_em]:italic"
+                  >
+                    {prosjekt.innhold[lang].split("\n\n").map((avsnitt, i) => (
+                      <p
+                        key={i}
+                        className="min-w-0"
+                        dangerouslySetInnerHTML={{ __html: avsnitt.trim() }}
+                      />
+                    ))}
+                  </div>
+                  {pscQr && (
+                    <div className="mt-5 md:mt-0 md:w-[190px] shrink-0 rounded-xl border border-indigo-500/30 bg-slate-950/60 p-3">
+                      <button
+                        type="button"
+                        onClick={() => setActiveImage({ src: pscQr.src, alt: pscQr.alt[lang] })}
+                        className="relative w-full h-[170px] rounded-lg overflow-hidden border border-slate-700/70 bg-slate-900 cursor-zoom-in focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:outline-none"
+                        aria-label={pscQr.alt[lang]}
+                      >
+                        <Image
+                          src={pscQr.src}
+                          alt={pscQr.alt[lang]}
+                          fill
+                          className="object-contain object-center"
+                          sizes="190px"
+                        />
+                      </button>
+                      <p className="mt-2 text-[10px] text-slate-400 leading-relaxed uppercase tracking-widest font-black text-center">
+                        {lang === "no" ? "Skann for tilgang" : "Scan for access"}
+                      </p>
+                    </div>
+                  )}
                 </div>
                 {prosjekt.navigasjonsCta && onNavigate && (
                   <button

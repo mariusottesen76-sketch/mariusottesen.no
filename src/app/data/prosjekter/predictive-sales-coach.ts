@@ -17,11 +17,11 @@ export interface ProsjektType {
 export const predictiveSalesCoach: ProsjektType = {
   id: "predictive-sales-coach-2026",
   tittel: {
-    no: "The Predictive Sales Coach",
-    en: "The Predictive Sales Coach",
+    no: "THE PREDICTIVE SALES COACH (PSC) V5.0",
+    en: "THE PREDICTIVE SALES COACH (PSC) V5.0",
   },
   teaser: {
-    no: "Et AI-basert trenings- og beslutningsstøtteverktøy for strukturert salgstrening, realistisk kundesimulering og raskere kompetanseutvikling i B2B-salgsorganisasjoner.",
+    no: "Reduser usikkerhet og øk win-rate med AI-basert salgstrening gjennom realistiske simuleringer, dyp evaluering og målbar progresjon.",
     en: "An AI-powered training and decision-support tool for structured sales practice, realistic customer simulation, and faster capability building in B2B sales organisations.",
   },
   bildeUrl: "/images/sales-coach-new2.jpg",
@@ -31,12 +31,33 @@ export const predictiveSalesCoach: ProsjektType = {
     no: "Klikk på bildet for å se The Predictive Sales Coach i større format.",
     en: "Click the image to view The Predictive Sales Coach in a larger format.",
   },
+  ekstraBilder: [
+    {
+      src: "/images/qrcode-psc.png",
+      alt: {
+        no: "QR-kode for tilgang til The Predictive Sales Coach (PSC) appen",
+        en: "QR code for access to The Predictive Sales Coach (PSC) app",
+      },
+    },
+  ],
   innhold: {
     no: `The Predictive Sales Coach er et konkret AI-basert trenings- og beslutningsstøtteverktøy for B2B-salg, bygget for å trene selgere i realistiske kundesituasjoner før de møter kunden i virkeligheten. Løsningen kombinerer DISC-psykologi med et strukturert fire-fasers salgsrammeverk, og lar brukeren simulere krevende kundemøter med ulik motstand, vanskelighetsgrad og fokusfase.
 
 Etter hver simulering får brukeren fasebasert evaluering, tydelig score breakdown og konkrete forbedringspunkter. Videreutviklingen har også hatt fokus på progresjon over tid, slik at både selger og leder kan se mønstre, identifisere hvor det trenes for lite og styrke kvaliteten i kundeaktiviteten.
 
-Løsningen er særlig relevant for onboarding, møteforberedelse, salgsledelse og løpende kapabilitetsutvikling i team.`,
+<strong>Hva er nytt i V5.0?</strong>
+
+Reduser usikkerhet og øk din win-rate med fremtidens AI-baserte salgstrening. PSC V5 er et kraftfullt verktøy for strategisk kompetanseutvikling som lar deg simulere virkelighetsnære kundemøter før de skjer i virkeligheten.
+
+<strong>DISC-selvkartlegging:</strong> Start med å forstå din egen kommunikasjonsstil gjennom vår nye, integrerte DISC-baserte test.
+
+<strong>Realistiske simuleringer:</strong> Tren på spesifikke rollespill der du møter ulike beslutningstakere og personlighetstyper. Øv på å håndtere argumenter og motstand skreddersydd til den enkelte kunden.
+
+<strong>Dyp-evaluering og analyse:</strong> Etter hver økt får du en objektiv analyse og et scorecard. Dette gir både selger og leder et unikt datagrunnlag for å identifisere mønstre, tette blindsoner og dokumentere progresjon over tid.
+
+PSC transformerer teoretisk salgsmetodikk til praktisk ferdighet, slik at du alltid er best forberedt når det gjelder. Løsningen er særlig relevant for onboarding, møteforberedelse, salgsledelse og løpende kapabilitetsutvikling i team.
+
+<strong>Ønsker du tilgang til PSC V5.0?</strong><br/>Skann QR-koden nedenfor eller klikk på <a href="https://the-predictive-sales-coach-v5-0-744893320985.europe-west2.run.app/" target="_blank" rel="noopener noreferrer">Be om tilgang til PSC-appen</a> for å starte reisen mot smartere salg.`,
     en: `The Predictive Sales Coach is a practical AI-based training and decision-support tool for B2B sales, built to train sales professionals in realistic customer situations before they meet real clients. The solution combines DISC psychology with a structured four-phase sales framework and lets users simulate demanding customer meetings with varying resistance, difficulty, and focus phases.
 
 After each simulation, users receive phase-based feedback, objective scoring with a clear score breakdown, and concrete improvement actions. The V3 logic is further developed with history and an analytics dashboard, enabling both sales reps and leaders to track progress over time, identify patterns, and see which sales phases and customer types require more training.
