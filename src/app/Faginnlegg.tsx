@@ -164,13 +164,26 @@ const Faginnlegg = ({ onNavigate }: { onNavigate?: (tab: string) => void }) => {
 
 /* ——— KORT ——— */
 const InnleggsKort = ({ innlegg, lang, onClick, lesLabel }: { innlegg: InnleggType; lang: "no" | "en"; onClick: () => void; lesLabel: string }) => {
+  const isVideo = innlegg.bildeUrl.toLowerCase().endsWith(".mp4") || innlegg.bildeUrl.toLowerCase().endsWith(".webm");
   return (
     <div
       onClick={onClick}
       className="group bg-slate-900/40 rounded-2xl border border-indigo-500/20 p-4 sm:p-6 hover:bg-slate-900/60 transition-all duration-300 shadow-xl flex flex-col sm:flex-row items-start gap-4 sm:gap-6 w-full text-left min-h-[200px] cursor-pointer"
     >
       <div className="w-full sm:w-[105px] h-[120px] sm:h-[160px] shrink-0 rounded-lg overflow-hidden bg-slate-800 border border-slate-800">
-        <Image key={`${innlegg.bildeUrl}-${innlegg.dato}`} src={`${innlegg.bildeUrl}?v=${innlegg.dato}`} alt={innlegg.tittel[lang]} width={105} height={160} className="w-full h-full object-cover transition-all duration-500" unoptimized />
+        {isVideo ? (
+          <video
+            key={`${innlegg.bildeUrl}-${innlegg.dato}`}
+            src={`${innlegg.bildeUrl}?v=${innlegg.dato}`}
+            className="w-full h-full object-cover transition-all duration-500"
+            autoPlay
+            muted
+            loop
+            playsInline
+          />
+        ) : (
+          <Image key={`${innlegg.bildeUrl}-${innlegg.dato}`} src={`${innlegg.bildeUrl}?v=${innlegg.dato}`} alt={innlegg.tittel[lang]} width={105} height={160} className="w-full h-full object-cover transition-all duration-500" unoptimized />
+        )}
       </div>
       <div className="flex-1 min-w-0 flex flex-col justify-between overflow-hidden">
         <div className="overflow-hidden">
@@ -232,6 +245,7 @@ function stripDuplicateTitle(innhold: string, tittel: string): string {
 const InnleggModal = ({ innlegg, lang, onClose, onNavigate, linkedinLabel, ctaText, ctaLink }: { innlegg: InnleggType; lang: "no" | "en"; onClose: () => void; onNavigate?: (tab: string) => void; linkedinLabel: string; ctaText: string; ctaLink: string }) => {
   const bodyRaw = innlegg.innhold?.[lang] || innlegg.teaser[lang];
   const bodyWithoutTitle = innlegg.innhold ? stripDuplicateTitle(innlegg.innhold[lang], innlegg.tittel[lang]) : bodyRaw;
+  const isVideo = innlegg.bildeUrl.toLowerCase().endsWith(".mp4") || innlegg.bildeUrl.toLowerCase().endsWith(".webm");
 
   return (
     <div className="fixed inset-0 z-50 flex items-start justify-center bg-black/80 backdrop-blur-sm overflow-y-auto py-8 px-2 sm:px-4 modal-enter" onClick={onClose}>
@@ -241,15 +255,28 @@ const InnleggModal = ({ innlegg, lang, onClose, onNavigate, linkedinLabel, ctaTe
         </button>
 
         <div className="w-full flex justify-center bg-slate-900/50 p-4 sm:p-6">
-          <Image
-            key={`${innlegg.bildeUrl}-${innlegg.dato}`}
-            src={`${innlegg.bildeUrl}?v=${innlegg.dato}`}
-            alt={innlegg.tittel[lang]}
-            width={420}
-            height={600}
-            className="max-w-[420px] md:max-w-[520px] max-h-[68vh] md:max-h-[75vh] w-auto h-auto object-contain rounded-lg"
-            unoptimized
-          />
+          {isVideo ? (
+            <video
+              key={`${innlegg.bildeUrl}-${innlegg.dato}`}
+              src={`${innlegg.bildeUrl}?v=${innlegg.dato}`}
+              className="max-w-[420px] md:max-w-[520px] max-h-[68vh] md:max-h-[75vh] w-auto h-auto object-contain rounded-lg"
+              controls
+              autoPlay
+              muted
+              loop
+              playsInline
+            />
+          ) : (
+            <Image
+              key={`${innlegg.bildeUrl}-${innlegg.dato}`}
+              src={`${innlegg.bildeUrl}?v=${innlegg.dato}`}
+              alt={innlegg.tittel[lang]}
+              width={420}
+              height={600}
+              className="max-w-[420px] md:max-w-[520px] max-h-[68vh] md:max-h-[75vh] w-auto h-auto object-contain rounded-lg"
+              unoptimized
+            />
+          )}
         </div>
 
         <div className="p-8 md:p-12 space-y-6">

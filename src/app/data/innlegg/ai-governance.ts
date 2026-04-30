@@ -13,6 +13,42 @@ const localize = (no: string, en: string = no): LocalizedText => ({ no, en });
 
 const aiGovernanceRaw = [
     {
+      id: "bi-generative-ai-for-business-2026-01",
+      tittel: "Siste samling på BI i Generative AI for Business – dette er bare starten",
+      teaser:
+        "Siste fysiske samling på masterstudiet ved BI ga både praktisk erfaring og strategisk retning: bygging, ledelse og implementering av GenAI i virksomheter.",
+      bildeUrl: "/images/studenter.mp4",
+      dato: "2026-04-30",
+      visningsDato: "30.04.26",
+      kategori: "AI / KI",
+      link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
+      innhold: `I går hadde vi siste fysiske samling på masterstudiet "Generative AI for Business" ved Handelshøyskolen BI.
+
+Men følelsen er ikke at noe avsluttes. Snarere at noe har begynt! Kurset har gitt både praktisk erfaring og et tydeligere strategisk perspektiv på hvordan GenAI kan brukes, implementeres og ledes i virksomheter.
+
+For min del har dette vært langt mer enn et fag med pensum, innleveringer, eksamener og prosjektoppgave.
+
+Vi har laget apper, nettsider, assistenter, infographics, podcast, quiz, reklamemateriell i form av bilder og video, og jobbet med et bredt spekter av GenAI verktøy, modeller og praktiske anvendelser. Man skal ikke bare forstå hva AI er, men prøve det ut på tvers av oppgaver, arbeidsformer og forretningsbehov. Studiet har også vektlagt prompt engineering, dataanalyse, automatisering, strategi, implementering og ansvarlig bruk.
+
+I tillegg har jeg fått utviklet 'The Predictive Sales Coach' 👇 - et salgscoach-verktøy som springer ut av både læringen på studiet og min egen kjernekompetanse innen kommersiell ledelse. Indikasjoner på at dette kan ha kommersielt potensial har jeg også fått. 📈
+
+Men studiet har også utløst mer!
+Det har gitt meg motivasjon til å bygge videre utover pensum med agentløsninger, AI-assistert innsikts- og innholdsmotor, AI-arkitektur for beslutningsstøtte, og ikke minst videre refleksjon og faglig deling. Dessuten har det gitt meg inspirasjon for å komme i kontakt med "likesinnede", hvilket for eksempel har ledet til at jeg har dannet AI Value Lab Oslo.
+
+Det gir meg en følelse av stolthet av flere grunner.
+💥 Fordi jeg ikke bare har lært om teknologien, men også bygget noe.
+💥 Fordi jeg har klart å koble ny teknologi med det jeg kan best fra før: salg, kommersiell utvikling, ledelse og praktisk verdiskaping.
+💥 Og fordi det er inspirerende å kjenne at dette ikke bare er faglig interessant, men også relevant og anvendbart i forretningskontekst der det kan ha store konkurransemessige fordeler.
+
+Det er også vanskelig å komme utenom hvor gøy dette har vært. GenAI er et fagområde som utvikler seg svært raskt, og som så tydelig er i tiden, hvilket både gir energi og læringslyst. Når andre hører man fordyper seg i GenAI, er responsen alltid positiv. De fleste ser at dette er et område som blir stadig viktigere fremover.
+
+Min viktigste take-away er derfor denne:
+Det stopper ikke her!
+Innen GenAI holder det ikke å ha testet noen verktøy eller fullført ett kurs. Utviklingen går for fort til det. Man må fortsette å lære, teste, bygge, feile, vurdere og omsette innsikt til praksis. Derfor har det vært spennende å kjenne på følelsen av å sitte mer i førersetet enn på sidelinjen mens mye fortsatt formes. 💪
+
+Takk til professor Shubin Yu og alle medstudenter for inspirerende samlinger, gode diskusjoner, mye energi og kreativitet underveis. 💯`,
+    },
+    {
       id: "econa-ai-kundereise-arbeidsflyt-01",
       tittel: "Det mest interessante med AI nå er hva den gjør med kundereisen, arbeidsflyten og tilgjengeligheten",
       teaser:
@@ -1267,6 +1303,35 @@ AI-dømmekraft er ikke en teknisk nisjeferdighet. Det er en lederkompetanse.`
   ];
 
 const aiGovernanceEn: Record<string, LocalizedTextMap> = {
+  "bi-generative-ai-for-business-2026-01": {
+    tittel: `Final BI session in Generative AI for Business - this is only the beginning`,
+    teaser: `The final in-person session at BI delivered both practical experience and strategic direction: building, leading and implementing GenAI in business.`,
+    innhold: `I går hadde vi siste fysiske samling på masterstudiet "Generative AI for Business" ved Handelshøyskolen BI.
+
+Men følelsen er ikke at noe avsluttes. Snarere at noe har begynt! Kurset har gitt både praktisk erfaring og et tydeligere strategisk perspektiv på hvordan GenAI kan brukes, implementeres og ledes i virksomheter.
+
+For min del har dette vært langt mer enn et fag med pensum, innleveringer, eksamener og prosjektoppgave.
+
+Vi har laget apper, nettsider, assistenter, infographics, podcast, quiz, reklamemateriell i form av bilder og video, og jobbet med et bredt spekter av GenAI verktøy, modeller og praktiske anvendelser. Man skal ikke bare forstå hva AI er, men prøve det ut på tvers av oppgaver, arbeidsformer og forretningsbehov. Studiet har også vektlagt prompt engineering, dataanalyse, automatisering, strategi, implementering og ansvarlig bruk.
+
+I tillegg har jeg fått utviklet 'The Predictive Sales Coach' 👇 - et salgscoach-verktøy som springer ut av både læringen på studiet og min egen kjernekompetanse innen kommersiell ledelse. Indikasjoner på at dette kan ha kommersielt potensial har jeg også fått. 📈
+
+Men studiet har også utløst mer!
+Det har gitt meg motivasjon til å bygge videre utover pensum med agentløsninger, AI-assistert innsikts- og innholdsmotor, AI-arkitektur for beslutningsstøtte, og ikke minst videre refleksjon og faglig deling. Dessuten har det gitt meg inspirasjon for å komme i kontakt med "likesinnede", hvilket for eksempel har ledet til at jeg har dannet AI Value Lab Oslo.
+
+Det gir meg en følelse av stolthet av flere grunner.
+💥 Fordi jeg ikke bare har lært om teknologien, men også bygget noe.
+💥 Fordi jeg har klart å koble ny teknologi med det jeg kan best fra før: salg, kommersiell utvikling, ledelse og praktisk verdiskaping.
+💥 Og fordi det er inspirerende å kjenne at dette ikke bare er faglig interessant, men også relevant og anvendbart i forretningskontekst der det kan ha store konkurransemessige fordeler.
+
+Det er også vanskelig å komme utenom hvor gøy dette har vært. GenAI er et fagområde som utvikler seg svært raskt, og som så tydelig er i tiden, hvilket både gir energi og læringslyst. Når andre hører man fordyper seg i GenAI, er responsen alltid positiv. De fleste ser at dette er et område som blir stadig viktigere fremover.
+
+Min viktigste take-away er derfor denne:
+Det stopper ikke her!
+Innen GenAI holder det ikke å ha testet noen verktøy eller fullført ett kurs. Utviklingen går for fort til det. Man må fortsette å lære, teste, bygge, feile, vurdere og omsette innsikt til praksis. Derfor har det vært spennende å kjenne på følelsen av å sitte mer i førersetet enn på sidelinjen mens mye fortsatt formes. 💪
+
+Takk til professor Shubin Yu og alle medstudenter for inspirerende samlinger, gode diskusjoner, mye energi og kreativitet underveis. 💯`,
+  },
   "econa-ai-kundereise-arbeidsflyt-01": {
     tittel: `What is most interesting about AI now is what it does to the customer journey, workflow and availability`,
     teaser: `Reflections from the Econa event: AI creates value when connected to the customer journey, workflow and concrete needs.`,
