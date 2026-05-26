@@ -16,20 +16,20 @@ const translations: Translations = {
 
   // Profil
   "profil.vp.headline": {
-    no: "Brobyggeren mellom kommersiell strategi og praktisk AI-implementering.",
-    en: "Bridging the gap between commercial strategy and hands-on AI implementation.",
+    no: "Brobygger mellom kommersiell strategi og konkret AI-implementering",
+    en: "Bridge between commercial strategy and hands-on AI implementation",
   },
   "profil.vp.sub": {
-    no: "25+ års kommersiell ledererfaring — nå kombinert med AI-kompetanse for virksomheter som vil skape konkret verdi av ny teknologi.",
-    en: "25+ years of proven commercial leadership — now coupled with AI expertise to help organisations unlock measurable value from emerging technology.",
+    no: "Erfaring fra nasjonal kommersiell ledelse og anvendbar AI-kompetanse — for virksomheter som vil identifisere kjerneprosesser, styrke beslutningsgrunnlaget og realisere målbar verdi av ny teknologi.",
+    en: "National commercial leadership experience and applied AI expertise — for organisations that want to identify core processes, elevate executive decision-making, and realise measurable value from new technology.",
   },
   "profil.tittel": {
-    no: "Kommersiell Leder & AI-Strateg",
-    en: "Commercial Executive & AI Strategist",
+    no: "Kommersiell leder | Vekst, transformasjon & AI",
+    en: "Commercial leader | Growth, transformation & AI",
   },
   "profil.selskap.desc": {
-    no: "Jeg leverer rådgivning og implementering innen AI-strategi, prosessoptimalisering og digital transformasjon — som brobygger mellom ledelse og teknologi. I samarbeid med et nettverk av tekniske eksperter hjelper jeg virksomheter med å omsette AI-muligheter til konkret kommersiell verdi.",
-    en: "I deliver advisory and implementation services spanning AI strategy, process optimisation, and digital transformation — serving as the critical link between executive leadership and technology. In partnership with a curated network of technical specialists, I help organisations convert AI opportunities into tangible commercial outcomes.",
+    no: "Jeg leverer rådgivning og implementering innen AI-strategi, prosessoptimalisering og digital transformasjon — mellom ledelse, forretning og teknologi. I samarbeid med et nettverk av tekniske eksperter omsetter vi AI-muligheter til konkret kommersiell verdi.",
+    en: "I deliver advisory and implementation across AI strategy, process optimisation, and digital transformation — connecting leadership, business, and technology. With a curated network of technical specialists, we convert AI opportunities into tangible commercial outcomes.",
   },
   "profil.chip.ai": { no: "AI-Strategi & Rådgivning", en: "AI Strategy & Advisory" },
   "profil.chip.prosess": { no: "Prosess-optimalisering", en: "Process Optimisation" },
@@ -37,7 +37,7 @@ const translations: Translations = {
   "profil.chip.workshops": { no: "Workshops & Opplæring", en: "Workshops & Capability Building" },
   "profil.cta.tjenester": { no: "Se fullstendig tjenestetilbud", en: "Explore full service offering" },
   "profil.operativ.title": { no: "Operativ kraft & lederskap", en: "Operational Excellence & Leadership" },
-  "profil.bransje.title": { no: "Bransjeerfaring & disiplin", en: "Industry Breadth & Commercial Discipline" },
+  "profil.bransje.title": { no: "Bransjeerfaring & kommersiell tyngde", en: "Industry Experience & Commercial Depth" },
   "profil.utdanning.title": { no: "Utdanning & AI som strategisk verktøy", en: "Education & AI as a Strategic Enabler" },
   "profil.kompetanse.title": { no: "Kjernekompetanse", en: "Core Competencies" },
   "profil.kompetanse.title.1": { no: "Kjerne", en: "Core" },
@@ -46,6 +46,8 @@ const translations: Translations = {
   "profil.styrker.sub": { no: "Slik beskrives min lederkraft av andre:", en: "How peers and colleagues characterise my leadership:" },
   "profil.logoer.erfaring": { no: "Erfaring fra blant annet", en: "Selected Professional Experience" },
   "profil.logoer.utdanning": { no: "Utdanning", en: "Education" },
+  "profil.ai.title": { no: "Praktisk AI & verdiskaping", en: "Practical AI & value creation" },
+  "profil.ai.reise.title": { no: "Hele AI-reisen", en: "The full AI journey" },
 
   // Erfaring
   "erfaring.title": { no: "Karriere høydepunkter", en: "Career Highlights" },
@@ -118,12 +120,53 @@ const translations: Translations = {
   "cons.title.1": { no: "Marius Ottesen", en: "Marius Ottesen" },
   "cons.title.2": { no: "Consulting", en: "Consulting" },
   "cons.intro.1": {
-    no: "Brobyggeren mellom ledelse og AI-teknologi. Jeg hjelper virksomheter med å omsette teknologiske muligheter til kommersiell verdi — uten at det krever et internt tech-team fra dag én.",
-    en: "The bridge between executive leadership and AI technology. I help organisations translate technological opportunity into commercial value — without the need for an in-house tech team from day one.",
+    no: "Brobygger mellom kommersiell ledelse og praktisk AI. Jeg hjelper virksomheter å omsette teknologiske muligheter til målbar verdi i kjerneprosesser, uten at du må bygge et fullt internt tech-team fra dag én.",
+    en: "A bridge between commercial leadership and practical AI. I help organisations translate technological opportunity into measurable value in core processes, without needing a full in-house tech team from day one.",
   },
   "cons.intro.2": {
-    no: "I samarbeid med flere tekniske eksperter leverer jeg rådgivning og implementering som er forankret i forretningsforståelse og praktisk ledererfaring.",
-    en: "In partnership with a vetted network of technical experts, I deliver advisory and implementation services anchored in business acumen and hands-on leadership experience.",
+    no: "Bakgrunnen min er kommersiell ledelse med helhetlig P/L-ansvar, nasjonale salgsorganisasjoner og lang erfaring fra komplekse B2B-miljøer. Parallelt har jeg bygget praktisk AI-kompetanse gjennom Generative AI for Business ved BI og konkret utviklingsarbeid, inkludert agentløsninger, AI-assistert beslutningsstøtte, innholds- og innsiktsmotor, nettsider og kommersielle prototyper som Predictive Sales Coach.",
+    en: "My background is commercial leadership with full P&L accountability, national sales organisations, and long experience from complex B2B environments. In parallel I have built practical AI competence through Generative AI for Business at BI and hands-on development work, including agent-based solutions, AI-assisted decision support, content and insights engines, websites, and commercial prototypes such as Predictive Sales Coach.",
+  },
+  "cons.intro.3": {
+    no: "Jeg ser at AI skaper verdi når virksomheter går fra verktøybruk til arbeidsflytdesign. Legger man AI oppå dagens prosesser, blir gevinstene som regel inkrementelle. Redesigner man arbeidsflyt, roller og beslutningspunkter, kan de bli strukturelle. Det gjelder særlig i kommersielle prosesser der marked, salg og kundeteam ofte sitter på mye av dataene som trengs.",
+    en: "I see AI creating value when organisations move from tool use to workflow design. Layer AI onto existing processes and gains are usually incremental. Redesign workflows, roles, and decision points, and they can become structural. This is especially true in commercial processes where marketing, sales, and customer teams often hold much of the data required.",
+  },
+  "cons.intro.4": {
+    no: "Typiske områder er B2B-salg og go-to-market, vekst og retention, samt service og kundebehandling. Her finnes det ofte arbeidsflyter med høy gjennomførbarhet og høy verdi. Min jobb er å koble marked, kunde, salgsprosess, organisasjon og teknologi, og vurdere realistisk hva som faktisk kan leveres.",
+    en: "Typical areas include B2B sales and go-to-market, growth and retention, and service and customer care. These are often high-feasibility, high-value workflows. My role is to connect market, customer, sales process, organisation, and technology, and assess realistically what can actually deliver.",
+  },
+  "cons.intro.5": {
+    no: "I oppdrag jobber jeg hands-on med use case-identifisering, prioritering, business case, forankring og oppfølging. Jeg tar også del i utvikling og implementering der det er naturlig, og supplerer med spesialister når prosjektet krever det. Samtidig holder jeg den kommersielle retningen, adopsjonen og kvaliteten i gjennomføringen. Det inkluderer governance, læring i organisasjonen og støtte til ledere og team når AI skal inn i drift, ikke bare i pilot.",
+    en: "In engagements I work hands-on on use case identification, prioritisation, business case, anchoring, and follow-up. I also take part in development and implementation where that makes sense, and bring in specialists when the project requires it. At the same time I hold the commercial direction, adoption, and quality of execution. That includes governance, organisational learning, and support for leaders and teams when AI must move into operations, not just pilot.",
+  },
+  "cons.formula.title": { no: "Business case-formel for AI-verdi", en: "Business case formula for AI value" },
+  "cons.formula.line": {
+    no: "Annual net value = Baseline × AI delta × Adoption × Confidence − Build & run cost",
+    en: "Annual net value = Baseline × AI delta × Adoption × Confidence − Build & run cost",
+  },
+  "cons.formula.baseline": {
+    no: "Baseline er dagens kostnad eller behov i prosessen.",
+    en: "Baseline is what the process costs or requires today.",
+  },
+  "cons.formula.delta": {
+    no: "AI delta er forbedringen AI faktisk kan gi.",
+    en: "AI delta is the improvement AI can actually deliver.",
+  },
+  "cons.formula.adoption": {
+    no: "Adoption handler om i hvilken grad løsningen tas i bruk.",
+    en: "Adoption is the extent to which the solution is put into use.",
+  },
+  "cons.formula.confidence": {
+    no: "Confidence er tilliten brukerne har til kvaliteten.",
+    en: "Confidence is the trust users have in the quality.",
+  },
+  "cons.formula.cost": {
+    no: "Build & run cost er kostnaden ved å bygge, drifte og skalere.",
+    en: "Build & run cost is the cost of building, operating, and scaling.",
+  },
+  "cons.formula.closing": {
+    no: "Teknisk potensial er ikke nok. Verdien avhenger også av adopsjon, tillit og kontroll på build- og driftskostnader.",
+    en: "Technical potential is not enough. Value also depends on adoption, trust, and control of build and run costs.",
   },
   "cons.tjenester": { no: "Tjenester", en: "Service Offering" },
   "cons.initiatives.title": { no: "Utvalgte initiativer", en: "Selected initiatives" },

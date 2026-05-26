@@ -1,11 +1,12 @@
 "use client";
 import React, { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
-import { X, ExternalLink, ArrowRight } from 'lucide-react';
+import { X, ExternalLink, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { tennisLedelse } from './data/innlegg/tennis-ledelse';
 import { aiGovernance } from './data/innlegg/ai-governance';
 import { useLanguage } from './LanguageContext';
 import { getTranslation } from './data/translations';
+import { normalizeDisplayText } from './lib/normalize-display-text';
 
 interface InnleggType {
   id: string;
@@ -17,7 +18,51 @@ interface InnleggType {
   kategori: string;
   link: string;
   innhold?: { no: string; en: string };
+  /** Valgfri bildekarusell (f.eks. tegneserie-paneler). */
+  karusellBilder?: { src: string; alt?: { no: string; en: string } }[];
+  karusellPdfUrl?: string;
+  /** cover = fyll ruten (foto). contain = hele bildet sentrert (grafikk/tekst). */
+  bildeFit?: "cover" | "contain";
+  /** Valgfritt kortbilde i listen. Modal bruker bildeUrl. */
+  bildeUrlKort?: string;
+  /** Bredt hovedbilde i modal (f.eks. landscape-banner). */
+  bildeModalBred?: boolean;
+  /** Tvinger ny bildeversjon ved oppdatering av samme filnavn. */
+  bildeVersjon?: string;
+  /** object-position for kortminiatyr (f.eks. "center 30%"). Modal uendret. */
+  bildeKortFokus?: string;
+  /** Zoom inn på kortminiatyr for å kutte innbygget kant/letterboxing (f.eks. 1.12). */
+  bildeKortZoom?: number;
 }
+
+const bildeCacheVersion = (innlegg: InnleggType) => innlegg.bildeVersjon ?? innlegg.dato;
+
+const bildeFitClass = (innlegg: InnleggType) =>
+  innlegg.bildeFit === "contain" ? "object-contain object-center" : "object-cover object-center";
+
+const kortBildeSrc = (innlegg: InnleggType) => innlegg.bildeUrlKort ?? innlegg.bildeUrl;
+
+const kortBildeStil = (innlegg: InnleggType): React.CSSProperties => ({
+  objectPosition: innlegg.bildeKortFokus ?? "center",
+  ...(innlegg.bildeKortZoom ? { transform: `scale(${innlegg.bildeKortZoom})` } : {}),
+});
+
+/** Felles kortdimensjoner – én regel for alle innlegg */
+const KORT_BILDE_BREDDE = 122;
+const KORT_BILDE_HOYDE = 186;
+const KORT_HOYDE = 206; // bilde + pt-3 + pb-2
+const KORT_TITTEL_HOYDE = "2.875rem"; // 2 linjer text-lg leading-tight
+const KORT_TEASER_HOYDE = "5.25rem"; // 4 linjer × 13px × 1.625 line-height
+
+/** Modal – minimumsstandard for liggende hovedbilde */
+const MODAL_LANDSCAPE_KLASSE =
+  "w-full max-w-[min(100%,754px)] mx-auto h-auto min-h-[286px] md:min-h-[325px] max-h-[59vh] md:max-h-[65vh] object-contain rounded-lg";
+const MODAL_PORTRAIT_KLASSE =
+  "w-auto max-w-[min(100%,480px)] md:max-w-[560px] max-h-[68vh] md:max-h-[72vh] h-auto object-contain rounded-lg mx-auto";
+const MODAL_LANDSCAPE_ASPECT = 16 / 9;
+const MODAL_PORTRAIT_ASPECT = 5 / 7;
+
+const erLandscapeProporsjon = (w: number, h: number) => w > h * 1.08;
 
 const Faginnlegg = ({ onNavigate }: { onNavigate?: (tab: string) => void }) => {
   const { lang } = useLanguage();
@@ -29,7 +74,8 @@ const Faginnlegg = ({ onNavigate }: { onNavigate?: (tab: string) => void }) => {
     ...(aiGovernance as InnleggType[])
   ].sort((a, b) => new Date(b.dato).getTime() - new Date(a.dato).getTime());
 
-  const ledelseInnlegg = alleInnlegg.filter(i => i.kategori === "Kommersiell Ledelse");
+  const ledelseKategorier = new Set(["Kommersiell Ledelse", "Generell ledelse og strategi"]);
+  const ledelseInnlegg = alleInnlegg.filter(i => ledelseKategorier.has(i.kategori));
   const aiInnlegg = alleInnlegg.filter(i => i.kategori === "AI / KI");
 
   const lukkModal = useCallback(() => setAktivtInnlegg(null), []);
@@ -86,7 +132,7 @@ const Faginnlegg = ({ onNavigate }: { onNavigate?: (tab: string) => void }) => {
                       onClick={() => setAktivtInnlegg(innlegg)}
                       className="border-b border-slate-800/40 hover:bg-slate-900/40 cursor-pointer transition-colors"
                     >
-                      <td className="py-1.5 px-2 text-sm text-slate-300 hover:text-indigo-300">
+                      <td className="py-1.5 px-2 text-sm font-sans font-normal text-slate-300 hover:text-indigo-300">
                         {innlegg.tittel[lang]}
                       </td>
                     </tr>
@@ -164,34 +210,52 @@ const Faginnlegg = ({ onNavigate }: { onNavigate?: (tab: string) => void }) => {
 
 /* ——— KORT ——— */
 const InnleggsKort = ({ innlegg, lang, onClick, lesLabel }: { innlegg: InnleggType; lang: "no" | "en"; onClick: () => void; lesLabel: string }) => {
-  const isVideo = innlegg.bildeUrl.toLowerCase().endsWith(".mp4") || innlegg.bildeUrl.toLowerCase().endsWith(".webm");
+  const cacheVersion = bildeCacheVersion(innlegg);
+  const kortSrc = kortBildeSrc(innlegg);
+  const isVideo =
+    kortSrc.toLowerCase().endsWith(".mp4") ||
+    kortSrc.toLowerCase().endsWith(".webm") ||
+    kortSrc.toLowerCase().endsWith(".mov");
   return (
     <div
       onClick={onClick}
-      className="group bg-slate-900/40 rounded-2xl border border-indigo-500/20 p-4 sm:p-6 hover:bg-slate-900/60 transition-all duration-300 shadow-xl flex flex-col sm:flex-row items-start gap-4 sm:gap-6 w-full text-left min-h-[200px] cursor-pointer"
+      className="group bg-slate-900/40 rounded-2xl border border-indigo-500/20 px-4 pt-3 pb-2 hover:bg-slate-900/60 transition-all duration-300 shadow-xl flex flex-row items-start gap-4 w-full text-left cursor-pointer"
+      style={{ height: KORT_HOYDE }}
     >
-      <div className="w-full sm:w-[105px] h-[120px] sm:h-[160px] shrink-0 rounded-lg overflow-hidden bg-slate-800 border border-slate-800">
+      <div
+        className="relative shrink-0 rounded-lg overflow-hidden bg-slate-900 border border-slate-800"
+        style={{ width: KORT_BILDE_BREDDE, height: KORT_BILDE_HOYDE }}
+      >
         {isVideo ? (
           <video
-            key={`${innlegg.bildeUrl}-${innlegg.dato}`}
-            src={`${innlegg.bildeUrl}?v=${innlegg.dato}`}
-            className="w-full h-full object-cover transition-all duration-500"
+            key={`${kortSrc}-${cacheVersion}`}
+            src={`${kortSrc}?v=${cacheVersion}`}
+            className="absolute inset-0 w-full h-full object-cover transition-all duration-500"
+            style={kortBildeStil(innlegg)}
             autoPlay
             muted
             loop
             playsInline
           />
         ) : (
-          <Image key={`${innlegg.bildeUrl}-${innlegg.dato}`} src={`${innlegg.bildeUrl}?v=${innlegg.dato}`} alt={innlegg.tittel[lang]} width={105} height={160} className="w-full h-full object-cover transition-all duration-500" unoptimized />
+          <Image
+            key={`${kortSrc}-${cacheVersion}`}
+            src={`${kortSrc}?v=${cacheVersion}`}
+            alt={innlegg.tittel[lang]}
+            fill
+            sizes={`${KORT_BILDE_BREDDE}px`}
+            className="object-cover transition-all duration-500"
+            style={kortBildeStil(innlegg)}
+            unoptimized
+          />
         )}
       </div>
-      <div className="flex-1 min-w-0 flex flex-col justify-between overflow-hidden">
-        <div className="overflow-hidden">
-          <span className="text-[9px] font-mono text-indigo-400 uppercase tracking-widest font-bold block mb-1">{innlegg.visningsDato}</span>
-          <h3 className="text-lg font-bold text-white leading-tight truncate mb-1 group-hover:text-indigo-300 transition-colors">{innlegg.tittel[lang]}</h3>
-          <p className="text-slate-400 text-[13px] leading-relaxed line-clamp-3 font-light">{innlegg.teaser[lang]}</p>
-        </div>
-        <div className="mt-auto pt-2 flex items-center gap-4">
+      <div className="flex-1 min-w-0 flex flex-col overflow-hidden" style={{ height: KORT_BILDE_HOYDE }}>
+        <span className="text-[9px] font-mono text-indigo-400 uppercase tracking-widest font-bold block mb-1 leading-none shrink-0">{innlegg.visningsDato}</span>
+        <h3 className="text-lg font-sans font-bold text-white leading-tight line-clamp-2 overflow-hidden shrink-0 mb-2.5 group-hover:text-indigo-300 transition-colors" style={{ height: KORT_TITTEL_HOYDE }}>{innlegg.tittel[lang]}</h3>
+        <p className="text-slate-400 text-[13px] leading-[1.625] line-clamp-4 overflow-hidden font-light shrink-0 mb-0" style={{ height: KORT_TEASER_HOYDE }}>{innlegg.teaser[lang]}</p>
+        <div className="flex-1 min-h-0" aria-hidden="true" />
+        <div className="shrink-0 flex items-center gap-4 leading-none">
           <span className="inline-flex items-center gap-1 text-[9px] font-black uppercase tracking-widest text-indigo-400">
             {lesLabel} <span>→</span>
           </span>
@@ -204,48 +268,204 @@ const InnleggsKort = ({ innlegg, lang, onClick, lesLabel }: { innlegg: InnleggTy
   );
 };
 
-/* Fjerner ledende avsnitt i innhold som gjentar tittelen ord for ord */
+/* ——— KARUSELL ——— */
+const InnleggKarusell = ({
+  slides,
+  lang,
+  cacheVersion,
+  pdfUrl,
+}: {
+  slides: { src: string; alt?: { no: string; en: string } }[];
+  lang: "no" | "en";
+  cacheVersion: string;
+  pdfUrl?: string;
+}) => {
+  const [index, setIndex] = useState(0);
+  const total = slides.length;
+  const goPrev = () => setIndex((i) => (i - 1 + total) % total);
+  const goNext = () => setIndex((i) => (i + 1) % total);
+
+  useEffect(() => {
+    setIndex(0);
+  }, [slides]);
+
+  if (total === 0) return null;
+
+  const slide = slides[index];
+  const alt = slide.alt?.[lang] ?? (lang === "no" ? `Panel ${index + 1}` : `Panel ${index + 1}`);
+
+  return (
+    <div className="w-full max-w-[520px] mx-auto">
+      <div className="relative rounded-lg overflow-hidden bg-slate-900 border border-slate-700/80">
+        <Image
+          key={`${slide.src}-${index}`}
+          src={`${slide.src}?v=${cacheVersion}`}
+          alt={alt}
+          width={520}
+          height={720}
+          className="w-full h-auto max-h-[68vh] md:max-h-[75vh] object-contain"
+          unoptimized
+        />
+        {total > 1 && (
+          <>
+            <button
+              type="button"
+              onClick={goPrev}
+              className="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 flex items-center justify-center rounded-full bg-slate-950/80 border border-slate-600 text-slate-300 hover:text-white hover:border-indigo-400 transition-all focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:outline-none"
+              aria-label={lang === "no" ? "Forrige panel" : "Previous panel"}
+            >
+              <ChevronLeft size={20} />
+            </button>
+            <button
+              type="button"
+              onClick={goNext}
+              className="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 flex items-center justify-center rounded-full bg-slate-950/80 border border-slate-600 text-slate-300 hover:text-white hover:border-indigo-400 transition-all focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:outline-none"
+              aria-label={lang === "no" ? "Neste panel" : "Next panel"}
+            >
+              <ChevronRight size={20} />
+            </button>
+            <span className="absolute bottom-2 right-2 px-2 py-0.5 rounded-md bg-slate-950/80 text-[10px] font-mono text-slate-400 border border-slate-700">
+              {index + 1} / {total}
+            </span>
+          </>
+        )}
+      </div>
+      {total > 1 && (
+        <div className="flex justify-center gap-1.5 mt-3 flex-wrap">
+          {slides.map((_, i) => (
+            <button
+              key={i}
+              type="button"
+              onClick={() => setIndex(i)}
+              className={`w-2 h-2 rounded-full transition-all focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:outline-none ${
+                i === index ? "bg-indigo-400 w-5" : "bg-slate-600 hover:bg-slate-500"
+              }`}
+              aria-label={lang === "no" ? `Gå til panel ${i + 1}` : `Go to panel ${i + 1}`}
+              aria-current={i === index ? "true" : undefined}
+            />
+          ))}
+        </div>
+      )}
+      {pdfUrl && (
+        <p className="mt-3 text-center">
+          <a
+            href={pdfUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[11px] font-bold uppercase tracking-widest text-indigo-400 hover:text-indigo-200 transition-colors"
+          >
+            {lang === "no" ? "Åpne hele tegneserien (PDF)" : "Open full comic (PDF)"}
+          </a>
+        </p>
+      )}
+    </div>
+  );
+};
+
+/* Fjerner ledende avsnitt/linje i innhold som gjentar tittelen ord for ord */
 function stripDuplicateTitle(innhold: string, tittel: string): string {
   const normalize = (s: string) =>
-    s
+    normalizeDisplayText(s)
       .toLowerCase()
       .replace(/<[^>]+>/g, " ")
-      .replace(/[\u2013\u2014\u2212\-–—]/g, " ") // en-dash, em-dash, minus, hyphen
-      .replace(/[^\p{L}\p{N}\s]/gu, " ") // alle tegn som ikke er bokstaver/tall (Unicode)
+      .replace(/[\u2013\u2014\u2212\-–—]/g, " ")
+      .replace(/[^\p{L}\p{N}\s]/gu, " ")
       .replace(/\s+/g, " ")
       .trim();
-  const paragraphs = innhold.split("\n\n").map((p) => p.trim()).filter(Boolean);
+
+  const raw = (innhold || "").trim();
+  if (!raw) return raw;
+
   const normalizedTitle = normalize(tittel);
-  if (!normalizedTitle) return innhold;
-  let startIndex = 0;
-  let accumulated = "";
-  for (let i = 0; i < paragraphs.length; i++) {
-    const plain = paragraphs[i].replace(/<[^>]+>/g, " ");
-    const norm = normalize(plain);
-    if (!norm) {
-      startIndex = i + 1;
-      continue;
-    }
-    accumulated = (accumulated + " " + norm).trim();
-    const matchesTitle =
-      norm === normalizedTitle ||
-      normalizedTitle === norm ||
-      normalizedTitle.includes(norm) ||
-      norm.includes(normalizedTitle) ||
-      accumulated === normalizedTitle ||
-      normalizedTitle.includes(accumulated) ||
-      accumulated.includes(normalizedTitle);
-    if (matchesTitle) startIndex = i + 1;
-    if (accumulated.length > normalizedTitle.length * 2 && !matchesTitle) break;
+  if (!normalizedTitle) return raw;
+
+  const paragraphs = raw.split("\n\n").map((p) => p.trim()).filter(Boolean);
+  if (!paragraphs.length) return raw;
+
+  const firstParagraph = paragraphs[0];
+  const firstParagraphNorm = normalize(firstParagraph.replace(/<[^>]+>/g, " "));
+  if (firstParagraphNorm === normalizedTitle) {
+    return paragraphs.slice(1).join("\n\n");
   }
-  return paragraphs.slice(startIndex).join("\n\n");
+
+  const lines = firstParagraph.split("\n").map((l) => l.trim()).filter(Boolean);
+  if (lines.length > 1 && normalize(lines[0].replace(/<[^>]+>/g, " ")) === normalizedTitle) {
+    const restOfFirst = lines.slice(1).join("\n").trim();
+    return [restOfFirst, ...paragraphs.slice(1)].filter(Boolean).join("\n\n");
+  }
+
+  return raw;
 }
+
+const ModalInnleggsMedia = ({
+  innlegg,
+  lang,
+  cacheVersion,
+}: {
+  innlegg: InnleggType;
+  lang: "no" | "en";
+  cacheVersion: string;
+}) => {
+  const [erLandscape, setErLandscape] = useState(Boolean(innlegg.bildeModalBred));
+  const isVideo =
+    innlegg.bildeUrl.toLowerCase().endsWith(".mp4") ||
+    innlegg.bildeUrl.toLowerCase().endsWith(".webm") ||
+    innlegg.bildeUrl.toLowerCase().endsWith(".mov");
+
+  const oppdaterProporsjon = (w: number, h: number) => {
+    if (innlegg.bildeModalBred) {
+      setErLandscape(true);
+      return;
+    }
+    setErLandscape(erLandscapeProporsjon(w, h));
+  };
+
+  const mediaKlasse = erLandscape ? MODAL_LANDSCAPE_KLASSE : MODAL_PORTRAIT_KLASSE;
+
+  return (
+    <div className={`w-full flex justify-center bg-slate-900/50 ${erLandscape ? "px-2 sm:px-3 pt-2 pb-4" : "p-4 sm:p-6"}`}>
+      {innlegg.karusellBilder && innlegg.karusellBilder.length > 0 ? (
+        <InnleggKarusell
+          slides={innlegg.karusellBilder}
+          lang={lang}
+          cacheVersion={cacheVersion}
+          pdfUrl={innlegg.karusellPdfUrl}
+        />
+      ) : isVideo ? (
+        <video
+          key={`${innlegg.bildeUrl}-${cacheVersion}`}
+          src={`${innlegg.bildeUrl}?v=${cacheVersion}`}
+          className={mediaKlasse}
+          controls
+          autoPlay
+          muted
+          loop
+          playsInline
+          onLoadedMetadata={(e) => oppdaterProporsjon(e.currentTarget.videoWidth, e.currentTarget.videoHeight)}
+        />
+      ) : (
+        <Image
+          key={`${innlegg.bildeUrl}-${cacheVersion}`}
+          src={`${innlegg.bildeUrl}?v=${cacheVersion}`}
+          alt={innlegg.tittel[lang]}
+          width={erLandscape ? 960 : MODAL_PORTRAIT_ASPECT * 720}
+          height={erLandscape ? 960 / MODAL_LANDSCAPE_ASPECT : 720}
+          className={mediaKlasse}
+          onLoadingComplete={(img) => oppdaterProporsjon(img.naturalWidth, img.naturalHeight)}
+          unoptimized
+        />
+      )}
+    </div>
+  );
+};
 
 /* ——— MODAL ——— */
 const InnleggModal = ({ innlegg, lang, onClose, onNavigate, linkedinLabel, ctaText, ctaLink }: { innlegg: InnleggType; lang: "no" | "en"; onClose: () => void; onNavigate?: (tab: string) => void; linkedinLabel: string; ctaText: string; ctaLink: string }) => {
+  const cacheVersion = bildeCacheVersion(innlegg);
   const bodyRaw = innlegg.innhold?.[lang] || innlegg.teaser[lang];
-  const bodyWithoutTitle = innlegg.innhold ? stripDuplicateTitle(innlegg.innhold[lang], innlegg.tittel[lang]) : bodyRaw;
-  const isVideo = innlegg.bildeUrl.toLowerCase().endsWith(".mp4") || innlegg.bildeUrl.toLowerCase().endsWith(".webm");
+  const bodyWithoutTitle = innlegg.innhold
+    ? stripDuplicateTitle(innlegg.innhold[lang], innlegg.tittel[lang])
+    : bodyRaw;
 
   return (
     <div className="fixed inset-0 z-50 flex items-start justify-center bg-black/80 backdrop-blur-sm overflow-y-auto py-8 px-2 sm:px-4 modal-enter" onClick={onClose}>
@@ -254,30 +474,7 @@ const InnleggModal = ({ innlegg, lang, onClose, onNavigate, linkedinLabel, ctaTe
           <X size={20} />
         </button>
 
-        <div className="w-full flex justify-center bg-slate-900/50 p-4 sm:p-6">
-          {isVideo ? (
-            <video
-              key={`${innlegg.bildeUrl}-${innlegg.dato}`}
-              src={`${innlegg.bildeUrl}?v=${innlegg.dato}`}
-              className="max-w-[420px] md:max-w-[520px] max-h-[68vh] md:max-h-[75vh] w-auto h-auto object-contain rounded-lg"
-              controls
-              autoPlay
-              muted
-              loop
-              playsInline
-            />
-          ) : (
-            <Image
-              key={`${innlegg.bildeUrl}-${innlegg.dato}`}
-              src={`${innlegg.bildeUrl}?v=${innlegg.dato}`}
-              alt={innlegg.tittel[lang]}
-              width={420}
-              height={600}
-              className="max-w-[420px] md:max-w-[520px] max-h-[68vh] md:max-h-[75vh] w-auto h-auto object-contain rounded-lg"
-              unoptimized
-            />
-          )}
-        </div>
+        <ModalInnleggsMedia innlegg={innlegg} lang={lang} cacheVersion={cacheVersion} />
 
         <div className="p-8 md:p-12 space-y-6">
           <div className="flex items-center gap-4 flex-wrap">
@@ -286,20 +483,42 @@ const InnleggModal = ({ innlegg, lang, onClose, onNavigate, linkedinLabel, ctaTe
             <span className="text-[10px] font-bold text-indigo-400 uppercase tracking-widest">{innlegg.kategori}</span>
           </div>
 
-          <h2 id="modal-title" className="text-3xl md:text-4xl font-black text-white tracking-tight leading-tight uppercase italic">{innlegg.tittel[lang]}</h2>
+          <h2 id="modal-title" className="text-3xl md:text-4xl font-sans font-black text-white tracking-tight leading-tight">{innlegg.tittel[lang]}</h2>
           <div className="w-16 h-0.5 bg-indigo-500/40" />
 
           <div
             className="text-slate-300 text-base leading-relaxed space-y-0 [&_strong]:font-semibold [&_em]:italic"
             dangerouslySetInnerHTML={{
-              __html: (bodyWithoutTitle || bodyRaw)
+              __html: (innlegg.innhold ? bodyWithoutTitle : bodyRaw)
                 .split("\n\n")
                 .map((avsnitt) => {
                   const trimmed = avsnitt.trim();
                   if (!trimmed) return "";
-                  if (trimmed.startsWith("•")) {
-                    const punkter = trimmed.split("\n").filter((l) => l.trim().startsWith("•")).map((l) => `<li class="ml-4">${l.trim().substring(1).trim()}</li>`).join("");
-                    return `<ul class="space-y-2 my-4 text-slate-400">${punkter}</ul>`;
+                  const lines = trimmed.split("\n").map((l) => l.trim()).filter(Boolean);
+                  const bulletLines = lines.filter((l) => l.startsWith("•") || l.startsWith("- "));
+                  if (bulletLines.length > 0 && bulletLines.length === lines.length) {
+                    const punkter = bulletLines
+                      .map((l) => {
+                        const text = l.startsWith("•") ? l.substring(1).trim() : l.substring(2).trim();
+                        return `<li>${text}</li>`;
+                      })
+                      .join("");
+                    return `<ul class="list-disc pl-6 space-y-2 my-4 text-slate-300 marker:text-indigo-400">${punkter}</ul>`;
+                  }
+                  if (trimmed.startsWith("•") || trimmed.startsWith("- ")) {
+                    const punkter = trimmed
+                      .split("\n")
+                      .filter((l) => l.trim().startsWith("•") || l.trim().startsWith("- "))
+                      .map((l) => {
+                        const t = l.trim();
+                        const text = t.startsWith("•") ? t.substring(1).trim() : t.substring(2).trim();
+                        return `<li>${text}</li>`;
+                      })
+                      .join("");
+                    return `<ul class="list-disc pl-6 space-y-2 my-4 text-slate-300 marker:text-indigo-400">${punkter}</ul>`;
+                  }
+                  if (trimmed.startsWith("Annual net value =")) {
+                    return `<p class="mb-4 rounded-xl border border-indigo-500/25 bg-indigo-500/10 px-4 py-3 text-indigo-300 font-semibold leading-snug">${trimmed}</p>`;
                   }
                   return `<p class="mb-4">${trimmed.replace(/\n/g, "<br/>")}</p>`;
                 })

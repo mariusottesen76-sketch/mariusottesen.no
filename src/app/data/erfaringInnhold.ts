@@ -2,7 +2,7 @@ import { Lang } from "../LanguageContext";
 
 const data = {
   no: {
-    intro: "25+ års karriere på tvers av kunnskapsintensive B2B-markeder — fra life science og sirkulær økonomi til teknologi og grossist. Gjennomgående ansvar for å profesjonalisere salgsorganisasjoner, drive vekst og lede endringsprosesser i virksomheter med høye krav til kvalitet og leveranseevne.",
+    intro: "Solid erfaring på tvers av kunnskapsintensive B2B-markeder — fra industri, life science og sirkulær økonomi til teknologi og grossistvirksomhet. Gjennomgående ansvar for å profesjonalisere salgsorganisasjoner, drive vekst og lede endringsprosesser i virksomheter med høye krav til kvalitet og leveranseevne.",
     jobs: [
       {
         title: "Nasjonal Salgssjef",
@@ -44,7 +44,7 @@ const data = {
     ],
   },
   en: {
-    intro: "A 25+ year career spanning knowledge-intensive B2B markets — from life science and circular economy to technology and wholesale distribution. A consistent track record of professionalising sales organisations, accelerating growth, and leading transformation programmes in businesses with exacting standards for quality and delivery.",
+    intro: "Solid experience across knowledge-intensive B2B markets — from industry, life science and circular economy to technology and wholesale. A consistent track record of professionalising sales organisations, accelerating growth, and leading transformation programmes in businesses with exacting standards for quality and delivery.",
     jobs: [
       {
         title: "National Sales Director",

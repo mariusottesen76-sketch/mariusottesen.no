@@ -21,6 +21,7 @@
 /build
 
 # misc
+.cursor/latest-screenshot.png
 .DS_Store
 *.pem
 

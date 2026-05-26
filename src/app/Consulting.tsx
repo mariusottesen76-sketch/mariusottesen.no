@@ -199,7 +199,7 @@ export default function Consulting() {
               <div className="rounded-lg overflow-hidden border border-slate-700/50 shadow bg-white p-2 min-w-0 max-w-full sm:max-w-[15.75rem] sm:ml-4">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/images/moc-avlang-logo.png"
+                  src="/images/moc-avlang.png"
                   alt="Marius Ottesen Consulting — Commercial Strategy & AI Leadership"
                   className="h-auto w-full max-w-full block object-contain object-left"
                   width={360}
@@ -207,13 +207,40 @@ export default function Consulting() {
                 />
               </div>
             </div>
-            <div className="max-w-3xl space-y-6 mt-4">
+            <div className="max-w-3xl space-y-5 mt-4">
               <p className="text-xl md:text-2xl text-slate-300 leading-relaxed font-light">
                 {tr("cons.intro.1")}
               </p>
-              <p className="text-lg md:text-xl text-slate-400 italic leading-relaxed font-light">
+              <p className="text-lg text-slate-400 leading-relaxed font-light">
                 {tr("cons.intro.2")}
               </p>
+              <p className="text-lg text-slate-400 leading-relaxed font-light">
+                {tr("cons.intro.3")}
+              </p>
+              <p className="text-lg text-slate-400 leading-relaxed font-light">
+                {tr("cons.intro.4")}
+              </p>
+              <p className="text-lg text-slate-400 leading-relaxed font-light">
+                {tr("cons.intro.5")}
+              </p>
+              <div className="rounded-xl border border-indigo-500/20 bg-indigo-500/5 px-4 py-3 space-y-2">
+                <p className="text-[11px] font-black uppercase tracking-widest text-indigo-400">
+                  {tr("cons.formula.title")}
+                </p>
+                <p className="text-indigo-200 font-semibold text-base leading-snug">
+                  {tr("cons.formula.line")}
+                </p>
+                <ul className="list-disc pl-5 space-y-1 text-sm text-slate-400 leading-relaxed">
+                  <li>{tr("cons.formula.baseline")}</li>
+                  <li>{tr("cons.formula.delta")}</li>
+                  <li>{tr("cons.formula.adoption")}</li>
+                  <li>{tr("cons.formula.confidence")}</li>
+                  <li>{tr("cons.formula.cost")}</li>
+                </ul>
+                <p className="text-sm text-slate-400 leading-relaxed">
+                  {tr("cons.formula.closing")}
+                </p>
+              </div>
             </div>
           </div>
         </div>

@@ -74,6 +74,18 @@
   animation: modalFadeIn 0.2s ease-out;
 }
 
+/* PSCv6 – samme farger som i PSC-appen */
+.psc-v {
+  color: #e30613;
+  font-weight: inherit;
+  text-transform: lowercase;
+}
+
+.psc-mark {
+  color: #ffffff;
+  font-weight: inherit;
+}
+
 /* Focus visible styles */
 *:focus-visible {
   outline: 2px solid rgb(99, 102, 241);

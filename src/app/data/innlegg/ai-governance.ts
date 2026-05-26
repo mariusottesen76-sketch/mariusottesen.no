@@ -1,3 +1,5 @@
+import { normalizeDisplayText } from "../../lib/normalize-display-text";
+
 type LocalizedText = {
   no: string;
   en: string;
@@ -11,7 +13,250 @@ type LocalizedTextMap = {
 
 const localize = (no: string, en: string = no): LocalizedText => ({ no, en });
 
+const tegneserieKarusellBilder = Array.from({ length: 9 }, (_, i) => ({
+  src: `/images/tegneserie${i + 1}.png`,
+  alt: {
+    no: `Tegneserie – panel ${i + 1} av 9`,
+    en: `Comic – panel ${i + 1} of 9`,
+  },
+}));
+
 const aiGovernanceRaw = [
+    {
+      id: "ai-kompetanse-tech-frokost-telenor-2026-05",
+      tittel: "AI-kompetansegapet vokser der erfaringen ikke bygges",
+      teaser:
+        "Telenor og Equinor på Digital Norways tech-frokost: to spor for AI-adopsjon, kommersielle arbeidsflyter med høy verdi — og en formel som flytter diskusjonen fra potensial til gjennomføring.",
+      bildeUrl: "/images/tech-frokost.png",
+      bildeUrlKort: "/images/tech-frokost-kort.png",
+      bildeModalBred: true,
+      bildeVersjon: "2026-05-28",
+      dato: "2026-05-28",
+      visningsDato: "28.05.26",
+      kategori: "AI / KI",
+      link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
+      innhold: `Forrige uke skrev vi i <a href="https://www.linkedin.com/company/aivaluelaboslo/" target="_blank" rel="noopener noreferrer" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">AI Value Lab Oslo</a>, med utgangspunkt i Erlend Rosseland Stokkes poeng i <a href="https://www.digi.no/artikler/debatt-norsk-naeringsliv-undervurderer-den-virkelige-ki-mangelen/572264" target="_blank" rel="noopener noreferrer" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">digi.no</a>, om en AI-mangel som kan bli mer krevende enn mange ser nå.
+
+Ikke mangel på teknologi.
+Ikke mangel på verktøy.
+👉 Men mangel på mennesker og miljøer som har fått AI til å fungere i praksis.
+
+Stokke peker på en selvforsterkende sirkel. Virksomheter blir stående i pilotmodus fordi de mangler folk med reell erfaring. Samtidig bygges erfaring først når noen får ta AI fra pilot til produksjon.
+
+På Digital Norways tech-frokost tirsdag, om AI-adopsjon i Equinor og Telenor, fikk jeg samme poeng bekreftet fra en annen vinkel.
+
+Mange virksomheter følger i realiteten ett av to spor.
+
+🔁 Det ene er pilotmodus. Mange diskusjoner. Mye verktøyfokus. Nye tester. Men begrenset bevegelse. Man lærer litt, men ikke nok til å bygge trygghet, gjennomføringsevne og praktisk modenhet.
+
+📈 Det andre er å bygge kompetanse gjennom reelle use cases. Da flyttes læringen inn i arbeidsprosesser, kundeopplevelse, data, governance, samarbeid og leveranser. Kompetanse blir ikke bare noe man snakker om. Den bygges gjennom bruk, justering og ansvarlig implementering.
+
+Det var interessant hvor tett dette ble koblet til kommersiell verdi.
+
+Telenor viste attraktive AI-områder innen:
+💥 B2B-salg og go-to-market
+💥 Kundevekst og kundebevaring
+💥 Kundeservice og kundeoppfølging
+
+Dette er ikke perifere AI-områder, men arbeidsflyter med høy gjennomførbarhet og høy verdi. Det er kjernen i kommersielle prosesser, kundereiser og verdiskaping.
+
+For meg treffer dette godt med min kommersielle ledererfaring og det jeg utforsker gjennom praktiske AI-prosjekter.
+
+Et annet sterkt poeng fra Telenor var at AI ikke bare bør legges oppå dagens arbeidsflyter. Da blir gevinstene ofte inkrementelle. Når arbeidsflytene redesignes rundt AI, kan gevinstene bli strukturelle.
+
+Telenor viste en enkel, men treffsikker formel for AI-verdi:
+
+Annual net value = Baseline × AI delta × Adoption × Confidence − Build & run cost
+
+Den flytter diskusjonen fra teknologisk potensial til operativ realisme. Adopsjon, tillit, kvalitet og kostnader ved å bygge, drifte og skalere.
+
+Equinor viste samtidig betydningen av struktur, deling, læring og ansvarlig bruk.
+
+Den virkelige AI-kompetansen bygges når mennesker jobber konkret med behov, brukeropplevelse, data, risiko, ansvar, arbeidsflyt og forretningsverdi.
+
+Derfor har vi også etablert AI Value Lab Oslo der vi bygger praktisk forståelse for hvordan AI kan skape reell verdi.
+
+Spørsmålet er ikke bare om virksomheter bruker AI. Spørsmålet er hvilket spor de faktisk bygger kompetanse i. 💯
+
+#AIKompetanse #KommersiellLedelse #DigitalTransformasjon #PraktiskAI`
+    },
+    {
+      id: "ai-gap-kompetanse-stokke-digi-2026-05",
+      tittel: "Den virkelige AI-mangelen: mennesker med praktisk AI kompetanse",
+      teaser:
+        "Refleksjon på Erlend Rosseland Stokkes artikkel i digi.no: kompetansegapet handler om mennesker med praktisk AI-erfaring i produksjon — og hvorfor AI Value Lab Oslo utforsker dette i praksis.",
+      bildeUrl: "/images/AI-gap.png",
+      bildeVersjon: "2026-05-26",
+      dato: "2026-05-22",
+      visningsDato: "22.05.26",
+      kategori: "AI / KI",
+      link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
+      innhold: `Erlend Rosseland Stokke peker i <a href="https://www.digi.no/artikler/debatt-norsk-naeringsliv-undervurderer-den-virkelige-ki-mangelen/572264" target="_blank" rel="noopener noreferrer" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">digi.no</a> på en AI-mangel som fort kan bli langt mer krevende enn mange ser nå.
+
+Mangelen er ikke teknologi.
+Mangelen er ikke verktøy og modeller.
+👉 Men, mangelen er mennesker og miljøer som har fått AI til å fungere i produksjon. Med reelle brukere, virksomhetsnære data og tydelige konsekvenser.
+
+Stokke beskriver også en selvforsterkende sirkel. ⭕
+
+Virksomheter blir stående i pilotmodus fordi de mangler folk med reell erfaring. Samtidig bygges konkret erfaring først når noen får muligheten til å ta AI fra pilot til produksjon. Da blir kompetansegapet større.
+
+Det er også noe av grunnen til at vi har etablert <a href="https://www.linkedin.com/company/aivaluelaboslo/" target="_blank" rel="noopener noreferrer" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">AI Value Lab Oslo</a>.
+Vi ønsker å utforske AI praktisk, ikke bare prinsipielt.
+
+Marius, Tatiana og Ole utvikler oss sammen med å kombinere forretningsforståelse, teknologi, kundereiser, praktisk utvikling og ansvarlig implementering.
+Gjennom konkrete case, prototyper og diskusjoner utfordrer og utforsker vi hvordan AI kan kobles til arbeidsprosesser, beslutningsstøtte, brukeropplevelse, governance og reell verdiskaping.
+
+For de som venter, lærer saktere. De får færre leveranser, færre feil å lære av, færre avklaringer rundt data og risiko, og mindre forståelse for hva som kreves i egen organisasjon.
+Samtidig bygger de som tar grep en læringskurve som blir vanskeligere å hente inn. 📈
+
+De lærer gjennom bruk.
+De justerer underveis.
+De utvikler egne rammer.
+De bygger intern trygghet.
+De ser raskere hvor verdien oppstår.
+
+Det interessante er ikke nødvendigvis at kompetansen ikke finnes, men at den må jobbes aktivt med. Både på individ- og organisasjonsnivå.
+
+Den viktigste læringen kommer ikke bare fra skolebenken eller sporadiske og teoretiske kurs. Kompetanse bygges heller ikke først og fremst gjennom innlegg og diskusjoner. Og heller ikke primært gjennom å teste et nytt verktøy.
+
+Når man står i avveiningene mellom behov, bruker, data, risiko, ansvar, forretning og gjennomføring – det er da en utvikler en helt annen form for AI-kompetanse og erfaring. Den som virkelig betyr noe. 💯
+
+Og derfor er vi enige i at kompetansegapet handler om mer enn generell AI-interesse. Det handler om hvem som aktivt bygger erfaring og praktisk modenhet som gjør at AI kan skape reell verdi i morgen.
+
+💥 For virksomheter som vil lykkes, holder det ikke å følge med fra sidelinjen.
+
+Vi tar gjerne en kaffe med andre som jobber med dette, eller som er nysgjerrige på hvordan slik erfaring kan bygges i praksis. ☕
+
+#GenerativeAI #AIKompetanse #DigitalTransformasjon #Teknologiledelse #PraktiskAI`
+    },
+    {
+      id: "nova-frokost-ai-kjernekompetanse-2026-05",
+      tittel: "AI må bli kjernekompetanse, ikke sideprosjekt",
+      teaser:
+        "Refleksjoner fra NOVA Consulting Groups frokostmøte: hvorfor mange virksomheter sitter fast i piloter — og hva Elkem, Egde, Nordic Corporate Bank og Infra Group viste om AI i drift.",
+      bildeUrl: "/images/nova-bistudenter.jpg",
+      bildeKortFokus: "22% center",
+      dato: "2026-05-21",
+      visningsDato: "21.05.26",
+      kategori: "AI / KI",
+      link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
+      innhold: `Det burde egentlig være et tankekors for flere ledergrupper og styrer.
+
+Hvorfor sitter så mange virksomheter fortsatt fast i «prat», piloter og enkeltverktøy når andre allerede flytter AI inn i drift og kjerneprosesser?
+
+AI må bli kjernekompetanse, ikke sideprosjekt.
+
+På individnivå kan man komme et stykke på vei med enkelte verktøy. Men hvis virksomheter skal ta reelle steg, skape verdi og bygge konkurransefortrinn, må AI kobles til mer sentrale oppgaver.
+
+Til verdiskapende prosesser.
+Til arbeidsflyt.
+Til beslutninger.
+Til kunde- og brukerreiser.
+Til kompetansen organisasjonen selv må eie.
+
+Det viktigste jeg tok med meg fra NOVA Consulting Group sitt frokostmøte i går var ikke én demo eller ett verktøy. Det var mønsteret i å høre hva som ligger bak det som fungerer i ulike selskaper, og hvor det kan ta dem.
+
+Det ga meg en skikkelig inspirasjonsboost. 💥
+
+• Elkem ASA og Egde viste hvordan mange små use cases, korte utviklingsløp og tett brukerinvolvering kan bli til en intern AI-plattform med reell effekt.
+• Nordic Corporate Bank ASA viste hvordan AI-agenter kan flytte arbeid tidligere i prosessen, fra uklare krav til bedre avklaringer, testing, kode og dokumentasjon.
+• Infra Group viste hvordan ustrukturert HMS-data kan bli bedre beslutningsstøtte, risikoforståelse og forebygging.
+
+Ikke alle selskaper skal kopiere disse løsningene. Men de viste at AI ikke bør bli stående i pilotmodus hvis virksomheten vil bygge konkurransekraft.
+
+Det er også interessant å se hvor mye av det jeg selv bygger og utforsker peker i samme retning. Gjennom blant annet masterkurset <em>GenAI for Business</em> og det selvstartede <a href="https://www.linkedin.com/company/aivaluelaboslo/" target="_blank" rel="noopener noreferrer" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">AI Value Lab Oslo</a>, har jeg jobbet med hele AI-reisen: fra forretningsbehov, kundereise og use case-logikk til bygging av apper, agenter, AI-arkitektur, visuelt innhold, governance og skalering.
+
+Fokuset er ikke på teknologi alene, selv om jeg også blir godt kjent med modeller, verktøy og tekniske muligheter.
+
+Det handler om hvordan AI faktisk kan brukes til å løse viktige forretningsutfordringer. ✅
+
+Jeg oppfordrer flere til å fokusere på - og ta del i - <em>hele</em> reisen:
+Fra idé til use case.
+Fra use case til trygg testing.
+Fra testing til drift.
+Fra drift til kjernekompetanse.
+
+For hvis andre får det til, kan flere få det til. 💯
+
+AI-transformasjon starter sjelden med den største ideen.
+Den starter med nok struktur til at små ideer kan testes raskt, læres av og deretter skaleres trygt.
+
+Men da må AI slutte å være noe organisasjonen prøver ved siden av jobben.
+Det må bli en del av hvordan jobben faktisk gjøres.
+
+Takk til Nova-crewet, til møteleder Michael Christophersen, og til BI-medstudenter Thomas Holm og Dimitri Oetiker som også tok turen.
+
+Sammen fortsetter vi å utforske potensialet i AI når det settes i gode systemer. 📈
+
+#GenerativeAI #DigitalTransformasjon #Teknologiledelse #KommersiellLedelse`
+    },
+    {
+      id: "ai-prosjekt-forretningsproblem-tegneserie-2026-05",
+      tittel: "Når et AI-prosjekt ikke starter med AI, men med et forretningsproblem.",
+      teaser:
+        "Masteroppgave-case for Skøyenåsen Tannklinikk: GenAI-verdi i pasientreisen — illustrert med en tegneserie som oppsummerer implementeringsreisen.",
+      bildeUrl: "/images/tegneserie1.png",
+      dato: "2026-05-23",
+      visningsDato: "23.05.26",
+      kategori: "AI / KI",
+      link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
+      innhold: `I masteroppgaven min i <em>Generative AI for Business</em> ved BI har jeg jobbet med et konkret case for Skøyenåsen Tannklinikk. 🦷
+
+Målet har ikke bare vært å lage en ny nettside, chatbot eller digitale løsninger. Det har vært å forstå hvor GenAI faktisk kan skape verdi i en reell virksomhet. 📈
+
+✅ Prosjektet handler om kunde- og pasientreisen rundt leveransen og behandlingen: informasjon, behovsavklaring, booking, oppfølging og recall.
+
+🚫 Ikke diagnose. Ikke behandlingsråd. Ikke automatisering av faglige vurderinger.
+
+Det handler om å forstå problemet, bygge konkret, ta risiko på alvor og vite hvor mennesker fortsatt må eie beslutningen.
+
+For min egen del har læringen vært stor. Ikke bare i bruk av AI-verktøy, promptarbeid og strategisk tech-forståelse, men også i det å drive et AI-prosjekt fremover fra problemforståelse til konkrete leveranser.
+
+Samtidig har prosjektoppgaven gitt en ramme for å beskrive hele implementeringsreisen: forretningsbehov, løsning, roadmap, risiko, governance, personvern, skalering og menneskelig ansvar.
+
+Resultatet begynner nå å ta form: ny nettside, text/speech-to-text chatbot på 6 språk, booking, behovsavklaring, oppfølging og recall.
+
+Kanskje din virksomhet kjenner på samme behov, eller er nysgjerrig på hvordan AI kan brukes mer konkret, trygt og verdiskapende? Ta gjerne kontakt for en prat.
+
+Tegneserien oppsummerer reisen.
+
+#GenerativeAI #Ledelse #DigitalTransformasjon #Forretningsutvikling #ResponsibleAI`,
+      karusellBilder: tegneserieKarusellBilder,
+      karusellPdfUrl: "/images/tegneserie-karusell.pdf"
+    },
+    {
+      id: "genai-foerste-reklamefilm-psc-2026-05",
+      tittel: "Min første reklamefilm med Generativ AI. 🎥",
+      teaser:
+        "Jeg laget filmen for The Predictive Sales Coach – og reflekterer over GenAI-produksjon, masterleveranser på BI og hva dette betyr for kommersiell innholdsproduksjon.",
+      bildeUrl: "/images/promovideo-final.mov",
+      dato: "2026-05-12",
+      visningsDato: "12.05.26",
+      kategori: "AI / KI",
+      link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
+      innhold: `Denne filmen laget jeg for <a href="https://pscv6-744893320985.europe-west2.run.app/" target="_blank" rel="noopener noreferrer" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">The Predictive Sales Coach</a>, mitt egenutviklede, AI-baserte verktøy for salgstrening som kombinerer DISC-inspirert kundepsykologi med realistiske salgssimuleringer, objektiv evaluering og strukturert læring for å styrke trygghet, metodikk og win-rate.
+
+Det har vært både lærerikt og fascinerende å se hvor mye som nå er mulig å få til, uten lang planlegging, stor produksjonsrigg, skuespillere, location, filmcrew, omfattende koordinering og de budsjettene som tidligere ofte var nødvendige.
+
+I prosjektet brukte jeg blant annet Higgsfield til produksjon, Seedance 2.0 til å generere scenene, DaVinci Resolve til redigering og ferdigstillelse, og lyd/musikk fra Pixabay. Verktøyene er ikke gratis, men sammenlignet med tradisjonell produksjon åpner de for helt andre muligheter i fart, testing, fleksibilitet og kreativ gjennomføring.
+
+Ekstra meningsfullt for meg var det at både PSC-appen og reklamefilmen var to av tre eksamensoppgaver på masterkurset <em>Generative AI for Business</em> ved Handelshøyskolen BI, levert denne helgen.
+
+Studiet har vært utrolig interessant. I løpet av disse månedene har vi jobbet bredt og praktisk med Gen.AI, digital transformasjon og utvikling. Ikke bare teori, men også konkrete leveranser, eksperimentering, innholdsutvikling, bygging av løsninger og innsikt i utfordringer og nye muligheter.
+
+For meg har studiet også gitt en bred innføring i hele AI-reisen: fra identifisering av behov og muligheter, analyse og strukturering av store datamengder, samt forankring og eierskap i organisasjonen, til bruk av modeller og programmer koblet mot kjerneprosesser, roadmaps, implementering, governance og ikke minst skaleringsmuligheter som ledere må forstå og håndtere.
+
+Det har også gitt motivasjon til mer. Utenfor pensum har jeg blant annet bygget agentløsninger, nettsider, AI-assistert innsikts- og innholdsmotor og AI-arkitektur for beslutningsstøtte. Det har gitt meg enda større innsikt i mulighetsrommet, og i hvordan dette allerede er verdiskapende for virksomheter.
+
+Kompetanse innen dette feltet har også gitt inspirasjon til å komme i kontakt med likesinnede. Nettverket har vokst med mennesker som ønsker å utforske, bygge og bidra til morgendagens løsninger.
+
+💥 Oppsummert peker dette i en tydelig retning. Jeg ønsker å fortsette og utforske hvordan Gen.AI kan skape reell verdi for virksomheter og kunder i kommersiell sammenheng. Det er en retning jeg vil bygge videre, enten gjennom eget selskap eller i arbeid i et selskap som vil bruke AI mer målrettet.
+
+Om noen er nysgjerrige på å teste ut Sales Coach-løsningen, er det bare å ta kontakt med meg for innlogging.
+
+#GenerativeAI #DigitalTransformasjon #KommersiellLedelse #Innholdsproduksjon #AIAdvertising`
+    },
     {
       id: "bi-generative-ai-for-business-2026-01",
       tittel: "Siste samling på BI i Generative AI for Business – dette er bare starten",
@@ -46,7 +291,7 @@ Min viktigste take-away er derfor denne:
 Det stopper ikke her!
 Innen GenAI holder det ikke å ha testet noen verktøy eller fullført ett kurs. Utviklingen går for fort til det. Man må fortsette å lære, teste, bygge, feile, vurdere og omsette innsikt til praksis. Derfor har det vært spennende å kjenne på følelsen av å sitte mer i førersetet enn på sidelinjen mens mye fortsatt formes. 💪
 
-Takk til professor Shubin Yu og alle medstudenter for inspirerende samlinger, gode diskusjoner, mye energi og kreativitet underveis. 💯`,
+Takk til professor Shubin Yu og alle medstudenter for inspirerende samlinger, gode diskusjoner, mye energi og kreativitet underveis. 💯`
     },
     {
       id: "econa-ai-kundereise-arbeidsflyt-01",
@@ -58,9 +303,7 @@ Takk til professor Shubin Yu og alle medstudenter for inspirerende samlinger, go
       visningsDato: "22.04.26",
       kategori: "AI / KI",
       link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
-      innhold: `Det mest interessante med AI nå er hva den gjør med kundereisen, arbeidsflyten og tilgjengeligheten.
-
-Det traff meg tydelig på Econa-arrangementet i går.
+      innhold: `Det traff meg tydelig på Econa-arrangementet i går.
 
 Selv jobber jeg nå med å bygge både AI-basert chatbot, agenter og smartere bookingflyt i en privat klinikk, med mål om bedre behovsavklaring og en mer presis kunde-/pasientreise. Derfor ble dette ekstra relevant for meg:
 
@@ -90,7 +333,7 @@ Da endres også kravene til oss som bygger:
 Det er også her jeg mener noe av det mest oppsiktsvekkende skjer nå:
 Virksomheter som klarer å koble AI til førstelinje, booking, behovsavklaring og oppfølging, bygger ikke bare effektivitet. De bygger en helt annen tilgjengelighet og presisjon i kundemøtet.
 
-Det er der mye av konkurransekraften kommer til å ligge fremover.`,
+Det er der mye av konkurransekraften kommer til å ligge fremover.`
     },
     {
       id: "ai-needs-first-tannklinikk-case-01",
@@ -98,6 +341,7 @@ Det er der mye av konkurransekraften kommer til å ligge fremover.`,
       teaser:
         "Fra AI Value Lab Oslo og et reelt tannklinikk-case: start med virksomheten og behov — ikke med «hvilken AI-løsning?» Nettside, chatbot og booking i riktig rekkefølge.",
       bildeUrl: "/images/ai-to-needs.jfif",
+      bildeKortFokus: "center center",
       dato: "2026-04-14",
       visningsDato: "14.04.2026",
       kategori: "AI / KI",
@@ -150,7 +394,7 @@ Siden disse AI-postene er ment som kompetansedeling, nevner jeg også kort verkt
 
 👉 I neste innlegg ser jeg på hvorfor mange AI-initiativer stopper opp, selv når de starter riktig.
 
-PS. Påsken ble ellers brukt på Røros og Svalbard med opplevelser som minner meg på noe viktig: Ikke alt skal optimaliseres. Langrenn, alpint, snøscooter, hundeslede, villdyr og tid med familie og venner slår fortsatt det meste – det reelle er ikke kunstig.`,
+PS. Påsken ble ellers brukt på Røros og Svalbard med opplevelser som minner meg på noe viktig: Ikke alt skal optimaliseres. Langrenn, alpint, snøscooter, hundeslede, villdyr og tid med familie og venner slår fortsatt det meste – det reelle er ikke kunstig.`
     },
     {
       id: "ai-value-lab-munch-kickoff-01",
@@ -180,7 +424,7 @@ Fra Munchs tid til vår egen har verktøyene endret seg mye. Behovet for å fors
 
 Kanskje er noe av den mest interessante AI utforskningen nettopp dette: ikke å gjøre det menneskelige mindre viktig, men å forstå bedre hva som gjør en opplevelse tryggere og mer sammenhengende.
 
-Det blir spennende å utforske dette sammen videre, Tatiana Hanecakova og Ole Mjelde!`,
+Det blir spennende å utforske dette sammen videre, Tatiana Hanecakova og Ole Mjelde!`
     },
     {
       id: "april-ai-kompetanse-praksis-01",
@@ -227,7 +471,7 @@ Den neste uken skal jeg bygge og teste AI-agenter. Det innebærer bruk av ulike 
 
 👉 I neste innlegg ser jeg nærmere på hvordan man identifiserer de riktige AI-use casene å starte med.
 
-God påske!`,
+God påske!`
     },
     {
       id: "iteam-operativ-modell-2026-01",
@@ -260,7 +504,7 @@ Roar Thon fra NSM leverte en dyster realitetsorientering: Trusselbildet er prege
 
 <strong>3. AI i operativ praksis: Microsoft Copilot</strong>
 Daniel Horgmo fra Microsoft demonstrerte hvordan vi går fra enkel chat til faktiske autonome agenter som fungerer som en digital arbeidsstyrke.
-• Presis delegring: Suksess med AI krever \"Prompting 101\" – evnen til å gi mål, kontekst og kilder som om du delegerer til et teammedlem.
+• Presis delegring: Suksess med AI krever "Prompting 101" – evnen til å gi mål, kontekst og kilder som om du delegerer til et teammedlem.
 • Agent Mode: Gjennom Copilot ser vi nå agenter som utfører flerstegsoppgaver autonomt direkte i våre kjernesystemer.
 
 <strong>Min strategiske konklusjon:</strong>
@@ -269,7 +513,7 @@ Jeg at suksess krever at vi slutter å se på sikkerhet og AI som IT-prosjekter.
 • Datadisplin: Gode data og streng tilgangsstyring er forutsetningen for AI-effekt.
 • Sikkerhet by design: Integrer sikkerhet fra start da det er betydelig billigere enn å håndtere en krise.
 
-Takk til iteam for et profesjonelt dypdykk inn i fremtiden.`,
+Takk til iteam for et profesjonelt dypdykk inn i fremtiden.`
     },
     {
       id: "ai-tech-frokost-rebel-01",
@@ -277,6 +521,7 @@ Takk til iteam for et profesjonelt dypdykk inn i fremtiden.`,
       teaser:
         "AI-agenter skaper verdi når de kobles til systemer, data og prosesser — med kontroll, tydelige instruksjoner og human in the loop.",
       bildeUrl: "/images/rebel.jpg",
+      bildeKortFokus: "center center",
       dato: "2026-03-25",
       visningsDato: "25.03.2026",
       kategori: "AI / KI",
@@ -301,7 +546,7 @@ Min take er enkel. Spørsmålet er ikke hvilke modeller man skal bruke. Spørsm�
 
 Det er også bakgrunnen for at jeg nå jobber konkret med å bygge agenter, med ambisjon om målbar effekt i en virksomhet jeg samarbeider med.
 
-Inne i lokalet stod det en DeLorean med “REBEL”-skilt. I filmen Back to the Future handlet det om å reise frem i tid. Med AI føles det mer som vi bygger den. AI-agenter er retningen fremover!`,
+Inne i lokalet stod det en DeLorean med “REBEL”-skilt. I filmen Back to the Future handlet det om å reise frem i tid. Med AI føles det mer som vi bygger den. AI-agenter er retningen fremover!`
     },
     {
       id: "nova-day-data-forst-01",
@@ -345,7 +590,7 @@ Når vi ser fremveksten av MCP og A2A, beveger vi oss mot en ny operativ modell 
 
 👉 Dette jobber jeg også aktivt med nå da jeg anser det som viktig å forstå hvordan dette implementeres i praksis, ikke bare på nivå med teoretiske rammeverk.
 
-Takk til NOVA Consulting Groupfor et svært godt gjennomført arrangement – og ikke minst hyggelig å møte mange nye bekjentskaper og ha gode faglige diskusjoner gjennom dagen!`,
+Takk til NOVA Consulting Groupfor et svært godt gjennomført arrangement – og ikke minst hyggelig å møte mange nye bekjentskaper og ha gode faglige diskusjoner gjennom dagen!`
     },
     {
       id: "ai-value-lab-01",
@@ -403,13 +648,15 @@ Ledelse som leverer effekt og resultat.
 
 Vi er tidlig ute. Vi bygger, ikke bare prater. I dobbel forstand. Ser frem til fortsettelsen Ole Mjelde og Tatiana Hanecakova!
 
-𝗦𝗸𝘆 𝗶𝘀 𝘁𝗵𝗲 𝗹𝗶𝗺𝗶𝘁. 𝗠𝗲𝗻 𝗸𝘂𝗻 𝗳𝗼𝗿 𝗱𝗲 𝘀𝗼𝗺 𝗼𝗺𝘀𝗲𝘁𝘁𝗲𝗿 𝗔𝗜 𝘁𝗶𝗹 𝘃𝗲𝗿𝗱𝗶.`,
+𝗦𝗸𝘆 𝗶𝘀 𝘁𝗵𝗲 𝗹𝗶𝗺𝗶𝘁. 𝗠𝗲𝗻 𝗸𝘂𝗻 𝗳𝗼𝗿 𝗱𝗲 𝘀𝗼𝗺 𝗼𝗺𝘀𝗲𝘁𝘁𝗲𝗿 𝗔𝗜 𝘁𝗶𝗹 𝘃𝗲𝗿𝗱𝗶.`
     },
     {
       id: "ai-debatten-hype-vs-frykt-01",
       tittel: "AI-debatten går fortsatt i to spor: hype vs frykt",
-      teaser: "Når debatten låser seg til «hype» og «frykt», blir det vanskelig å se verdiskaping i praksis. Det er adopsjon som flytter drift.",
+      teaser:
+        "Når debatten låser seg til «hype» og «frykt», blir det vanskelig å se verdiskaping i praksis. Det er adopsjon som flytter drift.",
       bildeUrl: "/images/debatten.jfif",
+      bildeKortFokus: "40% center",
       dato: "2026-03-22",
       visningsDato: "22.03.2026",
       kategori: "AI / KI",
@@ -443,23 +690,57 @@ Det er her forskjellen skapes, samtidig som vi må unngå to ytterpunkter. Naivi
 Min refleksjon er at AI ikke først og fremst vil skape vinnere. Den vil tydeliggjøre hvem som evner å utvikle seg raskest og omsette teknologi til konkret verdi.
 
 Spørsmålet er ikke hvem som har rett i AI-debatten.
-Det reelle spørsmålet er hvem som klarer å skape reell verdi av den.`,
+Det reelle spørsmålet er hvem som klarer å skape reell verdi av den.`
     },
     {
       id: "ai-dommekraft-bias-01",
       tittel: "Når AI gir råd – hvem stoler vi egentlig på?",
-      teaser: "AI fjerner ikke menneskelig bias, den kan forsterke den. Refleksjoner rundt hvordan vi tolker og bruker AI-anbefalinger i kommersielle beslutninger.",
+      teaser:
+        "AI fjerner ikke menneskelig bias, den kan forsterke den. Refleksjoner rundt hvordan vi tolker og bruker AI-anbefalinger i kommersielle beslutninger.",
       bildeUrl: "/images/ai-judgement.jpg",
       dato: "2026-03-16",
       visningsDato: "16.03.2026",
       kategori: "AI / KI",
       link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
-      innhold: `Denne uken deltar jeg på NOVA Day. Mange av samtalene der handler naturlig nok om hva AI kan gjøre for virksomheter. Det er viktig, men en problemstilling jeg mener får for lite oppmerksomhet, er hvordan mennesker reagerer når systemene begynner å gi råd.\n\nAI fjerner ikke menneskelig bias, men kan heller forsterke den.\n\nEn del av forklaringen ligger i hvordan generativ AI faktisk fungerer. Modellene svarer ikke fordi de “vet”. De beregner statistisk hva som er det mest sannsynlige neste ordet basert på store mengder treningsdata og konteksten de får. Det betyr at modellene speiler mønstre i dataene og påvirkes av hvordan vi rammer inn spørsmålet.\n\nMen bias oppstår ikke bare i modellen. Den oppstår også i møtet mellom modell og menneske.\n\nForskning fra blant annet MIT Sloan, Harvard Business School og Stanford peker på flere mekanismer som kan svekke beslutningskvaliteten når AI brukes i praksis:\n\n<strong>Automation bias</strong>\nNår mennesker legger for stor vekt på anbefalingen fra systemet, fordi den kommer fra en modell og oppleves objektiv.\n\n<strong>Algorithm aversion</strong>\nNår mennesker mister tilliten til modellen etter én synlig feil, og deretter avviser den helt, selv om den over tid kan være bedre enn magefølelsen alene.\n\n<strong>Databias</strong>\nHvis datagrunnlaget er skjevt, vil også analysene bli det.\n\n<strong>Confirmation bias</strong>\nVi tolker gjerne AI-svar på en måte som bekrefter det vi allerede tror.\n\nI praksis ser jeg dette tydelig i kommersielle situasjoner. En AI-modell kan analysere salgsdata og foreslå hvilke kunder som bør prioriteres, hvilke tilbud som bør følges opp eller hvilke kontoer som har størst vekstpotensial. Selgeren eller lederen kan gjøre to feil ved enten følge anbefalingen blindt, eller ignorere den helt.\n\nFølges anbefalingen ukritisk, kan skjevheter i data eller modell forsterkes. Hvis den avvises fordi den “føles feil”, mister man samtidig verdien av mønstergjenkjenningen modellen faktisk kan tilføre.\n\nDet er her ledelsesutfordringen ligger.\n\nDen modne organisasjonen ber ikke folk velge mellom teknologi og skjønn. Den bygger prosesser der anbefalinger testes, modellens begrensninger forstås, og analyse kombineres med dømmekraft. Det bygges med andre ord en kultur der mennesker fortsatt stiller spørsmål, også når systemet virker sikkert. Det er først da AI blir beslutningsstøtte i ordets egentlige forstand.\n\nFor meg er dette noe av det mest interessante ved AI akkurat nå. Ikke bare hva modellen kan produsere, men hva som skjer med vurderingsevnen vår når svaret kommer raskt, ser overbevisende ut og er pakket inn med høy selvtillit.\n\nI arbeidet med å bygge og teste egne AI-modeller og verktøy merker jeg dette tydelig. Små justeringer i data, kontekst eller instruksjoner kan gi ulike anbefalinger. Det minner meg stadig om at modellen gir forslag og ikke fasitsvar. Testing er en nødvendighet fortløpende.`,
+      innhold: `Denne uken deltar jeg på NOVA Day. Mange av samtalene der handler naturlig nok om hva AI kan gjøre for virksomheter. Det er viktig, men en problemstilling jeg mener får for lite oppmerksomhet, er hvordan mennesker reagerer når systemene begynner å gi råd.
+
+AI fjerner ikke menneskelig bias, men kan heller forsterke den.
+
+En del av forklaringen ligger i hvordan generativ AI faktisk fungerer. Modellene svarer ikke fordi de “vet”. De beregner statistisk hva som er det mest sannsynlige neste ordet basert på store mengder treningsdata og konteksten de får. Det betyr at modellene speiler mønstre i dataene og påvirkes av hvordan vi rammer inn spørsmålet.
+
+Men bias oppstår ikke bare i modellen. Den oppstår også i møtet mellom modell og menneske.
+
+Forskning fra blant annet MIT Sloan, Harvard Business School og Stanford peker på flere mekanismer som kan svekke beslutningskvaliteten når AI brukes i praksis:
+
+<strong>Automation bias</strong>
+Når mennesker legger for stor vekt på anbefalingen fra systemet, fordi den kommer fra en modell og oppleves objektiv.
+
+<strong>Algorithm aversion</strong>
+Når mennesker mister tilliten til modellen etter én synlig feil, og deretter avviser den helt, selv om den over tid kan være bedre enn magefølelsen alene.
+
+<strong>Databias</strong>
+Hvis datagrunnlaget er skjevt, vil også analysene bli det.
+
+<strong>Confirmation bias</strong>
+Vi tolker gjerne AI-svar på en måte som bekrefter det vi allerede tror.
+
+I praksis ser jeg dette tydelig i kommersielle situasjoner. En AI-modell kan analysere salgsdata og foreslå hvilke kunder som bør prioriteres, hvilke tilbud som bør følges opp eller hvilke kontoer som har størst vekstpotensial. Selgeren eller lederen kan gjøre to feil ved enten følge anbefalingen blindt, eller ignorere den helt.
+
+Følges anbefalingen ukritisk, kan skjevheter i data eller modell forsterkes. Hvis den avvises fordi den “føles feil”, mister man samtidig verdien av mønstergjenkjenningen modellen faktisk kan tilføre.
+
+Det er her ledelsesutfordringen ligger.
+
+Den modne organisasjonen ber ikke folk velge mellom teknologi og skjønn. Den bygger prosesser der anbefalinger testes, modellens begrensninger forstås, og analyse kombineres med dømmekraft. Det bygges med andre ord en kultur der mennesker fortsatt stiller spørsmål, også når systemet virker sikkert. Det er først da AI blir beslutningsstøtte i ordets egentlige forstand.
+
+For meg er dette noe av det mest interessante ved AI akkurat nå. Ikke bare hva modellen kan produsere, men hva som skjer med vurderingsevnen vår når svaret kommer raskt, ser overbevisende ut og er pakket inn med høy selvtillit.
+
+I arbeidet med å bygge og teste egne AI-modeller og verktøy merker jeg dette tydelig. Små justeringer i data, kontekst eller instruksjoner kan gi ulike anbefalinger. Det minner meg stadig om at modellen gir forslag og ikke fasitsvar. Testing er en nødvendighet fortløpende.`
     },
     {
       id: "ai-ready-virksomhet-01",
       tittel: "Når er en virksomhet AI-ready?",
-      teaser: "Mange investerer i AI, men færre forbereder organisasjonen. En gjennomgang av de fire områdene som avgjør om en virksomhet er rigget for å hente ut verdi fra teknologien.",
+      teaser:
+        "Mange investerer i AI, men færre forbereder organisasjonen. En gjennomgang av de fire områdene som avgjør om en virksomhet er rigget for å hente ut verdi fra teknologien.",
       bildeUrl: "/images/ai-ready.jpg",
       dato: "2026-03-09",
       visningsDato: "09.03.2026",
@@ -500,7 +781,8 @@ For virksomheter som vil bevege seg fra AI-eksperimentering til verdiskaping, bi
     {
       id: "ai-arkitektur-beslutningsstotte-01",
       tittel: "Jeg bygger AI-arkitektur for beslutningsstøtte",
-      teaser: "Hvordan generativ AI kan strukturere komplekse problemstillinger og gi kommersielle ledere et bedre beslutningsgrunnlag gjennom AI-dekonstruksjon.",
+      teaser:
+        "Hvordan generativ AI kan strukturere komplekse problemstillinger og gi kommersielle ledere et bedre beslutningsgrunnlag gjennom AI-dekonstruksjon.",
       bildeUrl: "/images/analyse.gif",
       dato: "2026-03-05",
       visningsDato: "05.03.2026",
@@ -545,7 +827,8 @@ Fellesnevneren er arkitekturen bak og hvordan Gen. AI kan analysere komplekse pr
     {
       id: "ai-dommekraft-kontekst-01",
       tittel: "AI-dømmekraft i praksis – fra prompt til kontekst",
-      teaser: "Hvorfor context engineering – ikke bare prompt engineering – avgjør kvaliteten på AI-svar i praksis.",
+      teaser:
+        "Hvorfor context engineering – ikke bare prompt engineering – avgjør kvaliteten på AI-svar i praksis.",
       bildeUrl: "/images/context.png",
       dato: "2026-03-02",
       visningsDato: "02.03.2026",
@@ -570,7 +853,8 @@ For virksomheter som ønsker å bevege seg fra AI-diskusjon til faktisk verdiska
     {
       id: "strategi-ai-master-01",
       tittel: "Strategi uten AI er som å se bakover i speilet mens du kjører fremover",
-      teaser: "AI er ikke lenger «nice to have» — det er en strategisk nødvendighet. Refleksjoner fra Oslo Business Forum og beslutningen om å melde seg på masterkurset Generativ AI for Business ved BI.",
+      teaser:
+        "AI er ikke lenger «nice to have» — det er en strategisk nødvendighet. Refleksjoner fra Oslo Business Forum og beslutningen om å melde seg på masterkurset Generativ AI for Business ved BI.",
       bildeUrl: "/images/strategi-ai.jfif",
       dato: "2025-11-11",
       visningsDato: "11.11.2025",
@@ -602,7 +886,8 @@ Hva med deg? Ser du AI som en strategisk game-changer i din virksomhet der du ak
     {
       id: "ai-learning-google-skills-01",
       tittel: "Det er fascinerende hvor enkelt det har blitt å tilegne seg AI-kompetanse gjennom helt nye og moderne metoder",
-      teaser: "Anbefaling av Googles læringsunivers for AI-kompetanse: Google Skills og Google Cloud YouTube-serier, med konkrete moduler å starte med.",
+      teaser:
+        "Anbefaling av Googles læringsunivers for AI-kompetanse: Google Skills og Google Cloud YouTube-serier, med konkrete moduler å starte med.",
       bildeUrl: "/images/ai-learning.jfif",
       dato: "2025-11-27",
       visningsDato: "27.11.2025",
@@ -639,7 +924,8 @@ For deg som vil utforske mulighetene:
     {
       id: "ai-ikke-intelligent-01",
       tittel: "AI er ikke intelligent — det er vi som må være det",
-      teaser: "AI skaper verdi bare når vi forstår begrensningene. Refleksjoner fra BI-webinaret om når AI passer og når menneskelig dømmekraft må ta over.",
+      teaser:
+        "AI skaper verdi bare når vi forstår begrensningene. Refleksjoner fra BI-webinaret om når AI passer og når menneskelig dømmekraft må ta over.",
       bildeUrl: "/images/ikke-intelligent.jfif",
       dato: "2025-12-11",
       visningsDato: "11.12.2025",
@@ -706,7 +992,8 @@ Det er en <strong>kjernkompetanse</strong> å:
     {
       id: "alle-snakker-ai-01",
       tittel: "Alle snakker om AI – men hva er det egentlig vi driver med?",
-      teaser: "Innledning til en serie om hva AI faktisk betyr i praksis — ikke bare som teknologi, men som ledelses- og forretningsdisiplin.",
+      teaser:
+        "Innledning til en serie om hva AI faktisk betyr i praksis — ikke bare som teknologi, men som ledelses- og forretningsdisiplin.",
       bildeUrl: "/images/snakk-ai.jfif",
       dato: "2025-12-22",
       visningsDato: "22.12.2025",
@@ -731,7 +1018,8 @@ Dette blir mitt siste innlegg i 2025. Takk for i år – jeg håper året har gi
     {
       id: "ai-foles-nytt-01",
       tittel: "AI føles nytt – men dette er ikke starten på historien",
-      teaser: "AI oppleves som nytt, men er kulminasjonen av tiår med utvikling. Ser fremover mot rammeverket De fem A-ene (Access til Agents).",
+      teaser:
+        "AI oppleves som nytt, men er kulminasjonen av tiår med utvikling. Ser fremover mot rammeverket De fem A-ene (Access til Agents).",
       bildeUrl: "/images/nytt.jfif",
       dato: "2026-01-05",
       visningsDato: "05.01.2026",
@@ -765,7 +1053,8 @@ Jeg håper flere vil dele egne erfaringer, perspektiver og spørsmål underveis 
     {
       id: "access-til-agents-01",
       tittel: "Fra Access til Agents – hvorfor mange stopper tidlig",
-      teaser: "Rammeverket De fem A-ene: hvordan AI tas i bruk i virksomheter i dag, og hvorfor mange stopper tidligere enn de tror.",
+      teaser:
+        "Rammeverket De fem A-ene: hvordan AI tas i bruk i virksomheter i dag, og hvorfor mange stopper tidligere enn de tror.",
       bildeUrl: "/images/access-agents.jfif",
       dato: "2026-01-08",
       visningsDato: "08.01.2026",
@@ -805,7 +1094,8 @@ Derfor er også AI og strategisk bruk og implementering i liten grad et IT-prosj
     {
       id: "fra-verktoy-til-system-01",
       tittel: "Fra verktøy til system – API-er, integrasjon og ledervalg",
-      teaser: "Verdien av AI skjer først når den kobles til systemer og prosesser via integrasjon — ikke som frittstående verktøy. API-er og ledervalg.",
+      teaser:
+        "Verdien av AI skjer først når den kobles til systemer og prosesser via integrasjon — ikke som frittstående verktøy. API-er og ledervalg.",
       bildeUrl: "/images/til-system.jfif",
       dato: "2026-01-12",
       visningsDato: "12.01.2026",
@@ -828,7 +1118,8 @@ I en tid der teknologien fungerer, skalerer og blir stadig rimeligere, er det ik
     {
       id: "fra-pilot-til-skalering-01",
       tittel: "Fra pilot til skalering – hvorfor så mange AI-initiativer stopper",
-      teaser: "Hvorfor så få AI-initiativer skalerer selv når teknologien fungerer. Om eierskap, prosessendring og governance.",
+      teaser:
+        "Hvorfor så få AI-initiativer skalerer selv når teknologien fungerer. Om eierskap, prosessendring og governance.",
       bildeUrl: "/images/fra-pilot.jfif",
       dato: "2026-01-15",
       visningsDato: "15.01.2026",
@@ -868,7 +1159,8 @@ Det er her AI går fra eksperiment til strategisk kjernekompetanse.`
     {
       id: "praktisk-oppskrift-skalering-01",
       tittel: "Fra pilot til skalering – en praktisk oppskrift for ledere",
-      teaser: "Fem ting virksomheter som lykkes med AI-skalering gjør riktig: eierskap, prosessendring, beslutningskobling, governance og data.",
+      teaser:
+        "Fem ting virksomheter som lykkes med AI-skalering gjør riktig: eierskap, prosessendring, beslutningskobling, governance og data.",
       bildeUrl: "/images/praktisk-oppskrift.jfif",
       dato: "2026-01-12",
       visningsDato: "12.01.2026",
@@ -904,7 +1196,8 @@ Mange snakker nå om agenter og autonome løsninger. Men realiteten er at de fle
     {
       id: "data-kontekst-rag-01",
       tittel: "Data, kontekst og RAG – hvorfor AI uten kontekst ikke er intelligens",
-      teaser: "AI uten kontekst er ikke intelligens. Hvorfor RAG og virksomhetens egne data er forutsetning for moden AI-bruk.",
+      teaser:
+        "AI uten kontekst er ikke intelligens. Hvorfor RAG og virksomhetens egne data er forutsetning for moden AI-bruk.",
       bildeUrl: "/images/data-kontekst.jfif",
       dato: "2026-01-19",
       visningsDato: "19.01.2026",
@@ -936,7 +1229,8 @@ AI blir strategisk først når den ikke bare gir svar, men bidrar til <strong>be
     {
       id: "rag-innsikt-handling-01",
       tittel: "Fra innsikt til handling – RAG som bro mellom AI og kjerneprosesser",
-      teaser: "RAG som bro mellom AI og kjerneprosesser: hvordan virksomheter beveger seg fra testing til reell verdiskaping. Eksempel fra salg.",
+      teaser:
+        "RAG som bro mellom AI og kjerneprosesser: hvordan virksomheter beveger seg fra testing til reell verdiskaping. Eksempel fra salg.",
       bildeUrl: "/images/innsikt-til-handling.jfif",
       dato: "2026-01-23",
       visningsDato: "23.01.2026",
@@ -968,7 +1262,8 @@ Dette er også grunnen til at mange snakker om agenter før de er klare for dem.
     {
       id: "ai-agenter-hva-01",
       tittel: "AI-agenter – hva de er (og hva de ikke er)",
-      teaser: "Hva AI-agenter er — og hva de ikke er. Rydding i begrepet og hvorfor det er et ledertema, ikke bare IT.",
+      teaser:
+        "Hva AI-agenter er — og hva de ikke er. Rydding i begrepet og hvorfor det er et ledertema, ikke bare IT.",
       bildeUrl: "/images/ai-agenter-hva.jfif",
       dato: "2026-01-27",
       visningsDato: "27.01.2026",
@@ -987,7 +1282,8 @@ Her ligger også et viktig varsel til ledere. Jo mer autonom AI blir, desto vikt
     {
       id: "ai-agenter-feil-01",
       tittel: "AI-agenter – hvorfor mange går feil når de vil bli mer autonome",
-      teaser: "Hvorfor mange går feil når de jager autonomi: agenter handler om struktur og ansvar, ikke bare «slå på»-autonomi.",
+      teaser:
+        "Hvorfor mange går feil når de jager autonomi: agenter handler om struktur og ansvar, ikke bare «slå på»-autonomi.",
       bildeUrl: "/images/ai-agenter.jfif",
       dato: "2026-01-31",
       visningsDato: "31.01.2026",
@@ -1018,7 +1314,8 @@ Agenter forsterker organisasjonen. Er strukturen uklar, forsterkes uklarheten. E
     {
       id: "ai-agenter-praksis-01",
       tittel: "AI-agenter i praksis – når, hvor og hvordan de faktisk gir verdi",
-      teaser: "Når gir AI-agenter faktisk verdi — og når bør man la være? Praktiske kriterier for ledere.",
+      teaser:
+        "Når gir AI-agenter faktisk verdi — og når bør man la være? Praktiske kriterier for ledere.",
       bildeUrl: "/images/agenter-i-praksis.jfif",
       dato: "2026-02-03",
       visningsDato: "03.02.2026",
@@ -1061,7 +1358,8 @@ Agenter er kraftige verktøy som markerer et skifte i hva som flyttes fra mennes
     {
       id: "ai-governance-01",
       tittel: "Når AI får mer makt – hva skal ledere faktisk styre?",
-      teaser: "Når AI påvirker beslutninger: hvem har ansvaret? EDGE, 5A og governance som ledelsens svar på økt autonomi.",
+      teaser:
+        "Når AI påvirker beslutninger: hvem har ansvaret? EDGE, 5A og governance som ledelsens svar på økt autonomi.",
       bildeUrl: "/images/governance.jpg",
       dato: "2026-02-12",
       visningsDato: "12.02.2026",
@@ -1109,7 +1407,8 @@ Governance avgjør om dette blir et konkurransefortrinn – eller en risiko.`
     {
       id: "ki-norsk-virksomheter-01",
       tittel: "KI i norske virksomheter – fra testing til verdiskaping",
-      teaser: "Over halvparten av norske virksomheter bruker AI — men få har integrert det i kjerneprosesser. NHO-rapportens budskap.",
+      teaser:
+        "Over halvparten av norske virksomheter bruker AI — men få har integrert det i kjerneprosesser. NHO-rapportens budskap.",
       bildeUrl: "/images/ki-norsk-virksomheter.jfif",
       dato: "2026-01-09",
       visningsDato: "09.01.2026",
@@ -1132,7 +1431,8 @@ Skal AI bli et reelt konkurransefortrinn, må vi bevege oss fra nysgjerrig utfor
     {
       id: "ai-governance-i-praksis-01",
       tittel: "AI-governance i praksis – fem styringsgrep som avgjør hvor makten ligger",
-      teaser: "Fem styringsgrep som avgjør hvor makten ligger når AI påvirker kunder, rabatter og prioriteringer.",
+      teaser:
+        "Fem styringsgrep som avgjør hvor makten ligger når AI påvirker kunder, rabatter og prioriteringer.",
       bildeUrl: "/images/ai-governance-i-praksis.jpg",
       dato: "2026-02-18",
       visningsDato: "18.02.2026",
@@ -1170,7 +1470,8 @@ Dette handler ikke om å bremse utviklingen, men om å sikre at tempo og autonom
     {
       id: "ai-kompetanse-2030-01",
       tittel: "AI er ikke trusselen i 2030. Kompetanseegapet er.",
-      teaser: "Konkurransekraft i 2030 avgjøres av kompetanse — ikke av AI som trussel. Perspektiver fra WEF, McKinsey og OECD.",
+      teaser:
+        "Konkurransekraft i 2030 avgjøres av kompetanse — ikke av AI som trussel. Perspektiver fra WEF, McKinsey og OECD.",
       bildeUrl: "/images/core-skills.jfif",
       dato: "2026-02-20",
       visningsDato: "20.02.2026",
@@ -1207,7 +1508,8 @@ Samtidig bistår jeg nå virksomheter innen AI og digital transformasjon – i s
     {
       id: "bi-master-oppstart-01",
       tittel: "Tilbake på BI – og på jakt etter en virksomhet å bygge AI-verdi med",
-      teaser: "Tilbake på BI: masterkurset Generative AI for Business og jakten på en virksomhet å bygge AI-app og implementeringsplan med.",
+      teaser:
+        "Tilbake på BI: masterkurset Generative AI for Business og jakten på en virksomhet å bygge AI-app og implementeringsplan med.",
       bildeUrl: "/images/bi-oppstart.jfif",
       dato: "2026-02-23",
       visningsDato: "23.02.2026",
@@ -1245,15 +1547,14 @@ Ta gjerne kontakt på DM dersom dette er aktuelt.`
     {
       id: "predictive-sales-coach-01",
       tittel: "Jeg bestemte meg for å bygge – ikke bare mene noe om AI",
-      teaser: "Fra analyse til bygging: refleksjoner fra BI-kurset og prototypen The Predictive Sales Coach.",
+      teaser:
+        "Fra analyse til bygging: refleksjoner fra BI-kurset og prototypen The Predictive Sales Coach.",
       bildeUrl: "/images/predictive-sales-coach.png",
       dato: "2026-02-26",
       visningsDato: "26.02.2026",
       kategori: "AI / KI",
       link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
-      innhold: `Jeg bestemte meg for å bygge – ikke bare mene noe om AI.
-
-Uken på masterkurset <em>Generative AI for Business</em> ved BI har vært særdeles interessant og lærerik. Det som gjør dette relevant er ikke bare rammeverkene, men det praktiske arbeidet. Vi har jobbet i Google-økosystemet med Gemini, Google AI Studio og Workspace-integrasjoner, testet modellvalg, strukturert prompt-arkitektur og evaluert output mot konkrete forretningscase. Når man selv må styre kontekst, parametere og datagrunnlag, får man en helt annen forståelse av presisjon og begrensninger.
+      innhold: `Uken på masterkurset <em>Generative AI for Business</em> ved BI har vært særdeles interessant og lærerik. Det som gjør dette relevant er ikke bare rammeverkene, men det praktiske arbeidet. Vi har jobbet i Google-økosystemet med Gemini, Google AI Studio og Workspace-integrasjoner, testet modellvalg, strukturert prompt-arkitektur og evaluert output mot konkrete forretningscase. Når man selv må styre kontekst, parametere og datagrunnlag, får man en helt annen forståelse av presisjon og begrensninger.
 
 Samtidig har jeg brukt mye tid på å teste og utforske AI-verktøy i praksis. Innen skriving og analyse er det tydelige forskjeller mellom løsninger som Claude, ChatGPT og Perplexity når det gjelder kontekstforståelse og strukturert resonnering. På utviklingssiden har verktøy som Cursor, Replit, Lovable og AI Studio gjort det mulig å gå fra idé til fungerende prototype raskt, gjennom AI-assistert koding, modelltesting og effektiv arbeidsflyt. Innen kunnskapsstrukturering har NotebookLM og lokale LLM-løsninger vist hvor avgjørende kontekst og datakvalitet er.
 
@@ -1272,7 +1573,8 @@ Motivasjonen er stor – inspirasjonen større!`
     {
       id: "ai-etikk-norden-01",
       tittel: "AI, makt, etikk og legitimitet – hva krever nordisk AI-ledelse?",
-      teaser: "Hva krever nordisk AI-ledelse? Om makt, etikk, legitimitet og ansvarlig styring.",
+      teaser:
+        "Hva krever nordisk AI-ledelse? Om makt, etikk, legitimitet og ansvarlig styring.",
       bildeUrl: "/images/etikk.jfif",
       dato: "2026-02-24",
       visningsDato: "24.02.2026",
@@ -1300,12 +1602,205 @@ Neste steg i serien handler om lederens dømmekraft. Når AI blir en del av besl
 
 AI-dømmekraft er ikke en teknisk nisjeferdighet. Det er en lederkompetanse.`
     }
-  ];
+];
 
 const aiGovernanceEn: Record<string, LocalizedTextMap> = {
+  "ai-kompetanse-tech-frokost-telenor-2026-05": {
+    tittel: "The AI competence gap grows where experience is not built",
+    teaser: "Telenor and Equinor at Digital Norway's tech breakfast: two paths for AI adoption, high-value commercial workflows — and a formula that shifts the discussion from potential to execution.",
+    innhold: `Last week we wrote in <a href="https://www.linkedin.com/company/aivaluelaboslo/" target="_blank" rel="noopener noreferrer" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">AI Value Lab Oslo</a>, building on Erlend Rosseland Stokke's point in <a href="https://www.digi.no/artikler/debatt-norsk-naeringsliv-undervurderer-den-virkelige-ki-mangelen/572264" target="_blank" rel="noopener noreferrer" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">digi.no</a>, about an AI shortage that may prove more demanding than many see today.
+
+Not a shortage of technology.
+Not a shortage of tools.
+👉 But a shortage of people and environments that have made AI work in practice.
+
+Stokke points to a self-reinforcing cycle. Organisations remain stuck in pilot mode because they lack people with real experience. At the same time, experience is built only when someone gets to take AI from pilot to production.
+
+At Digital Norway's tech breakfast on Tuesday, on AI adoption in Equinor and Telenor, I heard the same point confirmed from another angle.
+
+In reality, many organisations follow one of two paths.
+
+🔁 One is pilot mode. Many discussions. Heavy tool focus. New tests. But limited movement. You learn something, but not enough to build confidence, execution capability and practical maturity.
+
+📈 The other is building competence through real use cases. Then learning moves into workflows, customer experience, data, governance, collaboration and delivery. Competence is not just something you talk about. It is built through use, adjustment and responsible implementation.
+
+It was striking how closely this was linked to commercial value.
+
+Telenor highlighted attractive AI areas within:
+💥 B2B sales and go-to-market
+💥 Customer growth and retention
+💥 Customer service and follow-up
+
+These are not peripheral AI areas, but workflows with high feasibility and high value. They are at the core of commercial processes, customer journeys and value creation.
+
+For me this aligns well with my commercial leadership experience and what I explore through practical AI projects.
+
+Another strong point from Telenor was that AI should not simply be layered onto existing workflows. Then gains are often incremental. When workflows are redesigned around AI, gains can become structural.
+
+Telenor showed a simple but precise formula for AI value:
+
+Annual net value = Baseline × AI delta × Adoption × Confidence − Build & run cost
+
+It shifts the discussion from technological potential to operational realism. Adoption, confidence, quality and the cost of building, operating and scaling.
+
+Equinor showed at the same time the importance of structure, sharing, learning and responsible use.
+
+Real AI competence is built when people work concretely with needs, user experience, data, risk, accountability, workflow and business value.
+
+That is also why we established AI Value Lab Oslo, where we build practical understanding of how AI can create real value.
+
+The question is not only whether organisations use AI. The question is which path they are actually building competence in. 💯
+
+#AICompetence #CommercialLeadership #DigitalTransformation #PracticalAI`,
+  },
+  "ai-gap-kompetanse-stokke-digi-2026-05": {
+    tittel: "The real AI shortage: people with practical AI competence",
+    teaser: "Reflection on Erlend Rosseland Stokke's article in digi.no: the skills gap is about people with practical AI experience in production — and why AI Value Lab Oslo explores this in practice.",
+    innhold: `Erlend Rosseland Stokke points out in <a href="https://www.digi.no/artikler/debatt-norsk-naeringsliv-undervurderer-den-virkelige-ki-mangelen/572264" target="_blank" rel="noopener noreferrer" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">digi.no</a> to an AI skills gap that may soon prove far more demanding than many realise today.
+
+The shortage is not technology.
+It is not tools and models.
+👉 But the shortage is people and environments that have made AI work in production. With real users, business-near data and clear consequences.
+
+Stokke also describes a self-reinforcing cycle. ⭕
+
+Organisations remain stuck in pilot mode because they lack people with real experience. At the same time, concrete experience is built only when someone gets the opportunity to take AI from pilot to production. Then the skills gap grows.
+
+That is also part of the reason we established <a href="https://www.linkedin.com/company/aivaluelaboslo/" target="_blank" rel="noopener noreferrer" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">AI Value Lab Oslo</a>.
+We want to explore AI in practice, not only in principle.
+
+Marius, Tatiana and Ole develop together by combining business understanding, technology, customer journeys, practical development and responsible implementation.
+Through concrete cases, prototypes and discussions we challenge and explore how AI can be connected to workflows, decision support, user experience, governance and real value creation.
+
+Those who wait learn more slowly. They deliver less, have fewer mistakes to learn from, fewer clarifications around data and risk, and less understanding of what their own organisation requires.
+Meanwhile, those who act build a learning curve that becomes harder for others to catch up with. 📈
+
+They learn through use.
+They adjust along the way.
+They develop their own frameworks.
+They build internal confidence.
+They see faster where value emerges.
+
+What is interesting is not necessarily that the competence does not exist, but that it must be worked on actively. Both at individual and organisational level.
+
+The most important learning does not come only from the classroom or sporadic, theoretical courses. Competence is not built primarily through posts and discussions. And not primarily by testing a new tool either.
+
+When you stand in the trade-offs between need, user, data, risk, accountability, business and execution — that is when a different form of AI competence and experience develops. The kind that really matters. 💯
+
+And that is why we agree the skills gap is about more than general AI interest. It is about who actively builds experience and practical maturity so AI can create real value tomorrow.
+
+💥 For organisations that want to succeed, it is not enough to watch from the sidelines.
+
+We are happy to grab a coffee with others working on this, or curious about how such experience can be built in practice. ☕
+
+#GenerativeAI #AICompetence #DigitalTransformation #TechnologyLeadership #PracticalAI`,
+  },
+  "nova-frokost-ai-kjernekompetanse-2026-05": {
+    tittel: "AI must become core competence, not a side project",
+    teaser: "Reflections from NOVA Consulting Group's breakfast meeting: why many organisations remain stuck in pilots — and what Elkem, Egde, Nordic Corporate Bank and Infra Group showed about AI in operations.",
+    innhold: `It should really give more leadership teams and boards pause for thought.
+
+Why are so many organisations still stuck in talk, pilots and single tools when others are already moving AI into operations and core processes?
+
+AI must become core competence, not a side project.
+
+At individual level you can get somewhere with individual tools. But if organisations are to take real steps, create value and build competitive advantage, AI must be connected to more central tasks.
+
+To value-creating processes.
+To workflows.
+To decisions.
+To customer and user journeys.
+To the competence the organisation itself must own.
+
+The most important takeaway from yesterday's breakfast meeting with NOVA Consulting Group was not one demo or one tool. It was the pattern in hearing what lies behind what works in different companies, and where that can take them.
+
+It gave me a real boost of inspiration. 💥
+
+• Elkem ASA and Egde showed how many small use cases, short development cycles and close user involvement can become an internal AI platform with real impact.
+• Nordic Corporate Bank ASA showed how AI agents can move work earlier in the process, from unclear requirements to better clarification, testing, code and documentation.
+• Infra Group showed how unstructured HSE data can become better decision support, risk understanding and prevention.
+
+Not every company should copy these solutions. But they showed that AI should not remain in pilot mode if the organisation wants to build competitiveness.
+
+It is also interesting to see how much of what I build and explore myself points in the same direction. Through among other things the master's course <em>GenAI for Business</em> and the self-started <a href="https://www.linkedin.com/company/aivaluelaboslo/" target="_blank" rel="noopener noreferrer" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">AI Value Lab Oslo</a>, I have worked across the full AI journey: from business needs, customer journey and use case logic to building apps, agents, AI architecture, visual content, governance and scaling.
+
+The focus is not on technology alone, even though I also become well acquainted with models, tools and technical possibilities.
+
+It is about how AI can actually be used to solve important business challenges. ✅
+
+I encourage more people to focus on - and take part in - the <em>full</em> journey:
+From idea to use case.
+From use case to safe testing.
+From testing to operations.
+From operations to core competence.
+
+Because if others can do it, more can do it. 💯
+
+AI transformation rarely starts with the biggest idea.
+It starts with enough structure for small ideas to be tested quickly, learned from and then scaled safely.
+
+But then AI must stop being something the organisation tries on the side of the job.
+It must become part of how the work is actually done.
+
+Thank you to the Nova crew, meeting chair Michael Christophersen, and fellow BI students Thomas Holm and Dimitri Oetiker who also came along.
+
+Together we continue exploring the potential of AI when it is placed in good systems. 📈
+
+#GenerativeAI #DigitalTransformation #TechnologyLeadership #CommercialLeadership`,
+  },
+  "ai-prosjekt-forretningsproblem-tegneserie-2026-05": {
+    tittel: "When an AI project does not start with AI, but with a business problem.",
+    teaser: "Master's thesis case for Skøyenåsen Dental Clinic: GenAI value in the patient journey — illustrated with a comic summarising the implementation journey.",
+    innhold: `In my master's thesis in <em>Generative AI for Business</em> at BI, I have worked on a concrete case for Skøyenåsen Dental Clinic. 🦷
+
+The goal has not only been to build a new website, chatbot or digital solutions. It has been to understand where GenAI can actually create value in a real business. 📈
+
+✅ The project focuses on the customer and patient journey around delivery and treatment: information, needs clarification, booking, follow-up and recall.
+
+🚫 Not diagnosis. Not treatment advice. Not automation of professional judgements.
+
+It is about understanding the problem, building concretely, taking risk seriously and knowing where people must still own the decision.
+
+For me personally, the learning has been significant. Not only in using AI tools, prompt work and strategic tech understanding, but also in driving an AI project from problem understanding to concrete deliverables.
+
+At the same time, the thesis has provided a framework for describing the full implementation journey: business need, solution, roadmap, risk, governance, privacy, scaling and human accountability.
+
+Results are now taking shape: new website, text/speech-to-text chatbot in 6 languages, booking, needs clarification, follow-up and recall.
+
+Perhaps your organisation recognises the same needs, or is curious about how AI can be used more concretely, safely and with real value creation? Please get in touch for a conversation.
+
+The comic summarises the journey.
+
+#GenerativeAI #Leadership #DigitalTransformation #BusinessDevelopment #ResponsibleAI`,
+  },
+  "genai-foerste-reklamefilm-psc-2026-05": {
+    tittel: "My first commercial with Generative AI. 🎥",
+    teaser: "I made the film for The Predictive Sales Coach — and reflect on GenAI production, BI master's deliverables, and what this means for commercial content production.",
+    innhold: `I made this film for <a href="https://pscv6-744893320985.europe-west2.run.app/" target="_blank" rel="noopener noreferrer" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">The Predictive Sales Coach</a>, my own AI-based sales training tool that combines DISC-inspired customer psychology with realistic sales simulations, objective evaluation, and structured learning to strengthen confidence, methodology, and win-rate.
+
+It has been both instructive and fascinating to see how much is now possible without long planning, a large production rig, actors, locations, film crews, extensive coordination, and the budgets that were often necessary before.
+
+In the project I used Higgsfield for production, Seedance 2.0 to generate scenes, DaVinci Resolve for editing and finishing, and audio/music from Pixabay. The tools are not free, but compared with traditional production they open completely different possibilities for speed, testing, flexibility, and creative execution.
+
+It was especially meaningful for me that both the PSC app and the commercial were two of three exam assignments on the master's course <em>Generative AI for Business</em> at BI Norwegian Business School, submitted this weekend.
+
+The programme has been incredibly interesting. Over these months we have worked broadly and practically with Gen.AI, digital transformation, and development — not only theory, but also concrete deliverables, experimentation, content development, building solutions, and insight into challenges and new opportunities.
+
+For me the studies have also given a broad introduction to the full AI journey: from identifying needs and opportunities, analysing and structuring large data sets, and anchoring ownership in the organisation, to using models and programmes tied to core processes, roadmaps, implementation, governance, and not least scaling considerations that leaders must understand and handle.
+
+It has also motivated me to do more. Beyond the curriculum I have among other things built agent solutions, websites, an AI-assisted insight and content engine, and AI architecture for decision support. That has given me even greater insight into the opportunity space, and into how this is already creating value for businesses.
+
+Competence in this field has also inspired me to connect with like-minded people. The network has grown with people who want to explore, build, and contribute to tomorrow's solutions.
+
+💥 In summary, this points in a clear direction. I want to continue exploring how Gen.AI can create real value for businesses and customers in a commercial context. It is a direction I want to build on further, either through my own company or in a role where the organisation wants to use AI in a more targeted way.
+
+If anyone is curious about trying the Sales Coach solution, just contact me for access.
+
+#GenerativeAI #DigitalTransformation #CommercialLeadership #ContentProduction #AIAdvertising`,
+  },
   "bi-generative-ai-for-business-2026-01": {
-    tittel: `Final BI session in Generative AI for Business - this is only the beginning`,
-    teaser: `The final in-person session at BI delivered both practical experience and strategic direction: building, leading and implementing GenAI in business.`,
+    tittel: "Final BI session in Generative AI for Business - this is only the beginning",
+    teaser: "The final in-person session at BI delivered both practical experience and strategic direction: building, leading and implementing GenAI in business.",
     innhold: `I går hadde vi siste fysiske samling på masterstudiet "Generative AI for Business" ved Handelshøyskolen BI.
 
 Men følelsen er ikke at noe avsluttes. Snarere at noe har begynt! Kurset har gitt både praktisk erfaring og et tydeligere strategisk perspektiv på hvordan GenAI kan brukes, implementeres og ledes i virksomheter.
@@ -1333,11 +1828,9 @@ Innen GenAI holder det ikke å ha testet noen verktøy eller fullført ett kurs.
 Takk til professor Shubin Yu og alle medstudenter for inspirerende samlinger, gode diskusjoner, mye energi og kreativitet underveis. 💯`,
   },
   "econa-ai-kundereise-arbeidsflyt-01": {
-    tittel: `What is most interesting about AI now is what it does to the customer journey, workflow and availability`,
-    teaser: `Reflections from the Econa event: AI creates value when connected to the customer journey, workflow and concrete needs.`,
-    innhold: `What is most interesting about AI now is what it does to the customer journey, workflow and availability.
-
-This struck me clearly at the Econa event yesterday.
+    tittel: "What is most interesting about AI now is what it does to the customer journey, workflow and availability",
+    teaser: "Reflections from the Econa event: AI creates value when connected to the customer journey, workflow and concrete needs.",
+    innhold: `This struck me clearly at the Econa event yesterday.
 
 I am currently working on building both an AI-based chatbot, agents and a smarter booking flow in a private clinic, with the goal of better clarification of needs and a more precise customer/patient journey. That made this especially relevant to me:
 
@@ -1370,8 +1863,8 @@ Businesses that manage to connect AI to frontline work, booking, needs clarifica
 That is where much of the competitive strength will lie going forward.`,
   },
   "ai-needs-first-tannklinikk-case-01": {
-    tittel: `Most people start wrong with AI - lessons from a real case`,
-    teaser: `From AI Value Lab Oslo and a real dental clinic case: start with the business and needs — not with "which AI solution?" Website, chatbot and booking in the correct order.`,
+    tittel: "Most people start wrong with AI - lessons from a real case",
+    teaser: "From AI Value Lab Oslo and a real dental clinic case: start with the business and needs — not with \"which AI solution?\" Website, chatbot and booking in the correct order.",
     innhold: `At Easter and last week, I continued to work on a concrete case through my group AI Value Lab Oslo, where we use a real dental clinic as a learning arena to test how AI can be used in practice.
 
 We didn't start with technology. We started the business.
@@ -1423,8 +1916,8 @@ Since these AI posts are meant as expertise sharing, I also briefly mention the 
 PS. Easter was otherwise spent in Røros and Svalbard with experiences that remind me of something important: Not everything should be optimized. Cross-country skiing, alpine skiing, snowmobiling, dog sledding, wild animals and time with family and friends still beat most - the real is not artificial.`,
   },
   "ai-value-lab-munch-kickoff-01": {
-    tittel: `Kick off at Munch with AI Value Lab Oslo`,
-    teaser: `Easter lunch at Munch: explore responsible AI where communication, expectations and security matter a lot - from strong emotions to visits to the dentist.`,
+    tittel: "Kick off at Munch with AI Value Lab Oslo",
+    teaser: "Easter lunch at Munch: explore responsible AI where communication, expectations and security matter a lot - from strong emotions to visits to the dentist.",
     innhold: `At Easter we had a kick off lunch, and we in AI Value Lab Oslo met at 𝘔𝘜𝘕𝘊𝘏.
 
 It really felt like a pretty appropriate place to start.
@@ -1446,8 +1939,8 @@ Perhaps some of the most interesting AI exploration is precisely this: not to ma
 It will be exciting to explore this together further, Tatiana Hanecakova and Ole Mjelde!`,
   },
   "april-ai-kompetanse-praksis-01": {
-    tittel: `We have now found a simple way to build AI competence in the organisation`,
-    teaser: `AI competence is not built on courses alone, but in decisions and practice close to the core work.`,
+    tittel: "We have now found a simple way to build AI competence in the organisation",
+    teaser: "AI competence is not built on courses alone, but in decisions and practice close to the core work.",
     innhold: `We haven't found a simple way to build 𝐀𝐈 competence in the organization zone
 
 Send everyone on a course!
@@ -1486,8 +1979,8 @@ For the next week I will be building and testing AI agents. It involves the use 
 Happy Easter!`,
   },
   "iteam-operativ-modell-2026-01": {
-    tittel: `Is your commercial operating model rigged for 2026?`,
-    teaser: `Reflections from iteam's breakfast seminar: AI as a new operating system, cyber security as a foundation and agents that actually do work.`,
+    tittel: "Is your commercial operating model rigged for 2026?",
+    teaser: "Reflections from iteam's breakfast seminar: AI as a new operating system, cyber security as a foundation and agents that actually do work.",
     innhold: `Is your commercial operating model rigged for 2024?
 
 Yesterday I attended iteam and Michael Jacobs' breakfast seminar at Saga Kino in Oslo - an event with over 800 participants spread over 29 locations. The message was crystal clear: We are in a technological shift that requires a fundamental recalibration of how we lead, secure and scale businesses.
@@ -1521,8 +2014,8 @@ I believe that success requires us to stop looking at security and AI as IT proj
 Thanks to iteam for a professional deep dive into the future.`,
   },
   "ai-tech-frokost-rebel-01": {
-    tittel: `Tech breakfast: Now it's about what AI agents can do for business`,
-    teaser: `AI agents create value when connected to systems, data and processes — with control, clear instructions and human in the loop.`,
+    tittel: "Tech breakfast: Now it's about what AI agents can do for business",
+    teaser: "AI agents create value when connected to systems, data and processes — with control, clear instructions and human in the loop.",
     innhold: `At the AI ​​agent meeting at Digital Norway yesterday, we got a good picture of where the agent field stands now, from conceptual understanding, via the public sector and governance, to startup, scaling and concrete construction.
 
 Many still talk about AI as better text, faster searches and smarter assistants. That is not where the value lies. The value arises when AI connects to systems, data and processes – and performs work.
@@ -1546,8 +2039,8 @@ It is also the background to the fact that I am now concretely working on buildi
 Inside the venue was a DeLorean with a "REBEL" license plate. In the film Back to the Future, it was about traveling forward in time. With AI, it feels more like we build it. AI agents are the way forward!`,
   },
   "nova-day-data-forst-01": {
-    tittel: `NOVA Day: Data first – always`,
-    teaser: `I attended NOVA Day and got clear takeaways about data first, judgment and governance as a foundation.`,
+    tittel: "NOVA Day: Data first – always",
+    teaser: "I attended NOVA Day and got clear takeaways about data first, judgment and governance as a foundation.",
     innhold: `Yesterday I attended 𝗡𝗢𝗩𝗔 𝗿𝗿 at Hotel Bristol - a very relevant and insightful full-day seminar with the theme "𝐗𝐮𝐮 first - 𝑅 all time", with a focus on AI, data and the business models of the future.
 
 The day was led by Morten Blomfeldt, and brought together strong speakers.
@@ -1583,8 +2076,8 @@ As we see the rise of MCP and A2A, we are moving towards a new operational model
 Thank you to NOVA Consulting Group for a very well-executed event - and not least nice to meet many new acquaintances and have good professional discussions throughout the day!`,
   },
   "ai-value-lab-01": {
-    tittel: `We have started something that I believe more managers should do`,
-    teaser: `An informal community to build, share and challenge each other with AI — for real business value.`,
+    tittel: "We have started something that I believe more managers should do",
+    teaser: "An informal community to build, share and challenge each other with AI — for real business value.",
     innhold: `We have started something that I think more leaders should do.
 
 For me, this has become an arena where I both learn faster and get to test my own hypotheses in practice.
@@ -1634,8 +2127,8 @@ We are early. We build, not just talk. In a double sense. Looking forward to the
 Sky is the limit. But only for those who convert AI into value.`,
   },
   "ai-debatten-hype-vs-frykt-01": {
-    tittel: `The AI ​​debate still runs in two tracks: hype vs fear`,
-    teaser: `When the debate locks onto "hype" and "fear", it becomes difficult to see value creation in practice. It is adoption that moves operations.`,
+    tittel: "The AI ​​debate still runs in two tracks: hype vs fear",
+    teaser: "When the debate locks onto \"hype\" and \"fear\", it becomes difficult to see value creation in practice. It is adoption that moves operations.",
     innhold: `But the real distinction happens elsewhere.
 
 After following <strong>The Debate</strong> on <strong>NRK1</strong> this week, I am left with two clear reflections.
@@ -1668,8 +2161,8 @@ The question is not who is right in the AI ​​debate.
 The real question is who manages to create real value from it.`,
   },
   "ai-dommekraft-bias-01": {
-    tittel: `When AI gives advice - who do we really trust?`,
-    teaser: `AI doesn't remove human bias, it can amplify it. Reflections on how we interpret and use AI recommendations in commercial decisions.`,
+    tittel: "When AI gives advice - who do we really trust?",
+    teaser: "AI doesn't remove human bias, it can amplify it. Reflections on how we interpret and use AI recommendations in commercial decisions.",
     innhold: `This week I am participating in NOVA Day. Many of the conversations there are naturally about what AI can do for businesses. It is important, but one issue that I believe receives too little attention is how people react when the systems start giving advice.
 
 AI does not eliminate human bias, but rather can amplify it.
@@ -1705,8 +2198,8 @@ To me, this is one of the most interesting things about AI right now. Not just w
 In the work of building and testing my own AI models and tools, I notice this clearly. Small adjustments in data, context or instructions can produce different recommendations. It constantly reminds me that the model gives suggestions and not definitive answers. Testing is a necessity on an ongoing basis.`,
   },
   "ai-ready-virksomhet-01": {
-    tittel: `When is a business AI-ready?`,
-    teaser: `Many invest in AI, but fewer prepare the organization. A review of the four areas that determine whether a business is equipped to extract value from technology.`,
+    tittel: "When is a business AI-ready?",
+    teaser: "Many invest in AI, but fewer prepare the organization. A review of the four areas that determine whether a business is equipped to extract value from technology.",
     innhold: `Many businesses say they are working with AI. Fewer have prepared the organization for what it entails.
 
 The technology is available to everyone. The real difference lies in how the business organizes decisions, data and responsibilities around it.
@@ -1740,8 +2233,8 @@ For businesses that want to move from AI experimentation to value creation, I as
 👉 In the next post, I look at how organizations build AI competence in practice, without becoming dependent on a large internal tech environment.`,
   },
   "ai-arkitektur-beslutningsstotte-01": {
-    tittel: `I build AI architecture for decision support`,
-    teaser: `How generative AI can structure complex issues and give commercial managers a better decision-making basis through AI deconstruction.`,
+    tittel: "I build AI architecture for decision support",
+    teaser: "How generative AI can structure complex issues and give commercial managers a better decision-making basis through AI deconstruction.",
     innhold: `As a commercial manager, I have several times participated in strategy processes where the goal is to link ambitions to actual implementation. Such processes often involve many employees, external consultants and professional environments with different perspectives and agendas. The result can be extensive analyzes and presentations before you understand what the business needs to do differently.
 
 The challenge is well known: the strategy is clearly formulated, but the link to operational action is far weaker. Strategy documents, KPI structures, sales processes, tender documents and regulatory requirements create large amounts of information that are demanding to analyze systematically.
@@ -1779,8 +2272,8 @@ The common denominator is the architecture behind and how Gen. AI can analyze co
 👉 I work on developing and applying such solutions in practice. If you are curious about how this can be used in your own business, I would be happy to have a chat.`,
   },
   "ai-dommekraft-kontekst-01": {
-    tittel: `AI judgment in practice – from prompt to context`,
-    teaser: `Why context engineering – not just prompt engineering – determines the quality of AI responses in practice.`,
+    tittel: "AI judgment in practice – from prompt to context",
+    teaser: "Why context engineering – not just prompt engineering – determines the quality of AI responses in practice.",
     innhold: `In my work with generative AI, one thing has become clear: <strong>The quality of the answer is decided long before the model starts writing.</strong> Small adjustments in context, instructions or parameters can make a marked difference in precision and structure, whether you build your own GPTs with documents or use standard models in open work processes.
 
 We often talk about prompt engineering. In practice, it is <strong>context engineering</strong> that determines the quality. An AI response is influenced not only by the question itself, but by system instructions, previous dialogue, documents retrieved, model selection and parameters such as temperature and top-p. Temperature controls the balance between creativity and consistency. In idea development, variety can be useful. In commercial decision-making processes it can be a risk factor.
@@ -1798,8 +2291,8 @@ AI judgment is therefore about more than mastering a tool. It is about structuri
 For businesses that want to move from AI discussion to actual value creation, I assist through my company with both strategic clarification and practical implementation, in collaboration with technical specialists where necessary.`,
   },
   "strategi-ai-master-01": {
-    tittel: `Strategy without AI is like looking backwards in the mirror while driving forward`,
-    teaser: `AI is no longer a "nice to have" — it is a strategic necessity. Reflections from the Oslo Business Forum and the decision to enroll in the master's course Generative AI for Business at BI.`,
+    tittel: "Strategy without AI is like looking backwards in the mirror while driving forward",
+    teaser: "AI is no longer a \"nice to have\" — it is a strategic necessity. Reflections from the Oslo Business Forum and the decision to enroll in the master's course Generative AI for Business at BI.",
     innhold: `A few weeks ago I attended the Oslo Business Forum 2025. A consistent theme from the stage was clear: <strong>AI is no longer a "nice to have" — it is a strategic necessity.</strong> 🤖
 
 🧠 <em>The message I particularly took with me was:</em>
@@ -1824,8 +2317,8 @@ What about you? Do you see AI as a strategic game-changer in your business where
 📌 PS. For the record: The image is AI-generated.</em>`,
   },
   "ai-learning-google-skills-01": {
-    tittel: `It is fascinating how easy it has become to acquire AI expertise through completely new and modern methods`,
-    teaser: `Recommendation of Google's learning universe for AI competence: Google Skills and Google Cloud YouTube series, with concrete modules to start with.`,
+    tittel: "It is fascinating how easy it has become to acquire AI expertise through completely new and modern methods",
+    teaser: "Recommendation of Google's learning universe for AI competence: Google Skills and Google Cloud YouTube series, with concrete modules to start with.",
     innhold: `It is fascinating how easy it has become to acquire AI expertise through completely new and modern methods. <strong>Google has assembled an impressive learning universe that makes it possible to build solid AI competence, regardless of technical background.</strong>
 
 Two platforms stand out in particular:
@@ -1855,8 +2348,8 @@ For those who want to explore the possibilities:
 👉 https://lnkd.in/dM7WrkEe`,
   },
   "ai-ikke-intelligent-01": {
-    tittel: `AI is not intelligent — we have to be`,
-    teaser: `AI creates value only when we understand its limitations. Reflections from the BI webinar on when AI fits and when human judgment must take over.`,
+    tittel: "AI is not intelligent — we have to be",
+    teaser: "AI creates value only when we understand its limitations. Reflections from the BI webinar on when AI fits and when human judgment must take over.",
     innhold: `Reflections from yesterday's BI webinar "More Than Words: How to Know How AI Can (and Can't) Help You"
 
 Yesterday's webinar from BI with Auke Hunneman and Jan Ketil hit an important point:
@@ -1916,8 +2409,8 @@ It is a <strong>core competence</strong> to:
 <strong>If AI can't recognize my face - why should I blindly trust what it suggests?</strong>`,
   },
   "alle-snakker-ai-01": {
-    tittel: `Everyone is talking about AI – but what are we really doing?`,
-    teaser: `Introduction to a series on what AI actually means in practice — not just as a technology, but as a management and business discipline.`,
+    tittel: "Everyone is talking about AI – but what are we really doing?",
+    teaser: "Introduction to a series on what AI actually means in practice — not just as a technology, but as a management and business discipline.",
     innhold: `The past year has – like many others – been characterized by a fast pace, exciting experiences, great expectations and rapid technological changes. For my part, it has also provided room for reflection, professional deepening and new opportunities, particularly in the field of AI and strategy. This deepening takes, among other things, the framework and curriculum literature from the master's course <em>Generative AI for Business</em> at BI, combined with practical exploration of various AI models and areas of application.
 
 <strong>This post marks the start of a series</strong> where in 2026 I will share reflections, frameworks and experiences around what AI actually means in practice – not just as technology, but as a management and business discipline.
@@ -1935,8 +2428,8 @@ I am happy to have the dialogue here on LinkedIn, or over an informal coffee con
 This will be my last post in 2025. Thank you for this year - I hope the year has provided room for both development, learning and good conversations. We will continue in 2026.`,
   },
   "ai-foles-nytt-01": {
-    tittel: `AI feels new – but this is not the start of the story`,
-    teaser: `AI is experienced as new, but is the culmination of decades of development. Looking ahead to the framework The five A's (Access to Agents).`,
+    tittel: "AI feels new – but this is not the start of the story",
+    teaser: "AI is experienced as new, but is the culmination of decades of development. Looking ahead to the framework The five A's (Access to Agents).",
     innhold: `In my last post in 2025, I asked the question: <em>Everyone is talking about AI – but what are we really doing?</em>
 
 <strong>This post is the next step in the same series.</strong> In 2026, I will share reflections, frameworks and experiences around what AI actually means in practice - starting from the syllabus book <em>Generative AI for Business</em> by Shubin Yu, which is part of my master's study, combined with my own experiences and practical observations.
@@ -1963,8 +2456,8 @@ Where it is natural, I will also connect this to my own experiences from previou
 I hope more people will share their own experiences, perspectives and questions along the way - either here in the comments section, in direct dialogue, or over an informal cup of coffee. This is a field where we are all still learning. Join me on my little "journey".`,
   },
   "access-til-agents-01": {
-    tittel: `From Access to Agents - why many stop early`,
-    teaser: `The framework The five A's: how AI is being used in businesses today, and why many stop earlier than they think.`,
+    tittel: "From Access to Agents - why many stop early",
+    teaser: "The framework The five A's: how AI is being used in businesses today, and why many stop earlier than they think.",
     innhold: `In the previous post, I wrote about how AI is often perceived as new, even though it is in reality based on several decades of technological development. This post is part of the AI ​​series I'm sharing this winter, where I explore what AI actually means in practice for management, organizations and value creation.
 
 Here I take a closer look at <em>how AI is being used in many businesses today</em>, and why many stop earlier than they themselves think.
@@ -1997,8 +2490,8 @@ When AI is connected to data, processes and decisions, one goes from individual 
 Therefore, AI and strategic use and implementation are also to a small extent an IT project. It is a managerial responsibility - in line with other strategic choices related to organisation, risk and value creation.`,
   },
   "fra-verktoy-til-system-01": {
-    tittel: `From tool to system – APIs, integration and manager selection`,
-    teaser: `The value of AI only occurs when it is connected to systems and processes via integration — not as a stand-alone tool. APIs and manager selection.`,
+    tittel: "From tool to system – APIs, integration and manager selection",
+    teaser: "The value of AI only occurs when it is connected to systems and processes via integration — not as a stand-alone tool. APIs and manager selection.",
     innhold: `In the previous post in this AI series, I wrote about <em>The five A's</em> and why many organizations stop using AI earlier than they think. This post builds on the same framework, and takes a closer look at what distinguishes simple AI use from more mature and integrated use.
 
 A term many have heard of, but few put into a strategic context, is <strong>API - Application Programming Interface</strong>. In the curriculum book <em>Generative AI for Business</em>, an API is described simply as a bridge that allows systems to talk to each other. It sounds technical, but the consequences are primarily organizational.
@@ -2014,8 +2507,8 @@ When I look back on my experiences with IoT, sensor technology, automation and r
 In an age where technology works, scales and becomes increasingly affordable, it is not the tools that separate businesses from each other, but the ability to set good priorities, take ownership of decisions and translate AI into lasting value creation. This is where the difference between <strong>AI AWARE</strong> and <strong>AI READY</strong> becomes clear.`,
   },
   "fra-pilot-til-skalering-01": {
-    tittel: `From pilot to scaling – why so many AI initiatives stall`,
-    teaser: `Why so few AI initiatives scale even when the technology works. About ownership, process change and governance.`,
+    tittel: "From pilot to scaling – why so many AI initiatives stall",
+    teaser: "Why so few AI initiatives scale even when the technology works. About ownership, process change and governance.",
     innhold: `In recent posts, I have written about how many organizations adopt AI, but stop earlier than they themselves think. Today I want to go one level deeper - to the question many managers actually have:
 
 <strong>Why do so few AI initiatives scale, even when the technology works?</strong>
@@ -2048,8 +2541,8 @@ to make conscious choices about which processes to change, which decisions to su
 This is where AI goes from experiment to core strategic competence.`,
   },
   "praktisk-oppskrift-skalering-01": {
-    tittel: `From pilot to scaling – a practical recipe for managers`,
-    teaser: `Five things businesses that succeed in AI scaling do right: ownership, process change, decision linking, governance and data.`,
+    tittel: "From pilot to scaling – a practical recipe for managers",
+    teaser: "Five things businesses that succeed in AI scaling do right: ownership, process change, decision linking, governance and data.",
     innhold: `In the previous post, I wrote about why so many AI initiatives stop at the pilot stage, even when the technology works. In this post I will be more specific:
 What actually needs to be in place for AI to go from promising experiments to real, scalable value creation?
 
@@ -2078,8 +2571,8 @@ Scaling is far less about advanced technology and more about management.
 Many are now talking about agents and autonomous solutions. But the reality is that most organizations have yet to robustly scale a simple AI solution. Without ownership, process change and management, more autonomy becomes a risk, not a gain.`,
   },
   "data-kontekst-rag-01": {
-    tittel: `Data, context and RAG – why AI without context is not intelligence`,
-    teaser: `AI without context is not intelligence. Why RAG and the company's own data are prerequisites for mature AI use.`,
+    tittel: "Data, context and RAG – why AI without context is not intelligence",
+    teaser: "AI without context is not intelligence. Why RAG and the company's own data are prerequisites for mature AI use.",
     innhold: `In recent posts, I have written about why many AI initiatives stop in pilot, even when the technology works. Today I want to zoom in on a crucial but often underestimated point:
 
 👉 AI is not intelligent without context.
@@ -2104,8 +2597,8 @@ Before more autonomous solutions are even realistic, the business must have cont
 AI only becomes strategic when it not only provides answers, but contributes to <strong>better decisions</strong>. It requires data with meaning, context with ownership - and managers who understand the difference.`,
   },
   "rag-innsikt-handling-01": {
-    tittel: `From insight to action – RAG as a bridge between AI and core processes`,
-    teaser: `RAG as a bridge between AI and core processes: how businesses move from testing to real value creation. Example from sales.`,
+    tittel: "From insight to action – RAG as a bridge between AI and core processes",
+    teaser: "RAG as a bridge between AI and core processes: how businesses move from testing to real value creation. Example from sales.",
     innhold: `In the previous post, I wrote about why AI without context is not intelligence. Now I want to go one step further:
 What does this mean in practice for businesses that want to move from testing to actual value creation?
 
@@ -2130,8 +2623,8 @@ Succeeding with AI at this level is less about more tools and more about clear c
 • Who owns the consequences?`,
   },
   "ai-agenter-hva-01": {
-    tittel: `AI agents – what they are (and what they are not)`,
-    teaser: `What AI agents are — and what they are not. Clearing up the term and why it is a management topic, not just IT.`,
+    tittel: "AI agents – what they are (and what they are not)",
+    teaser: "What AI agents are — and what they are not. Clearing up the term and why it is a management topic, not just IT.",
     innhold: `In recent posts, I have written about why many AI initiatives stop before they create real value - and why data, context and RAG are prerequisites for mature AI use. Now it's time to clear up a term that keeps popping up in the AI ​​debate: <strong>AI agents</strong>.
 
 Let's start precisely. In <em>Generative AI for Business</em>, Shubin Yu describes agents as systems that not only respond to requests, but can plan, execute and follow up tasks over time - within defined frameworks. An agent has a clear goal, access to relevant data and tools, ability to make sequential decisions, and clear boundaries for responsibility and control. It also says a lot about what an agent is not: it is not just ChatGPT in a new wrapper, it is not automation without context, and it is not "autonomous" without governance. Agents are workflows with intelligence – not magic.
@@ -2143,8 +2636,8 @@ That is also why this is primarily a <strong>leadership theme</strong>, not an I
 There is also an important notice to managers here. The more autonomous AI becomes, the more important the answers to some fundamental questions become: Which decisions can be delegated – and which cannot? Who owns the consequences when something goes wrong? And how do we stop an agent – ​​and when? Agents reinforce the organization as it is. If the structure is unclear, the ambiguity is amplified.`,
   },
   "ai-agenter-feil-01": {
-    tittel: `AI agents - why many go wrong when they want to become more autonomous`,
-    teaser: `Why many go wrong chasing autonomy: agents are about structure and responsibility, not just “turn on” autonomy.`,
+    tittel: "AI agents - why many go wrong when they want to become more autonomous",
+    teaser: "Why many go wrong chasing autonomy: agents are about structure and responsibility, not just “turn on” autonomy.",
     innhold: `I see a clear pattern in AI conversations. AI provides good answers, analyzes and demos, but the decisions are still made as before. When the gap between insight and action becomes too large, one term almost always appears: <strong>agents</strong>.
 
 They are often referred to as the next natural step - an upgrade you "turn on" when you are tired of manual processes. This is where many go wrong.
@@ -2168,8 +2661,8 @@ McKinsey has described how it uses a large number of internal AI agents to suppo
 Agents reinforce the organization. If the structure is unclear, the ambiguity is amplified. If responsibility is diffused, the risk - not the value - increases. Therefore, this is a management topic, not an IT project.`,
   },
   "ai-agenter-praksis-01": {
-    tittel: `AI agents in practice – when, where and how they actually provide value`,
-    teaser: `When do AI agents actually provide value — and when should you not? Practical criteria for managers.`,
+    tittel: "AI agents in practice – when, where and how they actually provide value",
+    teaser: "When do AI agents actually provide value — and when should you not? Practical criteria for managers.",
     innhold: `Several managers notice a clear dilemma.
 
 Either you see the potential in AI agents, or you are unsure where it is safe to release them. The result is often either excessive caution – or too rapid autonomy.
@@ -2205,8 +2698,8 @@ Agents should therefore not be introduced widely - but tested in a controlled ma
 Agents are powerful tools that mark a shift in what is being moved from people to systems – from efficiency to decisions. Only when agents are used at the Decisions level of the EDGE framework (Efficiency, Decisions, Growth, Empowerment) do they become a strategic competitive advantage – and a clear leadership responsibility.`,
   },
   "ai-governance-01": {
-    tittel: `When AI gains more power – what should managers actually manage?`,
-    teaser: `When AI affects decisions: who is responsible? EDGE, 5A and governance as management's response to increased autonomy.`,
+    tittel: "When AI gains more power – what should managers actually manage?",
+    teaser: "When AI affects decisions: who is responsible? EDGE, 5A and governance as management's response to increased autonomy.",
     innhold: `Several managers I speak to describe the same dilemma:
 AI is helping us more and more – but we're not quite sure where the limit is.
 
@@ -2247,8 +2740,8 @@ EDGE explains where the value lies.
 Governance determines whether this becomes a competitive advantage - or a risk.`,
   },
   "ki-norsk-virksomheter-01": {
-    tittel: `AI in Norwegian businesses - from testing to value creation`,
-    teaser: `Over half of Norwegian businesses use AI — but few have integrated it into core processes. The NHO report's message.`,
+    tittel: "AI in Norwegian businesses - from testing to value creation",
+    teaser: "Over half of Norwegian businesses use AI — but few have integrated it into core processes. The NHO report's message.",
     innhold: `Yesterday I participated online in a conference under the auspices of <strong>NHO</strong>, where <strong>Social Economic Analysis</strong> presented its recent report on the use of artificial intelligence in Norwegian business.
 
 My main impression is that AI/CI has now seriously become part of everyday life in many businesses. Over half use AI today, a sharp increase in just the last two years. At the same time, it is clear that the use is still largely about testing, support tools and individual efficiency - not about real change in how businesses are run and create value.
@@ -2264,8 +2757,8 @@ My most important takeaway is once again that AI is to a small extent an IT proj
 If AI is to become a real competitive advantage, we must move from curious exploration to conscious integration.`,
   },
   "ai-governance-i-praksis-01": {
-    tittel: `AI governance in practice – five management measures that determine where the power lies`,
-    teaser: `Five management measures that determine where the power lies when AI affects customers, discounts and priorities.`,
+    tittel: "AI governance in practice – five management measures that determine where the power lies",
+    teaser: "Five management measures that determine where the power lies when AI affects customers, discounts and priorities.",
     innhold: `Most management groups have control over the budget, margins and forecast. Nevertheless, I see that many people lose track when AI begins to influence which customers are prioritized, which discounts are recommended and which opportunities are assessed as risks. The challenge rarely lies in the technology, but in the fact that decision-making power is shifted without it being clearly defined where the power actually lies.
 
 Imagine a commercial organization that introduces an AI agent into the sales process. It analyzes CRM data, historical deals and customer behavior and makes recommendations on the next best course of action. The precision increases, the priorities become sharper and the forecast more accurate.
@@ -2296,8 +2789,8 @@ When something goes wrong, it must be clear where the responsibility lies. IT ca
 This is not about slowing down development, but about ensuring that pace and autonomy do not run away from responsibility and legitimacy. AI does not become risky because it is intelligent. It becomes risky when the organization has not made conscious choices about how decision-making power is to be managed.`,
   },
   "ai-kompetanse-2030-01": {
-    tittel: `AI is not the threat in 2030. The skills gap is.`,
-    teaser: `Competitiveness in 2030 will be determined by competence — not by AI as a threat. Perspectives from the WEF, McKinsey and OECD.`,
+    tittel: "AI is not the threat in 2030. The skills gap is.",
+    teaser: "Competitiveness in 2030 will be determined by competence — not by AI as a threat. Perspectives from the WEF, McKinsey and OECD.",
     innhold: `The AI ​​debate is often characterized by pace, stock market movements and uncertainty. For me, the question is more which skills will actually determine competitiveness in the future?
 
 The diagram I am attaching visualizes this clearly. The <em>horizontal</em> axis shows the proportion of employers who today consider a skill a core competence (2025). The <em>vertical</em> axis shows the proportion of employers who expect this skill to increase in importance towards 2030.
@@ -2327,8 +2820,8 @@ That's why I'm looking forward to Monday's meeting at my Exec. Master in Generat
 At the same time, I now assist companies in AI and digital transformation - at the intersection between strategy, management and implementation. If you would like to discuss how this can be structured in your business, I would be happy to have a chat. The link to my consulting page can be found in the first comment field.`,
   },
   "bi-master-oppstart-01": {
-    tittel: `Back at BI - and looking for a business to build AI value with`,
-    teaser: `Back at BI: the master's course Generative AI for Business and the search for a business to build an AI app and implementation plan with.`,
+    tittel: "Back at BI - and looking for a business to build AI value with",
+    teaser: "Back at BI: the master's course Generative AI for Business and the search for a business to build an AI app and implementation plan with.",
     innhold: `Back at BI - and looking for a business to build AI value with (and an app you get to vote on).
 
 11 years ago I completed the Exec. Master of Management at BI School of Economics, with specialization in strategy and communication. Now I'm back on the master's course <em>Generative AI for Business</em>, led by professor and AI expert Shubin Yu.
@@ -2359,11 +2852,9 @@ Does your business have a process that can be optimized with generative AI, but 
 Feel free to contact us via DM if this is relevant.`,
   },
   "predictive-sales-coach-01": {
-    tittel: `I decided to build – not just think about AI`,
-    teaser: `From analysis to construction: reflections from the BI course and the prototype The Predictive Sales Coach.`,
-    innhold: `I decided to build – not just think about AI.
-
-The week on the master's course <em>Generative AI for Business</em> at BI has been particularly interesting and educational. What makes this relevant is not just the frameworks, but the practical work. We have worked in the Google ecosystem with Gemini, Google AI Studio and Workspace integrations, tested model selection, structured prompt architecture and evaluated output against concrete business cases. When you have to manage the context, parameters and data base yourself, you get a completely different understanding of precision and limitations.
+    tittel: "I decided to build – not just think about AI",
+    teaser: "From analysis to construction: reflections from the BI course and the prototype The Predictive Sales Coach.",
+    innhold: `The week on the master's course <em>Generative AI for Business</em> at BI has been particularly interesting and educational. What makes this relevant is not just the frameworks, but the practical work. We have worked in the Google ecosystem with Gemini, Google AI Studio and Workspace integrations, tested model selection, structured prompt architecture and evaluated output against concrete business cases. When you have to manage the context, parameters and data base yourself, you get a completely different understanding of precision and limitations.
 
 At the same time, I have spent a lot of time testing and exploring AI tools in practice. Within writing and analysis, there are clear differences between solutions such as Claude, ChatGPT and Perplexity when it comes to understanding context and structured reasoning. On the development side, tools such as Cursor, Replit, Lovable and AI Studio have made it possible to go from idea to working prototype quickly, through AI-assisted coding, model testing and efficient workflow. Within knowledge structuring, NotebookLM and local LLM solutions have shown how crucial context and data quality are.
 
@@ -2380,8 +2871,8 @@ If you are curious about the app solution, or want to discuss the practical appl
 The motivation is great - the inspiration is greater!`,
   },
   "ai-etikk-norden-01": {
-    tittel: `AI, power, ethics and legitimacy – what does Nordic AI leadership require?`,
-    teaser: `What does Nordic AI leadership require? About power, ethics, legitimacy and responsible governance.`,
+    tittel: "AI, power, ethics and legitimacy – what does Nordic AI leadership require?",
+    teaser: "What does Nordic AI leadership require? About power, ethics, legitimacy and responsible governance.",
     innhold: `In the previous post in my AI series, I wrote about the controls that determine where the power lies when AI influences decisions. The next level is about ethics. When decision-making power is shifted from people to systems, not only a governance issue arises, but also a legitimacy issue.
 
 Who is perceived as responsible when an algorithm prioritizes one customer over another? Who explains why a risk model gives different results? What happens when a dynamic pricing model differentiates prices based on willingness to pay - and the margin increases, but the experience of fairness weakens? What happens to the trust if the decision is effective, but is perceived as unreasonable?
@@ -2403,11 +2894,15 @@ The real test of maturity is not how advanced the model is, but whether the orga
 The next step in the series is about the manager's judgement. When AI becomes part of the decision-making basis, it is no longer enough to understand the governance structures. Managers must understand how models respond to context, how hallucinations occur, and how recommendations should be critically assessed.
 
 AI judgment is not a niche technical skill. It is a leadership skill.`,
-  },
+  }
 };
+
 export const aiGovernance = aiGovernanceRaw.map((innlegg) => ({
   ...innlegg,
-  tittel: localize(innlegg.tittel, aiGovernanceEn[innlegg.id].tittel),
+  tittel: localize(
+    normalizeDisplayText(innlegg.tittel),
+    normalizeDisplayText(aiGovernanceEn[innlegg.id]?.tittel ?? innlegg.tittel)
+  ),
   teaser: localize(innlegg.teaser, aiGovernanceEn[innlegg.id].teaser),
   innhold: localize(innlegg.innhold, aiGovernanceEn[innlegg.id].innhold),
 }));

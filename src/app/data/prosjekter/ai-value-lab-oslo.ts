@@ -28,20 +28,20 @@ export const aiValueLabOslo: ProsjektType = {
     },
   ],
   innhold: {
-    no: `AI Value Lab Oslo er et initiativ jeg tok for å skape en mer praktisk arena for læring og bygging på tvers av fagområder. Gjennom case, testing og iterasjon utvikler vi en mer anvendbar forståelse av hvordan AI kan brukes i virkelige arbeidssituasjoner.
+    no: `AI Value Lab Oslo er et tverrfaglig læringsinitiativ der teknologi, forretning og praktisk utvikling møtes for å utforske hvordan AI kan forstås, testes og anvendes på en ansvarlig måte. Gruppen bruker case og problemstillinger som læringsarena for å bygge kompetanse, prøve ut verktøy, dele erfaringer og utvikle praktisk forståelse på tvers av fagområder. Målet er å lære gjennom samarbeid — og styrke evnen til å identifisere, vurdere og utforske relevante AI-muligheter i praksis.
 
-Det som kjennetegner initiativet, er at vi ikke bare diskuterer AI som teknologi, men bruker konkrete problemstillinger som læringsarena. Målet er å lære raskere, dele erfaringer og bygge kompetanse som er relevant også utenfor enkeltverktøy og hype.
+Det som kjennetegner initiativet, er kombinasjonen av ulike perspektiver og komplementære styrker. Vi diskuterer ikke bare AI som teknologi, men bygger innsikt som er relevant i virkelige arbeidssituasjoner — med fokus på ansvarlig bruk, læring i praksis og løsninger som kan skape reell verdi.
 
-Fokus ligger på ansvarlig bruk av AI, praktisk læring og utvikling av løsninger som kan gi reell verdi i virksomheter.
+Gruppen består av Marius Ottesen, Tatiana Hanecakova og Ole Mjelde. Marius bidrar med erfaring fra kommersiell ledelse, strategi og organisasjonsutvikling, med særlig styrke i gjennomføring og koblingen mellom forretning, teknologi og verdiskaping. Tatiana bidrar med bakgrunn fra finansledelse og praktisk erfaring med AI-drevne arbeidsflyter — opptatt av løsninger som tåler virkeligheten og skaper konkret verdi. Ole bidrar med erfaring fra digitalisering, innovasjon og endringsarbeid i store nordiske virksomheter, med et praktisk blikk på hvordan nye løsninger utvikles, testes og tas i bruk.
 
 Jeg var initiativtaker til etableringen av AI Value Lab Oslo.
 
 Les mer via LinkedIn: <a href="https://www.linkedin.com/company/aivaluelaboslo/" target="_blank" rel="noopener noreferrer">AI Value Lab Oslo</a>.`,
-    en: `AI Value Lab Oslo is a cross-disciplinary learning initiative where different perspectives and complementary strengths come together to build practical AI understanding through collaboration. Through cases, testing, reflection, and hands-on experimentation, we build competence, share experience, and learn faster across disciplines.
+    en: `AI Value Lab Oslo is a cross-disciplinary learning initiative where technology, business, and hands-on development meet to explore how AI can be understood, tested, and applied responsibly. The group uses cases and real challenges as learning arenas to build competence, try tools, share experience, and develop practical understanding across disciplines. The goal is to learn through collaboration — and strengthen the ability to identify, assess, and explore relevant AI opportunities in practice.
 
-What characterises the initiative is that we do not only discuss AI as technology; we use concrete challenges and use cases as learning arenas. The goal is to develop a more practical understanding of how AI, data, governance, and business value connect in real working situations.
+What characterises the initiative is the combination of different perspectives and complementary strengths. We do not only discuss AI as technology; we build insight that matters in real working situations — with a focus on responsible use, learning in practice, and solutions that create genuine value.
 
-The focus is on learning in practice, responsible use of AI, and developing insight that remains relevant beyond individual tools and hype.
+The group consists of Marius Ottesen, Tatiana Hanecakova, and Ole Mjelde. Marius contributes experience from commercial leadership, strategy, and organisational development, with particular strength in execution and connecting business, technology, and value creation. Tatiana contributes a background in financial leadership and hands-on experience building AI-driven workflows — focused on solutions that work in reality and deliver concrete value. Ole contributes experience from digitalisation, innovation, and change in large Nordic organisations, with a practical view of how new solutions are developed, tested, and adopted.
 
 I was the initiator behind establishing AI Value Lab Oslo.
 

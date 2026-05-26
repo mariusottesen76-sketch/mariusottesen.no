@@ -17,6 +17,15 @@ export const skoyenasenTannklinikk: ProsjektType = {
     no: "Klikk på bildet for å se Skøyenåsen Tannklinikk i større format.",
     en: "Click the image to view Skøyenåsen Tannklinikk in a larger format.",
   },
+  ekstraBilder: [
+    {
+      src: "/images/skoyenasen-tannklinikk-logo.png",
+      alt: {
+        no: "Skøyenåsen Tannklinikk — logo",
+        en: "Skøyenåsen Dental Clinic — logo",
+      },
+    },
+  ],
   innhold: {
     no: `Skøyenåsen Tannklinikk er et konkret utviklingscase med fokus på hvordan AI og digitale løsninger kan forbedre pasientreisen fra første kontakt til oppfølging. Arbeidet tar utgangspunkt i konkrete behov knyttet til behovsavklaring, riktigere booking, tydeligere informasjon og mer systematisk oppfølging.
 

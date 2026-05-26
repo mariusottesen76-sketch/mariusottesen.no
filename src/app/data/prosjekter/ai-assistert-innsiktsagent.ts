@@ -11,6 +11,7 @@ export const aiAssistertInnsiktsagent: ProsjektType = {
     en: "A practical AI project where I am building a more agentic workflow to understand the task, choose the right process, and move from insight to concrete action.",
   },
   bildeUrl: "/images/innsikt-handling.png",
+  bildeRamme: "natural",
   dato: "2026-04-24",
   visningsDato: "24.04.26",
   bildeHint: {

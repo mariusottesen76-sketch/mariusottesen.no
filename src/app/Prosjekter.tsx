@@ -4,14 +4,17 @@ import Image from "next/image";
 import { useLanguage, type Lang } from "./LanguageContext";
 import { getTranslation } from "./data/translations";
 import { predictiveSalesCoach, type ProsjektType } from "./data/prosjekter/predictive-sales-coach";
+import { pscPromoVideo } from "./data/prosjekter/psc-promo-video";
 import { aiValueLabOslo } from "./data/prosjekter/ai-value-lab-oslo";
 import { skoyenasenTannklinikk } from "./data/prosjekter/skoyenasen-tannklinikk";
 import { aiArkitekturBeslutningsstotte } from "./data/prosjekter/ai-arkitektur-beslutningsstotte";
 import { aiFaginnleggHub } from "./data/prosjekter/ai-faginnlegg-hub";
 import { aiAssistertInnsiktsagent } from "./data/prosjekter/ai-assistert-innsiktsagent";
 import { aiAssistertInnsiktsOgInnholdsagent } from "./data/prosjekter/ai-assistert-innsikts-og-innholdsagent";
+import { prosjektoppgaveStrategiskImplementering } from "./data/prosjekter/prosjektoppgave-strategisk-implementering";
+import { applyPscBrandingHtml, applyPscBrandingPlain, isPscProsjekt } from "./lib/psc-brand";
 
-const prosjektKort: ProsjektType[] = [aiAssistertInnsiktsagent, aiAssistertInnsiktsOgInnholdsagent, predictiveSalesCoach, aiValueLabOslo, skoyenasenTannklinikk, aiArkitekturBeslutningsstotte].sort(
+const prosjektKort: ProsjektType[] = [prosjektoppgaveStrategiskImplementering, pscPromoVideo, aiAssistertInnsiktsagent, aiAssistertInnsiktsOgInnholdsagent, predictiveSalesCoach, aiValueLabOslo, skoyenasenTannklinikk, aiArkitekturBeslutningsstotte].sort(
   (a, b) => new Date(b.dato).getTime() - new Date(a.dato).getTime()
 );
 
@@ -26,10 +29,21 @@ function getProsjektBildeHint(prosjekt: ProsjektType, lang: Lang) {
     : `Click the image to view ${prosjekt.tittel.en} in a larger format.`;
 }
 
+function getProsjektBildeRamme(prosjekt: ProsjektType): "natural" | "cover" {
+  if (prosjekt.bildeRamme) return prosjekt.bildeRamme;
+  if (prosjekt.bildePortrett) return "natural";
+  return "natural";
+}
+
+function getVideoAspectClass(prosjekt: ProsjektType): string {
+  return prosjekt.videoFormat === "landscape" ? "aspect-video" : "aspect-[9/16]";
+}
+
 export default function Prosjekter({ onNavigate }: { onNavigate?: (tab: string) => void }) {
   const { lang } = useLanguage();
   const tr = (key: string) => getTranslation(key, lang);
   const [activeImage, setActiveImage] = useState<{ src: string; alt: string } | null>(null);
+  const [playingVideoId, setPlayingVideoId] = useState<string | null>(null);
 
   return (
     <div className="py-4 text-left w-full overflow-x-hidden min-w-0">
@@ -64,46 +78,135 @@ export default function Prosjekter({ onNavigate }: { onNavigate?: (tab: string) 
       <div className="mt-8 space-y-8 min-w-0">
         {alleProsjekter.map((prosjekt) => {
           const bildeHintKort = getProsjektBildeHint(prosjekt, lang);
-          const erPsc = prosjekt.id === "predictive-sales-coach-2026";
-          const pscQr = erPsc ? prosjekt.ekstraBilder?.[0] : undefined;
+          const erPsc = isPscProsjekt(prosjekt.id);
+          const pscQr = prosjekt.id === "predictive-sales-coach-2026" ? prosjekt.ekstraBilder?.[0] : undefined;
           return (
           <article
             key={prosjekt.id}
-            className="bg-slate-900/40 rounded-2xl border border-indigo-500/20 overflow-hidden shadow-xl min-w-0"
+            className={
+              erPsc
+                ? "bg-[#0B1120] rounded-2xl border border-slate-800/80 overflow-hidden shadow-xl min-w-0"
+                : "bg-slate-900/40 rounded-2xl border border-indigo-500/20 overflow-hidden shadow-xl min-w-0"
+            }
           >
             <div className="flex flex-col md:flex-row gap-0 min-w-0">
               {/* Smalere bildekolonne – predictive / predictive-sales-coach */}
-              <div className="w-full md:w-[220px] lg:w-[260px] shrink-0 md:min-h-[260px] flex flex-col items-center gap-2">
-                <button
-                  type="button"
-                  onClick={() => setActiveImage({ src: prosjekt.bildeUrl, alt: prosjekt.tittel[lang] })}
-                  className="w-full h-48 md:h-full relative bg-slate-800 overflow-hidden group cursor-zoom-in focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:outline-none rounded-lg border border-slate-700/60"
-                  aria-label={bildeHintKort}
-                >
-                  <Image
-                    src={prosjekt.bildeUrl}
-                    alt={prosjekt.tittel[lang]}
-                    fill
-                    className="object-contain object-center transition-transform duration-300 group-hover:scale-[1.03]"
-                    sizes="(max-width: 768px) 100vw, 260px"
-                  />
-                </button>
-                {prosjekt.ekstraBilder && prosjekt.ekstraBilder.length > 0 && (
-                  <div className="w-full flex gap-2 px-1">
-                    {prosjekt.ekstraBilder.map((img) => (
+              <div className="w-full md:w-[220px] lg:w-[260px] shrink-0 flex flex-col items-center gap-2 self-start">
+                {prosjekt.videoEmbedUrl || prosjekt.videoUrl ? (
+                  playingVideoId === prosjekt.id ? (
+                    <div
+                      className={`w-full ${getVideoAspectClass(prosjekt)} relative bg-slate-800 overflow-hidden rounded-lg border border-slate-700/60`}
+                    >
+                      {prosjekt.videoUrl ? (
+                        <video
+                          src={prosjekt.videoUrl}
+                          className="absolute inset-0 w-full h-full object-cover"
+                          controls
+                          autoPlay
+                          playsInline
+                        />
+                      ) : (
+                        <iframe
+                          src={prosjekt.videoEmbedUrl}
+                          title={prosjekt.tittel[lang]}
+                          className="absolute inset-0 w-full h-full border-0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          allowFullScreen
+                        />
+                      )}
+                    </div>
+                  ) : (
+                    <button
+                      type="button"
+                      onClick={() => setPlayingVideoId(prosjekt.id)}
+                      className={`w-full ${getVideoAspectClass(prosjekt)} relative bg-slate-800 overflow-hidden rounded-lg border border-slate-700/60 cursor-pointer group focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:outline-none`}
+                      aria-label={bildeHintKort}
+                    >
+                      <Image
+                        src={prosjekt.bildeUrl}
+                        alt={prosjekt.tittel[lang]}
+                        fill
+                        className="object-cover object-center transition-transform duration-300 group-hover:scale-[1.02]"
+                        sizes="(max-width: 768px) 100vw, 260px"
+                      />
+                    </button>
+                  )
+                ) : getProsjektBildeRamme(prosjekt) === "cover" ? (
+                  <button
+                    type="button"
+                    onClick={() => setActiveImage({ src: prosjekt.bildeUrl, alt: prosjekt.tittel[lang] })}
+                    className="w-full aspect-[4/3] relative bg-slate-800 overflow-hidden group cursor-zoom-in focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:outline-none rounded-lg border border-slate-700/60"
+                    aria-label={bildeHintKort}
+                  >
+                    <Image
+                      src={prosjekt.bildeUrl}
+                      alt={prosjekt.tittel[lang]}
+                      fill
+                      className="object-cover object-center transition-transform duration-300 group-hover:scale-[1.03]"
+                      sizes="(max-width: 768px) 100vw, 260px"
+                    />
+                  </button>
+                ) : (
+                  <button
+                    type="button"
+                    onClick={() => setActiveImage({ src: prosjekt.bildeUrl, alt: prosjekt.tittel[lang] })}
+                    className="w-full relative bg-slate-800 overflow-hidden group cursor-zoom-in focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:outline-none rounded-lg border border-slate-700/60"
+                    aria-label={bildeHintKort}
+                  >
+                    <Image
+                      src={prosjekt.bildeUrl}
+                      alt={prosjekt.tittel[lang]}
+                      width={0}
+                      height={0}
+                      sizes="(max-width: 768px) 100vw, 260px"
+                      className="w-full h-auto transition-transform duration-300 group-hover:scale-[1.02]"
+                      style={{ width: "100%", height: "auto" }}
+                    />
+                  </button>
+                )}
+                {prosjekt.bilderUnderHovedbilde && prosjekt.bilderUnderHovedbilde.length > 0 && (
+                  <div className="w-full flex flex-col gap-2 px-1">
+                    {prosjekt.bilderUnderHovedbilde.map((img) => (
                       <button
                         key={img.src}
                         type="button"
                         onClick={() => setActiveImage({ src: img.src, alt: img.alt[lang] })}
-                        className="relative h-12 flex-1 rounded-lg overflow-hidden border border-slate-700/60 bg-slate-800 cursor-zoom-in focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:outline-none"
+                        className="relative w-full rounded-lg overflow-hidden border border-slate-700/60 bg-slate-800 cursor-zoom-in focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:outline-none"
                         aria-label={img.alt[lang]}
                       >
                         <Image
                           src={img.src}
                           alt={img.alt[lang]}
-                          fill
-                          className="object-contain object-center"
-                          sizes="(max-width: 768px) 50vw, 120px"
+                          width={0}
+                          height={0}
+                          sizes="(max-width: 768px) 100vw, 260px"
+                          className="w-full h-auto"
+                          style={{ width: "100%", height: "auto" }}
+                        />
+                      </button>
+                    ))}
+                  </div>
+                )}
+                {prosjekt.ekstraBilder &&
+                  prosjekt.ekstraBilder.length > 0 &&
+                  !prosjekt.bilderUnderHovedbilde?.length && (
+                  <div className="w-full flex flex-col gap-2 px-1">
+                    {prosjekt.ekstraBilder.map((img) => (
+                      <button
+                        key={img.src}
+                        type="button"
+                        onClick={() => setActiveImage({ src: img.src, alt: img.alt[lang] })}
+                        className="relative w-full rounded-lg overflow-hidden border border-slate-700/60 bg-slate-800 cursor-zoom-in focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:outline-none"
+                        aria-label={img.alt[lang]}
+                      >
+                        <Image
+                          src={img.src}
+                          alt={img.alt[lang]}
+                          width={0}
+                          height={0}
+                          sizes="(max-width: 768px) 100vw, 260px"
+                          className="w-full h-auto"
+                          style={{ width: "100%", height: "auto" }}
                         />
                       </button>
                     ))}
@@ -115,37 +218,84 @@ export default function Prosjekter({ onNavigate }: { onNavigate?: (tab: string) 
               </div>
               <div className="flex-1 min-w-0 p-6 md:p-8 flex flex-col justify-center overflow-hidden">
                 {prosjekt.visningsDato?.trim() && (
-                  <span className="text-[10px] font-mono text-indigo-400 uppercase tracking-widest font-bold block mb-2">
+                  <span
+                    className={`text-[10px] font-mono uppercase tracking-widest font-bold block mb-2 ${
+                      erPsc ? "text-slate-400" : "text-indigo-400"
+                    }`}
+                  >
                   {prosjekt.visningsDato}
                   </span>
                 )}
-                <h2 className="text-xl md:text-2xl font-black text-white tracking-tight leading-tight uppercase italic mb-4 break-words [overflow-wrap:anywhere]">
-                  {prosjekt.tittel[lang]}
-                </h2>
-                <p className="text-slate-400 text-sm leading-relaxed mb-4 font-light break-words">
-                  {prosjekt.teaser[lang]}
-                </p>
+                {erPsc ? (
+                  <h2
+                    className="text-xl md:text-2xl font-black text-white tracking-tight leading-tight italic mb-4 break-words [overflow-wrap:anywhere]"
+                    dangerouslySetInnerHTML={{ __html: applyPscBrandingPlain(prosjekt.tittel[lang]) }}
+                  />
+                ) : (
+                  <h2 className="text-xl md:text-2xl font-black text-white tracking-tight leading-tight italic mb-4 break-words [overflow-wrap:anywhere]">
+                    {prosjekt.tittel[lang]}
+                  </h2>
+                )}
+                {erPsc ? (
+                  <p
+                    className="text-slate-300 text-sm leading-relaxed mb-4 font-light break-words"
+                    dangerouslySetInnerHTML={{ __html: applyPscBrandingPlain(prosjekt.teaser[lang]) }}
+                  />
+                ) : (
+                  <p className="text-slate-400 text-sm leading-relaxed mb-4 font-light break-words">
+                    {prosjekt.teaser[lang]}
+                  </p>
+                )}
                 <div className={erPsc ? "md:flex md:items-start md:gap-6" : ""}>
                   <div
-                    className="text-slate-300 text-base leading-relaxed space-y-3 font-light break-words overflow-hidden flex-1
+                    className={
+                      erPsc
+                        ? `text-slate-200 text-base leading-relaxed space-y-3 font-light break-words overflow-hidden flex-1
+                    [&_a]:text-[#E30613] [&_a]:underline [&_a]:underline-offset-2
+                    [&_a]:decoration-[#E30613]/70 [&_a]:hover:text-white
+                    [&_a]:transition-colors
+                    [&_a.link-subtle]:text-slate-200 [&_a.link-subtle]:no-underline [&_a.link-subtle]:hover:text-[#E30613] [&_a.link-subtle]:hover:underline
+                    [&_strong]:font-bold [&_strong]:text-white [&_em]:italic`
+                        : `text-slate-300 text-base leading-relaxed space-y-3 font-light break-words overflow-hidden flex-1
                     [&_a]:text-indigo-300 [&_a]:underline [&_a]:underline-offset-2
                     [&_a]:decoration-indigo-500/70 [&_a]:hover:text-indigo-200
-                    [&_a]:transition-colors [&_strong]:font-semibold [&_em]:italic"
+                    [&_a]:transition-colors
+                    [&_a.link-subtle]:text-slate-300 [&_a.link-subtle]:no-underline [&_a.link-subtle]:hover:text-indigo-300 [&_a.link-subtle]:hover:underline
+                    [&_strong]:font-semibold [&_em]:italic`
+                    }
                   >
                     {prosjekt.innhold[lang].split("\n\n").map((avsnitt, i) => (
                       <p
                         key={i}
                         className="min-w-0"
-                        dangerouslySetInnerHTML={{ __html: avsnitt.trim() }}
+                        dangerouslySetInnerHTML={{
+                          __html: erPsc ? applyPscBrandingHtml(avsnitt.trim()) : avsnitt.trim(),
+                        }}
                       />
                     ))}
+                    {prosjekt.navigasjonsCta?.beskrivelse && onNavigate && (
+                      <p className="min-w-0">
+                        {prosjekt.navigasjonsCta.beskrivelse[lang]}{" "}
+                        <button
+                          type="button"
+                          onClick={() => onNavigate(prosjekt.navigasjonsCta!.tab)}
+                          className={
+                            erPsc
+                              ? "text-[#E30613] hover:text-white underline underline-offset-2 decoration-[#E30613]/70 transition-colors focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:outline-none rounded-sm"
+                              : "text-indigo-300 hover:text-indigo-200 underline underline-offset-2 decoration-indigo-500/70 transition-colors focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:outline-none rounded-sm"
+                          }
+                        >
+                          {prosjekt.navigasjonsCta.label[lang]} →
+                        </button>
+                      </p>
+                    )}
                   </div>
                   {pscQr && (
-                    <div className="mt-5 md:mt-0 md:w-[190px] shrink-0 rounded-xl border border-indigo-500/30 bg-slate-950/60 p-3">
+                    <div className="mt-5 md:mt-0 w-full max-w-[230px] md:w-[230px] shrink-0 mx-auto md:mx-0">
                       <button
                         type="button"
                         onClick={() => setActiveImage({ src: pscQr.src, alt: pscQr.alt[lang] })}
-                        className="relative w-full h-[170px] rounded-lg overflow-hidden border border-slate-700/70 bg-slate-900 cursor-zoom-in focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:outline-none"
+                        className="relative w-full h-[205px] rounded-lg overflow-hidden bg-slate-900/40 cursor-zoom-in focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:outline-none"
                         aria-label={pscQr.alt[lang]}
                       >
                         <Image
@@ -153,23 +303,24 @@ export default function Prosjekter({ onNavigate }: { onNavigate?: (tab: string) 
                           alt={pscQr.alt[lang]}
                           fill
                           className="object-contain object-center"
-                          sizes="190px"
+                          sizes="230px"
                         />
                       </button>
-                      <p className="mt-2 text-[10px] text-slate-400 leading-relaxed uppercase tracking-widest font-black text-center">
-                        {lang === "no" ? "Skann for tilgang" : "Scan for access"}
-                      </p>
                     </div>
                   )}
                 </div>
-                {prosjekt.navigasjonsCta && onNavigate && (
+                {prosjekt.navigasjonsCta && onNavigate && !prosjekt.navigasjonsCta.beskrivelse && (
                   <button
                     type="button"
                     onClick={() => onNavigate(prosjekt.navigasjonsCta!.tab)}
-                    className="mt-5 inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-indigo-500/15 border border-indigo-500/35 text-indigo-300 text-xs font-black uppercase tracking-widest hover:bg-indigo-500/25 hover:text-white hover:border-indigo-400/50 transition-all focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:outline-none"
+                    className="group mt-5 inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-indigo-500/15 border border-indigo-500/35 hover:bg-indigo-500/25 hover:border-indigo-400/50 transition-all focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:outline-none"
                   >
-                    {prosjekt.navigasjonsCta.label[lang]}
-                    <span aria-hidden>→</span>
+                    <span className="text-indigo-300 text-xs font-black uppercase tracking-widest group-hover:text-white">
+                      {prosjekt.navigasjonsCta.label[lang]}
+                    </span>
+                    <span aria-hidden className="text-indigo-300 group-hover:text-white">
+                      →
+                    </span>
                   </button>
                 )}
               </div>

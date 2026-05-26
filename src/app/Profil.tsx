@@ -5,7 +5,12 @@ import { ShieldCheck, Zap, Globe, Target, Star, Brain, Users, ArrowRight } from 
 import { getProfilData } from "./data/profil";
 import { useLanguage } from "./LanguageContext";
 import { getTranslation } from "./data/translations";
-import { useScrollAnimation } from "./hooks/useScrollAnimation";
+
+const richTextClass =
+  "text-lg text-slate-300 border-l-4 border-indigo-600 pl-6 italic font-medium leading-relaxed [&_a]:text-indigo-400 [&_a]:underline [&_a]:underline-offset-2 [&_a]:decoration-indigo-500/70 [&_a]:hover:text-indigo-200 [&_a]:transition-colors [&_a]:focus-visible:outline [&_a]:focus-visible:outline-2 [&_a]:focus-visible:outline-offset-2 [&_a]:focus-visible:outline-indigo-400 [&_.profil-formel]:my-3 [&_.profil-formel]:rounded-xl [&_.profil-formel]:border [&_.profil-formel]:border-indigo-500/20 [&_.profil-formel]:bg-indigo-500/5 [&_.profil-formel]:px-4 [&_.profil-formel]:py-3 [&_.profil-formel]:not-italic [&_.profil-formel-tittel]:text-[11px] [&_.profil-formel-tittel]:font-black [&_.profil-formel-tittel]:uppercase [&_.profil-formel-tittel]:tracking-widest [&_.profil-formel-tittel]:text-indigo-400 [&_.profil-formel-tittel]:mb-2 [&_.profil-formel-tittel]:not-italic [&_.profil-formel-linje]:text-indigo-200 [&_.profil-formel-linje]:font-semibold [&_.profil-formel-linje]:text-base [&_.profil-formel-linje]:leading-snug [&_.profil-formel-linje]:mb-2 [&_.profil-formel-linje]:not-italic [&_.profil-formel-forklaring]:text-sm [&_.profil-formel-forklaring]:text-slate-400 [&_.profil-formel-forklaring]:not-italic [&_.profil-formel-forklaring]:leading-relaxed [&_.profil-formel-forklaring]:mb-0";
+
+const boxTextClass =
+  "text-slate-400 text-sm font-medium italic leading-relaxed whitespace-pre-line [&_a]:text-indigo-400 [&_a]:underline [&_a]:underline-offset-2 [&_a]:decoration-indigo-500/70 [&_a]:hover:text-indigo-200 [&_a]:transition-colors";
 
 export default function Profil({ onNavigate }: { onNavigate?: (tab: string) => void }) {
   const { lang } = useLanguage();
@@ -64,10 +69,48 @@ export default function Profil({ onNavigate }: { onNavigate?: (tab: string) => v
             </p>
           </div>
 
-          <div
-            className="text-lg text-slate-300 border-l-4 border-indigo-600 pl-6 italic font-medium leading-relaxed [&_a]:text-indigo-400 [&_a]:underline [&_a]:underline-offset-2 [&_a]:decoration-indigo-500/70 [&_a]:hover:text-indigo-200 [&_a]:transition-colors [&_a]:focus-visible:outline [&_a]:focus-visible:outline-2 [&_a]:focus-visible:outline-offset-2 [&_a]:focus-visible:outline-indigo-400"
-            dangerouslySetInnerHTML={{ __html: profilData.hoved }}
-          />
+          <div className={richTextClass}>
+            {profilData.intro.split("\n\n").map((paragraph, i) => (
+              <p key={i} className={i > 0 ? "mt-4" : undefined}>
+                {paragraph}
+              </p>
+            ))}
+          </div>
+
+          <div className="p-8 bg-slate-900/25 backdrop-blur-sm border border-indigo-500/20 rounded-2xl shadow-xl space-y-5">
+            <h3 className="text-white font-black flex items-center gap-3 text-lg uppercase italic">
+              <Brain className="text-indigo-500" size={24} /> {tr("profil.ai.title")}
+            </h3>
+            <div className={`${boxTextClass} space-y-4`}>
+              {profilData.aiPerspektiv.split("\n\n").map((paragraph, i) => (
+                <p key={i}>{paragraph}</p>
+              ))}
+            </div>
+            <div className={boxTextClass}>{profilData.aiBidrag}</div>
+            <div className="space-y-3">
+              <p className="text-[11px] font-black uppercase tracking-widest text-indigo-400 not-italic">
+                {tr("profil.ai.reise.title")}
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {profilData.aiReise.map((step) => (
+                  <span
+                    key={step}
+                    className="px-3 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-[10px] font-black uppercase tracking-wider not-italic"
+                  >
+                    {step}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div
+              className={`${richTextClass} border-l-0 pl-0 text-base`}
+              dangerouslySetInnerHTML={{ __html: profilData.formulaHtml }}
+            />
+            <div
+              className={boxTextClass}
+              dangerouslySetInnerHTML={{ __html: profilData.aiPlattformer }}
+            />
+          </div>
 
           {/* SELSKAP */}
           <div className="p-8 bg-slate-900/25 backdrop-blur-sm border border-indigo-500/20 rounded-2xl shadow-xl space-y-5">
@@ -122,7 +165,7 @@ export default function Profil({ onNavigate }: { onNavigate?: (tab: string) => v
               <h3 className="text-white font-black flex items-center gap-3 text-lg uppercase italic">
                 <ShieldCheck className="text-indigo-500" size={24} /> {tr("profil.operativ.title")}
               </h3>
-              <div className="text-slate-400 text-sm font-medium italic leading-relaxed whitespace-pre-line">
+              <div className={boxTextClass}>
                 {profilData.lederskap}
               </div>
             </div>
@@ -131,7 +174,7 @@ export default function Profil({ onNavigate }: { onNavigate?: (tab: string) => v
               <h3 className="text-white font-black flex items-center gap-3 text-lg uppercase italic">
                 <Globe className="text-indigo-500" size={24} /> {tr("profil.bransje.title")}
               </h3>
-              <div className="text-slate-400 text-sm font-medium italic leading-relaxed">
+              <div className={boxTextClass}>
                 {profilData.bransje}
               </div>
             </div>
@@ -141,7 +184,7 @@ export default function Profil({ onNavigate }: { onNavigate?: (tab: string) => v
                 <Zap className="text-indigo-500" size={24} /> {tr("profil.utdanning.title")}
               </h3>
               <div
-                className="text-slate-400 text-sm font-medium italic leading-relaxed whitespace-pre-line"
+                className={boxTextClass}
                 dangerouslySetInnerHTML={{
                   __html: profilData.utdanning.replace(/\*(.*?)\*/g, '<em class="text-indigo-400 not-italic font-black">$1</em>'),
                 }}
