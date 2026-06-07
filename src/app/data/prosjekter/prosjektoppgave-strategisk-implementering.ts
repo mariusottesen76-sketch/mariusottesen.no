@@ -1,3 +1,4 @@
+import { prosjektKontaktLenke } from "../../lib/prosjekt-lenker";
 import { type ProsjektType } from "./predictive-sales-coach";
 
 export const prosjektoppgaveStrategiskImplementering: ProsjektType = {
@@ -7,8 +8,8 @@ export const prosjektoppgaveStrategiskImplementering: ProsjektType = {
     en: "Strategic AI implementation: From case to executable plan",
   },
   teaser: {
-    no: "Prosjektoppgave fra Generative AI for Business ved BI — systematisk gjennomføring av hele AI-reisen, med Skøyenåsen Tannklinikk som case og konkrete digitale leveranser.",
-    en: "Master's project from Generative AI for Business at BI — a systematic journey through AI implementation, with Skøyenåsen Dental Clinic as the case and concrete digital deliverables.",
+    no: "Prosjektoppgave fra masterkurset Generative AI for Business ved BI, med Skøyenåsen Tannklinikk som case. Arbeidet viser hvordan AI kan gå fra generell mulighet til konkret implementeringsplan, med kobling mellom forretningsbehov, kundeopplevelse, teknologi, risiko og praktisk gjennomføring.",
+    en: "Master's project from Generative AI for Business at BI, with Skøyenåsen Dental Clinic as the case. The work shows how AI can move from general opportunity to a concrete implementation plan, with links between business needs, customer experience, technology, risk and practical execution.",
   },
   bildeUrl: "/images/prosjektoppgave-strategisk-implementering.png",
   dato: "2026-05-20",
@@ -17,31 +18,93 @@ export const prosjektoppgaveStrategiskImplementering: ProsjektType = {
     no: "Klikk på bildet for å se prosjektoppgaven i større format.",
     en: "Click the image to view the master's project in a larger format.",
   },
-  navigasjonsCta: {
-    tab: "Kontakt",
-    beskrivelse: {
-      no: "Ta gjerne kontakt for en samtale om dine utfordringer og behov — også for virksomheter som ønsker bedre kundedialog, flyt og ansvarlig bruk av AI.",
-      en: "Please get in touch for a conversation about your challenges and needs — also for organisations that want stronger customer dialogue, flow and responsible use of AI.",
+  bilderUnderHovedbilde: [
+    {
+      src: "/images/bi-prosjektforside.png",
+      alt: {
+        no: "BI – prosjektforside for Strategisk AI-implementering",
+        en: "BI – project cover for Strategic AI implementation",
+      },
     },
-    label: {
-      no: "Gå til kontaktskjema",
-      en: "Go to contact form",
-    },
-  },
+  ],
   innhold: {
-    no: `Dette prosjektet er utviklet som del av prosjektoppgaven i <em>Generative AI for Business</em> ved BI. Skøyenåsen Tannklinikk er det konkrete caset, men hovedlæringen har ligget i å jobbe systematisk med hele AI-implementeringsreisen.
+    no: `<strong>Hva prosjektet er</strong>
 
-Arbeidet handlet ikke bare om å teste AI-verktøy eller utvikle digitale løsninger. Det handlet om å forstå reelt forretningsbehov, analysere kunde- og arbeidsflyt, avgrense riktig bruksområde, vurdere risiko og bygge en implementeringsplan som kan vurderes på ledernivå.
+Dette er et praktisk og strategisk AI-case utviklet gjennom GenAI-kurset ved BI. Målet var å vise hvordan en mindre virksomhet kan identifisere relevante AI-bruksområder, vurdere risiko og lage en realistisk plan for implementering.
 
-Prosjektoppgaven beskriver denne reisen gjennom problemforståelse, løsningsdesign, roadmap, teknologi, governance, personvern, ansvarlig bruk, skalering og menneskelig kontroll. I tillegg ble det levert ny digital front-end, chatbot med text og speech-to-text, støtte for seks språk, behovsavklaring, bookinglogikk, oppfølging og recall.
+Caset handler ikke bare om teknologi, men om hvordan AI kan forbedre pasientreise, førstelinjedialog, booking og oppfølging uten å svekke kvalitet eller menneskelig kontroll.
 
-Den viktigste læringen er at god AI-implementering ikke starter med teknologien, men der kunder, brukere og ansatte opplever friksjon — og der AI kan skape verdi uten å overta vurderinger mennesker fortsatt bør eie. Selv om caset kommer fra tannhelse, gjelder mønsteret bredt: uklare henvendelser, manuelle kundereiser og fragmentert oppfølging finnes i mange bransjer, og gir grunnlag for videreføring mot andre klinikker og servicebedrifter.`,
-    en: `This project was developed as part of the master's thesis in <em>Generative AI for Business</em> at BI Norwegian Business School. Skøyenåsen Dental Clinic is the concrete case, but the main learning has been to work systematically through the full AI implementation journey.
+<strong>Problemet prosjektet adresserer</strong>
 
-The work was not only about testing AI tools or developing digital solutions. It was about understanding real business needs, analysing customer and work flows, scoping the right use case, assessing risk, and building an implementation plan that can be evaluated at leadership level.
+Mange virksomheter er nysgjerrige på AI, men mangler struktur for å gå fra idé til gjennomføring. Utfordringen er ofte å vite hvor AI faktisk skaper verdi, hvilke bruksområder som bør prioriteres, og hvordan risiko, tillit og ansvar bør håndteres.
 
-The thesis describes this journey through problem understanding, solution design, roadmap, technology, governance, privacy, responsible use, scaling, and human control. In addition, deliverables included a new digital front-end, chatbot with text and speech-to-text, support for six languages, needs clarification, booking logic, follow-up and recall.
+<strong>Hva som er bygget eller utviklet</strong>
 
-The most important lesson is that good AI implementation does not start with technology, but where customers, users and employees experience friction — and where AI can create value without taking over judgements people should still own. Although the case comes from dental care, the pattern is broader: unclear inquiries, manual customer journeys and fragmented follow-up exist across many industries, and provide a basis for extension to other clinics and service businesses.`,
+Prosjektet beskriver en helhetlig implementeringsplan med behovsanalyse, løsningsdesign, roadmap, teknologi, governance, personvern og ansvarlig bruk.
+
+Som del av arbeidet ble det også utviklet digitale konsepter for ny front-end, chatbot, tekst- og taleinput, støtte for flere språk, behovsavklaring, bookinglogikk, oppfølging og recall.
+
+<strong>Hvordan det fungerer</strong>
+
+Løsningen tar utgangspunkt i pasientreisen fra første kontakt til oppfølging. AI brukes til å strukturere henvendelser, avklare behov, gi bedre veiledning og gjøre booking mer relevant.
+
+AI støtter førstelinjedialog og informasjonsflyt, mens kliniske vurderinger fortsatt skal ligge hos mennesker.
+
+<strong>Hvorfor dette er relevant</strong>
+
+Prosjektet viser hvordan AI kan implementeres ansvarlig og forretningsnært i en konkret virksomhet. Det er relevant for arbeidsgivere, kunder og ledere som ønsker å forstå hvordan AI kan skape verdi uten å bli et teknologiprosjekt løsrevet fra drift og brukerbehov.
+
+Det viser også hvordan jeg kombinerer kommersiell forståelse, brukerreise, governance og praktisk AI-implementering.
+
+<strong>Status og modenhet</strong>
+
+Fullført prosjektoppgave, konkret casearbeid og utviklet implementeringslogikk. Prosjektet fungerer som dokumentasjon på både akademisk forankring og praktisk AI-forståelse.
+
+<strong>Mulig videreutvikling</strong>
+
+Metodikken kan videreutvikles til workshop-format for virksomheter som ønsker å identifisere AI-bruksområder, prioritere tiltak og lage en ansvarlig implementeringsplan.
+
+<strong>Neste steg</strong>
+
+${prosjektKontaktLenke("no")} dersom du ønsker å diskutere hvordan et konkret AI-case kan utvikles fra idé til praktisk og ansvarlig implementeringsplan.`,
+    en: `<strong>What the project is</strong>
+
+This is a practical and strategic AI case developed through the Generative AI for Business programme at BI. The goal was to show how a smaller organisation can identify relevant AI use areas, assess risk and create a realistic implementation plan.
+
+The case is not only about technology, but about how AI can improve the patient journey, first-line dialogue, booking and follow-up without weakening quality or human control.
+
+<strong>The problem the project addresses</strong>
+
+Many organisations are curious about AI but lack structure for moving from idea to execution. The challenge is often knowing where AI actually creates value, which use areas should be prioritised, and how risk, trust and responsibility should be managed.
+
+<strong>What has been built or developed</strong>
+
+The project describes a comprehensive implementation plan covering needs analysis, solution design, roadmap, technology, governance, privacy and responsible use.
+
+As part of the work, digital concepts were also developed for a new front-end, chatbot, text and voice input, support for multiple languages, needs clarification, booking logic, follow-up and recall.
+
+<strong>How it works</strong>
+
+The solution starts from the patient journey from first contact to follow-up. AI is used to structure inquiries, clarify needs, provide better guidance and make booking more relevant.
+
+AI supports first-line dialogue and information flow, while clinical judgements should remain with people.
+
+<strong>Why this is relevant</strong>
+
+The project shows how AI can be implemented responsibly and close to the business in a concrete organisation. It is relevant for employers, customers and leaders who want to understand how AI can create value without becoming a technology project detached from operations and user needs.
+
+It also shows how I combine commercial understanding, user journey, governance and practical AI implementation.
+
+<strong>Status and maturity</strong>
+
+Completed master's project, concrete case work and developed implementation logic. The project serves as documentation of both academic grounding and practical AI understanding.
+
+<strong>Possible further development</strong>
+
+The methodology can be developed into a workshop format for organisations that want to identify AI use areas, prioritise initiatives and create a responsible implementation plan.
+
+<strong>Next steps</strong>
+
+${prosjektKontaktLenke("en")} if you would like to discuss how a concrete AI case can be developed from idea to practical and responsible implementation plan.`,
   },
 };

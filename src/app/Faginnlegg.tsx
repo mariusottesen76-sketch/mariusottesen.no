@@ -1,12 +1,32 @@
 "use client";
 import React, { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { X, ExternalLink, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
-import { tennisLedelse } from './data/innlegg/tennis-ledelse';
-import { aiGovernance } from './data/innlegg/ai-governance';
 import { useLanguage } from './LanguageContext';
 import { getTranslation } from './data/translations';
 import { normalizeDisplayText } from './lib/normalize-display-text';
+import { applyProductNameItalicsPlain, formatInnleggHtml, formatInnleggTittelHtml } from './lib/product-brand';
+import { getFaginnleggLeseStier } from './data/faginnlegg-lesestier';
+import {
+  AI_SUBTEMA,
+  FAGINNLEGG_SORT_OPTIONS,
+  FaginnleggSortMode,
+  LEDELSE_SUBTEMA,
+  grupperAiInnlegg,
+  grupperLedelseInnlegg,
+  sorterFaginnlegg,
+  sporOverskriftMedTelling,
+  subtemaOverskriftMedTelling,
+} from './data/faginnlegg-grupper';
+import {
+  erAiInnlegg,
+  erLedelseInnlegg,
+  FAGINNLEGG_AI_ANKER,
+  FAGINNLEGG_LEDELSE_ANKER,
+  getAlleFaginnlegg,
+  getFaginnleggTelling,
+} from './lib/faginnlegg-data';
 
 interface InnleggType {
   id: string;
@@ -50,9 +70,7 @@ const kortBildeStil = (innlegg: InnleggType): React.CSSProperties => ({
 /** Felles kortdimensjoner – én regel for alle innlegg */
 const KORT_BILDE_BREDDE = 122;
 const KORT_BILDE_HOYDE = 186;
-const KORT_HOYDE = 206; // bilde + pt-3 + pb-2
 const KORT_TITTEL_HOYDE = "2.875rem"; // 2 linjer text-lg leading-tight
-const KORT_TEASER_HOYDE = "5.25rem"; // 4 linjer × 13px × 1.625 line-height
 
 /** Modal – minimumsstandard for liggende hovedbilde */
 const MODAL_LANDSCAPE_KLASSE =
@@ -64,21 +82,56 @@ const MODAL_PORTRAIT_ASPECT = 5 / 7;
 
 const erLandscapeProporsjon = (w: number, h: number) => w > h * 1.08;
 
+const linkClass =
+  "text-indigo-400 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400";
+
+const subtemaOverskriftKlasse =
+  "scroll-mt-28 text-sm md:text-base font-bold text-indigo-300 uppercase tracking-wide border-l-[3px] border-indigo-500 pl-3 py-1.5 bg-indigo-500/10 rounded-r-lg";
+
 const Faginnlegg = ({ onNavigate }: { onNavigate?: (tab: string) => void }) => {
   const { lang } = useLanguage();
   const tr = (key: string) => getTranslation(key, lang);
   const [aktivtInnlegg, setAktivtInnlegg] = useState<InnleggType | null>(null);
+  const [tocSort, setTocSort] = useState<FaginnleggSortMode>("nyeste");
 
-  const alleInnlegg: InnleggType[] = [
-    ...(tennisLedelse as InnleggType[]),
-    ...(aiGovernance as InnleggType[])
-  ].sort((a, b) => new Date(b.dato).getTime() - new Date(a.dato).getTime());
-
-  const ledelseKategorier = new Set(["Kommersiell Ledelse", "Generell ledelse og strategi"]);
-  const ledelseInnlegg = alleInnlegg.filter(i => ledelseKategorier.has(i.kategori));
-  const aiInnlegg = alleInnlegg.filter(i => i.kategori === "AI / KI");
+  const alleInnlegg: InnleggType[] = getAlleFaginnlegg() as InnleggType[];
+  const lesestier = getFaginnleggLeseStier(lang);
+  const telling = getFaginnleggTelling();
+  const ledelseInnlegg = sorterFaginnlegg(
+    alleInnlegg.filter((i) => erLedelseInnlegg(i.kategori)),
+    tocSort,
+    lang
+  );
+  const aiInnlegg = sorterFaginnlegg(
+    alleInnlegg.filter((i) => erAiInnlegg(i.kategori)),
+    tocSort,
+    lang
+  );
+  const ledelseGrupper = grupperLedelseInnlegg(alleInnlegg, tocSort, lang);
+  const aiGrupper = grupperAiInnlegg(alleInnlegg, tocSort, lang);
+  const subtemaMeta = new Map(
+    [...LEDELSE_SUBTEMA, ...AI_SUBTEMA].map((subtema) => {
+      const gruppe =
+        ledelseGrupper.find((g) => g.subtema.id === subtema.id) ??
+        aiGrupper.find((g) => g.subtema.id === subtema.id);
+      return [subtema.id, { label: subtema.label[lang], count: gruppe?.innlegg.length ?? 0 }] as const;
+    })
+  );
 
   const lukkModal = useCallback(() => setAktivtInnlegg(null), []);
+
+  useEffect(() => {
+    const scrollTilAnker = () => {
+      const hash = window.location.hash.slice(1);
+      if (!hash) return;
+      requestAnimationFrame(() => {
+        document.getElementById(hash)?.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    };
+    scrollTilAnker();
+    window.addEventListener("hashchange", scrollTilAnker);
+    return () => window.removeEventListener("hashchange", scrollTilAnker);
+  }, []);
 
   useEffect(() => {
     const handleEsc = (e: KeyboardEvent) => {
@@ -109,70 +162,169 @@ const Faginnlegg = ({ onNavigate }: { onNavigate?: (tab: string) => void }) => {
           <div className="max-w-3xl">
             <p className="text-xl md:text-2xl text-slate-300 leading-relaxed font-light mb-4">{tr("fag.intro.1")}</p>
             <p className="text-lg md:text-xl text-slate-400 italic leading-relaxed font-light mb-4">{tr("fag.intro.2")}</p>
-            <p className="text-base md:text-lg text-slate-300 leading-relaxed font-light">{tr("fag.intro.3")}</p>
+            <p className="text-base md:text-lg text-slate-300 leading-relaxed font-light mb-4">
+              <a href="#fag-innlegg-oversikt" className={linkClass}>
+                {tr("fag.intro.scroll")}
+              </a>
+              {lang === "no" ? " ↓" : " ↓"}
+            </p>
+            <p className="text-base md:text-lg text-slate-300 leading-relaxed font-light">
+              {lang === "no" ? "Vil du se dette omsettes i prosjekter eller rådgivning, finner du mer under " : "To see this translated into projects or advisory work, see "}
+              <Link href="/prosjekter" className={linkClass}>AI-prosjekter</Link>
+              {lang === "no" ? " og " : " and "}
+              {onNavigate ? (
+                <button
+                  type="button"
+                  onClick={() => onNavigate("Consulting")}
+                  className={`${linkClass} bg-transparent border-0 p-0 cursor-pointer font-light`}
+                >
+                  Consulting
+                </button>
+              ) : (
+                <Link href="/consulting" className={linkClass}>Consulting</Link>
+              )}
+              .
+            </p>
           </div>
         </div>
       </div>
 
+      <section aria-labelledby="fag-lesestier-heading" className="mt-6 mb-6">
+        <h2 id="fag-lesestier-heading" className="text-xl md:text-2xl font-black text-white italic tracking-tight mb-2">
+          {tr("fag.lesestier.title")}
+        </h2>
+        <p className="text-sm text-slate-400 leading-relaxed mb-4 max-w-3xl">{tr("fag.lesestier.intro")}</p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+          {lesestier.map((sti) => (
+            <article
+              key={sti.title.no}
+              className="p-4 bg-slate-900/40 rounded-xl border border-slate-800 shadow-xl space-y-3 min-w-0"
+            >
+              <h3 className="text-sm font-black text-white italic leading-snug">{sti.title[lang]}</h3>
+              <p className="text-xs text-slate-400 leading-relaxed">{sti.intro[lang]}</p>
+              <div>
+                <p className="text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-2">
+                  {tr("fag.lesestier.tema")}
+                </p>
+                <ul className="space-y-1.5">
+                  {sti.subtemaRefs.map(({ subtemaId }) => {
+                    const meta = subtemaMeta.get(subtemaId);
+                    if (!meta) return null;
+                    return (
+                      <li key={subtemaId}>
+                        <a
+                          href={`#${subtemaId}`}
+                          className="text-left text-sm text-indigo-300 hover:text-indigo-100 underline underline-offset-2 decoration-indigo-500/50 transition-colors leading-snug block"
+                        >
+                          {meta.label}
+                          {lang === "no" ? ` (${meta.count} stk)` : ` (${meta.count})`}
+                        </a>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
       {/* INNHOLDSFORTEGNELSE */}
       <div className="mt-6 mb-6">
-        <h2 className="text-2xl font-bold tracking-tight text-white uppercase mb-4 break-words max-w-full [overflow-wrap:anywhere]">{tr("fag.toc.title.1")}<br className="sm:hidden" />{tr("fag.toc.title.2")}</h2>
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-4">
+          <h2 className="text-2xl font-bold tracking-tight text-white uppercase break-words max-w-full [overflow-wrap:anywhere]">
+            {tr("fag.toc.title.1")}<br className="sm:hidden" />{tr("fag.toc.title.2")}
+          </h2>
+          <label className="flex items-center gap-2 shrink-0">
+            <span className="text-[10px] font-bold uppercase tracking-widest text-slate-500">{tr("fag.toc.sort.label")}</span>
+            <select
+              value={tocSort}
+              onChange={(e) => setTocSort(e.target.value as FaginnleggSortMode)}
+              className="rounded-lg border border-slate-700 bg-slate-900/80 px-3 py-1.5 text-sm text-slate-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
+            >
+              {FAGINNLEGG_SORT_OPTIONS.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.label[lang]}
+                </option>
+              ))}
+            </select>
+          </label>
+        </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {/* Strategisk Ledelse & Transformasjon */}
-          <div>
-            <h3 className="text-lg font-semibold text-indigo-400 uppercase mb-2 border-b border-indigo-500/30 pb-1.5">
-              {tr("fag.kat.ledelse")}
+          <div id={FAGINNLEGG_LEDELSE_ANKER} className="scroll-mt-24 space-y-6">
+            <h3 className="text-lg font-semibold text-indigo-400 uppercase border-b border-indigo-500/30 pb-1.5">
+              {sporOverskriftMedTelling(tr("fag.kat.ledelse"), telling.ledelse, lang)}
             </h3>
-            <div className="overflow-x-auto">
-              <table className="w-full border-collapse">
-                <tbody>
-                  {ledelseInnlegg.map((innlegg, index) => (
-                    <tr
-                      key={innlegg.id}
-                      onClick={() => setAktivtInnlegg(innlegg)}
-                      className="border-b border-slate-800/40 hover:bg-slate-900/40 cursor-pointer transition-colors"
-                    >
-                      <td className="py-1.5 px-2 text-sm font-sans font-normal text-slate-300 hover:text-indigo-300">
-                        {innlegg.tittel[lang]}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+            {ledelseGrupper.map(({ subtema, innlegg }) => (
+              <div key={subtema.id} id={subtema.id} className="space-y-2 pt-1">
+                <h4 className={subtemaOverskriftKlasse}>
+                  {subtemaOverskriftMedTelling(subtema, innlegg.length, lang)}
+                </h4>
+                <div className="overflow-x-auto">
+                  <table className="w-full border-collapse">
+                    <tbody>
+                      {innlegg.map((innlegg) => (
+                        <tr
+                          key={innlegg.id}
+                          onClick={() => setAktivtInnlegg(innlegg)}
+                          className="border-b border-slate-800/40 hover:bg-slate-900/40 cursor-pointer transition-colors"
+                        >
+                          <td className="py-1.5 px-2 text-sm font-sans font-normal text-slate-300 hover:text-indigo-300">
+                            {innlegg.tittel[lang]}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            ))}
           </div>
 
-          {/* AI & Fremtidens Teknologiledelse */}
-          <div>
-            <h3 className="text-lg font-semibold text-indigo-400 uppercase mb-2 border-b border-indigo-500/30 pb-1.5">
-              {tr("fag.kat.ai")}
+          <div id={FAGINNLEGG_AI_ANKER} className="scroll-mt-24 space-y-6">
+            <h3 className="text-lg font-semibold text-indigo-400 uppercase border-b border-indigo-500/30 pb-1.5">
+              {sporOverskriftMedTelling(tr("fag.kat.ai"), telling.ai, lang)}
             </h3>
-            <div className="overflow-x-auto">
-              <table className="w-full border-collapse">
-                <tbody>
-                  {aiInnlegg.map((innlegg, index) => (
-                    <tr
-                      key={innlegg.id}
-                      onClick={() => setAktivtInnlegg(innlegg)}
-                      className="border-b border-slate-800/40 hover:bg-slate-900/40 cursor-pointer transition-colors"
-                    >
-                      <td className="py-1.5 px-2 text-sm text-slate-300 hover:text-indigo-300">
-                        {innlegg.tittel[lang]}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+            {aiGrupper.map(({ subtema, innlegg }) => (
+              <div key={subtema.id} id={subtema.id} className="space-y-2 pt-1">
+                <h4 className={subtemaOverskriftKlasse}>
+                  {subtemaOverskriftMedTelling(subtema, innlegg.length, lang)}
+                </h4>
+                <div className="overflow-x-auto">
+                  <table className="w-full border-collapse">
+                    <tbody>
+                      {innlegg.map((innlegg) => (
+                        <tr
+                          key={innlegg.id}
+                          onClick={() => setAktivtInnlegg(innlegg)}
+                          className="border-b border-slate-800/40 hover:bg-slate-900/40 cursor-pointer transition-colors"
+                        >
+                          <td className="py-1.5 px-2 text-sm text-slate-300 hover:text-indigo-300">
+                            {innlegg.tittel[lang]}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
 
       {/* KOLONNER MED INNLEGG - like høyde på header slik at første kort aligner */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mt-6 items-start">
+      <section id="fag-innlegg-oversikt" aria-labelledby="fag-kort-heading" className="scroll-mt-24 mt-10 pt-8 border-t border-slate-800/60">
+        <h2 id="fag-kort-heading" className="text-xl md:text-2xl font-black text-white italic tracking-tight mb-2">
+          {tr("fag.kort.seksjon.title")}
+        </h2>
+        <p className="text-sm text-slate-400 leading-relaxed mb-6 max-w-3xl">{tr("fag.kort.seksjon.intro")}</p>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
         <section className="flex flex-col w-full">
           <div className="border-b-2 border-indigo-500/30 mb-4 min-h-[4.5rem] flex flex-col justify-end">
-            <h2 className="text-2xl font-bold tracking-tight text-white uppercase mb-2">{tr("fag.kat.ledelse")}</h2>
+            <h2 className="text-2xl font-bold tracking-tight text-white uppercase mb-2">
+              {sporOverskriftMedTelling(tr("fag.kat.ledelse"), telling.ledelse, lang)}
+            </h2>
           </div>
           <div className="flex flex-col gap-4">
             {ledelseInnlegg.length > 0 ? (
@@ -187,7 +339,9 @@ const Faginnlegg = ({ onNavigate }: { onNavigate?: (tab: string) => void }) => {
 
         <section className="flex flex-col w-full">
           <div className="border-b-2 border-indigo-500/30 mb-4 min-h-[4.5rem] flex flex-col justify-end">
-            <h2 className="text-2xl font-bold tracking-tight text-white uppercase mb-2">{tr("fag.kat.ai")}</h2>
+            <h2 className="text-2xl font-bold tracking-tight text-white uppercase mb-2">
+              {sporOverskriftMedTelling(tr("fag.kat.ai"), telling.ai, lang)}
+            </h2>
           </div>
           <div className="flex flex-col gap-4">
             {aiInnlegg.length > 0 ? (
@@ -200,6 +354,7 @@ const Faginnlegg = ({ onNavigate }: { onNavigate?: (tab: string) => void }) => {
           </div>
         </section>
       </div>
+      </section>
 
       {aktivtInnlegg && (
         <InnleggModal innlegg={aktivtInnlegg} lang={lang} onClose={lukkModal} onNavigate={onNavigate} linkedinLabel={tr("fag.linkedin")} ctaText={tr("fag.cta")} ctaLink={tr("fag.cta.link")} />
@@ -219,8 +374,7 @@ const InnleggsKort = ({ innlegg, lang, onClick, lesLabel }: { innlegg: InnleggTy
   return (
     <div
       onClick={onClick}
-      className="group bg-slate-900/40 rounded-2xl border border-indigo-500/20 px-4 pt-3 pb-2 hover:bg-slate-900/60 transition-all duration-300 shadow-xl flex flex-row items-start gap-4 w-full text-left cursor-pointer"
-      style={{ height: KORT_HOYDE }}
+      className="group bg-slate-900/40 rounded-2xl border border-indigo-500/20 px-4 pt-3 pb-2.5 hover:bg-slate-900/60 transition-all duration-300 shadow-xl flex flex-row items-start gap-4 w-full text-left cursor-pointer"
     >
       <div
         className="relative shrink-0 rounded-lg overflow-hidden bg-slate-900 border border-slate-800"
@@ -250,12 +404,18 @@ const InnleggsKort = ({ innlegg, lang, onClick, lesLabel }: { innlegg: InnleggTy
           />
         )}
       </div>
-      <div className="flex-1 min-w-0 flex flex-col overflow-hidden" style={{ height: KORT_BILDE_HOYDE }}>
-        <span className="text-[9px] font-mono text-indigo-400 uppercase tracking-widest font-bold block mb-1 leading-none shrink-0">{innlegg.visningsDato}</span>
-        <h3 className="text-lg font-sans font-bold text-white leading-tight line-clamp-2 overflow-hidden shrink-0 mb-2.5 group-hover:text-indigo-300 transition-colors" style={{ height: KORT_TITTEL_HOYDE }}>{innlegg.tittel[lang]}</h3>
-        <p className="text-slate-400 text-[13px] leading-[1.625] line-clamp-4 overflow-hidden font-light shrink-0 mb-0" style={{ height: KORT_TEASER_HOYDE }}>{innlegg.teaser[lang]}</p>
-        <div className="flex-1 min-h-0" aria-hidden="true" />
-        <div className="shrink-0 flex items-center gap-4 leading-none">
+      <div className="flex-1 min-w-0 flex flex-col min-h-[186px]">
+        <span className="text-[9px] font-mono text-indigo-400 uppercase tracking-widest font-bold block mb-3 leading-none shrink-0">{innlegg.visningsDato}</span>
+        <h3
+          className="text-lg font-sans font-bold text-white leading-tight line-clamp-2 overflow-hidden shrink-0 mb-2 group-hover:text-indigo-300 transition-colors [&_em]:italic"
+          style={{ height: KORT_TITTEL_HOYDE }}
+          dangerouslySetInnerHTML={{ __html: formatInnleggTittelHtml(innlegg.tittel[lang]) }}
+        />
+        <p
+          className="text-slate-400 text-sm leading-snug font-light mb-2 [&_em]:italic"
+          dangerouslySetInnerHTML={{ __html: applyProductNameItalicsPlain(innlegg.teaser[lang]) }}
+        />
+        <div className="shrink-0 flex items-center gap-4 leading-none mt-auto pt-1">
           <span className="inline-flex items-center gap-1 text-[9px] font-black uppercase tracking-widest text-indigo-400">
             {lesLabel} <span>→</span>
           </span>
@@ -483,7 +643,11 @@ const InnleggModal = ({ innlegg, lang, onClose, onNavigate, linkedinLabel, ctaTe
             <span className="text-[10px] font-bold text-indigo-400 uppercase tracking-widest">{innlegg.kategori}</span>
           </div>
 
-          <h2 id="modal-title" className="text-3xl md:text-4xl font-sans font-black text-white tracking-tight leading-tight">{innlegg.tittel[lang]}</h2>
+          <h2
+            id="modal-title"
+            className="text-3xl md:text-4xl font-sans font-black text-white tracking-tight leading-tight [&_em]:italic"
+            dangerouslySetInnerHTML={{ __html: formatInnleggTittelHtml(innlegg.tittel[lang]) }}
+          />
           <div className="w-16 h-0.5 bg-indigo-500/40" />
 
           <div
@@ -500,7 +664,7 @@ const InnleggModal = ({ innlegg, lang, onClose, onNavigate, linkedinLabel, ctaTe
                     const punkter = bulletLines
                       .map((l) => {
                         const text = l.startsWith("•") ? l.substring(1).trim() : l.substring(2).trim();
-                        return `<li>${text}</li>`;
+                        return `<li>${formatInnleggHtml(text)}</li>`;
                       })
                       .join("");
                     return `<ul class="list-disc pl-6 space-y-2 my-4 text-slate-300 marker:text-indigo-400">${punkter}</ul>`;
@@ -512,15 +676,15 @@ const InnleggModal = ({ innlegg, lang, onClose, onNavigate, linkedinLabel, ctaTe
                       .map((l) => {
                         const t = l.trim();
                         const text = t.startsWith("•") ? t.substring(1).trim() : t.substring(2).trim();
-                        return `<li>${text}</li>`;
+                        return `<li>${formatInnleggHtml(text)}</li>`;
                       })
                       .join("");
                     return `<ul class="list-disc pl-6 space-y-2 my-4 text-slate-300 marker:text-indigo-400">${punkter}</ul>`;
                   }
                   if (trimmed.startsWith("Annual net value =")) {
-                    return `<p class="mb-4 rounded-xl border border-indigo-500/25 bg-indigo-500/10 px-4 py-3 text-indigo-300 font-semibold leading-snug">${trimmed}</p>`;
+                    return `<p class="mb-4 rounded-xl border border-indigo-500/25 bg-indigo-500/10 px-4 py-3 text-indigo-300 font-semibold leading-snug">${formatInnleggHtml(trimmed)}</p>`;
                   }
-                  return `<p class="mb-4">${trimmed.replace(/\n/g, "<br/>")}</p>`;
+                  return `<p class="mb-4">${formatInnleggHtml(trimmed.replace(/\n/g, "<br/>"))}</p>`;
                 })
                 .join(""),
             }}

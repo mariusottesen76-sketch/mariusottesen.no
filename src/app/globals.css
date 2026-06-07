@@ -86,6 +86,17 @@
   font-weight: inherit;
 }
 
+/* FlowSignal v1.0 – champagne accent */
+.fs-v {
+  color: #cdb47a;
+  font-weight: inherit;
+}
+
+.fs-mark {
+  color: inherit;
+  font-weight: inherit;
+}
+
 /* Focus visible styles */
 *:focus-visible {
   outline: 2px solid rgb(99, 102, 241);

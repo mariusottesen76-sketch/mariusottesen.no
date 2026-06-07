@@ -1,12 +1,13 @@
 import { Lang } from "../LanguageContext";
+import { getProfilProofPoints } from "./proof-points";
 
 export type ProfilData = {
+  ingress: string;
   intro: string;
-  aiPerspektiv: string;
-  aiBidrag: string;
-  aiReise: string[];
-  formulaHtml: string;
-  aiPlattformer: string;
+  aiKort: string;
+  roller: string[];
+  proofPoints: string[];
+  aiSeksjon: string;
   lederskap: string;
   bransje: string;
   utdanning: string;
@@ -16,37 +17,37 @@ export type ProfilData = {
 
 const data: Record<Lang, ProfilData> = {
   no: {
-    intro: `Jeg er kommersiell leder med erfaring fra å bygge vekst, styrke lønnsomhet og utvikle team i komplekse B2B-virksomheter. Jeg har ledet salg, marked og kommersiell utvikling med personal- og P/L-ansvar, og trives best når strategi skal omsettes til tydelig retning, sterk gjennomføring og målbare resultater.
+    ingress:
+      "Jeg hjelper virksomheter med å skape retning, vekst og gjennomføring i skjæringspunktet mellom kommersiell ledelse, salgsutvikling, transformasjon og praktisk bruk av AI.",
 
-I dag jobber jeg videre med dette gjennom Marius Ottesen Consulting, egne utviklingsprosjekter og AI Value Lab Oslo, med fokus på kommersiell verdiskaping og gjennomførbar implementering.`,
+    intro:
+      "Jeg er en kommersiell leder med lang erfaring fra å bygge vekst, styrke lønnsomhet og utvikle team i komplekse B2B-virksomheter. Jeg har ledet salg, marked og kommersiell utvikling med personal- og P/L-ansvar, og trives best når strategi skal omsettes til tydelig retning, sterk gjennomføring og målbare resultater.",
 
-    aiPerspektiv: `Jeg ser at AI-verdi oppstår når virksomheter går fra verktøybruk til arbeidsflytdesign. Legger vi AI oppå dagens prosesser, får vi som regel bare inkrementelle gevinster. Redesigner vi arbeidsflyt, roller og beslutningspunkter, kan gevinstene bli strukturelle. Det gjelder særlig i kommersielle prosesser der marked, salg og kundeteam ofte sitter på mye av dataene som trengs.
+    aiKort:
+      "Jeg arbeider også med hvordan AI, data og nye arbeidsformer kan styrke beslutninger, effektivisere arbeidsprosesser og utvikle nye kommersielle muligheter. For meg handler AI ikke først og fremst om verktøy, men om arbeidsflyt, prioritering og gjennomføring.",
 
-Typiske områder er B2B-salg og go-to-market, vekst og retention, samt service og kundebehandling. Her finnes det ofte arbeidsflyter med høy gjennomførbarhet og høy verdi. Min jobb er å koble marked, kunde, salgsprosess, organisasjon og teknologi, og vurdere realistisk hva som faktisk kan leveres.`,
-
-    aiBidrag: `Konkret bidrar jeg med å forstå reelt forretningsbehov, analysere kunde- og arbeidsflyt, avgrense use cases, vurdere risiko og bygge implementeringsplaner som kan vurderes på ledernivå. Typiske leveranser spenner fra digital kundedialog og front-end til booking, oppfølging og automatisering av salgs- og serviceprosesser, agentløsninger og AI-assistert beslutningsstøtte.`,
-
-    aiReise: [
-      "Problemforståelse",
-      "Løsningsdesign",
-      "Roadmap",
-      "Teknologi",
-      "Governance",
-      "Personvern",
-      "Ansvarlig bruk",
-      "Skalering",
-      "Menneskelig kontroll",
+    roller: [
+      "Kommersiell leder",
+      "Salgsdirektør",
+      "CCO",
+      "Daglig leder SMB",
+      "Business Unit Manager",
+      "Commercial transformation",
+      "Commercial AI transformation",
+      "Kommersiell forretningsutvikler",
     ],
 
-    formulaHtml: `<div class="profil-formel"><p class="profil-formel-tittel">Business case-formel for AI-verdi</p><p class="profil-formel-linje">Annual net value = Baseline × AI delta × Adoption × Confidence − Build &amp; run cost</p><p class="profil-formel-forklaring">Annual net value er den årlige nettoverdien AI skaper. Baseline er utgangspunktet. AI delta er forbedringen teknologien faktisk kan gi. Adopsjon og tillit avgjør hvor mye av potensialet som realiseres. Hva det koster å bygge, drifte og skalere trekkes fra.</p></div>`,
+    proofPoints: getProfilProofPoints("no"),
 
-    aiPlattformer: `Les mer om arbeidet via <a href="https://www.mariusottesen.no/consulting">Marius Ottesen Consulting</a>, <a href="/prosjekter">mine AI-prosjekter</a> og <a href="https://www.linkedin.com/company/aivaluelaboslo/" target="_blank" rel="noopener noreferrer">AI Value Lab Oslo</a>.`,
+    aiSeksjon:
+      "Jeg bruker AI som et praktisk leder- og forretningsverktøy for å forstå arbeidsflyt, prioritere bedre, strukturere innsikt og forbedre kommersiell gjennomføring. Dette arbeidet vises mer konkret gjennom egne AI-prosjekter, consulting og faginnlegg.",
 
-    lederskap: `Jeg tror på styrkebasert ledelse, tydelige forventninger og nær oppfølging. Lederstilen er tydelig, involverende og relasjonssterk, og kjennetegnes av trygghet, eierskap og gjennomføring. Det er særlig viktig i miljøer med høyt tempo og sterke fagmiljøer.
+    lederskap: `Jeg tror på styrkebasert ledelse, tydelige forventninger og nær oppfølging. Lederstilen er tydelig, involverende og relasjonssterk — med trygghet, eierskap og gjennomføring som fellesnevner.
 
-Trives i hybride lederroller som kombinerer strategisk ansvar med operativ tilstedeværelse, og i situasjoner der retning, prioritering og gjennomføring er avgjørende.`,
+Trives i hybride lederroller som kombinerer strategisk ansvar med operativ tilstedeværelse.`,
 
-    bransje: `Har erfaring fra komplekse B2B-virksomheter innen blant annet sirkulær økonomi, life science, industri, teknologi og retail/grossist. Fellesnevneren er kommersiell ledelse, endringsarbeid og evnen til å skape struktur, retning og resultater på tvers av fagmiljøer og lokasjoner.`,
+    bransje:
+      "Har erfaring fra komplekse B2B-virksomheter innen blant annet sirkulær økonomi, life science, industri, teknologi og retail/grossist. Fellesnevneren er kommersiell ledelse, endringsarbeid og evnen til å skape struktur, retning og resultater på tvers av fagmiljøer og lokasjoner.",
 
     utdanning: `Gjennom masterkurset *Generative AI for Business* ved Handelshøyskolen BI har jeg utviklet strategisk AI-kompetanse med fokus på lederverktøy for beslutningsstøtte, effektiv dokumentasjon og økt kommersiell effektivitet.
 
@@ -70,41 +71,41 @@ Jeg er utdannet *Master of Science in Business Administration (Siviløkonom)* fr
     ],
   },
   en: {
-    intro: `I am a commercial leader with experience building growth, strengthening profitability, and developing teams in complex B2B organisations. I have led sales, marketing, and commercial development with people and P&L accountability, and thrive when strategy must translate into clear direction, strong execution, and measurable results.
+    ingress:
+      "I help organisations create direction, growth and execution at the intersection of commercial leadership, sales development, transformation and practical use of AI.",
 
-Today I continue this work through Marius Ottesen Consulting, my own development projects, and AI Value Lab Oslo, with a focus on commercial value creation and feasible implementation.`,
+    intro:
+      "I am a commercial leader with extensive experience building growth, strengthening profitability and developing teams in complex B2B organisations. I have led sales, marketing and commercial development with people and P&L accountability, and thrive when strategy must translate into clear direction, strong execution and measurable results.",
 
-    aiPerspektiv: `I see AI value emerging when organisations move from tool use to workflow design. Layer AI onto existing processes and you usually get incremental gains only. Redesign workflows, roles, and decision points, and the gains can become structural. This is especially true in commercial processes where marketing, sales, and customer teams often hold much of the data required.
+    aiKort:
+      "I also work on how AI, data and new ways of working can strengthen decisions, streamline workflows and develop new commercial opportunities. For me, AI is not primarily about tools, but about workflow, prioritisation and execution.",
 
-Typical areas include B2B sales and go-to-market, growth and retention, and service and customer care. These are often high-feasibility, high-value workflows. My role is to connect market, customer, sales process, organisation, and technology, and assess realistically what can actually deliver.`,
-
-    aiBidrag: `In practice I help organisations understand real business needs, analyse customer and work flows, scope use cases, assess risk, and build implementation plans that can be evaluated at leadership level. Typical deliverables range from digital customer dialogue and front-end solutions to booking, follow-up, and automation of sales and service processes, agent-based solutions, and AI-assisted decision support.`,
-
-    aiReise: [
-      "Problem understanding",
-      "Solution design",
-      "Roadmap",
-      "Technology",
-      "Governance",
-      "Privacy",
-      "Responsible use",
-      "Scaling",
-      "Human control",
+    roller: [
+      "Commercial leader",
+      "Sales director",
+      "CCO",
+      "Managing director SMB",
+      "Business Unit Manager",
+      "Commercial transformation",
+      "Commercial AI transformation",
+      "Commercial business developer",
     ],
 
-    formulaHtml: `<div class="profil-formel"><p class="profil-formel-tittel">Business case formula for AI value</p><p class="profil-formel-linje">Annual net value = Baseline × AI delta × Adoption × Confidence − Build &amp; run cost</p><p class="profil-formel-forklaring">Annual net value is the annual net value AI creates. Baseline is the starting point. AI delta is the improvement the technology can actually deliver. Adoption and confidence determine how much of the potential is realised. Build &amp; run cost is subtracted.</p></div>`,
+    proofPoints: getProfilProofPoints("en"),
 
-    aiPlattformer: `Read more about the work via <a href="https://www.mariusottesen.no/consulting">Marius Ottesen Consulting</a>, <a href="/prosjekter">my AI projects</a>, and <a href="https://www.linkedin.com/company/aivaluelaboslo/" target="_blank" rel="noopener noreferrer">AI Value Lab Oslo</a>.`,
+    aiSeksjon:
+      "I use AI as a practical leadership and business tool to understand workflows, prioritise better, structure insight and improve commercial execution. This work is shown more concretely through my AI projects, consulting and articles.",
 
-    lederskap: `I believe in strengths-based leadership, clear expectations, and close follow-up. My leadership style is clear, engaging, and relationship-oriented, characterised by psychological safety, ownership, and disciplined execution. That matters especially in fast-paced environments with strong specialist cultures.
+    lederskap: `I believe in strengths-based leadership, clear expectations and close follow-up. My style is clear, engaging and relationship-oriented — with psychological safety, ownership and disciplined execution as the common thread.
 
-I thrive in hybrid leadership roles that combine strategic responsibility with operational presence, and in situations where direction, prioritisation, and execution are decisive.`,
+I thrive in hybrid leadership roles that combine strategic responsibility with operational presence.`,
 
-    bransje: `I have experience from complex B2B organisations in areas including circular economy, life science, industry, technology, and retail/wholesale. The common thread is commercial leadership, change work, and the ability to create structure, direction, and results across professional environments and locations.`,
+    bransje:
+      "Experience from complex B2B organisations in areas including circular economy, life science, industry, technology and retail/wholesale. The common thread is commercial leadership, change work and the ability to create structure, direction and results across disciplines and locations.",
 
-    utdanning: `Through the master's course *Generative AI for Business* at BI Norwegian Business School, I have developed strategic AI competence focused on leadership tools for decision support, efficient documentation, and enhanced commercial effectiveness.
+    utdanning: `Through the master's course *Generative AI for Business* at BI Norwegian Business School, I have developed strategic AI competence focused on leadership tools for decision support, efficient documentation and enhanced commercial effectiveness.
 
-I hold a *Master of Science in Business Administration* from the University of Utah (USA), and an *Executive Master of Management* from BI Norwegian Business School, specialising in strategy, communication, and AI.`,
+I hold a *Master of Science in Business Administration* from the USA, and an *Executive Master of Management* from BI specialising in strategy, communication and AI.`,
 
     kompetanse: [
       "Commercial leadership & go-to-market strategy",

@@ -5,6 +5,8 @@ export const PSC_COLORS = {
   accent: "#E30613",
 } as const;
 
+export const PSC_APP_URL = "https://pscv6-744893320985.europe-west2.run.app/";
+
 export const PSC_PROSJEKT_IDS = new Set([
   "predictive-sales-coach-2026",
   "psc-promo-video-moc-2026",
@@ -12,6 +14,14 @@ export const PSC_PROSJEKT_IDS = new Set([
 
 export function isPscProsjekt(id: string): boolean {
   return PSC_PROSJEKT_IDS.has(id);
+}
+
+/** Rød v6 kun i prosjektoverskrift – «The Predictive Sales Coach v6». */
+export function applyPscTitleBrandingHtml(html: string): string {
+  return html.replace(
+    /(The Predictive Sales Coach)\s+(v\d+)/gi,
+    '$1 <span class="psc-v">$2</span>'
+  );
 }
 
 /** Markerer PSC-versjoner (v6) med rød accent – PSCv6 / (PSCv6), uten mellomrom før v. */

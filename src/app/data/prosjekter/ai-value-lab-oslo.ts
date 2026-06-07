@@ -1,18 +1,19 @@
+import { prosjektKontaktLenke } from "../../lib/prosjekt-lenker";
 import { type ProsjektType } from "./predictive-sales-coach";
 
 export const aiValueLabOslo: ProsjektType = {
   id: "ai-value-lab-oslo-2026",
   tittel: {
-    no: "AI Value Lab Oslo",
-    en: "AI Value Lab Oslo",
+    no: "AI Value Lab Oslo: Praktisk AI-verdi for virksomheter",
+    en: "AI Value Lab Oslo: Practical AI value for organisations",
   },
   teaser: {
-    no: "Tverrfaglig lærings- og byggeinitiativ der teknologi, forretning og praktisk utvikling møtes for å utforske ansvarlig bruk av AI gjennom reelle case.",
-    en: "A cross-disciplinary learning initiative where technology, business, and practical development meet to explore how AI can be understood, tested, and used responsibly.",
+    no: "Tverrfaglig lærings- og utviklingsinitiativ der teknologi, forretning og praktisk utvikling møtes for å utforske ansvarlig bruk av AI gjennom reelle case.",
+    en: "A cross-disciplinary learning and development initiative where technology, business and practical development meet to explore responsible use of AI through real cases.",
   },
   bildeUrl: "/images/ai-value-lab.jpeg",
   dato: "2026-03-29",
-  visningsDato: "29.03.2026",
+  visningsDato: "29.03.26",
   bildeHint: {
     no: "Klikk på bildet for å se AI Value Lab Oslo i større format.",
     en: "Click the image to view AI Value Lab Oslo in a larger format.",
@@ -28,24 +29,87 @@ export const aiValueLabOslo: ProsjektType = {
     },
   ],
   innhold: {
-    no: `AI Value Lab Oslo er et tverrfaglig læringsinitiativ der teknologi, forretning og praktisk utvikling møtes for å utforske hvordan AI kan forstås, testes og anvendes på en ansvarlig måte. Gruppen bruker case og problemstillinger som læringsarena for å bygge kompetanse, prøve ut verktøy, dele erfaringer og utvikle praktisk forståelse på tvers av fagområder. Målet er å lære gjennom samarbeid — og styrke evnen til å identifisere, vurdere og utforske relevante AI-muligheter i praksis.
+    no: `<strong>Hva prosjektet er</strong>
 
-Det som kjennetegner initiativet, er kombinasjonen av ulike perspektiver og komplementære styrker. Vi diskuterer ikke bare AI som teknologi, men bygger innsikt som er relevant i virkelige arbeidssituasjoner — med fokus på ansvarlig bruk, læring i praksis og løsninger som kan skape reell verdi.
+AI Value Lab Oslo er et tverrfaglig initiativ der teknologi, forretning og praktisk utvikling møtes. Målet er å utforske hvordan AI kan forstås, testes og brukes ansvarlig i virksomhetsnære problemstillinger.
 
-Gruppen består av Marius Ottesen, Tatiana Hanecakova og Ole Mjelde. Marius bidrar med erfaring fra kommersiell ledelse, strategi og organisasjonsutvikling, med særlig styrke i gjennomføring og koblingen mellom forretning, teknologi og verdiskaping. Tatiana bidrar med bakgrunn fra finansledelse og praktisk erfaring med AI-drevne arbeidsflyter — opptatt av løsninger som tåler virkeligheten og skaper konkret verdi. Ole bidrar med erfaring fra digitalisering, innovasjon og endringsarbeid i store nordiske virksomheter, med et praktisk blikk på hvordan nye løsninger utvikles, testes og tas i bruk.
+Initiativet bruker konkrete case som læringsarena for å bygge kompetanse, prøve ut verktøy og utvikle praktisk forståelse på tvers av fagområder.
 
-Jeg var initiativtaker til etableringen av AI Value Lab Oslo.
+<strong>Problemet prosjektet adresserer</strong>
 
-Les mer via LinkedIn: <a href="https://www.linkedin.com/company/aivaluelaboslo/" target="_blank" rel="noopener noreferrer">AI Value Lab Oslo</a>.`,
-    en: `AI Value Lab Oslo is a cross-disciplinary learning initiative where technology, business, and hands-on development meet to explore how AI can be understood, tested, and applied responsibly. The group uses cases and real challenges as learning arenas to build competence, try tools, share experience, and develop practical understanding across disciplines. The goal is to learn through collaboration — and strengthen the ability to identify, assess, and explore relevant AI opportunities in practice.
+Mange virksomheter har interesse for AI, men mangler tid, struktur og kompetanse til å identifisere hvor teknologien faktisk kan skape verdi.
 
-What characterises the initiative is the combination of different perspectives and complementary strengths. We do not only discuss AI as technology; we build insight that matters in real working situations — with a focus on responsible use, learning in practice, and solutions that create genuine value.
+Utfordringen er ofte å gå fra generell AI-nysgjerrighet til konkrete use case, prioriterte arbeidsflyter, realistiske piloter og ansvarlig implementering.
 
-The group consists of Marius Ottesen, Tatiana Hanecakova, and Ole Mjelde. Marius contributes experience from commercial leadership, strategy, and organisational development, with particular strength in execution and connecting business, technology, and value creation. Tatiana contributes a background in financial leadership and hands-on experience building AI-driven workflows — focused on solutions that work in reality and deliver concrete value. Ole contributes experience from digitalisation, innovation, and change in large Nordic organisations, with a practical view of how new solutions are developed, tested, and adopted.
+<strong>Hva som er bygget eller utviklet</strong>
 
-I was the initiator behind establishing AI Value Lab Oslo.
+AI Value Lab Oslo er etablert som en arena for læring, sparring, praktisk testing og utvikling av AI-relaterte konsepter.
 
-Read more on LinkedIn: <a href="https://www.linkedin.com/company/aivaluelaboslo/" target="_blank" rel="noopener noreferrer">AI Value Lab Oslo</a>.`,
+Gruppen består av Marius Ottesen, Tatiana Hanecakova og Ole Mjelde, med komplementær erfaring innen kommersiell ledelse, finans, digitalisering, innovasjon, organisasjonsutvikling og praktisk AI-bruk. Marius var initiativtaker til etableringen.
+
+<strong>Hvordan det fungerer</strong>
+
+Initiativet vurderer AI gjennom konkrete problemer, ikke bare verktøydemoer. Gruppen ser på hvordan AI kan skape verdi i arbeidsprosesser, kundeopplevelse, beslutningsstøtte, kommunikasjon og gjennomføring.
+
+Kjernen er ansvarlig bruk, praktisk læring og løsninger som tåler virkeligheten.
+
+<strong>Hvorfor dette er relevant</strong>
+
+Prosjektet er relevant for SMB-ledere, ledergrupper, samarbeidspartnere og kunder som ønsker å forstå hvor AI faktisk kan skape verdi.
+
+For arbeidsgivere viser initiativet evne til å bygge faglige arenaer, samle kompetanse og utvikle praktisk AI-forståelse. For kunder viser det hvordan AI-rådgivning kan gjøres konkret, forretningsnært og handlingsorientert.
+
+<strong>Status og modenhet</strong>
+
+Tverrfaglig lærings- og utviklingsinitiativ i videre utvikling, med potensial for workshops, rådgivning, pilotprosjekter og kommersielle tjenestepakker.
+
+<strong>Mulig videreutvikling</strong>
+
+Initiativet kan videreutvikles til konkrete tilbud for SMB-markedet, eksempelvis AI-mulighetsverksted, AI Growth Sprint, use case-prioritering, prosesskartlegging og governance light.
+
+<strong>Neste steg</strong>
+
+${prosjektKontaktLenke("no")} dersom du ønsker å diskutere samarbeid, workshop, pilotprosjekt eller praktisk AI-verdi for din virksomhet.`,
+    en: `<strong>What the project is</strong>
+
+AI Value Lab Oslo is a cross-disciplinary initiative where technology, business and practical development meet. The goal is to explore how AI can be understood, tested and used responsibly in business-near challenges.
+
+The initiative uses concrete cases as learning arenas to build competence, try tools and develop practical understanding across disciplines.
+
+<strong>The problem the project addresses</strong>
+
+Many organisations are interested in AI but lack the time, structure and competence to identify where the technology can actually create value.
+
+The challenge is often moving from general AI curiosity to concrete use cases, prioritised workflows, realistic pilots and responsible implementation.
+
+<strong>What has been built or developed</strong>
+
+AI Value Lab Oslo has been established as an arena for learning, sparring, practical testing and development of AI-related concepts.
+
+The group consists of Marius Ottesen, Tatiana Hanecakova and Ole Mjelde, with complementary experience in commercial leadership, finance, digitalisation, innovation, organisational development and practical AI use. Marius was the initiator behind establishing the group.
+
+<strong>How it works</strong>
+
+The initiative assesses AI through concrete problems, not only tool demos. The group looks at how AI can create value in work processes, customer experience, decision support, communication and execution.
+
+The core is responsible use, practical learning and solutions that work in reality.
+
+<strong>Why this is relevant</strong>
+
+The project is relevant for SMB leaders, leadership teams, partners and customers who want to understand where AI can actually create value.
+
+For employers, the initiative shows the ability to build professional arenas, gather competence and develop practical AI understanding. For customers, it shows how AI advisory work can be made concrete, business-oriented and action-focused.
+
+<strong>Status and maturity</strong>
+
+Cross-disciplinary learning and development initiative under further development, with potential for workshops, advisory services, pilot projects and commercial service packages.
+
+<strong>Possible further development</strong>
+
+The initiative can be developed into concrete offerings for the SMB market, such as AI opportunity workshops, AI Growth Sprint, use case prioritisation, process mapping and governance light.
+
+<strong>Next steps</strong>
+
+${prosjektKontaktLenke("en")} if you would like to discuss collaboration, workshops, pilot projects or practical AI value for your organisation.`,
   },
 };
-

@@ -1,3 +1,8 @@
+import { PSC_APP_URL } from "../../lib/psc-brand";
+import { prosjektKontaktLenke } from "../../lib/prosjekt-lenker";
+
+const pscAppLink = `<a href="${PSC_APP_URL}" target="_blank" rel="noopener noreferrer" aria-label="Åpne The Predictive Sales Coach v6" class="psc-app-link focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400">The Predictive Sales Coach <span class="psc-v">v6</span></a>`;
+
 export interface ProsjektType {
   id: string;
   tittel: { no: string; en: string };
@@ -37,17 +42,17 @@ export interface ProsjektType {
 export const predictiveSalesCoach: ProsjektType = {
   id: "predictive-sales-coach-2026",
   tittel: {
-    no: "The Predictive Sales Coach (PSCv6)",
-    en: "The Predictive Sales Coach (PSCv6)",
+    no: "The Predictive Sales Coach v6: AI-basert salgstrening og møteforberedelse",
+    en: "The Predictive Sales Coach v6: AI-based sales training and meeting preparation",
   },
   teaser: {
-    no: "Reduser usikkerhet og øk win-rate med AI-basert salgstrening gjennom realistiske simuleringer, dyp evaluering og målbar progresjon.",
-    en: "An AI-powered training and decision-support tool for structured sales practice, realistic customer simulation, and faster capability building in B2B sales organisations.",
+    no: "The Predictive Sales Coach (PSCv6) er en AI-basert salgstrenings- og analyseplattform for B2B-salg, møteforberedelse og mer presis kundedialog.",
+    en: "The Predictive Sales Coach (PSCv6) is an AI-based sales training and analysis platform for B2B sales, meeting preparation and more precise customer dialogue.",
   },
   bildeUrl: "/images/sales-coach-new2.jpg",
   bildeRamme: "cover",
-  dato: "2026-02-26",
-  visningsDato: "26.02.2026",
+  dato: "2026-05-25",
+  visningsDato: "25.05.26",
   bildeHint: {
     no: "Klikk på bildet for å se The Predictive Sales Coach i større format.",
     en: "Click the image to view The Predictive Sales Coach in a larger format.",
@@ -60,40 +65,124 @@ export const predictiveSalesCoach: ProsjektType = {
         en: "PSCv6 quick setup – DISC profile, sales phase, customer attitude and difficulty level",
       },
     },
-  ],
-  ekstraBilder: [
     {
-      src: "/images/QR-PSCv6.png?v=20260509",
+      src: "/images/QR-PSCv6.png?v=20260531",
       alt: {
-        no: "QR-kode for tilgang til The Predictive Sales Coach (PSC)v6-appen",
-        en: "QR code for access to The Predictive Sales Coach (PSC)v6 app",
+        no: "QR-kode – skann for tilgang til The Predictive Sales Coach (PSCv6)",
+        en: "QR code – scan for access to The Predictive Sales Coach (PSCv6)",
       },
     },
   ],
   innhold: {
-    no: `The Predictive Sales Coach er et konkret AI-basert trenings- og beslutningsstøtteverktøy for B2B-salg, bygget for å trene selgere i realistiske kundesituasjoner før de møter kunden i virkeligheten. Løsningen kombinerer DISC-psykologi med et strukturert fire-fasers salgsrammeverk, og lar brukeren simulere krevende kundemøter med ulik motstand, vanskelighetsgrad og fokusfase.
+    no: `<strong>Hva prosjektet er</strong>
 
-Etter hver simulering får brukeren fasebasert evaluering, tydelig score breakdown og konkrete forbedringspunkter. Videreutviklingen har også hatt fokus på progresjon over tid, slik at både selger og leder kan se mønstre, identifisere hvor det trenes for lite og styrke kvaliteten i kundeaktiviteten.
+PSCv6 er utviklet for selgere, salgsledere og kommersielle team som ønsker å trene mer målrettet før viktige kundemøter.
 
-<strong>Hva er nytt i versjon 6?</strong>
+Løsningen kombinerer realistiske kundesimuleringer, DISC-inspirert kommunikasjon, salgsfaser, scenario-oppsett, evaluering og lederinnsikt. Målet er å flytte salgstrening nærmere virkelige kundesituasjoner.
 
-Reduser usikkerhet og øk din win-rate med fremtidens AI-baserte salgstrening. PSCv6 er et kraftfullt verktøy for strategisk kompetanseutvikling som lar deg simulere virkelighetsnære kundemøter før de skjer i virkeligheten.
+<strong>Problemet prosjektet adresserer</strong>
 
-<strong>DISC-selvkartlegging:</strong> Start med å forstå din egen kommunikasjonsstil gjennom vår nye, integrerte DISC-baserte test.
+Mange selgere trener for lite før viktige kundemøter. Forberedelser blir ofte generelle, kundeinnsikt brukes ujevnt, og salgsledere mangler strukturert innsikt i hvilke ferdigheter teamet faktisk må utvikle.
 
-<strong>Realistiske simuleringer:</strong> Tren på spesifikke rollespill der du møter ulike beslutningstakere og personlighetstyper. Øv på å håndtere argumenter og motstand skreddersydd til den enkelte kunden.
+PSCv6 adresserer dette ved å gjøre møteforberedelse, rollespill, refleksjon og feedback mer konkret, repeterbart og målbart.
 
-<strong>Dyp-evaluering og analyse:</strong> Etter hver økt får du en objektiv analyse og et scorecard. Dette gir både selger og leder et unikt datagrunnlag for å identifisere mønstre, tette blindsoner og dokumentere progresjon over tid.
+<strong>Hva som er bygget eller utviklet</strong>
 
-PSC transformerer teoretisk salgsmetodikk til praktisk ferdighet, slik at du alltid er best forberedt når det gjelder. Løsningen er særlig relevant for onboarding, møteforberedelse, salgsledelse og løpende kapabilitetsutvikling i team.
+Det er utviklet en AI-basert salgstreningsplattform med scenario-oppsett, kundetype, bransje, salgsfase, kundens holdning, vanskelighetsgrad, mål for møtet, simulert kundedialog og strukturert evaluering.
 
-<strong>Ønsker du tilgang til PSCv6?</strong><br/>Skann QR-koden nedenfor eller klikk på <a href="https://pscv6-744893320985.europe-west2.run.app/" target="_blank" rel="noopener noreferrer">Be om tilgang til PSC-appen</a> for å starte reisen mot smartere salg.`,
-    en: `The Predictive Sales Coach is a practical AI-based training and decision-support tool for B2B sales, built to train sales professionals in realistic customer situations before they meet real clients. The solution combines DISC psychology with a structured four-phase sales framework and lets users simulate demanding customer meetings with varying resistance, difficulty, and focus phases.
+Løsningen inkluderer også DISC-inspirert selvkartlegging, støtte for ulike kundetyper, fasebasert feedback, scorecard, arkiv og grunnlag for lederinnsikt.
 
-After each simulation, users receive phase-based feedback, objective scoring with a clear score breakdown, and concrete improvement actions. The V3 logic is further developed with history and an analytics dashboard, enabling both sales reps and leaders to track progress over time, identify patterns, and see which sales phases and customer types require more training.
+<strong>Hvordan det fungerer</strong>
 
-The solution is especially relevant for onboarding, meeting preparation, sales leadership, and continuous team capability development. The result is reduced time-to-competence, higher quality customer dialogues, and a stronger foundation for improving win-rate over time.
+Brukeren setter opp et realistisk kundescenario basert på hva som selges, kundens rolle, bransje, salgsfase, holdning, vanskelighetsgrad og ønsket møteutfall.
 
-The underlying logic can also be extended to adjacent training and simulation scenarios, such as negotiation training, role-reversal for better counterpart understanding, and more advanced team insight for sales leaders.`,
+Deretter trener selgeren på kundedialogen. AI-en simulerer kunden, utfordrer selgeren, stiller oppfølgingsspørsmål og responderer på hvordan samtalen utvikler seg.
+
+Etter økten får brukeren strukturert feedback på blant annet salgsfaseforståelse, DISC-tilpasning, verdiargumentasjon, spørreteknikk, innvendingshåndtering og kontroll på samtalen.
+
+Målet er ikke bare å evaluere én samtale, men å vise hva som fungerte, hva som bør trenes videre på, og hvordan neste kundemøte kan gjennomføres bedre.
+
+<strong>Hvorfor dette er relevant</strong>
+
+PSCv6 er relevant for arbeidsgivere, salgsledere og kommersielle team som ønsker mer strukturert salgstrening, bedre møteforberedelser og mer presis coaching.
+
+For arbeidsgivere viser prosjektet hvordan AI kan brukes til ferdighetsutvikling, onboarding, salgsledelse og kompetansekartlegging. For kunder viser det hvordan AI kan styrke prestasjon før møtet, ikke bare analysere resultatet etterpå.
+
+<strong>Status og modenhet</strong>
+
+PSCv6 er en lukket pilot og fungerer som en strukturert trenings-, evaluerings- og lederinnsiktsplattform.
+
+Løsningen er tekstbasert for å trene presisjon i formuleringer, spørsmål, aktiv lytting og kundetilpasning. Speech-to-text og tale kan være aktuelle videreutviklingsspor, men tekstformatet er bevisst valgt i dagens versjon.
+
+<strong>Mulig videreutvikling</strong>
+
+PSCv6 er bygget for salgstrening, men grunnmodellen kan brukes i flere profesjonelle samtalesituasjoner.
+
+Videre potensial inkluderer forhandlingstrening, intervjutrening, lederdialoger, kundeservice, rådgivning, vanskelige samtaler og andre situasjoner der trygghet, presisjon og tilpasning er avgjørende.
+
+<strong>Hvordan PSCv6 skiller seg fra FlowSignal</strong>
+
+PSCv6 handler primært om kundedialog, salgsfaser og kommersiell gjennomføring. FlowSignal handler primært om team, dagsform, rolleforståelse og intern samhandling.
+
+Der PSCv6 trener selgeren på konkrete kundemøter, hjelper FlowSignal team å forstå hvordan mennesker samarbeider bedre i hverdagen.
+
+<strong>Neste steg</strong>
+
+Har du tilgangskode, kan du åpne ${pscAppLink} direkte ved å trykke på linken. Du kan også skanne QR-koden under bildet for tilgang på mobil og nettbrett. ${prosjektKontaktLenke("no")} dersom du ønsker en gjennomgang, tilgangskode eller vil teste løsningen i et salgs- eller lederteam.`,
+    en: `<strong>What the project is</strong>
+
+PSCv6 is built for sales reps, sales leaders and commercial teams who want to train more purposefully before important customer meetings.
+
+The solution combines realistic customer simulations, DISC-inspired communication, sales phases, scenario setup, evaluation and leadership insight. The goal is to move sales training closer to real customer situations.
+
+<strong>The problem the project addresses</strong>
+
+Many sales reps train too little before important customer meetings. Preparation is often generic, customer insight is used unevenly, and sales leaders lack structured insight into which skills the team actually needs to develop.
+
+PSCv6 addresses this by making meeting preparation, role play, reflection and feedback more concrete, repeatable and measurable.
+
+<strong>What has been built or developed</strong>
+
+An AI-based sales training platform has been developed with scenario setup, customer type, industry, sales phase, customer attitude, difficulty level, meeting goals, simulated customer dialogue and structured evaluation.
+
+The solution also includes DISC-inspired self-assessment, support for different customer types, phase-based feedback, scorecard, archive and a foundation for leadership insight.
+
+<strong>How it works</strong>
+
+The user sets up a realistic customer scenario based on what is being sold, the customer's role, industry, sales phase, attitude, difficulty level and desired meeting outcome.
+
+The seller then trains on the customer dialogue. The AI simulates the customer, challenges the seller, asks follow-up questions and responds to how the conversation develops.
+
+After the session, the user receives structured feedback on areas including sales phase understanding, DISC adaptation, value argumentation, questioning technique, objection handling and control of the conversation.
+
+The goal is not only to evaluate one conversation, but to show what worked, what should be practised further, and how the next customer meeting can be conducted better.
+
+<strong>Why this is relevant</strong>
+
+PSCv6 is relevant for employers, sales leaders and commercial teams that want more structured sales training, better meeting preparation and more precise coaching.
+
+For employers, the project shows how AI can be used for skills development, onboarding, sales leadership and competence mapping. For customers, it shows how AI can strengthen performance before the meeting, not only analyse results afterwards.
+
+<strong>Status and maturity</strong>
+
+PSCv6 is a closed pilot and functions as a structured training, evaluation and leadership insight platform.
+
+The solution is text-based to train precision in wording, questions, active listening and customer adaptation. Speech-to-text and voice may be relevant further development tracks, but the text format is deliberately chosen in the current version.
+
+<strong>Possible further development</strong>
+
+PSCv6 is built for sales training, but the core model can be used in more professional conversation situations.
+
+Further potential includes negotiation training, interview training, leadership dialogues, customer service, advisory conversations, difficult conversations and other situations where confidence, precision and adaptation are critical.
+
+<strong>How PSCv6 differs from FlowSignal</strong>
+
+PSCv6 is primarily about customer dialogue, sales phases and commercial execution. FlowSignal is primarily about teams, daily form, role understanding and internal collaboration.
+
+Where PSCv6 trains the seller on concrete customer meetings, FlowSignal helps teams understand how people collaborate better in everyday work.
+
+<strong>Next steps</strong>
+
+If you have an access code, you can open ${pscAppLink} directly by clicking the link. You can also scan the QR code below the image for access on mobile and tablet. ${prosjektKontaktLenke("en")} if you would like a walkthrough, an access code or want to test the solution with a sales or leadership team.`,
   },
 };

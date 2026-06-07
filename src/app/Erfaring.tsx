@@ -7,6 +7,7 @@ import { useLanguage } from "./LanguageContext";
 import { getTranslation } from "./data/translations";
 
 const selskapLogo: Record<string, string | null> = {
+  "Marius Ottesen Consulting": "/images/moc.logo.png",
   "Franzefoss Gjenvinning": "/images/Franzefoss.png",
   "Norengros Johs. Olsen": "/images/Norengros.png",
   "MedDrop": "/images/meddrop-logo.png",
@@ -47,7 +48,15 @@ export default function Erfaring() {
                     <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center p-1.5 shrink-0">
                       {selskapLogo[j.company] ? (
                         // eslint-disable-next-line @next/next/no-img-element
-                        <img src={selskapLogo[j.company]!} alt={`${j.company} logo`} width={48} height={48} className="max-h-9 max-w-full w-auto h-auto object-contain" />
+                        <img
+                          src={selskapLogo[j.company]!}
+                          alt={`${j.company} logo`}
+                          width={48}
+                          height={48}
+                          className={`max-w-full w-auto h-auto object-contain ${
+                            j.company === "Marius Ottesen Consulting" ? "max-h-[30px]" : "max-h-9"
+                          }`}
+                        />
                       ) : (
                         <span className="text-slate-500 text-[10px] font-bold uppercase tracking-wider">{j.company.replace(/ .*/, "")}</span>
                       )}
@@ -84,6 +93,7 @@ export default function Erfaring() {
             <p className="text-[10px] text-slate-500 uppercase tracking-widest font-bold">{tr("profil.logoer.erfaring")}</p>
             <div className="flex flex-wrap items-center gap-2">
               {[
+                { src: "/images/moc-avlang.png", alt: "Marius Ottesen Consulting", h: "max-h-[29px]", pad: "p-1" },
                 { src: "/images/Franzefoss.png", alt: "Franzefoss", h: "max-h-[26px]" },
                 { src: "/images/Norengros.png", alt: "Norengros", h: "max-h-[30px]" },
                 { src: "/images/Nilfisk.png", alt: "Nilfisk", h: "max-h-[42px]" },
@@ -93,7 +103,7 @@ export default function Erfaring() {
                 { src: "/images/Mundipharma.png", alt: "Mundipharma", h: "max-h-[26px]" },
                 { src: "/images/meddrop-logo.png", alt: "MedDrop", h: "max-h-[32px]" },
               ].map((logo) => (
-                <div key={logo.alt} className="flex-1 min-w-[80px] h-[44px] flex items-center justify-center bg-white rounded-lg p-1.5 shrink-0">
+                <div key={logo.alt} className={`flex-1 min-w-[80px] h-[44px] flex items-center justify-center bg-white rounded-lg shrink-0 ${logo.pad ?? "p-1.5"}`}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={logo.src} alt={`${logo.alt} logo`} width={100} height={44} className={`${logo.h} max-w-full w-auto h-auto object-contain`} />
                 </div>

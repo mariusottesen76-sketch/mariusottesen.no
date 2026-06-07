@@ -1,58 +1,106 @@
+import { prosjektKontaktLenke } from "../../lib/prosjekt-lenker";
 import { type ProsjektType } from "./predictive-sales-coach";
 
 export const aiArkitekturBeslutningsstotte: ProsjektType = {
   id: "ai-arkitektur-beslutningsstotte-2026",
   tittel: {
-    no: "AI-arkitektur for beslutningsstøtte",
-    en: "AI Architecture for Decision Support",
+    no: "AI-arkitektur for beslutningsstøtte og kommersiell prioritering",
+    en: "AI architecture for decision support and commercial prioritisation",
   },
   teaser: {
     no: "Generativ AI brukt til å strukturere kompleksitet, identifisere gap, avdekke mønstre og styrke beslutningsgrunnlaget i strategi, salg, governance og operativ utvikling.",
-    en: "Generative AI used to structure complexity, identify gaps, uncover patterns, and strengthen decision foundations across strategy, sales, governance, and operations.",
+    en: "Generative AI used to structure complexity, identify gaps, reveal patterns and strengthen decision foundations in strategy, sales, governance and operational development.",
   },
   bildeUrl: "/images/ai-beslutningsstotte-dashboard.png?v=20260519",
   bildeRamme: "natural",
   dato: "2026-03-05",
-  visningsDato: "05.03.2026",
+  visningsDato: "05.03.26",
   bildeHint: {
     no: "Klikk på bildet for å se AI-arkitektur for beslutningsstøtte i større format.",
     en: "Click the image to view AI architecture for decision support in a larger format.",
   },
-  navigasjonsCta: {
-    tab: "Kontakt",
-    beskrivelse: {
-      no: "Ta gjerne kontakt for en samtale om hvordan denne arkitekturen kan tilpasses din virksomhet — fra innsikt og gap-analyse til et konkret beslutningsstøtte-spor med ansvarlig bruk av AI.",
-      en: "Please get in touch to discuss how this architecture can be adapted for your organisation — from insight and gap analysis to a concrete decision-support track with responsible use of AI.",
-    },
-    label: {
-      no: "Gå til kontaktskjema",
-      en: "Go to contact form",
-    },
-  },
   innhold: {
-    no: `Som kommersiell leder har jeg flere ganger sett hvor krevende det er å omsette store informasjonsmengder til tydelige prioriteringer og konkret handling. Strategidokumenter, KPI-strukturer, salgsprosesser, anbudsdokumenter og regulatoriske krav skaper ofte mer kompleksitet enn fremdrift.
+    no: `<strong>Hva prosjektet er</strong>
 
-Jeg bygger derfor en arkitektur for å bruke generativ AI til å bryte ned slike problemstillinger mer systematisk. Målet er å identifisere gap, mønstre og handlingsalternativer tidligere, slik at ledere får et tydeligere grunnlag for prioritering og gjennomføring.
+Dette prosjektet er en AI-arkitektur for å strukturere kompleksitet, identifisere gap, avdekke mønstre og styrke beslutningsgrunnlaget i strategi, salg, governance og operativ utvikling.
 
-Den samme logikken brukes nå som teknisk fundament i flere praktiske spor, blant annet The Predictive Sales Coach og en mer agentisk innsikts- og opportunity-flyt. Det gjør arkitekturen relevant som byggestein for flere typer leder- og beslutningsverktøy.
+Som kommersiell leder har jeg flere ganger sett hvor krevende det er å omsette store informasjonsmengder til tydelige prioriteringer og konkret handling.
 
-Overføringsverdien ligger i at konseptet ikke er bundet til ett domene: samme tilnærming kan tilpasses andre virksomheter som trenger å omsette data, dokumenter og erfaring til tydeligere innsikt, gap-analyse og prioriteringer. Jeg hjelper gjerne lederteam med å kartlegge hvor en slik arkitektur gir størst effekt, og med å skissere et første spor fra idé til fungerende prototype.
+<strong>Problemet prosjektet adresserer</strong>
 
-<em>Et praktisk AI-spor for virksomheter som ønsker bedre innsikt, tydeligere prioriteringer og mer operativ gjennomføring.</em>`,
-    en: `As a commercial leader, I have repeatedly participated in strategy processes where ambitions are clear, but the link to actual execution is weaker. Strategy documents, KPI structures, sales processes, RFP documents, and regulatory requirements create large volumes of information that are demanding to analyse systematically.
+Strategidokumenter, KPI-strukturer, salgsprosesser, anbudsdokumenter og regulatoriske krav kan skape mer kompleksitet enn fremdrift.
 
-I am therefore developing a method to use generative AI to structure and analyse these challenges more effectively. The goal is to identify gaps, patterns, and action alternatives earlier, so leaders gain a clearer basis for prioritisation and execution. The core logic is simple:
+Problemet er ofte ikke mangel på informasjon, men at informasjonen er spredt, tung å tolke og vanskelig å omsette til prioriteringer og neste handling.
 
-Documents and data -> AI deconstruction -> strategic insight -> decision support.
+<strong>Hva som er bygget eller utviklet</strong>
 
-The objective is not to replace leadership, but to give leaders a better foundation for assessments and decisions. By using tools such as GPT-4o, Claude, Gemini, Cursor, and Streamlit, I have developed a technical foundation that makes it possible to prototype and build multiple decision-support tools on the same architecture.
+Jeg bygger en arkitektur for å bruke generativ AI til å bryte ned komplekse problemstillinger mer systematisk. Målet er å identifisere gap, mønstre, risiko og handlingsalternativer tidligere.
 
-The same logic can be applied to areas such as strategy and execution, commercial excellence and sales, tender and RFP processes, governance and compliance, as well as onboarding and capability development.
+Den samme logikken brukes som teknisk fundament i flere praktiske spor, blant annet PSCv6 og en mer agentisk innsikts- og opportunity-flyt.
 
-<em>The Predictive Sales Coach</em> is a concrete example of how this architecture can be translated into a focused product with clear business value.
+<strong>Hvordan det fungerer</strong>
 
-The transfer value is that the concept is not tied to one domain: the same approach can be adapted for other organisations that need to turn data, documents, and experience into clearer insight, gap analysis, and priorities. I am happy to help leadership teams map where this kind of architecture creates the most impact, and to outline a first track from idea to working prototype.
+Arkitekturen kan ta utgangspunkt i dokumenter, prosesser, salgsdata, strategiske mål, kundeinnsikt eller governance-krav.
 
-A practical AI track for organisations that want better insight, clearer priorities, and stronger operational execution.`,
+AI brukes til å strukturere materialet, trekke ut mønstre, identifisere gap og foreslå handlingsspor. Menneskelig vurdering beholdes i beslutningspunktet.
+
+<strong>Hvorfor dette er relevant</strong>
+
+Prosjektet er relevant for virksomheter som ønsker bedre beslutningsstøtte, tydeligere prioriteringer og mer operativ gjennomføring.
+
+Det kan være særlig relevant innen kommersiell ledelse, pipeline-prioritering, salgsledelse, kundeinnsikt, strategi, rapportering og ledergruppers beslutningsarbeid.
+
+<strong>Status og modenhet</strong>
+
+Modell og arkitekturspor under utvikling, med overføringsverdi til flere AI-prosjekter og beslutningsverktøy.
+
+<strong>Mulig videreutvikling</strong>
+
+Arkitekturen kan videreutvikles til dashboards, lederstøtte, salgsanalyse, gap-analyse, use case-prioritering eller beslutningsverktøy for ledergrupper.
+
+<strong>Neste steg</strong>
+
+${prosjektKontaktLenke("no")} dersom du ønsker å kartlegge hvordan AI kan brukes til bedre beslutningsstøtte, kommersiell prioritering eller lederrapportering i din virksomhet.`,
+    en: `<strong>What the project is</strong>
+
+This project is an AI architecture for structuring complexity, identifying gaps, revealing patterns and strengthening decision foundations in strategy, sales, governance and operational development.
+
+As a commercial leader, I have repeatedly seen how demanding it is to turn large volumes of information into clear priorities and concrete action.
+
+<strong>The problem the project addresses</strong>
+
+Strategy documents, KPI structures, sales processes, tender documents and regulatory requirements can create more complexity than progress.
+
+The problem is often not a lack of information, but that information is scattered, heavy to interpret and difficult to translate into priorities and next actions.
+
+<strong>What has been built or developed</strong>
+
+I am building an architecture to use generative AI to break down complex issues more systematically. The goal is to identify gaps, patterns, risk and action alternatives earlier.
+
+The same logic is used as a technical foundation in several practical tracks, including PSCv6 and a more agentic insight and opportunity flow.
+
+<strong>How it works</strong>
+
+The architecture can start from documents, processes, sales data, strategic goals, customer insight or governance requirements.
+
+AI is used to structure the material, extract patterns, identify gaps and suggest action paths. Human judgement is retained at the decision point.
+
+<strong>Why this is relevant</strong>
+
+The project is relevant for organisations that want better decision support, clearer priorities and more operational execution.
+
+It can be especially relevant in commercial leadership, pipeline prioritisation, sales leadership, customer insight, strategy, reporting and leadership team decision work.
+
+<strong>Status and maturity</strong>
+
+Model and architecture track under development, with transfer value to several AI projects and decision tools.
+
+<strong>Possible further development</strong>
+
+The architecture can be developed into dashboards, leadership support, sales analysis, gap analysis, use case prioritisation or decision tools for leadership teams.
+
+<strong>Next steps</strong>
+
+${prosjektKontaktLenke("en")} if you would like to map how AI can be used for better decision support, commercial prioritisation or leadership reporting in your organisation.`,
   },
 };

@@ -1,8 +1,10 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { useLanguage, type Lang } from "./LanguageContext";
 import { getTranslation } from "./data/translations";
+import { getProsjektHurtigoversikt } from "./data/prosjekter-hurtigoversikt";
 import { predictiveSalesCoach, type ProsjektType } from "./data/prosjekter/predictive-sales-coach";
 import { pscPromoVideo } from "./data/prosjekter/psc-promo-video";
 import { aiValueLabOslo } from "./data/prosjekter/ai-value-lab-oslo";
@@ -12,9 +14,12 @@ import { aiFaginnleggHub } from "./data/prosjekter/ai-faginnlegg-hub";
 import { aiAssistertInnsiktsagent } from "./data/prosjekter/ai-assistert-innsiktsagent";
 import { aiAssistertInnsiktsOgInnholdsagent } from "./data/prosjekter/ai-assistert-innsikts-og-innholdsagent";
 import { prosjektoppgaveStrategiskImplementering } from "./data/prosjekter/prosjektoppgave-strategisk-implementering";
-import { applyPscBrandingHtml, applyPscBrandingPlain, isPscProsjekt } from "./lib/psc-brand";
+import { flowSignal } from "./data/prosjekter/flowsignal";
+import { isFlowSignalProsjekt } from "./lib/flowsignal-brand";
+import { isPscProsjekt } from "./lib/psc-brand";
+import { formatProsjektHtml, formatProsjektPlain } from "./lib/product-brand";
 
-const prosjektKort: ProsjektType[] = [prosjektoppgaveStrategiskImplementering, pscPromoVideo, aiAssistertInnsiktsagent, aiAssistertInnsiktsOgInnholdsagent, predictiveSalesCoach, aiValueLabOslo, skoyenasenTannklinikk, aiArkitekturBeslutningsstotte].sort(
+const prosjektKort: ProsjektType[] = [flowSignal, prosjektoppgaveStrategiskImplementering, pscPromoVideo, aiAssistertInnsiktsagent, aiAssistertInnsiktsOgInnholdsagent, predictiveSalesCoach, aiValueLabOslo, skoyenasenTannklinikk, aiArkitekturBeslutningsstotte].sort(
   (a, b) => new Date(b.dato).getTime() - new Date(a.dato).getTime()
 );
 
@@ -39,11 +44,31 @@ function getVideoAspectClass(prosjekt: ProsjektType): string {
   return prosjekt.videoFormat === "landscape" ? "aspect-video" : "aspect-[9/16]";
 }
 
+const linkClass =
+  "text-indigo-400 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400";
+
+const anchorLinkClass =
+  "text-sm text-indigo-300 hover:text-indigo-100 underline underline-offset-2 decoration-indigo-500/50 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400";
+
 export default function Prosjekter({ onNavigate }: { onNavigate?: (tab: string) => void }) {
   const { lang } = useLanguage();
   const tr = (key: string) => getTranslation(key, lang);
+  const hurtigoversikt = getProsjektHurtigoversikt(lang);
   const [activeImage, setActiveImage] = useState<{ src: string; alt: string } | null>(null);
   const [playingVideoId, setPlayingVideoId] = useState<string | null>(null);
+
+  useEffect(() => {
+    const scrollTilProsjekt = () => {
+      const hash = window.location.hash.slice(1);
+      if (!hash) return;
+      requestAnimationFrame(() => {
+        document.getElementById(hash)?.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    };
+    scrollTilProsjekt();
+    window.addEventListener("hashchange", scrollTilProsjekt);
+    return () => window.removeEventListener("hashchange", scrollTilProsjekt);
+  }, []);
 
   return (
     <div className="py-4 text-left w-full overflow-x-hidden min-w-0">
@@ -68,30 +93,72 @@ export default function Prosjekter({ onNavigate }: { onNavigate?: (tab: string) 
               {tr("prosjekter.intro.1")}
             </p>
             <p className="text-lg md:text-xl text-slate-400 italic leading-relaxed font-light break-words">
-              {tr("prosjekter.intro.2")}
+              {tr("prosjekter.intro.2")}{" "}
+              {onNavigate ? (
+                <button
+                  type="button"
+                  onClick={() => onNavigate("Consulting")}
+                  className={`${linkClass} bg-transparent border-0 p-0 cursor-pointer font-light italic`}
+                >
+                  {tr("prosjekter.intro.2.link")}
+                </button>
+              ) : (
+                <Link href="/consulting" className={linkClass}>
+                  {tr("prosjekter.intro.2.link")}
+                </Link>
+              )}
+              .
             </p>
           </div>
         </div>
       </div>
 
+      <section aria-labelledby="prosjekter-hurtig-heading" className="mt-6 mb-2 min-w-0">
+        <h2 id="prosjekter-hurtig-heading" className="text-lg md:text-xl font-black text-white italic tracking-tight mb-3">
+          {tr("prosjekter.hurtig.title")}
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3">
+          {hurtigoversikt.map((kategori) => (
+            <div
+              key={kategori.title.no}
+              className="p-4 bg-slate-900/40 rounded-xl border border-slate-800 space-y-2 min-w-0"
+            >
+              <h3 className="text-[10px] font-black uppercase tracking-widest text-indigo-400">
+                {kategori.title[lang]}
+              </h3>
+              <ul className="space-y-1.5">
+                {kategori.lenker.map((lenke) => (
+                  <li key={lenke.prosjektId}>
+                    <a href={`#${lenke.prosjektId}`} className={anchorLinkClass}>
+                      {lenke.label[lang]}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* PROSJEKTLISTE – smalere bilde, tekst innenfor ramme */}
-      <div className="mt-8 space-y-8 min-w-0">
+      <div className="mt-8 space-y-6 min-w-0">
         {alleProsjekter.map((prosjekt) => {
           const bildeHintKort = getProsjektBildeHint(prosjekt, lang);
           const erPsc = isPscProsjekt(prosjekt.id);
-          const pscQr = prosjekt.id === "predictive-sales-coach-2026" ? prosjekt.ekstraBilder?.[0] : undefined;
+          const erFlowSignal = isFlowSignalProsjekt(prosjekt.id);
           return (
           <article
             key={prosjekt.id}
-            className={
+            id={prosjekt.id}
+            className={`scroll-mt-24 ${
               erPsc
                 ? "bg-[#0B1120] rounded-2xl border border-slate-800/80 overflow-hidden shadow-xl min-w-0"
                 : "bg-slate-900/40 rounded-2xl border border-indigo-500/20 overflow-hidden shadow-xl min-w-0"
-            }
+            }`}
           >
-            <div className="flex flex-col md:flex-row gap-0 min-w-0">
+            <div className="flex flex-col md:flex-row gap-2 md:gap-3 items-start p-2.5 md:p-3 min-w-0">
               {/* Smalere bildekolonne – predictive / predictive-sales-coach */}
-              <div className="w-full md:w-[220px] lg:w-[260px] shrink-0 flex flex-col items-center gap-2 self-start">
+              <div className="w-full md:w-[220px] lg:w-[260px] shrink-0 flex flex-col items-center gap-1.5 self-start">
                 {prosjekt.videoEmbedUrl || prosjekt.videoUrl ? (
                   playingVideoId === prosjekt.id ? (
                     <div
@@ -165,26 +232,33 @@ export default function Prosjekter({ onNavigate }: { onNavigate?: (tab: string) 
                   </button>
                 )}
                 {prosjekt.bilderUnderHovedbilde && prosjekt.bilderUnderHovedbilde.length > 0 && (
-                  <div className="w-full flex flex-col gap-2 px-1">
-                    {prosjekt.bilderUnderHovedbilde.map((img) => (
-                      <button
-                        key={img.src}
-                        type="button"
-                        onClick={() => setActiveImage({ src: img.src, alt: img.alt[lang] })}
-                        className="relative w-full rounded-lg overflow-hidden border border-slate-700/60 bg-slate-800 cursor-zoom-in focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:outline-none"
-                        aria-label={img.alt[lang]}
-                      >
-                        <Image
-                          src={img.src}
-                          alt={img.alt[lang]}
-                          width={0}
-                          height={0}
-                          sizes="(max-width: 768px) 100vw, 260px"
-                          className="w-full h-auto"
-                          style={{ width: "100%", height: "auto" }}
-                        />
-                      </button>
-                    ))}
+                  <div className="w-full flex flex-col gap-1.5">
+                    {prosjekt.bilderUnderHovedbilde.map((img) => {
+                      const erQr = /QR-PSC/i.test(img.src);
+                      return (
+                        <button
+                          key={img.src}
+                          type="button"
+                          onClick={() => setActiveImage({ src: img.src, alt: img.alt[lang] })}
+                          className={
+                            erQr
+                              ? "relative w-full rounded-lg overflow-hidden border border-slate-700/60 bg-slate-800 cursor-zoom-in focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:outline-none leading-none p-0"
+                              : "relative w-full rounded-lg overflow-hidden border border-slate-700/60 bg-slate-800 cursor-zoom-in focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:outline-none"
+                          }
+                          aria-label={img.alt[lang]}
+                        >
+                          <Image
+                            src={img.src}
+                            alt={img.alt[lang]}
+                            width={0}
+                            height={0}
+                            sizes="(max-width: 768px) 100vw, 260px"
+                            className="w-full h-auto block m-0"
+                            style={{ width: "100%", height: "auto", display: "block", verticalAlign: "top" }}
+                          />
+                        </button>
+                      );
+                    })}
                   </div>
                 )}
                 {prosjekt.ekstraBilder &&
@@ -216,47 +290,57 @@ export default function Prosjekter({ onNavigate }: { onNavigate?: (tab: string) 
                   {bildeHintKort}
                 </p>
               </div>
-              <div className="flex-1 min-w-0 p-6 md:p-8 flex flex-col justify-center overflow-hidden">
+              <div className="flex-1 min-w-0 flex flex-col justify-start overflow-hidden space-y-3">
                 {prosjekt.visningsDato?.trim() && (
                   <span
-                    className={`text-[10px] font-mono uppercase tracking-widest font-bold block mb-2 ${
+                    className={`text-[10px] font-mono uppercase tracking-widest font-bold block leading-none ${
                       erPsc ? "text-slate-400" : "text-indigo-400"
                     }`}
                   >
                   {prosjekt.visningsDato}
                   </span>
                 )}
-                {erPsc ? (
-                  <h2
-                    className="text-xl md:text-2xl font-black text-white tracking-tight leading-tight italic mb-4 break-words [overflow-wrap:anywhere]"
-                    dangerouslySetInnerHTML={{ __html: applyPscBrandingPlain(prosjekt.tittel[lang]) }}
-                  />
-                ) : (
-                  <h2 className="text-xl md:text-2xl font-black text-white tracking-tight leading-tight italic mb-4 break-words [overflow-wrap:anywhere]">
-                    {prosjekt.tittel[lang]}
-                  </h2>
-                )}
-                {erPsc ? (
-                  <p
-                    className="text-slate-300 text-sm leading-relaxed mb-4 font-light break-words"
-                    dangerouslySetInnerHTML={{ __html: applyPscBrandingPlain(prosjekt.teaser[lang]) }}
-                  />
-                ) : (
-                  <p className="text-slate-400 text-sm leading-relaxed mb-4 font-light break-words">
-                    {prosjekt.teaser[lang]}
-                  </p>
-                )}
-                <div className={erPsc ? "md:flex md:items-start md:gap-6" : ""}>
+                <h2
+                  className={`text-xl md:text-2xl font-black text-white tracking-tight leading-tight italic break-words [overflow-wrap:anywhere] ${
+                    erPsc ? "[&_.psc-v]:text-[#E30613]" : erFlowSignal ? "[&_.fs-v]:text-[#CDB47A]" : ""
+                  }`}
+                  dangerouslySetInnerHTML={{
+                    __html: formatProsjektPlain(prosjekt.tittel[lang], prosjekt.id, erPsc || erFlowSignal),
+                  }}
+                />
+                <p
+                  className={`text-sm leading-[1.5] md:leading-[1.48] font-light break-words [&_em]:italic ${
+                    erPsc ? "text-slate-300" : "text-slate-400"
+                  }`}
+                  dangerouslySetInnerHTML={{ __html: formatProsjektPlain(prosjekt.teaser[lang], prosjekt.id) }}
+                />
+                <div>
                   <div
                     className={
                       erPsc
-                        ? `text-slate-200 text-base leading-relaxed space-y-3 font-light break-words overflow-hidden flex-1
+                        ? `text-slate-200 text-base leading-[1.55] md:leading-[1.48] space-y-2 font-light break-words overflow-hidden
                     [&_a]:text-[#E30613] [&_a]:underline [&_a]:underline-offset-2
                     [&_a]:decoration-[#E30613]/70 [&_a]:hover:text-white
                     [&_a]:transition-colors
                     [&_a.link-subtle]:text-slate-200 [&_a.link-subtle]:no-underline [&_a.link-subtle]:hover:text-[#E30613] [&_a.link-subtle]:hover:underline
+                    [&_a.psc-app-link]:text-[#E30613] [&_a.psc-app-link]:font-semibold [&_a.psc-app-link]:underline [&_a.psc-app-link]:underline-offset-2
+                    [&_a.psc-app-link]:decoration-[#E30613] [&_a.psc-app-link]:hover:text-white [&_a.psc-app-link]:hover:decoration-white
+                    [&_a.psc-app-link]:transition-colors
+                    [&_a.psc-app-link_em]:italic [&_a.psc-app-link_em]:text-[#E30613] [&_a.psc-app-link:hover_em]:text-white
+                    [&_a.psc-app-link_.psc-v]:text-[#E30613] [&_a.psc-app-link:hover_.psc-v]:text-white
                     [&_strong]:font-bold [&_strong]:text-white [&_em]:italic`
-                        : `text-slate-300 text-base leading-relaxed space-y-3 font-light break-words overflow-hidden flex-1
+                        : erFlowSignal
+                          ? `text-slate-300 text-base leading-[1.55] md:leading-[1.48] space-y-2 font-light break-words overflow-hidden
+                    [&_a]:text-indigo-300 [&_a]:underline [&_a]:underline-offset-2
+                    [&_a]:decoration-indigo-500/70 [&_a]:hover:text-indigo-200
+                    [&_a]:transition-colors
+                    [&_a.fs-app-link]:text-[#CDB47A] [&_a.fs-app-link]:font-semibold [&_a.fs-app-link]:underline [&_a.fs-app-link]:underline-offset-2
+                    [&_a.fs-app-link]:decoration-[#CDB47A] [&_a.fs-app-link]:hover:text-white [&_a.fs-app-link]:hover:decoration-white
+                    [&_a.fs-app-link]:transition-colors
+                    [&_a.fs-app-link_.fs-mark]:text-[#CDB47A] [&_a.fs-app-link:hover_.fs-mark]:text-white
+                    [&_a.fs-app-link_.fs-v]:text-[#CDB47A] [&_a.fs-app-link:hover_.fs-v]:text-white
+                    [&_strong]:font-semibold [&_em]:italic`
+                          : `text-slate-300 text-base leading-[1.55] md:leading-[1.48] space-y-2 font-light break-words overflow-hidden
                     [&_a]:text-indigo-300 [&_a]:underline [&_a]:underline-offset-2
                     [&_a]:decoration-indigo-500/70 [&_a]:hover:text-indigo-200
                     [&_a]:transition-colors
@@ -269,7 +353,7 @@ export default function Prosjekter({ onNavigate }: { onNavigate?: (tab: string) 
                         key={i}
                         className="min-w-0"
                         dangerouslySetInnerHTML={{
-                          __html: erPsc ? applyPscBrandingHtml(avsnitt.trim()) : avsnitt.trim(),
+                          __html: formatProsjektHtml(avsnitt.trim(), erPsc),
                         }}
                       />
                     ))}
@@ -290,24 +374,6 @@ export default function Prosjekter({ onNavigate }: { onNavigate?: (tab: string) 
                       </p>
                     )}
                   </div>
-                  {pscQr && (
-                    <div className="mt-5 md:mt-0 w-full max-w-[230px] md:w-[230px] shrink-0 mx-auto md:mx-0">
-                      <button
-                        type="button"
-                        onClick={() => setActiveImage({ src: pscQr.src, alt: pscQr.alt[lang] })}
-                        className="relative w-full h-[205px] rounded-lg overflow-hidden bg-slate-900/40 cursor-zoom-in focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:outline-none"
-                        aria-label={pscQr.alt[lang]}
-                      >
-                        <Image
-                          src={pscQr.src}
-                          alt={pscQr.alt[lang]}
-                          fill
-                          className="object-contain object-center"
-                          sizes="230px"
-                        />
-                      </button>
-                    </div>
-                  )}
                 </div>
                 {prosjekt.navigasjonsCta && onNavigate && !prosjekt.navigasjonsCta.beskrivelse && (
                   <button

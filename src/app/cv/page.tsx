@@ -6,33 +6,33 @@ export async function generateMetadata(
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   return {
-    title: "CV & Åpen søknad — Marius Ottesen",
-  description:
-    "Fullstendig CV og åpen søknad. Kommersiell leder med 25+ års erfaring fra B2B-markeder. AI-strateg som kombinerer kommersiell ledererfaring med AI-kompetanse.",
-  metadataBase: new URL("https://www.mariusottesen.no"),
-  openGraph: {
-    title: "CV & Åpen søknad — Marius Ottesen",
+    title: "CV & åpen søknad — Marius Ottesen",
     description:
-      "Fullstendig CV og åpen søknad. Kommersiell leder med 25+ års erfaring fra B2B-markeder, nå kombinert med AI-kompetanse.",
-    url: "https://www.mariusottesen.no/cv",
-    type: "website",
-    siteName: "Marius Ottesen",
-    images: [
-      {
-        url: "https://www.mariusottesen.no/images/profil.jpg",
-        width: 1200,
-        height: 630,
-        alt: "CV & Åpen søknad — Marius Ottesen",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "CV & Åpen søknad — Marius Ottesen",
-    description:
-      "Fullstendig CV og åpen søknad. Kommersiell leder med 25+ års erfaring fra B2B-markeder.",
-    images: ["https://www.mariusottesen.no/images/profil.jpg"],
-  },
+      "CV, åpen søknad og executive summary for rekrutterere, headhuntere og arbeidsgivere. Rollefit, utvalgte resultater og kjernekompetanse — med lang erfaring fra kommersiell ledelse.",
+    metadataBase: new URL("https://www.mariusottesen.no"),
+    openGraph: {
+      title: "CV & åpen søknad — Marius Ottesen",
+      description:
+        "CV, åpen søknad og kort oppsummering av lederprofil, resultater og kjernekompetanse for rekrutterere, headhuntere og arbeidsgivere.",
+      url: "https://www.mariusottesen.no/cv",
+      type: "website",
+      siteName: "Marius Ottesen",
+      images: [
+        {
+          url: "https://www.mariusottesen.no/images/profil.jpg",
+          width: 1200,
+          height: 630,
+          alt: "CV & åpen søknad — Marius Ottesen",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "CV & åpen søknad — Marius Ottesen",
+      description:
+        "CV, åpen søknad og executive summary. Kommersiell leder med lang erfaring og dokumenterte resultater.",
+      images: ["https://www.mariusottesen.no/images/profil.jpg"],
+    },
   };
 }
 

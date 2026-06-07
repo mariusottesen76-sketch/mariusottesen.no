@@ -1,4 +1,5 @@
 import { normalizeDisplayText } from "../../lib/normalize-display-text";
+import { normaliserKortTeaser } from "../../lib/innlegg-kort-teaser";
 
 type LocalizedText = {
   no: string;
@@ -22,7 +23,7 @@ const tennisLedelseRaw = [
       bildeUrl: "/images/trykk-prestasjon.png",
       dato: "2026-05-26",
       visningsDato: "26.05.26",
-      kategori: "Kommersiell Ledelse",
+      kategori: "Endring og gjennomføring",
       link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
       innhold: `Mer trykk er ikke en ledelsesmodell. Det er en kortsiktig respons.
 
@@ -70,13 +71,13 @@ Kommersiell ledelse handler om å bygge motoren bak resultatene.
     },
     {
       id: "gronne-exceltall-transformasjon-2026-05",
-      tittel: "De grønne tallene er ikke problemet. 📈",
+      tittel: "De grønne tallene er ikke problemet.",
       teaser:
         "Business caset ser bra ut i Excel – men gevinstene lekker ofte i drift. Gode transformasjoner starter med hele virkeligheten, ikke bare kurvene.",
       bildeUrl: "/images/grønne-exceltall.png",
       dato: "2026-05-19",
       visningsDato: "19.05.26",
-      kategori: "Generell ledelse og strategi",
+      kategori: "Strategi og virksomhetsutvikling",
       link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
       innhold: `Problemet er alt de ikke viser.
 
@@ -117,7 +118,7 @@ Det handler om å se hva endringen gjør med mennesker, kunder og drift.
       bildeUrl: "/images/pappa-ikke-trener.png",
       dato: "2026-05-09",
       visningsDato: "09.05.26",
-      kategori: "Kommersiell Ledelse",
+      kategori: "Lederstil, kultur og team",
       link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
       innhold: `Den siste uken har jeg skrevet om motivasjon, tillit og psykologisk trygghet. Temaer vi ofte snakker om i ledelse, men som kanskje blir enda viktigere hjemme.
 
@@ -175,7 +176,7 @@ Og er dette noe som endrer seg med alder?
       bildeUrl: "/images/psykologisk-trygghet.png",
       dato: "2026-05-07",
       visningsDato: "07.05.26",
-      kategori: "Kommersiell Ledelse",
+      kategori: "Lederstil, kultur og team",
       link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
       innhold: `Psykologisk trygghet blir av og til fremstilt som om det handler om å gjøre arbeidslivet mykere, mindre direkte eller mindre krevende.
 
@@ -232,7 +233,7 @@ Det er et tema om kvalitet, ansvar og gjennomføring i streben etter å nå mål
       bildeUrl: "/images/effektiv-endring.jfif",
       dato: "2026-05-05",
       visningsDato: "05.05.26",
-      kategori: "Generell ledelse og strategi",
+      kategori: "Endring og gjennomføring",
       link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
       innhold: `Folk motsetter seg sjelden endring. De motsetter seg uklarhet, avstand og lav tillit.
 
@@ -268,7 +269,7 @@ Forskning peker i samme retning. Ansatte i høy-tillitsorganisasjoner rapportere
       bildeUrl: "/images/bonus.png",
       dato: "2026-04-28",
       visningsDato: "28.04.26",
-      kategori: "Kommersiell Ledelse",
+      kategori: "Lederstil, kultur og team",
       link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
       innhold: `𝐇𝐯𝐚 𝐦𝐨𝐭𝐢𝐯𝐞𝐫𝐞𝐫 𝐃𝐄𝐆 og 𝐦𝐞𝐧𝐧𝐞𝐬𝐤𝐞𝐫 𝐢 𝐤𝐮𝐧𝐧𝐬𝐤𝐚𝐩𝐬𝐚𝐫𝐛𝐞𝐢𝐝?
 
@@ -314,7 +315,7 @@ Selv sterk motivasjon er ikke nok hvis mennesker ikke har tillit til retningen, 
       bildeUrl: "/images/intentions.png",
       dato: "2026-04-20",
       visningsDato: "20.04.26",
-      kategori: "Kommersiell Ledelse",
+      kategori: "Strategi og virksomhetsutvikling",
       link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
       innhold: `De fleste virksomheter jeg møter har ikke mangel på ambisjoner, strategier eller vilje til endring. De har et annet problem hvilket er at det som besluttes i møterommet, skjer ikke i markedet.
 
@@ -341,7 +342,7 @@ Den vanskeligste samtalen i mange ledergrupper er ikke om retning. Den er om hva
       bildeKortFokus: "center center",
       dato: "2026-04-16",
       visningsDato: "16.04.2026",
-      kategori: "Kommersiell Ledelse",
+      kategori: "Strategi og virksomhetsutvikling",
       link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
       innhold: `Den siste tiden har jeg skrevet mest om AI, fremtidens teknologiledelse og hvordan nye verktøy vil påvirke arbeidslivet. Det kommer jeg til å fortsette med.
 
@@ -382,7 +383,7 @@ Derfor kommer neste innlegg til å ta utgangspunkt i en av titlene fra mitt BI-a
       bildeUrl: "/images/innovasjon.jpg",
       dato: "2026-03-28",
       visningsDato: "28.03.2026",
-      kategori: "Kommersiell Ledelse",
+      kategori: "Strategi og virksomhetsutvikling",
       link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
       innhold: `𝗦𝗹𝗶𝗸 𝗯𝘆𝗴𝗴𝗲𝗿 𝗱𝘂 𝗲𝗻 𝗼𝗿𝗴𝗮𝗻𝗶𝘀𝗮𝘀𝗷𝗼𝗻 𝗵𝘃𝗼𝗿 𝗶𝗱𝗲𝗲𝗿 𝗯𝗹𝗶𝗿 𝘁𝗶𝗹 𝘃𝗲𝗿𝗱𝗶
 
@@ -462,7 +463,7 @@ Hva fungerer og hva mangler? Jeg setter stor pris på alle tilbakemeldinger!
       bildeUrl: "/images/attitude.jfif",
       dato: "2016-10-08",
       visningsDato: "08.10.2016",
-      kategori: "Kommersiell Ledelse",
+      kategori: "Lederstil, kultur og team",
       link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
       innhold: `Bildet viser en «Quote of the Month» på en tavle fra et tidligere arbeidssted.
 
@@ -472,14 +473,15 @@ En enkel, men effektiv påminnelse om at holdning ofte er det som avgjør om kun
     },
     {
       id: "visindi-rekruttering-2024-01",
-      tittel: "Hyggelig gest av Visindi som kjørte en god og profesjonell rekrutteringsprosess da jeg ble headhuntet til Franzefoss Gjenvinning AS!",
+      tittel:
+        "Hyggelig gest av Visindi som kjørte en god og profesjonell rekrutteringsprosess\nda jeg ble headhuntet til Franzefoss Gjenvinning AS!",
       teaser:
-        "Takker Visindi for en god og profesjonell rekrutteringsprosess ved headhunting til Franzefoss Gjenvinning.",
+        "Takker Visindi for en god og profesjonell rekrutteringsprosess ved headhunting til Franzefoss\u00A0Gjenvinning.",
       bildeUrl: "/images/visindi.jfif",
       bildeKortFokus: "78% center",
       dato: "2024-01-03",
       visningsDato: "03.01.2024",
-      kategori: "Kommersiell Ledelse",
+      kategori: "Kommersiell ledelse og salg",
       link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
       innhold: ``,
     },
@@ -491,7 +493,7 @@ En enkel, men effektiv påminnelse om at holdning ofte er det som avgjør om kun
       bildeUrl: "/images/obf-deltakelse.jfif",
       dato: "2025-09-23",
       visningsDato: "23.09.2025",
-      kategori: "Kommersiell Ledelse",
+      kategori: "Strategi og virksomhetsutvikling",
       link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
       innhold: `Jeg ser frem til et tettpakket program med sterke foredragsholdere, nye perspektiver og mye faglig påfyll. Like viktig er møtene med både gamle og nye bekjentskaper – alltid spennende å dele erfaringer og bygge relasjoner på tvers av bransjer.
 
@@ -508,7 +510,7 @@ https://www.obforum.com/`,
       bildeKortFokus: "28% center",
       dato: "2025-09-26",
       visningsDato: "26.09.2025",
-      kategori: "Kommersiell Ledelse",
+      kategori: "Strategi og virksomhetsutvikling",
       link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
       innhold: `To inspirerende og lærerike dager er over – fylt med sterke foredrag, viktige perspektiver og energi rundt strategi, ledelse, teknologi og fremtidens muligheter. I tillegg markerte årets konferanse 10-årsjubileet til Oslo Business Forum – en milepæl som viser hvilken betydning arenaen har fått for ledere.
 
@@ -548,7 +550,7 @@ En stor takk til Christoffer Omberg og hele det dyktige og hyggelige(!) OBF-team
       bildeUrl: "/images/kjeft.jfif",
       dato: "2025-12-04",
       visningsDato: "04.12.2025",
-      kategori: "Kommersiell Ledelse",
+      kategori: "Lederstil, kultur og team",
       link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
       innhold: `På mandag deltok jeg på et innsiktsfullt foredrag i regi av Econa med professor <strong>Henning Bang</strong>. Temaet var <strong>psykologisk trygghet</strong>, og hva som faktisk bygger den – eller undergraver den.
 Foredraget traff, spesielt fordi det utfordrer både ledere og medarbeidere.
@@ -601,7 +603,7 @@ Jeg lærer mest når andre tenker høyt sammen med meg.`,
       bildeUrl: "/images/maraton.jfif",
       dato: "2025-12-16",
       visningsDato: "16.12.2025",
-      kategori: "Kommersiell Ledelse",
+      kategori: "Lederstil, kultur og team",
       link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
       innhold: `På lørdag deltok jeg i Marakez Pyramids Half Marathon i Kairo, Egypt.
 10.000 løpere fra 122 land på startstreken – det ble 18. plass i min klasse.
@@ -635,7 +637,7 @@ En påminnelse om hva langsiktig innsats, hardt arbeid, utholdenhet og styring k
       bildeUrl: "/images/videre.jfif",
       dato: "2026-01-21",
       visningsDato: "21.01.2026",
-      kategori: "Kommersiell Ledelse",
+      kategori: "Kommersiell ledelse og salg",
       link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
       innhold: `Bakgrunnen er ulike strategiske syn på veien videre – og et bevisst valg om å investere tid i videre utvikling og kompetanse før endringene tvinger seg frem, blant annet innen AI.
 
@@ -669,7 +671,7 @@ Ta gjerne kontakt for en uformell samtale.`,
       bildeUrl: "/images/brains.jfif",
       dato: "2026-01-15",
       visningsDato: "15.01.2026",
-      kategori: "Kommersiell Ledelse",
+      kategori: "Lederstil, kultur og team",
       link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
       innhold: `I går var jeg på frokostmøte på BI Executive. Temaet var «Slik blir autentisiteten lederens strategiske fortrinn i 2026», med en tydelig kobling til bruk av KI.
 
@@ -702,7 +704,7 @@ Jeg spurte om <strong>tankestrek</strong> – og fikk klar beskjed om å fortset
       bildeUrl: "/images/frastøtende.jfif",
       dato: "2025-12-18",
       visningsDato: "18.12.2025",
-      kategori: "Kommersiell Ledelse",
+      kategori: "Kommersiell ledelse og salg",
       link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
       innhold: `Med referanse til denne artikkelen (<a href="https://www.linkedin.com/feed/update/urn:li:activity:7407361511905452033/" target="_blank" rel="noopener noreferrer">https://www.linkedin.com/feed/update/urn:li:activity:7407361511905452033/</a> ) fra ASD Group setter Espen Hellman ord på noe svært viktig for salgsfaget. Tilliten til selgere er lav, og få kunder opplever reell verdi i første møte. Samtidig viser artikkelen at det er enkle prinsipper som skiller de beste: Lytt, vær ærlig – og ikke press.
 
@@ -729,7 +731,7 @@ For meg er en god selger en rådgiver og partner – en som lytter aktivt, er æ
       bildeKortFokus: "82% 13%",
       dato: "2026-01-26",
       visningsDato: "26.01.2026",
-      kategori: "Kommersiell Ledelse",
+      kategori: "Strategi og virksomhetsutvikling",
       link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
       innhold: `Mange snakker om skalering som om det først og fremst handler om tempo, ambisjoner og vekst i tall. Min erfaring er at utfordringene oftere oppstår i overgangen fra det som fungerte i går til neste fase.
 
@@ -759,7 +761,7 @@ Min viktigste påminnelse etter webinaret er enkel, men krevende:
       bildeKortFokus: "center 38%",
       dato: "2026-02-10",
       visningsDato: "10.02.2026",
-      kategori: "Kommersiell Ledelse",
+      kategori: "Strategi og virksomhetsutvikling",
       link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
       innhold: `Å jobbe målrettet betyr ikke alltid å vinne.
 Noen ganger seirer du. Andre ganger taper du finalen.
@@ -801,7 +803,7 @@ Overføringsverdien til arbeidsliv og ledelse er større enn mange tror.`,
       bildeUrl: "/images/landet-rikt.png",
       dato: "2026-02-05",
       visningsDato: "05.02.2026",
-      kategori: "Kommersiell Ledelse",
+      kategori: "Strategi og virksomhetsutvikling",
       link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
       innhold: `Din virksomhet kan være langt inne i forfall.
 Men du merker det ikke – fordi kontoen er full.
@@ -834,7 +836,7 @@ Spørsmålet er ikke om dette kan snus. Historien viser at det kan det. Hva må 
       bildeUrl: "/images/norge-virksomhet.jpg",
       dato: "2026-02-07",
       visningsDato: "07.02.2026",
-      kategori: "Kommersiell Ledelse",
+      kategori: "Strategi og virksomhetsutvikling",
       link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
       innhold: `I <em>Landet som ble for rikt</em> beskriver Martin Bech Holte hvordan Norge gradvis har mistet fart, ikke fordi vi mangler ressurser, men fordi de brukes feil. Det interessante spørsmålet for oss som leder virksomheter er ikke om analysen er helt presis, men hva vi kan lære av mønsteret – og gjøre annerledes.
 
@@ -911,7 +913,7 @@ Commercial leadership is about building the engine behind the results.
 #kommersiellledelse #prestasjonskultur #salgsutvikling #kundeinnsikt #gjennomføringskraft`,
   },
   "gronne-exceltall-transformasjon-2026-05": {
-    tittel: "The green numbers are not the problem. 📈",
+    tittel: "The green numbers are not the problem.",
     teaser: "The business case looks good in Excel — but benefits often leak in operations. Good transformations start with the full reality, not just the curves.",
     innhold: `The problem is everything they do not show.
 
@@ -1239,8 +1241,9 @@ The point is a simple letter-to-number code where A=1, B=2, and so on up to Z=26
 A simple but effective reminder that mindset often determines whether knowledge and effort actually pay off in practice.`,
   },
   "visindi-rekruttering-2024-01": {
-    tittel: "Nice gesture by Visindi who ran a good and professional recruitment process when I was headhunted to Franzefoss Gjenvinning AS!",
-    teaser: "Thanks Visindi for a good and professional recruitment process in headhunting for Franzefoss Gjenvinning.",
+    tittel:
+      "Nice gesture by Visindi who ran a good and professional recruitment process\nwhen I was headhunted to Franzefoss Gjenvinning AS!",
+    teaser: "Thanks Visindi for a good and professional recruitment process in headhunting for Franzefoss\u00A0Gjenvinning.",
     innhold: ``,
   },
   "obf-klar-2025-01": {
@@ -1548,6 +1551,9 @@ export const tennisLedelse = tennisLedelseRaw.map((innlegg) => ({
     normalizeDisplayText(innlegg.tittel),
     normalizeDisplayText(tennisLedelseEn[innlegg.id]?.tittel ?? innlegg.tittel)
   ),
-  teaser: localize(innlegg.teaser, tennisLedelseEn[innlegg.id].teaser),
+  teaser: localize(
+    normaliserKortTeaser(normalizeDisplayText(innlegg.teaser)),
+    normaliserKortTeaser(normalizeDisplayText(tennisLedelseEn[innlegg.id].teaser))
+  ),
   innhold: localize(innlegg.innhold, tennisLedelseEn[innlegg.id].innhold),
 }));

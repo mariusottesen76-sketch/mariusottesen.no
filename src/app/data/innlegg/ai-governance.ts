@@ -1,4 +1,5 @@
 import { normalizeDisplayText } from "../../lib/normalize-display-text";
+import { normaliserKortTeaser } from "../../lib/innlegg-kort-teaser";
 
 type LocalizedText = {
   no: string;
@@ -21,7 +22,218 @@ const tegneserieKarusellBilder = Array.from({ length: 9 }, (_, i) => ({
   },
 }));
 
+const biAvslutningKarusellBase = "/images/BI%20-%20LinkedIn";
+const biAvslutningKarusellBilder = Array.from({ length: 7 }, (_, i) => ({
+  src: `${biAvslutningKarusellBase}/BI${i + 1}.png`,
+  alt: {
+    no: `GenAI for Business – karusell ${i + 1} av 7`,
+    en: `Generative AI for Business – carousel ${i + 1} of 7`,
+  },
+}));
+
 const aiGovernanceRaw = [
+    {
+      id: "ai-agent-007-master-bi-2026-06",
+      tittel: "AI Agent 007?",
+      teaser:
+        "GenAI for Business på BI med toppkarakter – nå klar i kampen om de beste hodene: AI-strategi, agenter og praktisk verdiskaping, og hvorfor gapet vokser mellom de som tar grep og de som venter.",
+      bildeUrl: "/images/ai-agent-007.png",
+      bildeVersjon: "2026-06-06",
+      dato: "2026-06-06",
+      visningsDato: "06.06.26",
+      kategori: "AI / KI",
+      link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
+      innhold: `Jeg registrerer at jakten på neste James Bond er i gang.
+
+Siden agentrollen visstnok er ledig, melder jeg meg herved på i kampen om de beste hodene og prosjektene. 🙋‍♂️
+
+Ikke nødvendigvis for MI6, men for virksomheter som ser etter kommersiell ledelse, strategi og AI-kompetanse i samme pakke.
+
+Dette halvåret har jeg tatt Master of Management-kurset 'Generative AI for Business' ved BI. Resultatet kom nå, og "oppdraget" kunne knapt vært løst bedre.
+
+Men det viktigste er ikke karakteren. Det er hva arbeidet har gitt av innsikt.
+
+Jeg har jobbet med AI-strategi, roadmaps og arbeidsflytdesign, AI-implementering, multimodalt innhold, app- og agentlogikk, dataflyt, kundeprosesser, chatbots, governance og praktisk verdiskaping.
+
+Jo mer jeg bygger, tester og analyserer, jo tydeligere blir verdien. Interessen øker nesten eksponentielt, og flere AI prosjekter er på trappene.
+
+Et av dem er et refleksjons- og utviklingsverktøy som skal hjelpe samspillet mellom ledere, medarbeidere og team ved å forstå hvordan profil, rolle, dagsform og situasjon påvirker kommunikasjon, prioriteringer og gjennomføring.
+
+For meg handler AI ikke bare om teknologi. Det handler om hva jeg kan bidra med direkte, både innenfra og utenfra virksomheten. Bedre beslutninger, smartere prosesser, tydeligere kundeverdi og mer effektiv kommersiell gjennomføring.
+
+Et klokt hode fortalte meg nylig at endringene i arbeidslivet peker mot et større behov for å videreutvikle kompetansen vi allerede har. Når AI tar mer av den rene produksjonen, blir det mindre tid på å bare produsere, og mer tid på vurdering, retning, prioritering og helhetsforståelse. Det ble også løftet frem at erfarne medarbeidere kan få økt verdi, fordi de ofte har bedre forståelse for helhet, sammenhenger og kontekst. 💥
+
+Jeg kunne selvfølgelig ikke vært mer enig!
+
+Gapet øker nå mellom de som tar grep, og de som fortsatt venter.
+
+Hvor lenge har man egentlig råd til å sitte på sidelinjen?
+
+👉 Tar gjerne en kaffe med deg som vil diskutere hvor AI kan skape reell verdi.
+
+#AI #Ledelse #KommersiellLedelse #DigitalTransformasjon #Verdiskaping`,
+    },
+    {
+      id: "crm-genai-medspiller-knowit-2026-06",
+      tittel: "Når CRM blir en medspiller",
+      teaser:
+        "Frokost hos Knowit om AI og CRM: fra passive dashboards til aktivt kommersielt beslutningslag – og hvorfor gapet mellom AI-ambisjon og «current reality» er et ledertema.",
+      bildeUrl: "/images/crm-data.png",
+      bildeVersjon: "2026-06-04",
+      dato: "2026-06-04",
+      visningsDato: "04.06.26",
+      kategori: "AI / KI",
+      link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
+      innhold: `Den nye måten å jobbe på starter når dataene vi allerede har, begynner å hjelpe oss å ta bedre valg. Den starter ikke med flere dashboards.
+
+På tirsdag fikk jeg bekreftet flere av mine egne tanker om AI, CRM og kommersiell utvikling på et frokostmøte hos Knowit.
+
+Mange virksomheter har store mengder strukturerte og ustrukturerte kundedata, aktivitetsdata, ordredata, møtenotater, e-poster og historikk.
+
+Likevel brukes mye av dette fortsatt for passivt.
+
+🔸 Vi leter i dashboards.
+🔸 Klikker oss gjennom et utall CRM-faner.
+🔸 Sjekker e-post.
+🔸 Avstemmer regneark.
+🔸 Snakker med kollegaer på tvers av ulike funksjoner.
+🔸 Sjekker egne notater og prøver å skape oversikt manuelt.
+
+Det er den gamle arbeidsmåten, der mange av oss kjenner oss igjen i.
+
+Den nye arbeidsmåten handler ikke om å erstatte menneskelig vurdering. Den handler om å gi mennesker bedre beslutningsstøtte, tettere på arbeidsflyten. 💡
+
+For meg har CRM alltid vært et av de mest interessante områdene innenfor kommersiell utvikling, nettopp fordi det ligger så tett på kundeverdi, salgsledelse og operativ gjennomføring.
+
+Men CRM bør ikke bare være et system for enkle kundedata, registrering, kontroll og pipelineoppfølging.
+
+Det bør være et sted for aktivt kommersielt beslutningslag. Et system som hjelper oss å forstå kunder bedre.
+
+💥 Se mønstre tidligere.
+💥 Prioritere riktigere.
+💥 Forberede møter bedre.
+💥 Følge opp mer presist.
+💥 Og ikke minst bruke innsikt på tvers av salg, marked, kundeservice, drift og ledelse.
+
+👉 Hvordan kan vi hente ut mer av innsikten virksomheten allerede besitter, nyttiggjøre data bedre, og bruke dette mer effektivt i salg, kundeoppfølging og kommersiell ledelse?
+
+Jeg ønsker å utforske hvordan CRM kan videreutvikles ved hjelp av GenAI, derfor vil jeg ha dette som et av mine neste AI-prosjekter.
+
+For gapet mellom å bruke CRM på den gamle måten og å få fullt utbytte av potensialet er stort.
+
+Som grafene viser har mange virksomheter høye AI-ambisjoner. Men «current reality» er ofte langt svakere. Datakvalitet, governance, KPI-målinger, struktur og bruk i drift henger ikke alltid med.
+
+Suksess med AI handler om å bygge nye arbeidsmåter som skaper verdi for hele organisasjonen.
+
+Nicolai Tangen og Oljefondet har sagt det godt:
+Når andre får 10–20 % forbedring på bunnlinjen, hvor mange år har du råd til å stå utenfor? Når konkurrentene lærer raskere i ett år, to år eller tre år, blir gapet vanskelig å ta igjen.
+
+Dette er et ledertema. AI vil ikke skape varig verdi hvis det blir et sideprosjekt. Verdien kommer når data, mennesker, arbeidsflyt og styring kobles til konkrete forretningsresultater. 📈
+
+Takk til Knowit, Jprofessionals, Snowflake og Mowi for et svært relevant seminar. Spesielt nyttig å høre perspektivene fra Morten Hauge og Hamik Sevan om hvordan data, prosesser, teknologi, styring og mennesker kan kobles sammen for å skape verdi i arbeidsflyten. 💯
+
+#AI #CRM #KommersiellLedelse #DigitalTransformasjon #Kundeverdi`,
+    },
+    {
+      id: "ai-value-lab-smb-praksis-2026-06",
+      tittel: "AI skaper ikke verdi før hverdagen endres",
+      teaser:
+        "Fra AI Value Lab Oslo: interesse og demoer stopper ofte i hverdagen. For SMB handler det om riktige brukscase, rask testing og praktisk verdiskaping – vi søker kontakt for å lære mer.",
+      bildeUrl: "/images/value-lab-smb.png",
+      bildeKortFokus: "14% center",
+      bildeKortZoom: 1.15,
+      bildeVersjon: "2026-06-03",
+      dato: "2026-06-03",
+      visningsDato: "03.06.26",
+      kategori: "AI / KI",
+      link: "https://www.linkedin.com/company/aivaluelaboslo/",
+      innhold: `Vi ser et mønster:
+
+🔸 Ledere er nysgjerrige.
+🔸 Ansatte eksperimenterer.
+🔸 Noen har vært på kurs.
+🔸 Mange har sett imponerende demoer.
+
+Likevel stopper mye opp.
+
+Ikke fordi interessen mangler, men fordi hverdagen tar over. AI drukner i tidsklemma.
+
+Nicolai Tangen i Oljefondet har pekt på et viktig poeng:
+Når noen lærer raskere med AI år etter år, blir forspranget vanskelig å hente inn.
+
+Spørsmålet er derfor ikke bare om AI kan gi verdi. Spørsmålet er hvor lenge man har råd til å stå utenfor ❗
+
+Dette handler ikke om teknologioptimisme. Det handler om konkurransekraft, læringshastighet og evnen til å ta i bruk nye arbeidsformer.
+
+For mange SMB er spørsmålet derfor ikke lenger «bør vi bruke AI?», men hvor man bør starte.
+
+SMB har sjelden store IT-avdelinger, egne AI-team eller tid til lange strategiprosesser. Samtidig finnes det mange konkrete prosesser der AI kan gi verdi. For å nevne noen:
+
+💥 Kundeservice.
+💥 Salg og oppfølging.
+💥 Booking og administrasjon.
+💥 Intern kommunikasjon.
+💥 Markedsinnsikt.
+💥 Dokumentasjon.
+💥 Opplæring.
+
+<a href="https://www.linkedin.com/company/aivaluelaboslo/" target="_blank" rel="noopener noreferrer" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">AI Value Lab Oslo</a> sin hypotese er enkel:
+
+Verdien kommer når AI kobles til reelle arbeidsprosesser, tydelig ansvar og konkrete forbedringer.
+
+Vi utvikler nå en praktisk tilnærming:
+
+🔸 Finne riktige brukscase.
+🔸 Prioritere det som gir mest verdi.
+🔸 Teste raskt uten å gjøre det komplisert.
+🔸 Sikre ansvarlig bruk fra start.
+
+Derfor ønsker vi kontakt med flere SMB.
+
+Ikke for å selge en ferdig løsning, men for å forstå hvor AI-arbeidet stopper opp, hvilke prosesser som stjeler tid, hvor usikkerheten er størst, og hvilke brukscase som kan gi verdi raskt.
+
+💡 <a href="https://www.linkedin.com/company/aivaluelaboslo/" target="_blank" rel="noopener noreferrer" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">AI Value Lab Oslo</a> er fortsatt et lærings- og utviklingsinitiativ. Men retningen blir tydeligere:
+Fra AI-interesse til praktisk verdiskaping.
+
+👉 Har du erfaring fra en SMB der AI er på agendaen, men der det fortsatt er uklart hvor man bør starte? <a href="https://www.linkedin.com/company/aivaluelaboslo/" target="_blank" rel="noopener noreferrer" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">Ta kontakt med oss på LinkedIn</a>.
+
+#AIValueLabOslo #GenAI #SMB #forretningsutvikling #ledelse`,
+    },
+    {
+      id: "bi-genai-avslutning-master-2026-06",
+      tittel: "Ferdig, men akkurat startet",
+      teaser:
+        "I helgen leverte jeg siste prosjektoppgave i Generative AI for Business på BI. Caset Skøyenåsen Tannklinikk: GenAI i pasient- og kundereisen gjennom nettside, chatbot og booking. Strategisk implementering og bygging i praksis – og hvordan ny kompetanse forsterker kommersiell ledelse videre.",
+      bildeUrl: `${biAvslutningKarusellBase}/BI1.png`,
+      bildeVersjon: "2026-06-02",
+      dato: "2026-06-02",
+      visningsDato: "02.06.26",
+      kategori: "AI / KI",
+      link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
+      innhold: `I helgen leverte jeg min siste prosjektoppgave i <em>Generative AI for Business</em> på BI.
+
+Det markerer avslutningen på masterkurset med blant annet tre eksamensprosjekter, praktisk bruk av AI-verktøy, bygging, strategi, analyse og en større individuell prosjektoppgave.
+
+Den siste oppgaven handlet om hvordan Skøyenåsen Tannklinikk kan bruke GenAI til å forbedre pasient- og kundereisen gjennom ny nettside, chatbot og online booking. Kjernen var å gjøre første kontakt med klinikken mer guidet, relevant og effektiv gjennom behovsavklaring, bookingstøtte og pasientkommunikasjon.
+
+Oppgaven handlet om strategisk AI-implementering, men jeg valgte også å bygge deler av løsningen for å teste hvordan dette kan fungere i praksis.
+
+Det viktigste jeg tar med meg er likevel bredere enn selve caset.
+
+AI skaper først verdi når det kobles til reelle arbeidsflyter, tydelige problemer, mennesker, risiko og kommersiell gjennomføring. 💯
+
+For meg har dette gitt mye inspirasjon videre. Både som leder, i kommersiell sammenheng og i arbeidet med å forstå hvordan AI kan brukes til å skape konkret verdi i virksomheter.
+
+Derfor er jeg ikke egentlig ferdig.
+
+Jeg tar med meg ny AI-kompetanse som et viktig supplement til min kommersielle kjernekompetanse, og ser store muligheter for å bruke dette til å skape verdi i flere bransjer og selskaper. 💥
+
+💡 Noen av refleksjonene deler jeg i karusellen.
+
+#GenerativeAI #AIImplementering #DigitalTransformasjon #KommersiellLedelse #Ledelse`,
+      karusellBilder: biAvslutningKarusellBilder,
+      karusellPdfUrl: `${biAvslutningKarusellBase}/bi-avslutning-karusell.pdf`,
+    },
     {
       id: "ai-kompetanse-tech-frokost-telenor-2026-05",
       tittel: "AI-kompetansegapet vokser der erfaringen ikke bygges",
@@ -1605,6 +1817,176 @@ AI-dømmekraft er ikke en teknisk nisjeferdighet. Det er en lederkompetanse.`
 ];
 
 const aiGovernanceEn: Record<string, LocalizedTextMap> = {
+  "ai-agent-007-master-bi-2026-06": {
+    tittel: "AI Agent 007?",
+    teaser:
+      "Generative AI for Business at BI with top marks — now ready in the fight for the best minds: AI strategy, agents and practical value creation, and why the gap is growing between those who act and those who wait.",
+    innhold: `I note that the hunt for the next James Bond is underway.
+
+Since the agent role is apparently vacant, I hereby throw my hat in the ring for the best minds and projects. 🙋‍♂️
+
+Not necessarily for MI6, but for organisations looking for commercial leadership, strategy and AI competence in the same package.
+
+This semester I completed the Master of Management course 'Generative AI for Business' at BI. The result arrived recently, and the "mission" could hardly have been completed better.
+
+But what matters most is not the grade. It is the insight the work has provided.
+
+I have worked on AI strategy, roadmaps and workflow design, AI implementation, multimodal content, app and agent logic, data flows, customer processes, chatbots, governance and practical value creation.
+
+The more I build, test and analyse, the clearer the value becomes. Interest is growing almost exponentially, and several AI projects are on the way.
+
+One of them is a reflection and development tool designed to support collaboration between leaders, employees and teams by understanding how profile, role, daily form and situation affect communication, priorities and execution.
+
+For me, AI is not only about technology. It is about what I can contribute directly, both inside and outside the organisation. Better decisions, smarter processes, clearer customer value and more effective commercial execution.
+
+A wise head told me recently that changes in working life point to a greater need to develop the competence we already have. When AI takes more of pure production, there is less time for just producing and more time for judgement, direction, prioritisation and holistic understanding. It was also highlighted that experienced employees can gain increased value because they often have a better grasp of the whole, connections and context. 💥
+
+I could not agree more!
+
+The gap is now widening between those who take action and those who still wait.
+
+How long can you really afford to sit on the sidelines?
+
+👉 I am happy to grab a coffee with you if you want to discuss where AI can create real value.
+
+#AI #Leadership #CommercialLeadership #DigitalTransformation #ValueCreation`,
+  },
+  "crm-genai-medspiller-knowit-2026-06": {
+    tittel: "When CRM becomes a teammate",
+    teaser:
+      "Breakfast at Knowit on AI and CRM: from passive dashboards to an active commercial decision layer — and why the gap between AI ambition and \"current reality\" is a leadership issue.",
+    innhold: `The new way of working starts when the data we already have begins to help us make better decisions. It does not start with more dashboards.
+
+On Tuesday, a breakfast meeting at Knowit confirmed several of my own thoughts on AI, CRM and commercial development.
+
+Many organisations hold large volumes of structured and unstructured customer data, activity data, order data, meeting notes, emails and history.
+
+Yet much of this is still used passively.
+
+🔸 We search in dashboards.
+🔸 Click through countless CRM tabs.
+🔸 Check email.
+🔸 Reconcile spreadsheets.
+🔸 Talk with colleagues across different functions.
+🔸 Check our own notes and try to create overview manually.
+
+That is the old way of working, which many of us recognise.
+
+The new way of working is not about replacing human judgement. It is about giving people better decision support, closer to the workflow. 💡
+
+For me, CRM has always been one of the most interesting areas within commercial development, precisely because it sits so close to customer value, sales leadership and operational execution.
+
+But CRM should not only be a system for simple customer data, registration, control and pipeline follow-up.
+
+It should be a place for an active commercial decision layer. A system that helps us understand customers better.
+
+💥 Spot patterns earlier.
+💥 Prioritise more accurately.
+💥 Prepare meetings better.
+💥 Follow up more precisely.
+💥 And not least use insight across sales, marketing, customer service, operations and leadership.
+
+👉 How can we extract more of the insight the organisation already holds, make better use of data, and apply this more effectively in sales, customer follow-up and commercial leadership?
+
+I want to explore how CRM can be developed further with GenAI, so I intend to make this one of my next AI projects.
+
+The gap between using CRM the old way and getting full benefit from the potential is large.
+
+As the charts show, many organisations have high AI ambitions. But \"current reality\" is often much weaker. Data quality, governance, KPI measurement, structure and use in operations do not always keep pace.
+
+Success with AI is about building new ways of working that create value for the whole organisation.
+
+Nicolai Tangen and the Oil Fund have put it well:
+When others achieve 10–20% improvement on the bottom line, how many years can you afford to stay on the sidelines? When competitors learn faster over one, two or three years, the gap becomes hard to close.
+
+This is a leadership theme. AI will not create lasting value if it becomes a side project. Value comes when data, people, workflow and governance are connected to concrete business results. 📈
+
+Thanks to Knowit, Jprofessionals, Snowflake and Mowi for a highly relevant seminar. Especially useful to hear perspectives from Morten Hauge and Hamik Sevan on how data, processes, technology, governance and people can be connected to create value in the workflow. 💯
+
+#AI #CRM #CommercialLeadership #DigitalTransformation #CustomerValue`,
+  },
+  "ai-value-lab-smb-praksis-2026-06": {
+    tittel: "AI does not create value until everyday work changes",
+    teaser:
+      "From AI Value Lab Oslo: interest and demos often stall in everyday work. For SMBs it is about the right use cases, rapid testing and practical value creation – we welcome contact to learn more.",
+    innhold: `We see a pattern:
+
+🔸 Leaders are curious.
+🔸 Employees experiment.
+🔸 Some have attended courses.
+🔸 Many have seen impressive demos.
+
+Yet much still stalls.
+
+Not because interest is missing, but because everyday work takes over. AI drowns in the time squeeze.
+
+Nicolai Tangen at the Oil Fund has pointed to an important insight:
+When some people learn faster with AI year after year, the gap becomes hard to close.
+
+The question is therefore not only whether AI can create value. The question is how long you can afford to stay on the sidelines ❗
+
+This is not about technology optimism. It is about competitiveness, learning speed and the ability to adopt new ways of working.
+
+For many SMBs, the question is no longer "should we use AI?" but where to start.
+
+SMBs rarely have large IT departments, dedicated AI teams or time for long strategy processes. At the same time, there are many concrete processes where AI can create value. To name a few:
+
+💥 Customer service.
+💥 Sales and follow-up.
+💥 Booking and administration.
+💥 Internal communication.
+💥 Market insight.
+💥 Documentation.
+💥 Training.
+
+The hypothesis at <a href="https://www.linkedin.com/company/aivaluelaboslo/" target="_blank" rel="noopener noreferrer" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">AI Value Lab Oslo</a> is simple:
+
+Value comes when AI is connected to real workflows, clear accountability and concrete improvements.
+
+We are now developing a practical approach:
+
+🔸 Find the right use cases.
+🔸 Prioritise what creates the most value.
+🔸 Test quickly without making it complicated.
+🔸 Ensure responsible use from the start.
+
+That is why we want contact with more SMBs.
+
+Not to sell a finished solution, but to understand where AI work stalls, which processes steal time, where uncertainty is greatest, and which use cases can create value quickly.
+
+💡 <a href="https://www.linkedin.com/company/aivaluelaboslo/" target="_blank" rel="noopener noreferrer" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">AI Value Lab Oslo</a> remains a learning and development initiative. But the direction is becoming clearer:
+From AI interest to practical value creation.
+
+👉 Do you have experience from an SMB where AI is on the agenda, but it is still unclear where to start? <a href="https://www.linkedin.com/company/aivaluelaboslo/" target="_blank" rel="noopener noreferrer" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">Get in touch with us on LinkedIn</a>.
+
+#AIValueLabOslo #GenAI #SMB #BusinessDevelopment #Leadership`,
+  },
+  "bi-genai-avslutning-master-2026-06": {
+    tittel: "Finished, but just getting started",
+    teaser:
+      "This weekend I submitted my final project assignment in Generative AI for Business at BI. The Skøyenåsen Dental Clinic case: GenAI in the patient and customer journey through website, chatbot and booking. Strategic implementation and building in practice – and how new competence strengthens commercial leadership going forward.",
+    innhold: `This weekend I submitted my final project assignment in <em>Generative AI for Business</em> at BI.
+
+It marks the end of the master's programme, including three exam projects, practical use of AI tools, building, strategy, analysis and a larger individual project assignment.
+
+The final assignment was about how Skøyenåsen Dental Clinic can use GenAI to improve the patient and customer journey through a new website, chatbot and online booking. The core was to make first contact with the clinic more guided, relevant and efficient through needs clarification, booking support and patient communication.
+
+The assignment was about strategic AI implementation, but I also chose to build parts of the solution to test how this can work in practice.
+
+What I take away is broader than the case itself.
+
+AI creates value first when it is connected to real workflows, clear problems, people, risk and commercial execution. 💯
+
+For me this has been highly inspiring going forward — as a leader, in a commercial context and in understanding how AI can be used to create concrete value in organisations.
+
+So I am not really finished.
+
+I bring new AI competence as an important supplement to my commercial core skills, and see major opportunities to use this to create value across more industries and companies. 💥
+
+💡 Some of the reflections are shared in the carousel.
+
+#GenerativeAI #AIImplementation #DigitalTransformation #CommercialLeadership #Leadership`,
+  },
   "ai-kompetanse-tech-frokost-telenor-2026-05": {
     tittel: "The AI competence gap grows where experience is not built",
     teaser: "Telenor and Equinor at Digital Norway's tech breakfast: two paths for AI adoption, high-value commercial workflows — and a formula that shifts the discussion from potential to execution.",
@@ -2903,6 +3285,9 @@ export const aiGovernance = aiGovernanceRaw.map((innlegg) => ({
     normalizeDisplayText(innlegg.tittel),
     normalizeDisplayText(aiGovernanceEn[innlegg.id]?.tittel ?? innlegg.tittel)
   ),
-  teaser: localize(innlegg.teaser, aiGovernanceEn[innlegg.id].teaser),
+  teaser: localize(
+    normaliserKortTeaser(normalizeDisplayText(innlegg.teaser)),
+    normaliserKortTeaser(normalizeDisplayText(aiGovernanceEn[innlegg.id].teaser))
+  ),
   innhold: localize(innlegg.innhold, aiGovernanceEn[innlegg.id].innhold),
 }));
