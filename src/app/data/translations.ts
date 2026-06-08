@@ -99,6 +99,14 @@ const translations: Translations = {
     no: "Under finner du anbefalte lesestier og innholdsfortegnelse etter tema. Alle innlegg er nærmere beskrevet lenger ned på siden — med ingress, bilde og mulighet til å lese hele teksten.",
     en: "Below you will find recommended reading paths and a table of contents by topic. Every article is described in more detail further down the page — with a teaser, image and option to read the full text.",
   },
+  "fag.intro.why": {
+    no: "For meg er formidling av fag en av de mest effektive metodene for egen læring; ved å strukturere og lære bort komplekse emner, tvinges man til å se nye sammenhenger.",
+    en: "I regard knowledge sharing as one of the most powerful vehicles for continuous learning — structuring and articulating complex topics compels you to uncover new connections and sharper insights.",
+  },
+  "fag.intro.why.bridge": {
+    no: "Innleggene bygger derfor på det jeg faktisk jobber med. Det er kommersiell ledelse, transformasjon og praktisk AI der det skal omsettes til arbeidsflyt, beslutninger og gjennomføring.",
+    en: "The articles therefore build on what I actually work with. That is commercial leadership, transformation and practical AI where it must translate into workflow, decisions and execution.",
+  },
   "fag.intro.scroll": {
     no: "Hopp til alle innlegg i detalj",
     en: "Jump to all articles in detail",
@@ -134,8 +142,8 @@ const translations: Translations = {
     en: "Here you will find AI projects with status, relevance, maturity and next steps — from sales training and business-near cases to agentic workflows and decision support.",
   },
   "prosjekter.intro.2": {
-    no: "Hvert prosjekt beskriver hva som er bygget, hvordan det fungerer og hvorfor det er relevant. For metode, business case og tjenester, se",
-    en: "Each project describes what has been built, how it works and why it matters. For methodology, business case and services, see",
+    no: "Hvert prosjekt beskriver hva som er bygget, hvordan det fungerer og hvorfor det er relevant, inkludert muligheter for videreutvikling. For metode, business case og tjenester, se",
+    en: "Each project describes what has been built, how it works and why it matters, including options for further development. For methodology, business case and services, see",
   },
   "prosjekter.intro.2.link": { no: "Consulting", en: "Consulting" },
   "prosjekter.les": { no: "Les mer", en: "Read more" },

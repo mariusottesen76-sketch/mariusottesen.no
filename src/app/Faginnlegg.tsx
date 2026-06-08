@@ -162,6 +162,8 @@ const Faginnlegg = ({ onNavigate }: { onNavigate?: (tab: string) => void }) => {
           </h1>
           <div className="max-w-3xl">
             <p className="text-xl md:text-2xl text-slate-300 leading-relaxed font-light mb-4">{tr("fag.intro.1")}</p>
+            <p className="text-lg md:text-xl text-slate-400 italic leading-relaxed font-light mb-4">{tr("fag.intro.why")}</p>
+            <p className="text-lg md:text-xl text-slate-400 italic leading-relaxed font-light mb-4">{tr("fag.intro.why.bridge")}</p>
             <p className="text-lg md:text-xl text-slate-400 italic leading-relaxed font-light mb-4">{tr("fag.intro.2")}</p>
             <p className="text-base md:text-lg text-slate-300 leading-relaxed font-light mb-4">
               <a href="#fag-innlegg-oversikt" className={linkClass}>

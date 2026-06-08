@@ -110,11 +110,11 @@ function AppContent({ initialTab = "Profil" }: { initialTab?: string }) {
     "Profil",
     "Erfaring",
     "Resultater",
-    "Referanser",
     "Faginnlegg",
     "Prosjekter",
     "Consulting",
     "CV & Åpen søknad",
+    "Referanser",
     "Kontakt",
   ];
 

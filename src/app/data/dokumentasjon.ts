@@ -1,4 +1,5 @@
 import { Lang } from "../LanguageContext";
+import { AKTUELL_FOR_ROLLER } from "./aktuell-for-roller";
 
 export const linkedinUrl = "https://www.linkedin.com/in/mariusottesen/";
 
@@ -13,16 +14,7 @@ const data = {
       "Jeg er kjent for å skape fremdrift i organisasjoner som trenger klar retning, høy gjennomføringsevne og bedre samspill mellom strategi, salg, drift og teknologi. Lederstilen min er tydelig, involverende og relasjonssterk, med vekt på styrkebasert ledelse, tydelige forventninger og nær oppfølging.",
     ],
     rollerTitle: "Aktuell for roller innen",
-    roller: [
-      "Kommersiell leder",
-      "Salgsdirektør",
-      "CCO",
-      "Daglig leder SMB",
-      "Business Unit Manager",
-      "Commercial transformation",
-      "Commercial AI transformation",
-      "Kommersiell forretningsutvikler",
-    ],
+    roller: AKTUELL_FOR_ROLLER.no,
     resultaterTitle: "Utvalgte resultater",
     resultater: [
       "Franzefoss: Forbedret kapasitetsutnyttelse, tydeligere styringsmodell, KPI-er og økte marginer.",
@@ -52,7 +44,7 @@ const data = {
       "Ønsker du å besøke min LinkedIn-profil for mer informasjon, trykk på linken under:",
     ctaTitle: "Ønsker du å vurdere profilen videre?",
     ctaText:
-      "Se gjerne erfaring, resultater og referanser for mer kontekst, eller ta kontakt dersom du ønsker dialog om lederroller, kommersielle muligheter, AI-prosjekter eller samarbeid.",
+      "Se gjerne erfaring, resultater og referanser for mer kontekst, eller ta kontakt dersom du ønsker dialog om lederroller, consulting, kommersielle muligheter, AI-prosjekter eller samarbeid.",
     ctaErfaring: "Se erfaring",
     ctaResultater: "Se resultater",
     ctaKontakt: "Ta kontakt",
@@ -67,16 +59,7 @@ const data = {
       "I am known for creating momentum in organisations that need clearer direction, high execution capability and better alignment between strategy, sales, operations and technology. My leadership style is clear, engaging and relationship-oriented, with an emphasis on strengths-based leadership, explicit expectations and close follow-up.",
     ],
     rollerTitle: "Relevant for roles in",
-    roller: [
-      "Commercial leader",
-      "Sales director",
-      "CCO",
-      "Managing director SMB",
-      "Business Unit Manager",
-      "Commercial transformation",
-      "Commercial AI transformation",
-      "Commercial business developer",
-    ],
+    roller: AKTUELL_FOR_ROLLER.en,
     resultaterTitle: "Selected results",
     resultater: [
       "Franzefoss: Improved capacity utilisation, clearer governance model, KPIs and increased margins.",
@@ -106,7 +89,7 @@ const data = {
       "Would you like to visit my LinkedIn profile for more information? Click the link below:",
     ctaTitle: "Would you like to evaluate the profile further?",
     ctaText:
-      "See experience, results and references for more context, or get in touch if you would like to discuss leadership roles, commercial opportunities, AI projects or collaboration.",
+      "See experience, results and references for more context, or get in touch if you would like to discuss leadership roles, consulting, commercial opportunities, AI projects or collaboration.",
     ctaErfaring: "See experience",
     ctaResultater: "See results",
     ctaKontakt: "Get in touch",

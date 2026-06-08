@@ -1,5 +1,6 @@
 import { Lang } from "../LanguageContext";
 import { getProfilProofPoints } from "./proof-points";
+import { AKTUELL_FOR_ROLLER } from "./aktuell-for-roller";
 
 export type ProfilData = {
   ingress: string;
@@ -26,16 +27,7 @@ const data: Record<Lang, ProfilData> = {
     aiKort:
       "Jeg arbeider også med hvordan AI, data og nye arbeidsformer kan styrke beslutninger, effektivisere arbeidsprosesser og utvikle nye kommersielle muligheter. For meg handler AI ikke først og fremst om verktøy, men om arbeidsflyt, prioritering og gjennomføring.",
 
-    roller: [
-      "Kommersiell leder",
-      "Salgsdirektør",
-      "CCO",
-      "Daglig leder SMB",
-      "Business Unit Manager",
-      "Commercial transformation",
-      "Commercial AI transformation",
-      "Kommersiell forretningsutvikler",
-    ],
+    roller: AKTUELL_FOR_ROLLER.no,
 
     proofPoints: getProfilProofPoints("no"),
 
@@ -80,16 +72,7 @@ Jeg er utdannet *Master of Science in Business Administration (Siviløkonom)* fr
     aiKort:
       "I also work on how AI, data and new ways of working can strengthen decisions, streamline workflows and develop new commercial opportunities. For me, AI is not primarily about tools, but about workflow, prioritisation and execution.",
 
-    roller: [
-      "Commercial leader",
-      "Sales director",
-      "CCO",
-      "Managing director SMB",
-      "Business Unit Manager",
-      "Commercial transformation",
-      "Commercial AI transformation",
-      "Commercial business developer",
-    ],
+    roller: AKTUELL_FOR_ROLLER.en,
 
     proofPoints: getProfilProofPoints("en"),
 
