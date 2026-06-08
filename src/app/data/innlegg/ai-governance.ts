@@ -22,7 +22,7 @@ const tegneserieKarusellBilder = Array.from({ length: 9 }, (_, i) => ({
   },
 }));
 
-const biAvslutningKarusellBase = "/images/BI%20-%20LinkedIn";
+const biAvslutningKarusellBase = "/images/bi-genai-avslutning";
 const biAvslutningKarusellBilder = Array.from({ length: 7 }, (_, i) => ({
   src: `${biAvslutningKarusellBase}/BI${i + 1}.png`,
   alt: {

@@ -60,7 +60,8 @@ const bildeCacheVersion = (innlegg: InnleggType) => innlegg.bildeVersjon ?? innl
 const bildeFitClass = (innlegg: InnleggType) =>
   innlegg.bildeFit === "contain" ? "object-contain object-center" : "object-cover object-center";
 
-const kortBildeSrc = (innlegg: InnleggType) => innlegg.bildeUrlKort ?? innlegg.bildeUrl;
+const kortBildeSrc = (innlegg: InnleggType) =>
+  innlegg.bildeUrlKort ?? innlegg.karusellBilder?.[0]?.src ?? innlegg.bildeUrl;
 
 const kortBildeStil = (innlegg: InnleggType): React.CSSProperties => ({
   objectPosition: innlegg.bildeKortFokus ?? "center",
