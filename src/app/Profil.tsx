@@ -310,6 +310,7 @@ export default function Profil({ onNavigate }: { onNavigate?: (tab: string) => v
               </p>
               <div className="flex items-center gap-2 overflow-x-auto pb-2">
                 {[
+                  { src: "/images/moc-avlang.png", alt: "Marius Ottesen Consulting", h: "max-h-[29px]", pad: "p-1" },
                   { src: "/images/Franzefoss.png", alt: "Franzefoss", h: "max-h-[26px]" },
                   { src: "/images/Norengros.png", alt: "Norengros", h: "max-h-[30px]" },
                   { src: "/images/Nilfisk.png", alt: "Nilfisk", h: "max-h-[42px]" },
@@ -321,7 +322,7 @@ export default function Profil({ onNavigate }: { onNavigate?: (tab: string) => v
                 ].map((logo) => (
                   <div
                     key={logo.alt}
-                    className="flex-1 min-w-[80px] h-[44px] flex items-center justify-center bg-white rounded-lg p-1.5 shrink-0"
+                    className={`flex-1 min-w-[80px] h-[44px] flex items-center justify-center bg-white rounded-lg shrink-0 ${logo.pad ?? "p-1.5"}`}
                   >
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img

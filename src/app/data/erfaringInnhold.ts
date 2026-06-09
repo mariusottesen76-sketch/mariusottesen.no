@@ -5,17 +5,6 @@ const data = {
     intro: "Solid erfaring på tvers av kunnskapsintensive B2B-markeder — fra industri, life science og sirkulær økonomi til teknologi og grossistvirksomhet. Gjennomgående ansvar for å profesjonalisere salgsorganisasjoner, drive vekst og lede endringsprosesser i virksomheter med høye krav til kvalitet og leveranseevne.",
     jobs: [
       {
-        title: "Kommersiell leder, rådgiver og forretningsutvikler",
-        company: "Marius Ottesen Consulting",
-        period: "2025 – Nå",
-        mandate:
-          "Etter Franzefoss-perioden: bevisst satsning på egen utvikling og kommersiell verdiskaping gjennom consulting, forretningsutvikling og AI-orientert kommersiell utvikling.",
-        strategy:
-          "Kommersiell lederstøtte i Skøyenåsen Tannklinikk (vekst, modernisering og pasientopplevelse). Videreutvikling av MedDrop. Masterkurs Generative AI for Business (BI), egne AI-prosjekter og etablert Marius Ottesen Consulting som bro mellom strategi og praktisk implementering.",
-        results:
-          "Kombinerer dokumentert kommersiell ledererfaring med praktisk AI-kompetanse, consulting og gjennomføring i vekstbedrifter og nye initiativer.",
-      },
-      {
         title: "Nasjonal Salgssjef",
         company: "Franzefoss Gjenvinning",
         period: "2024 – 2025",
@@ -47,6 +36,17 @@ const data = {
         strategy: "Ledet nasjonale salgsteam og satt i internasjonale strategigrupper. Operasjonaliserte komplekse endringsprosesser og bygget strategiske partnerskap med KOLs.",
         results: "Lanserte og posisjonerte 4 blockbuster-produkter. Oppnådde høyest global vekst og omsetning i hele konsernet i perioden. Personlig vinner av EU PR-pris.",
       },
+      {
+        title: "Kommersiell leder, rådgiver og forretningsutvikler",
+        company: "Marius Ottesen Consulting",
+        period: "2025 – Nå",
+        mandate:
+          "Etter Franzefoss-perioden: bevisst satsning på egen utvikling og kommersiell verdiskaping gjennom consulting, forretningsutvikling og AI-orientert kommersiell utvikling.",
+        strategy:
+          "Kommersiell lederstøtte i Skøyenåsen Tannklinikk (vekst, modernisering og pasientopplevelse). Videreutvikling av MedDrop. Masterkurs Generative AI for Business (BI), egne AI-prosjekter og etablert Marius Ottesen Consulting som bro mellom strategi og praktisk implementering.",
+        results:
+          "Kombinerer dokumentert kommersiell ledererfaring med praktisk AI-kompetanse, consulting og gjennomføring i vekstbedrifter og nye initiativer.",
+      },
     ],
     others: [
       { area: "Internasjonal Salg", desc: "Pelagia: Senior Sales Manager (Europa, USA, Asia)." },
@@ -57,17 +57,6 @@ const data = {
   en: {
     intro: "Solid experience across knowledge-intensive B2B markets — from industry, life science and circular economy to technology and wholesale. A consistent track record of professionalising sales organisations, accelerating growth, and leading transformation programmes in businesses with exacting standards for quality and delivery.",
     jobs: [
-      {
-        title: "Commercial leader, advisor and business developer",
-        company: "Marius Ottesen Consulting",
-        period: "2025 – Present",
-        mandate:
-          "After the Franzefoss period: a deliberate focus on personal development and commercial value creation through consulting, business development and AI-oriented commercial growth.",
-        strategy:
-          "Commercial leadership support at Skøyenåsen Tannklinikk (growth, modernisation and patient experience). Continued development of MedDrop. Generative AI for Business master's course (BI), own AI projects, and Marius Ottesen Consulting as a bridge between strategy and practical implementation.",
-        results:
-          "Combines documented commercial leadership experience with practical AI competence, consulting and execution in growth businesses and new initiatives.",
-      },
       {
         title: "National Sales Director",
         company: "Franzefoss Gjenvinning",
@@ -99,6 +88,17 @@ const data = {
         mandate: "Accountable for shaping and executing the national sales and marketing strategy across critical therapeutic areas within one of the world's leading pharmaceutical organisations.",
         strategy: "Led national sales teams while serving on international strategy committees. Operationalised complex transformation programmes and cultivated strategic partnerships with key opinion leaders (KOLs).",
         results: "Successfully launched and positioned four blockbuster products. Achieved the highest global growth rate and revenue contribution across the entire group during tenure. Personal recipient of the EU Public Relations Award.",
+      },
+      {
+        title: "Commercial leader, advisor and business developer",
+        company: "Marius Ottesen Consulting",
+        period: "2025 – Present",
+        mandate:
+          "After the Franzefoss period: a deliberate focus on personal development and commercial value creation through consulting, business development and AI-oriented commercial growth.",
+        strategy:
+          "Commercial leadership support at Skøyenåsen Tannklinikk (growth, modernisation and patient experience). Continued development of MedDrop. Generative AI for Business master's course (BI), own AI projects, and Marius Ottesen Consulting as a bridge between strategy and practical implementation.",
+        results:
+          "Combines documented commercial leadership experience with practical AI competence, consulting and execution in growth businesses and new initiatives.",
       },
     ],
     others: [
