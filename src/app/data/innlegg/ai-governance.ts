@@ -31,7 +31,65 @@ const biAvslutningKarusellBilder = Array.from({ length: 7 }, (_, i) => ({
   },
 }));
 
+const sopraSteriaKarusellBase = "/images/sopra-steria-karusell";
+const sopraSteriaKarusellBilder = Array.from({ length: 9 }, (_, i) => ({
+  src: `${sopraSteriaKarusellBase}/SS${i + 1}.png`,
+  alt: {
+    no: `Sopra Steria fagmøte – karusell ${i + 1} av 9`,
+    en: `Sopra Steria session – carousel ${i + 1} of 9`,
+  },
+}));
+
 const aiGovernanceRaw = [
+    {
+      id: "sopra-steria-produktutvikling-ai-2026-06",
+      tittel: "Har du AI på agendaen, eller i hendene?",
+      teaser:
+        "Sopra Steria om produktutvikling og AI. Transformasjonskompetanse, hands-on erfaring og spørsmålene ledere må kunne stille.",
+      bildeUrl: `${sopraSteriaKarusellBase}/SS1.png`,
+      bildeVersjon: "2026-06-10",
+      dato: "2026-06-10",
+      visningsDato: "10.06.26",
+      kategori: "AI / KI",
+      link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
+      innhold: `Har du AI på agendaen, eller i hendene?
+
+Det holder ikke at ledere snakker om AI, følger med på utviklingen eller setter det på strategikartet.
+
+De må også ha nok hands-on erfaring til å forstå hvordan teknologien faktisk påvirker strategi, prioritering, arbeidsmåter, ansvar og verdiskaping.
+
+På tirsdag deltok jeg på Sopra Steria sitt fagmøte om produktutvikling og AI. For meg ble møtet en tydelig bekreftelse på noe jeg selv har jobbet mye med det siste året.
+
+AI handler ikke bare om IT-kompetanse.
+Det handler i stor grad om transformasjonskompetanse. 💡
+
+Ledere skal ikke bli teknologer. Men de må kunne nok til å stille bedre spørsmål:
+🔸 Hva bør AI gjøre?
+🔸 Hva bør mennesker fortsatt eie?
+🔸 Hvordan må vi måle effekt?
+🔸 Hvordan må arbeidsmåtene endres?
+🔸 Hvordan kobler vi AI til strategi, taktikk og operativ gjennomføring?
+
+Jeg er ferdig med masterkurset <em>GenAI for Business</em> ved BI, men læringen stopper ikke der.
+
+Tvert imot.
+
+Gjennom <a href="https://www.linkedin.com/company/aivaluelaboslo/" target="_blank" rel="noopener noreferrer" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">AI Value Lab Oslo</a>, egne AI-prosjekter, prototyper og samarbeid med eksterne miljøer har jeg blitt enda mer overbevist om én ting.
+
+💥 AI forstås best når man faktisk bruker, bygger og tester selv.
+
+Det er her forskjellen mellom verktøybruk og reell verdiskaping blir tydelig.
+AI går fra å være et sideprosjekt til å bli en del av hvordan virksomheten styres, utvikles og forbedres.
+
+Takk til Anders Morthen, Andreas Tjernsli, Ragnhild Ljosland, Thomas Almnes (Sopra Steria), og Torbjørn Sitre (DNB) for et faglig sterkt og relevant møte. 🙏
+
+Noen refleksjoner fra møtet finner du i vedlagte karusell.
+
+#AI #Ledelse #DigitalTransformasjon #Produktutvikling #Strategi`,
+      karusellBilder: sopraSteriaKarusellBilder,
+      karusellPdfUrl: "/images/sopra-steria-karusell.pdf",
+      bildeFit: "contain",
+    },
     {
       id: "ai-agent-007-master-bi-2026-06",
       tittel: "AI Agent 007?",
@@ -1817,6 +1875,45 @@ AI-dømmekraft er ikke en teknisk nisjeferdighet. Det er en lederkompetanse.`
 ];
 
 const aiGovernanceEn: Record<string, LocalizedTextMap> = {
+  "sopra-steria-produktutvikling-ai-2026-06": {
+    tittel: "Do you have AI on the agenda, or in your hands?",
+    teaser:
+      "Sopra Steria on product development and AI. Transformation competence, hands-on experience and the questions leaders must be able to ask.",
+    innhold: `Do you have AI on the agenda, or in your hands?
+
+It is not enough for leaders to talk about AI, follow developments or place it on the strategy map.
+
+They must also have enough hands-on experience to understand how the technology actually affects strategy, prioritisation, ways of working, accountability and value creation.
+
+On Tuesday I took part in Sopra Steria's professional session on product development and AI. For me, the meeting was a clear confirmation of something I have worked extensively on over the past year.
+
+AI is not only about IT competence.
+It is largely about transformation competence. 💡
+
+Leaders should not become technologists. But they must know enough to ask better questions:
+🔸 What should AI do?
+🔸 What should people still own?
+🔸 How must we measure impact?
+🔸 How must ways of working change?
+🔸 How do we connect AI to strategy, tactics and operational execution?
+
+I have completed the <em>GenAI for Business</em> master's course at BI, but the learning does not stop there.
+
+On the contrary.
+
+Through <a href="https://www.linkedin.com/company/aivaluelaboslo/" target="_blank" rel="noopener noreferrer" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">AI Value Lab Oslo</a>, my own AI projects, prototypes and collaboration with external environments, I have become even more convinced of one thing.
+
+💥 AI is best understood when you actually use, build and test it yourself.
+
+This is where the difference between tool use and real value creation becomes clear.
+AI moves from being a side project to becoming part of how the organisation is managed, developed and improved.
+
+Thank you to Anders Morthen, Andreas Tjernsli, Ragnhild Ljosland, Thomas Almnes (Sopra Steria), and Torbjørn Sitre (DNB) for a professionally strong and relevant session. 🙏
+
+Some reflections from the meeting are in the attached carousel.
+
+#AI #Leadership #DigitalTransformation #ProductDevelopment #Strategy`,
+  },
   "ai-agent-007-master-bi-2026-06": {
     tittel: "AI Agent 007?",
     teaser:
