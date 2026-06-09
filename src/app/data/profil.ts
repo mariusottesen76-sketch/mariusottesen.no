@@ -41,7 +41,7 @@ Trives i hybride lederroller som kombinerer strategisk ansvar med operativ tilst
     bransje:
       "Har erfaring fra komplekse B2B-virksomheter innen blant annet sirkulær økonomi, life science, industri, teknologi og retail/grossist. Fellesnevneren er kommersiell ledelse, endringsarbeid og evnen til å skape struktur, retning og resultater på tvers av fagmiljøer og lokasjoner.",
 
-    utdanning: `Gjennom masterkurset *Generative AI for Business* ved Handelshøyskolen BI har jeg utviklet strategisk AI-kompetanse med fokus på lederverktøy for beslutningsstøtte, effektiv dokumentasjon og økt kommersiell effektivitet.
+    utdanning: `Gjennom det fullførte masterkurset *Generative AI for Business* ved Handelshøyskolen BI har jeg utviklet strategisk AI-kompetanse med fokus på lederverktøy for beslutningsstøtte, effektiv dokumentasjon og økt kommersiell effektivitet. Jeg har også tatt initiativ til *AI Value Lab Oslo*, et tverrfaglig lærings- og utviklingsinitiativ med fokus på praktisk testing, ansvarlig bruk av AI og reell verdiskaping gjennom virksomhetsnære case.
 
 Jeg er utdannet *Master of Science in Business Administration (Siviløkonom)* fra USA, og har en *Executive Master of Management* fra BI med spesialisering i strategi, kommunikasjon og AI.`,
 
@@ -86,7 +86,7 @@ I thrive in hybrid leadership roles that combine strategic responsibility with o
     bransje:
       "Experience from complex B2B organisations in areas including circular economy, life science, industry, technology and retail/wholesale. The common thread is commercial leadership, change work and the ability to create structure, direction and results across disciplines and locations.",
 
-    utdanning: `Through the master's course *Generative AI for Business* at BI Norwegian Business School, I have developed strategic AI competence focused on leadership tools for decision support, efficient documentation and enhanced commercial effectiveness.
+    utdanning: `Through the completed master's course *Generative AI for Business* at BI Norwegian Business School, I have developed strategic AI competence focused on leadership tools for decision support, efficient documentation and enhanced commercial effectiveness. I have also initiated *AI Value Lab Oslo*, a cross-disciplinary learning and development initiative focused on practical testing, responsible use of AI and real value creation through business-near cases.
 
 I hold a *Master of Science in Business Administration* from the USA, and an *Executive Master of Management* from BI specialising in strategy, communication and AI.`,
 

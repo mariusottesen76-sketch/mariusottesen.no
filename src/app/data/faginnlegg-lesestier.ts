@@ -1,13 +1,15 @@
 import { Lang } from "../LanguageContext";
 
-export type LeseStiSubtemaRef = {
-  subtemaId: string;
+export type LeseStiTopic = {
+  label: { no: string; en: string };
+  /** Lenker til subtema i innholdsfortegnelsen når satt. */
+  subtemaId?: string;
 };
 
 export type LeseSti = {
   title: { no: string; en: string };
   intro: { no: string; en: string };
-  subtemaRefs: LeseStiSubtemaRef[];
+  topics: LeseStiTopic[];
 };
 
 const lesestier: LeseSti[] = [
@@ -17,15 +19,14 @@ const lesestier: LeseSti[] = [
       en: "For recruiters and employers",
     },
     intro: {
-      no: "Få et helhetlig bilde av lederprofil, kommersiell erfaring, gjennomføring og AI-perspektiv — tema for tema, ikke tre tilfeldige innlegg.",
-      en: "Get a full picture of leadership profile, commercial experience, execution and AI perspective — topic by topic, not three random posts.",
+      no: "Få raskt innblikk i lederprofil, kommersiell erfaring, gjennomføringsevne og hvordan jeg tenker om AI som del av moderne ledelse.",
+      en: "Get a quick view of leadership profile, commercial experience, execution capability and how I think about AI as part of modern leadership.",
     },
-    subtemaRefs: [
-      { subtemaId: "ledelse-strategi" },
-      { subtemaId: "ledelse-endring" },
-      { subtemaId: "ledelse-kommersiell" },
-      { subtemaId: "ledelse-kultur" },
-      { subtemaId: "ai-grunnlag" },
+    topics: [
+      { label: { no: "Lederstil", en: "Leadership style" }, subtemaId: "ledelse-kultur" },
+      { label: { no: "Kommersiell ledelse", en: "Commercial leadership" }, subtemaId: "ledelse-kommersiell" },
+      { label: { no: "Transformasjon", en: "Transformation" }, subtemaId: "ledelse-strategi" },
+      { label: { no: "AI-perspektiv", en: "AI perspective" }, subtemaId: "ai-grunnlag" },
     ],
   },
   {
@@ -34,14 +35,14 @@ const lesestier: LeseSti[] = [
       en: "For leaders and commercial teams",
     },
     intro: {
-      no: "Følg hele sporet fra strategi og transformasjon til kultur, endring og kommersiell praksis — slik innleggene faktisk er gruppert.",
-      en: "Follow the full arc from strategy and transformation to culture, change and commercial practice — as the articles are actually grouped.",
+      no: "Les innlegg om strategi, endring, prestasjon, salgsledelse og hvordan team kan skape bedre gjennomføring over tid.",
+      en: "Read articles on strategy, change, performance, sales leadership and how teams can create better execution over time.",
     },
-    subtemaRefs: [
-      { subtemaId: "ledelse-strategi" },
-      { subtemaId: "ledelse-endring" },
-      { subtemaId: "ledelse-kultur" },
-      { subtemaId: "ledelse-kommersiell" },
+    topics: [
+      { label: { no: "Strategi", en: "Strategy" }, subtemaId: "ledelse-strategi" },
+      { label: { no: "Gjennomføring", en: "Execution" }, subtemaId: "ledelse-endring" },
+      { label: { no: "Kultur", en: "Culture" }, subtemaId: "ledelse-kultur" },
+      { label: { no: "Kommersiell praksis", en: "Commercial practice" }, subtemaId: "ledelse-kommersiell" },
     ],
   },
   {
@@ -50,15 +51,14 @@ const lesestier: LeseSti[] = [
       en: "For AI-interested employers and clients",
     },
     intro: {
-      no: "Gå systematisk fra grunnlag og arbeidsflyt til data, governance og praktiske prosjekter — fem AI-temaer som dekker hele feltet.",
-      en: "Move systematically from foundations and workflow to data, governance and practical projects — five AI topics covering the full field.",
+      no: "Utforsk hvordan AI kan kobles til arbeidsflyt, CRM, beslutningsstøtte, governance og praktiske prosjekter.",
+      en: "Explore how AI can connect to workflow, CRM, decision support, governance and practical projects.",
     },
-    subtemaRefs: [
-      { subtemaId: "ai-grunnlag" },
-      { subtemaId: "ai-arbeidsflyt" },
-      { subtemaId: "ai-data-crm" },
-      { subtemaId: "ai-governance" },
-      { subtemaId: "ai-praksis" },
+    topics: [
+      { label: { no: "AI-verdi", en: "AI value" }, subtemaId: "ai-grunnlag" },
+      { label: { no: "Arbeidsflyt", en: "Workflow" }, subtemaId: "ai-arbeidsflyt" },
+      { label: { no: "Data og CRM", en: "Data and CRM" }, subtemaId: "ai-data-crm" },
+      { label: { no: "Implementering", en: "Implementation" }, subtemaId: "ai-praksis" },
     ],
   },
 ];

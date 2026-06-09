@@ -125,7 +125,7 @@ export default function Dokumentasjon() {
             </h2>
             <div className="space-y-3 text-slate-300 text-base leading-relaxed">
               {d.aiText.map((avsnitt) => (
-                <p key={avsnitt.slice(0, 40)}>{avsnitt}</p>
+                <p key={avsnitt.slice(0, 40)} dangerouslySetInnerHTML={{ __html: avsnitt }} />
               ))}
             </div>
             <p>

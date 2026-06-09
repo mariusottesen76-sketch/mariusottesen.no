@@ -113,10 +113,9 @@ const translations: Translations = {
   },
   "fag.lesestier.title": { no: "Anbefalte lesestier", en: "Recommended reading paths" },
   "fag.lesestier.intro": {
-    no: "Velg lesesti etter hvem du er. Hver sti peker til relevante temaer i innholdsfortegnelsen — ikke et smalt utvalg enkeltinnlegg.",
-    en: "Choose a reading path based on who you are. Each path points to relevant topics in the table of contents — not a narrow pick of individual posts.",
+    no: "Start her hvis du vil lese innleggene ut fra rolle, behov eller interessefelt.",
+    en: "Start here if you want to read the articles based on role, need or area of interest.",
   },
-  "fag.lesestier.tema": { no: "Relevante temaer:", en: "Relevant topics:" },
   "fag.kort.seksjon.title": { no: "Alle innlegg i detalj", en: "All articles in detail" },
   "fag.kort.seksjon.intro": {
     no: "Her finner du hvert innlegg med kort beskrivelse. Klikk for å lese hele teksten her på siden, eller gå videre til LinkedIn.",
@@ -175,8 +174,12 @@ const translations: Translations = {
   },
   "cons.verdi.title": { no: "Fra AI-mulighet til praktisk verdi", en: "From AI opportunity to practical value" },
   "cons.verdi.text": {
-    no: "Mange virksomheter vet at AI kan skape verdi, men mangler struktur for å gå fra idé til prioriterte tiltak. Jeg hjelper ledere og team med å forstå forretningsbehovet, kartlegge arbeidsflyt, vurdere risiko og lage en gjennomførbar plan.",
-    en: "Many organisations know AI can create value, but lack structure to move from idea to prioritised initiatives. I help leaders and teams understand the business need, map workflows, assess risk and build a feasible plan.",
+    no: "Mange virksomheter vet at AI kan skape verdi, men mangler struktur for å gå fra idé til prioriterte tiltak.",
+    en: "Many organisations know AI can create value, but lack structure to move from idea to prioritised initiatives.",
+  },
+  "cons.verdi.text.2": {
+    no: "Jeg hjelper ledere og team med å forstå forretningsbehovet, kartlegge arbeidsflyt, vurdere risiko og lage en gjennomførbar plan.",
+    en: "I help leaders and teams understand the business need, map workflows, assess risk and build a feasible plan.",
   },
   "cons.formula.title": { no: "Business case for AI-verdi", en: "Business case for AI value" },
   "cons.formula.line": {

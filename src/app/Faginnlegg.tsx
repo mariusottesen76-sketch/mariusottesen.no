@@ -9,10 +9,8 @@ import { normalizeDisplayText } from './lib/normalize-display-text';
 import { applyProductNameItalicsPlain, formatInnleggHtml, formatInnleggTittelHtml } from './lib/product-brand';
 import { getFaginnleggLeseStier } from './data/faginnlegg-lesestier';
 import {
-  AI_SUBTEMA,
   FAGINNLEGG_SORT_OPTIONS,
   FaginnleggSortMode,
-  LEDELSE_SUBTEMA,
   grupperAiInnlegg,
   grupperLedelseInnlegg,
   sorterFaginnlegg,
@@ -110,14 +108,11 @@ const Faginnlegg = ({ onNavigate }: { onNavigate?: (tab: string) => void }) => {
   );
   const ledelseGrupper = grupperLedelseInnlegg(alleInnlegg, tocSort, lang);
   const aiGrupper = grupperAiInnlegg(alleInnlegg, tocSort, lang);
-  const subtemaMeta = new Map(
-    [...LEDELSE_SUBTEMA, ...AI_SUBTEMA].map((subtema) => {
-      const gruppe =
-        ledelseGrupper.find((g) => g.subtema.id === subtema.id) ??
-        aiGrupper.find((g) => g.subtema.id === subtema.id);
-      return [subtema.id, { label: subtema.label[lang], count: gruppe?.innlegg.length ?? 0 }] as const;
-    })
-  );
+
+  const lesestiChipKlasse =
+    "inline-flex items-center rounded-full border border-slate-700/80 bg-slate-950/60 px-2.5 py-1 text-[11px] font-medium text-slate-300 leading-none";
+  const lesestiChipLinkKlasse =
+    "inline-flex items-center rounded-full border border-indigo-500/25 bg-indigo-500/10 px-2.5 py-1 text-[11px] font-medium text-indigo-300 leading-none hover:border-indigo-400/50 hover:text-indigo-100 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400";
 
   const lukkModal = useCallback(() => setAktivtInnlegg(null), []);
 
@@ -192,51 +187,41 @@ const Faginnlegg = ({ onNavigate }: { onNavigate?: (tab: string) => void }) => {
         </div>
       </div>
 
-      <section aria-labelledby="fag-lesestier-heading" className="mt-6 mb-6">
+      <section aria-labelledby="fag-lesestier-heading" className="mt-8 mb-10 pt-6 border-t border-slate-800/40">
         <h2 id="fag-lesestier-heading" className="text-xl md:text-2xl font-black text-white italic tracking-tight mb-2">
           {tr("fag.lesestier.title")}
         </h2>
-        <p className="text-sm text-slate-400 leading-relaxed mb-4 max-w-3xl">{tr("fag.lesestier.intro")}</p>
+        <p className="text-sm text-slate-400 leading-relaxed mb-5 max-w-2xl">{tr("fag.lesestier.intro")}</p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
           {lesestier.map((sti) => (
             <article
               key={sti.title.no}
-              className="p-4 bg-slate-900/40 rounded-xl border border-slate-800 shadow-xl space-y-3 min-w-0"
+              className="p-4 bg-slate-900/40 rounded-xl border border-indigo-500/15 shadow-lg space-y-3 min-w-0 flex flex-col"
             >
-              <h3 className="text-sm font-black text-white italic leading-snug">{sti.title[lang]}</h3>
-              <p className="text-xs text-slate-400 leading-relaxed">{sti.intro[lang]}</p>
-              <div>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-2">
-                  {tr("fag.lesestier.tema")}
-                </p>
-                <ul className="space-y-1.5">
-                  {sti.subtemaRefs.map(({ subtemaId }) => {
-                    const meta = subtemaMeta.get(subtemaId);
-                    if (!meta) return null;
-                    return (
-                      <li key={subtemaId}>
-                        <a
-                          href={`#${subtemaId}`}
-                          className="text-left text-sm text-indigo-300 hover:text-indigo-100 underline underline-offset-2 decoration-indigo-500/50 transition-colors leading-snug block"
-                        >
-                          {meta.label}
-                          {lang === "no" ? ` (${meta.count} stk)` : ` (${meta.count})`}
-                        </a>
-                      </li>
-                    );
-                  })}
-                </ul>
+              <h3 className="text-sm font-semibold text-white leading-snug">{sti.title[lang]}</h3>
+              <p className="text-xs text-slate-400 leading-relaxed flex-1">{sti.intro[lang]}</p>
+              <div className="flex flex-wrap gap-1.5 pt-1">
+                {sti.topics.map((topic) =>
+                  topic.subtemaId ? (
+                    <a key={topic.label.no} href={`#${topic.subtemaId}`} className={lesestiChipLinkKlasse}>
+                      {topic.label[lang]}
+                    </a>
+                  ) : (
+                    <span key={topic.label.no} className={lesestiChipKlasse}>
+                      {topic.label[lang]}
+                    </span>
+                  )
+                )}
               </div>
             </article>
           ))}
         </div>
       </section>
 
-      {/* INNHOLDSFORTEGNELSE */}
-      <div className="mt-6 mb-6">
+      <section aria-labelledby="fag-toc-heading" className="mt-2 mb-6 pt-8 border-t border-slate-800/40">
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-4">
-          <h2 className="text-2xl font-bold tracking-tight text-white uppercase break-words max-w-full [overflow-wrap:anywhere]">
-            {tr("fag.toc.title.1")}<br className="sm:hidden" />{tr("fag.toc.title.2")}
+          <h2 id="fag-toc-heading" className="text-xl md:text-2xl font-black text-white italic tracking-tight">
+            {tr("fag.toc.title")}
           </h2>
           <label className="flex items-center gap-2 shrink-0">
             <span className="text-[10px] font-bold uppercase tracking-widest text-slate-500">{tr("fag.toc.sort.label")}</span>
@@ -314,7 +299,7 @@ const Faginnlegg = ({ onNavigate }: { onNavigate?: (tab: string) => void }) => {
             ))}
           </div>
         </div>
-      </div>
+      </section>
 
       {/* KOLONNER MED INNLEGG - like høyde på header slik at første kort aligner */}
       <section id="fag-innlegg-oversikt" aria-labelledby="fag-kort-heading" className="scroll-mt-24 mt-10 pt-8 border-t border-slate-800/60">

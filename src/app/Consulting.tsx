@@ -178,31 +178,29 @@ export default function Consulting() {
     <div className="py-4 text-left w-full overflow-x-hidden">
       <section className="border-b border-white/10 pb-8 mb-10">
         <div className="flex flex-col md:flex-row gap-8 items-start">
-          <div className="w-full md:w-60 shrink-0">
+          <div className="w-full md:w-60 shrink-0 space-y-3">
             <div className="rounded-2xl overflow-hidden border border-slate-800 shadow-xl bg-slate-900">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/images/consulting.png" alt="Marius Ottesen Consulting" className="w-full h-auto" />
             </div>
+            <div className="rounded-lg overflow-hidden border border-slate-700/50 shadow bg-white p-1">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/moc-avlang.png"
+                alt="Marius Ottesen Consulting"
+                className="w-full h-auto block"
+                width={240}
+                height={80}
+              />
+            </div>
           </div>
 
           <div className="flex-1 min-w-0 flex flex-col">
-            <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-4">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black tracking-tighter leading-tight text-white uppercase italic break-words max-w-full [overflow-wrap:anywhere] shrink-0">
-                {tr("cons.title.1")} <br />
-                <span className="text-indigo-500">{tr("cons.title.2")}</span>
-              </h1>
-              <div className="rounded-lg overflow-hidden border border-slate-700/50 shadow bg-white p-2 min-w-0 max-w-full sm:max-w-[15.75rem] sm:ml-4">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/images/moc-avlang.png"
-                  alt="Marius Ottesen Consulting"
-                  className="h-auto w-full max-w-full block object-contain object-left"
-                  width={360}
-                  height={113}
-                />
-              </div>
-            </div>
-            <div className="max-w-3xl space-y-4 mt-4">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black tracking-tighter leading-tight text-white uppercase italic break-words max-w-full [overflow-wrap:anywhere] mb-4">
+              {tr("cons.title.1")} <br />
+              <span className="text-indigo-500">{tr("cons.title.2")}</span>
+            </h1>
+            <div className="max-w-3xl space-y-4">
               <p className="text-xl md:text-2xl text-slate-300 leading-relaxed font-light">{tr("cons.intro.1")}</p>
               <p className="text-lg text-slate-400 leading-relaxed font-light">
                 {tr("cons.intro.2")}{" "}
@@ -219,9 +217,14 @@ export default function Consulting() {
 
       <section aria-labelledby="cons-verdi-heading" className="mb-12">
         <SectionHeading id="cons-verdi-heading">{tr("cons.verdi.title")}</SectionHeading>
-        <p className="text-slate-300 text-base md:text-lg leading-relaxed font-light max-w-3xl">
-          {tr("cons.verdi.text")}
-        </p>
+        <div className="space-y-3">
+          <p className="text-slate-300 text-base md:text-lg leading-relaxed font-light md:whitespace-nowrap md:overflow-x-auto pb-1 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+            {tr("cons.verdi.text")}
+          </p>
+          <p className="text-slate-300 text-base md:text-lg leading-relaxed font-light md:whitespace-nowrap md:overflow-x-auto pb-1 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+            {tr("cons.verdi.text.2")}
+          </p>
+        </div>
       </section>
 
       <section aria-labelledby="cons-aireise-heading" className="mb-12">

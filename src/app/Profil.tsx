@@ -192,7 +192,7 @@ export default function Profil({ onNavigate }: { onNavigate?: (tab: string) => v
                 dangerouslySetInnerHTML={{
                   __html: d.utdanning.replace(
                     /\*(.*?)\*/g,
-                    '<em class="text-indigo-400 not-italic font-black">$1</em>'
+                    '<em class="text-indigo-400 italic">$1</em>'
                   ),
                 }}
               />

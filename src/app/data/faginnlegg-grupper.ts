@@ -71,7 +71,10 @@ export const LEDELSE_SUBTEMA: FaginnleggSubtema[] = [
   },
 ];
 
-/** AI-innlegg gruppert etter innhold og subtematikk. */
+/**
+ * AI-innlegg gruppert etter hovedtema (tittel vektlegges ved flere temaer).
+ * Møtedeltakelse, frokoster, samlinger og fagmiljø → ai-utdanning.
+ */
 export const AI_SUBTEMA: FaginnleggSubtema[] = [
   {
     id: "ai-grunnlag",
@@ -96,8 +99,6 @@ export const AI_SUBTEMA: FaginnleggSubtema[] = [
       "ai-prosjekt-forretningsproblem-tegneserie-2026-05",
       "ai-needs-first-tannklinikk-case-01",
       "econa-ai-kundereise-arbeidsflyt-01",
-      "iteam-operativ-modell-2026-01",
-      "nettside-lansering-2026-01",
     ],
   },
   {
@@ -110,18 +111,12 @@ export const AI_SUBTEMA: FaginnleggSubtema[] = [
       "ai-arkitektur-beslutningsstotte-01",
       "ai-dommekraft-bias-01",
       "ai-dommekraft-kontekst-01",
-      "nova-day-data-forst-01",
     ],
   },
   {
     id: "ai-agenter",
     label: { no: "Agenter og agentisk arbeid", en: "Agents and agentic work" },
-    innleggIds: [
-      "ai-agenter-hva-01",
-      "ai-agenter-feil-01",
-      "ai-agenter-praksis-01",
-      "ai-agent-007-master-bi-2026-06",
-    ],
+    innleggIds: ["ai-agenter-hva-01", "ai-agenter-feil-01", "ai-agenter-praksis-01"],
   },
   {
     id: "ai-governance",
@@ -132,21 +127,26 @@ export const AI_SUBTEMA: FaginnleggSubtema[] = [
       "ai-etikk-norden-01",
       "ai-kompetanse-2030-01",
       "ai-gap-kompetanse-stokke-digi-2026-05",
-      "ai-kompetanse-tech-frokost-telenor-2026-05",
-      "nova-frokost-ai-kjernekompetanse-2026-05",
-      "sopra-steria-produktutvikling-ai-2026-06",
       "april-ai-kompetanse-praksis-01",
-      "ai-learning-google-skills-01",
     ],
   },
   {
     id: "ai-utdanning",
     label: { no: "Utdanning, strategi og fagmiljø", en: "Education, strategy and community" },
     innleggIds: [
-      "bi-generative-ai-for-business-2026-01",
-      "bi-genai-avslutning-master-2026-06",
       "bi-master-oppstart-01",
       "strategi-ai-master-01",
+      "bi-generative-ai-for-business-2026-01",
+      "bi-genai-avslutning-master-2026-06",
+      "ai-agent-007-master-bi-2026-06",
+      "ai-learning-google-skills-01",
+      "sopra-steria-produktutvikling-ai-2026-06",
+      "ai-kompetanse-tech-frokost-telenor-2026-05",
+      "nova-frokost-ai-kjernekompetanse-2026-05",
+      "iteam-operativ-modell-2026-01",
+      "ai-tech-frokost-rebel-01",
+      "nova-day-data-forst-01",
+      "ai-value-lab-munch-kickoff-01",
     ],
   },
   {
@@ -154,11 +154,10 @@ export const AI_SUBTEMA: FaginnleggSubtema[] = [
     label: { no: "Praksis, lab og prosjekter", en: "Practice, lab and projects" },
     innleggIds: [
       "ai-value-lab-01",
-      "ai-value-lab-munch-kickoff-01",
       "ai-value-lab-smb-praksis-2026-06",
       "genai-foerste-reklamefilm-psc-2026-05",
       "predictive-sales-coach-01",
-      "ai-tech-frokost-rebel-01",
+      "nettside-lansering-2026-01",
     ],
   },
 ];
