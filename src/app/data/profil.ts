@@ -2,15 +2,18 @@ import { Lang } from "../LanguageContext";
 import { getProfilProofPoints } from "./proof-points";
 import { AKTUELL_FOR_ROLLER } from "./aktuell-for-roller";
 
+export type ProfilKort = {
+  title: string;
+  text: string;
+};
+
 export type ProfilData = {
   ingress: string;
   intro: string;
-  aiKort: string;
   roller: string[];
   proofPoints: string[];
+  lederprofil: ProfilKort[];
   aiSeksjon: string;
-  lederskap: string;
-  bransje: string;
   utdanning: string;
   kompetanse: string[];
   styrker: string[];
@@ -24,22 +27,27 @@ const data: Record<Lang, ProfilData> = {
     intro:
       "Jeg er en kommersiell leder med lang erfaring fra å bygge vekst, styrke lønnsomhet og utvikle team i komplekse B2B-virksomheter. Jeg har ledet salg, marked og kommersiell utvikling med personal- og P/L-ansvar, og trives best når strategi skal omsettes til tydelig retning, sterk gjennomføring og målbare resultater.",
 
-    aiKort:
-      "Jeg arbeider også med hvordan AI, data og nye arbeidsformer kan styrke beslutninger, effektivisere arbeidsprosesser og utvikle nye kommersielle muligheter. For meg handler AI ikke først og fremst om verktøy, men om arbeidsflyt, prioritering og gjennomføring.",
-
     roller: AKTUELL_FOR_ROLLER.no,
 
     proofPoints: getProfilProofPoints("no"),
 
+    lederprofil: [
+      {
+        title: "Ledelse og gjennomføring",
+        text: "Tydelig, involverende og relasjonssterk lederstil med vekt på retning, forventninger, eierskap og gjennomføring.",
+      },
+      {
+        title: "Kommersiell bredde",
+        text: "Erfaring fra komplekse B2B-miljøer der salg, drift, marked, teknologi og kundeverdi må henge sammen.",
+      },
+      {
+        title: "Strategisk utvikling og AI",
+        text: "Utdanning og praktiske AI-prosjekter brukes til å styrke beslutningsstøtte, arbeidsflyt og kommersiell gjennomføring.",
+      },
+    ],
+
     aiSeksjon:
-      "Jeg bruker AI som et praktisk leder- og forretningsverktøy for å forstå arbeidsflyt, prioritere bedre, strukturere innsikt og forbedre kommersiell gjennomføring. Dette arbeidet vises mer konkret gjennom egne AI-prosjekter, consulting og faginnlegg.",
-
-    lederskap: `Jeg tror på styrkebasert ledelse, tydelige forventninger og nær oppfølging. Lederstilen er tydelig, involverende og relasjonssterk — med trygghet, eierskap og gjennomføring som fellesnevner.
-
-Trives i hybride lederroller som kombinerer strategisk ansvar med operativ tilstedeværelse.`,
-
-    bransje:
-      "Har erfaring fra komplekse B2B-virksomheter innen blant annet sirkulær økonomi, life science, industri, teknologi og retail/grossist. Fellesnevneren er kommersiell ledelse, endringsarbeid og evnen til å skape struktur, retning og resultater på tvers av fagmiljøer og lokasjoner.",
+      "Jeg bruker AI, data og nye arbeidsformer til å strukturere innsikt, forbedre arbeidsflyt og styrke kommersiell gjennomføring. Mer konkret vises dette i AI-prosjekter, consulting og faginnlegg.",
 
     utdanning: `Gjennom det fullførte masterkurset *Generative AI for Business* ved Handelshøyskolen BI har jeg utviklet strategisk AI-kompetanse med fokus på lederverktøy for beslutningsstøtte, effektiv dokumentasjon og økt kommersiell effektivitet. Jeg har også tatt initiativ til *AI Value Lab Oslo*, et tverrfaglig lærings- og utviklingsinitiativ med fokus på praktisk testing, ansvarlig bruk av AI og reell verdiskaping gjennom virksomhetsnære case.
 
@@ -69,22 +77,27 @@ Jeg er utdannet *Master of Science in Business Administration (Siviløkonom)* fr
     intro:
       "I am a commercial leader with extensive experience building growth, strengthening profitability and developing teams in complex B2B organisations. I have led sales, marketing and commercial development with people and P&L accountability, and thrive when strategy must translate into clear direction, strong execution and measurable results.",
 
-    aiKort:
-      "I also work on how AI, data and new ways of working can strengthen decisions, streamline workflows and develop new commercial opportunities. For me, AI is not primarily about tools, but about workflow, prioritisation and execution.",
-
     roller: AKTUELL_FOR_ROLLER.en,
 
     proofPoints: getProfilProofPoints("en"),
 
+    lederprofil: [
+      {
+        title: "Leadership and execution",
+        text: "A clear, engaging and relationship-oriented leadership style focused on direction, expectations, ownership and delivery.",
+      },
+      {
+        title: "Commercial breadth",
+        text: "Experience from complex B2B environments where sales, operations, marketing, technology and customer value must align.",
+      },
+      {
+        title: "Strategic development and AI",
+        text: "Education and practical AI projects are used to strengthen decision support, workflow and commercial execution.",
+      },
+    ],
+
     aiSeksjon:
-      "I use AI as a practical leadership and business tool to understand workflows, prioritise better, structure insight and improve commercial execution. This work is shown more concretely through my AI projects, consulting and articles.",
-
-    lederskap: `I believe in strengths-based leadership, clear expectations and close follow-up. My style is clear, engaging and relationship-oriented — with psychological safety, ownership and disciplined execution as the common thread.
-
-I thrive in hybrid leadership roles that combine strategic responsibility with operational presence.`,
-
-    bransje:
-      "Experience from complex B2B organisations in areas including circular economy, life science, industry, technology and retail/wholesale. The common thread is commercial leadership, change work and the ability to create structure, direction and results across disciplines and locations.",
+      "I use AI, data and new ways of working to structure insight, improve workflow and strengthen commercial execution. This is shown more concretely in AI projects, consulting and articles.",
 
     utdanning: `Through the completed master's course *Generative AI for Business* at BI Norwegian Business School, I have developed strategic AI competence focused on leadership tools for decision support, efficient documentation and enhanced commercial effectiveness. I have also initiated *AI Value Lab Oslo*, a cross-disciplinary learning and development initiative focused on practical testing, responsible use of AI and real value creation through business-near cases.
 

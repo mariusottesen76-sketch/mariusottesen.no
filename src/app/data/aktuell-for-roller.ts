@@ -9,9 +9,7 @@ export const AKTUELL_FOR_ROLLER: Record<Lang, string[]> = {
     "Daglig leder SMB",
     "Business Unit Manager",
     "Kommersiell transformasjon",
-    "AI-utvikling og transformasjon",
-    "Kommersiell forretningsutvikler",
-    "Consulting",
+    "Commercial AI transformation",
   ],
   en: [
     "Commercial leader",
@@ -20,8 +18,6 @@ export const AKTUELL_FOR_ROLLER: Record<Lang, string[]> = {
     "Managing director SMB",
     "Business Unit Manager",
     "Commercial transformation",
-    "AI development and transformation",
-    "Commercial business developer",
-    "Consulting",
+    "Commercial AI transformation",
   ],
 };
