@@ -323,7 +323,7 @@ export default function Consulting() {
 
       <section aria-labelledby="cons-spesialisert-heading" className="mb-12">
         <SectionHeading id="cons-spesialisert-heading">{tr("cons.spesialisert.title")}</SectionHeading>
-        <div className="space-y-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           {spesialisertePakker.map((pakke) => (
             <SpesialisertPakkeAccordion key={pakke.id} pakke={pakke} tr={tr} />
           ))}
@@ -334,24 +334,13 @@ export default function Consulting() {
         <SectionHeading id="cons-foredrag-heading">{foredrag.title}</SectionHeading>
         <p className="text-slate-400 text-base md:text-lg leading-relaxed font-light mb-4 w-full min-w-0 max-w-none">{foredrag.ingress}</p>
         <p className="text-slate-400 text-sm leading-relaxed font-light mb-6 w-full min-w-0 max-w-none">{foredrag.stotte}</p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
           {foredrag.kort.map((kort) => (
             <div key={kort.title} className="p-4 bg-slate-900/40 rounded-xl border border-slate-800 space-y-2">
               <h3 className="text-sm font-black text-white italic tracking-tight">{kort.title}</h3>
               <p className="text-slate-400 text-sm leading-relaxed font-light">{kort.text}</p>
             </div>
           ))}
-        </div>
-        <div className="space-y-2 mb-6">
-          <p className={pakkeLabelClass}>{foredrag.formaterLabel}</p>
-          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-            {foredrag.formater.map((format) => (
-              <li key={format} className="flex items-start gap-2 text-sm text-slate-300 leading-snug">
-                <span className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-1.5 shrink-0" aria-hidden="true" />
-                {format}
-              </li>
-            ))}
-          </ul>
         </div>
         <Link href="/kontakt" className={ctaBtnClass}>
           {foredrag.cta}

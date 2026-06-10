@@ -35,13 +35,6 @@ const data = {
         text: "Hvordan tydeligere forventninger, styrker, dialog og lederrytme kan gi bedre prestasjon over tid.",
       },
     ] satisfies ForedragKort[],
-    formaterLabel: "Mulige formater",
-    formater: [
-      "Inspirasjonsforedrag, 30–45 minutter",
-      "Workshop, 2–3 timer",
-      "Ledergruppesamling, halv dag",
-      "Oppstartssamling før sprint eller utviklingsløp",
-    ],
     cta: "Book en prat om foredrag eller workshop",
   },
   en: {
@@ -76,13 +69,6 @@ const data = {
         text: "How clearer expectations, strengths, dialogue and leadership rhythm can improve performance over time.",
       },
     ] satisfies ForedragKort[],
-    formaterLabel: "Possible formats",
-    formater: [
-      "Inspirational talk, 30–45 minutes",
-      "Workshop, 2–3 hours",
-      "Leadership team session, half day",
-      "Kick-off before sprint or development programme",
-    ],
     cta: "Book a conversation about a talk or workshop",
   },
 };
