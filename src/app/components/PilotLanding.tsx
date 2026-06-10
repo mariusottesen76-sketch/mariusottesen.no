@@ -3,7 +3,8 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronRight } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { LanguageProvider, LanguageToggle, useLanguage } from "../LanguageContext";
 import { getPilotSide, t, type PilotSide } from "../data/pilot-pages";
 
@@ -12,8 +13,30 @@ const linkClass =
 
 const sectionTitleClass = "text-xl md:text-2xl font-black text-white italic tracking-tight mb-4";
 
-const bodyTextClass =
-  "text-base leading-relaxed font-light text-pretty w-full min-w-0 max-w-none";
+const bodyTextClass = "text-base leading-relaxed font-light w-full min-w-0 max-w-none";
+
+function TilbakeKnapp() {
+  const { lang } = useLanguage();
+  const router = useRouter();
+
+  return (
+    <button
+      type="button"
+      onClick={() => {
+        if (typeof window !== "undefined" && window.history.length > 1) {
+          router.back();
+        } else {
+          router.push("/prosjekter");
+        }
+      }}
+      className="inline-flex items-center gap-1.5 text-xs text-slate-500 hover:text-indigo-300 transition-colors mb-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400 rounded-sm"
+      aria-label={lang === "no" ? "Gå tilbake til forrige side" : "Go back to previous page"}
+    >
+      <ChevronLeft size={14} aria-hidden="true" />
+      {lang === "no" ? "Tilbake" : "Back"}
+    </button>
+  );
+}
 
 function SectionHeading({ id, children }: { id: string; children: React.ReactNode }) {
   return (
@@ -106,15 +129,18 @@ function PilotLandingInner({ slug }: { slug: PilotSide["slug"] }) {
         </div>
       </nav>
 
+      <TilbakeKnapp />
+
       <header className="border-b border-white/10 pb-8 mb-10">
         <p className="text-[10px] font-black uppercase tracking-widest text-indigo-400 mb-3">
           {lang === "no" ? "Pilotflate" : "Pilot environment"}
         </p>
-        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black tracking-tighter leading-tight text-white italic break-words mb-3">
-          {t(side.hero.tittel, lang)} <span className={accentClass}>{t(side.hero.tittelAccent, lang)}</span>
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black tracking-tighter leading-tight text-white italic mb-3 flex flex-wrap items-baseline gap-x-2">
+          <span>{t(side.hero.tittel, lang)}</span>
+          <span className={accentClass}>{t(side.hero.tittelAccent, lang)}</span>
         </h1>
-        <p className="text-lg md:text-xl text-slate-300 leading-relaxed font-light mb-4 text-pretty w-full min-w-0">{t(side.hero.undertittel, lang)}</p>
-        <p className="text-base md:text-lg text-slate-400 leading-relaxed font-light mb-6 text-pretty w-full min-w-0">{t(side.hero.tekst, lang)}</p>
+        <p className={`text-lg md:text-xl text-slate-300 mb-4 ${bodyTextClass}`}>{t(side.hero.undertittel, lang)}</p>
+        <p className={`text-slate-400 mb-6 ${bodyTextClass}`}>{t(side.hero.tekst, lang)}</p>
         <PilotCtaer side={side} />
       </header>
 
@@ -152,7 +178,7 @@ function PilotLandingInner({ slug }: { slug: PilotSide["slug"] }) {
 
       <section aria-labelledby="pilot-format" className="mb-10">
         <SectionHeading id="pilot-format">{t(side.format.tittel, lang)}</SectionHeading>
-        <p className="text-slate-400 text-base leading-relaxed font-light mb-4 text-pretty w-full min-w-0">{t(side.format.tekst, lang)}</p>
+        <p className={`text-slate-400 mb-4 ${bodyTextClass}`}>{t(side.format.tekst, lang)}</p>
         <PunktListe punkter={side.format.punkter} />
       </section>
 
@@ -198,8 +224,8 @@ function PilotLandingInner({ slug }: { slug: PilotSide["slug"] }) {
 export default function PilotLanding({ slug }: { slug: PilotSide["slug"] }) {
   return (
     <LanguageProvider>
-      <main className="min-h-screen bg-slate-950 text-slate-200 px-6 sm:px-12 md:px-24 lg:px-32 xl:px-40 py-4 md:py-8 relative overflow-x-hidden w-full">
-        <div className="max-w-6xl mx-auto relative z-10 w-full">
+      <main className="min-h-screen bg-slate-950 text-slate-200 px-16 sm:px-24 md:px-32 lg:px-40 xl:px-48 2xl:px-56 py-4 md:py-8 relative overflow-x-hidden w-full">
+        <div className="max-w-7xl mx-auto relative z-10 w-full">
           <PilotLandingInner slug={slug} />
         </div>
       </main>

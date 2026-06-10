@@ -1,6 +1,7 @@
 import { Lang } from "../LanguageContext";
 import { getProfilProofPoints } from "./proof-points";
 import { AKTUELL_FOR_ROLLER } from "./aktuell-for-roller";
+import { getRekruttererVerdiData } from "./rekrutterer-verdi";
 
 export type ProfilKort = {
   title: string;
@@ -12,6 +13,7 @@ export type ProfilData = {
   intro: string;
   roller: string[];
   proofPoints: string[];
+  verdiSituasjoner: ReturnType<typeof getRekruttererVerdiData>["verdiSituasjoner"];
   lederprofil: ProfilKort[];
   aiSeksjon: string;
   utdanning: string;
@@ -30,6 +32,8 @@ const data: Record<Lang, ProfilData> = {
     roller: AKTUELL_FOR_ROLLER.no,
 
     proofPoints: getProfilProofPoints("no"),
+
+    verdiSituasjoner: getRekruttererVerdiData("no").verdiSituasjoner,
 
     lederprofil: [
       {
@@ -80,6 +84,8 @@ Jeg er utdannet *Master of Science in Business Administration (Siviløkonom)* fr
     roller: AKTUELL_FOR_ROLLER.en,
 
     proofPoints: getProfilProofPoints("en"),
+
+    verdiSituasjoner: getRekruttererVerdiData("en").verdiSituasjoner,
 
     lederprofil: [
       {

@@ -299,14 +299,14 @@ export default function Consulting() {
               {tr("cons.title.1")} <br />
               <span className="text-indigo-500">{tr("cons.title.2")}</span>
             </h1>
-            <p className="text-xl md:text-2xl text-slate-300 leading-relaxed font-light text-pretty">{tr("cons.intro.1")}</p>
+            <p className="text-xl md:text-2xl text-slate-300 leading-relaxed font-light w-full min-w-0 max-w-none">{tr("cons.intro.1")}</p>
           </div>
         </div>
       </section>
 
       <section aria-labelledby="cons-tjenester-heading" className="mb-12">
         <SectionHeading id="cons-tjenester-heading">{tr("cons.tjenester.title")}</SectionHeading>
-        <p className="text-slate-400 text-base md:text-lg leading-relaxed font-light mb-6 text-pretty">{tr("cons.tjenester.intro")}</p>
+        <p className="text-slate-400 text-base md:text-lg leading-relaxed font-light mb-6 w-full min-w-0 max-w-none">{tr("cons.tjenester.intro")}</p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {hovedpakker.map((pakke, index) => (
             <HovedpakkeKort key={pakke.id} pakke={pakke} index={index} tr={tr} nummerLabel={tr("cons.pakke.nummer")} />
@@ -359,7 +359,7 @@ export default function Consulting() {
 
       <section aria-labelledby="cons-metodikk-heading" className="mb-12">
         <SectionHeading id="cons-metodikk-heading">{tr("cons.metodikk.title")}</SectionHeading>
-        <p className="text-slate-400 text-base leading-relaxed font-light mb-6 text-pretty">{tr("cons.metodikk.intro")}</p>
+        <p className="text-slate-400 text-base leading-relaxed font-light mb-6 w-full min-w-0 max-w-none">{tr("cons.metodikk.intro")}</p>
         <h3 className="text-sm font-black uppercase tracking-widest text-indigo-400 mb-3">{tr("cons.aiReise.title")}</h3>
         <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-5">
           {aiReiseSteps.map((step, index) => (
@@ -371,8 +371,8 @@ export default function Consulting() {
             </li>
           ))}
         </ol>
-        <p className="text-sm text-slate-400 leading-relaxed italic mb-6 text-pretty">{tr("cons.aiReise.forklaring")}</p>
-        <div className="rounded-xl border border-indigo-500/20 bg-indigo-500/5 px-5 py-4 space-y-3 max-w-3xl">
+        <p className="text-sm text-slate-400 leading-relaxed italic mb-6 w-full min-w-0 max-w-none">{tr("cons.aiReise.forklaring")}</p>
+        <div className="rounded-xl border border-indigo-500/20 bg-indigo-500/5 px-5 py-4 space-y-3 w-full min-w-0 max-w-none">
           <p className="text-indigo-200 font-semibold text-base leading-snug">{tr("cons.formula.line")}</p>
           <p className="text-sm text-slate-300 leading-relaxed">{tr("cons.formula.summary")}</p>
         </div>
@@ -381,7 +381,7 @@ export default function Consulting() {
       <section aria-labelledby="cons-dialog-heading" className="mb-12">
         <SectionHeading id="cons-dialog-heading">{tr("cons.dialog")}</SectionHeading>
         <div className="bg-slate-900/40 rounded-2xl border border-white/10 shadow-xl p-8 md:p-12">
-          <p className="text-slate-400 italic font-light text-lg mb-6 text-pretty">{tr("cons.dialog.intro")}</p>
+          <p className="text-slate-400 italic font-light text-lg mb-6 w-full min-w-0 max-w-none">{tr("cons.dialog.intro")}</p>
 
           <form onSubmit={handleSubmit} className="space-y-5">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

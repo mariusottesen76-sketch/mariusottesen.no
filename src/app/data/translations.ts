@@ -240,8 +240,8 @@ const translations: Translations = {
   "kontakt.title": { no: "Kontakt", en: "Contact" },
   "kontakt.profil": { no: "Kommersiell Lederprofil", en: "Commercial Leadership Profile" },
   "kontakt.profil.desc": {
-    no: "Er du arbeidsgiver eller rekrutterer? Se CV & åpen søknad for executive summary, rollefit og dokumenter — eller ta kontakt direkte.",
-    en: "Are you an employer or recruiter? See CV & open application for an executive summary, role fit and documents — or get in touch directly.",
+    no: "Er du arbeidsgiver, rekrutterer eller headhunter? Se CV & åpen søknad for executive summary, rollefit, resultater og dokumenter – eller ta kontakt direkte for en kort avklaring.",
+    en: "Are you an employer, recruiter or headhunter? See CV & open application for executive summary, role fit, results and documents — or get in touch directly for a brief clarification.",
   },
   "kontakt.ambisjon": { no: "Ambisjon & fokus", en: "Ambition & focus" },
   "kontakt.ambisjon.desc": {
@@ -265,6 +265,10 @@ const translations: Translations = {
   "dok.cv": { no: "Min CV", en: "My CV" },
   "dok.cv.desc": { no: "Last ned eller les min fullstendige CV", en: "Download or review my comprehensive CV" },
   "dok.cv.btn": { no: "Åpne PDF", en: "Open PDF" },
+  "dok.jumpToPdf": {
+    no: "Last ned eller åpne dokumenter",
+    en: "Download or open documents",
+  },
   "dok.soknad": { no: "Åpen søknad", en: "Open application" },
   "dok.soknad.desc": { no: "Les min åpne søknad for kommersielle lederroller", en: "Read my open application for senior commercial leadership roles" },
   "dok.linkedin": { no: "Besøk min LinkedIn-profil", en: "Visit my LinkedIn Profile" },

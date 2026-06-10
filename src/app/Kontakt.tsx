@@ -77,7 +77,7 @@ export default function Kontakt() {
             </div>
           </div>
 
-          <div className="text-center pt-4 max-w-3xl">
+          <div className="text-center pt-4 w-full min-w-0 max-w-none">
             <p className="text-white font-black text-2xl tracking-tight uppercase italic border-b-2 border-indigo-600 pb-4">
               {tr("kontakt.cta")}
             </p>

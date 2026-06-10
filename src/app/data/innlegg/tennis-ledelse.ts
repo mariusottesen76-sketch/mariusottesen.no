@@ -417,8 +417,10 @@ Min viktigste takeaway er derfor enkel: Innovasjon handler ikke først og fremst
       tittel: "Fra koding i 1999 til AI-revolusjon i 2026 – ny hjemmeside og nytt consultingselskap!",
       teaser:
         "Ny hjemmeside bygget med AI-verktøy på to dager – og lansering av Marius Ottesen Consulting som brobygger mellom strategi og AI-implementering.",
-      bildeUrl: "/images/nettside-bilde.gif",
+      bildeUrl: "/images/hjemmeside.png",
       bildeModalBred: true,
+      bildeFit: "contain",
+      bildeKortRamme: "nettsted",
       dato: "2026-02-16",
       visningsDato: "16.02.2026",
       kategori: "AI / KI",

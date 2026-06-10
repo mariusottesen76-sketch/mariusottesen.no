@@ -2,8 +2,19 @@ import { Lang } from "../LanguageContext";
 
 const data = {
   no: {
-    intro: "Solid erfaring på tvers av kunnskapsintensive B2B-markeder — fra industri, life science og sirkulær økonomi til teknologi og grossistvirksomhet. Gjennomgående ansvar for å profesjonalisere salgsorganisasjoner, drive vekst og lede endringsprosesser i virksomheter med høye krav til kvalitet og leveranseevne.",
+    intro: "Solid erfaring på tvers av kunnskapsintensive B2B-markeder — fra industri, life science og sirkulær økonomi til teknologi og grossistvirksomhet. Gjennomgående ansvar for å profesjonalisere salgsorganisasjoner, drive vekst og lede endringsprosesser i virksomheter med høye krav til kvalitet og leveranseevne. Under følger utvalgte karrierehøydepunkter som viser kommersiell ledelse, teamutvikling, endringsarbeid og praktisk bruk av AI, data og digitale arbeidsformer.",
     jobs: [
+      {
+        title: "Strategisk rådgiver og AI-utvikler",
+        company: "Marius Ottesen Consulting / Handelshøyskolen BI",
+        period: "2026 – Nåværende",
+        mandate:
+          "Bygge en faglig og kommersiell plattform for rådgivning, pilotprosjekter og praktisk AI-anvendelse innen salg, ledelse, arbeidsflyt og kommersiell utvikling.",
+        strategy:
+          'Kombinert kommersiell ledererfaring med videreutvikling innen AI, digital transformasjon og praktisk implementering gjennom <a href="/consulting">Marius Ottesen Consulting</a>, <a href="/prosjekter">egne pilotprosjekter</a> og masterkurset <a href="/prosjekter#prosjektoppgave-strategisk-implementering-2026">Generative AI for Business</a> ved BI.',
+        results:
+          'Utviklet flere konkrete AI-prosjekter og pilotflater, inkludert <a href="/psc">The Predictive Sales Coach</a> og <a href="/flowsignal">FlowSignal</a>, samt rådgivningskonsepter for verdilekkasjer, CRM, kundedialog, salgsutvikling og teamgjennomføring. Styrket posisjoneringen som kommersiell leder og AI-strateg gjennom <a href="/faginnlegg">faginnlegg</a>, prosjekter, consulting og en tydeligere <a href="/">digital plattform</a>.',
+      },
       {
         title: "Nasjonal Salgssjef",
         company: "Franzefoss Gjenvinning",
@@ -55,8 +66,19 @@ const data = {
     ],
   },
   en: {
-    intro: "Solid experience across knowledge-intensive B2B markets — from industry, life science and circular economy to technology and wholesale. A consistent track record of professionalising sales organisations, accelerating growth, and leading transformation programmes in businesses with exacting standards for quality and delivery.",
+    intro: "Solid experience across knowledge-intensive B2B markets — from industry, life science and circular economy to technology and wholesale. A consistent track record of professionalising sales organisations, accelerating growth, and leading transformation programmes in businesses with exacting standards for quality and delivery. Below are selected career highlights demonstrating commercial leadership, team development, change management, and practical use of AI, data and digital ways of working.",
     jobs: [
+      {
+        title: "Strategic advisor and AI developer",
+        company: "Marius Ottesen Consulting / BI Norwegian Business School",
+        period: "2026 – Present",
+        mandate:
+          "Build a professional and commercial platform for advisory services, pilot projects and practical AI application in sales, leadership, workflow and commercial development.",
+        strategy:
+          'Combined commercial leadership experience with further development in AI, digital transformation and practical implementation through <a href="/consulting">Marius Ottesen Consulting</a>, <a href="/prosjekter">own pilot projects</a> and the <a href="/prosjekter#prosjektoppgave-strategisk-implementering-2026">Generative AI for Business</a> master\'s course at BI.',
+        results:
+          'Developed several concrete AI projects and pilot environments, including <a href="/psc">The Predictive Sales Coach</a> and <a href="/flowsignal">FlowSignal</a>, plus advisory concepts for value leaks, CRM, customer dialogue, sales development and team execution. Strengthened positioning as commercial leader and AI strategist through <a href="/faginnlegg">articles</a>, projects, consulting and a clearer <a href="/">digital platform</a>.',
+      },
       {
         title: "National Sales Director",
         company: "Franzefoss Gjenvinning",

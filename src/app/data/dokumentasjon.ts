@@ -1,5 +1,4 @@
 import { Lang } from "../LanguageContext";
-import { AKTUELL_FOR_ROLLER } from "./aktuell-for-roller";
 
 export const linkedinUrl = "https://www.linkedin.com/in/mariusottesen/";
 
@@ -8,13 +7,6 @@ const data = {
     heroSub: "Profil, dokumenter og executive summary",
     intro:
       "Her finner du min CV, åpne søknad og en kort oppsummering av lederprofil, resultater og kjernekompetanse. Siden er laget for rekrutterere, headhuntere, researchere og arbeidsgivere som raskt ønsker å forstå hvor jeg skaper mest verdi.",
-    kortversjonTitle: "Kortversjon for rekrutterere og arbeidsgivere",
-    kortversjon: [
-      "Jeg er en kommersiell leder med lang erfaring fra å bygge vekst, styrke lønnsomhet og utvikle team i komplekse og kunnskapsintensive B2B-virksomheter. Jeg har ledet salg, marked og kommersiell utvikling med personal- og P/L-ansvar, og trives best i roller der strategi skal omsettes til tydelig retning, sterk gjennomføring og målbare resultater.",
-      "Jeg er kjent for å skape fremdrift i organisasjoner som trenger klar retning, høy gjennomføringsevne og bedre samspill mellom strategi, salg, drift og teknologi. Lederstilen min er tydelig, involverende og relasjonssterk, med vekt på styrkebasert ledelse, tydelige forventninger og nær oppfølging.",
-    ],
-    rollerTitle: "Aktuell for roller innen",
-    roller: AKTUELL_FOR_ROLLER.no,
     resultaterTitle: "Utvalgte resultater",
     resultater: [
       "Franzefoss: Forbedret kapasitetsutnyttelse, tydeligere styringsmodell, KPI-er og økte marginer.",
@@ -53,13 +45,6 @@ const data = {
     heroSub: "Profile, documents and executive summary",
     intro:
       "Here you will find my CV, open application and a concise summary of my leadership profile, results and core competencies. This page is designed for recruiters, headhunters, researchers and employers who want to quickly understand where I create the most value.",
-    kortversjonTitle: "Short version for recruiters and employers",
-    kortversjon: [
-      "I am a commercial leader with extensive experience building growth, strengthening profitability and developing teams in complex, knowledge-intensive B2B organisations. I have led sales, marketing and commercial development with people and P&L accountability, and perform best in roles where strategy must translate into clear direction, strong execution and measurable results.",
-      "I am known for creating momentum in organisations that need clearer direction, high execution capability and better alignment between strategy, sales, operations and technology. My leadership style is clear, engaging and relationship-oriented, with an emphasis on strengths-based leadership, explicit expectations and close follow-up.",
-    ],
-    rollerTitle: "Relevant for roles in",
-    roller: AKTUELL_FOR_ROLLER.en,
     resultaterTitle: "Selected results",
     resultater: [
       "Franzefoss: Improved capacity utilisation, clearer governance model, KPIs and increased margins.",

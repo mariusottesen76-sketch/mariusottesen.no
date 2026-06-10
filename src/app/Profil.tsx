@@ -147,6 +147,24 @@ export default function Profil({ onNavigate }: { onNavigate?: (tab: string) => v
             </ul>
           </section>
 
+          <section aria-labelledby="profil-verdi-heading" className="space-y-3">
+            <h2 id="profil-verdi-heading" className={sectionTitleClass}>
+              {d.verdiSituasjoner.title}
+            </h2>
+            <p className="text-slate-400 text-sm leading-relaxed">{d.verdiSituasjoner.ingress}</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {d.verdiSituasjoner.kort.map((kort) => (
+                <div
+                  key={kort.title}
+                  className="p-4 rounded-xl border border-slate-800/80 bg-slate-900/30 space-y-2"
+                >
+                  <h3 className="text-sm font-black text-white italic tracking-tight">{kort.title}</h3>
+                  <p className="text-slate-400 text-sm leading-relaxed">{kort.text}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
           <section aria-labelledby="profil-lederprofil-heading" className="space-y-3">
             <h2 id="profil-lederprofil-heading" className={sectionTitleClass}>
               {tr("profil.lederprofil.title")}

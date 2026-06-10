@@ -89,7 +89,7 @@ export default function Prosjekter({ onNavigate }: { onNavigate?: (tab: string) 
             {tr("prosjekter.title.1")} <br />
             <span className="text-indigo-500">{tr("prosjekter.title.2")}</span>
           </h1>
-          <div className="max-w-3xl min-w-0">
+          <div className="w-full min-w-0 max-w-none">
             <p className="text-xl md:text-2xl text-slate-300 leading-relaxed font-light mb-4 break-words">
               {tr("prosjekter.intro.1")}
             </p>

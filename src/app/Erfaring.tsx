@@ -8,12 +8,20 @@ import { getTranslation } from "./data/translations";
 
 const selskapLogo: Record<string, string | null> = {
   "Marius Ottesen Consulting": "/images/moc.logo.png",
+  "Marius Ottesen Consulting / Handelshøyskolen BI": "/images/moc.logo.png",
+  "Marius Ottesen Consulting / BI Norwegian Business School": "/images/moc.logo.png",
   "Franzefoss Gjenvinning": "/images/Franzefoss.png",
   "Norengros Johs. Olsen": "/images/Norengros.png",
   "MedDrop": "/images/meddrop-logo.png",
   "Mundipharma": "/images/Mundipharma.png",
   "Nilfisk": "/images/Nilfisk.png",
 };
+
+const erfaringTekstLinkClass =
+  "[&_a]:text-indigo-400 [&_a]:underline [&_a]:underline-offset-2 [&_a]:decoration-indigo-500/70 [&_a]:hover:text-indigo-200 [&_a]:transition-colors [&_a]:focus-visible:outline [&_a]:focus-visible:outline-2 [&_a]:focus-visible:outline-offset-2 [&_a]:focus-visible:outline-indigo-400";
+
+const erfaringResultatLinkClass =
+  "[&_a]:text-indigo-300 [&_a]:underline [&_a]:underline-offset-2 [&_a]:decoration-indigo-500/70 [&_a]:hover:text-indigo-200 [&_a]:transition-colors [&_a]:focus-visible:outline [&_a]:focus-visible:outline-2 [&_a]:focus-visible:outline-offset-2 [&_a]:focus-visible:outline-indigo-400";
 
 export default function Erfaring() {
   const { lang } = useLanguage();
@@ -54,7 +62,11 @@ export default function Erfaring() {
                           width={48}
                           height={48}
                           className={`max-w-full w-auto h-auto object-contain ${
-                            j.company === "Marius Ottesen Consulting" ? "max-h-[30px]" : "max-h-9"
+                            j.company === "Marius Ottesen Consulting" ||
+                            j.company === "Marius Ottesen Consulting / Handelshøyskolen BI" ||
+                            j.company === "Marius Ottesen Consulting / BI Norwegian Business School"
+                              ? "max-h-[30px]"
+                              : "max-h-9"
                           }`}
                         />
                       ) : (
@@ -73,15 +85,24 @@ export default function Erfaring() {
                 <div className="space-y-4 text-sm">
                   <div>
                     <p className="text-white text-[10px] uppercase tracking-widest flex items-center gap-2 font-black"><Target size={14} className="text-indigo-500"/>{tr("erfaring.mandat")}</p>
-                    <p className="text-slate-300 italic font-medium">{j.mandate}</p>
+                    <p
+                      className={`text-slate-300 italic font-medium ${erfaringTekstLinkClass}`}
+                      dangerouslySetInnerHTML={{ __html: j.mandate }}
+                    />
                   </div>
                   <div>
                     <p className="text-white text-[10px] uppercase tracking-widest flex items-center gap-2 font-black"><Lightbulb size={14} className="text-indigo-500"/>{tr("erfaring.strategi")}</p>
-                    <p className="text-slate-300 italic font-medium">{j.strategy}</p>
+                    <p
+                      className={`text-slate-300 italic font-medium ${erfaringTekstLinkClass}`}
+                      dangerouslySetInnerHTML={{ __html: j.strategy }}
+                    />
                   </div>
                   <div className="pt-4 border-t border-slate-800">
                     <p className="text-indigo-500 text-[10px] uppercase tracking-widest flex items-center gap-2 font-black"><TrendingUp size={14}/>{tr("erfaring.resultater")}</p>
-                    <p className="text-white font-bold leading-relaxed">{j.results}</p>
+                    <p
+                      className={`text-white font-bold leading-relaxed ${erfaringResultatLinkClass}`}
+                      dangerouslySetInnerHTML={{ __html: j.results }}
+                    />
                   </div>
                 </div>
               </div>

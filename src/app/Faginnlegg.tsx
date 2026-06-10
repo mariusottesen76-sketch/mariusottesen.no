@@ -52,6 +52,8 @@ interface InnleggType {
   bildeKortFokus?: string;
   /** Zoom inn på kortminiatyr for å kutte innbygget kant/letterboxing (f.eks. 1.12). */
   bildeKortZoom?: number;
+  /** Nettleser-lignende ramme på kortminiatyr (f.eks. hjemside-screenshot). */
+  bildeKortRamme?: "nettsted";
 }
 
 const bildeCacheVersion = (innlegg: InnleggType) => innlegg.bildeVersjon ?? innlegg.dato;
@@ -195,7 +197,7 @@ const Faginnlegg = ({ onNavigate }: { onNavigate?: (tab: string) => void }) => {
             {tr("fag.title.1")} <br />
             <span className="text-indigo-500">{tr("fag.title.2")}</span>
           </h1>
-          <div className="max-w-3xl">
+          <div className="w-full min-w-0 max-w-none">
             <p className="text-xl md:text-2xl text-slate-300 leading-relaxed font-light mb-4">{tr("fag.intro.1")}</p>
             <p className="text-lg md:text-xl text-slate-400 italic leading-relaxed font-light mb-4">{tr("fag.intro.why")}</p>
             <p className="text-lg md:text-xl text-slate-400 italic leading-relaxed font-light mb-4">{tr("fag.intro.why.bridge")}</p>
@@ -231,7 +233,7 @@ const Faginnlegg = ({ onNavigate }: { onNavigate?: (tab: string) => void }) => {
         <h2 id="fag-lesestier-heading" className="text-xl md:text-2xl font-black text-white italic tracking-tight mb-2">
           {tr("fag.lesestier.title")}
         </h2>
-        <p className="text-sm text-slate-400 leading-relaxed mb-5 max-w-2xl">{tr("fag.lesestier.intro")}</p>
+        <p className="text-sm text-slate-400 leading-relaxed mb-5 w-full min-w-0 max-w-none">{tr("fag.lesestier.intro")}</p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
           {lesestier.map((sti) => (
             <article
@@ -407,29 +409,52 @@ const InnleggsKort = ({ innlegg, lang, onClick, lesLabel }: { innlegg: InnleggTy
         className="relative shrink-0 rounded-lg overflow-hidden bg-slate-900 border border-slate-800"
         style={{ width: KORT_BILDE_BREDDE, height: KORT_BILDE_HOYDE }}
       >
-        {isVideo ? (
-          <video
-            key={`${kortSrc}-${cacheVersion}`}
-            src={`${kortSrc}?v=${cacheVersion}`}
-            className="absolute inset-0 w-full h-full object-cover transition-all duration-500"
-            style={kortBildeStil(innlegg)}
-            autoPlay
-            muted
-            loop
-            playsInline
-          />
-        ) : (
-          <Image
-            key={`${kortSrc}-${cacheVersion}`}
-            src={`${kortSrc}?v=${cacheVersion}`}
-            alt={innlegg.tittel[lang]}
-            fill
-            sizes={`${KORT_BILDE_BREDDE}px`}
-            className="object-cover transition-all duration-500"
-            style={kortBildeStil(innlegg)}
-            unoptimized
-          />
+        {innlegg.bildeKortRamme === "nettsted" && (
+          <div
+            className="absolute inset-x-0 top-0 z-10 flex h-[18px] items-center gap-1 border-b border-slate-700/80 bg-slate-800 px-1"
+            aria-hidden="true"
+          >
+            <span className="flex shrink-0 gap-[3px]">
+              <span className="h-[5px] w-[5px] rounded-full bg-slate-600" />
+              <span className="h-[5px] w-[5px] rounded-full bg-slate-600" />
+              <span className="h-[5px] w-[5px] rounded-full bg-slate-600" />
+            </span>
+            <span className="min-w-0 flex-1 truncate rounded-sm bg-slate-900/80 px-1 py-px text-center font-mono text-[5px] leading-none text-slate-500">
+              mariusottesen.no
+            </span>
+          </div>
         )}
+        <div
+          className={
+            innlegg.bildeKortRamme === "nettsted"
+              ? "absolute inset-x-0 bottom-0 top-[18px] bg-slate-950"
+              : "absolute inset-0"
+          }
+        >
+          {isVideo ? (
+            <video
+              key={`${kortSrc}-${cacheVersion}`}
+              src={`${kortSrc}?v=${cacheVersion}`}
+              className={`absolute inset-0 h-full w-full transition-all duration-500 ${bildeFitClass(innlegg)}`}
+              style={kortBildeStil(innlegg)}
+              autoPlay
+              muted
+              loop
+              playsInline
+            />
+          ) : (
+            <Image
+              key={`${kortSrc}-${cacheVersion}`}
+              src={`${kortSrc}?v=${cacheVersion}`}
+              alt={innlegg.tittel[lang]}
+              fill
+              sizes={`${KORT_BILDE_BREDDE}px`}
+              className={`transition-all duration-500 ${bildeFitClass(innlegg)}`}
+              style={kortBildeStil(innlegg)}
+              unoptimized
+            />
+          )}
+        </div>
       </div>
       <div className="flex-1 min-w-0 flex flex-col min-h-[186px]">
         <span className="text-[9px] font-mono text-indigo-400 uppercase tracking-widest font-bold block mb-3 leading-none shrink-0">{innlegg.visningsDato}</span>

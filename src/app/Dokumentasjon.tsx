@@ -2,8 +2,9 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { FileText, Download, Linkedin, ChevronRight } from "lucide-react";
+import { FileText, Download, Linkedin, ChevronRight, ArrowDown } from "lucide-react";
 import { getDokumentasjonData, linkedinUrl } from "./data/dokumentasjon";
+import { getRekruttererVerdiData } from "./data/rekrutterer-verdi";
 import { useLanguage } from "./LanguageContext";
 import { getTranslation } from "./data/translations";
 
@@ -12,10 +13,18 @@ const linkClass =
 
 const sectionTitleClass = "text-xl md:text-2xl font-black text-white italic tracking-tight";
 
+const ctaBtnClass =
+  "inline-flex items-center justify-center px-4 py-2.5 rounded-lg border border-indigo-500/40 bg-indigo-500/10 text-indigo-200 text-sm font-bold hover:bg-indigo-500/20 hover:border-indigo-400/60 transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400";
+
 export default function Dokumentasjon() {
   const { lang } = useLanguage();
   const tr = (key: string) => getTranslation(key, lang);
   const d = getDokumentasjonData(lang);
+  const rv = getRekruttererVerdiData(lang);
+  const r = rv.cvRekrutterere;
+  const verdi = rv.verdiSituasjoner;
+
+  const subLabelClass = "text-[10px] font-black uppercase tracking-widest text-indigo-400";
 
   return (
     <div className="py-4 text-left w-full overflow-x-hidden">
@@ -54,31 +63,77 @@ export default function Dokumentasjon() {
             {d.intro}
           </p>
 
-          <section aria-labelledby="cv-kortversjon-heading" className="space-y-3">
-            <h2 id="cv-kortversjon-heading" className={sectionTitleClass}>
-              {d.kortversjonTitle}
+          <a
+            href="#cv-dokumenter"
+            className="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-indigo-500/40 bg-indigo-500/10 text-indigo-200 font-black text-sm uppercase tracking-widest hover:bg-indigo-500/20 hover:border-indigo-400/60 transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400 w-full sm:w-auto justify-center"
+          >
+            <FileText size={18} aria-hidden="true" />
+            {tr("dok.jumpToPdf")}
+            <ArrowDown size={16} className="opacity-70" aria-hidden="true" />
+          </a>
+
+          <section
+            aria-labelledby="cv-rekrutterere-heading"
+            className="p-6 md:p-8 bg-slate-900/40 rounded-2xl border border-indigo-500/20 shadow-xl space-y-5"
+          >
+            <h2 id="cv-rekrutterere-heading" className={sectionTitleClass}>
+              {r.title}
             </h2>
-            <div className="space-y-3 text-slate-300 text-base leading-relaxed">
-              {d.kortversjon.map((avsnitt) => (
-                <p key={avsnitt.slice(0, 40)}>{avsnitt}</p>
-              ))}
+            <p className="text-slate-300 text-base leading-relaxed">{r.intro}</p>
+            <div className="space-y-2">
+              <p className={subLabelClass}>{r.kortVurderingLabel}</p>
+              <p className="text-slate-300 text-sm leading-relaxed italic">{r.kortVurdering}</p>
+            </div>
+            <div className="space-y-2">
+              <p className={subLabelClass}>{r.rollerLabel}</p>
+              <ul className="flex flex-wrap gap-2">
+                {rv.roller.map((rolle) => (
+                  <li
+                    key={rolle}
+                    className="px-3 py-1.5 rounded-full border border-indigo-500/25 bg-indigo-500/10 text-sm text-indigo-200"
+                  >
+                    {rolle}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="space-y-2">
+              <p className={subLabelClass}>{r.matchLabel}</p>
+              <p className="text-slate-300 text-sm leading-relaxed">{r.matchText}</p>
+            </div>
+            <div className="space-y-2">
+              <p className={subLabelClass}>{r.nesteStegLabel}</p>
+              <p className="text-slate-300 text-sm leading-relaxed">{r.nesteStegText}</p>
+            </div>
+            <div className="flex flex-wrap gap-2 pt-1">
+              <Link href="/resultater" className={ctaBtnClass} aria-label="Gå til resultater">
+                {r.ctaResultater}
+              </Link>
+              <Link href="/referanser" className={ctaBtnClass} aria-label="Gå til referanser">
+                {r.ctaReferanser}
+              </Link>
+              <Link href="/kontakt" className={ctaBtnClass} aria-label="Gå til kontakt">
+                {r.ctaKontakt}
+              </Link>
             </div>
           </section>
 
-          <section aria-labelledby="cv-roller-heading" className="space-y-3">
-            <h2 id="cv-roller-heading" className={sectionTitleClass}>
-              {d.rollerTitle}
+          <section aria-labelledby="cv-verdi-heading" className="space-y-3">
+            <h2 id="cv-verdi-heading" className={sectionTitleClass}>
+              {verdi.title}
             </h2>
-            <ul className="flex flex-wrap gap-2">
-              {d.roller.map((rolle) => (
-                <li
-                  key={rolle}
-                  className="px-3 py-1.5 rounded-full border border-indigo-500/25 bg-indigo-500/10 text-sm text-indigo-200"
+            <p className="text-slate-400 text-sm leading-relaxed">{verdi.ingress}</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {verdi.kort.map((kort) => (
+                <div
+                  key={kort.title}
+                  className="p-4 rounded-xl border border-slate-800/80 bg-slate-900/30 space-y-2"
                 >
-                  {rolle}
-                </li>
+                  <h3 className="text-sm font-black text-white italic tracking-tight">{kort.title}</h3>
+                  <p className="text-slate-400 text-sm leading-relaxed">{kort.text}</p>
+                </div>
               ))}
-            </ul>
+            </div>
           </section>
 
           <section aria-labelledby="cv-resultater-heading" className="space-y-3">
@@ -135,7 +190,7 @@ export default function Dokumentasjon() {
             </p>
           </section>
 
-          <section aria-labelledby="cv-pdf-heading" className="space-y-4">
+          <section id="cv-dokumenter" aria-labelledby="cv-pdf-heading" className="space-y-4 scroll-mt-24">
             <h2 id="cv-pdf-heading" className={sectionTitleClass}>
               {d.pdfTitle}
             </h2>
