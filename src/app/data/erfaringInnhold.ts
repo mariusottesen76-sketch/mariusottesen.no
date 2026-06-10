@@ -44,11 +44,11 @@ const data = {
         company: "Nilfisk",
         period: "2017 – 2018",
         mandate:
-          "Nasjonalt ansvar for salgsorganisasjonen i en periode preget av salgssvikt og behov for tydeligere retning, sterkere oppfølging og bedre teamgjennomføring.",
+          "Nasjonalt ansvar for salgsorganisasjonen, inkludert KAM-ansvar for selskapets to største kunder. Overtok en situasjon der salgssvikten var etablert før min ansettelse, med mandat om tydeligere retning, sterkere oppfølging og bedre teamgjennomføring.",
         strategy:
-          "Satte tydelig kommersiell retning, styrket salgsledelse, coaching og oppfølging, og jobbet målrettet med prioritering, kundedialog og prestasjonskultur i teamet.",
+          "Satte tydelig kommersiell retning og styrket salgsledelse, coaching og oppfølging. Drev flere nylanseringer av produkter innen ny retning og innovasjon, inkludert robotteknologi, og jobbet målrettet med prioritering, kundedialog og prestasjonskultur i teamet.",
         results:
-          "Snudde salgssvikt til vekst, overgikk salgsmål og styrket teammotivasjon og prestasjoner i en krevende snuoperasjon.",
+          "Snudde en etablert salgssvikt til vekst, overgikk salgsmål og styrket teammotivasjon og prestasjoner. Leverte flere vellykkede nylanseringer i en mer innovasjons- og teknologiorientert produktretning.",
       },
       {
         title: "Business Unit Manager",
@@ -107,11 +107,11 @@ const data = {
         company: "Nilfisk",
         period: "2017 – 2018",
         mandate:
-          "Nationwide accountability for the sales organisation during a period of declining sales, requiring clearer direction, stronger follow-up and better team execution.",
+          "Nationwide accountability for the sales organisation, including key account management responsibility for the company's two largest customers. Inherited a situation where declining sales was already established before my appointment, with a mandate to create clearer direction, stronger follow-up and better team execution.",
         strategy:
-          "Set clearer commercial direction, strengthened sales leadership, coaching and follow-up, and worked systematically on prioritisation, customer dialogue and performance culture in the team.",
+          "Set clearer commercial direction and strengthened sales leadership, coaching and follow-up. Drove multiple product launches within a new direction and innovation agenda, including robotics technology, and worked systematically on prioritisation, customer dialogue and performance culture in the team.",
         results:
-          "Turned declining sales into growth, exceeded sales targets and strengthened team motivation and performance in a demanding turnaround.",
+          "Turned an established sales decline into growth, exceeded sales targets and strengthened team motivation and performance. Delivered several successful launches in a more innovation- and technology-oriented product direction.",
       },
       {
         title: "Business Unit Manager",

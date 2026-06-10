@@ -137,11 +137,12 @@ export default function Resultater() {
             rolle: "Salgssjef",
             periode: "2017 – 2018",
             resultater: [
-              "Snudde salgssvikt til vekst",
-              "Overgikk salgsmål",
-              "Styrket teammotivasjon og prestasjoner",
+              "Overtok salgssvikt etablert før ansettelse og snudde utviklingen til vekst",
+              "KAM-ansvar for selskapets to største kunder",
+              "Drev nylanseringer innen ny produktretning, innovasjon og robotteknologi",
+              "Overgikk salgsmål og styrket teammotivasjon og prestasjoner",
             ],
-            relevans: "Salgsledelse, snuoperasjon og teamutvikling.",
+            relevans: "Salgsledelse, KAM, nylanseringer og snuoperasjon.",
             farge: "amber",
           },
           {
@@ -189,11 +190,12 @@ export default function Resultater() {
             rolle: "Sales Manager",
             periode: "2017 – 2018",
             resultater: [
-              "Turned declining sales into growth",
-              "Exceeded sales targets",
-              "Strengthened team motivation and performance",
+              "Inherited a sales decline established before appointment and turned performance into growth",
+              "Key account management responsibility for the company's two largest customers",
+              "Drove product launches within a new direction, innovation and robotics technology",
+              "Exceeded sales targets and strengthened team motivation and performance",
             ],
-            relevans: "Sales leadership, turnaround and team development.",
+            relevans: "Sales leadership, KAM, product launches and turnaround.",
             farge: "amber",
           },
           {
