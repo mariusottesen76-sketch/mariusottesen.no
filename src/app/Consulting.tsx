@@ -385,16 +385,16 @@ export default function Consulting() {
         <SectionHeading id="cons-metodikk-heading">{tr("cons.metodikk.title")}</SectionHeading>
         <p className="text-slate-400 text-base leading-relaxed font-light mb-6 w-full min-w-0 max-w-none">{tr("cons.metodikk.intro")}</p>
         <h3 className="text-sm font-black uppercase tracking-widest text-indigo-400 mb-3">{tr("cons.aiReise.title")}</h3>
-        <ol className="list-none grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-5 p-0 m-0">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-5">
           {aiReiseSteps.map((step, index) => (
-            <li key={step} className="flex items-start gap-3 p-4 bg-slate-900/40 rounded-xl border border-slate-800">
+            <div key={step} className="flex items-start gap-3 p-4 bg-slate-900/40 rounded-xl border border-slate-800">
               <span className="flex items-center justify-center w-7 h-7 rounded-full bg-indigo-500/15 border border-indigo-500/30 text-indigo-300 text-xs font-black shrink-0">
                 {index + 1}
               </span>
               <span className="text-sm text-slate-300 leading-snug pt-0.5">{step}</span>
-            </li>
+            </div>
           ))}
-        </ol>
+        </div>
         <p className="text-sm text-slate-400 leading-relaxed italic mb-6 w-full min-w-0 max-w-none">{tr("cons.aiReise.forklaring")}</p>
         <div className="rounded-xl border border-indigo-500/20 bg-indigo-500/5 px-5 py-4 space-y-3 w-full min-w-0 max-w-none">
           <p className="text-indigo-200 font-semibold text-base leading-snug">{tr("cons.formula.line")}</p>

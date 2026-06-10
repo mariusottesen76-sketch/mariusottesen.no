@@ -133,18 +133,6 @@ export default function Resultater() {
             farge: "sky",
           },
           {
-            selskap: "Mundipharma",
-            rolle: "Business Unit Manager",
-            periode: "2001 – 2012",
-            resultater: [
-              "Ledet team til global #1-ranking i vekst og omsetning i hele konsernet",
-              "Lanserte og posisjonerte fire blockbuster-produkter",
-              "Vant salgspriser for beste salg og EU PR-pris for fremragende resultater",
-            ],
-            relevans: "Global forretningsenhet, produktlansering og teamledelse.",
-            farge: "emerald",
-          },
-          {
             selskap: "Nilfisk",
             rolle: "Salgssjef",
             periode: "2017 – 2018",
@@ -155,6 +143,18 @@ export default function Resultater() {
             ],
             relevans: "Salgsledelse, snuoperasjon og teamutvikling.",
             farge: "amber",
+          },
+          {
+            selskap: "Mundipharma",
+            rolle: "Business Unit Manager",
+            periode: "2001 – 2012",
+            resultater: [
+              "Ledet team til global #1-ranking i vekst og omsetning i hele konsernet",
+              "Lanserte og posisjonerte fire blockbuster-produkter",
+              "Vant salgspriser for beste salg og EU PR-pris for fremragende resultater",
+            ],
+            relevans: "Global forretningsenhet, produktlansering og teamledelse.",
+            farge: "emerald",
           },
         ]
       : [
@@ -185,18 +185,6 @@ export default function Resultater() {
             farge: "sky",
           },
           {
-            selskap: "Mundipharma",
-            rolle: "Business Unit Manager",
-            periode: "2001 – 2012",
-            resultater: [
-              "Led the team to a global #1 ranking in growth and revenue across the group",
-              "Launched and positioned four blockbuster products",
-              "Won sales awards for best sales and the EU PR Award for outstanding results",
-            ],
-            relevans: "Global business unit leadership, product launches and team leadership.",
-            farge: "emerald",
-          },
-          {
             selskap: "Nilfisk",
             rolle: "Sales Manager",
             periode: "2017 – 2018",
@@ -207,6 +195,18 @@ export default function Resultater() {
             ],
             relevans: "Sales leadership, turnaround and team development.",
             farge: "amber",
+          },
+          {
+            selskap: "Mundipharma",
+            rolle: "Business Unit Manager",
+            periode: "2001 – 2012",
+            resultater: [
+              "Led the team to a global #1 ranking in growth and revenue across the group",
+              "Launched and positioned four blockbuster products",
+              "Won sales awards for best sales and the EU PR Award for outstanding results",
+            ],
+            relevans: "Global business unit leadership, product launches and team leadership.",
+            farge: "emerald",
           },
         ];
 

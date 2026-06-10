@@ -40,6 +40,17 @@ const data = {
         results: "Utviklet en funksjonell prototype klar for nasjonal og global skalering. Etablert dyp forståelse for skjæringspunktet mellom digital teknologi og kliniske behov.",
       },
       {
+        title: "Salgssjef",
+        company: "Nilfisk",
+        period: "2017 – 2018",
+        mandate:
+          "Nasjonalt ansvar for salgsorganisasjonen i en periode preget av salgssvikt og behov for tydeligere retning, sterkere oppfølging og bedre teamgjennomføring.",
+        strategy:
+          "Satte tydelig kommersiell retning, styrket salgsledelse, coaching og oppfølging, og jobbet målrettet med prioritering, kundedialog og prestasjonskultur i teamet.",
+        results:
+          "Snudde salgssvikt til vekst, overgikk salgsmål og styrket teammotivasjon og prestasjoner i en krevende snuoperasjon.",
+      },
+      {
         title: "Business Unit Manager",
         company: "Mundipharma",
         period: "2001 – 2012",
@@ -51,7 +62,6 @@ const data = {
     others: [
       { area: "Internasjonal Salg", desc: "Pelagia: Senior Sales Manager (Europa, USA, Asia)." },
       { area: "Strategisk Rådgivning", desc: "Assessit: Executive Search & lederutvelgelse." },
-      { area: "Markedsledelse", desc: "Nilfisk: Salgssjef med nasjonalt ansvar." },
     ],
   },
   en: {
@@ -93,6 +103,17 @@ const data = {
         results: "Developed a market-ready functional prototype positioned for national and international scale-up. Built deep domain expertise at the intersection of digital health technology and clinical needs.",
       },
       {
+        title: "Sales Manager",
+        company: "Nilfisk",
+        period: "2017 – 2018",
+        mandate:
+          "Nationwide accountability for the sales organisation during a period of declining sales, requiring clearer direction, stronger follow-up and better team execution.",
+        strategy:
+          "Set clearer commercial direction, strengthened sales leadership, coaching and follow-up, and worked systematically on prioritisation, customer dialogue and performance culture in the team.",
+        results:
+          "Turned declining sales into growth, exceeded sales targets and strengthened team motivation and performance in a demanding turnaround.",
+      },
+      {
         title: "Business Unit Manager",
         company: "Mundipharma",
         period: "2001 – 2012",
@@ -104,7 +125,6 @@ const data = {
     others: [
       { area: "International Sales", desc: "Pelagia: Senior Sales Manager (Europe, USA, Asia)." },
       { area: "Strategic Advisory", desc: "Assessit: Executive Search & senior leadership selection." },
-      { area: "Market Leadership", desc: "Nilfisk: Sales Manager with nationwide responsibility." },
     ],
   },
 };
