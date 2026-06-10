@@ -6,6 +6,12 @@ import { ArrowRight } from "lucide-react";
 import { getProfilData } from "./data/profil";
 import { useLanguage } from "./LanguageContext";
 import { getTranslation } from "./data/translations";
+import {
+  blockTitleClass,
+  pageEyebrowClass,
+  pageTitleClass,
+  sectionTitleClass,
+} from "./lib/typography";
 
 const introClass = "text-lg text-slate-300 leading-relaxed";
 
@@ -14,8 +20,6 @@ const linkClass =
 
 const secondaryLinkClass =
   "text-slate-500 underline underline-offset-2 decoration-slate-600/70 hover:text-slate-300 transition-colors text-xs";
-
-const sectionTitleClass = "text-white font-black text-lg italic tracking-tight";
 
 const cardClass =
   "p-5 md:p-6 bg-slate-900/25 backdrop-blur-sm border border-slate-800 rounded-2xl shadow-xl";
@@ -101,10 +105,10 @@ export default function Profil({ onNavigate }: { onNavigate?: (tab: string) => v
 
         <div className="flex-1 min-w-0 space-y-8">
           <header className="space-y-3">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-white tracking-tighter uppercase italic break-words max-w-full [overflow-wrap:anywhere]">
+            <h1 className={pageTitleClass}>
               Marius <span className="text-indigo-500">Ottesen</span>
             </h1>
-            <p className="text-lg text-indigo-400 font-black uppercase tracking-widest italic">
+            <p className={pageEyebrowClass}>
               {tr("profil.tittel")}
             </p>
             <p className="text-xl md:text-2xl text-white font-bold leading-snug tracking-tight">
@@ -276,7 +280,7 @@ export default function Profil({ onNavigate }: { onNavigate?: (tab: string) => v
                 />
               </div>
               <div>
-                <h2 className="text-white font-black text-base italic tracking-tight">
+                <h2 className={blockTitleClass}>
                   Marius Ottesen Consulting
                 </h2>
                 <p className="text-slate-500 text-[10px] font-bold tracking-widest mt-0.5">

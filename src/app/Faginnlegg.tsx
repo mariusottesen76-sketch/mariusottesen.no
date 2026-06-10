@@ -5,6 +5,12 @@ import Link from 'next/link';
 import { X, ExternalLink, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useLanguage } from './LanguageContext';
 import { getTranslation } from './data/translations';
+import {
+  cardTitleClass,
+  pageIntroClass,
+  pageTitleClass,
+  sectionTitleClass,
+} from './lib/typography';
 import { normalizeDisplayText } from './lib/normalize-display-text';
 import { applyProductNameItalicsPlain, formatInnleggHtml, formatInnleggTittelHtml } from './lib/product-brand';
 import { getFaginnleggLeseStier } from './data/faginnlegg-lesestier';
@@ -87,10 +93,10 @@ const linkClass =
   "text-indigo-400 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400";
 
 const subtemaOverskriftKlasse =
-  "scroll-mt-28 text-sm md:text-base font-bold text-indigo-300 uppercase tracking-wide border-l-[3px] border-indigo-500 pl-3 py-1.5 bg-indigo-500/10 rounded-r-lg";
+  "scroll-mt-28 text-sm md:text-base font-bold text-indigo-300 tracking-wide border-l-[3px] border-indigo-500 pl-3 py-1.5 bg-indigo-500/10 rounded-r-lg";
 
 const sporKolonneOverskriftKlasse =
-  "font-bold uppercase text-white tracking-tight leading-tight hyphens-none [overflow-wrap:normal]";
+  "font-black text-white italic tracking-tight leading-tight hyphens-none [overflow-wrap:normal]";
 
 const Faginnlegg = ({ onNavigate }: { onNavigate?: (tab: string) => void }) => {
   const { lang } = useLanguage();
@@ -156,12 +162,12 @@ const Faginnlegg = ({ onNavigate }: { onNavigate?: (tab: string) => void }) => {
           <Image src="/images/blogg.jpg" alt="Innsikt og tankeledelse — Marius Ottesen" width={400} height={500} className="w-full h-auto rounded-2xl shadow-xl border border-slate-800" />
         </div>
         <div className="flex-1 min-w-0 pt-2">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-black mb-6 tracking-tighter leading-tight text-white uppercase italic break-words max-w-full [overflow-wrap:anywhere]">
+          <h1 className={`${pageTitleClass} mb-6`}>
             {tr("fag.title.1")} <br />
             <span className="text-indigo-500">{tr("fag.title.2")}</span>
           </h1>
           <div className="w-full min-w-0 max-w-none">
-            <p className="text-xl md:text-2xl text-slate-300 leading-relaxed font-light mb-4">{tr("fag.intro.1")}</p>
+            <p className={`${pageIntroClass} mb-4`}>{tr("fag.intro.1")}</p>
             <p className="text-lg md:text-xl text-slate-400 italic leading-relaxed font-light mb-4">{tr("fag.intro.why")}</p>
             <p className="text-lg md:text-xl text-slate-400 italic leading-relaxed font-light mb-4">{tr("fag.intro.why.bridge")}</p>
             <p className="text-lg md:text-xl text-slate-400 italic leading-relaxed font-light mb-4">{tr("fag.intro.2")}</p>
@@ -193,7 +199,7 @@ const Faginnlegg = ({ onNavigate }: { onNavigate?: (tab: string) => void }) => {
       </div>
 
       <section aria-labelledby="fag-lesestier-heading" className="mt-8 mb-10 pt-6 border-t border-slate-800/40">
-        <h2 id="fag-lesestier-heading" className="text-xl md:text-2xl font-black text-white italic tracking-tight mb-2">
+        <h2 id="fag-lesestier-heading" className={`${sectionTitleClass} mb-2`}>
           {tr("fag.lesestier.title")}
         </h2>
         <p className="text-sm text-slate-400 leading-relaxed mb-5 w-full min-w-0 max-w-none">{tr("fag.lesestier.intro")}</p>
@@ -203,7 +209,7 @@ const Faginnlegg = ({ onNavigate }: { onNavigate?: (tab: string) => void }) => {
               key={sti.title.no}
               className="p-4 bg-slate-900/40 rounded-xl border border-indigo-500/15 shadow-lg space-y-3 min-w-0 flex flex-col"
             >
-              <h3 className="text-sm font-semibold text-white leading-snug">{sti.title[lang]}</h3>
+              <h3 className={cardTitleClass}>{sti.title[lang]}</h3>
               <p className="text-xs text-slate-400 leading-relaxed flex-1">{sti.intro[lang]}</p>
               <ul className="flex flex-wrap gap-2 pt-1 list-none p-0 m-0" role="list">
                 {sti.topics.map((topic) => (
@@ -225,7 +231,7 @@ const Faginnlegg = ({ onNavigate }: { onNavigate?: (tab: string) => void }) => {
 
       <section aria-labelledby="fag-toc-heading" className="mt-2 mb-6 pt-8 border-t border-slate-800/40">
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-4">
-          <h2 id="fag-toc-heading" className="text-xl md:text-2xl font-black text-white italic tracking-tight">
+          <h2 id="fag-toc-heading" className={sectionTitleClass}>
             {tr("fag.toc.title")}
           </h2>
           <label className="flex items-center gap-2 shrink-0">
@@ -308,7 +314,7 @@ const Faginnlegg = ({ onNavigate }: { onNavigate?: (tab: string) => void }) => {
 
       {/* KOLONNER MED INNLEGG - like høyde på header slik at første kort aligner */}
       <section id="fag-innlegg-oversikt" aria-labelledby="fag-kort-heading" className="scroll-mt-24 mt-10 pt-8 border-t border-slate-800/60">
-        <h2 id="fag-kort-heading" className="text-xl md:text-2xl font-black text-white italic tracking-tight mb-2">
+        <h2 id="fag-kort-heading" className={`${sectionTitleClass} mb-2`}>
           {tr("fag.kort.seksjon.title")}
         </h2>
         <p className="text-sm text-slate-400 leading-relaxed mb-6">

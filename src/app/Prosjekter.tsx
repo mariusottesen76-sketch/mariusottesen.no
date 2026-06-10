@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useLanguage, type Lang } from "./LanguageContext";
 import { getTranslation } from "./data/translations";
+import { blockTitleClass, cardTitleClass, pageIntroClass, pageTitleClass, sectionTitleClass } from "./lib/typography";
 import { getProsjektHurtigoversikt } from "./data/prosjekter-hurtigoversikt";
 import { predictiveSalesCoach, type ProsjektType } from "./data/prosjekter/predictive-sales-coach";
 import { pscPromoVideo } from "./data/prosjekter/psc-promo-video";
@@ -85,12 +86,12 @@ export default function Prosjekter({ onNavigate }: { onNavigate?: (tab: string) 
           />
         </div>
         <div className="flex-1 min-w-0 pt-2 overflow-hidden">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-black mb-6 tracking-tighter leading-tight text-white uppercase italic break-words [overflow-wrap:anywhere]">
+          <h1 className={`${pageTitleClass} mb-6`}>
             {tr("prosjekter.title.1")} <br />
             <span className="text-indigo-500">{tr("prosjekter.title.2")}</span>
           </h1>
           <div className="w-full min-w-0 max-w-none">
-            <p className="text-xl md:text-2xl text-slate-300 leading-relaxed font-light mb-4 break-words">
+            <p className={`${pageIntroClass} mb-4 break-words`}>
               {tr("prosjekter.intro.1")}
             </p>
             <p className="text-lg md:text-xl text-slate-400 italic leading-relaxed font-light break-words">
@@ -115,7 +116,7 @@ export default function Prosjekter({ onNavigate }: { onNavigate?: (tab: string) 
       </div>
 
       <section aria-labelledby="prosjekter-hurtig-heading" className="mt-6 mb-2 min-w-0">
-        <h2 id="prosjekter-hurtig-heading" className="text-lg md:text-xl font-black text-white italic tracking-tight mb-3">
+        <h2 id="prosjekter-hurtig-heading" className={`${sectionTitleClass} mb-3`}>
           {tr("prosjekter.hurtig.title")}
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3">
@@ -124,7 +125,7 @@ export default function Prosjekter({ onNavigate }: { onNavigate?: (tab: string) 
               key={kategori.title.no}
               className="p-4 bg-slate-900/40 rounded-xl border border-slate-800 space-y-2 min-w-0"
             >
-              <h3 className="text-[10px] font-black uppercase tracking-widest text-indigo-400">
+              <h3 className={`${cardTitleClass} text-indigo-400`}>
                 {kategori.title[lang]}
               </h3>
               <ul className="space-y-1.5">
@@ -302,7 +303,7 @@ export default function Prosjekter({ onNavigate }: { onNavigate?: (tab: string) 
                   </span>
                 )}
                 <h2
-                  className={`text-xl md:text-2xl font-black text-white tracking-tight leading-tight italic break-words [overflow-wrap:anywhere] ${
+                  className={`${blockTitleClass} text-xl md:text-2xl break-words [overflow-wrap:anywhere] ${
                     erPsc ? "[&_.psc-v]:text-[#E30613]" : erFlowSignal ? "[&_.fs-v]:text-[#CDB47A]" : ""
                   }`}
                   dangerouslySetInnerHTML={{

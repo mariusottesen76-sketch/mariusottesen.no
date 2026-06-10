@@ -6,6 +6,7 @@ import { BarChart3, Globe, Target, TrendingUp, Award, Zap, ArrowUpRight, Chevron
 import { useLanguage } from "./LanguageContext";
 import { getTranslation } from "./data/translations";
 import { getResultaterProofPoints } from "./data/proof-points";
+import { blockTitleClass, pageEyebrowClass, pageTitleClass, sectionTitleClass } from "./lib/typography";
 
 const linkClass =
   "text-indigo-400 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400";
@@ -240,7 +241,7 @@ export default function Resultater() {
                 </>
               )}
             </h1>
-            <p className="text-lg text-indigo-400 font-black uppercase tracking-widest italic">
+            <p className={pageEyebrowClass}>
               {tr("resultater.sub")}
             </p>
           </div>
@@ -277,7 +278,7 @@ export default function Resultater() {
           <section aria-labelledby="resultater-proof-heading">
             <h2
               id="resultater-proof-heading"
-              className="text-xl md:text-2xl font-black text-white italic tracking-tight mb-4"
+              className={`${sectionTitleClass} mb-4`}
             >
               {lang === "no" ? "6 resultater du bør merke deg" : "6 results worth noting"}
             </h2>
@@ -318,7 +319,7 @@ export default function Resultater() {
                         )}
                       </div>
                       <div>
-                        <h3 className="text-lg font-black text-white italic tracking-tight">{s.selskap}</h3>
+                        <h3 className={blockTitleClass}>{s.selskap}</h3>
                         <p className={`text-sm ${f.text} font-bold italic`}>{s.rolle}</p>
                       </div>
                     </div>
@@ -349,7 +350,7 @@ export default function Resultater() {
             aria-labelledby="resultater-cta-heading"
             className="p-8 bg-slate-900/40 rounded-2xl border border-indigo-500/20 shadow-xl space-y-4"
           >
-            <h2 id="resultater-cta-heading" className="text-xl font-black text-white italic tracking-tight">
+            <h2 id="resultater-cta-heading" className={sectionTitleClass}>
               {lang === "no"
                 ? "Vil du se hvordan erfaringen kan være relevant for din virksomhet?"
                 : "Would you like to see how this experience could be relevant for your organisation?"}

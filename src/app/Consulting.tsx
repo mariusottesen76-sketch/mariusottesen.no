@@ -18,6 +18,14 @@ import {
   PakkePilotStotte,
 } from "./data/consulting";
 import { getConsultingForedragData } from "./data/consulting-foredrag";
+import {
+  blockTitleClass,
+  cardTitleClass,
+  pageIntroClass,
+  pageTitleClass,
+  sectionHeadingClass,
+  sectionHeadingWrapClass,
+} from "./lib/typography";
 
 function getKategorier(lang: "no" | "en") {
   return lang === "no"
@@ -34,13 +42,11 @@ function getBudsjett(lang: "no" | "en") {
 const inputClass =
   "w-full bg-slate-950/80 border border-white/10 rounded-xl px-5 py-4 text-white placeholder-slate-600 text-sm focus:outline-none focus:border-indigo-500/50 focus:ring-1 focus:ring-indigo-500/20 transition-all";
 
-const linkClass =
-  "text-indigo-400 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400";
-
-const sectionTitleClass = "text-xl md:text-2xl font-black text-white italic tracking-tight mb-4";
-
 const pakkeLabelClass = "text-[10px] font-black uppercase tracking-widest text-indigo-400 mb-1";
 const pakkeBodyClass = "text-sm text-slate-400 leading-relaxed font-light";
+
+const linkClass =
+  "text-indigo-400 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400";
 
 const produktLenker = [
   { label: "The Predictive Sales Coach", href: "/psc" },
@@ -73,8 +79,8 @@ const summaryClass =
 
 function SectionHeading({ id, children }: { id: string; children: React.ReactNode }) {
   return (
-    <div className="border-b-2 border-indigo-500/30 mb-6">
-      <h2 id={id} className={sectionTitleClass}>
+    <div className={sectionHeadingWrapClass}>
+      <h2 id={id} className={sectionHeadingClass}>
         {children}
       </h2>
     </div>
@@ -133,7 +139,7 @@ function HovedpakkeKort({
       <p className="text-[10px] font-black uppercase tracking-widest text-indigo-400">
         {nummerLabel} {index + 1}
       </p>
-      <h3 className="text-lg font-black text-white italic tracking-tight">{pakke.tittel}</h3>
+      <h3 className={blockTitleClass}>{pakke.tittel}</h3>
       <PakkeFelt label={tr("cons.pakke.hvem")} text={pakke.hvem} />
       <PakkeFelt label={tr("cons.pakke.leveranse")} text={pakke.leveranseKort} />
       <details className="group">
@@ -158,7 +164,7 @@ function SpesialisertPakkeAccordion({
     <details className="group rounded-2xl border border-slate-800 bg-slate-900/40 shadow-xl overflow-hidden">
       <summary className={`${summaryClass} p-5 md:p-6`} aria-label={`${tr("cons.pakke.lesMer")}: ${pakke.tittel}`}>
         <span className="text-left block min-w-0">
-          <span className="block text-lg font-black text-white italic tracking-tight mb-1">{pakke.tittel}</span>
+          <span className={`block ${blockTitleClass} mb-1`}>{pakke.tittel}</span>
           <PakkeTekst text={pakke.hvem} />
         </span>
         <ChevronDown size={18} className="shrink-0 transition-transform group-open:rotate-180 mt-1" aria-hidden="true" />
@@ -302,11 +308,11 @@ export default function Consulting() {
 
           <div className="flex-1 min-w-0 flex flex-col">
             <p className="text-[10px] font-black uppercase tracking-widest text-indigo-400 mb-3">{tr("cons.brand")}</p>
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black tracking-tighter leading-tight text-white italic break-words mb-4">
+            <h1 className={`${pageTitleClass} mb-4`}>
               {tr("cons.title.1")} <br />
               <span className="text-indigo-500">{tr("cons.title.2")}</span>
             </h1>
-            <p className="text-xl md:text-2xl text-slate-300 leading-relaxed font-light w-full min-w-0 max-w-none">{tr("cons.intro.1")}</p>
+            <p className={pageIntroClass}>{tr("cons.intro.1")}</p>
           </div>
         </div>
       </section>
@@ -337,7 +343,7 @@ export default function Consulting() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
           {foredrag.kort.map((kort) => (
             <div key={kort.title} className="p-4 bg-slate-900/40 rounded-xl border border-slate-800 space-y-2">
-              <h3 className="text-sm font-black text-white italic tracking-tight">{kort.title}</h3>
+              <h3 className={cardTitleClass}>{kort.title}</h3>
               <p className="text-slate-400 text-sm leading-relaxed font-light">{kort.text}</p>
             </div>
           ))}
@@ -384,7 +390,7 @@ export default function Consulting() {
       <section aria-labelledby="cons-metodikk-heading" className="mb-12">
         <SectionHeading id="cons-metodikk-heading">{tr("cons.metodikk.title")}</SectionHeading>
         <p className="text-slate-400 text-base leading-relaxed font-light mb-6 w-full min-w-0 max-w-none">{tr("cons.metodikk.intro")}</p>
-        <h3 className="text-sm font-black uppercase tracking-widest text-indigo-400 mb-3">{tr("cons.aiReise.title")}</h3>
+        <h3 className={`${cardTitleClass} text-indigo-400 mb-3`}>{tr("cons.aiReise.title")}</h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-5">
           {aiReiseSteps.map((step, index) => (
             <div key={step} className="flex items-start gap-3 p-4 bg-slate-900/40 rounded-xl border border-slate-800">

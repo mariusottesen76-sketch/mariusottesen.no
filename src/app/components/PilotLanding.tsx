@@ -7,11 +7,17 @@ import { useRouter } from "next/navigation";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { LanguageProvider, LanguageToggle, useLanguage } from "../LanguageContext";
 import { getPilotSide, t, type PilotSide } from "../data/pilot-pages";
+import {
+  blockTitleClass,
+  cardTitleClass,
+  pageTitleClass,
+  sectionHeadingClass,
+  sectionHeadingWrapClass,
+  sectionTitleClass,
+} from "../lib/typography";
 
 const linkClass =
   "text-indigo-400 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400";
-
-const sectionTitleClass = "text-xl md:text-2xl font-black text-white italic tracking-tight mb-4";
 
 const bodyTextClass = "text-base leading-relaxed font-light w-full min-w-0 max-w-none";
 
@@ -40,8 +46,8 @@ function TilbakeKnapp() {
 
 function SectionHeading({ id, children }: { id: string; children: React.ReactNode }) {
   return (
-    <div className="border-b-2 border-indigo-500/30 mb-5">
-      <h2 id={id} className={sectionTitleClass}>
+    <div className={sectionHeadingWrapClass}>
+      <h2 id={id} className={sectionHeadingClass}>
         {children}
       </h2>
     </div>
@@ -135,7 +141,7 @@ function PilotLandingInner({ slug }: { slug: PilotSide["slug"] }) {
         <p className="text-[10px] font-black uppercase tracking-widest text-indigo-400 mb-3">
           {lang === "no" ? "Pilotflate" : "Pilot environment"}
         </p>
-        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black tracking-tighter leading-tight text-white italic mb-3 flex flex-wrap items-baseline gap-x-2">
+        <h1 className={`${pageTitleClass} mb-3 flex flex-wrap items-baseline gap-x-2`}>
           <span>{t(side.hero.tittel, lang)}</span>
           <span className={accentClass}>{t(side.hero.tittelAccent, lang)}</span>
         </h1>
@@ -164,7 +170,7 @@ function PilotLandingInner({ slug }: { slug: PilotSide["slug"] }) {
               <span className="flex items-center justify-center w-7 h-7 rounded-full bg-indigo-500/15 border border-indigo-500/30 text-indigo-300 text-xs font-black">
                 {index + 1}
               </span>
-              <h3 className="text-white text-sm font-black italic">{t(steg.tittel, lang)}</h3>
+              <h3 className={cardTitleClass}>{t(steg.tittel, lang)}</h3>
               <p className="text-slate-400 text-sm font-light leading-relaxed">{t(steg.beskrivelse, lang)}</p>
             </li>
           ))}
@@ -189,7 +195,7 @@ function PilotLandingInner({ slug }: { slug: PilotSide["slug"] }) {
 
       {side.avgrensning && (
         <section aria-labelledby="pilot-avgrensning" className="mb-10 p-6 bg-slate-900/40 rounded-2xl border border-slate-800">
-          <h2 id="pilot-avgrensning" className="text-lg font-black text-white italic tracking-tight mb-3">
+          <h2 id="pilot-avgrensning" className={`${blockTitleClass} mb-3`}>
             {t(side.avgrensning.tittel, lang)}
           </h2>
           <p className={`text-slate-400 text-sm ${bodyTextClass}`}>{t(side.avgrensning.tekst, lang)}</p>
@@ -200,7 +206,7 @@ function PilotLandingInner({ slug }: { slug: PilotSide["slug"] }) {
         aria-labelledby="pilot-consulting"
         className="p-8 bg-slate-900/40 rounded-2xl border border-indigo-500/20 shadow-xl space-y-4"
       >
-        <h2 id="pilot-consulting" className="text-xl md:text-2xl font-black text-white italic tracking-tight">
+        <h2 id="pilot-consulting" className={sectionTitleClass}>
           {t(side.consulting.tittel, lang)}
         </h2>
         <p className={`text-slate-300 ${bodyTextClass}`}>{t(side.consulting.tekst, lang)}</p>

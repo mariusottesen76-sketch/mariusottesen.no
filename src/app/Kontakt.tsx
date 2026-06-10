@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Mail, Smartphone, Linkedin, ChevronRight, Target, Briefcase, MessageSquare, Globe } from "lucide-react";
 import { useLanguage } from "./LanguageContext";
 import { getTranslation } from "./data/translations";
+import { iconSectionTitleClass, pageEyebrowClass, pageTitleClass, sectionTitleClass } from "./lib/typography";
 
 const linkClass =
   "text-indigo-400 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400";
@@ -30,16 +31,16 @@ export default function Kontakt() {
 
         <div className="flex-1 min-w-0 space-y-6">
           <div className="space-y-2">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-white tracking-tighter uppercase italic break-words max-w-full [overflow-wrap:anywhere]">
+            <h1 className={pageTitleClass}>
               {tr("kontakt.title")}
             </h1>
-            <p className="text-lg text-indigo-400 uppercase tracking-widest font-black italic">Marius Ottesen</p>
+            <p className={pageEyebrowClass}>Marius Ottesen</p>
           </div>
 
           <div className="w-full bg-slate-900/40 rounded-2xl border border-slate-800 overflow-hidden shadow-xl">
             <div className="p-8 md:p-10 space-y-5 text-slate-300">
               <div className="space-y-2">
-                <h2 className="text-indigo-500 font-black flex items-center gap-2 text-sm uppercase tracking-widest">
+                <h2 className={iconSectionTitleClass}>
                   <Target size={18} aria-hidden="true" /> {tr("kontakt.profil")}
                 </h2>
                 <p className="italic font-medium text-base leading-relaxed">
@@ -51,7 +52,7 @@ export default function Kontakt() {
                 </p>
               </div>
               <div className="space-y-2">
-                <h2 className="text-indigo-500 font-black flex items-center gap-2 text-sm uppercase tracking-widest">
+                <h2 className={iconSectionTitleClass}>
                   <Briefcase size={18} aria-hidden="true" /> {tr("kontakt.ambisjon")}
                 </h2>
                 <p className="italic font-medium text-base leading-relaxed">
@@ -63,7 +64,7 @@ export default function Kontakt() {
                 </p>
               </div>
               <div className="space-y-2">
-                <h2 className="text-indigo-500 font-black flex items-center gap-2 text-sm uppercase tracking-widest">
+                <h2 className={iconSectionTitleClass}>
                   <MessageSquare size={18} aria-hidden="true" /> {tr("kontakt.dialog")}
                 </h2>
                 <p className="italic font-medium text-base leading-relaxed">
@@ -78,7 +79,7 @@ export default function Kontakt() {
           </div>
 
           <div className="text-center pt-4 w-full min-w-0 max-w-none">
-            <p className="text-white font-black text-2xl tracking-tight uppercase italic border-b-2 border-indigo-600 pb-4">
+            <p className={`${sectionTitleClass} border-b-2 border-indigo-600 pb-4`}>
               {tr("kontakt.cta")}
             </p>
           </div>

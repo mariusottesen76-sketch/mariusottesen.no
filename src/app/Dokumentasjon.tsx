@@ -7,11 +7,10 @@ import { getDokumentasjonData, linkedinUrl } from "./data/dokumentasjon";
 import { getRekruttererVerdiData } from "./data/rekrutterer-verdi";
 import { useLanguage } from "./LanguageContext";
 import { getTranslation } from "./data/translations";
+import { pageEyebrowClass, pageTitleClass, sectionTitleClass } from "./lib/typography";
 
 const linkClass =
   "text-indigo-400 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400";
-
-const sectionTitleClass = "text-xl md:text-2xl font-black text-white italic tracking-tight";
 
 const ctaBtnClass =
   "inline-flex items-center justify-center px-4 py-2.5 rounded-lg border border-indigo-500/40 bg-indigo-500/10 text-indigo-200 text-sm font-bold hover:bg-indigo-500/20 hover:border-indigo-400/60 transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400";
@@ -43,7 +42,7 @@ export default function Dokumentasjon() {
 
         <div className="flex-1 min-w-0 space-y-6">
           <header className="space-y-2">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-white tracking-tighter italic break-words max-w-full [overflow-wrap:anywhere]">
+            <h1 className={pageTitleClass}>
               {lang === "no" ? (
                 <>
                   CV &amp; <span className="text-indigo-500">åpen søknad</span>
@@ -54,7 +53,7 @@ export default function Dokumentasjon() {
                 </>
               )}
             </h1>
-            <p className="text-lg text-indigo-400 font-black uppercase tracking-widest italic">
+            <p className={pageEyebrowClass}>
               {d.heroSub}
             </p>
           </header>
