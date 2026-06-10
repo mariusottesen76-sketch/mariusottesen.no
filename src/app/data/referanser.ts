@@ -27,7 +27,7 @@ export const referanserData: Referanse[] = [
     relasjon: "Agnese var klient til Marius",
     dato: "16. oktober 2025",
     sorteringsDato: "2025-10-16",
-    tekst: `Jeg hadde gleden av å samarbeide med Marius da han inviterte meg til å gjennomføre utviklingsprosjektet «Du er her for mer enn et salgsbudsjett. Når du eier det – sa skjer det!» for hele det kommersielle teamet i Franzefoss Gjenvinning. Allerede fra første stund var det tydelig at Marius er en engasjert og fremtidsrettet leder som virkelig investerer i faglig utvikling og kompetansebygging hos sine medarbeidere.
+    tekst: `Jeg hadde gleden av å samarbeide med Marius da han inviterte meg til å gjennomføre utviklingsprosjektet «Du er her for mer enn et salgsbudsjett. Når du eier det – så skjer det!» for hele det kommersielle teamet i Franzefoss Gjenvinning. Allerede fra første stund var det tydelig at Marius er en engasjert og fremtidsrettet leder som virkelig investerer i faglig utvikling og kompetansebygging hos sine medarbeidere.
 
 Marius forstår at reelle resultater skapes når mennesker blir sett, verdsatt og motivert. Han kombinerer tydelig strategisk retning med et sterkt fokus på personlig utvikling og eierskap i teamet – noe som også reflekteres i prosjektets tittel og budskap. Dette kom tydelig til uttrykk i hvordan medarbeiderne responderte: med energi, åpenhet og ekte engasjement. En av deltakerne oppsummerte det treffende: «Dette ga meg et løft jeg trengte.» Det vitner om en sterk kultur preget av tillit, tydelig lederskap og utviklingsfokus.
 

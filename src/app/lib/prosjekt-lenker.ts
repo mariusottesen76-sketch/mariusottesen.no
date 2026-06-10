@@ -15,12 +15,12 @@ const aria = {
 
 const faginnleggKategoriNavn = {
   ledelse: {
-    no: "Strategisk Ledelse & Transformasjon",
-    en: "Strategic Leadership & Transformation",
+    no: "Strategisk ledelse & transformasjon",
+    en: "Strategic leadership & transformation",
   },
   ai: {
-    no: "AI & Fremtidens Teknologiledelse",
-    en: "AI & Next-Generation Technology Leadership",
+    no: "AI & fremtidens teknologiledelse",
+    en: "AI & next-generation technology leadership",
   },
 } as const;
 

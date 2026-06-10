@@ -17,9 +17,12 @@ import {
   TjenestePakke,
   PakkePilotStotte,
 } from "./data/consulting";
+import { getConsultingForedragData } from "./data/consulting-foredrag";
 
 function getKategorier(lang: "no" | "en") {
-  return lang === "no" ? ["Strategi", "Prosess", "Implementering", "Annet"] : ["Strategy", "Process", "Implementation", "Other"];
+  return lang === "no"
+    ? ["Strategi", "Prosess", "Implementering", "Foredrag / workshop", "Annet"]
+    : ["Strategy", "Process", "Implementation", "Talk / workshop", "Other"];
 }
 
 function getBudsjett(lang: "no" | "en") {
@@ -172,6 +175,9 @@ function SpesialisertPakkeAccordion({
   );
 }
 
+const ctaBtnClass =
+  "inline-flex items-center justify-center px-5 py-2.5 rounded-lg border border-indigo-500/40 bg-indigo-500/10 text-indigo-200 text-sm font-bold hover:bg-indigo-500/20 hover:border-indigo-400/60 transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400";
+
 export default function Consulting() {
   const { lang } = useLanguage();
   const tr = (key: string) => getTranslation(key, lang);
@@ -181,6 +187,7 @@ export default function Consulting() {
   const hovedpakker = getHovedpakker(lang);
   const spesialisertePakker = getSpesialisertePakker(lang);
   const metoder = getConsultingMetoder(lang);
+  const foredrag = getConsultingForedragData(lang);
   const [valgtKategori, setValgtKategori] = useState<string[]>([]);
   const [budsjett, setBudsjett] = useState("");
   const [navn, setNavn] = useState("");
@@ -323,6 +330,34 @@ export default function Consulting() {
         </div>
       </section>
 
+      <section aria-labelledby="cons-foredrag-heading" className="mb-12">
+        <SectionHeading id="cons-foredrag-heading">{foredrag.title}</SectionHeading>
+        <p className="text-slate-400 text-base md:text-lg leading-relaxed font-light mb-4 w-full min-w-0 max-w-none">{foredrag.ingress}</p>
+        <p className="text-slate-400 text-sm leading-relaxed font-light mb-6 w-full min-w-0 max-w-none">{foredrag.stotte}</p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-6">
+          {foredrag.kort.map((kort) => (
+            <div key={kort.title} className="p-4 bg-slate-900/40 rounded-xl border border-slate-800 space-y-2">
+              <h3 className="text-sm font-black text-white italic tracking-tight">{kort.title}</h3>
+              <p className="text-slate-400 text-sm leading-relaxed font-light">{kort.text}</p>
+            </div>
+          ))}
+        </div>
+        <div className="space-y-2 mb-6">
+          <p className={pakkeLabelClass}>{foredrag.formaterLabel}</p>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            {foredrag.formater.map((format) => (
+              <li key={format} className="flex items-start gap-2 text-sm text-slate-300 leading-snug">
+                <span className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-1.5 shrink-0" aria-hidden="true" />
+                {format}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <Link href="/kontakt" className={ctaBtnClass}>
+          {foredrag.cta}
+        </Link>
+      </section>
+
       <section aria-labelledby="cons-metoder-heading" className="mb-12">
         <SectionHeading id="cons-metoder-heading">{tr("cons.metoder.title")}</SectionHeading>
         <p className="text-slate-400 text-base leading-relaxed font-light mb-5">{tr("cons.metoder.intro")}</p>
@@ -361,7 +396,7 @@ export default function Consulting() {
         <SectionHeading id="cons-metodikk-heading">{tr("cons.metodikk.title")}</SectionHeading>
         <p className="text-slate-400 text-base leading-relaxed font-light mb-6 w-full min-w-0 max-w-none">{tr("cons.metodikk.intro")}</p>
         <h3 className="text-sm font-black uppercase tracking-widest text-indigo-400 mb-3">{tr("cons.aiReise.title")}</h3>
-        <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-5">
+        <ol className="list-none grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-5 p-0 m-0">
           {aiReiseSteps.map((step, index) => (
             <li key={step} className="flex items-start gap-3 p-4 bg-slate-900/40 rounded-xl border border-slate-800">
               <span className="flex items-center justify-center w-7 h-7 rounded-full bg-indigo-500/15 border border-indigo-500/30 text-indigo-300 text-xs font-black shrink-0">

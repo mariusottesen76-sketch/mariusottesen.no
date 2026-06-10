@@ -127,8 +127,8 @@ const translations: Translations = {
     no: "gå videre til LinkedIn.",
     en: "continue to LinkedIn.",
   },
-  "fag.kat.ledelse": { no: "Strategisk Ledelse & Transformasjon", en: "Strategic Leadership & Transformation" },
-  "fag.kat.ai": { no: "AI & Fremtidens Teknologiledelse", en: "AI & Next-Generation Technology Leadership" },
+  "fag.kat.ledelse": { no: "Strategisk ledelse & transformasjon", en: "Strategic leadership & transformation" },
+  "fag.kat.ai": { no: "AI & fremtidens teknologiledelse", en: "AI & next-generation technology leadership" },
   "fag.toc.title": { no: "Innholdsfortegnelse", en: "Table of Contents" },
   "fag.toc.title.1": { no: "Innholds", en: "Table of" },
   "fag.toc.title.2": { no: "fortegnelse", en: "Contents" },
@@ -238,7 +238,7 @@ const translations: Translations = {
 
   // Kontakt
   "kontakt.title": { no: "Kontakt", en: "Contact" },
-  "kontakt.profil": { no: "Kommersiell Lederprofil", en: "Commercial Leadership Profile" },
+  "kontakt.profil": { no: "Kommersiell lederprofil", en: "Commercial leadership profile" },
   "kontakt.profil.desc": {
     no: "Er du arbeidsgiver, rekrutterer eller headhunter? Se CV & åpen søknad for executive summary, rollefit, resultater og dokumenter – eller ta kontakt direkte for en kort avklaring.",
     en: "Are you an employer, recruiter or headhunter? See CV & open application for executive summary, role fit, results and documents — or get in touch directly for a brief clarification.",
@@ -274,7 +274,10 @@ const translations: Translations = {
   "dok.linkedin": { no: "Besøk min LinkedIn-profil", en: "Visit my LinkedIn Profile" },
 
   // Footer
-  "footer.linkedin": { no: "Følg meg på LinkedIn for daglig AI-innsikt", en: "Follow me on LinkedIn for daily AI insights" },
+  "footer.linkedin": {
+    no: "Følg meg på LinkedIn for innlegg om ledelse, kommersiell utvikling, transformasjon og praktisk AI.",
+    en: "Follow me on LinkedIn for posts on leadership, commercial development, transformation and practical AI.",
+  },
 };
 
 export function getTranslation(key: string, lang: Lang): string {

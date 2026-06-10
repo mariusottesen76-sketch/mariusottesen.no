@@ -147,7 +147,7 @@ export default function Resultater() {
           {
             selskap: "Nilfisk",
             rolle: "Salgssjef",
-            periode: "2012 – 2014",
+            periode: "2017 – 2018",
             resultater: [
               "Snudde salgssvikt til vekst",
               "Overgikk salgsmål",
@@ -199,7 +199,7 @@ export default function Resultater() {
           {
             selskap: "Nilfisk",
             rolle: "Sales Manager",
-            periode: "2012 – 2014",
+            periode: "2017 – 2018",
             resultater: [
               "Turned declining sales into growth",
               "Exceeded sales targets",

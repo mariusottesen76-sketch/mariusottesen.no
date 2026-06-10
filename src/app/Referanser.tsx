@@ -60,7 +60,9 @@ export default function Referanser() {
                   <span className="flex items-center gap-2 text-slate-500 text-[9px] font-bold uppercase tracking-widest">
                     <UserCheck size={11} /> {ref.relasjon}
                   </span>
-                  <span className="text-slate-700">|</span>
+                  <span className="text-slate-700 px-1" aria-hidden="true">
+                    {" | "}
+                  </span>
                   <span className="flex items-center gap-2 text-slate-500 text-[9px] font-bold uppercase tracking-widest">
                     <Calendar size={11} /> {ref.dato}
                   </span>

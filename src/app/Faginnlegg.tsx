@@ -16,7 +16,6 @@ import {
   sorterFaginnlegg,
   sporOverskriftMedTelling,
   subtemaOverskriftMedTelling,
-  tellMedSuffix,
 } from './data/faginnlegg-grupper';
 import {
   erAiInnlegg,
@@ -92,44 +91,6 @@ const subtemaOverskriftKlasse =
 
 const sporKolonneOverskriftKlasse =
   "font-bold uppercase text-white tracking-tight leading-tight hyphens-none [overflow-wrap:normal]";
-
-/** Kolonneetikett under «Alle innlegg i detalj» – én linje når det er plass, ellers skjermbryt ved « & ». */
-function KolonneSporLabel({ label, antall, lang }: { label: string; antall: number; lang: "no" | "en" }) {
-  const suffix = tellMedSuffix(antall, lang);
-  const deler = label.split(" & ");
-  const tekstKlasse = sporKolonneOverskriftKlasse;
-
-  if (deler.length === 2) {
-    const fullLabel = (
-      <>
-        {deler[0]} & {deler[1]}
-        {suffix}
-      </>
-    );
-
-    return (
-      <>
-        <div className={`${tekstKlasse} text-lg max-[479px]:block hidden`}>
-          <span className="block">{deler[0]} &</span>
-          <span className="block">
-            {deler[1]}
-            {suffix}
-          </span>
-        </div>
-        <p className={`${tekstKlasse} hidden min-[480px]:block text-xl xl:text-2xl whitespace-nowrap`}>
-          {fullLabel}
-        </p>
-      </>
-    );
-  }
-
-  return (
-    <p className={`${tekstKlasse} text-lg lg:text-xl min-[480px]:whitespace-nowrap`}>
-      {label}
-      {suffix}
-    </p>
-  );
-}
 
 const Faginnlegg = ({ onNavigate }: { onNavigate?: (tab: string) => void }) => {
   const { lang } = useLanguage();
@@ -244,19 +205,19 @@ const Faginnlegg = ({ onNavigate }: { onNavigate?: (tab: string) => void }) => {
             >
               <h3 className="text-sm font-semibold text-white leading-snug">{sti.title[lang]}</h3>
               <p className="text-xs text-slate-400 leading-relaxed flex-1">{sti.intro[lang]}</p>
-              <div className="flex flex-wrap gap-1.5 pt-1">
-                {sti.topics.map((topic) =>
-                  topic.subtemaId ? (
-                    <a key={topic.label.no} href={`#${topic.subtemaId}`} className={lesestiChipLinkKlasse}>
-                      {topic.label[lang]}
-                    </a>
-                  ) : (
-                    <span key={topic.label.no} className={lesestiChipKlasse}>
-                      {topic.label[lang]}
-                    </span>
-                  )
-                )}
-              </div>
+              <ul className="flex flex-wrap gap-2 pt-1 list-none p-0 m-0" role="list">
+                {sti.topics.map((topic) => (
+                  <li key={topic.label.no} role="listitem">
+                    {topic.subtemaId ? (
+                      <a href={`#${topic.subtemaId}`} className={lesestiChipLinkKlasse}>
+                        {topic.label[lang]}
+                      </a>
+                    ) : (
+                      <span className={lesestiChipKlasse}>{topic.label[lang]}</span>
+                    )}
+                  </li>
+                ))}
+              </ul>
             </article>
           ))}
         </div>
@@ -356,9 +317,7 @@ const Faginnlegg = ({ onNavigate }: { onNavigate?: (tab: string) => void }) => {
         </p>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
         <section className="flex flex-col w-full min-w-0">
-          <div className="border-b-2 border-indigo-500/30 pb-3 mb-4">
-            <KolonneSporLabel label={tr("fag.kat.ledelse")} antall={telling.ledelse} lang={lang} />
-          </div>
+          <div className="border-b-2 border-indigo-500/30 mb-4" aria-hidden="true" />
           <div className="flex flex-col gap-4">
             {ledelseInnlegg.length > 0 ? (
               ledelseInnlegg.map((innlegg) => (
@@ -371,9 +330,7 @@ const Faginnlegg = ({ onNavigate }: { onNavigate?: (tab: string) => void }) => {
         </section>
 
         <section className="flex flex-col w-full min-w-0">
-          <div className="border-b-2 border-indigo-500/30 pb-3 mb-4">
-            <KolonneSporLabel label={tr("fag.kat.ai")} antall={telling.ai} lang={lang} />
-          </div>
+          <div className="border-b-2 border-indigo-500/30 mb-4" aria-hidden="true" />
           <div className="flex flex-col gap-4">
             {aiInnlegg.length > 0 ? (
               aiInnlegg.map((innlegg) => (
