@@ -90,12 +90,14 @@ const linkClass =
 const subtemaOverskriftKlasse =
   "scroll-mt-28 text-sm md:text-base font-bold text-indigo-300 uppercase tracking-wide border-l-[3px] border-indigo-500 pl-3 py-1.5 bg-indigo-500/10 rounded-r-lg";
 
+const sporKolonneOverskriftKlasse =
+  "font-bold uppercase text-white tracking-tight leading-tight hyphens-none [overflow-wrap:normal]";
+
 /** Kolonneetikett under «Alle innlegg i detalj» – én linje når det er plass, ellers skjermbryt ved « & ». */
 function KolonneSporLabel({ label, antall, lang }: { label: string; antall: number; lang: "no" | "en" }) {
   const suffix = tellMedSuffix(antall, lang);
   const deler = label.split(" & ");
-  const tekstKlasse =
-    "font-bold uppercase text-white tracking-tight leading-tight hyphens-none [overflow-wrap:normal]";
+  const tekstKlasse = sporKolonneOverskriftKlasse;
 
   if (deler.length === 2) {
     const fullLabel = (
@@ -107,14 +109,14 @@ function KolonneSporLabel({ label, antall, lang }: { label: string; antall: numb
 
     return (
       <>
-        <div className={`${tekstKlasse} text-base max-[479px]:block hidden`}>
+        <div className={`${tekstKlasse} text-lg max-[479px]:block hidden`}>
           <span className="block">{deler[0]} &</span>
           <span className="block">
             {deler[1]}
             {suffix}
           </span>
         </div>
-        <p className={`${tekstKlasse} hidden min-[480px]:block text-lg lg:text-base xl:text-lg 2xl:text-xl whitespace-nowrap`}>
+        <p className={`${tekstKlasse} hidden min-[480px]:block text-xl xl:text-2xl whitespace-nowrap`}>
           {fullLabel}
         </p>
       </>
@@ -122,7 +124,7 @@ function KolonneSporLabel({ label, antall, lang }: { label: string; antall: numb
   }
 
   return (
-    <p className={`${tekstKlasse} text-base lg:text-lg min-[480px]:whitespace-nowrap`}>
+    <p className={`${tekstKlasse} text-lg lg:text-xl min-[480px]:whitespace-nowrap`}>
       {label}
       {suffix}
     </p>
@@ -282,7 +284,7 @@ const Faginnlegg = ({ onNavigate }: { onNavigate?: (tab: string) => void }) => {
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <div id={FAGINNLEGG_LEDELSE_ANKER} className="scroll-mt-24 space-y-6">
-            <h3 className="text-lg font-semibold text-indigo-400 uppercase border-b border-indigo-500/30 pb-1.5">
+            <h3 className={`${sporKolonneOverskriftKlasse} text-xl xl:text-2xl border-b border-indigo-500/30 pb-1.5`}>
               {sporOverskriftMedTelling(tr("fag.kat.ledelse"), telling.ledelse, lang)}
             </h3>
             {ledelseGrupper.map(({ subtema, innlegg }) => (
@@ -312,7 +314,7 @@ const Faginnlegg = ({ onNavigate }: { onNavigate?: (tab: string) => void }) => {
           </div>
 
           <div id={FAGINNLEGG_AI_ANKER} className="scroll-mt-24 space-y-6">
-            <h3 className="text-lg font-semibold text-indigo-400 uppercase border-b border-indigo-500/30 pb-1.5">
+            <h3 className={`${sporKolonneOverskriftKlasse} text-xl xl:text-2xl border-b border-indigo-500/30 pb-1.5`}>
               {sporOverskriftMedTelling(tr("fag.kat.ai"), telling.ai, lang)}
             </h3>
             {aiGrupper.map(({ subtema, innlegg }) => (
