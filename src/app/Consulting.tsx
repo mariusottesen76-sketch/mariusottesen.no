@@ -1,20 +1,22 @@
 "use client";
 import React, { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import {
   Send,
   ChevronDown,
   Loader2,
-  AlertTriangle,
-  CheckCircle2,
-  ArrowRight,
   ChevronRight,
 } from "lucide-react";
 import { useLanguage } from "./LanguageContext";
 import { getTranslation } from "./data/translations";
 import { getAiReiseSteps } from "./data/ai-reise";
-import { getConsultingPakker } from "./data/consulting";
+import {
+  getHovedpakker,
+  getSpesialisertePakker,
+  getConsultingMetoder,
+  TjenestePakke,
+  PakkePilotStotte,
+} from "./data/consulting";
 
 function getKategorier(lang: "no" | "en") {
   return lang === "no" ? ["Strategi", "Prosess", "Implementering", "Annet"] : ["Strategy", "Process", "Implementation", "Other"];
@@ -26,36 +28,6 @@ function getBudsjett(lang: "no" | "en") {
     : ["Select indicative budget (optional)", "Under NOK 50,000", "NOK 50,000 – 150,000", "NOK 150,000 – 500,000", "Above NOK 500,000", "To be determined / Advisory needed"];
 }
 
-function getProblems(lang: "no" | "en") {
-  return lang === "no"
-    ? [
-        { problem: "«AI føles som en hype — vi vet ikke hvor vi skal starte.»", losning: "AI-Roadmap: Vi kartlegger de 3 viktigste prosessene der AI vil gi umiddelbar ROI." },
-        { problem: "«Vi har verktøyene, men mangler styring og forankring i ledelsen.»", losning: "Governance-rammeverk: Klare retningslinjer for hvem som eier hva når AI påvirker beslutninger." },
-        { problem: "«Teamet bruker AI individuelt, men vi ser ingen gevinster på bunnlinjen.»", losning: "Prosessintegrasjon: Vi bygger AI inn i kjerneprosessene — ikke som enkeltverktøy, men ende-til-ende." },
-        { problem: "«Vi trenger teknisk implementering, men har ikke et internt tech-team.»", losning: "Nettverksmodell: Jeg kobler deg med de rette ekspertene og leder prosjektet fra strategi til produksjon." },
-      ]
-    : [
-        { problem: '"AI feels like hype — we have no idea where to begin."', losning: "AI Roadmap: We identify the three highest-impact processes where AI will deliver immediate, measurable ROI." },
-        { problem: '"We have the tools, but lack governance and leadership alignment."', losning: "Governance Framework: Clear accountability structures for AI-influenced decision-making across the organisation." },
-        { problem: '"Our team uses AI individually, but we see no bottom-line impact."', losning: "Process Integration: We embed AI into core business workflows — not as isolated tools, but as an end-to-end capability." },
-        { problem: '"We need technical implementation, but lack an in-house tech team."', losning: "Network Model: I connect you with the right specialists and lead the engagement from strategy through to production." },
-      ];
-}
-
-function getSteps(lang: "no" | "en") {
-  return lang === "no"
-    ? [
-        { steg: "1", tittel: "Oppstartsmøte", beskrivelse: "Vi kartlegger utfordringer, mål og muligheter. Du får en klar anbefaling — uforpliktende." },
-        { steg: "2", tittel: "Analyse & strategi", beskrivelse: "Dypdykk i prosesser, data og organisasjon. Leverer et konkret veikart med prioriterte tiltak og forventet ROI." },
-        { steg: "3", tittel: "Implementering", beskrivelse: "Gjennomføring med mine tekniske partnere. Jeg leder prosjektet og sikrer at det leverer kommersiell verdi." },
-      ]
-    : [
-        { steg: "1", tittel: "Discovery session", beskrivelse: "We assess your challenges, objectives and opportunities. You receive a clear recommendation — no obligation." },
-        { steg: "2", tittel: "Analysis & strategy", beskrivelse: "A deep dive into processes, data and organisational readiness. Deliverable: a concrete roadmap with prioritised initiatives." },
-        { steg: "3", tittel: "Implementation", beskrivelse: "Execution alongside my technical partners. I lead the project and ensure it delivers commercial value." },
-      ];
-}
-
 const inputClass =
   "w-full bg-slate-950/80 border border-white/10 rounded-xl px-5 py-4 text-white placeholder-slate-600 text-sm focus:outline-none focus:border-indigo-500/50 focus:ring-1 focus:ring-indigo-500/20 transition-all";
 
@@ -63,6 +35,38 @@ const linkClass =
   "text-indigo-400 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400";
 
 const sectionTitleClass = "text-xl md:text-2xl font-black text-white italic tracking-tight mb-4";
+
+const pakkeLabelClass = "text-[10px] font-black uppercase tracking-widest text-indigo-400 mb-1";
+const pakkeBodyClass = "text-sm text-slate-400 leading-relaxed font-light";
+
+const produktLenker = [
+  { label: "The Predictive Sales Coach", href: "/psc" },
+  { label: "FlowSignal", href: "/flowsignal" },
+] as const;
+
+function PakkeTekst({ text }: { text: string }) {
+  const pattern = new RegExp(`(${produktLenker.map(({ label }) => label.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|")})`, "g");
+  const deler = text.split(pattern);
+
+  return (
+    <p className={pakkeBodyClass}>
+      {deler.map((del, index) => {
+        const lenke = produktLenker.find(({ label }) => label === del);
+        if (lenke) {
+          return (
+            <Link key={`${lenke.href}-${index}`} href={lenke.href} className={linkClass}>
+              {lenke.label}
+            </Link>
+          );
+        }
+        return del;
+      })}
+    </p>
+  );
+}
+
+const summaryClass =
+  "cursor-pointer list-none flex items-center justify-between gap-3 text-sm font-bold text-indigo-400 hover:text-indigo-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400 rounded [&::-webkit-details-marker]:hidden";
 
 function SectionHeading({ id, children }: { id: string; children: React.ReactNode }) {
   return (
@@ -74,15 +78,109 @@ function SectionHeading({ id, children }: { id: string; children: React.ReactNod
   );
 }
 
+function PakkeFelt({ label, text }: { label: string; text: string }) {
+  return (
+    <div>
+      <p className={pakkeLabelClass}>{label}</p>
+      <PakkeTekst text={text} />
+    </div>
+  );
+}
+
+function PakkePilotStotteBlokk({ stotte }: { stotte: PakkePilotStotte }) {
+  return (
+    <div className="pt-3 border-t border-white/10 space-y-2">
+      <p className={pakkeBodyClass}>{stotte.tekst}</p>
+      <Link href={stotte.lenkeHref} className={`${linkClass} text-sm font-bold`}>
+        {stotte.lenkeLabel} →
+      </Link>
+    </div>
+  );
+}
+
+function PakkeDetaljer({
+  pakke,
+  tr,
+}: {
+  pakke: TjenestePakke;
+  tr: (key: string) => string;
+}) {
+  return (
+    <div className="mt-4 pt-4 border-t border-white/10 space-y-3">
+      <PakkeFelt label={tr("cons.pakke.for")} text={pakke.forDetalj} />
+      <PakkeFelt label={tr("cons.pakke.leveranseDetalj")} text={pakke.leveranseDetalj} />
+      {pakke.pilotStotte && <PakkePilotStotteBlokk stotte={pakke.pilotStotte} />}
+    </div>
+  );
+}
+
+function HovedpakkeKort({
+  pakke,
+  index,
+  tr,
+  nummerLabel,
+}: {
+  pakke: TjenestePakke;
+  index: number;
+  tr: (key: string) => string;
+  nummerLabel: string;
+}) {
+  return (
+    <article className="p-6 bg-slate-900/40 rounded-2xl border border-indigo-500/20 shadow-xl space-y-3">
+      <p className="text-[10px] font-black uppercase tracking-widest text-indigo-400">
+        {nummerLabel} {index + 1}
+      </p>
+      <h3 className="text-lg font-black text-white italic tracking-tight">{pakke.tittel}</h3>
+      <PakkeFelt label={tr("cons.pakke.hvem")} text={pakke.hvem} />
+      <PakkeFelt label={tr("cons.pakke.leveranse")} text={pakke.leveranseKort} />
+      <details className="group">
+        <summary className={summaryClass} aria-label={`${tr("cons.pakke.lesMer")}: ${pakke.tittel}`}>
+          <span>{tr("cons.pakke.lesMer")}</span>
+          <ChevronDown size={16} className="shrink-0 transition-transform group-open:rotate-180" aria-hidden="true" />
+        </summary>
+        <PakkeDetaljer pakke={pakke} tr={tr} />
+      </details>
+    </article>
+  );
+}
+
+function SpesialisertPakkeAccordion({
+  pakke,
+  tr,
+}: {
+  pakke: TjenestePakke;
+  tr: (key: string) => string;
+}) {
+  return (
+    <details className="group rounded-2xl border border-slate-800 bg-slate-900/40 shadow-xl overflow-hidden">
+      <summary className={`${summaryClass} p-5 md:p-6`} aria-label={`${tr("cons.pakke.lesMer")}: ${pakke.tittel}`}>
+        <span className="text-left block min-w-0">
+          <span className="block text-lg font-black text-white italic tracking-tight mb-1">{pakke.tittel}</span>
+          <PakkeTekst text={pakke.hvem} />
+        </span>
+        <ChevronDown size={18} className="shrink-0 transition-transform group-open:rotate-180 mt-1" aria-hidden="true" />
+      </summary>
+      <div className="px-5 md:px-6 pb-5 md:pb-6 border-t border-white/10">
+        <div className="pt-4 space-y-3">
+          <PakkeFelt label={tr("cons.pakke.leveranse")} text={pakke.leveranseKort} />
+          <PakkeFelt label={tr("cons.pakke.for")} text={pakke.forDetalj} />
+          <PakkeFelt label={tr("cons.pakke.leveranseDetalj")} text={pakke.leveranseDetalj} />
+          {pakke.pilotStotte && <PakkePilotStotteBlokk stotte={pakke.pilotStotte} />}
+        </div>
+      </div>
+    </details>
+  );
+}
+
 export default function Consulting() {
   const { lang } = useLanguage();
   const tr = (key: string) => getTranslation(key, lang);
   const kategorier = getKategorier(lang);
   const budsjettAlternativer = getBudsjett(lang);
-  const problems = getProblems(lang);
-  const steps = getSteps(lang);
   const aiReiseSteps = getAiReiseSteps(lang);
-  const pakker = getConsultingPakker(lang);
+  const hovedpakker = getHovedpakker(lang);
+  const spesialisertePakker = getSpesialisertePakker(lang);
+  const metoder = getConsultingMetoder(lang);
   const [valgtKategori, setValgtKategori] = useState<string[]>([]);
   const [budsjett, setBudsjett] = useState("");
   const [navn, setNavn] = useState("");
@@ -196,45 +294,76 @@ export default function Consulting() {
           </div>
 
           <div className="flex-1 min-w-0 flex flex-col">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black tracking-tighter leading-tight text-white uppercase italic break-words max-w-full [overflow-wrap:anywhere] mb-4">
+            <p className="text-[10px] font-black uppercase tracking-widest text-indigo-400 mb-3">{tr("cons.brand")}</p>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black tracking-tighter leading-tight text-white italic break-words mb-4">
               {tr("cons.title.1")} <br />
               <span className="text-indigo-500">{tr("cons.title.2")}</span>
             </h1>
-            <div className="max-w-3xl space-y-4">
-              <p className="text-xl md:text-2xl text-slate-300 leading-relaxed font-light">{tr("cons.intro.1")}</p>
-              <p className="text-lg text-slate-400 leading-relaxed font-light">
-                {tr("cons.intro.2")}{" "}
-                <Link href="/prosjekter" className={linkClass}>
-                  {tr("cons.intro.2.link")}
-                </Link>
-                {lang === "no" ? " for konkrete caser." : " for concrete cases."}
-              </p>
-              <p className="text-lg text-slate-400 leading-relaxed font-light">{tr("cons.intro.5")}</p>
-            </div>
+            <p className="text-xl md:text-2xl text-slate-300 leading-relaxed font-light text-pretty">{tr("cons.intro.1")}</p>
           </div>
         </div>
       </section>
 
-      <section aria-labelledby="cons-verdi-heading" className="mb-12">
-        <SectionHeading id="cons-verdi-heading">{tr("cons.verdi.title")}</SectionHeading>
-        <div className="space-y-3">
-          <p className="text-slate-300 text-base md:text-lg leading-relaxed font-light md:whitespace-nowrap md:overflow-x-auto pb-1 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
-            {tr("cons.verdi.text")}
-          </p>
-          <p className="text-slate-300 text-base md:text-lg leading-relaxed font-light md:whitespace-nowrap md:overflow-x-auto pb-1 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
-            {tr("cons.verdi.text.2")}
-          </p>
+      <section aria-labelledby="cons-tjenester-heading" className="mb-12">
+        <SectionHeading id="cons-tjenester-heading">{tr("cons.tjenester.title")}</SectionHeading>
+        <p className="text-slate-400 text-base md:text-lg leading-relaxed font-light mb-6 text-pretty">{tr("cons.tjenester.intro")}</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          {hovedpakker.map((pakke, index) => (
+            <HovedpakkeKort key={pakke.id} pakke={pakke} index={index} tr={tr} nummerLabel={tr("cons.pakke.nummer")} />
+          ))}
         </div>
       </section>
 
-      <section aria-labelledby="cons-aireise-heading" className="mb-12">
-        <SectionHeading id="cons-aireise-heading">{tr("cons.aiReise.title")}</SectionHeading>
-        <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-5">
-          {aiReiseSteps.map((step, index) => (
+      <section aria-labelledby="cons-spesialisert-heading" className="mb-12">
+        <SectionHeading id="cons-spesialisert-heading">{tr("cons.spesialisert.title")}</SectionHeading>
+        <div className="space-y-3">
+          {spesialisertePakker.map((pakke) => (
+            <SpesialisertPakkeAccordion key={pakke.id} pakke={pakke} tr={tr} />
+          ))}
+        </div>
+      </section>
+
+      <section aria-labelledby="cons-metoder-heading" className="mb-12">
+        <SectionHeading id="cons-metoder-heading">{tr("cons.metoder.title")}</SectionHeading>
+        <p className="text-slate-400 text-base leading-relaxed font-light mb-5">{tr("cons.metoder.intro")}</p>
+        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          {metoder.map((metode) => {
+            const metodeHref = produktLenker.find(({ label }) => label === metode.tittel)?.href;
+            return (
             <li
-              key={step}
+              key={metode.tittel}
               className="flex items-start gap-3 p-4 bg-slate-900/40 rounded-xl border border-slate-800"
             >
+              <ChevronRight size={16} className="text-indigo-400 shrink-0 mt-0.5" aria-hidden="true" />
+              <div className="space-y-2">
+                {metodeHref ? (
+                  <Link href={metodeHref} className={`${linkClass} text-sm font-bold no-underline hover:underline`}>
+                    {metode.tittel}
+                  </Link>
+                ) : (
+                  <p className="text-white text-sm font-bold">{metode.tittel}</p>
+                )}
+                <p className="text-slate-400 text-sm font-light leading-relaxed">{metode.beskrivelse}</p>
+                {metode.pilotStotte && <PakkePilotStotteBlokk stotte={metode.pilotStotte} />}
+              </div>
+            </li>
+            );
+          })}
+        </ul>
+        <p className="mt-4">
+          <Link href="/prosjekter" className={linkClass}>
+            {tr("cons.prosjekter.link")}
+          </Link>
+        </p>
+      </section>
+
+      <section aria-labelledby="cons-metodikk-heading" className="mb-12">
+        <SectionHeading id="cons-metodikk-heading">{tr("cons.metodikk.title")}</SectionHeading>
+        <p className="text-slate-400 text-base leading-relaxed font-light mb-6 text-pretty">{tr("cons.metodikk.intro")}</p>
+        <h3 className="text-sm font-black uppercase tracking-widest text-indigo-400 mb-3">{tr("cons.aiReise.title")}</h3>
+        <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-5">
+          {aiReiseSteps.map((step, index) => (
+            <li key={step} className="flex items-start gap-3 p-4 bg-slate-900/40 rounded-xl border border-slate-800">
               <span className="flex items-center justify-center w-7 h-7 rounded-full bg-indigo-500/15 border border-indigo-500/30 text-indigo-300 text-xs font-black shrink-0">
                 {index + 1}
               </span>
@@ -242,134 +371,17 @@ export default function Consulting() {
             </li>
           ))}
         </ol>
-        <p className="text-sm text-slate-400 leading-relaxed max-w-3xl italic whitespace-nowrap overflow-x-auto pb-1 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
-          {tr("cons.aiReise.forklaring")}
-        </p>
-      </section>
-
-      <section aria-labelledby="cons-formula-heading" className="mb-12">
-        <SectionHeading id="cons-formula-heading">{tr("cons.formula.title")}</SectionHeading>
+        <p className="text-sm text-slate-400 leading-relaxed italic mb-6 text-pretty">{tr("cons.aiReise.forklaring")}</p>
         <div className="rounded-xl border border-indigo-500/20 bg-indigo-500/5 px-5 py-4 space-y-3 max-w-3xl">
           <p className="text-indigo-200 font-semibold text-base leading-snug">{tr("cons.formula.line")}</p>
           <p className="text-sm text-slate-300 leading-relaxed">{tr("cons.formula.summary")}</p>
         </div>
       </section>
 
-      <section aria-labelledby="cons-pakker-heading" className="mb-12">
-        <SectionHeading id="cons-pakker-heading">{tr("cons.pakker.title")}</SectionHeading>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-          {pakker.map((pakke, index) => (
-            <article
-              key={pakke.tittel}
-              className="p-6 bg-slate-900/40 rounded-2xl border border-indigo-500/20 shadow-xl space-y-2"
-            >
-              <p className="text-[10px] font-black uppercase tracking-widest text-indigo-400">
-                {lang === "no" ? `Pakke ${index + 1}` : `Package ${index + 1}`}
-              </p>
-              <h3 className="text-lg font-black text-white italic tracking-tight">{pakke.tittel}</h3>
-              <p className="text-slate-400 text-sm leading-relaxed font-light">{pakke.beskrivelse}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section
-        aria-labelledby="cons-cta-heading"
-        className="mb-12 p-8 bg-slate-900/40 rounded-2xl border border-indigo-500/20 shadow-xl space-y-4"
-      >
-        <h2 id="cons-cta-heading" className="sr-only">
-          {tr("cons.cta.kontakt")}
-        </h2>
-        <p className="text-sm text-slate-300 leading-relaxed max-w-2xl">{tr("cons.prosjekter.intro")}</p>
-        <div className="flex flex-wrap gap-x-4 gap-y-3 items-center">
-          <Link
-            href="/kontakt"
-            className="inline-flex items-center gap-2 bg-white text-black px-6 py-3 rounded-full font-black uppercase text-xs hover:bg-indigo-500 hover:text-white transition-all italic shadow-lg"
-            aria-label="Gå til kontaktsiden"
-          >
-            {tr("cons.cta.kontakt")}
-            <ChevronRight size={16} aria-hidden="true" />
-          </Link>
-          <Link href="/prosjekter" className={linkClass} aria-label="Gå til AI-prosjekter">
-            {tr("cons.prosjekter.link")}
-          </Link>
-        </div>
-      </section>
-
-      <section aria-labelledby="cons-initiatives-heading" className="mb-12">
-        <SectionHeading id="cons-initiatives-heading">{tr("cons.initiatives.title")}</SectionHeading>
-        <p className="text-slate-400 italic font-light text-base mb-6 max-w-3xl">{tr("cons.initiatives.intro")}</p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-4">
-          <div className="p-6 bg-slate-900/40 rounded-2xl border border-slate-800 shadow-xl">
-            <div className="flex items-start gap-4">
-              <div className="w-[72px] h-[72px] shrink-0 rounded-xl bg-white border border-slate-700/50 p-2 flex items-center justify-center overflow-hidden">
-                <Image src="/images/ai-value-lab-logo.png" alt="AI Value Lab Oslo" width={72} height={72} className="w-full h-full object-contain" />
-              </div>
-              <div className="min-w-0 space-y-2">
-                <h3 className="text-white font-black italic tracking-tight">{tr("cons.initiatives.avl.title")}</h3>
-                <p className="text-slate-400 text-sm leading-relaxed font-light">{tr("cons.initiatives.avl.text")}</p>
-              </div>
-            </div>
-          </div>
-          <div className="p-6 bg-slate-900/40 rounded-2xl border border-slate-800 shadow-xl">
-            <div className="flex items-start gap-4">
-              <div className="w-[72px] h-[72px] shrink-0 rounded-xl bg-white border border-slate-700/50 p-2 flex items-center justify-center overflow-hidden">
-                <Image src="/images/skoyenasen-tk-logo.png" alt="Skøyenåsen Tannklinikk" width={72} height={72} className="w-full h-full object-contain" />
-              </div>
-              <div className="min-w-0 space-y-2">
-                <h3 className="text-white font-black italic tracking-tight">{tr("cons.initiatives.stk.title")}</h3>
-                <p className="text-slate-400 text-sm leading-relaxed font-light">{tr("cons.initiatives.stk.text")}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <p>
-          <Link href="/prosjekter" className={linkClass} aria-label="Gå til AI-prosjekter">
-            {tr("cons.prosjekter.link")}
-          </Link>
-        </p>
-      </section>
-
-      <section aria-labelledby="cons-problems-heading" className="mb-12">
-        <SectionHeading id="cons-problems-heading">{tr("cons.kjenner")}</SectionHeading>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-          {problems.map((item) => (
-            <div key={item.problem} className="p-6 bg-slate-900/40 rounded-2xl border border-slate-800 shadow-xl space-y-4">
-              <div className="flex items-start gap-3">
-                <AlertTriangle size={16} className="text-amber-400/70 shrink-0 mt-0.5" aria-hidden="true" />
-                <p className="text-slate-400 text-sm italic">{item.problem}</p>
-              </div>
-              <div className="flex items-start gap-3">
-                <CheckCircle2 size={16} className="text-emerald-400/70 shrink-0 mt-0.5" aria-hidden="true" />
-                <p className="text-white text-sm font-bold">{item.losning}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section aria-labelledby="cons-prosess-heading" className="mb-12">
-        <SectionHeading id="cons-prosess-heading">{tr("cons.prosess")}</SectionHeading>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          {steps.map((item) => (
-            <div key={item.steg} className="p-6 bg-slate-900/40 rounded-2xl border border-indigo-500/20 shadow-xl text-center space-y-3">
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 font-black text-xl">
-                {item.steg}
-              </div>
-              <h3 className="text-white font-black italic text-base tracking-tight">{item.tittel}</h3>
-              <p className="text-slate-400 text-sm font-light leading-relaxed">{item.beskrivelse}</p>
-              {item.steg !== "3" && (
-                <ArrowRight size={16} className="text-indigo-500/30 mx-auto hidden md:block" aria-hidden="true" />
-              )}
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section aria-labelledby="cons-dialog-heading">
+      <section aria-labelledby="cons-dialog-heading" className="mb-12">
         <SectionHeading id="cons-dialog-heading">{tr("cons.dialog")}</SectionHeading>
         <div className="bg-slate-900/40 rounded-2xl border border-white/10 shadow-xl p-8 md:p-12">
-          <p className="text-slate-400 italic font-light text-lg mb-6 max-w-2xl">{tr("cons.dialog.intro")}</p>
+          <p className="text-slate-400 italic font-light text-lg mb-6 text-pretty">{tr("cons.dialog.intro")}</p>
 
           <form onSubmit={handleSubmit} className="space-y-5">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

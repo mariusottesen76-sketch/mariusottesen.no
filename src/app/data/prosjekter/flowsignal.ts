@@ -79,7 +79,7 @@ For arbeidsgivere viser prosjektet hvordan AI kan brukes til å støtte ledelse,
 
 <strong>Status og modenhet</strong>
 
-FlowSignal v1.0 er en lukket pilot. Løsningen er bygget som en praktisk app med tilgangskode, brukerregistrering og avgrenset testbruk.
+FlowSignal v1.0 er en lukket pilot. Løsningen er bygget som en tilgangsstyrt, praktisk arbeidsflate for avgrenset testbruk i avtalte løp.
 
 Prosjektet er fortsatt under utvikling, med særlig fokus på bedre rapportimport, redigerbart profilgrunnlag, mer presise anbefalinger og tydeligere lederverdi.
 
@@ -97,7 +97,7 @@ Der FlowSignal hjelper team å samarbeide bedre, trener PSCv6 selgere på konkre
 
 <strong>Neste steg</strong>
 
-Har du tilgangskode, kan du åpne ${fsAppLink} direkte ved å trykke på linken. ${prosjektKontaktLenke("no")} dersom du ønsker en gjennomgang, tilgangskode eller vil teste løsningen i et team.`,
+Pilotflaten er tilgangsstyrt og brukes i avtalte testløp. ${prosjektKontaktLenke("no")} dersom du ønsker tilgang eller vil diskutere en mulig pilot. Når tilgang er avtalt, kan ${fsAppLink} brukes som del av et avgrenset testløp, workshop eller kommersielt utviklingsarbeid.`,
     en: `<strong>What the project is</strong>
 
 FlowSignal is built for leaders, commercial teams and organisations that want better insight into how people create value, collaborate and are affected by daily form.
@@ -142,7 +142,7 @@ For employers, the project shows how AI can support leadership, team development
 
 <strong>Status and maturity</strong>
 
-FlowSignal v1.0 is a closed pilot. The solution is built as a practical app with access code, user registration and limited test use.
+FlowSignal v1.0 is a closed pilot. The solution is built as an access-controlled, practical workspace for limited use in agreed engagements.
 
 The project is still under development, with particular focus on better report import, editable profile foundation, more precise recommendations and clearer leadership value.
 
@@ -160,6 +160,6 @@ Where FlowSignal helps teams collaborate better, PSCv6 trains sales reps on conc
 
 <strong>Next steps</strong>
 
-If you have an access code, you can open ${fsAppLink} directly by clicking the link. ${prosjektKontaktLenke("en")} if you would like a walkthrough, an access code or want to test the solution with a team.`,
+The pilot environment is access-controlled and used in agreed test runs. ${prosjektKontaktLenke("en")} if you want access or to discuss a possible pilot. Once access is agreed, ${fsAppLink} can be used as part of a scoped test run, workshop or commercial development engagement.`,
   },
 };

@@ -56,6 +56,7 @@ const translations: Translations = {
   "profil.ai.link.consulting": { no: "Se consulting", en: "See consulting" },
   "profil.ai.link.prosjekter": { no: "Se AI-prosjekter", en: "See AI projects" },
   "profil.ai.link.faginnlegg": { no: "Les faginnlegg", en: "Read articles" },
+  "profil.ai.link.pilot": { no: "Se pilotflater for PSCv6 og FlowSignal", en: "See pilot environments for PSCv6 and FlowSignal" },
 
   // Erfaring
   "erfaring.title": { no: "Karriere høydepunkter", en: "Career Highlights" },
@@ -118,9 +119,13 @@ const translations: Translations = {
     en: "Start here if you want to read the articles based on role, need or area of interest.",
   },
   "fag.kort.seksjon.title": { no: "Alle innlegg i detalj", en: "All articles in detail" },
-  "fag.kort.seksjon.intro": {
-    no: "Her finner du hvert innlegg med kort beskrivelse. Klikk for å lese hele teksten her på siden, eller gå videre til LinkedIn.",
-    en: "Here you will find each article with a short description. Click to read the full text on this page, or continue to LinkedIn.",
+  "fag.kort.seksjon.intro.lead": {
+    no: "Her finner du hvert innlegg med kort beskrivelse. Klikk for å lese hele teksten her på siden, eller ",
+    en: "Here you will find each article with a short description. Click to read the full text on this page, or ",
+  },
+  "fag.kort.seksjon.intro.linkedin": {
+    no: "gå videre til LinkedIn.",
+    en: "continue to LinkedIn.",
   },
   "fag.kat.ledelse": { no: "Strategisk Ledelse & Transformasjon", en: "Strategic Leadership & Transformation" },
   "fag.kat.ai": { no: "AI & Fremtidens Teknologiledelse", en: "AI & Next-Generation Technology Leadership" },
@@ -150,37 +155,37 @@ const translations: Translations = {
   "prosjekter.hurtig.title": { no: "Utforsk prosjektene etter type", en: "Explore projects by type" },
 
   // Consulting
-  "cons.title.1": { no: "Marius Ottesen", en: "Marius Ottesen" },
-  "cons.title.2": { no: "Consulting", en: "Consulting" },
+  "cons.brand": { no: "Marius Ottesen Consulting", en: "Marius Ottesen Consulting" },
+  "cons.title.1": { no: "Finn og tett verdilekkasjer", en: "Find and close value leaks" },
+  "cons.title.2": {
+    no: "i salg, kundedialog, CRM, arbeidsflyt og ledelse",
+    en: "in sales, customer dialogue, CRM, workflow and leadership",
+  },
   "cons.intro.1": {
-    no: "Marius Ottesen Consulting hjelper ledere og team med AI-strategi, arbeidsflyt, kommersiell utvikling og praktisk implementering — uten at du må bygge et fullt internt tech-team fra dag én.",
-    en: "Marius Ottesen Consulting helps leaders and teams with AI strategy, workflow, commercial development and practical implementation — without needing a full in-house tech team from day one.",
+    no: "Jeg hjelper SMB-ledere og kommersielle team med å identifisere hvor tid, penger, kunder, kvalitet eller kapasitet lekker – og omsette innsikten til tydelige tiltak, bedre arbeidsflyt og målbar kommersiell verdi.",
+    en: "I help SMB leaders and commercial teams identify where time, money, customers, quality or capacity are leaking — and turn that insight into clear initiatives, better workflow and measurable commercial value.",
   },
-  "cons.intro.2": {
-    no: "Bakgrunnen min er kommersiell ledelse med helhetlig P/L-ansvar, nasjonale salgsorganisasjoner og lang erfaring fra komplekse B2B-miljøer. Parallelt har jeg bygget praktisk AI-kompetanse gjennom Generative AI for Business ved BI og hands-on utviklingsarbeid — se",
-    en: "My background is commercial leadership with full P&L accountability, national sales organisations and long experience from complex B2B environments. In parallel I have built practical AI competence through Generative AI for Business at BI and hands-on development work — see",
+  "cons.tjenester.title": { no: "Tjenester og startpunkter", en: "Services and starting points" },
+  "cons.tjenester.intro": {
+    no: "AI kan være en del av løsningen, men startpunktet er alltid forretningsproblemet: hvor taper virksomheten tid, penger, kunder, kvalitet eller kapasitet?",
+    en: "AI can be part of the solution, but the starting point is always the business problem: where is the organisation losing time, money, customers, quality or capacity?",
   },
-  "cons.intro.2.link": { no: "AI-prosjekter", en: "AI Projects" },
-  "cons.intro.3": {
-    no: "Jeg ser at AI skaper verdi når virksomheter går fra verktøybruk til arbeidsflytdesign. Legger man AI oppå dagens prosesser, blir gevinstene som regel inkrementelle. Redesigner man arbeidsflyt, roller og beslutningspunkter, kan de bli strukturelle. Det gjelder særlig i kommersielle prosesser der marked, salg og kundeteam ofte sitter på mye av dataene som trengs.",
-    en: "I see AI creating value when organisations move from tool use to workflow design. Layer AI onto existing processes and gains are usually incremental. Redesign workflows, roles, and decision points, and they can become structural. This is especially true in commercial processes where marketing, sales, and customer teams often hold much of the data required.",
+  "cons.spesialisert.title": { no: "Flere spesialiserte pakker", en: "More specialised packages" },
+  "cons.metoder.title": { no: "Metoder og prosjekter som kan inngå", en: "Methods and projects that may be included" },
+  "cons.metoder.intro": {
+    no: "Noen oppdrag kan støttes av egne metoder, arbeidsflyter eller prototypeprosjekter, avhengig av behov.",
+    en: "Some engagements can be supported by my own methods, workflows or prototype projects, depending on need.",
   },
-  "cons.intro.4": {
-    no: "Typiske områder er B2B-salg og go-to-market, vekst og retention, samt service og kundebehandling. Her finnes det ofte arbeidsflyter med høy gjennomførbarhet og høy verdi. Min jobb er å koble marked, kunde, salgsprosess, organisasjon og teknologi, og vurdere realistisk hva som faktisk kan leveres.",
-    en: "Typical areas include B2B sales and go-to-market, growth and retention, and service and customer care. These are often high-feasibility, high-value workflows. My role is to connect market, customer, sales process, organisation, and technology, and assess realistically what can actually deliver.",
-  },
-  "cons.intro.5": {
-    no: "I oppdrag jobber jeg hands-on med use case-identifisering, prioritering, business case, forankring og oppfølging. Jeg tar også del i utvikling og implementering der det er naturlig, og supplerer med spesialister når prosjektet krever det. Samtidig holder jeg den kommersielle retningen, adopsjonen og kvaliteten i gjennomføringen. Det inkluderer governance, læring i organisasjonen og støtte til ledere og team når AI skal inn i drift, ikke bare i pilot.",
-    en: "In engagements I work hands-on on use case identification, prioritisation, business case, anchoring, and follow-up. I also take part in development and implementation where that makes sense, and bring in specialists when the project requires it. At the same time I hold the commercial direction, adoption, and quality of execution. That includes governance, organisational learning, and support for leaders and teams when AI must move into operations, not just pilot.",
-  },
-  "cons.verdi.title": { no: "Fra AI-mulighet til praktisk verdi", en: "From AI opportunity to practical value" },
-  "cons.verdi.text": {
-    no: "Mange virksomheter vet at AI kan skape verdi, men mangler struktur for å gå fra idé til prioriterte tiltak.",
-    en: "Many organisations know AI can create value, but lack structure to move from idea to prioritised initiatives.",
-  },
-  "cons.verdi.text.2": {
-    no: "Jeg hjelper ledere og team med å forstå forretningsbehovet, kartlegge arbeidsflyt, vurdere risiko og lage en gjennomførbar plan.",
-    en: "I help leaders and teams understand the business need, map workflows, assess risk and build a feasible plan.",
+  "cons.pakke.hvem": { no: "Hvem passer det for?", en: "Who is it for?" },
+  "cons.pakke.nummer": { no: "Pakke", en: "Package" },
+  "cons.pakke.leveranse": { no: "Kort leveranse", en: "Brief deliverable" },
+  "cons.pakke.lesMer": { no: "Les mer", en: "Read more" },
+  "cons.pakke.for": { no: "Passer for", en: "Suited for" },
+  "cons.pakke.leveranseDetalj": { no: "Leveranse", en: "Deliverable" },
+  "cons.metodikk.title": { no: "AI-metodikk når det er relevant", en: "AI methodology when it is relevant" },
+  "cons.metodikk.intro": {
+    no: "Når AI inngår i løsningen, starter jeg med forretningsproblemet — ikke verktøyet. Metodikken under sikrer prioritering, ansvarlig bruk og målbar verdi.",
+    en: "When AI is part of the solution, I start with the business problem — not the tool. The methodology below ensures prioritisation, responsible use and measurable value.",
   },
   "cons.formula.title": { no: "Business case for AI-verdi", en: "Business case for AI value" },
   "cons.formula.line": {
@@ -220,31 +225,8 @@ const translations: Translations = {
     no: "Poenget er ikke å starte med verktøy, men å forstå hvor AI faktisk kan skape verdi, hva som må endres i\u00A0arbeidsflyten, og hvordan løsningen kan innføres ansvarlig.",
     en: "The point is not to start with tools, but to understand where AI can actually create value, what must change in the\u00A0workflow, and how the solution can be introduced responsibly.",
   },
-  "cons.pakker.title": { no: "Mulige startpunkter", en: "Possible starting points" },
   "cons.prosjekter.link": { no: "Se AI-prosjekter", en: "See AI projects" },
-  "cons.prosjekter.intro": {
-    no: "Egne AI-prosjekter viser hvordan arbeidsflyt, prototyper og kommersiell gjennomføring kan se ut i praksis.",
-    en: "My AI projects show what workflow, prototypes and commercial execution can look like in practice.",
-  },
-  "cons.cta.kontakt": { no: "Ta kontakt for en uforpliktende prat", en: "Get in touch for a no-obligation chat" },
-  "cons.initiatives.title": { no: "Utvalgte initiativer", en: "Selected initiatives" },
-  "cons.initiatives.intro": {
-    no: "Eksempler på virksomhetsnært utviklingsarbeid som kobler arbeidsflyt, kundeopplevelse og AI i praksis:",
-    en: "Examples of business-near development work connecting workflow, customer experience and AI in practice:",
-  },
-  "cons.initiatives.avl.title": { no: "AI Value Lab Oslo", en: "AI Value Lab Oslo" },
-  "cons.initiatives.avl.text": {
-    no: "Utvikling og testing av AI-drevne konsepter, prototyper og virksomhetsnære anvendelser med fokus på reell verdiskaping og implementering.",
-    en: "Development and testing of AI-driven concepts, prototypes, and business-near applications with a focus on real value creation and implementation.",
-  },
-  "cons.initiatives.stk.title": { no: "Skøyenåsen Tannklinikk", en: "Skøyenåsen Tannklinikk" },
-  "cons.initiatives.stk.text": {
-    no: "Utviklingsarbeid knyttet til modernisering av pasientreisen, inkludert booking, oppfølging, kundeopplevelse, forbedring av arbeidsflyt og vurdering av relevante AI- og digitale muligheter.",
-    en: "Development-oriented work related to modernization of the patient journey, including booking, follow-up, customer experience, workflow improvement, and assessment of relevant AI and digital opportunities.",
-  },
-  "cons.kjenner": { no: "Kjenner du deg igjen?", en: "Does this resonate?" },
-  "cons.prosess": { no: "Slik jobber vi sammen", en: "Our Engagement Model" },
-  "cons.dialog": { no: "Start Dialogen", en: "Start the Conversation" },
+  "cons.dialog": { no: "Start dialogen", en: "Start the conversation" },
   "cons.dialog.intro": {
     no: "Fortell meg kort om prosjektet eller utfordringen din, så tar jeg kontakt for en uforpliktende samtale. Du mottar en kopi av forespørselen på e-post.",
     en: "Share a brief overview of your project or challenge, and I will be in touch for a no-obligation discussion. You will receive a copy of your inquiry by email.",

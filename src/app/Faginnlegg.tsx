@@ -16,6 +16,7 @@ import {
   sorterFaginnlegg,
   sporOverskriftMedTelling,
   subtemaOverskriftMedTelling,
+  tellMedSuffix,
 } from './data/faginnlegg-grupper';
 import {
   erAiInnlegg,
@@ -86,6 +87,45 @@ const linkClass =
 
 const subtemaOverskriftKlasse =
   "scroll-mt-28 text-sm md:text-base font-bold text-indigo-300 uppercase tracking-wide border-l-[3px] border-indigo-500 pl-3 py-1.5 bg-indigo-500/10 rounded-r-lg";
+
+/** Kolonneetikett under «Alle innlegg i detalj» – én linje når det er plass, ellers skjermbryt ved « & ». */
+function KolonneSporLabel({ label, antall, lang }: { label: string; antall: number; lang: "no" | "en" }) {
+  const suffix = tellMedSuffix(antall, lang);
+  const deler = label.split(" & ");
+  const tekstKlasse =
+    "font-bold uppercase text-white tracking-tight leading-tight hyphens-none [overflow-wrap:normal]";
+
+  if (deler.length === 2) {
+    const fullLabel = (
+      <>
+        {deler[0]} & {deler[1]}
+        {suffix}
+      </>
+    );
+
+    return (
+      <>
+        <div className={`${tekstKlasse} text-base max-[479px]:block hidden`}>
+          <span className="block">{deler[0]} &</span>
+          <span className="block">
+            {deler[1]}
+            {suffix}
+          </span>
+        </div>
+        <p className={`${tekstKlasse} hidden min-[480px]:block text-lg lg:text-base xl:text-lg 2xl:text-xl whitespace-nowrap`}>
+          {fullLabel}
+        </p>
+      </>
+    );
+  }
+
+  return (
+    <p className={`${tekstKlasse} text-base lg:text-lg min-[480px]:whitespace-nowrap`}>
+      {label}
+      {suffix}
+    </p>
+  );
+}
 
 const Faginnlegg = ({ onNavigate }: { onNavigate?: (tab: string) => void }) => {
   const { lang } = useLanguage();
@@ -306,13 +346,14 @@ const Faginnlegg = ({ onNavigate }: { onNavigate?: (tab: string) => void }) => {
         <h2 id="fag-kort-heading" className="text-xl md:text-2xl font-black text-white italic tracking-tight mb-2">
           {tr("fag.kort.seksjon.title")}
         </h2>
-        <p className="text-sm text-slate-400 leading-relaxed mb-6 max-w-3xl">{tr("fag.kort.seksjon.intro")}</p>
+        <p className="text-sm text-slate-400 leading-relaxed mb-6">
+          {tr("fag.kort.seksjon.intro.lead")}
+          <span className="whitespace-nowrap">{tr("fag.kort.seksjon.intro.linkedin")}</span>
+        </p>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
-        <section className="flex flex-col w-full">
-          <div className="border-b-2 border-indigo-500/30 mb-4 min-h-[4.5rem] flex flex-col justify-end">
-            <h2 className="text-2xl font-bold tracking-tight text-white uppercase mb-2">
-              {sporOverskriftMedTelling(tr("fag.kat.ledelse"), telling.ledelse, lang)}
-            </h2>
+        <section className="flex flex-col w-full min-w-0">
+          <div className="border-b-2 border-indigo-500/30 pb-3 mb-4">
+            <KolonneSporLabel label={tr("fag.kat.ledelse")} antall={telling.ledelse} lang={lang} />
           </div>
           <div className="flex flex-col gap-4">
             {ledelseInnlegg.length > 0 ? (
@@ -325,11 +366,9 @@ const Faginnlegg = ({ onNavigate }: { onNavigate?: (tab: string) => void }) => {
           </div>
         </section>
 
-        <section className="flex flex-col w-full">
-          <div className="border-b-2 border-indigo-500/30 mb-4 min-h-[4.5rem] flex flex-col justify-end">
-            <h2 className="text-2xl font-bold tracking-tight text-white uppercase mb-2">
-              {sporOverskriftMedTelling(tr("fag.kat.ai"), telling.ai, lang)}
-            </h2>
+        <section className="flex flex-col w-full min-w-0">
+          <div className="border-b-2 border-indigo-500/30 pb-3 mb-4">
+            <KolonneSporLabel label={tr("fag.kat.ai")} antall={telling.ai} lang={lang} />
           </div>
           <div className="flex flex-col gap-4">
             {aiInnlegg.length > 0 ? (

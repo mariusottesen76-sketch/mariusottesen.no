@@ -18,6 +18,7 @@ import { flowSignal } from "./data/prosjekter/flowsignal";
 import { isFlowSignalProsjekt } from "./lib/flowsignal-brand";
 import { isPscProsjekt } from "./lib/psc-brand";
 import { formatProsjektHtml, formatProsjektPlain } from "./lib/product-brand";
+import ProsjektPilotBlokk from "./components/ProsjektPilotBlokk";
 
 const prosjektKort: ProsjektType[] = [flowSignal, prosjektoppgaveStrategiskImplementering, pscPromoVideo, aiAssistertInnsiktsagent, aiAssistertInnsiktsOgInnholdsagent, predictiveSalesCoach, aiValueLabOslo, skoyenasenTannklinikk, aiArkitekturBeslutningsstotte].sort(
   (a, b) => new Date(b.dato).getTime() - new Date(a.dato).getTime()
@@ -314,6 +315,7 @@ export default function Prosjekter({ onNavigate }: { onNavigate?: (tab: string) 
                   }`}
                   dangerouslySetInnerHTML={{ __html: formatProsjektPlain(prosjekt.teaser[lang], prosjekt.id) }}
                 />
+                {(erPsc || erFlowSignal) && <ProsjektPilotBlokk prosjektId={prosjekt.id} lang={lang} />}
                 <div>
                   <div
                     className={

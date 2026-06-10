@@ -219,6 +219,9 @@ export default function Profil({ onNavigate }: { onNavigate?: (tab: string) => v
               >
                 {tr("profil.ai.link.faginnlegg")}
               </NavLink>
+              <Link href="/prosjekter" className={`${linkClass} text-slate-500 hover:text-indigo-300`} aria-label="Se pilotflater via AI-prosjekter">
+                {tr("profil.ai.link.pilot")}
+              </Link>
             </div>
             </div>
           </section>

@@ -128,7 +128,7 @@ Der PSCv6 trener selgeren på konkrete kundemøter, hjelper FlowSignal team å f
 
 <strong>Neste steg</strong>
 
-Har du tilgangskode, kan du åpne ${pscAppLink} direkte ved å trykke på linken. Du kan også skanne QR-koden under bildet for tilgang på mobil og nettbrett. ${prosjektKontaktLenke("no")} dersom du ønsker en gjennomgang, tilgangskode eller vil teste løsningen i et salgs- eller lederteam.`,
+Pilotflaten er tilgangsstyrt og brukes i avtalte testløp. ${prosjektKontaktLenke("no")} dersom du ønsker tilgang eller vil diskutere en mulig pilot. Når tilgang er avtalt, kan ${pscAppLink} brukes som del av et avgrenset testløp, workshop eller kommersielt utviklingsarbeid.`,
     en: `<strong>What the project is</strong>
 
 PSCv6 is built for sales reps, sales leaders and commercial teams who want to train more purposefully before important customer meetings.
@@ -183,6 +183,6 @@ Where PSCv6 trains the seller on concrete customer meetings, FlowSignal helps te
 
 <strong>Next steps</strong>
 
-If you have an access code, you can open ${pscAppLink} directly by clicking the link. You can also scan the QR code below the image for access on mobile and tablet. ${prosjektKontaktLenke("en")} if you would like a walkthrough, an access code or want to test the solution with a sales or leadership team.`,
+The pilot environment is access-controlled and used in agreed test runs. ${prosjektKontaktLenke("en")} if you want access or to discuss a possible pilot. Once access is agreed, ${pscAppLink} can be used as part of a scoped test run, workshop or commercial development engagement.`,
   },
 };

@@ -6,14 +6,14 @@ export async function generateMetadata(
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   return {
-    title: "Consulting | AI-strategi & Prosessoptimalisering — Marius Ottesen Consulting",
+    title: "Consulting | Verdilekkasjer, salg, CRM og kommersiell utvikling — Marius Ottesen Consulting",
   description:
-    "Rådgivning og implementering innen AI-strategi, prosessoptimalisering og digital transformasjon. Brobygger mellom ledelse og teknologi.",
+    "Jeg hjelper SMB-ledere og kommersielle team med å finne og tette verdilekkasjer i salg, kundedialog, CRM, arbeidsflyt og ledelse.",
   metadataBase: new URL("https://www.mariusottesen.no"),
   openGraph: {
-    title: "Consulting | AI-strategi & Prosessoptimalisering — Marius Ottesen Consulting",
+    title: "Consulting | Verdilekkasjer, salg, CRM og kommersiell utvikling — Marius Ottesen Consulting",
     description:
-      "Rådgivning og implementering innen AI-strategi (kunstig intelligens), prosessoptimalisering og digital transformasjon. Hjelper virksomheter med å omsette AI-muligheter til konkret kommersiell verdi.",
+      "Kartlegging og forbedring av salg, CRM, kundedialog, oppfølging, arbeidsflyt og ledelse for SMB. AI som virkemiddel når det gir verdi.",
     url: "https://www.mariusottesen.no/consulting",
     type: "website",
     siteName: "Marius Ottesen",
@@ -22,15 +22,15 @@ export async function generateMetadata(
         url: "https://www.mariusottesen.no/images/profil.jpg",
         width: 1200,
         height: 630,
-        alt: "Marius Ottesen Consulting — AI-strategi & Prosessoptimalisering",
+        alt: "Marius Ottesen Consulting — verdilekkasjer, salg, CRM og kommersiell utvikling",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Consulting | AI-strategi & Prosessoptimalisering — Marius Ottesen Consulting",
+    title: "Consulting | Verdilekkasjer, salg, CRM og kommersiell utvikling — Marius Ottesen Consulting",
     description:
-      "Rådgivning og implementering innen AI-strategi, prosessoptimalisering og digital transformasjon.",
+      "Kartlegging og forbedring av salg, CRM, kundedialog, oppfølging, arbeidsflyt og ledelse for SMB.",
     images: ["https://www.mariusottesen.no/images/profil.jpg"],
   },
   };
