@@ -40,7 +40,76 @@ const sopraSteriaKarusellBilder = Array.from({ length: 9 }, (_, i) => ({
   },
 }));
 
+const rocketKarusellBase = "/images/rocket-karusell";
+const rocketKarusellBilder = Array.from({ length: 8 }, (_, i) => ({
+  src: `${rocketKarusellBase}/R${i + 1}.png`,
+  alt: {
+    no: `Rocket frokostseminar – karusell ${i + 1} av 8`,
+    en: `Rocket breakfast seminar – carousel ${i + 1} of 8`,
+  },
+}));
+
 const aiGovernanceRaw = [
+    {
+      id: "rocket-verdilekkasje-ai-kommersiell-2026-06",
+      tittel: "Hvor lekker verdien i virksomheten din?",
+      teaser:
+        "Rocket og NOVA om operativ AI-læring, DNBs læringssløyfe og kommersielle skiller — og et SMB-koncept for konkret verdiskaping.",
+      bildeUrl: `${rocketKarusellBase}/R1.png`,
+      bildeVersjon: "2026-06-11",
+      dato: "2026-06-11",
+      visningsDato: "11.06.26",
+      kategori: "AI / KI",
+      link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
+      innhold: `AI-diskusjonen handler fortsatt for ofte om teknologi.
+
+Jeg mener lederdiskusjonen bør handle mer om verdi.
+
+På frokostseminaret hos Rocket og NOVA Consulting Group i går ble det tydelig hvor stor forskjell det er på å teste AI-verktøy og å gjøre AI til en del av den operative motoren.
+
+DNB presenterte et eksempel som var særlig interessant sett med kommersielle øyne.
+
+Ikke fordi de bruker AI-agenter, for det gjør endel allerede. Det interessante var hvordan de forsøker å bygge AI inn i en operativ læringssløyfe.
+
+Oversatt til kommersiell drift handler det om noe mange ledere vil kjenne igjen:
+
+Brief → Prioritering → Handling → Responsdata → Innsikt → Oppdatert playbook → Neste beslutning starter smartere.
+
+Da begynner AI å bli relevant.
+
+Det handler om en måte å koble data, mennesker, beslutninger og læring tettere sammen på. Ikke som et verktøy for å produsere mer, og ikke som enda et dashboard ingen bruker godt nok.
+
+Et spørsmål fra salen viste også at AI-modenheten kan variere betydelig, selv mellom store aktører i samme bransje.
+
+💥 Det er her det blir kommersielle skiller.
+
+Fordi noen klarer å koble AI til kundeinnsikt, prioriteringer, salgsarbeid, drift og gjennomføring.
+
+For meg er den viktigste lederrefleksjonen denne:
+
+AI skaper verdi når neste kundemøte, neste tilbud, neste beslutning eller neste prioritering starter smartere enn den forrige.
+
+👉 I karusellen har jeg skissert hvor denne logikken kan brukes i henholdsvis:
+🔸 salg
+🔸 kommersiell ledelse
+🔸 drift
+🔸 kundeoppfølging
+🔸 ledergruppe og styrearbeid
+🔸 SMB
+
+Jeg jobber nå med et konsept for SMB-bedrifter som vil finne konkrete verdilekkasjer og vurdere hvor AI kan gi reell nytte, uten store IT-miljøer eller tunge transformasjonsprogrammer.
+
+Dette henger også sammen med egne AI-konsepter jeg utvikler innen salgsforberedelse, kommersiell trening og teamflyt, blant annet <a href="/psc">The Predictive Sales Coach</a> og <a href="/flowsignal">FlowSignal</a>.
+
+🙋‍♂️ Jeg kommer gjerne i kontakt med SMB-ledere som vil diskutere hvor verdien lekker i dag.
+
+Takk til Rocket, NOVA, Erik Egeriis, Eivind Bodding og Heidi Lois Ravnås for et praktisk og nyttig seminar. 💯
+
+#AI #KommersiellLedelse #DigitalTransformasjon #Verdiskaping #SMB #AIready`,
+      karusellBilder: rocketKarusellBilder,
+      karusellPdfUrl: "/images/rocket-karusell.pdf",
+      bildeFit: "contain",
+    },
     {
       id: "sopra-steria-produktutvikling-ai-2026-06",
       tittel: "Har du AI på agendaen, eller i hendene?",
@@ -1875,6 +1944,56 @@ AI-dømmekraft er ikke en teknisk nisjeferdighet. Det er en lederkompetanse.`
 ];
 
 const aiGovernanceEn: Record<string, LocalizedTextMap> = {
+  "rocket-verdilekkasje-ai-kommersiell-2026-06": {
+    tittel: "Where is value leaking in your business?",
+    teaser:
+      "Rocket and NOVA on operational AI learning, DNB's learning loop and commercial differentiators — plus an SMB concept for concrete value creation.",
+    innhold: `The AI discussion still focuses too often on technology.
+
+I believe the leadership conversation should focus more on value.
+
+At yesterday's breakfast seminar with Rocket and NOVA Consulting Group, it became clear how big the difference is between testing AI tools and making AI part of the operational engine.
+
+DNB presented an example that was particularly interesting from a commercial perspective.
+
+Not because they use AI agents — many already do. What was interesting was how they are trying to build AI into an operational learning loop.
+
+Translated into commercial operations, this is something many leaders will recognise:
+
+Brief → Prioritisation → Action → Response data → Insight → Updated playbook → The next decision starts smarter.
+
+That is when AI becomes relevant.
+
+It is about a way of connecting data, people, decisions and learning more tightly. Not as a tool to produce more, and not as yet another dashboard that nobody uses well enough.
+
+A question from the audience also showed that AI maturity can vary significantly, even between large players in the same industry.
+
+💥 This is where commercial differentiators emerge.
+
+Because some manage to connect AI to customer insight, priorities, sales work, operations and execution.
+
+For me, the most important leadership reflection is this:
+
+AI creates value when the next customer meeting, the next proposal, the next decision or the next prioritisation starts smarter than the last one.
+
+👉 In the carousel I have sketched where this logic can be applied in:
+🔸 sales
+🔸 commercial leadership
+🔸 operations
+🔸 customer follow-up
+🔸 leadership team and board work
+🔸 SMB
+
+I am now working on a concept for SMB companies that want to find concrete value leaks and assess where AI can deliver real benefit, without large IT environments or heavy transformation programmes.
+
+This also connects to AI concepts I am developing within sales preparation, commercial training and team flow, including <a href="/psc">The Predictive Sales Coach</a> and <a href="/flowsignal">FlowSignal</a>.
+
+🙋‍♂️ I would be happy to connect with SMB leaders who want to discuss where value is leaking today.
+
+Thanks to Rocket, NOVA, Erik Egeriis, Eivind Bodding and Heidi Lois Ravnås for a practical and useful seminar. 💯
+
+#AI #CommercialLeadership #DigitalTransformation #ValueCreation #SMB #AIready`,
+  },
   "sopra-steria-produktutvikling-ai-2026-06": {
     tittel: "Do you have AI on the agenda, or in your hands?",
     teaser:

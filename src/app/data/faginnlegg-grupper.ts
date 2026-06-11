@@ -141,6 +141,7 @@ export const AI_SUBTEMA: FaginnleggSubtema[] = [
       "ai-agent-007-master-bi-2026-06",
       "ai-learning-google-skills-01",
       "sopra-steria-produktutvikling-ai-2026-06",
+      "rocket-verdilekkasje-ai-kommersiell-2026-06",
       "ai-kompetanse-tech-frokost-telenor-2026-05",
       "nova-frokost-ai-kjernekompetanse-2026-05",
       "iteam-operativ-modell-2026-01",
