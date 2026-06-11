@@ -56,9 +56,9 @@ const aiGovernanceRaw = [
       teaser:
         "Rocket og NOVA om operativ AI-læring, DNBs læringssløyfe og kommersielle skiller — og et SMB-koncept for konkret verdiskaping.",
       bildeUrl: `${rocketKarusellBase}/R1.png`,
-      bildeVersjon: "2026-06-11",
-      dato: "2026-06-11",
-      visningsDato: "11.06.26",
+      bildeVersjon: "2026-06-12",
+      dato: "2026-06-12",
+      visningsDato: "12.06.26",
       kategori: "AI / KI",
       link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
       innhold: `AI-diskusjonen handler fortsatt for ofte om teknologi.
