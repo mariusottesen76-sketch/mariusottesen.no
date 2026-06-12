@@ -18,6 +18,14 @@ export const sectionHeadingClass = `${sectionTitleClass} mb-4`;
 /** H3 – jobber, selskapskort, pakker */
 export const blockTitleClass = "text-lg font-black text-white italic tracking-tight leading-tight";
 
+/** Selskapsnavn – erfaring (under stillingstittel) */
+export const selskapNavnClass =
+  "text-base md:text-lg font-black italic tracking-tight leading-tight";
+
+/** Selskapsnavn – resultater-kort (hovedoverskrift i kort) */
+export const selskapNavnHeroClass =
+  "text-xl md:text-2xl font-black text-white italic tracking-tight leading-tight";
+
 /** H3 – kompakte kort */
 export const cardTitleClass = "text-sm font-black text-white italic tracking-tight";
 

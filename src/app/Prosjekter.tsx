@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useLanguage, type Lang } from "./LanguageContext";
 import { getTranslation } from "./data/translations";
-import { blockTitleClass, cardTitleClass, pageIntroClass, pageTitleClass, sectionTitleClass } from "./lib/typography";
+import { blockTitleClass, pageIntroClass, pageTitleClass, sectionTitleClass } from "./lib/typography";
 import { getProsjektHurtigoversikt } from "./data/prosjekter-hurtigoversikt";
 import { predictiveSalesCoach, type ProsjektType } from "./data/prosjekter/predictive-sales-coach";
 import { pscPromoVideo } from "./data/prosjekter/psc-promo-video";
@@ -49,8 +49,8 @@ function getVideoAspectClass(prosjekt: ProsjektType): string {
 const linkClass =
   "text-indigo-400 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400";
 
-const anchorLinkClass =
-  "text-sm text-indigo-300 hover:text-indigo-100 underline underline-offset-2 decoration-indigo-500/50 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400";
+const prosjektIntroLinkClass =
+  "text-indigo-300 text-base font-medium underline underline-offset-2 decoration-indigo-500/60 hover:text-indigo-100 hover:decoration-indigo-400 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400 rounded-sm";
 
 export default function Prosjekter({ onNavigate }: { onNavigate?: (tab: string) => void }) {
   const { lang } = useLanguage();
@@ -91,10 +91,13 @@ export default function Prosjekter({ onNavigate }: { onNavigate?: (tab: string) 
             <span className="text-indigo-500">{tr("prosjekter.title.2")}</span>
           </h1>
           <div className="w-full min-w-0 max-w-none">
-            <p className={`${pageIntroClass} mb-4 break-words`}>
+            <p className={`${pageIntroClass} mb-3 break-words`}>
               {tr("prosjekter.intro.1")}
             </p>
-            <p className="text-lg md:text-xl text-slate-400 italic leading-relaxed font-light break-words">
+            <p className="text-lg md:text-xl text-slate-300 leading-relaxed font-light mb-4 break-words">
+              {tr("prosjekter.intro.1b")}
+            </p>
+            <p className="text-lg md:text-xl text-slate-400 italic leading-relaxed font-light mb-4 break-words">
               {tr("prosjekter.intro.2")}{" "}
               {onNavigate ? (
                 <button
@@ -111,39 +114,48 @@ export default function Prosjekter({ onNavigate }: { onNavigate?: (tab: string) 
               )}
               .
             </p>
+            <p className="text-base md:text-lg text-slate-400 font-medium mb-3">
+              {tr("prosjekter.intro.gridLead")}
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
+              {hurtigoversikt.map((kategori) => (
+                <div
+                  key={kategori.title.no}
+                  className="p-4 md:p-5 bg-slate-900/40 rounded-xl border border-slate-800 space-y-3 min-w-0"
+                >
+                  <h3 className="text-base font-black text-indigo-400 italic tracking-tight">{kategori.title[lang]}</h3>
+                  <ul className="space-y-3">
+                    {kategori.lenker.map((lenke) => (
+                      <li key={lenke.prosjektId} className="space-y-1">
+                        <a href={`#${lenke.prosjektId}`} className={prosjektIntroLinkClass}>
+                          {tr(`prosjekter.intro.punkt.${lenke.introSlug}.label`)}
+                        </a>
+                        <p className="text-base text-slate-400 leading-snug font-light">
+                          {tr(`prosjekter.intro.punkt.${lenke.introSlug}.desc`)}
+                        </p>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
 
-      <section aria-labelledby="prosjekter-hurtig-heading" className="mt-6 mb-2 min-w-0">
-        <h2 id="prosjekter-hurtig-heading" className={`${sectionTitleClass} mb-3`}>
-          {tr("prosjekter.hurtig.title")}
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3">
-          {hurtigoversikt.map((kategori) => (
-            <div
-              key={kategori.title.no}
-              className="p-4 bg-slate-900/40 rounded-xl border border-slate-800 space-y-2 min-w-0"
-            >
-              <h3 className={`${cardTitleClass} text-indigo-400`}>
-                {kategori.title[lang]}
-              </h3>
-              <ul className="space-y-1.5">
-                {kategori.lenker.map((lenke) => (
-                  <li key={lenke.prosjektId}>
-                    <a href={`#${lenke.prosjektId}`} className={anchorLinkClass}>
-                      {lenke.label[lang]}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </section>
-
       {/* PROSJEKTLISTE – smalere bilde, tekst innenfor ramme */}
-      <div className="mt-8 space-y-6 min-w-0">
+      <section
+        id="prosjekter-detalj"
+        aria-labelledby="prosjekter-kort-heading"
+        className="scroll-mt-24 mt-10 pt-8 border-t border-slate-800/60 min-w-0"
+      >
+        <h2 id="prosjekter-kort-heading" className={`${sectionTitleClass} mb-2`}>
+          {tr("prosjekter.kort.seksjon.title")}
+        </h2>
+        <p className="text-sm text-slate-400 leading-relaxed mb-6">
+          {tr("prosjekter.kort.seksjon.intro")}
+        </p>
+        <div className="space-y-6 min-w-0">
         {alleProsjekter.map((prosjekt) => {
           const bildeHintKort = getProsjektBildeHint(prosjekt, lang);
           const erPsc = isPscProsjekt(prosjekt.id);
@@ -397,7 +409,8 @@ export default function Prosjekter({ onNavigate }: { onNavigate?: (tab: string) 
           </article>
           );
         })}
-      </div>
+        </div>
+      </section>
 
       {activeImage && (
         <div

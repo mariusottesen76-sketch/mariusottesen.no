@@ -143,14 +143,77 @@ const translations: Translations = {
   "prosjekter.title.1": { no: "AI-prosjekter &", en: "AI Projects &" },
   "prosjekter.title.2": { no: "Utvikling", en: "Development" },
   "prosjekter.intro.1": {
-    no: "Her finner du AI-prosjekter med status, relevans, modenhet og neste steg — fra salgstrening og virksomhetsnære case til agentiske arbeidsflyter og beslutningsstøtte.",
-    en: "Here you will find AI projects with status, relevance, maturity and next steps — from sales training and business-near cases to agentic workflows and decision support.",
+    no: "Her finner du AI-prosjekter med status, relevans, modenhet og neste steg. De er viktige fordi de kobler AI til konkrete kommersielle og operative behov — fra salgstrening og virksomhetsnære case til agentiske arbeidsflyter, innsikts- og innholdsmotor og beslutningsstøtte, ikke bare teknologidemonstrasjoner.",
+    en: "Here you will find AI projects with status, relevance, maturity and next steps. They matter because they connect AI to concrete commercial and operational needs — from sales training and business-near cases to agentic workflows, insight and content engines and decision support, not just technology demonstrations.",
+  },
+  "prosjekter.intro.1b": {
+    no: "Flere prosjekter tar utgangspunkt i kundeopplevelse, smart intake, veiledet booking, digital front-end og ansvarlig bruk av AI. For deg som leder eller beslutningstaker er det sentralt hva som kan videreutvikles, tilpasses bransje og behov, og testes som pilot i din virksomhet — slik at du kan vurdere hva som faktisk kan gi verdi hos dere.",
+    en: "Several projects start from customer experience, smart intake, guided booking, digital front-end and responsible use of AI. As a leader or decision-maker, what matters is what can be developed further, adapted to industry and needs, and piloted in your organisation — so you can assess what could actually create value for you.",
+  },
+  "prosjekter.intro.gridLead": {
+    no: "Kort oversikt — klikk på navnet for å lese mer:",
+    en: "Quick overview — click a name to read more:",
+  },
+  "prosjekter.intro.punkt.flowsignal.label": { no: "FlowSignal", en: "FlowSignal" },
+  "prosjekter.intro.punkt.flowsignal.desc": {
+    no: "Profilinnsikt, dagsform og teamflyt — kan tilpasses leder- og teambehov",
+    en: "Profile insight, daily form and team flow — adaptable to leadership and team needs",
+  },
+  "prosjekter.intro.punkt.psc.label": { no: "The Predictive Sales Coach", en: "The Predictive Sales Coach" },
+  "prosjekter.intro.punkt.psc.desc": {
+    no: "AI-basert salgstrening og møteforberedelse — relevant for B2B og kommersielle team",
+    en: "AI-based sales training and meeting preparation — relevant for B2B and commercial teams",
+  },
+  "prosjekter.intro.punkt.psc-video.label": { no: "Promovideo PSC", en: "PSC promo video" },
+  "prosjekter.intro.punkt.psc-video.desc": {
+    no: "GenAI til konseptformidling og kommersiell posisjonering — kan brukes i egen profilering",
+    en: "GenAI for concept communication and commercial positioning — transferable to your own branding",
+  },
+  "prosjekter.intro.punkt.strategisk.label": { no: "Strategisk AI-implementering", en: "Strategic AI implementation" },
+  "prosjekter.intro.punkt.strategisk.desc": {
+    no: "Fra case til gjennomførbar plan (BI) — modell for ansvarlig implementering",
+    en: "From case to executable plan (BI) — a model for responsible implementation",
+  },
+  "prosjekter.intro.punkt.tannklinikk.label": { no: "Skøyenåsen Tannklinikk", en: "Skøyenåsen Dental Clinic" },
+  "prosjekter.intro.punkt.tannklinikk.desc": {
+    no: "Chatbot og booking på 6 språk — enklere booking, flere henvendelser og sterkere pasientreise",
+    en: "Chatbot and booking in 6 languages — simpler booking, more inquiries and a stronger patient journey",
+  },
+  "prosjekter.intro.punkt.agent.label": { no: "Agentisk arbeidsflyt", en: "Agentic workflow" },
+  "prosjekter.intro.punkt.agent.desc": {
+    no: "Fra innsikt til kommersiell handling — kan skaleres til salg, drift og prioritering",
+    en: "From insight to commercial action — scalable to sales, operations and prioritisation",
+  },
+  "prosjekter.intro.punkt.innhold.label": { no: "Innsikts- og innholdsmotor", en: "Insight and content engine" },
+  "prosjekter.intro.punkt.innhold.desc": {
+    no: "Kunnskap til tydeligere budskap og innhold — tilpassbart for ledelse og kommunikasjon",
+    en: "Knowledge into clearer messaging and content — adaptable for leadership and communication",
+  },
+  "prosjekter.intro.punkt.beslutning.label": { no: "AI-arkitektur for beslutningsstøtte", en: "AI architecture for decision support" },
+  "prosjekter.intro.punkt.beslutning.desc": {
+    no: "Prioritering, gap og mønstre — relevant for strategi og kommersiell styring",
+    en: "Prioritisation, gaps and patterns — relevant for strategy and commercial governance",
+  },
+  "prosjekter.intro.punkt.value-lab.label": { no: "AI Value Lab Oslo", en: "AI Value Lab Oslo" },
+  "prosjekter.intro.punkt.value-lab.desc": {
+    no: "Praktisk AI-verdi gjennom reelle case — samarbeid og læring i praksis",
+    en: "Practical AI value through real cases — collaboration and learning in practice",
+  },
+  "prosjekter.intro.punkt.faginnlegg.label": { no: "Faginnlegg", en: "Articles" },
+  "prosjekter.intro.punkt.faginnlegg.desc": {
+    no: "Løpende fagspor om AI, ledelse og verdiskaping — teori møter praksis",
+    en: "Ongoing track on AI, leadership and value creation — where theory meets practice",
   },
   "prosjekter.intro.2": {
-    no: "Hvert prosjekt beskriver hva som er bygget, hvordan det fungerer og hvorfor det er relevant, inkludert muligheter for videreutvikling. For metode, business case og tjenester, se",
-    en: "Each project describes what has been built, how it works and why it matters, including options for further development. For methodology, business case and services, see",
+    no: "Hvert prosjekt beskriver hva som er bygget, hvordan det fungerer og hvorfor det er relevant — inkludert muligheter for videreutvikling og tilpasning til din virksomhet. For metode, business case og tjenester, se",
+    en: "Each project describes what has been built, how it works and why it matters — including options for further development and adaptation for your organisation. For methodology, business case and services, see",
   },
   "prosjekter.intro.2.link": { no: "Consulting", en: "Consulting" },
+  "prosjekter.kort.seksjon.title": { no: "Alle AI-prosjekter i detalj", en: "All AI projects in detail" },
+  "prosjekter.kort.seksjon.intro": {
+    no: "Her finner du hvert prosjekt med kort beskrivelse. Scroll for å lese hva som er bygget, hvordan det fungerer og hvorfor det er relevant.",
+    en: "Here you will find each project with a short description. Scroll to read what has been built, how it works and why it matters.",
+  },
   "prosjekter.les": { no: "Les mer", en: "Read more" },
   "prosjekter.hurtig.title": { no: "Utforsk prosjektene etter type", en: "Explore projects by type" },
 

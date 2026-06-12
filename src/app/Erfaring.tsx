@@ -5,7 +5,7 @@ import { Briefcase, Calendar, TrendingUp, Target, Lightbulb, FileText, ChevronRi
 import { getErfaringData } from "./data/erfaringInnhold";
 import { useLanguage } from "./LanguageContext";
 import { getTranslation } from "./data/translations";
-import { blockTitleClass, pageTitleClass } from "./lib/typography";
+import { blockTitleClass, pageTitleClass, selskapNavnClass } from "./lib/typography";
 
 const selskapLogo: Record<string, string | null> = {
   "Marius Ottesen Consulting": "/images/moc.logo.png",
@@ -76,7 +76,7 @@ export default function Erfaring() {
                     </div>
                     <div>
                       <h3 className={`${blockTitleClass} text-xl`}>{j.title}</h3>
-                      <p className="text-indigo-400 text-sm mt-2 italic font-black flex items-center gap-2"><Briefcase size={14}/>{j.company}</p>
+                      <p className={`text-indigo-400 ${selskapNavnClass} mt-2 flex items-center gap-2`}><Briefcase size={16} aria-hidden="true" />{j.company}</p>
                     </div>
                   </div>
                   <div className="text-slate-400 text-[10px] bg-slate-950 px-4 py-2 rounded-full border border-slate-800 self-start shrink-0 font-black">

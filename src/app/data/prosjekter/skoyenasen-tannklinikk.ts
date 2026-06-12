@@ -8,8 +8,8 @@ export const skoyenasenTannklinikk: ProsjektType = {
     en: "Skøyenåsen Dental Clinic: AI in patient journey, intake and booking",
   },
   teaser: {
-    no: "Virksomhetsnært AI-case for pasientreise, smart intake, veiledet booking og mer systematisk oppfølging.",
-    en: "A business-near AI case focused on patient journey, smart intake, guided booking and more systematic follow-up.",
+    no: "Virksomhetsnært AI-case for pasientreise, chatbot og booking på 6 språk — enklere booking for pasienter og flere henvendelser og økning i antall pasienter.",
+    en: "A business-near AI case for patient journey, chatbot and booking in 6 languages — simpler booking for patients and more inquiries and an increase in patient numbers.",
   },
   bildeUrl: "/images/skoyenasen-tk.gif",
   dato: "2026-03-26",
@@ -32,23 +32,23 @@ export const skoyenasenTannklinikk: ProsjektType = {
 
 Skøyenåsen Tannklinikk er et konkret utviklingscase med fokus på hvordan AI og digitale løsninger kan forbedre pasientreisen fra første kontakt til oppfølging.
 
-Prosjektet kobler kundeopplevelse, smart intake, veiledet booking, digital front-end og ansvarlig bruk av AI.
+Prosjektet kobler kundeopplevelse, smart intake, veiledet booking, chatbot og digital front-end på 6 språk — med ansvarlig bruk av AI.
 
 <strong>Problemet prosjektet adresserer</strong>
 
-Mange mindre virksomheter har manuelle, fragmenterte eller uklare kundereiser. Henvendelser kommer gjennom flere kanaler, behov må avklares manuelt, booking kan bli unøyaktig, og oppfølging kan bli personavhengig.
+Mange mindre virksomheter har manuelle, fragmenterte eller uklare kundereiser. Henvendelser kommer gjennom flere kanaler, behov må avklares manuelt, booking kan bli unøyaktig, og pasienter eller kunder faller av underveis.
 
-I helsetjenester er dette ekstra viktig fordi tillit, presisjon og menneskelig kontroll må ivaretas.
+I helsetjenester er dette ekstra viktig fordi tillit, presisjon og menneskelig kontroll må ivaretas — samtidig som enklere booking, flere henvendelser og økning i antall pasienter er avgjørende for både pasientopplevelse og kapasitetsutnyttelse.
 
 <strong>Hva som er bygget eller utviklet</strong>
 
-Prosjektet tar utgangspunkt i behov knyttet til behovsavklaring, riktigere booking, tydeligere informasjon og mer systematisk oppfølging.
+Prosjektet tar utgangspunkt i behovsavklaring, riktigere booking, tydeligere informasjon og mer systematisk oppfølging.
 
-I første fase vurderes særlig løsninger for smart intake, veiledet booking, mer relevant kommunikasjon og en sterkere digital front-end. Målet er å forbedre flyt og tilgjengelighet uten å miste det personlige preget som er en viktig del av klinikkens styrke.
+Det er utviklet chatbot og booking på 6 språk, med smart intake og veiledet booking i digital front-end. Målet er enklere booking for pasienter, flere henvendelser og økning i antall pasienter — uten å miste det personlige preget som er en viktig del av klinikkens styrke.
 
 <strong>Hvordan det fungerer</strong>
 
-Løsningen er tenkt som støtte i første del av pasientreisen. AI og digital veiledning kan hjelpe brukeren å beskrive behov, forstå relevante alternativer og bli guidet mot riktig neste steg.
+Løsningen støtter første del av pasientreisen. Pasienten kan få veiledning på eget språk, avklare behov, forstå relevante alternativer og booke enklere — mens resepsjon og klinisk team avlastes fra repetitive henvendelser.
 
 Prosjektet er bevisst avgrenset mot front-end, pasientdialog og praktisk flyt, ikke journalnære eller sensitive kliniske vurderinger.
 
@@ -60,11 +60,11 @@ For arbeidsgivere viser prosjektet hvordan jeg tenker praktisk AI-implementering
 
 <strong>Status og modenhet</strong>
 
-Konkret virksomhetscase og utviklingsspor. Fokus på pasientreise, front-end, intake, bookinglogikk, oppfølging og ansvarlig avgrensning.
+Konkret virksomhetscase med chatbot og booking på 6 språk. Fokus på pasientreise, front-end, intake, enklere booking, flere henvendelser og ansvarlig avgrensning.
 
 <strong>Mulig videreutvikling</strong>
 
-Prosjektet kan videreutvikles til pilot for chatbot, guidet intake, bookingstøtte, recall, digital oppfølging og bedre informasjonsflyt mellom pasient og klinikk.
+Prosjektet kan videreutvikles med recall, digital oppfølging og enda tettere informasjonsflyt mellom pasient og klinikk.
 
 <strong>Neste steg</strong>
 
@@ -73,23 +73,23 @@ ${prosjektKontaktLenke("no")} dersom du ønsker å diskutere hvordan AI kan forb
 
 Skøyenåsen Dental Clinic is a concrete development case focused on how AI and digital solutions can improve the patient journey from first contact to follow-up.
 
-The project connects customer experience, smart intake, guided booking, digital front-end and responsible use of AI.
+The project connects customer experience, smart intake, guided booking, chatbot and digital front-end in 6 languages — with responsible use of AI.
 
 <strong>The problem the project addresses</strong>
 
-Many smaller organisations have manual, fragmented or unclear customer journeys. Inquiries come through multiple channels, needs must be clarified manually, booking can become inaccurate, and follow-up can become person-dependent.
+Many smaller organisations have manual, fragmented or unclear customer journeys. Inquiries come through multiple channels, needs must be clarified manually, booking can become inaccurate, and patients or customers drop off along the way.
 
-In healthcare services this is especially important because trust, precision and human control must be safeguarded.
+In healthcare services this is especially important because trust, precision and human control must be safeguarded — while simpler booking, more inquiries and an increase in patient numbers are critical for both patient experience and capacity utilisation.
 
 <strong>What has been built or developed</strong>
 
-The project starts from needs related to needs clarification, more accurate booking, clearer information and more systematic follow-up.
+The project starts from needs clarification, more accurate booking, clearer information and more systematic follow-up.
 
-In the first phase, solutions for smart intake, guided booking, more relevant communication and a stronger digital front-end are being assessed in particular. The goal is to improve flow and accessibility without losing the personal touch that is a key strength of the clinic.
+A chatbot and booking in 6 languages have been developed, with smart intake and guided booking in the digital front-end. The goal is simpler booking for patients, more inquiries and an increase in patient numbers — without losing the personal touch that is a key strength of the clinic.
 
 <strong>How it works</strong>
 
-The solution is intended as support in the first part of the patient journey. AI and digital guidance can help the user describe needs, understand relevant options and be guided toward the right next step.
+The solution supports the first part of the patient journey. Patients can get guidance in their own language, clarify needs, understand relevant options and book more easily — while reception and clinical staff are relieved from repetitive inquiries.
 
 The project is deliberately scoped to front-end, patient dialogue and practical flow — not journal-adjacent or sensitive clinical judgements.
 
@@ -101,11 +101,11 @@ For employers, the project shows how I approach practical AI implementation in a
 
 <strong>Status and maturity</strong>
 
-Concrete business case and development track. Focus on patient journey, front-end, intake, booking logic, follow-up and responsible scoping.
+Concrete business case with chatbot and booking in 6 languages. Focus on patient journey, front-end, intake, simpler booking, more inquiries and responsible scoping.
 
 <strong>Possible further development</strong>
 
-The project can be developed into a pilot for chatbot, guided intake, booking support, recall, digital follow-up and better information flow between patient and clinic.
+The project can be developed further with recall, digital follow-up and even tighter information flow between patient and clinic.
 
 <strong>Next steps</strong>
 

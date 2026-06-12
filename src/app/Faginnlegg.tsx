@@ -6,7 +6,7 @@ import { X, ExternalLink, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-r
 import { useLanguage } from './LanguageContext';
 import { getTranslation } from './data/translations';
 import {
-  cardTitleClass,
+  blockTitleClass,
   pageIntroClass,
   pageTitleClass,
   sectionTitleClass,
@@ -121,9 +121,9 @@ const Faginnlegg = ({ onNavigate }: { onNavigate?: (tab: string) => void }) => {
   const aiGrupper = grupperAiInnlegg(alleInnlegg, tocSort, lang);
 
   const lesestiChipKlasse =
-    "inline-flex items-center rounded-full border border-slate-700/80 bg-slate-950/60 px-2.5 py-1 text-[11px] font-medium text-slate-300 leading-none";
+    "inline-flex items-center rounded-full border border-slate-700/80 bg-slate-950/60 px-3 py-1.5 text-xs md:text-sm font-medium text-slate-300 leading-none";
   const lesestiChipLinkKlasse =
-    "inline-flex items-center rounded-full border border-indigo-500/25 bg-indigo-500/10 px-2.5 py-1 text-[11px] font-medium text-indigo-300 leading-none hover:border-indigo-400/50 hover:text-indigo-100 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400";
+    "inline-flex items-center rounded-full border border-indigo-500/25 bg-indigo-500/10 px-3 py-1.5 text-xs md:text-sm font-medium text-indigo-300 leading-none hover:border-indigo-400/50 hover:text-indigo-100 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400";
 
   const lukkModal = useCallback(() => setAktivtInnlegg(null), []);
 
@@ -202,15 +202,15 @@ const Faginnlegg = ({ onNavigate }: { onNavigate?: (tab: string) => void }) => {
         <h2 id="fag-lesestier-heading" className={`${sectionTitleClass} mb-2`}>
           {tr("fag.lesestier.title")}
         </h2>
-        <p className="text-sm text-slate-400 leading-relaxed mb-5 w-full min-w-0 max-w-none">{tr("fag.lesestier.intro")}</p>
+        <p className="text-base md:text-lg text-slate-400 leading-relaxed mb-5 w-full min-w-0 max-w-none">{tr("fag.lesestier.intro")}</p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
           {lesestier.map((sti) => (
             <article
               key={sti.title.no}
-              className="p-4 bg-slate-900/40 rounded-xl border border-indigo-500/15 shadow-lg space-y-3 min-w-0 flex flex-col"
+              className="p-5 bg-slate-900/40 rounded-xl border border-indigo-500/15 shadow-lg space-y-3 min-w-0 flex flex-col"
             >
-              <h3 className={cardTitleClass}>{sti.title[lang]}</h3>
-              <p className="text-xs text-slate-400 leading-relaxed flex-1">{sti.intro[lang]}</p>
+              <h3 className={blockTitleClass}>{sti.title[lang]}</h3>
+              <p className="text-sm md:text-base text-slate-400 leading-relaxed flex-1">{sti.intro[lang]}</p>
               <ul className="flex flex-wrap gap-2 pt-1 list-none p-0 m-0" role="list">
                 {sti.topics.map((topic) => (
                   <li key={topic.label.no} role="listitem">

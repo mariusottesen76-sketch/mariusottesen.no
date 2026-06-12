@@ -6,10 +6,14 @@ import { BarChart3, Globe, Target, TrendingUp, Award, Zap, ArrowUpRight, Chevron
 import { useLanguage } from "./LanguageContext";
 import { getTranslation } from "./data/translations";
 import { getResultaterProofPoints } from "./data/proof-points";
-import { blockTitleClass, pageEyebrowClass, pageTitleClass, sectionTitleClass } from "./lib/typography";
+import { getMocResultaterPunkter, erMocResultatPunktMedUnderpunkter, erMocSelskapsresultater } from "./data/moc-consulting-resultater";
+import { pageEyebrowClass, pageTitleClass, sectionTitleClass, selskapNavnHeroClass } from "./lib/typography";
 
 const linkClass =
   "text-indigo-400 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400";
+
+const mocResultatLinkClass =
+  "[&_a]:text-slate-200 [&_a]:underline [&_a]:underline-offset-[3px] [&_a]:decoration-slate-400/50 [&_a]:decoration-1 [&_a]:hover:text-white [&_a]:hover:decoration-slate-300/70 [&_a]:not-italic [&_a]:transition-colors";
 
 const fargeMap: Record<string, { text: string; border: string; bg: string; dot: string }> = {
   indigo:  { text: "text-indigo-400",  border: "border-indigo-500/20",  bg: "bg-indigo-500/10",  dot: "bg-indigo-500" },
@@ -26,6 +30,7 @@ const ikonMap: Record<string, React.ReactNode> = {
 };
 
 const selskapLogo: Record<string, string> = {
+  "Marius Ottesen Consulting": "/images/moc.logo.png",
   "Franzefoss Gjenvinning": "/images/Franzefoss.png",
   "Norengros Johs. Olsen": "/images/Norengros.png",
   "Mundipharma": "/images/Mundipharma.png",
@@ -44,7 +49,7 @@ type Selskapsresultat = {
   selskap: string;
   rolle: string;
   periode: string;
-  resultater: string[];
+  resultater: ReturnType<typeof getMocResultaterPunkter> | string[];
   relevans: string;
   farge: string;
 };
@@ -104,7 +109,7 @@ export default function Resultater() {
 
   const proofPoints = getResultaterProofPoints(lang);
 
-  const selskapsresultater: Selskapsresultat[] =
+  const ovrigeSelskapsresultater: Selskapsresultat[] =
     lang === "no"
       ? [
           {
@@ -112,12 +117,12 @@ export default function Resultater() {
             rolle: "Nasjonal Salgssjef",
             periode: "2024 – 2025",
             resultater: [
-              "Forbedret kapasitetsutnyttelse på tvers av 18 driftssteder",
-              "Etablerte tydeligere styringsmodell med resultatdrevne KPI-er",
-              "Økte marginer gjennom målrettet innsats mot nøkkelkunder",
-              "Bygget ny standard for datadrevet salgsledelse",
+              "Forbedret kapasitetsutnyttelse og samhandling mellom salg og drift på tvers av 18 driftssteder",
+              "Etablerte tydeligere styringsmodell med resultatdrevne KPI-er og digitale dashboards",
+              "Økte marginer gjennom målrettet innsats mot nøkkelkunder og moderne CRM-metodikk",
+              "Bygget ny standard for datadrevet, proaktiv salgsledelse i tradisjonell bransje",
             ],
-            relevans: "Nasjonal salgsledelse, KPI-styring og margin i desentralisert B2B.",
+            relevans: "Nasjonal salgsledelse, P/L-ansvar, digital transformasjon, KPI-styring, salg/drift-samhandling og margin i desentralisert B2B.",
             farge: "indigo",
           },
           {
@@ -125,12 +130,12 @@ export default function Resultater() {
             rolle: "Salgssjef Forbruksvarer",
             periode: "2019 – 2023",
             resultater: [
-              "Leverte 67 % salgsvekst i perioden",
+              "Leverte 67 % salgsvekst i perioden som salgssjef for selskapets største avdeling",
               "Bidro til selskapets vekstmål om NOK 1 mrd. gjennom teamledelse i vekstprosjekter",
               "Bygget høytytende team gjennom transformasjonsprosjektet «Forbruk Oslo 2.0»",
-              "Moderniserte salgsprosesser i et konkurransepreget marked",
+              "Moderniserte salgsprosesser, CRM og logistikk i et konkurransepreget marked",
             ],
-            relevans: "Salgsledelse, vekst og kommersiell transformasjon.",
+            relevans: "Salgsledelse, vekst, P/L- og KPI-ansvar, CRM/modernisering og kommersiell transformasjon i konkurransepreget marked.",
             farge: "sky",
           },
           {
@@ -139,11 +144,11 @@ export default function Resultater() {
             periode: "2017 – 2018",
             resultater: [
               "Overtok salgssvikt etablert før ansettelse og snudde utviklingen til vekst",
-              "KAM-ansvar for selskapets to største kunder",
-              "Drev nylanseringer innen ny produktretning, innovasjon og robotteknologi",
-              "Overgikk salgsmål og styrket teammotivasjon og prestasjoner",
+              "KAM-ansvar for selskapets to største kunder nasjonalt",
+              "Drev nylanseringer innen innovasjon, robotteknologi og ny produktretning",
+              "Overgikk salgsmål og styrket teammotivasjon, coaching og prestasjoner",
             ],
-            relevans: "Salgsledelse, KAM, nylanseringer og snuoperasjon.",
+            relevans: "Salgsledelse, KAM, P/L-ansvar, KPI-styring, snuoperasjon, nylanseringer innen innovasjon og teamcoaching.",
             farge: "amber",
           },
           {
@@ -152,10 +157,10 @@ export default function Resultater() {
             periode: "2001 – 2012",
             resultater: [
               "Ledet team til global #1-ranking i vekst og omsetning i hele konsernet",
-              "Lanserte og posisjonerte fire blockbuster-produkter",
+              "Lanserte og posisjonerte fire blockbuster-produkter i kritiske terapiområder",
               "Vant salgspriser for beste salg og EU PR-pris for fremragende resultater",
             ],
-            relevans: "Global forretningsenhet, produktlansering og teamledelse.",
+            relevans: "Nasjonal salgs- og markedsledelse, salg og KAM, produktledelse, P/L- og KPI-ansvar, blockbuster-lanseringer og teamledelse med dokumentert global toppranking.",
             farge: "emerald",
           },
         ]
@@ -165,12 +170,12 @@ export default function Resultater() {
             rolle: "National Sales Director",
             periode: "2024 – 2025",
             resultater: [
-              "Improved capacity utilisation across 18 operational sites",
-              "Established a clearer governance model with performance-driven KPIs",
-              "Increased margins through targeted key-account efforts",
-              "Built a new standard for data-driven sales leadership",
+              "Improved capacity utilisation and collaboration between sales and operations across 18 operational sites",
+              "Established a clearer governance model with performance-driven KPIs and digital dashboards",
+              "Increased margins through targeted key-account efforts and modern CRM methodology",
+              "Built a new standard for data-driven, proactive sales leadership in a traditional industry",
             ],
-            relevans: "National sales leadership, KPI management and margin in decentralised B2B.",
+            relevans: "National sales leadership, P/L accountability, digital transformation, KPI management, sales/operations alignment and margin in decentralised B2B.",
             farge: "indigo",
           },
           {
@@ -178,12 +183,12 @@ export default function Resultater() {
             rolle: "Sales Manager, Consumer Goods",
             periode: "2019 – 2023",
             resultater: [
-              "Delivered 67% revenue growth over the period",
+              "Delivered 67% revenue growth as sales manager for the company's largest division",
               "Contributed to the company's NOK 1 billion target through leadership in growth projects",
               "Built a high-performing team through the 'Forbruk Oslo 2.0' transformation programme",
-              "Modernised sales processes in a competitive market",
+              "Modernised sales processes, CRM and logistics in a competitive market",
             ],
-            relevans: "Sales leadership, growth and commercial transformation.",
+            relevans: "Sales leadership, growth, P/L and KPI accountability, CRM modernisation and commercial transformation in a competitive market.",
             farge: "sky",
           },
           {
@@ -192,11 +197,11 @@ export default function Resultater() {
             periode: "2017 – 2018",
             resultater: [
               "Inherited a sales decline established before appointment and turned performance into growth",
-              "Key account management responsibility for the company's two largest customers",
-              "Drove product launches within a new direction, innovation and robotics technology",
-              "Exceeded sales targets and strengthened team motivation and performance",
+              "National key account management responsibility for the company's two largest customers",
+              "Drove product launches within innovation, robotics technology and a new product direction",
+              "Exceeded sales targets and strengthened team motivation, coaching and performance",
             ],
-            relevans: "Sales leadership, KAM, product launches and turnaround.",
+            relevans: "Sales leadership, KAM, P/L accountability, KPI management, turnaround, innovation launches and team coaching.",
             farge: "amber",
           },
           {
@@ -205,13 +210,31 @@ export default function Resultater() {
             periode: "2001 – 2012",
             resultater: [
               "Led the team to a global #1 ranking in growth and revenue across the group",
-              "Launched and positioned four blockbuster products",
+              "Launched and positioned four blockbuster products in critical therapeutic areas",
               "Won sales awards for best sales and the EU PR Award for outstanding results",
             ],
-            relevans: "Global business unit leadership, product launches and team leadership.",
+            relevans: "National sales and marketing leadership, sales and KAM, product leadership, P/L and KPI accountability, blockbuster launches and team leadership with documented global top ranking.",
             farge: "emerald",
           },
         ];
+
+  const selskapsresultater: Selskapsresultat[] = [
+    {
+      selskap: "Marius Ottesen Consulting",
+      rolle:
+        lang === "no"
+          ? "Strategisk rådgiver og AI-utvikling"
+          : "Strategic advisor and AI development",
+      periode: lang === "no" ? "2026 – Nåværende" : "2026 – Present",
+      resultater: getMocResultaterPunkter(lang),
+      relevans:
+        lang === "no"
+          ? "Kommersiell rådgivning, digital transformasjon, interim ledelse, AI-prosjekter, pilotutvikling og faglig posisjonering for arbeidsgivere og kunder."
+          : "Commercial advisory, digital transformation, interim leadership, AI projects, pilot development and professional positioning for employers and clients.",
+      farge: "indigo",
+    },
+    ...ovrigeSelskapsresultater,
+  ];
 
   return (
     <div className="py-4 text-left w-full overflow-x-hidden">
@@ -312,14 +335,16 @@ export default function Resultater() {
                             alt={`${s.selskap} logo`}
                             width={48}
                             height={48}
-                            className="max-h-9 max-w-full w-auto h-auto object-contain"
+                            className={`max-w-full w-auto h-auto object-contain ${
+                              s.selskap === "Marius Ottesen Consulting" ? "max-h-[30px]" : "max-h-9"
+                            }`}
                           />
                         ) : (
                           <span className={f.text}>{ikonMap[s.farge]}</span>
                         )}
                       </div>
                       <div>
-                        <h3 className={blockTitleClass}>{s.selskap}</h3>
+                        <h3 className={selskapNavnHeroClass}>{s.selskap}</h3>
                         <p className={`text-sm ${f.text} font-bold italic`}>{s.rolle}</p>
                       </div>
                     </div>
@@ -328,12 +353,57 @@ export default function Resultater() {
                     </span>
                   </div>
                   <ul className="space-y-2 mb-4">
-                    {s.resultater.map((r) => (
-                      <li key={r} className="flex items-start gap-3 text-sm text-slate-300 font-medium italic">
-                        <span className={`w-1.5 h-1.5 rounded-full ${f.dot} mt-1.5 shrink-0`} aria-hidden="true" />
-                        {r}
-                      </li>
-                    ))}
+                    {s.resultater.map((r, i) => {
+                      const mocHtml = erMocSelskapsresultater(s.selskap, s.resultater);
+                      if (erMocResultatPunktMedUnderpunkter(r)) {
+                        return (
+                          <li key={`moc-${i}`} className="space-y-2">
+                            <div className="flex items-start gap-3 text-sm text-slate-300 font-medium italic">
+                              <span className={`w-1.5 h-1.5 rounded-full ${f.dot} mt-1.5 shrink-0`} aria-hidden="true" />
+                              {mocHtml ? (
+                                <span
+                                  className={mocResultatLinkClass}
+                                  dangerouslySetInnerHTML={{ __html: r.tekst }}
+                                />
+                              ) : (
+                                r.tekst
+                              )}
+                            </div>
+                            <ul className="ml-5 space-y-1.5">
+                              {r.underpunkter.map((u, j) => (
+                                <li
+                                  key={`moc-${i}-${j}`}
+                                  className="flex items-start gap-2.5 text-sm text-slate-400 font-medium italic leading-snug"
+                                >
+                                  <span className="w-1 h-1 rounded-full bg-slate-500 mt-2 shrink-0" aria-hidden="true" />
+                                  {mocHtml ? (
+                                    <span
+                                      className={mocResultatLinkClass}
+                                      dangerouslySetInnerHTML={{ __html: u }}
+                                    />
+                                  ) : (
+                                    u
+                                  )}
+                                </li>
+                              ))}
+                            </ul>
+                          </li>
+                        );
+                      }
+                      return (
+                        <li key={`${i}-${typeof r === "string" ? r.slice(0, 24) : "x"}`} className="flex items-start gap-3 text-sm text-slate-300 font-medium italic">
+                          <span className={`w-1.5 h-1.5 rounded-full ${f.dot} mt-1.5 shrink-0`} aria-hidden="true" />
+                          {mocHtml && typeof r === "string" ? (
+                            <span
+                              className={mocResultatLinkClass}
+                              dangerouslySetInnerHTML={{ __html: r }}
+                            />
+                          ) : (
+                            r
+                          )}
+                        </li>
+                      );
+                    })}
                   </ul>
                   <p className="text-xs text-slate-500 italic leading-relaxed">
                     <span className="text-slate-400 not-italic font-semibold">
