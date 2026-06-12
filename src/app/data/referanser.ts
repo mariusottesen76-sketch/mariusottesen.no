@@ -13,7 +13,7 @@ export const referanserData: Referanse[] = [
   {
     id: "thomas-falch",
     navn: "Thomas Falch",
-    tittel: "Markedsansvarlig Industri",
+    tittel: "Markedsansvarlig Industri hos Franzefoss Gjenvinning",
     relasjon: "Thomas rapporterte direkte til Marius",
     dato: "20. desember 2025",
     sorteringsDato: "2025-12-20",

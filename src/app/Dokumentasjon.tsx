@@ -1,19 +1,66 @@
 "use client";
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { FileText, Download, Linkedin, ChevronRight, ArrowDown } from "lucide-react";
+import { FileText, Linkedin, ChevronRight, ArrowDown } from "lucide-react";
 import { getDokumentasjonData, linkedinUrl } from "./data/dokumentasjon";
 import { getRekruttererVerdiData } from "./data/rekrutterer-verdi";
 import { useLanguage } from "./LanguageContext";
 import { getTranslation } from "./data/translations";
-import { pageEyebrowClass, pageTitleClass, sectionTitleClass } from "./lib/typography";
+import { cardSubtitleClass, pageEyebrowClass, pageTitleClass, sectionTitleClass } from "./lib/typography";
 
 const linkClass =
   "text-indigo-400 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400";
 
 const ctaBtnClass =
   "inline-flex items-center justify-center px-4 py-2.5 rounded-lg border border-indigo-500/40 bg-indigo-500/10 text-indigo-200 text-sm font-bold hover:bg-indigo-500/20 hover:border-indigo-400/60 transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400";
+
+const pdfFrameClass = "w-full h-[75vh] min-h-[560px] border-0";
+
+function PdfViewerBlock({
+  title,
+  hint,
+  viewerTitle,
+  openNewTabLabel,
+  placeholder,
+  pdfSrc,
+  visible,
+}: {
+  title: string;
+  hint: string;
+  viewerTitle: string;
+  openNewTabLabel: string;
+  placeholder: string;
+  pdfSrc: string;
+  visible: boolean;
+}) {
+  return (
+    <div className="space-y-2 min-w-0">
+      <h3 className={cardSubtitleClass}>{title}</h3>
+      <p className="text-xs text-slate-500 italic">{hint}</p>
+      <div className="rounded-2xl border border-slate-800 overflow-hidden bg-white shadow-xl">
+        {visible ? (
+          <iframe
+            src={`${pdfSrc}#view=FitH&toolbar=1`}
+            title={viewerTitle}
+            className={pdfFrameClass}
+          />
+        ) : (
+          <div
+            className={`${pdfFrameClass} flex items-center justify-center bg-slate-100 text-slate-500 text-sm italic px-6 text-center`}
+          >
+            {placeholder}
+          </div>
+        )}
+      </div>
+      <p className="text-xs text-slate-500">
+        <a href={pdfSrc} target="_blank" rel="noopener noreferrer" className={linkClass}>
+          {openNewTabLabel}
+        </a>
+      </p>
+    </div>
+  );
+}
 
 export default function Dokumentasjon() {
   const { lang } = useLanguage();
@@ -22,6 +69,23 @@ export default function Dokumentasjon() {
   const rv = getRekruttererVerdiData(lang);
   const r = rv.cvRekrutterere;
   const verdi = rv.verdiSituasjoner;
+  const docsRef = useRef<HTMLElement>(null);
+  const [docsVisible, setDocsVisible] = useState(false);
+
+  useEffect(() => {
+    const section = docsRef.current;
+    if (!section) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) setDocsVisible(true);
+      },
+      { rootMargin: "120px" },
+    );
+
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, []);
 
   const subLabelClass = "text-[10px] font-black uppercase tracking-widest text-indigo-400";
 
@@ -64,6 +128,7 @@ export default function Dokumentasjon() {
 
           <a
             href="#cv-dokumenter"
+            onClick={() => setDocsVisible(true)}
             className="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-indigo-500/40 bg-indigo-500/10 text-indigo-200 font-black text-sm uppercase tracking-widest hover:bg-indigo-500/20 hover:border-indigo-400/60 transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400 w-full sm:w-auto justify-center"
           >
             <FileText size={18} aria-hidden="true" />
@@ -128,7 +193,7 @@ export default function Dokumentasjon() {
                   key={kort.title}
                   className="p-4 rounded-xl border border-slate-800/80 bg-slate-900/30 space-y-2"
                 >
-                  <h3 className="text-sm font-black text-white italic tracking-tight">{kort.title}</h3>
+                  <h3 className={cardSubtitleClass}>{kort.title}</h3>
                   <p className="text-slate-400 text-sm leading-relaxed">{kort.text}</p>
                 </div>
               ))}
@@ -189,39 +254,39 @@ export default function Dokumentasjon() {
             </p>
           </section>
 
-          <section id="cv-dokumenter" aria-labelledby="cv-pdf-heading" className="space-y-4 scroll-mt-24">
-            <h2 id="cv-pdf-heading" className={sectionTitleClass}>
-              {d.pdfTitle}
-            </h2>
-            <p className="text-sm text-slate-400 italic">{d.pdfIntro}</p>
-            <div className="grid md:grid-cols-2 gap-5">
-              <a
-                href="/pdf/cv.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group p-8 bg-slate-900/40 border border-slate-800 rounded-2xl shadow-xl hover:border-indigo-500/50 transition-all flex flex-col items-center gap-4 text-center"
-              >
-                <FileText size={40} className="text-indigo-500" aria-hidden="true" />
-                <h3 className="text-white font-black text-xl italic">{tr("dok.cv")}</h3>
-                <p className="text-slate-400 text-sm italic font-medium">{tr("dok.cv.desc")}</p>
-                <span className="flex items-center gap-2 text-indigo-400 font-black text-sm uppercase tracking-widest mt-2 group-hover:text-white transition-colors">
-                  <Download size={16} aria-hidden="true" /> {tr("dok.cv.btn")}
-                </span>
-              </a>
+          <section
+            ref={docsRef}
+            id="cv-dokumenter"
+            aria-labelledby="cv-pdf-heading"
+            className="space-y-8 scroll-mt-24"
+          >
+            <div className="space-y-2">
+              <h2 id="cv-pdf-heading" className={sectionTitleClass}>
+                {d.pdfTitle}
+              </h2>
+              <p className="text-sm text-slate-400 italic">{d.pdfIntro}</p>
+            </div>
 
-              <a
-                href="/pdf/soknad.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group p-8 bg-slate-900/40 border border-slate-800 rounded-2xl shadow-xl hover:border-indigo-500/50 transition-all flex flex-col items-center gap-4 text-center"
-              >
-                <FileText size={40} className="text-indigo-500" aria-hidden="true" />
-                <h3 className="text-white font-black text-xl italic">{tr("dok.soknad")}</h3>
-                <p className="text-slate-400 text-sm italic font-medium">{tr("dok.soknad.desc")}</p>
-                <span className="flex items-center gap-2 text-indigo-400 font-black text-sm uppercase tracking-widest mt-2 group-hover:text-white transition-colors">
-                  <Download size={16} aria-hidden="true" /> {tr("dok.cv.btn")}
-                </span>
-              </a>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+              <PdfViewerBlock
+                title={tr("dok.cv")}
+                hint={tr("dok.cv.viewerHint")}
+                viewerTitle={tr("dok.cv.viewerTitle")}
+                openNewTabLabel={tr("dok.cv.openNewTab")}
+                placeholder={tr("dok.pdf.placeholder")}
+                pdfSrc="/pdf/cv.pdf"
+                visible={docsVisible}
+              />
+
+              <PdfViewerBlock
+                title={tr("dok.soknad")}
+                hint={tr("dok.soknad.viewerHint")}
+                viewerTitle={tr("dok.soknad.viewerTitle")}
+                openNewTabLabel={tr("dok.soknad.openNewTab")}
+                placeholder={tr("dok.pdf.placeholder")}
+                pdfSrc="/pdf/soknad.pdf"
+                visible={docsVisible}
+              />
             </div>
           </section>
 

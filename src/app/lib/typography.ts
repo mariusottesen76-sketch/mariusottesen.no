@@ -29,6 +29,9 @@ export const selskapNavnHeroClass =
 /** H3 – kompakte kort */
 export const cardTitleClass = "text-sm font-black text-white italic tracking-tight";
 
+/** H3 – små kortoverskrifter (verdi, lederprofil) */
+export const cardSubtitleClass = "text-sm font-black text-slate-300 italic tracking-tight";
+
 /** H2/H3 – seksjoner med ikon (kontakt) */
 export const iconSectionTitleClass =
   "text-indigo-500 font-black flex items-center gap-2 text-base tracking-wide italic";

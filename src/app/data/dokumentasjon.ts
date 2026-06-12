@@ -29,9 +29,9 @@ const data = {
       "Jeg har videreutviklet min kommersielle og strategiske lederkompetanse gjennom masterkurset <em class=\"italic\">Generative AI for Business</em> ved BI, kombinert med egne AI-prosjekter innen salgstrening, samhandling, innsiktsarbeid, beslutningsstøtte og agentiske arbeidsflyter. Jeg har også tatt initiativ til <em class=\"italic\">AI Value Lab Oslo</em>, et tverrfaglig lærings- og utviklingsinitiativ med fokus på praktisk testing, ansvarlig bruk av AI og reell verdiskaping gjennom virksomhetsnære case.",
     ],
     aiLink: "Se AI-prosjekter",
-    pdfTitle: "Last ned eller åpne dokumenter",
+    pdfTitle: "CV og åpen søknad",
     pdfIntro:
-      "CV og åpen søknad kan leses direkte på siden, lastes ned eller deles videre ved behov.",
+      "Les CV og åpen søknad (oppdatert juni 2026) direkte i viserne under. Du kan også åpne hvert dokument i egen fane for nedlasting.",
     linkedinTekst:
       "Ønsker du å besøke min LinkedIn-profil for mer informasjon, trykk på linken under:",
     ctaTitle: "Ønsker du å vurdere profilen videre?",
@@ -67,9 +67,9 @@ const data = {
       "I have further developed my commercial and strategic leadership competence through the <em class=\"italic\">Generative AI for Business</em> master's programme at BI, combined with my own AI projects in sales training, collaboration, insight work, decision support and agentic workflows. I have also initiated <em class=\"italic\">AI Value Lab Oslo</em>, a cross-disciplinary learning and development initiative focused on practical testing, responsible use of AI and real value creation through business-near cases.",
     ],
     aiLink: "See AI projects",
-    pdfTitle: "Download or open documents",
+    pdfTitle: "CV and open application",
     pdfIntro:
-      "The CV and open application can be read on this page, downloaded or shared as needed.",
+      "Read the CV and open application (updated June 2026) directly in the viewers below. You can also open each document in a new tab to download.",
     linkedinTekst:
       "Would you like to visit my LinkedIn profile for more information? Click the link below:",
     ctaTitle: "Would you like to evaluate the profile further?",

@@ -326,14 +326,30 @@ const translations: Translations = {
   "dok.title.1": { no: "CV & Åpen", en: "CV & Open" },
   "dok.title.2": { no: "Søknad", en: "Application" },
   "dok.cv": { no: "Min CV", en: "My CV" },
-  "dok.cv.desc": { no: "Last ned eller les min fullstendige CV", en: "Download or review my comprehensive CV" },
+  "dok.cv.desc": { no: "Last ned eller les min fullstendige CV (oppdatert juni 2026)", en: "Download or review my comprehensive CV (updated June 2026)" },
   "dok.cv.btn": { no: "Åpne PDF", en: "Open PDF" },
+  "dok.cv.viewerTitle": { no: "CV Marius Ottesen — PDF", en: "Marius Ottesen CV — PDF" },
+  "dok.cv.viewerHint": {
+    no: "Bla mellom CV-sidene i viseren, eller åpne PDF i egen fane for nedlasting.",
+    en: "Scroll through the CV pages in the viewer, or open the PDF in a new tab to download.",
+  },
+  "dok.cv.openNewTab": { no: "Åpne CV i ny fane", en: "Open CV in new tab" },
   "dok.jumpToPdf": {
-    no: "Last ned eller åpne dokumenter",
-    en: "Download or open documents",
+    no: "Gå til CV og åpen søknad",
+    en: "Go to CV and open application",
+  },
+  "dok.pdf.placeholder": {
+    no: "Dokumentet vises når du scroller hit.",
+    en: "The document appears when you scroll here.",
   },
   "dok.soknad": { no: "Åpen søknad", en: "Open application" },
   "dok.soknad.desc": { no: "Les min åpne søknad for kommersielle lederroller", en: "Read my open application for senior commercial leadership roles" },
+  "dok.soknad.viewerTitle": { no: "Åpen søknad Marius Ottesen — PDF", en: "Marius Ottesen open application — PDF" },
+  "dok.soknad.viewerHint": {
+    no: "Bla mellom sidene i viseren, eller åpne PDF i egen fane for nedlasting.",
+    en: "Scroll through the pages in the viewer, or open the PDF in a new tab to download.",
+  },
+  "dok.soknad.openNewTab": { no: "Åpne søknad i ny fane", en: "Open application in new tab" },
   "dok.linkedin": { no: "Besøk min LinkedIn-profil", en: "Visit my LinkedIn Profile" },
 
   // Footer

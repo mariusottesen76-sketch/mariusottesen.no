@@ -8,6 +8,7 @@ import { useLanguage } from "./LanguageContext";
 import { getTranslation } from "./data/translations";
 import {
   blockTitleClass,
+  cardSubtitleClass,
   pageEyebrowClass,
   pageTitleClass,
   sectionTitleClass,
@@ -162,7 +163,7 @@ export default function Profil({ onNavigate }: { onNavigate?: (tab: string) => v
                   key={kort.title}
                   className="p-4 rounded-xl border border-slate-800/80 bg-slate-900/30 space-y-2"
                 >
-                  <h3 className="text-sm font-black text-white italic tracking-tight">{kort.title}</h3>
+                  <h3 className={cardSubtitleClass}>{kort.title}</h3>
                   <p className="text-slate-400 text-sm leading-relaxed">{kort.text}</p>
                 </div>
               ))}
@@ -179,7 +180,7 @@ export default function Profil({ onNavigate }: { onNavigate?: (tab: string) => v
                   key={kort.title}
                   className="p-4 rounded-xl border border-slate-800/80 bg-slate-900/30 space-y-2"
                 >
-                  <h3 className="text-sm font-black text-white italic tracking-tight">{kort.title}</h3>
+                  <h3 className={cardSubtitleClass}>{kort.title}</h3>
                   <p className="text-slate-400 text-sm leading-relaxed">{kort.text}</p>
                 </div>
               ))}
