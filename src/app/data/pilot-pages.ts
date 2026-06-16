@@ -1,13 +1,14 @@
 import { Lang } from "../LanguageContext";
 import { FLOW_SIGNAL_APP_URL } from "../lib/flowsignal-brand";
 import { PSC_APP_URL } from "../lib/psc-brand";
+import { SMB_SALGSFLYT_APP_URL } from "../lib/smb-salgsflyt-brand";
 
 type L = { no: string; en: string };
 
 export type PilotSteg = { tittel: L; beskrivelse: L };
 
 export type PilotSide = {
-  slug: "psc" | "flowsignal";
+  slug: "psc" | "flowsignal" | "salgsflyt-sjekken";
   meta: { title: L; description: L };
   hero: {
     tittel: L;
@@ -338,9 +339,167 @@ const flowSignalSide: PilotSide = {
   pilotAppUrl: FLOW_SIGNAL_APP_URL,
 };
 
+const salgsflytSjekkenSide: PilotSide = {
+  slug: "salgsflyt-sjekken",
+  meta: {
+    title: {
+      no: "Diagnose- og kvalifiseringspilot med SMB Salgsflyt-sjekken | Marius Ottesen",
+      en: "Diagnosis and qualification pilot with SMB Sales Flow Check | Marius Ottesen",
+    },
+    description: {
+      no: "Interaktiv diagnose og AI-rapportering for kommersiell modenhet, salgskvalifisering og raskere oppfølging i Verdilekkasje- og CRM-løp.",
+      en: "Interactive diagnosis and AI reporting for commercial maturity, sales qualification and faster follow-up in value leak and CRM engagements.",
+    },
+  },
+  hero: {
+    tittel: { no: "Diagnose- og kvalifiseringspilot med", en: "Diagnosis and qualification pilot with" },
+    tittelAccent: { no: "SMB Salgsflyt-sjekken", en: "SMB Sales Flow Check" },
+    undertittel: {
+      no: "Interaktiv spørreundersøkelse og AI-rapportering for ledere og rådgivere som vil avdekke salgsfriksjon, kvalifisere potensielle kunder og forberede oppfølging.",
+      en: "An interactive survey and AI reporting for leaders and advisors who want to uncover sales friction, qualify potential clients and prepare follow-up.",
+    },
+    tekst: {
+      no: "SMB Salgsflyt-sjekken er utviklet som et praktisk diagnose- og kvalifiseringsverktøy for kommersielle miljøer. Målet er å gi respondenten umiddelbar verdi gjennom en skreddersydd PDF-rapport sendt med en gang diagnosen er fullført, samtidig som rådgiveren får AI-generert innsikt for oppfølging og salgskvalifisering — uten lange kartleggingsmøter.",
+      en: "SMB Sales Flow Check is built as a practical diagnostic and qualification tool for commercial environments. The goal is to give the respondent immediate value through a tailored PDF report sent as soon as the diagnosis is complete, while the advisor gets AI-generated insight for follow-up and sales qualification — without long discovery meetings.",
+    },
+    primaerCta: { no: "Be om tilgang / pilot", en: "Request access / pilot" },
+    sekundaerCta: { no: "Åpne spørreundersøkelsen", en: "Open the survey" },
+    tilgangNote: {
+      no: "Spørreundersøkelsen er tilgangsstyrt og krever avtalt tilgangskode. Ta kontakt dersom du ønsker tilgang eller vil diskutere en mulig pilot.",
+      en: "The survey is access-controlled and requires an agreed access code. Get in touch if you want access or to discuss a possible pilot.",
+    },
+  },
+  hvem: {
+    tittel: { no: "Hvem passer piloten for?", en: "Who is the pilot for?" },
+    tekst: {
+      no: "Piloten passer for SMB-ledere, daglige ledere, rådgivere og kommersielle team som mistenker friksjon i salgsflyt, CRM-bruk, oppfølging eller tilbudsprosesser — og som vil starte med en strukturert diagnose før dypere rådgivning.",
+      en: "The pilot suits SMB leaders, managing directors, advisors and commercial teams who suspect friction in sales flow, CRM use, follow-up or proposal processes — and who want to start with a structured diagnosis before deeper advisory work.",
+    },
+    punkter: [
+      { no: "Ledere som vil avdekke usynlig salgsfriksjon", en: "Leaders who want to uncover invisible sales friction" },
+      { no: "Rådgivere som trenger raskere kvalifisering av potensielle kunder", en: "Advisors who need faster qualification of potential clients" },
+      { no: "Virksomheter med CRM, men lav utnyttelse og svak oppfølging", en: "Businesses with CRM but low utilisation and weak follow-up" },
+      { no: "Team som vil prioritere riktige kommersielle tiltak", en: "Teams that want to prioritise the right commercial initiatives" },
+      { no: "Organisasjoner som vurderer Verdilekkasje- eller CRM-forbedring", en: "Organisations considering value leak or CRM improvement work" },
+    ],
+  },
+  problem: {
+    tittel: { no: "Problemet piloten adresserer", en: "The problem the pilot addresses" },
+    tekst: {
+      no: "Mange virksomheter har fragmentert salgsflyt: ubrukte CRM-systemer, ustrukturerte tilbudsprosesser og svak leadoppfølging. Rotårsakene er ofte usynlige, og kvalifisering tar for lang tid før rådgiver eller selger vet om det er riktig match.",
+      en: "Many organisations have fragmented sales flow: unused CRM systems, unstructured proposal processes and weak lead follow-up. Root causes are often invisible, and qualification takes too long before the advisor or salesperson knows if there is a good fit.",
+    },
+    punkter: [
+      { no: "Usynlig friksjon på tvers av salgsleddet", en: "Invisible friction across the sales function" },
+      { no: "Lang og ustrukturert kvalifisering", en: "Long and unstructured qualification" },
+      { no: "CRM og oppfølging som ikke henger sammen", en: "CRM and follow-up that do not connect" },
+      { no: "Manglende felles bilde før rådgivning eller tiltak", en: "No shared picture before advisory work or initiatives" },
+      { no: "Tid brukt på feil leads og feil prioriteringer", en: "Time spent on wrong leads and wrong priorities" },
+    ],
+  },
+  gjennomforing: {
+    tittel: { no: "Slik kan en pilot gjennomføres", en: "How a pilot can be run" },
+    steg: [
+      {
+        tittel: { no: "Avtale og tilgang", en: "Agreement and access" },
+        beskrivelse: {
+          no: "Kort avklaring av formål, målgruppe og oppfølging. Respondent får tilsendt tilgangskode til spørreundersøkelsen.",
+          en: "Brief clarification of purpose, target group and follow-up. The respondent receives an access code for the survey.",
+        },
+      },
+      {
+        tittel: { no: "Diagnose", en: "Diagnosis" },
+        beskrivelse: {
+          no: "Respondent gjennomfører spørreundersøkelsen på tvers av ti kommersielle dimensjoner — typisk under ti minutter.",
+          en: "The respondent completes the survey across ten commercial dimensions — typically in under ten minutes.",
+        },
+      },
+      {
+        tittel: { no: "Dypdykk", en: "Deep dive" },
+        beskrivelse: {
+          no: "Svakeste områder utløser oppfølgingsspørsmål om rotårsaker, varighet og historiske feilskjær.",
+          en: "The weakest areas trigger follow-up questions on root causes, duration and historical missteps.",
+        },
+      },
+      {
+        tittel: { no: "Rapportering", en: "Reporting" },
+        beskrivelse: {
+          no: "AI genererer kunderapport og intern salgsvurdering parallelt — med score, lead-kvalitet og anbefalt oppfølging. Kunden får en skreddersydd PDF-rapport sendt med en gang diagnosen er fullført.",
+          en: "AI generates customer report and internal sales assessment in parallel — with score, lead quality and recommended follow-up. The customer receives a tailored PDF report as soon as the diagnosis is complete.",
+        },
+      },
+      {
+        tittel: { no: "Oppfølging", en: "Follow-up" },
+        beskrivelse: {
+          no: "Debrief og anbefalt neste steg — for eksempel Verdilekkasje Sprint, CRM-forbedring eller avgrenset rådgivningsløp.",
+          en: "Debrief and recommended next step — for example Value Leak Sprint, CRM improvement or a scoped advisory engagement.",
+        },
+      },
+    ],
+  },
+  utvikler: {
+    tittel: { no: "Hva piloten kan avdekke og utvikle", en: "What the pilot can uncover and develop" },
+    punkter: [
+      { no: "Dimensjons- og totalscore for salgsmodenhet", en: "Dimension and total scores for sales maturity" },
+      { no: "Prioriterte flaskehalser og rotårsaker", en: "Prioritised bottlenecks and root causes" },
+      { no: "Lead-kvalitet og anbefalt oppfølging", en: "Lead quality and recommended follow-up" },
+      { no: "Grunnlag for Verdilekkasje- eller CRM-arbeid", en: "Foundation for value leak or CRM work" },
+      { no: "Raskere kvalifisering før dypere rådgivning", en: "Faster qualification before deeper advisory work" },
+      { no: "Felles språk mellom leder, rådgiver og salg", en: "Shared language between leader, advisor and sales" },
+    ],
+  },
+  format: {
+    tittel: { no: "Mulig pilotformat", en: "Possible pilot format" },
+    tekst: {
+      no: "Et typisk pilotformat kan være en avgrenset diagnose med én til fem respondenter, etterfulgt av kort debrief og anbefalt neste steg. Omfang tilpasses om verktøyet brukes som salgskvalifisering, kundedialog eller forberedelse til rådgivning.",
+      en: "A typical pilot format can be a scoped diagnosis with one to five respondents, followed by a short debrief and recommended next step. Scope is adapted whether the tool is used for sales qualification, customer dialogue or preparation for advisory work.",
+    },
+    punkter: [
+      { no: "1–5 respondenter med avtalt tilgangskode", en: "1–5 respondents with agreed access code" },
+      { no: "Spørreundersøkelse på under ti minutter", en: "Survey completed in under ten minutes" },
+      { no: "Kunderapport og intern salgsvurdering", en: "Customer report and internal sales assessment" },
+      { no: "Kort debrief og prioritering av tiltak", en: "Short debrief and prioritisation of initiatives" },
+      { no: "Anbefaling for videre sprint eller rådgivning", en: "Recommendation for further sprint or advisory work" },
+    ],
+  },
+  utbytte: {
+    tittel: { no: "Hva kunden får ut av det", en: "What the client gains" },
+    punkter: [
+      { no: "Skreddersydd PDF-rapport med konkrete tiltak", en: "Tailored PDF report with concrete actions" },
+      { no: "Raskere avklaring av salgsmodenhet og friksjon", en: "Faster clarification of sales maturity and friction" },
+      { no: "Bedre grunnlag for prioritering og oppfølging", en: "Better foundation for prioritisation and follow-up" },
+      { no: "Lavere terskel enn tradisjonell kartlegging", en: "Lower threshold than traditional discovery" },
+      { no: "Tydeligere kvalifisering før dypere engasjement", en: "Clearer qualification before deeper engagement" },
+      { no: "Umiddelbar verdi for respondenten", en: "Immediate value for the respondent" },
+    ],
+  },
+  avgrensning: {
+    tittel: { no: "Viktig avgrensning", en: "Important boundary" },
+    tekst: {
+      no: "SMB Salgsflyt-sjekken er et diagnose- og kvalifiseringsverktøy — ikke en CRM-implementering eller ferdig salgsstrategi. Den avdekker friksjon og modenhet, men erstatter ikke oppfølgende rådgivning, prosessdesign eller systemarbeid der det trengs.",
+      en: "SMB Sales Flow Check is a diagnostic and qualification tool — not a CRM implementation or finished sales strategy. It uncovers friction and maturity, but does not replace follow-up advisory work, process design or systems work where needed.",
+    },
+  },
+  consulting: {
+    tittel: { no: "Kobling til consulting", en: "Link to consulting" },
+    tekst: {
+      no: "Piloten kan brukes som inngang til Verdilekkasje Sprint, CRM & Sales Follow-up Sprint eller et bredere arbeid med kommersiell utvikling, salgskvalifisering og rådgivningsforberedelse.",
+      en: "The pilot can be used as an entry point to Value Leak Sprint, CRM & Sales Follow-up Sprint, or broader work on commercial development, sales qualification and advisory preparation.",
+    },
+    primaerCta: { no: "Ta kontakt om diagnosepilot", en: "Contact about diagnostic pilot" },
+    sekundaerCta: { no: "Åpne spørreundersøkelsen", en: "Open the survey" },
+    tilgangNote: {
+      no: "Spørreundersøkelsen er tilgangsstyrt og krever avtalt tilgangskode. Ta kontakt dersom du ønsker tilgang eller vil diskutere en mulig pilot.",
+      en: "The survey is access-controlled and requires an agreed access code. Get in touch if you want access or to discuss a possible pilot.",
+    },
+  },
+  pilotAppUrl: SMB_SALGSFLYT_APP_URL,
+};
+
 const pilotSider: Record<PilotSide["slug"], PilotSide> = {
   psc: pscSide,
   flowsignal: flowSignalSide,
+  "salgsflyt-sjekken": salgsflytSjekkenSide,
 };
 
 export function getPilotSide(slug: PilotSide["slug"]): PilotSide {

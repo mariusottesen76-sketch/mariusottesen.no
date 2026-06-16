@@ -23,6 +23,11 @@ const kategorier: ProsjektHurtigKategori[] = [
         label: { no: "The Predictive Sales Coach v6", en: "The Predictive Sales Coach v6" },
       },
       {
+        prosjektId: "smb-salgsflyt-sjekken-2026",
+        introSlug: "salgsflyt",
+        label: { no: "SMB Salgsflyt-sjekken", en: "SMB Sales Flow Check" },
+      },
+      {
         prosjektId: "psc-promo-video-moc-2026",
         introSlug: "psc-video",
         label: { no: "Promovideo PSC", en: "PSC promo video" },

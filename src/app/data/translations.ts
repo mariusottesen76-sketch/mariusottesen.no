@@ -54,9 +54,8 @@ const translations: Translations = {
   "profil.utdanning.title": { no: "Utdanning", en: "Education" },
   "profil.ai.title": { no: "AI som praktisk lederverktøy", en: "AI as a practical leadership tool" },
   "profil.ai.link.consulting": { no: "Se consulting", en: "See consulting" },
-  "profil.ai.link.prosjekter": { no: "Se AI-prosjekter", en: "See AI projects" },
+  "profil.ai.link.prosjekter": { no: "Se AI-prosjekter og pilotflater", en: "See AI projects and pilot environments" },
   "profil.ai.link.faginnlegg": { no: "Les faginnlegg", en: "Read articles" },
-  "profil.ai.link.pilot": { no: "Se pilotflater for PSCv6 og FlowSignal", en: "See pilot environments for PSCv6 and FlowSignal" },
 
   // Erfaring
   "erfaring.title": { no: "Karriere høydepunkter", en: "Career Highlights" },
@@ -163,6 +162,11 @@ const translations: Translations = {
   "prosjekter.intro.punkt.psc.desc": {
     no: "AI-basert salgstrening og møteforberedelse — relevant for B2B og kommersielle team",
     en: "AI-based sales training and meeting preparation — relevant for B2B and commercial teams",
+  },
+  "prosjekter.intro.punkt.salgsflyt.label": { no: "SMB Salgsflyt-sjekken", en: "SMB Sales Flow Check" },
+  "prosjekter.intro.punkt.salgsflyt.desc": {
+    no: "Interaktiv SMB-diagnose med AI-rapportering og salgskvalifisering",
+    en: "Interactive SMB diagnosis with AI reporting and sales qualification",
   },
   "prosjekter.intro.punkt.psc-video.label": { no: "Promovideo PSC", en: "PSC promo video" },
   "prosjekter.intro.punkt.psc-video.desc": {

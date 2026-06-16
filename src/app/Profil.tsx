@@ -223,7 +223,7 @@ export default function Profil({ onNavigate }: { onNavigate?: (tab: string) => v
             <div className={`${cardClassSubtle} space-y-2.5`}>
               <p className="text-slate-400 text-sm leading-relaxed">{d.aiSeksjon}</p>
               <div className="flex flex-wrap gap-x-4 gap-y-1.5 text-sm pt-1">
-              <Link href="/prosjekter" className={linkClass} aria-label="Gå til AI-prosjekter">
+              <Link href="/prosjekter" className={linkClass} aria-label="Gå til AI-prosjekter og pilotflater">
                 {tr("profil.ai.link.prosjekter")}
               </Link>
               <NavLink
@@ -242,9 +242,6 @@ export default function Profil({ onNavigate }: { onNavigate?: (tab: string) => v
               >
                 {tr("profil.ai.link.faginnlegg")}
               </NavLink>
-              <Link href="/prosjekter" className={`${linkClass} text-slate-500 hover:text-indigo-300`} aria-label="Se pilotflater via AI-prosjekter">
-                {tr("profil.ai.link.pilot")}
-              </Link>
             </div>
             </div>
           </section>

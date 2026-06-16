@@ -51,6 +51,7 @@ const linkClass =
 const produktLenker = [
   { label: "The Predictive Sales Coach", href: "/psc" },
   { label: "FlowSignal", href: "/flowsignal" },
+  { label: "SMB Salgsflyt-sjekken", href: "/salgsflyt-sjekken" },
 ] as const;
 
 function PakkeTekst({ text }: { text: string }) {
@@ -97,12 +98,20 @@ function PakkeFelt({ label, text }: { label: string; text: string }) {
 }
 
 function PakkePilotStotteBlokk({ stotte }: { stotte: PakkePilotStotte }) {
+  const erEkstern = stotte.lenkeHref.startsWith("http");
+  const linkProps = {
+    className: `${linkClass} text-sm font-bold`,
+    children: <>{stotte.lenkeLabel} →</>,
+  };
+
   return (
     <div className="pt-3 border-t border-white/10 space-y-2">
       <p className={pakkeBodyClass}>{stotte.tekst}</p>
-      <Link href={stotte.lenkeHref} className={`${linkClass} text-sm font-bold`}>
-        {stotte.lenkeLabel} →
-      </Link>
+      {erEkstern ? (
+        <a href={stotte.lenkeHref} target="_blank" rel="noopener noreferrer" {...linkProps} />
+      ) : (
+        <Link href={stotte.lenkeHref} {...linkProps} />
+      )}
     </div>
   );
 }

@@ -5,7 +5,7 @@ import { type ProsjektType } from "./predictive-sales-coach";
 const fsAppLink = `<a href="${FLOW_SIGNAL_APP_URL}" target="_blank" rel="noopener noreferrer" aria-label="Åpne FlowSignal v1.0" class="fs-app-link focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"><span class="fs-mark">FlowSignal</span> <span class="fs-v">v1.0</span></a>`;
 
 /**
- * Hovedbilde: flow-signal1.png. Under: flow-signal3.png.
+ * Hovedbilde: flow-signal1.png. Under: flow-signal3.png, energi-balanse.png.
  */
 export const flowSignal: ProsjektType = {
   id: "flowsignal-2026-05",
@@ -33,6 +33,13 @@ export const flowSignal: ProsjektType = {
         en: "FlowSignal – Use people more effectively in sales, profile, collaboration and training",
       },
     },
+    {
+      src: "/images/energi-balanse.png?v=2026061612",
+      alt: {
+        no: "FlowSignal – Energi og balanse i dagsform og handlingsrom",
+        en: "FlowSignal – Energy and balance in daily form and room to act",
+      },
+    },
   ],
   innhold: {
     no: `<strong>Hva prosjektet er</strong>
@@ -57,17 +64,7 @@ Brukere med formell Talent Dynamics-rapport kan bruke rapporten som profilgrunnl
 
 FlowSignal kombinerer tre hovedspor:
 
-<strong>1. Profil og arbeidsstil</strong>
-
-Brukeren får et praktisk utgangspunkt for å reflektere over styrker, energidrivere, kommunikasjonsstil og samspill med andre.
-
-<strong>2. Dagsform og handlingsrom</strong>
-
-Fyrtårnet brukes som modell for energi, fokus, indre ro, arbeidspress, flyt i samspill og opplevd handlingsrom. Dette gir en veiledende sone som kan støtte bedre prioritering, dialog og tilpasning.
-
-<strong>3. Dialog, trening og samhandling</strong>
-
-Appen kan brukes til 1:1-samtaler, teammøter, rolleavklaringer, onboarding, prioriteringsmøter og krevende dialoger. Anbefalingene tilpasses profil, dagsform og situasjon.
+<div class="prosjekt-steg-liste"><blockquote class="prosjekt-innrykk"><strong>1. Profil og arbeidsstil</strong> — Brukeren får et praktisk utgangspunkt for å reflektere over styrker, energidrivere, kommunikasjonsstil og samspill med andre.</blockquote><blockquote class="prosjekt-innrykk"><strong>2. Dagsform og handlingsrom</strong> — Fyrtårnet brukes som modell for energi, fokus, indre ro, arbeidspress, flyt i samspill og opplevd handlingsrom.</blockquote><blockquote class="prosjekt-innrykk"><strong>3. Dialog, trening og samhandling</strong> — Appen kan brukes til 1:1-samtaler, teammøter, rolleavklaringer, onboarding og krevende dialoger.</blockquote></div>
 
 FlowSignal er ikke utviklet som et kontroll-, vurderings- eller diagnoseverktøy. Hensikten er å gi brukeren bedre språk, tydeligere valg og mer presise neste steg.
 
@@ -120,17 +117,7 @@ Users with a formal Talent Dynamics report can use the report as a profile found
 
 FlowSignal combines three main tracks:
 
-<strong>1. Profile and work style</strong>
-
-The user gets a practical starting point for reflecting on strengths, energy drivers, communication style and interaction with others.
-
-<strong>2. Daily form and room to act</strong>
-
-The Lighthouse is used as a model for energy, focus, inner calm, work pressure, flow in collaboration and perceived room to act. This provides a guiding zone that can support better prioritisation, dialogue and adaptation.
-
-<strong>3. Dialogue, training and collaboration</strong>
-
-The app can be used in 1:1 conversations, team meetings, role clarifications, onboarding, prioritisation meetings and demanding dialogues. Recommendations are adapted to profile, daily form and situation.
+<div class="prosjekt-steg-liste"><blockquote class="prosjekt-innrykk"><strong>1. Profile and work style</strong> — The user gets a practical starting point for reflecting on strengths, energy drivers, communication style and interaction with others.</blockquote><blockquote class="prosjekt-innrykk"><strong>2. Daily form and room to act</strong> — The Lighthouse is used as a model for energy, focus, inner calm, work pressure, flow in collaboration and perceived room to act.</blockquote><blockquote class="prosjekt-innrykk"><strong>3. Dialogue, training and collaboration</strong> — The app can be used in 1:1 conversations, team meetings, role clarifications, onboarding and demanding dialogues.</blockquote></div>
 
 FlowSignal is not built as a control, assessment or diagnostic tool. The purpose is to give users better language, clearer choices and more precise next steps.
 

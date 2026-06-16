@@ -73,7 +73,7 @@ export function prosjektFaginnleggNesteStegLenker(lang: Lang): string {
  * 2. Hva prosjektet er
  * 3. Problemet prosjektet adresserer
  * 4. Hva som er bygget eller utviklet
- * 5. Hvordan det fungerer
+ * 5. Hvordan det fungerer (nummererte steg i .prosjekt-steg-liste / .prosjekt-innrykk)
  * 6. Hvorfor dette er relevant
  * 7. Status og modenhet
  * 8. Mulig videreutvikling

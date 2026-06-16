@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useLanguage, type Lang } from "./LanguageContext";
 import { getTranslation } from "./data/translations";
-import { blockTitleClass, pageIntroClass, pageTitleClass, sectionTitleClass } from "./lib/typography";
+import { blockTitleClass, getProsjektInnholdProseClass, pageIntroClass, pageTitleClass, prosjektTeaserClass, sectionTitleClass } from "./lib/typography";
 import { getProsjektHurtigoversikt } from "./data/prosjekter-hurtigoversikt";
 import { predictiveSalesCoach, type ProsjektType } from "./data/prosjekter/predictive-sales-coach";
 import { pscPromoVideo } from "./data/prosjekter/psc-promo-video";
@@ -16,12 +16,14 @@ import { aiAssistertInnsiktsagent } from "./data/prosjekter/ai-assistert-innsikt
 import { aiAssistertInnsiktsOgInnholdsagent } from "./data/prosjekter/ai-assistert-innsikts-og-innholdsagent";
 import { prosjektoppgaveStrategiskImplementering } from "./data/prosjekter/prosjektoppgave-strategisk-implementering";
 import { flowSignal } from "./data/prosjekter/flowsignal";
+import { smbSalgsflytSjekken } from "./data/prosjekter/smb-salgsflyt-sjekken";
 import { isFlowSignalProsjekt } from "./lib/flowsignal-brand";
 import { isPscProsjekt } from "./lib/psc-brand";
+import { isSmbSalgsflytProsjekt } from "./lib/smb-salgsflyt-brand";
 import { formatProsjektHtml, formatProsjektPlain } from "./lib/product-brand";
 import ProsjektPilotBlokk from "./components/ProsjektPilotBlokk";
 
-const prosjektKort: ProsjektType[] = [flowSignal, prosjektoppgaveStrategiskImplementering, pscPromoVideo, aiAssistertInnsiktsagent, aiAssistertInnsiktsOgInnholdsagent, predictiveSalesCoach, aiValueLabOslo, skoyenasenTannklinikk, aiArkitekturBeslutningsstotte].sort(
+const prosjektKort: ProsjektType[] = [smbSalgsflytSjekken, flowSignal, prosjektoppgaveStrategiskImplementering, pscPromoVideo, aiAssistertInnsiktsagent, aiAssistertInnsiktsOgInnholdsagent, predictiveSalesCoach, aiValueLabOslo, skoyenasenTannklinikk, aiArkitekturBeslutningsstotte].sort(
   (a, b) => new Date(b.dato).getTime() - new Date(a.dato).getTime()
 );
 
@@ -160,6 +162,7 @@ export default function Prosjekter({ onNavigate }: { onNavigate?: (tab: string) 
           const bildeHintKort = getProsjektBildeHint(prosjekt, lang);
           const erPsc = isPscProsjekt(prosjekt.id);
           const erFlowSignal = isFlowSignalProsjekt(prosjekt.id);
+          const erSmbSalgsflyt = isSmbSalgsflytProsjekt(prosjekt.id);
           return (
           <article
             key={prosjekt.id}
@@ -323,48 +326,18 @@ export default function Prosjekter({ onNavigate }: { onNavigate?: (tab: string) 
                   }}
                 />
                 <p
-                  className={`text-sm leading-[1.5] md:leading-[1.48] font-light break-words [&_em]:italic ${
-                    erPsc ? "text-slate-300" : "text-slate-400"
-                  }`}
+                  className={prosjektTeaserClass}
                   dangerouslySetInnerHTML={{ __html: formatProsjektPlain(prosjekt.teaser[lang], prosjekt.id) }}
                 />
-                {(erPsc || erFlowSignal) && <ProsjektPilotBlokk prosjektId={prosjekt.id} lang={lang} />}
+                {(erPsc || erFlowSignal || erSmbSalgsflyt) && <ProsjektPilotBlokk prosjektId={prosjekt.id} lang={lang} />}
                 <div>
                   <div
-                    className={
-                      erPsc
-                        ? `text-slate-200 text-base leading-[1.55] md:leading-[1.48] space-y-2 font-light break-words overflow-hidden
-                    [&_a]:text-[#E30613] [&_a]:underline [&_a]:underline-offset-2
-                    [&_a]:decoration-[#E30613]/70 [&_a]:hover:text-white
-                    [&_a]:transition-colors
-                    [&_a.link-subtle]:text-slate-200 [&_a.link-subtle]:no-underline [&_a.link-subtle]:hover:text-[#E30613] [&_a.link-subtle]:hover:underline
-                    [&_a.psc-app-link]:text-[#E30613] [&_a.psc-app-link]:font-semibold [&_a.psc-app-link]:underline [&_a.psc-app-link]:underline-offset-2
-                    [&_a.psc-app-link]:decoration-[#E30613] [&_a.psc-app-link]:hover:text-white [&_a.psc-app-link]:hover:decoration-white
-                    [&_a.psc-app-link]:transition-colors
-                    [&_a.psc-app-link_em]:italic [&_a.psc-app-link_em]:text-[#E30613] [&_a.psc-app-link:hover_em]:text-white
-                    [&_a.psc-app-link_.psc-v]:text-[#E30613] [&_a.psc-app-link:hover_.psc-v]:text-white
-                    [&_strong]:font-bold [&_strong]:text-white [&_em]:italic`
-                        : erFlowSignal
-                          ? `text-slate-300 text-base leading-[1.55] md:leading-[1.48] space-y-2 font-light break-words overflow-hidden
-                    [&_a]:text-indigo-300 [&_a]:underline [&_a]:underline-offset-2
-                    [&_a]:decoration-indigo-500/70 [&_a]:hover:text-indigo-200
-                    [&_a]:transition-colors
-                    [&_a.fs-app-link]:text-[#CDB47A] [&_a.fs-app-link]:font-semibold [&_a.fs-app-link]:underline [&_a.fs-app-link]:underline-offset-2
-                    [&_a.fs-app-link]:decoration-[#CDB47A] [&_a.fs-app-link]:hover:text-white [&_a.fs-app-link]:hover:decoration-white
-                    [&_a.fs-app-link]:transition-colors
-                    [&_a.fs-app-link_.fs-mark]:text-[#CDB47A] [&_a.fs-app-link:hover_.fs-mark]:text-white
-                    [&_a.fs-app-link_.fs-v]:text-[#CDB47A] [&_a.fs-app-link:hover_.fs-v]:text-white
-                    [&_strong]:font-semibold [&_em]:italic`
-                          : `text-slate-300 text-base leading-[1.55] md:leading-[1.48] space-y-2 font-light break-words overflow-hidden
-                    [&_a]:text-indigo-300 [&_a]:underline [&_a]:underline-offset-2
-                    [&_a]:decoration-indigo-500/70 [&_a]:hover:text-indigo-200
-                    [&_a]:transition-colors
-                    [&_a.link-subtle]:text-slate-300 [&_a.link-subtle]:no-underline [&_a.link-subtle]:hover:text-indigo-300 [&_a.link-subtle]:hover:underline
-                    [&_strong]:font-semibold [&_em]:italic`
-                    }
+                    className={getProsjektInnholdProseClass(
+                      erPsc ? "psc" : erFlowSignal ? "flowsignal" : "default",
+                    )}
                   >
                     {prosjekt.innhold[lang].split("\n\n").map((avsnitt, i) => (
-                      <p
+                      <div
                         key={i}
                         className="min-w-0"
                         dangerouslySetInnerHTML={{

@@ -1,4 +1,5 @@
 import { Lang } from "../LanguageContext";
+import { SMB_SALGSFLYT_PILOT_PATH } from "../lib/smb-salgsflyt-brand";
 
 export type PakkePilotStotte = {
   tekst: string;
@@ -33,6 +34,21 @@ const flowSignalPilotStotte: Record<Lang, PakkePilotStotte> = {
       "FlowSignal can be used as a reflection and collaboration component in Team Performance & Collaboration Sprint and SMB leadership lift.",
     lenkeHref: "/flowsignal",
     lenkeLabel: "See FlowSignal pilot",
+  },
+};
+
+const smbSalgsflytPilotStotte: Record<Lang, PakkePilotStotte> = {
+  no: {
+    tekst:
+      "SMB Salgsflyt-sjekken kan brukes som diagnose- og kvalifiseringskomponent i Verdilekkasje Sprint og CRM & Sales Follow-up Sprint. Spørreundersøkelsen er tilgangsstyrt og krever avtalt tilgangskode.",
+    lenkeHref: SMB_SALGSFLYT_PILOT_PATH,
+    lenkeLabel: "Se Salgsflyt-sjekken-pilot",
+  },
+  en: {
+    tekst:
+      "SMB Sales Flow Check can be used as a diagnosis and qualification component in Value Leak Sprint and CRM & Sales Follow-up Sprint. The survey is access-controlled and requires an agreed access code.",
+    lenkeHref: SMB_SALGSFLYT_PILOT_PATH,
+    lenkeLabel: "See Sales Flow Check pilot",
   },
 };
 
@@ -259,6 +275,11 @@ const metoder: Record<Lang, MetodeKomponent[]> = {
       pilotStotte: flowSignalPilotStotte.no,
     },
     {
+      tittel: "SMB Salgsflyt-sjekken",
+      beskrivelse: "Diagnose, scoring og AI-rapportering for salgsmodenhet",
+      pilotStotte: smbSalgsflytPilotStotte.no,
+    },
+    {
       tittel: "AI Value Lab Oslo",
       beskrivelse: "Use case-prioritering, læring og praktisk AI-verdi",
     },
@@ -277,6 +298,11 @@ const metoder: Record<Lang, MetodeKomponent[]> = {
       tittel: "FlowSignal",
       beskrivelse: "Collaboration, team development, daily form and dialogue",
       pilotStotte: flowSignalPilotStotte.en,
+    },
+    {
+      tittel: "SMB Sales Flow Check",
+      beskrivelse: "Diagnosis, scoring and AI reporting for sales maturity",
+      pilotStotte: smbSalgsflytPilotStotte.en,
     },
     {
       tittel: "AI Value Lab Oslo",
