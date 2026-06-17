@@ -158,7 +158,7 @@ const translations: Translations = {
     no: "Profilinnsikt, dagsform og teamflyt — kan tilpasses leder- og teambehov",
     en: "Profile insight, daily form and team flow — adaptable to leadership and team needs",
   },
-  "prosjekter.intro.punkt.psc.label": { no: "The Predictive Sales Coach", en: "The Predictive Sales Coach" },
+  "prosjekter.intro.punkt.psc.label": { no: "The Predictive Sales Coach v2.0", en: "The Predictive Sales Coach v2.0" },
   "prosjekter.intro.punkt.psc.desc": {
     no: "AI-basert salgstrening og møteforberedelse — relevant for B2B og kommersielle team",
     en: "AI-based sales training and meeting preparation — relevant for B2B and commercial teams",

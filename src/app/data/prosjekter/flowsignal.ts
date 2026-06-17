@@ -86,11 +86,11 @@ FlowSignal kan videreutvikles til et bredere samhandlingssystem for ledergrupper
 
 Aktuelle videre spor er onboarding, lederutvikling, rolleavklaring, ukesplanlegging, teamutvikling, organisasjonsendring og samhandlingsstøtte i kommersielle miljøer.
 
-<strong>Hvordan FlowSignal skiller seg fra PSCv6</strong>
+<strong>Hvordan FlowSignal skiller seg fra PSCv2.0</strong>
 
-FlowSignal handler primært om mennesker, roller, dagsform og intern samhandling. PSCv6 handler primært om salgstrening, kundemøter og kommersiell samtalepresisjon.
+FlowSignal handler primært om mennesker, roller, dagsform og intern samhandling. PSCv2.0 handler primært om salgstrening, kundemøter og kommersiell samtalepresisjon.
 
-Der FlowSignal hjelper team å samarbeide bedre, trener PSCv6 selgere på konkrete kundedialoger.
+Der FlowSignal hjelper team å samarbeide bedre, trener PSCv2.0 selgere på konkrete kundedialoger.
 
 <strong>Neste steg</strong>
 
@@ -139,11 +139,11 @@ FlowSignal can be developed into a broader collaboration system for leadership g
 
 Relevant further tracks include onboarding, leadership development, role clarification, weekly planning, team development, organisational change and collaboration support in commercial environments.
 
-<strong>How FlowSignal differs from PSCv6</strong>
+<strong>How FlowSignal differs from PSCv2.0</strong>
 
-FlowSignal is primarily about people, roles, daily form and internal collaboration. PSCv6 is primarily about sales training, customer meetings and commercial conversation precision.
+FlowSignal is primarily about people, roles, daily form and internal collaboration. PSCv2.0 is primarily about sales training, customer meetings and commercial conversation precision.
 
-Where FlowSignal helps teams collaborate better, PSCv6 trains sales reps on concrete customer dialogues.
+Where FlowSignal helps teams collaborate better, PSCv2.0 trains sales reps on concrete customer dialogues.
 
 <strong>Next steps</strong>
 

@@ -54,7 +54,7 @@ const pscSide: PilotSide = {
       en: "The Predictive Sales Coach is built as a practical pilot environment for sales leaders, salespeople and commercial teams who want better preparation, clearer meeting execution and more systematic learning after customer dialogues. The goal is not to replace sales leadership, but to strengthen training, reflection and quality in sales work.",
     },
     primaerCta: { no: "Be om pilot / tilgang", en: "Request pilot access" },
-    sekundaerCta: { no: "Åpne PSCv6 pilotflate", en: "Open PSCv6 pilot environment" },
+    sekundaerCta: { no: "Åpne PSCv2.0 pilotflate", en: "Open PSCv2.0 pilot environment" },
     tilgangNote: {
       no: "Pilotflaten er tilgangsstyrt og brukes i avtalte testløp. Ta kontakt dersom du ønsker tilgang eller vil diskutere en mulig pilot.",
       en: "The pilot environment is access-controlled and used in agreed test runs. Get in touch if you want access or to discuss a possible pilot.",
@@ -171,7 +171,7 @@ const pscSide: PilotSide = {
       en: "The pilot can be used as part of Sales Meeting Performance Sprint, Leader as sales coach, or broader work on CRM, sales follow-up and commercial execution.",
     },
     primaerCta: { no: "Ta kontakt om pilot", en: "Contact about pilot" },
-    sekundaerCta: { no: "Åpne PSCv6 pilotflate", en: "Open PSCv6 pilot environment" },
+    sekundaerCta: { no: "Åpne PSCv2.0 pilotflate", en: "Open PSCv2.0 pilot environment" },
     tilgangNote: {
       no: "Pilotflaten er tilgangsstyrt og brukes i avtalte testløp. Ta kontakt dersom du ønsker tilgang eller vil diskutere en mulig pilot.",
       en: "The pilot environment is access-controlled and used in agreed test runs. Get in touch if you want access or to discuss a possible pilot.",

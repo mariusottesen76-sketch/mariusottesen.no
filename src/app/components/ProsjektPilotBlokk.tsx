@@ -16,7 +16,7 @@ const pscBlokk = {
   },
   pilotHref: "/psc",
   pilotCta: { no: "Se pilotformat", en: "See pilot format" },
-  appCta: { no: "Åpne PSCv6 pilotflate", en: "Open PSCv6 pilot environment" },
+  appCta: { no: "Åpne PSCv2.0 pilotflate", en: "Open PSCv2.0 pilot environment" },
   tilgangNote: {
     no: "Pilotflaten er tilgangsstyrt og brukes i avtalte testløp. Ta kontakt dersom du ønsker tilgang eller vil diskutere en mulig pilot.",
     en: "The pilot environment is access-controlled and used in agreed test runs. Get in touch if you want access or to discuss a possible pilot.",

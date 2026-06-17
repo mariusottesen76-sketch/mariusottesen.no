@@ -36,7 +36,7 @@ Problemet er ofte ikke mangel på informasjon, men at informasjonen er spredt, t
 
 Jeg bygger en arkitektur for å bruke generativ AI til å bryte ned komplekse problemstillinger mer systematisk. Målet er å identifisere gap, mønstre, risiko og handlingsalternativer tidligere.
 
-Den samme logikken brukes som teknisk fundament i flere praktiske spor, blant annet PSCv6 og en mer agentisk innsikts- og opportunity-flyt.
+Den samme logikken brukes som teknisk fundament i flere praktiske spor, blant annet PSCv2.0 og en mer agentisk innsikts- og opportunity-flyt.
 
 <strong>Hvordan det fungerer</strong>
 
@@ -77,7 +77,7 @@ The problem is often not a lack of information, but that information is scattere
 
 I am building an architecture to use generative AI to break down complex issues more systematically. The goal is to identify gaps, patterns, risk and action alternatives earlier.
 
-The same logic is used as a technical foundation in several practical tracks, including PSCv6 and a more agentic insight and opportunity flow.
+The same logic is used as a technical foundation in several practical tracks, including PSCv2.0 and a more agentic insight and opportunity flow.
 
 <strong>How it works</strong>
 
