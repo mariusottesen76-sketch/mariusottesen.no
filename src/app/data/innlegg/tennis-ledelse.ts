@@ -16,6 +16,72 @@ const localize = (no: string, en: string = no): LocalizedText => ({ no, en });
 
 const tennisLedelseRaw = [
     {
+      id: "verdier-kultur-kommersiell-ledelse-2026-06",
+      tittel: "Hva tillater du at blir kultur?",
+      teaser:
+        "Kultur er sjelden det vi sier at vi står for. Den vises i hva vi belønner, tolererer og korrigerer — og i hvordan verdier faktisk testes når noe koster.",
+      bildeUrl: "/images/verdier-kultur.png",
+      dato: "2026-06-18",
+      visningsDato: "18.06.26",
+      kategori: "Lederstil, kultur og team",
+      link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
+      innhold: `For noen uker siden skrev jeg om hva som skjer når press blir selve ledelsesmodellen.
+
+Kjernen var at varige resultater krever mer enn trykk. De krever et system bak prestasjonen. En sentral del av det systemet er kultur.
+
+Og kultur er sjelden det vi sier at vi står for. Den vises i hva vi belønner, tolererer og korrigerer.
+
+De fleste virksomheter har gode ord.
+Kundefokus
+Ansvar
+Samarbeid
+Integritet
+Kvalitet
+Stadig bedre
+
+Problemet er sjelden ordene, men om de faktisk får konsekvenser i hverdagen.
+
+Dette er lett å kjenne igjen i kommersielle miljøer.
+💥 Aktivitet belønnes mer enn kundeverdi.
+💥 Problemer skyves videre i stedet for å løses der de oppstår.
+💥 CRM sies å være felles arbeidsflate, men mangelfull bruk aksepteres likevel. Da lærer organisasjonen raskt at struktur er viktig i teorien, men valgfritt i praksis.
+💥 En sterk selger som leverer tall, men bryter prosessen og svekker laget, får passere fordi resultatene ser gode ut.
+💥 Eller motsatt: En svak medarbeider begynner å motarbeide kulturen, undergrave systemet og tappe omgivelsene, uten at det tas tak tidlig nok.
+
+Jeg har selv erfart hvor krevende dette kan være i praksis.
+
+Når dårlig adferd aksepteres fordi leveransene på overflaten ser gode nok ut, sier det noe om kulturen. Ikke bare internt. Også utad. Over tid påvirker det tillit, samarbeid, omdømme og hvordan virksomheten faktisk blir oppfattet.
+
+💡 Edgar Schein beskrev organisasjonskultur som de grunnleggende antakelsene en gruppe har lært å ta for gitt over tid. Det er mønstrene som styrer hvordan mennesker faktisk handler, ofte uten at de selv legger merke til det.
+
+Derfor blir kultur veldig konkret.
+
+Kulturen viser seg i hva organisasjonen lærer at det lønner seg å gjøre:
+🔸 Hvis vi sier åpenhet, men belønner tilbakeholdelse, intern posisjonering og lite deling, lærer vi folk å holde kortene tett. Da skapes skjulte agendaer.
+🔸 Hvis vi sier samarbeid, men lar enkeltpersoner stå utenfor felles standarder, lærer vi organisasjonen at standardene er valgfrie. Da bygger vi ikke kultur. Vi bygger unntak.
+
+Verdier testes først når noe koster.
+Når marginen presses.
+Når tempoet øker.
+Når en viktig kunde utfordrer oss.
+Når en god prestasjon har dårlig adferd bak seg.
+Når det raske valget ikke er det riktige valget.
+
+For en leder er dette et designspørsmål.
+Hva belønner du?
+Hva lar du passere?
+Hva korrigerer du tidlig nok?
+
+Tilbakemeldinger som bare handler om resultater, endrer lite over tid. Det er adferden bak resultatene som bygger kapasitet, læring og kultur.
+
+Verdier må også eies av medarbeiderne. De blir først sterke når mennesker bruker dem til å ta bedre valg, ikke bare venter på at lederen skal avklare alt.
+
+👉 Derfor er verdier et av de mest praktiske styringsverktøyene en leder har.
+Fordi de avgjør hva som skjer når ingen enkel løsning finnes. 💯
+
+#kommersiellledelse #organisasjonskultur #prestasjonskultur #verdibasertledelse #gjennomføringskraft`,
+    },
+    {
       id: "trykk-prestasjon-kommersiell-ledelse-2026-05",
       tittel: "Når press blir ledelse",
       teaser:
@@ -867,6 +933,66 @@ Virksomheter feiler ofte av samme grunn.`,
 ];
 
 const tennisLedelseEn: Record<string, LocalizedTextMap> = {
+  "verdier-kultur-kommersiell-ledelse-2026-06": {
+    tittel: "What do you allow to become culture?",
+    teaser:
+      "Culture is rarely what we say we stand for. It shows in what we reward, tolerate and correct — and in how values are actually tested when something costs.",
+    innhold: `A few weeks ago I wrote about what happens when pressure becomes the leadership model itself.
+
+The core point was that lasting results require more than pressure. They require a system behind performance. A central part of that system is culture.
+
+And culture is rarely what we say we stand for. It shows in what we reward, tolerate and correct.
+
+Most organisations have good words.
+Customer focus
+Accountability
+Collaboration
+Integrity
+Quality
+Continuous improvement
+
+The problem is rarely the words, but whether they actually have consequences in everyday work.
+
+This is easy to recognise in commercial environments.
+💥 Activity is rewarded more than customer value.
+💥 Problems are passed on instead of being solved where they arise.
+💥 CRM is said to be a shared workspace, but poor use is still accepted. Then the organisation quickly learns that structure matters in theory, but is optional in practice.
+💥 A strong salesperson who delivers numbers but breaks process and weakens the team is allowed to pass because the results look good.
+💥 Or the opposite: A weak employee starts working against the culture, undermining the system and draining those around them, without action being taken early enough.
+
+I have experienced myself how demanding this can be in practice.
+
+When poor behaviour is accepted because deliveries on the surface look good enough, it says something about the culture. Not just internally. Externally too. Over time it affects trust, collaboration, reputation and how the organisation is actually perceived.
+
+💡 Edgar Schein described organisational culture as the basic assumptions a group has learned to take for granted over time. These are the patterns that govern how people actually act, often without noticing it themselves.
+
+That is why culture becomes very concrete.
+
+Culture shows up in what the organisation learns it pays to do:
+🔸 If we say openness, but reward withholding, internal positioning and little sharing, we teach people to keep their cards close. Hidden agendas emerge.
+🔸 If we say collaboration, but let individuals stand outside shared standards, we teach the organisation that standards are optional. Then we are not building culture. We are building exceptions.
+
+Values are tested first when something costs.
+When margins are squeezed.
+When the pace increases.
+When an important customer challenges us.
+When a good performance comes with poor behaviour behind it.
+When the quick choice is not the right choice.
+
+For a leader, this is a design question.
+What do you reward?
+What do you let pass?
+What do you correct early enough?
+
+Feedback that only addresses results changes little over time. It is the behaviour behind the results that builds capacity, learning and culture.
+
+Values must also be owned by employees. They only become strong when people use them to make better choices, not just wait for the leader to clarify everything.
+
+👉 That is why values are one of the most practical management tools a leader has.
+Because they determine what happens when there is no simple solution. 💯
+
+#kommersiellledelse #organisasjonskultur #prestasjonskultur #verdibasertledelse #gjennomføringskraft`,
+  },
   "trykk-prestasjon-kommersiell-ledelse-2026-05": {
     tittel: "When pressure becomes leadership",
     teaser: "More pressure is rarely a sustainable leadership model. Commercial leadership is about results — but lasting performance is built in the space between clear demands and real ownership.",
