@@ -49,8 +49,8 @@ export const predictiveSalesCoach: ProsjektType = {
     no: "The Predictive Sales Coach (PSCv2.0) er en AI-basert salgstrenings- og analyseplattform for B2B-salg, møteforberedelse og mer presis kundedialog.",
     en: "The Predictive Sales Coach (PSCv2.0) is an AI-based sales training and analysis platform for B2B sales, meeting preparation and more precise customer dialogue.",
   },
-  bildeUrl: "/images/sales-coach-new2.jpg",
-  bildeRamme: "cover",
+  bildeUrl: "/images/psc2.png",
+  bildeRamme: "natural",
   dato: "2026-05-25",
   visningsDato: "25.05.26",
   bildeHint: {
@@ -58,13 +58,6 @@ export const predictiveSalesCoach: ProsjektType = {
     en: "Click the image to view The Predictive Sales Coach in a larger format.",
   },
   bilderUnderHovedbilde: [
-    {
-      src: "/images/psc-v6-hurtigoppsett.png?v=20260519",
-      alt: {
-        no: "PSCv2.0 hurtigoppsett – DISC-profil, salgsfase, kundens holdning og vanskelighetsgrad",
-        en: "PSCv2.0 quick setup – DISC profile, sales phase, customer attitude and difficulty level",
-      },
-    },
     {
       src: "/images/QR-PSCv6.png?v=20260531",
       alt: {
