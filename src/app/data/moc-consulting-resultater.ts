@@ -43,7 +43,7 @@ export function getMocResultaterPunkter(lang: Lang): MocResultatPunkt[] {
       `Built ${lenke(prosjektLenker.agent, "agentic workflow")}, ${lenke(prosjektLenker.innhold, "insight and content engine")} and ${lenke(prosjektLenker.beslutning, "AI architecture for decision support")}`,
       `${totalt} published ${lenke(prosjektLenker.faginnlegg, "articles")} on AI, leadership and commercial value creation (updated automatically)`,
       `Initiated ${lenke(prosjektLenker.valueLab, "AI Value Lab Oslo")} — a cross-disciplinary learning initiative focused on practical testing, responsible AI use and real value creation through business-near cases`,
-      `Completed the ${lenke(prosjektLenker.bi, "Generative AI for Business")} master's course at ${lenke(prosjektLenker.bi, "BI Norwegian Business School")}`,
+      `Completed the ${lenke(prosjektLenker.bi, "Generative AI for Business")} master's course at ${lenke(prosjektLenker.bi, "BI Norwegian Business School")} with grade A`,
     ];
   }
 
@@ -60,7 +60,7 @@ export function getMocResultaterPunkter(lang: Lang): MocResultatPunkt[] {
     `Bygget ${lenke(prosjektLenker.agent, "agentisk arbeidsflyt")}, ${lenke(prosjektLenker.innhold, "innsikts- og innholdsmotor")} og ${lenke(prosjektLenker.beslutning, "AI-arkitektur for beslutningsstøtte")}`,
     `${totalt} ${lenke(prosjektLenker.faginnlegg, "faginnlegg")} om AI, ledelse og kommersiell verdiskaping (oppdateres løpende)`,
     `Tatt initiativ til dannelsen av ${lenke(prosjektLenker.valueLab, "AI Value Lab Oslo")} — tverrfaglig lærings- og utviklingsinitiativ for praktisk testing, ansvarlig AI-bruk og reell verdiskaping gjennom virksomhetsnære case`,
-    `Fullført masterkurset ${lenke(prosjektLenker.bi, "Generative AI for Business")} ved ${lenke(prosjektLenker.bi, "Handelshøyskolen BI")}`,
+    `Fullført masterkurset ${lenke(prosjektLenker.bi, "Generative AI for Business")} ved ${lenke(prosjektLenker.bi, "Handelshøyskolen BI")} med karakter A`,
   ];
 }
 
