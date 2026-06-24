@@ -51,6 +51,49 @@ const rocketKarusellBilder = Array.from({ length: 8 }, (_, i) => ({
 
 const aiGovernanceRaw = [
     {
+      id: "tilskuere-ror-genai-master-bi-2026-06",
+      tittel: "Ro! Ro! Ro!",
+      teaser:
+        "Fotball-VM-roen, toppkarakter på BI-prosjektoppgaven og avslutningen av Generative AI for Business — rytme, retning og samspill mot reell verdiskaping.",
+      bildeUrl: "/images/tilskuere-ror.png",
+      dato: "2026-06-25",
+      visningsDato: "25.06.26",
+      kategori: "AI / KI",
+      link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
+      innhold: `Det norske ro-ropet har skapt både begeistring, debatt og oppmerksomhet under fotball-VM.
+
+Noen liker energien og samspillet. Andre mener det blir for mye, eller trekker paralleller til Islands vikingklapp.
+
+Jeg er blant dem som liker det. Elsker det, faktisk!
+
+Ikke bare fordi det er en kul idé, men fordi kraften, samspillet og entusiasmen er umulig å overse.
+
+Når mange finner samme rytme, med tydelig retning og felles energi, skaper det fremdrift og resultater.
+
+Denne uken kom resultatet på prosjektoppgaven min på BI. Karakteren kunne ikke ha vært bedre. Den personlige tilbakemeldingen fra professoren i ettertid gjorde opplevelsen enda bedre. Dermed ble det også toppkarakter A samlet sett i masterkurset 'Generative AI for Business'. 🎓
+
+Karakteren er ikke det viktigste. Men mestringsfølelsen er verdt å la få litt plass før et kapittel avsluttes og nye muligheter åpner seg.
+
+Det siste året har riktignok handlet om langt mer enn dette kurset. Jeg har bygget, testet og utforsket bredt hvordan AI kan forbedre prosesser, kundeopplevelser og beslutninger i praksis.
+
+Parallellt de siste seks månedene har jeg også hatt stor glede av <a href="https://www.linkedin.com/company/aivaluelaboslo/" target="_blank" rel="noopener noreferrer" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">AI Value Lab Oslo</a>. Det har vært en praktisk arena for kunnskapsbygging og kunnskapsdeling, deling og utforskning på tvers av flere prosjekter.
+
+Dessuten utforsker noen av mine samarbeidspartnere Thomas Holm og Dimitri Oetiker og jeg flere nye muligheter sammen.
+
+Jeg holder fortsatt kortene litt tett til brystet. Men det som nå utforskes henger tett sammen med det ro-ropet illustrerer.
+
+Rytme.
+Retning.
+Samspill.
+Kraft.
+
+💥 Fremdrift når flere jobber mot samme mål. For å skape reelle verdier.
+
+Mer om dette fremover. Men det handler om kommersielle løsninger, og bedre flyt.
+
+#KommersiellLedelse #GenerativeAI #AIKompetanse #Verdiskaping #StrategiskLedelse`,
+    },
+    {
       id: "rocket-verdilekkasje-ai-kommersiell-2026-06",
       tittel: "Hvor lekker verdien i virksomheten din?",
       teaser:
@@ -1944,6 +1987,43 @@ AI-dømmekraft er ikke en teknisk nisjeferdighet. Det er en lederkompetanse.`
 ];
 
 const aiGovernanceEn: Record<string, LocalizedTextMap> = {
+  "tilskuere-ror-genai-master-bi-2026-06": {
+    tittel: "Ro! Ro! Ro!",
+    teaser:
+      "The World Cup ro chant, top grade on the BI project assignment and completion of Generative AI for Business — rhythm, direction and teamwork towards real value creation.",
+    innhold: `The Norwegian ro chant has created excitement, debate and attention during the World Cup.
+
+Some like the energy and teamwork. Others think it is too much, or draw parallels to Iceland's Viking clap.
+
+I am among those who like it. Love it, in fact!
+
+Not just because it is a cool idea, but because the power, teamwork and enthusiasm are impossible to overlook.
+
+When many find the same rhythm, with clear direction and shared energy, it creates momentum and results.
+
+This week the result came in on my project assignment at BI. The grade could not have been better. The personal feedback from the professor afterwards made the experience even better. That also meant a top grade A overall in the master's course 'Generative AI for Business'. 🎓
+
+The grade is not the most important thing. But the sense of mastery is worth making room for before a chapter closes and new opportunities open up.
+
+The past year has indeed been about far more than this course. I have built, tested and explored broadly how AI can improve processes, customer experiences and decisions in practice.
+
+In parallel over the last six months I have also greatly enjoyed <a href="https://www.linkedin.com/company/aivaluelaboslo/" target="_blank" rel="noopener noreferrer" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">AI Value Lab Oslo</a>. It has been a practical arena for building and sharing knowledge, and for exploration across several projects.
+
+In addition, some of my collaborators Thomas Holm and Dimitri Oetiker and I are exploring several new opportunities together.
+
+I am still keeping my cards close to my chest. But what we are exploring now is closely connected to what the ro chant illustrates.
+
+Rhythm.
+Direction.
+Teamwork.
+Power.
+
+💥 Momentum when many work towards the same goal. To create real value.
+
+More on this ahead. But it is about commercial solutions, and better flow.
+
+#KommersiellLedelse #GenerativeAI #AIKompetanse #Verdiskaping #StrategiskLedelse`,
+  },
   "rocket-verdilekkasje-ai-kommersiell-2026-06": {
     tittel: "Where is value leaking in your business?",
     teaser:

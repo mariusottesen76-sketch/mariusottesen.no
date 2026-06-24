@@ -135,6 +135,7 @@ export const AI_SUBTEMA: FaginnleggSubtema[] = [
     id: "ai-utdanning",
     label: { no: "Utdanning, strategi og fagmiljø", en: "Education, strategy and community" },
     innleggIds: [
+      "tilskuere-ror-genai-master-bi-2026-06",
       "bi-master-oppstart-01",
       "strategi-ai-master-01",
       "bi-generative-ai-for-business-2026-01",
