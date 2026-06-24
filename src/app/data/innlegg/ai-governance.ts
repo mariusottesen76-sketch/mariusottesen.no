@@ -54,7 +54,7 @@ const aiGovernanceRaw = [
       id: "tilskuere-ror-genai-master-bi-2026-06",
       tittel: "Ro! Ro! Ro!",
       teaser:
-        "Fotball-VM-roen, toppkarakter på BI-prosjektoppgaven og avslutningen av Generative AI for Business — rytme, retning og samspill mot reell verdiskaping.",
+        "Ro-ropet under fotball-VM, toppkarakter på BI-prosjektoppgaven og avslutning av Generative AI for Business — rytme, retning og samspill mot reell verdiskaping.",
       bildeUrl: "/images/tilskuere-ror.png",
       dato: "2026-06-25",
       visningsDato: "25.06.26",
@@ -1990,7 +1990,7 @@ const aiGovernanceEn: Record<string, LocalizedTextMap> = {
   "tilskuere-ror-genai-master-bi-2026-06": {
     tittel: "Ro! Ro! Ro!",
     teaser:
-      "The World Cup ro chant, top grade on the BI project assignment and completion of Generative AI for Business — rhythm, direction and teamwork towards real value creation.",
+      "The ro chant at the World Cup, top grade on the BI project assignment and completion of Generative AI for Business — rhythm, direction and teamwork towards real value creation.",
     innhold: `The Norwegian ro chant has created excitement, debate and attention during the World Cup.
 
 Some like the energy and teamwork. Others think it is too much, or draw parallels to Iceland's Viking clap.
