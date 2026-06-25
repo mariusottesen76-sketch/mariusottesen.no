@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { FileText, Linkedin, ChevronRight, ArrowDown } from "lucide-react";
-import { getDokumentasjonData, linkedinUrl } from "./data/dokumentasjon";
+import { getDokumentasjonData, linkedinUrl, cvPdfUrl, soknadPdfUrl } from "./data/dokumentasjon";
 import { getRekruttererVerdiData } from "./data/rekrutterer-verdi";
 import { useLanguage } from "./LanguageContext";
 import { getTranslation } from "./data/translations";
@@ -274,7 +274,7 @@ export default function Dokumentasjon() {
                 viewerTitle={tr("dok.cv.viewerTitle")}
                 openNewTabLabel={tr("dok.cv.openNewTab")}
                 placeholder={tr("dok.pdf.placeholder")}
-                pdfSrc="/pdf/cv.pdf"
+                pdfSrc={cvPdfUrl}
                 visible={docsVisible}
               />
 
@@ -284,7 +284,7 @@ export default function Dokumentasjon() {
                 viewerTitle={tr("dok.soknad.viewerTitle")}
                 openNewTabLabel={tr("dok.soknad.openNewTab")}
                 placeholder={tr("dok.pdf.placeholder")}
-                pdfSrc="/pdf/soknad.pdf"
+                pdfSrc={soknadPdfUrl}
                 visible={docsVisible}
               />
             </div>

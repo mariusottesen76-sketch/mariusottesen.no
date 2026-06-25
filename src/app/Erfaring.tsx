@@ -3,6 +3,7 @@ import React from "react";
 import Image from "next/image";
 import { Briefcase, Calendar, TrendingUp, Target, Lightbulb, FileText, ChevronRight } from "lucide-react";
 import { getErfaringData } from "./data/erfaringInnhold";
+import { cvPdfUrl } from "./data/dokumentasjon";
 import { useLanguage } from "./LanguageContext";
 import { getTranslation } from "./data/translations";
 import { blockTitleClass, pageTitleClass, selskapNavnClass } from "./lib/typography";
@@ -146,7 +147,7 @@ export default function Erfaring() {
           </div>
 
           <div className="flex justify-center pt-4">
-            <a href="/pdf/cv.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 bg-white text-black px-10 py-5 rounded-full font-black uppercase text-sm hover:bg-indigo-500 hover:text-white transition-all italic shadow-lg cursor-pointer">
+            <a href={cvPdfUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 bg-white text-black px-10 py-5 rounded-full font-black uppercase text-sm hover:bg-indigo-500 hover:text-white transition-all italic shadow-lg cursor-pointer">
               <FileText size={20}/>{tr("erfaring.cv")}<ChevronRight size={20}/>
             </a>
           </div>
