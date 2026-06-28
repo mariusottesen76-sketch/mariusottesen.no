@@ -52,6 +52,7 @@ const produktLenker = [
   { label: "The Predictive Sales Coach", href: "/psc" },
   { label: "FlowSignal", href: "/flowsignal" },
   { label: "SMB Salgsflyt-sjekken", href: "/salgsflyt-sjekken" },
+  { label: "AI Readiness Scan", href: "/prosjekter#ai-readiness-scan-2026-06" },
 ] as const;
 
 function PakkeTekst({ text }: { text: string }) {

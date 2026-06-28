@@ -2,6 +2,7 @@ import Link from "next/link";
 import { PSC_APP_URL } from "../lib/psc-brand";
 import { FLOW_SIGNAL_APP_URL } from "../lib/flowsignal-brand";
 import { SMB_SALGSFLYT_APP_URL } from "../lib/smb-salgsflyt-brand";
+import { AI_READINESS_SCAN_APP_URL } from "../lib/ai-readiness-scan-brand";
 import type { Lang } from "../LanguageContext";
 
 const linkBase =
@@ -57,10 +58,25 @@ const smbSalgsflytBlokk = {
   accent: "default" as const,
 };
 
+const aiReadinessScanBlokk = {
+  tekst: {
+    no: "Fra prosjekt til pilot: AI Readiness Scan kan brukes som en strukturert inngang til AI-mulighetsverksted, modenhetskartlegging og prioritering av konkrete forbedringstiltak.",
+    en: "From project to pilot: AI Readiness Scan can be used as a structured entry point to AI opportunity workshops, maturity mapping and prioritisation of concrete improvement measures.",
+  },
+  appCta: { no: "Åpne AI Readiness Scan", en: "Open AI Readiness Scan" },
+  tilgangNote: {
+    no: "Kartleggingen er tilgangsstyrt og krever avtalt tilgangskode. Ta kontakt dersom du ønsker tilgang eller vil diskutere en mulig pilot.",
+    en: "The assessment is access-controlled and requires an agreed access code. Get in touch if you want access or to discuss a possible pilot.",
+  },
+  appUrl: AI_READINESS_SCAN_APP_URL,
+  accent: "default" as const,
+};
+
 function getBlokk(prosjektId: string) {
   if (prosjektId === "predictive-sales-coach-2026") return pscBlokk;
   if (prosjektId === "flowsignal-2026-05") return flowSignalBlokk;
   if (prosjektId === "smb-salgsflyt-sjekken-2026") return smbSalgsflytBlokk;
+  if (prosjektId === "ai-readiness-scan-2026-06") return aiReadinessScanBlokk;
   return null;
 }
 
@@ -76,20 +92,25 @@ export default function ProsjektPilotBlokk({ prosjektId, lang }: { prosjektId: s
         : linkClass;
 
   const harPilotformat = "pilotHref" in blokk && blokk.pilotHref;
+  const harAppLenke = "appUrl" in blokk && blokk.appUrl && "appCta" in blokk && blokk.appCta;
 
   return (
     <div className="-mt-1.5 pt-1.5 border-t border-white/10 space-y-1">
       <p className="text-sm text-slate-300 font-light leading-tight">{blokk.tekst[lang]}</p>
-      <div className="flex flex-wrap gap-x-3 gap-y-0.5 items-baseline">
-        {harPilotformat && (
-          <Link href={blokk.pilotHref} className={linkClass}>
-            {blokk.pilotCta![lang]} →
-          </Link>
-        )}
-        <a href={blokk.appUrl} target="_blank" rel="noopener noreferrer" className={appLinkClass}>
-          {blokk.appCta[lang]} →
-        </a>
-      </div>
+      {(harPilotformat || harAppLenke) && (
+        <div className="flex flex-wrap gap-x-3 gap-y-0.5 items-baseline">
+          {harPilotformat && (
+            <Link href={blokk.pilotHref} className={linkClass}>
+              {blokk.pilotCta![lang]} →
+            </Link>
+          )}
+          {harAppLenke && (
+            <a href={blokk.appUrl} target="_blank" rel="noopener noreferrer" className={appLinkClass}>
+              {blokk.appCta![lang]} →
+            </a>
+          )}
+        </div>
+      )}
       <p className="text-xs text-slate-500 font-light leading-tight">{blokk.tilgangNote[lang]}</p>
     </div>
   );

@@ -1,4 +1,5 @@
 import { Lang } from "../LanguageContext";
+import { AI_READINESS_SCAN_PROSJEKT_PATH } from "../lib/ai-readiness-scan-brand";
 import { SMB_SALGSFLYT_PILOT_PATH } from "../lib/smb-salgsflyt-brand";
 
 export type PakkePilotStotte = {
@@ -49,6 +50,21 @@ const smbSalgsflytPilotStotte: Record<Lang, PakkePilotStotte> = {
       "SMB Sales Flow Check can be used as a diagnosis and qualification component in Value Leak Sprint and CRM & Sales Follow-up Sprint. The survey is access-controlled and requires an agreed access code.",
     lenkeHref: SMB_SALGSFLYT_PILOT_PATH,
     lenkeLabel: "See Sales Flow Check pilot",
+  },
+};
+
+const aiReadinessScanPilotStotte: Record<Lang, PakkePilotStotte> = {
+  no: {
+    tekst:
+      "AI Readiness Scan kan brukes som modenhets- og prioriteringskomponent i AI-relaterte rådgivningsløp, workshops og mulighetsverksted. Kartleggingen er tilgangsstyrt og krever avtalt tilgangskode.",
+    lenkeHref: AI_READINESS_SCAN_PROSJEKT_PATH,
+    lenkeLabel: "Se AI Readiness Scan",
+  },
+  en: {
+    tekst:
+      "AI Readiness Scan can be used as a maturity and prioritisation component in AI-related advisory programmes, workshops and opportunity sessions. The assessment is access-controlled and requires an agreed access code.",
+    lenkeHref: AI_READINESS_SCAN_PROSJEKT_PATH,
+    lenkeLabel: "See AI Readiness Scan",
   },
 };
 
@@ -280,6 +296,11 @@ const metoder: Record<Lang, MetodeKomponent[]> = {
       pilotStotte: smbSalgsflytPilotStotte.no,
     },
     {
+      tittel: "AI Readiness Scan",
+      beskrivelse: "Modenhet, prioritering og grunnlag for AI-arbeid",
+      pilotStotte: aiReadinessScanPilotStotte.no,
+    },
+    {
       tittel: "AI Value Lab Oslo",
       beskrivelse: "Use case-prioritering, læring og praktisk AI-verdi",
     },
@@ -303,6 +324,11 @@ const metoder: Record<Lang, MetodeKomponent[]> = {
       tittel: "SMB Sales Flow Check",
       beskrivelse: "Diagnosis, scoring and AI reporting for sales maturity",
       pilotStotte: smbSalgsflytPilotStotte.en,
+    },
+    {
+      tittel: "AI Readiness Scan",
+      beskrivelse: "Maturity, prioritisation and a basis for AI work",
+      pilotStotte: aiReadinessScanPilotStotte.en,
     },
     {
       tittel: "AI Value Lab Oslo",

@@ -153,6 +153,11 @@ const translations: Translations = {
     no: "Kort oversikt — klikk på navnet for å lese mer:",
     en: "Quick overview — click a name to read more:",
   },
+  "prosjekter.intro.punkt.readiness-scan.label": { no: "AI Readiness Scan", en: "AI Readiness Scan" },
+  "prosjekter.intro.punkt.readiness-scan.desc": {
+    no: "AI-modenhet, prioriteringer og konkret grunnlag for videre AI-arbeid",
+    en: "AI maturity, priorities and a concrete basis for further AI work",
+  },
   "prosjekter.intro.punkt.flowsignal.label": { no: "FlowSignal", en: "FlowSignal" },
   "prosjekter.intro.punkt.flowsignal.desc": {
     no: "Profilinnsikt, dagsform og teamflyt — kan tilpasses leder- og teambehov",

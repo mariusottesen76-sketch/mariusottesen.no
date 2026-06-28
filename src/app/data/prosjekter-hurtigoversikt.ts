@@ -1,4 +1,16 @@
 import { Lang } from "../LanguageContext";
+import { aiReadinessScan } from "./prosjekter/ai-readiness-scan";
+import { flowSignal } from "./prosjekter/flowsignal";
+import { predictiveSalesCoach } from "./prosjekter/predictive-sales-coach";
+import { smbSalgsflytSjekken } from "./prosjekter/smb-salgsflyt-sjekken";
+import { pscPromoVideo } from "./prosjekter/psc-promo-video";
+import { prosjektoppgaveStrategiskImplementering } from "./prosjekter/prosjektoppgave-strategisk-implementering";
+import { skoyenasenTannklinikk } from "./prosjekter/skoyenasen-tannklinikk";
+import { aiAssistertInnsiktsagent } from "./prosjekter/ai-assistert-innsiktsagent";
+import { aiAssistertInnsiktsOgInnholdsagent } from "./prosjekter/ai-assistert-innsikts-og-innholdsagent";
+import { aiArkitekturBeslutningsstotte } from "./prosjekter/ai-arkitektur-beslutningsstotte";
+import { aiValueLabOslo } from "./prosjekter/ai-value-lab-oslo";
+import { aiFaginnleggHub } from "./prosjekter/ai-faginnlegg-hub";
 
 export type ProsjektHurtigLenke = {
   prosjektId: string;
@@ -16,6 +28,11 @@ const kategorier: ProsjektHurtigKategori[] = [
   {
     title: { no: "App og prototype", en: "App and prototype" },
     lenker: [
+      {
+        prosjektId: "ai-readiness-scan-2026-06",
+        introSlug: "readiness-scan",
+        label: { no: "AI Readiness Scan", en: "AI Readiness Scan" },
+      },
       { prosjektId: "flowsignal-2026-05", introSlug: "flowsignal", label: { no: "FlowSignal", en: "FlowSignal" } },
       {
         prosjektId: "predictive-sales-coach-2026",
@@ -95,6 +112,33 @@ const kategorier: ProsjektHurtigKategori[] = [
   },
 ];
 
+const prosjektDatoById = Object.fromEntries(
+  [
+    aiReadinessScan,
+    flowSignal,
+    predictiveSalesCoach,
+    smbSalgsflytSjekken,
+    pscPromoVideo,
+    prosjektoppgaveStrategiskImplementering,
+    skoyenasenTannklinikk,
+    aiAssistertInnsiktsagent,
+    aiAssistertInnsiktsOgInnholdsagent,
+    aiArkitekturBeslutningsstotte,
+    aiValueLabOslo,
+    aiFaginnleggHub,
+  ].map((prosjekt) => [prosjekt.id, prosjekt.dato])
+);
+
+function sortLenkerEtterDato(lenker: ProsjektHurtigLenke[]): ProsjektHurtigLenke[] {
+  return [...lenker].sort(
+    (a, b) =>
+      new Date(prosjektDatoById[b.prosjektId]).getTime() - new Date(prosjektDatoById[a.prosjektId]).getTime()
+  );
+}
+
 export function getProsjektHurtigoversikt(_lang: Lang): ProsjektHurtigKategori[] {
-  return kategorier;
+  return kategorier.map((kategori) => ({
+    ...kategori,
+    lenker: sortLenkerEtterDato(kategori.lenker),
+  }));
 }

@@ -1,11 +1,13 @@
 import { Lang } from "../LanguageContext";
 import { getFaginnleggTelling } from "../lib/faginnlegg-data";
+import { AI_READINESS_SCAN_PROSJEKT_PATH } from "../lib/ai-readiness-scan-brand";
 
 const prosjektLenker = {
   skoyenasen: "/prosjekter#skoyenasen-tannklinikk-2026",
   psc: "/psc",
   flowsignal: "/flowsignal",
   salgsflyt: "/salgsflyt-sjekken",
+  readinessScan: AI_READINESS_SCAN_PROSJEKT_PATH,
   agent: "/prosjekter#ai-assistert-innsikts-og-opportunity-agent-2026",
   innhold: "/prosjekter#ai-assistert-innsikts-og-innholdsagent-2026",
   beslutning: "/prosjekter#ai-arkitektur-beslutningsstotte-2026",
@@ -40,6 +42,7 @@ export function getMocResultaterPunkter(lang: Lang): MocResultatPunkt[] {
       `Developed ${lenke(prosjektLenker.psc, "The Predictive Sales Coach")}: AI-based sales training and meeting preparation for B2B sales`,
       `Developed ${lenke(prosjektLenker.flowsignal, "FlowSignal")}: AI-supported collaboration, profile insight and team development`,
       `Developed ${lenke(prosjektLenker.salgsflyt, "SMB Sales Flow Check")}: interactive diagnosis and AI reporting for commercial maturity and sales qualification`,
+      `Developed ${lenke(prosjektLenker.readinessScan, "AI Readiness Scan")}: access-controlled mapping of AI maturity, priorities and a basis for further AI work`,
       `Built ${lenke(prosjektLenker.agent, "agentic workflow")}, ${lenke(prosjektLenker.innhold, "insight and content engine")} and ${lenke(prosjektLenker.beslutning, "AI architecture for decision support")}`,
       `${totalt} published ${lenke(prosjektLenker.faginnlegg, "articles")} on AI, leadership and commercial value creation (updated automatically)`,
       `Initiated ${lenke(prosjektLenker.valueLab, "AI Value Lab Oslo")} — a cross-disciplinary learning initiative focused on practical testing, responsible AI use and real value creation through business-near cases`,
@@ -57,6 +60,7 @@ export function getMocResultaterPunkter(lang: Lang): MocResultatPunkt[] {
     `Utviklet ${lenke(prosjektLenker.psc, "The Predictive Sales Coach")}: AI-basert salgstrening og møteforberedelse for B2B-salg`,
     `Utviklet ${lenke(prosjektLenker.flowsignal, "FlowSignal")}: AI-støttet samhandling, profilinnsikt og teamutvikling`,
     `Utviklet ${lenke(prosjektLenker.salgsflyt, "SMB Salgsflyt-sjekken")}: interaktiv diagnose og AI-rapportering for kommersiell modenhet og salgskvalifisering`,
+    `Utviklet ${lenke(prosjektLenker.readinessScan, "AI Readiness Scan")}: tilgangsstyrt kartlegging av AI-modenhet, prioriteringer og grunnlag for videre AI-arbeid`,
     `Bygget ${lenke(prosjektLenker.agent, "agentisk arbeidsflyt")}, ${lenke(prosjektLenker.innhold, "innsikts- og innholdsmotor")} og ${lenke(prosjektLenker.beslutning, "AI-arkitektur for beslutningsstøtte")}`,
     `${totalt} ${lenke(prosjektLenker.faginnlegg, "faginnlegg")} om AI, ledelse og kommersiell verdiskaping (oppdateres løpende)`,
     `Tatt initiativ til dannelsen av ${lenke(prosjektLenker.valueLab, "AI Value Lab Oslo")} — tverrfaglig lærings- og utviklingsinitiativ for praktisk testing, ansvarlig AI-bruk og reell verdiskaping gjennom virksomhetsnære case`,

@@ -17,13 +17,15 @@ import { aiAssistertInnsiktsOgInnholdsagent } from "./data/prosjekter/ai-assiste
 import { prosjektoppgaveStrategiskImplementering } from "./data/prosjekter/prosjektoppgave-strategisk-implementering";
 import { flowSignal } from "./data/prosjekter/flowsignal";
 import { smbSalgsflytSjekken } from "./data/prosjekter/smb-salgsflyt-sjekken";
+import { aiReadinessScan } from "./data/prosjekter/ai-readiness-scan";
 import { isFlowSignalProsjekt } from "./lib/flowsignal-brand";
 import { isPscProsjekt } from "./lib/psc-brand";
 import { isSmbSalgsflytProsjekt } from "./lib/smb-salgsflyt-brand";
+import { isAiReadinessScanProsjekt } from "./lib/ai-readiness-scan-brand";
 import { formatProsjektHtml, formatProsjektPlain } from "./lib/product-brand";
 import ProsjektPilotBlokk from "./components/ProsjektPilotBlokk";
 
-const prosjektKort: ProsjektType[] = [smbSalgsflytSjekken, flowSignal, prosjektoppgaveStrategiskImplementering, pscPromoVideo, aiAssistertInnsiktsagent, aiAssistertInnsiktsOgInnholdsagent, predictiveSalesCoach, aiValueLabOslo, skoyenasenTannklinikk, aiArkitekturBeslutningsstotte].sort(
+const prosjektKort: ProsjektType[] = [aiReadinessScan, smbSalgsflytSjekken, flowSignal, prosjektoppgaveStrategiskImplementering, pscPromoVideo, aiAssistertInnsiktsagent, aiAssistertInnsiktsOgInnholdsagent, predictiveSalesCoach, aiValueLabOslo, skoyenasenTannklinikk, aiArkitekturBeslutningsstotte].sort(
   (a, b) => new Date(b.dato).getTime() - new Date(a.dato).getTime()
 );
 
@@ -163,6 +165,7 @@ export default function Prosjekter({ onNavigate }: { onNavigate?: (tab: string) 
           const erPsc = isPscProsjekt(prosjekt.id);
           const erFlowSignal = isFlowSignalProsjekt(prosjekt.id);
           const erSmbSalgsflyt = isSmbSalgsflytProsjekt(prosjekt.id);
+          const erAiReadinessScan = isAiReadinessScanProsjekt(prosjekt.id);
           return (
           <article
             key={prosjekt.id}
@@ -329,7 +332,9 @@ export default function Prosjekter({ onNavigate }: { onNavigate?: (tab: string) 
                   className={prosjektTeaserClass}
                   dangerouslySetInnerHTML={{ __html: formatProsjektPlain(prosjekt.teaser[lang], prosjekt.id) }}
                 />
-                {(erPsc || erFlowSignal || erSmbSalgsflyt) && <ProsjektPilotBlokk prosjektId={prosjekt.id} lang={lang} />}
+                {(erPsc || erFlowSignal || erSmbSalgsflyt || erAiReadinessScan) && (
+                  <ProsjektPilotBlokk prosjektId={prosjekt.id} lang={lang} />
+                )}
                 <div>
                   <div
                     className={getProsjektInnholdProseClass(

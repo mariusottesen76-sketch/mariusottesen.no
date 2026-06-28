@@ -13,7 +13,7 @@ const data = {
         strategy:
           'Kombinert kommersiell ledererfaring med videreutvikling innen AI, digital transformasjon og praktisk implementering gjennom <a href="/consulting">Marius Ottesen Consulting</a>, <a href="/prosjekter">egne pilotprosjekter</a> og masterkurset <a href="/prosjekter#prosjektoppgave-strategisk-implementering-2026">Generative AI for Business</a> ved BI.',
         results:
-          'Utviklet flere konkrete AI-prosjekter og pilotflater, inkludert <a href="/psc">The Predictive Sales Coach</a>, <a href="/flowsignal">FlowSignal</a> og <a href="/salgsflyt-sjekken">SMB Salgsflyt-sjekken</a>, samt rådgivningskonsepter for verdilekkasjer, CRM, kundedialog, salgsutvikling og teamgjennomføring. Styrket posisjoneringen som kommersiell leder og AI-strateg gjennom <a href="/faginnlegg">faginnlegg</a>, prosjekter, <a href="/consulting">consulting</a> og en tydeligere <a href="/">digital plattform</a>.',
+          'Utviklet flere konkrete AI-prosjekter og pilotflater, inkludert <a href="/psc">The Predictive Sales Coach</a>, <a href="/flowsignal">FlowSignal</a>, <a href="/salgsflyt-sjekken">SMB Salgsflyt-sjekken</a> og <a href="/prosjekter#ai-readiness-scan-2026-06">AI Readiness Scan</a>, samt rådgivningskonsepter for verdilekkasjer, CRM, kundedialog, salgsutvikling og teamgjennomføring. Styrket posisjoneringen som kommersiell leder og AI-strateg gjennom <a href="/faginnlegg">faginnlegg</a>, prosjekter, <a href="/consulting">consulting</a> og en tydeligere <a href="/">digital plattform</a>.',
       },
       {
         title: "Nasjonal Salgssjef",
@@ -76,7 +76,7 @@ const data = {
         strategy:
           'Combined commercial leadership experience with further development in AI, digital transformation and practical implementation through <a href="/consulting">Marius Ottesen Consulting</a>, <a href="/prosjekter">own pilot projects</a> and the <a href="/prosjekter#prosjektoppgave-strategisk-implementering-2026">Generative AI for Business</a> master\'s course at BI.',
         results:
-          'Developed several concrete AI projects and pilot environments, including <a href="/psc">The Predictive Sales Coach</a>, <a href="/flowsignal">FlowSignal</a> and <a href="/salgsflyt-sjekken">SMB Sales Flow Check</a>, plus advisory concepts for value leaks, CRM, customer dialogue, sales development and team execution. Strengthened positioning as commercial leader and AI strategist through <a href="/faginnlegg">articles</a>, projects, <a href="/consulting">consulting</a> and a clearer <a href="/">digital platform</a>.',
+          'Developed several concrete AI projects and pilot environments, including <a href="/psc">The Predictive Sales Coach</a>, <a href="/flowsignal">FlowSignal</a>, <a href="/salgsflyt-sjekken">SMB Sales Flow Check</a> and <a href="/prosjekter#ai-readiness-scan-2026-06">AI Readiness Scan</a>, plus advisory concepts for value leaks, CRM, customer dialogue, sales development and team execution. Strengthened positioning as commercial leader and AI strategist through <a href="/faginnlegg">articles</a>, projects, <a href="/consulting">consulting</a> and a clearer <a href="/">digital platform</a>.',
       },
       {
         title: "National Sales Director",
