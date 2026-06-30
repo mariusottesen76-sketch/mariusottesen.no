@@ -49,7 +49,58 @@ const rocketKarusellBilder = Array.from({ length: 8 }, (_, i) => ({
   },
 }));
 
+const fireApperKarusellBase = "/images/4-apper-karusell";
+const fireApperKarusellBilder = Array.from({ length: 10 }, (_, i) => ({
+  src: `${fireApperKarusellBase}/A${i + 1}.png`,
+  alt: {
+    no: `Fire AI-apper – karusell ${i + 1} av 10`,
+    en: `Four AI apps – carousel ${i + 1} of 10`,
+  },
+}));
+
 const aiGovernanceRaw = [
+    {
+      id: "fire-egne-ai-apper-friksjon-prioritering-2026-06",
+      tittel: "4 egneutviklede AI-apper for å finne friksjon og prioritere neste steg",
+      teaser:
+        "Fire egne AI-apper for modenhet, salgsflyt, team og salgstrening — fra friksjon mellom plan og praksis til prioritering og neste steg.",
+      bildeUrl: `${fireApperKarusellBase}/A1.png`,
+      bildeVersjon: "2026-06-30",
+      dato: "2026-06-30",
+      visningsDato: "30.06.26",
+      kategori: "AI / KI",
+      link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
+      innhold: `Det er sjelden mangel på planer som bremser virksomheter.
+
+Det er friksjonen mellom plan og praksis.
+
+Jeg har utviklet fire egne, AI-støttede apper som tar tak i ulike deler av denne utfordringen:
+
+<strong>AI Readiness Scan</strong> kartlegger AI-beredskap og hjelper virksomheter å prioritere hvor de bør starte.
+
+<strong>SMB Salgsflyt-sjekken</strong> avdekker flaskehalser i salgsflyten og gir et tydeligere grunnlag for oppfølging og forbedring.
+
+<strong>FlowSignal</strong> kobler profilinnsikt, dagsform og samspill for å styrke dialog, feedback og utvikling i team.
+
+<strong>The Predictive Sales Coach</strong> gir selgere og salgsledere en arena for å trene på kundedialoger, kommunikasjon og salgsfaser før det gjelder.
+
+Bakgrunnen er erfaring fra kommersielle lederroller. Jeg har sett salgsprosesser stoppe opp uten at årsaken er tydelig, CRM-data som ikke brukes godt nok, team med høy innsats men ulik retning, og gode planer som ikke alltid omsettes i praksis.
+
+Appene er bygget for å komme nærmere kjernen: Hvor oppstår friksjonen? Hva er det egentlige smertepunktet? Og hvilke tiltak kan gi effekt først?
+
+Dette er praktiske konsepter som kan videreutvikles og tilpasses ulike virksomheter, roller, prosesser og behov med relativt enkle grep.
+
+👉 Se gjennom karusellen for en kort presentasjon av hvordan de fungerer.
+
+💥 <strong>CTA:</strong> Ønsker du å teste en eller flere av appene, eller diskutere hvordan slike verktøy kan tilpasses din virksomhet, <a href="/kontakt" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">send meg en melding</a> og be om tilgangskode.
+
+👇 En samlet oversikt over appene finner du på <a href="/prosjekter" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">prosjektsiden</a>, med videre lenker til <a href="/prosjekter#ai-readiness-scan-2026-06">AI Readiness Scan</a>, <a href="/salgsflyt-sjekken">SMB Salgsflyt-sjekken</a>, <a href="/flowsignal">FlowSignal</a> og <a href="/psc">The Predictive Sales Coach</a>.
+
+#AIstrategi #AIimplementering #kommersiellledelse #salgsutvikling #organisasjonsutvikling`,
+      karusellBilder: fireApperKarusellBilder,
+      karusellPdfUrl: "/images/4-apper-karusell.pdf",
+      bildeFit: "contain",
+    },
     {
       id: "tilskuere-ror-genai-master-bi-2026-06",
       tittel: "Ro! Ro! Ro!",
@@ -1987,6 +2038,38 @@ AI-dømmekraft er ikke en teknisk nisjeferdighet. Det er en lederkompetanse.`
 ];
 
 const aiGovernanceEn: Record<string, LocalizedTextMap> = {
+  "fire-egne-ai-apper-friksjon-prioritering-2026-06": {
+    tittel: "4 custom-built AI apps to find friction and prioritise next steps",
+    teaser:
+      "Four custom AI apps for maturity, sales flow, teams and sales training — from friction between plan and practice to prioritisation and next steps.",
+    innhold: `It is rarely a lack of plans that holds businesses back.
+
+It is the friction between plan and practice.
+
+I have developed four custom, AI-supported apps that address different parts of this challenge:
+
+<strong>AI Readiness Scan</strong> maps AI readiness and helps organisations prioritise where to start.
+
+<strong>SMB Sales Flow Check</strong> reveals bottlenecks in the sales flow and provides a clearer basis for follow-up and improvement.
+
+<strong>FlowSignal</strong> connects profile insight, daily form and collaboration to strengthen dialogue, feedback and team development.
+
+<strong>The Predictive Sales Coach</strong> gives salespeople and sales leaders an arena to practise customer dialogues, communication and sales phases before it counts.
+
+The background is experience from commercial leadership roles. I have seen sales processes stall without a clear cause, CRM data that is not used well enough, teams with high effort but uneven direction, and good plans that do not always translate into practice.
+
+The apps are built to get closer to the core: Where does friction arise? What is the real pain point? And which measures can deliver impact first?
+
+These are practical concepts that can be developed further and adapted to different businesses, roles, processes and needs with relatively simple adjustments.
+
+👉 Browse the carousel for a short presentation of how they work.
+
+💥 <strong>CTA:</strong> If you want to test one or more of the apps, or discuss how such tools can be adapted to your business, <a href="/kontakt" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">send me a message</a> and request an access code.
+
+👇 A combined overview of the apps is on the <a href="/prosjekter" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">projects page</a>, with further links to <a href="/prosjekter#ai-readiness-scan-2026-06">AI Readiness Scan</a>, <a href="/salgsflyt-sjekken">SMB Sales Flow Check</a>, <a href="/flowsignal">FlowSignal</a> and <a href="/psc">The Predictive Sales Coach</a>.
+
+#AIstrategi #AIimplementering #kommersiellledelse #salgsutvikling #organisasjonsutvikling`,
+  },
   "tilskuere-ror-genai-master-bi-2026-06": {
     tittel: "Ro! Ro! Ro!",
     teaser:
