@@ -1,5 +1,5 @@
 import { AI_READINESS_SCAN_APP_URL } from "../../lib/ai-readiness-scan-brand";
-import { prosjektKontaktLenke } from "../../lib/prosjekt-lenker";
+import { prosjektKontaktLenke, prosjektKontaktDialogTekst, prosjektTilgangStandard } from "../../lib/prosjekt-lenker";
 import { type ProsjektType } from "./predictive-sales-coach";
 
 const readinessAppLink = `<a href="${AI_READINESS_SCAN_APP_URL}" target="_blank" rel="noopener noreferrer" aria-label="Åpne AI Readiness Scan" class="text-indigo-400 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400">AI Readiness Scan</a>`;
@@ -36,7 +36,7 @@ export const aiReadinessScan: ProsjektType = {
 
 AI Readiness Scan er et tilgangsstyrt kartleggingsverktøy for ledere og virksomheter som vil avklare AI-modenhet, prioriteringer og neste steg — fra strategi og kompetanse til data, arbeidsprosesser og ansvarlig bruk.
 
-Rådgiveren får oversikt og oppfølging i administrasjonsflaten. Virksomheten får et konkret grunnlag for videre AI-arbeid, pilotvalg og mulighetsverksted.
+Administrasjonsflaten gir oversikt over besvarelser, mønstre og aktuelle prioriteringer. Virksomheten får et konkret grunnlag for videre AI-arbeid, prioritering og strukturert oppfølging.
 
 <strong>Problemet prosjektet adresserer</strong>
 
@@ -50,28 +50,28 @@ En tilgangsstyrt diagnoseapp med strukturert spørsmålsflyt, sikker innlogging,
 
 Kartleggingen gjennomføres i fire steg:
 
-<div class="prosjekt-steg-liste"><blockquote class="prosjekt-innrykk"><strong>1. Tilgang</strong> — Virksomheten får tilgang gjennom unik tilgangskode eller sikker innlogging.</blockquote><blockquote class="prosjekt-innrykk"><strong>2. Kartlegging</strong> — Deltakeren svarer på spørsmål om strategi, kompetanse, prosesser, data, risiko og ansvarlig bruk.</blockquote><blockquote class="prosjekt-innrykk"><strong>3. Oppslag</strong> — Besvarelser samles og er tilgjengelige for oppfølging i administrasjonsflaten.</blockquote><blockquote class="prosjekt-innrykk"><strong>4. Prioritering</strong> — Resultatet brukes som grunnlag for dialog om neste steg og mulige pilotområder.</blockquote></div>
+<div class="prosjekt-steg-liste"><blockquote class="prosjekt-innrykk"><strong>1. Tilgang</strong> — Virksomheten får tilgang gjennom unik tilgangskode eller sikker innlogging.</blockquote><blockquote class="prosjekt-innrykk"><strong>2. Kartlegging</strong> — Deltakeren svarer på spørsmål om strategi, kompetanse, prosesser, data, risiko og ansvarlig bruk.</blockquote><blockquote class="prosjekt-innrykk"><strong>3. Oppslag</strong> — Besvarelser samles og er tilgjengelige for oppfølging i administrasjonsflaten.</blockquote><blockquote class="prosjekt-innrykk"><strong>4. Prioritering</strong> — Resultatet brukes som grunnlag for dialog om neste steg og mulige forbedringsområder.</blockquote></div>
 
 <strong>Hvorfor dette er relevant</strong>
 
-Prosjektet viser hvordan strukturert kartlegging kan gi bedre prioritering og rådgivningsforberedelse — før virksomheten investerer bredt i AI.
+Prosjektet viser hvordan strukturert kartlegging kan gi bedre prioritering og forberedelse — før virksomheten investerer bredt i AI.
 
 <strong>Status og modenhet</strong>
 
-Tilgangsstyrt kartleggingsverktøy, klar for bruk i pilot- og rådgivningsløp.
+Bygget som tilgangsstyrt kartleggingsverktøy med modenhet for avgrenset testing og videre utvikling.
 
 <strong>Mulig videreutvikling</strong>
 
-AI-generert oppsummering, modenhetsprofil, bransjetilpassede spørsmål og integrasjon mot workshop- og rådgivningsløp.
+AI-generert oppsummering, modenhetsprofil, bransjetilpassede spørsmål og integrasjon mot praktiske læringsarenaer og videre faglig utvikling.
 
-<strong>Neste steg</strong>
+<strong>Videre relevans og mulig anvendelse</strong>
 
-Kartleggingen er tilgangsstyrt og krever avtalt tilgangskode. ${prosjektKontaktLenke("no")} dersom du ønsker tilgang eller vil diskutere en mulig pilot. Når tilgang er avtalt, kan ${readinessAppLink} brukes som del av modenhetskartlegging, AI-mulighetsverksted eller rådgivningsløp.`,
+${prosjektTilgangStandard.no} ${prosjektKontaktLenke("no", "Ta gjerne kontakt")} ${prosjektKontaktDialogTekst.no}. ${readinessAppLink} åpner den tilgangsstyrte løsningen.`,
     en: `<strong>What the project is</strong>
 
 AI Readiness Scan is an access-controlled mapping tool for leaders and organisations that want to clarify AI maturity, priorities and next steps — from strategy and competence to data, work processes and responsible use.
 
-The advisor gets overview and follow-up in the admin environment. The organisation gets a concrete basis for further AI work, pilot selection and opportunity workshops.
+The admin environment provides overview of responses, patterns and current priorities. The organisation gets a concrete basis for further AI work, prioritisation and structured follow-up.
 
 <strong>The problem the project addresses</strong>
 
@@ -85,7 +85,7 @@ An access-controlled diagnostic app with structured question flow, secure login,
 
 The assessment runs in four steps:
 
-<div class="prosjekt-steg-liste"><blockquote class="prosjekt-innrykk"><strong>1. Access</strong> — The organisation gains access through a unique access code or secure login.</blockquote><blockquote class="prosjekt-innrykk"><strong>2. Assessment</strong> — The participant answers questions on strategy, competence, processes, data, risk and responsible use.</blockquote><blockquote class="prosjekt-innrykk"><strong>3. Overview</strong> — Responses are collected and available for follow-up in the admin environment.</blockquote><blockquote class="prosjekt-innrykk"><strong>4. Prioritisation</strong> — The result is used as a basis for dialogue on next steps and possible pilot areas.</blockquote></div>
+<div class="prosjekt-steg-liste"><blockquote class="prosjekt-innrykk"><strong>1. Access</strong> — The organisation gains access through a unique access code or secure login.</blockquote><blockquote class="prosjekt-innrykk"><strong>2. Assessment</strong> — The participant answers questions on strategy, competence, processes, data, risk and responsible use.</blockquote><blockquote class="prosjekt-innrykk"><strong>3. Overview</strong> — Responses are collected and available for follow-up in the admin environment.</blockquote><blockquote class="prosjekt-innrykk"><strong>4. Prioritisation</strong> — The result is used as a basis for dialogue on next steps and possible improvement areas.</blockquote></div>
 
 <strong>Why this is relevant</strong>
 
@@ -93,14 +93,14 @@ The project shows how structured mapping can improve prioritisation and advisory
 
 <strong>Status and maturity</strong>
 
-Access-controlled mapping tool, ready for use in pilot and advisory engagements.
+Built as an access-controlled mapping tool with maturity for limited testing and further development.
 
 <strong>Possible further development</strong>
 
-AI-generated summary, maturity profile, industry-specific questions and integration with workshop and advisory solutions.
+AI-generated summary, maturity profile, industry-specific questions and integration with practical learning arenas and further professional development.
 
-<strong>Next steps</strong>
+<strong>Further relevance and possible application</strong>
 
-The assessment is access-controlled and requires an agreed access code. ${prosjektKontaktLenke("en")} if you want access or to discuss a possible pilot. Once access is agreed, ${readinessAppLink} can be used as part of maturity mapping, AI opportunity workshops or advisory engagements.`,
+${prosjektTilgangStandard.en} ${prosjektKontaktLenke("en", "Feel free to get in touch")} ${prosjektKontaktDialogTekst.en}. ${readinessAppLink} opens the access-controlled solution.`,
   },
 };

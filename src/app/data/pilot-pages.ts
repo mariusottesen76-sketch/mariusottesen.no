@@ -5,6 +5,15 @@ import { SMB_SALGSFLYT_APP_URL } from "../lib/smb-salgsflyt-brand";
 
 type L = { no: string; en: string };
 
+const tilgangNoteStandard: L = {
+  no: "Løsningen er tilgangsstyrt og utviklet som porteføljeprosjekt / lukket testflate. Den beskrives her for å dokumentere funksjonalitet, læring og praktisk AI-kompetanse. Tilgang vurderes kun i relevante faglige eller profesjonelle sammenhenger.",
+  en: "The solution is access-controlled and developed as a portfolio project / closed test environment. It is described here to document functionality, learning and practical AI competence. Access is considered only in relevant professional contexts.",
+};
+
+const kontaktFagligCta: L = { no: "Ta kontakt for faglig dialog", en: "Contact for professional dialogue" };
+const apneTilgangsstyrtCta: L = { no: "Åpne tilgangsstyrt løsning", en: "Open access-controlled solution" };
+const apneLukketTestflateCta: L = { no: "Åpne lukket testflate", en: "Open closed test environment" };
+
 export type PilotSteg = { tittel: L; beskrivelse: L };
 
 export type PilotSide = {
@@ -50,18 +59,15 @@ const pscSide: PilotSide = {
       en: "AI-based sales training and meeting preparation for sales organisations that want to raise the quality of customer dialogue, needs clarification and learning.",
     },
     tekst: {
-      no: "The Predictive Sales Coach er utviklet som en praktisk pilotflate for salgsledere, selgere og kommersielle team som ønsker bedre forberedelse, tydeligere møtegjennomføring og mer systematisk læring etter kundedialoger. Målet er ikke å erstatte salgsledelse, men å styrke trening, refleksjon og kvalitet i salgsarbeidet.",
-      en: "The Predictive Sales Coach is built as a practical pilot environment for sales leaders, salespeople and commercial teams who want better preparation, clearer meeting execution and more systematic learning after customer dialogues. The goal is not to replace sales leadership, but to strengthen training, reflection and quality in sales work.",
+      no: "The Predictive Sales Coach er utviklet som et tilgangsstyrt porteføljeprosjekt og lukket testflate for salgsledere, selgere og kommersielle team som ønsker bedre forberedelse, tydeligere møtegjennomføring og mer systematisk læring etter kundedialoger. Målet er ikke å erstatte salgsledelse, men å styrke trening, refleksjon og kvalitet i salgsarbeidet.",
+      en: "The Predictive Sales Coach is built as an access-controlled portfolio project and closed test environment for sales leaders, salespeople and commercial teams who want better preparation, clearer meeting execution and more systematic learning after customer dialogues. The goal is not to replace sales leadership, but to strengthen training, reflection and quality in sales work.",
     },
-    primaerCta: { no: "Be om pilot / tilgang", en: "Request pilot access" },
-    sekundaerCta: { no: "Åpne PSCv2.0 pilotflate", en: "Open PSCv2.0 pilot environment" },
-    tilgangNote: {
-      no: "Pilotflaten er tilgangsstyrt og brukes i avtalte testløp. Ta kontakt dersom du ønsker tilgang eller vil diskutere en mulig pilot.",
-      en: "The pilot environment is access-controlled and used in agreed test runs. Get in touch if you want access or to discuss a possible pilot.",
-    },
+    primaerCta: kontaktFagligCta,
+    sekundaerCta: apneTilgangsstyrtCta,
+    tilgangNote: tilgangNoteStandard,
   },
   hvem: {
-    tittel: { no: "Hvem passer piloten for?", en: "Who is the pilot for?" },
+    tittel: { no: "Hvem løsningen er relevant for", en: "Who the solution is relevant for" },
     tekst: {
       no: "Piloten passer for B2B-selskaper med selgere, KAM-er eller rådgivere som har viktige kundemøter, men der kvaliteten på forberedelse, behovsavklaring, innvendinger, neste steg og læring varierer for mye.",
       en: "The pilot suits B2B companies with salespeople, key account managers or advisors who run important customer meetings, but where quality of preparation, needs clarification, objections, next steps and learning varies too much.",
@@ -154,7 +160,7 @@ const pscSide: PilotSide = {
     ],
   },
   utbytte: {
-    tittel: { no: "Hva kunden får ut av det", en: "What the client gains" },
+    tittel: { no: "Hva løsningen dokumenterer", en: "What the solution demonstrates" },
     punkter: [
       { no: "Bedre forberedte selgere", en: "Better prepared salespeople" },
       { no: "Høyere kvalitet i kundemøter", en: "Higher quality in customer meetings" },
@@ -165,17 +171,14 @@ const pscSide: PilotSide = {
     ],
   },
   consulting: {
-    tittel: { no: "Kobling til consulting", en: "Link to consulting" },
+    tittel: { no: "Kobling til portefølje og metode", en: "Link to portfolio and methods" },
     tekst: {
-      no: "Piloten kan brukes som en del av Sales Meeting Performance Sprint, Leder som salgscoach eller et bredere arbeid med CRM, salgsoppfølging og kommersiell gjennomføring.",
-      en: "The pilot can be used as part of Sales Meeting Performance Sprint, Leader as sales coach, or broader work on CRM, sales follow-up and commercial execution.",
+      no: "Løsningen kobles til erfaring, arbeidsmetoder og porteføljeprosjekter innen kommersiell utvikling, salgsledelse, CRM og praktisk AI som presenteres på Consulting-siden.",
+      en: "The solution connects to experience, working methods and portfolio projects in commercial development, sales leadership, CRM and practical AI presented on the Consulting page.",
     },
-    primaerCta: { no: "Ta kontakt om pilot", en: "Contact about pilot" },
-    sekundaerCta: { no: "Åpne PSCv2.0 pilotflate", en: "Open PSCv2.0 pilot environment" },
-    tilgangNote: {
-      no: "Pilotflaten er tilgangsstyrt og brukes i avtalte testløp. Ta kontakt dersom du ønsker tilgang eller vil diskutere en mulig pilot.",
-      en: "The pilot environment is access-controlled and used in agreed test runs. Get in touch if you want access or to discuss a possible pilot.",
-    },
+    primaerCta: kontaktFagligCta,
+    sekundaerCta: apneTilgangsstyrtCta,
+    tilgangNote: tilgangNoteStandard,
   },
   pilotAppUrl: PSC_APP_URL,
 };
@@ -200,18 +203,15 @@ const flowSignalSide: PilotSide = {
       en: "A practical pilot format for teams that want to strengthen collaboration, dialogue, energy, prioritisation and leadership follow-up.",
     },
     tekst: {
-      no: "FlowSignal er utviklet som en praktisk pilotflate for team, ledere og organisasjoner som ønsker bedre innsikt i hvordan mennesker jobber sammen. Målet er å styrke dialog, samhandling og gjennomføring, ikke å sette mennesker i bokser eller gjøre personprofiler til fasit.",
-      en: "FlowSignal is built as a practical pilot environment for teams, leaders and organisations that want better insight into how people work together. The goal is to strengthen dialogue, collaboration and execution — not to put people in boxes or treat personality profiles as the final answer.",
+      no: "FlowSignal er utviklet som et tilgangsstyrt porteføljeprosjekt og lukket testflate for team, ledere og organisasjoner som ønsker bedre innsikt i hvordan mennesker jobber sammen. Målet er å styrke dialog, samhandling og gjennomføring, ikke å sette mennesker i bokser eller gjøre personprofiler til fasit.",
+      en: "FlowSignal is built as an access-controlled portfolio project and closed test environment for teams, leaders and organisations that want better insight into how people work together. The goal is to strengthen dialogue, collaboration and execution — not to put people in boxes or treat personality profiles as the final answer.",
     },
-    primaerCta: { no: "Be om samhandlingspilot", en: "Request collaboration pilot" },
-    sekundaerCta: { no: "Åpne FlowSignal pilotflate", en: "Open FlowSignal pilot environment" },
-    tilgangNote: {
-      no: "Pilotflaten er tilgangsstyrt og brukes i avtalte testløp. Ta kontakt dersom du ønsker tilgang eller vil diskutere en mulig pilot.",
-      en: "The pilot environment is access-controlled and used in agreed test runs. Get in touch if you want access or to discuss a possible pilot.",
-    },
+    primaerCta: kontaktFagligCta,
+    sekundaerCta: apneTilgangsstyrtCta,
+    tilgangNote: tilgangNoteStandard,
   },
   hvem: {
-    tittel: { no: "Hvem passer piloten for?", en: "Who is the pilot for?" },
+    tittel: { no: "Hvem løsningen er relevant for", en: "Who the solution is relevant for" },
     tekst: {
       no: "Piloten passer for ledergrupper, kommersielle team og SMB-team som trenger bedre samspill, tydeligere ansvar, bedre dialog og mer bevissthet rundt hvordan folk jobber best sammen.",
       en: "The pilot suits leadership groups, commercial teams and SMB teams that need better collaboration, clearer accountability, better dialogue and more awareness of how people work best together.",
@@ -306,7 +306,7 @@ const flowSignalSide: PilotSide = {
     ],
   },
   utbytte: {
-    tittel: { no: "Hva kunden får ut av det", en: "What the client gains" },
+    tittel: { no: "Hva løsningen dokumenterer", en: "What the solution demonstrates" },
     punkter: [
       { no: "Bedre samarbeid", en: "Better collaboration" },
       { no: "Mindre misforståelser", en: "Fewer misunderstandings" },
@@ -324,17 +324,14 @@ const flowSignalSide: PilotSide = {
     },
   },
   consulting: {
-    tittel: { no: "Kobling til consulting", en: "Link to consulting" },
+    tittel: { no: "Kobling til portefølje og metode", en: "Link to portfolio and methods" },
     tekst: {
-      no: "Piloten kan brukes som en del av Team Performance & Samhandling Sprint, SMB lederløft eller et bredere arbeid med ledelse, teamutvikling og kommersiell gjennomføring.",
-      en: "The pilot can be used as part of Team Performance & Collaboration Sprint, SMB leadership lift, or broader work on leadership, team development and commercial execution.",
+      no: "Løsningen kobles til erfaring, arbeidsmetoder og porteføljeprosjekter innen teamutvikling, lederoppfølging og kommersiell gjennomføring som presenteres på Consulting-siden.",
+      en: "The solution connects to experience, working methods and portfolio projects in team development, leadership follow-up and commercial execution presented on the Consulting page.",
     },
-    primaerCta: { no: "Ta kontakt om samhandlingspilot", en: "Contact about collaboration pilot" },
-    sekundaerCta: { no: "Åpne FlowSignal pilotflate", en: "Open FlowSignal pilot environment" },
-    tilgangNote: {
-      no: "Pilotflaten er tilgangsstyrt og brukes i avtalte testløp. Ta kontakt dersom du ønsker tilgang eller vil diskutere en mulig pilot.",
-      en: "The pilot environment is access-controlled and used in agreed test runs. Get in touch if you want access or to discuss a possible pilot.",
-    },
+    primaerCta: kontaktFagligCta,
+    sekundaerCta: apneTilgangsstyrtCta,
+    tilgangNote: tilgangNoteStandard,
   },
   pilotAppUrl: FLOW_SIGNAL_APP_URL,
 };
@@ -347,8 +344,8 @@ const salgsflytSjekkenSide: PilotSide = {
       en: "Diagnosis and qualification pilot with SMB Sales Flow Check | Marius Ottesen",
     },
     description: {
-      no: "Interaktiv diagnose og AI-rapportering for kommersiell modenhet, salgskvalifisering og raskere oppfølging i Verdilekkasje- og CRM-løp.",
-      en: "Interactive diagnosis and AI reporting for commercial maturity, sales qualification and faster follow-up in value leak and CRM engagements.",
+      no: "Interaktiv diagnose og AI-rapportering for kommersiell modenhet, strukturert prioritering og raskere oppfølging i salgs- og CRM-arbeidsflyt.",
+      en: "Interactive diagnosis and AI reporting for commercial maturity, structured prioritisation and faster follow-up in sales and CRM workflows.",
     },
   },
   hero: {
@@ -359,18 +356,15 @@ const salgsflytSjekkenSide: PilotSide = {
       en: "An interactive survey and AI reporting for leaders and advisors who want to uncover sales friction, qualify potential clients and prepare follow-up.",
     },
     tekst: {
-      no: "SMB Salgsflyt-sjekken er utviklet som et praktisk diagnose- og kvalifiseringsverktøy for kommersielle miljøer. Målet er å gi respondenten umiddelbar verdi gjennom en skreddersydd PDF-rapport sendt med en gang diagnosen er fullført, samtidig som rådgiveren får AI-generert innsikt for oppfølging og salgskvalifisering — uten lange kartleggingsmøter.",
-      en: "SMB Sales Flow Check is built as a practical diagnostic and qualification tool for commercial environments. The goal is to give the respondent immediate value through a tailored PDF report sent as soon as the diagnosis is complete, while the advisor gets AI-generated insight for follow-up and sales qualification — without long discovery meetings.",
+      no: "SMB Salgsflyt-sjekken er utviklet som et tilgangsstyrt diagnose- og analyseverktøy for kommersielle miljøer. Målet er å gi respondenten umiddelbar verdi gjennom en skreddersydd PDF-rapport sendt med en gang diagnosen er fullført, samtidig som løsningen genererer AI-støttet innsikt for scoring, prioritering og strukturert oppfølging — uten lange kartleggingsmøter.",
+      en: "SMB Sales Flow Check is built as an access-controlled diagnostic and analysis tool for commercial environments. The goal is to give the respondent immediate value through a tailored PDF report sent as soon as the diagnosis is complete, while the solution generates AI-supported insight for scoring, prioritisation and structured follow-up — without long discovery meetings.",
     },
-    primaerCta: { no: "Be om tilgang / pilot", en: "Request access / pilot" },
-    sekundaerCta: { no: "Åpne spørreundersøkelsen", en: "Open the survey" },
-    tilgangNote: {
-      no: "Spørreundersøkelsen er tilgangsstyrt og krever avtalt tilgangskode. Ta kontakt dersom du ønsker tilgang eller vil diskutere en mulig pilot.",
-      en: "The survey is access-controlled and requires an agreed access code. Get in touch if you want access or to discuss a possible pilot.",
-    },
+    primaerCta: kontaktFagligCta,
+    sekundaerCta: apneLukketTestflateCta,
+    tilgangNote: tilgangNoteStandard,
   },
   hvem: {
-    tittel: { no: "Hvem passer piloten for?", en: "Who is the pilot for?" },
+    tittel: { no: "Hvem løsningen er relevant for", en: "Who the solution is relevant for" },
     tekst: {
       no: "Piloten passer for SMB-ledere, daglige ledere, rådgivere og kommersielle team som mistenker friksjon i salgsflyt, CRM-bruk, oppfølging eller tilbudsprosesser — og som vil starte med en strukturert diagnose før dypere rådgivning.",
       en: "The pilot suits SMB leaders, managing directors, advisors and commercial teams who suspect friction in sales flow, CRM use, follow-up or proposal processes — and who want to start with a structured diagnosis before deeper advisory work.",
@@ -431,8 +425,8 @@ const salgsflytSjekkenSide: PilotSide = {
       {
         tittel: { no: "Oppfølging", en: "Follow-up" },
         beskrivelse: {
-          no: "Debrief og anbefalt neste steg — for eksempel Verdilekkasje Sprint, CRM-forbedring eller avgrenset rådgivningsløp.",
-          en: "Debrief and recommended next step — for example Value Leak Sprint, CRM improvement or a scoped advisory engagement.",
+          no: "Debrief og anbefalt neste steg — for eksempel prioritering av kommersielle tiltak, CRM-forbedring eller videre arbeidsflyt.",
+          en: "Debrief and recommended next step — for example prioritisation of commercial initiatives, CRM improvement or further workflow work.",
         },
       },
     ],
@@ -451,19 +445,19 @@ const salgsflytSjekkenSide: PilotSide = {
   format: {
     tittel: { no: "Mulig pilotformat", en: "Possible pilot format" },
     tekst: {
-      no: "Et typisk pilotformat kan være en avgrenset diagnose med én til fem respondenter, etterfulgt av kort debrief og anbefalt neste steg. Omfang tilpasses om verktøyet brukes som salgskvalifisering, kundedialog eller forberedelse til rådgivning.",
-      en: "A typical pilot format can be a scoped diagnosis with one to five respondents, followed by a short debrief and recommended next step. Scope is adapted whether the tool is used for sales qualification, customer dialogue or preparation for advisory work.",
+      no: "Et typisk anvendelsesformat kan være en avgrenset diagnose med én til fem respondenter, etterfulgt av kort debrief og anbefalt neste steg. Omfang tilpasses om verktøyet brukes til kommersiell modenhetskartlegging, faglig dialog eller forberedelse til videre prioritering.",
+      en: "A typical application format can be a scoped diagnosis with one to five respondents, followed by a short debrief and recommended next step. Scope is adapted whether the tool is used for commercial maturity mapping, professional dialogue or preparation for further prioritisation.",
     },
     punkter: [
       { no: "1–5 respondenter med avtalt tilgangskode", en: "1–5 respondents with agreed access code" },
       { no: "Spørreundersøkelse på under ti minutter", en: "Survey completed in under ten minutes" },
       { no: "Kunderapport og intern salgsvurdering", en: "Customer report and internal sales assessment" },
       { no: "Kort debrief og prioritering av tiltak", en: "Short debrief and prioritisation of initiatives" },
-      { no: "Anbefaling for videre sprint eller rådgivning", en: "Recommendation for further sprint or advisory work" },
+      { no: "Anbefaling for videre prioritering og arbeidsflyt", en: "Recommendation for further prioritisation and workflow" },
     ],
   },
   utbytte: {
-    tittel: { no: "Hva kunden får ut av det", en: "What the client gains" },
+    tittel: { no: "Hva løsningen dokumenterer", en: "What the solution demonstrates" },
     punkter: [
       { no: "Skreddersydd PDF-rapport med konkrete tiltak", en: "Tailored PDF report with concrete actions" },
       { no: "Raskere avklaring av salgsmodenhet og friksjon", en: "Faster clarification of sales maturity and friction" },
@@ -481,17 +475,14 @@ const salgsflytSjekkenSide: PilotSide = {
     },
   },
   consulting: {
-    tittel: { no: "Kobling til consulting", en: "Link to consulting" },
+    tittel: { no: "Kobling til portefølje og metode", en: "Link to portfolio and methods" },
     tekst: {
-      no: "Piloten kan brukes som inngang til Verdilekkasje Sprint, CRM & Sales Follow-up Sprint eller et bredere arbeid med kommersiell utvikling, salgskvalifisering og rådgivningsforberedelse.",
-      en: "The pilot can be used as an entry point to Value Leak Sprint, CRM & Sales Follow-up Sprint, or broader work on commercial development, sales qualification and advisory preparation.",
+      no: "Løsningen kobles til erfaring, arbeidsmetoder og porteføljeprosjekter innen kommersiell diagnose, CRM og arbeidsflyt som presenteres på Consulting-siden.",
+      en: "The solution connects to experience, working methods and portfolio projects in commercial diagnosis, CRM and workflow presented on the Consulting page.",
     },
-    primaerCta: { no: "Ta kontakt om diagnosepilot", en: "Contact about diagnostic pilot" },
-    sekundaerCta: { no: "Åpne spørreundersøkelsen", en: "Open the survey" },
-    tilgangNote: {
-      no: "Spørreundersøkelsen er tilgangsstyrt og krever avtalt tilgangskode. Ta kontakt dersom du ønsker tilgang eller vil diskutere en mulig pilot.",
-      en: "The survey is access-controlled and requires an agreed access code. Get in touch if you want access or to discuss a possible pilot.",
-    },
+    primaerCta: kontaktFagligCta,
+    sekundaerCta: apneLukketTestflateCta,
+    tilgangNote: tilgangNoteStandard,
   },
   pilotAppUrl: SMB_SALGSFLYT_APP_URL,
 };

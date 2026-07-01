@@ -6,14 +6,14 @@ export async function generateMetadata(
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   return {
-    title: "Consulting | Verdilekkasjer, salg, CRM og kommersiell utvikling — Marius Ottesen Consulting",
+    title: "Kommersiell utvikling, arbeidsflyt og praktisk AI | Marius Ottesen Consulting",
   description:
-    "Jeg hjelper SMB-ledere og kommersielle team med å finne og tette verdilekkasjer i salg, kundedialog, CRM, arbeidsflyt og ledelse.",
+    "Relevant erfaring, arbeidsmetoder og porteføljeprosjekter innen kommersiell ledelse, salgsutvikling, CRM, arbeidsflyt, transformasjon og praktisk AI.",
   metadataBase: new URL("https://www.mariusottesen.no"),
   openGraph: {
-    title: "Consulting | Verdilekkasjer, salg, CRM og kommersiell utvikling — Marius Ottesen Consulting",
+    title: "Kommersiell utvikling, arbeidsflyt og praktisk AI | Marius Ottesen Consulting",
     description:
-      "Kartlegging og forbedring av salg, CRM, kundedialog, oppfølging, arbeidsflyt og ledelse for SMB. AI som virkemiddel når det gir verdi.",
+      "Relevant erfaring, arbeidsmetoder og porteføljeprosjekter innen kommersiell ledelse, salgsutvikling, CRM, arbeidsflyt, transformasjon og praktisk AI.",
     url: "https://www.mariusottesen.no/consulting",
     type: "website",
     siteName: "Marius Ottesen",
@@ -22,15 +22,15 @@ export async function generateMetadata(
         url: "https://www.mariusottesen.no/images/profil.jpg",
         width: 1200,
         height: 630,
-        alt: "Marius Ottesen Consulting — verdilekkasjer, salg, CRM og kommersiell utvikling",
+        alt: "Marius Ottesen Consulting — kommersiell utvikling, arbeidsflyt og praktisk AI",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Consulting | Verdilekkasjer, salg, CRM og kommersiell utvikling — Marius Ottesen Consulting",
+    title: "Kommersiell utvikling, arbeidsflyt og praktisk AI | Marius Ottesen Consulting",
     description:
-      "Kartlegging og forbedring av salg, CRM, kundedialog, oppfølging, arbeidsflyt og ledelse for SMB.",
+      "Relevant erfaring, arbeidsmetoder og porteføljeprosjekter innen kommersiell ledelse, salgsutvikling, CRM, arbeidsflyt, transformasjon og praktisk AI.",
     images: ["https://www.mariusottesen.no/images/profil.jpg"],
   },
   };

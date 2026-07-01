@@ -5,15 +5,16 @@ import Page from "../page";
 export async function generateMetadata(
   parent: ResolvingMetadata
 ): Promise<Metadata> {
+  const description =
+    "Dokumenterte resultater fra kommersiell ledelse, salgsutvikling, vekst, transformasjon og teamutvikling – supplert med egenutviklede AI-prosjekter, apper og arbeidsflyter.";
+
   return {
-    title: "Resultater | Dokumenterte resultater — Marius Ottesen",
-    description:
-      "Dokumenterte resultater med vekst, snuoperasjoner, teamutvikling og kommersiell transformasjon. Nøkkeltall: 67 % salgsvekst, NOK 1 mrd. vekstmål og global #1-ranking.",
+    title: "Dokumenterte resultater og praktisk AI-kompetanse | Marius Ottesen",
+    description,
     metadataBase: new URL("https://www.mariusottesen.no"),
     openGraph: {
-      title: "Resultater | Dokumenterte resultater — Marius Ottesen",
-      description:
-        "Gjennomgående dokumenterte resultater fra vekst, snuoperasjoner, teamutvikling og kommersiell transformasjon — levert i roller med salgsledelse, KPI-styring og helhetlig kommersielt ansvar.",
+      title: "Dokumenterte resultater og praktisk AI-kompetanse | Marius Ottesen",
+      description,
       url: "https://www.mariusottesen.no/resultater",
       type: "website",
       siteName: "Marius Ottesen",
@@ -28,9 +29,8 @@ export async function generateMetadata(
     },
     twitter: {
       card: "summary_large_image",
-      title: "Resultater | Dokumenterte resultater — Marius Ottesen",
-      description:
-        "67 % salgsvekst, bidrag til NOK 1 mrd. vekstmål og global #1-ranking — dokumenterte resultater fra kommersiell ledelse.",
+      title: "Dokumenterte resultater og praktisk AI-kompetanse | Marius Ottesen",
+      description,
       images: ["https://www.mariusottesen.no/images/resultater.jpg"],
     },
   };

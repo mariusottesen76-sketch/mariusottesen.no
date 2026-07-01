@@ -10,17 +10,27 @@ const linkBase =
 
 const linkClass = `${linkBase} text-indigo-400 decoration-indigo-500/70 hover:text-indigo-200`;
 
+const kontaktDialog = {
+  no: "Ta gjerne kontakt dersom du ønsker faglig dialog om løsningen, vurderer relevant lederrolle, eller ønsker å forstå hvordan tilsvarende arbeidsflyter kan være relevante i en fremtidig sammenheng.",
+  en: "Feel free to get in touch if you want professional dialogue about the solution, are considering a relevant leadership role, or want to understand how similar workflows may be relevant in a future context.",
+};
+
+const tilgangIntro = {
+  no: "Løsningen er tilgangsstyrt og utviklet som porteføljeprosjekt / lukket testflate. Den beskrives her for å dokumentere funksjonalitet, læring og praktisk AI-kompetanse.",
+  en: "The solution is access-controlled and developed as a portfolio project / closed test environment. It is described here to document functionality, learning and practical AI competence.",
+};
+
 const pscBlokk = {
   tekst: {
-    no: "Fra prosjekt til pilot: The Predictive Sales Coach kan testes som Sales Meeting Performance Pilot for salgsorganisasjoner som vil styrke møteforberedelse, kundedialog, salgslederinnsikt og læring.",
-    en: "From project to pilot: The Predictive Sales Coach can be tested as a Sales Meeting Performance Pilot for sales organisations that want to strengthen meeting preparation, customer dialogue, sales leadership insight and learning.",
+    no: "Status, modenhet og videre anvendelse: The Predictive Sales Coach er utviklet som en praktisk trenings- og analyseplattform for kundedialog, møteforberedelse og salgsledelse.",
+    en: "Status, maturity and further application: The Predictive Sales Coach is developed as a practical training and analysis platform for customer dialogue, meeting preparation and sales leadership.",
   },
   pilotHref: "/psc",
-  pilotCta: { no: "Se pilotformat", en: "See pilot format" },
-  appCta: { no: "Åpne PSCv2.0 pilotflate", en: "Open PSCv2.0 pilot environment" },
+  pilotCta: { no: "Se hvordan løsningen fungerer", en: "See how the solution works" },
+  appCta: { no: "Åpne tilgangsstyrt løsning", en: "Open access-controlled solution" },
   tilgangNote: {
-    no: "Pilotflaten er tilgangsstyrt og brukes i avtalte testløp. Ta kontakt dersom du ønsker tilgang eller vil diskutere en mulig pilot.",
-    en: "The pilot environment is access-controlled and used in agreed test runs. Get in touch if you want access or to discuss a possible pilot.",
+    no: `${tilgangIntro.no} ${kontaktDialog.no}`,
+    en: `${tilgangIntro.en} ${kontaktDialog.en}`,
   },
   appUrl: PSC_APP_URL,
   accent: "psc" as const,
@@ -28,15 +38,15 @@ const pscBlokk = {
 
 const flowSignalBlokk = {
   tekst: {
-    no: "Fra prosjekt til pilot: FlowSignal kan testes som Team Performance & Samhandling Pilot for team som ønsker bedre dialog, samspill, energi, prioritering og lederoppfølging.",
-    en: "From project to pilot: FlowSignal can be tested as a Team Performance & Collaboration Pilot for teams that want better dialogue, collaboration, energy, prioritisation and leadership follow-up.",
+    no: "Status, modenhet og videre anvendelse: FlowSignal er utviklet som en praktisk arbeidsflate for teamutvikling, samhandling og lederoppfølging.",
+    en: "Status, maturity and further application: FlowSignal is developed as a practical workspace for team development, collaboration and leadership follow-up.",
   },
   pilotHref: "/flowsignal",
-  pilotCta: { no: "Se pilotformat", en: "See pilot format" },
-  appCta: { no: "Åpne FlowSignal pilotflate", en: "Open FlowSignal pilot environment" },
+  pilotCta: { no: "Se hvordan løsningen fungerer", en: "See how the solution works" },
+  appCta: { no: "Åpne tilgangsstyrt løsning", en: "Open access-controlled solution" },
   tilgangNote: {
-    no: "Pilotflaten er tilgangsstyrt og brukes i avtalte testløp. Ta kontakt dersom du ønsker tilgang eller vil diskutere en mulig pilot.",
-    en: "The pilot environment is access-controlled and used in agreed test runs. Get in touch if you want access or to discuss a possible pilot.",
+    no: `${tilgangIntro.no} ${kontaktDialog.no}`,
+    en: `${tilgangIntro.en} ${kontaktDialog.en}`,
   },
   appUrl: FLOW_SIGNAL_APP_URL,
   accent: "flowsignal" as const,
@@ -44,15 +54,15 @@ const flowSignalBlokk = {
 
 const smbSalgsflytBlokk = {
   tekst: {
-    no: "Fra prosjekt til pilot: SMB Salgsflyt-sjekken kan brukes som diagnose- og kvalifiseringskomponent i Verdilekkasje Sprint og CRM & Sales Follow-up Sprint.",
-    en: "From project to pilot: SMB Sales Flow Check can be used as a diagnosis and qualification component in Value Leak Sprint and CRM & Sales Follow-up Sprint.",
+    no: "Status, modenhet og videre anvendelse: SMB Salgsflyt-sjekken er bygget som interaktiv diagnose med scoring, AI-analyse, rapport og adminkonsoll for kommersielle miljøer.",
+    en: "Status, maturity and further application: SMB Sales Flow Check is built as an interactive diagnosis with scoring, AI analysis, reporting and admin console for commercial environments.",
   },
   pilotHref: "/salgsflyt-sjekken",
-  pilotCta: { no: "Se pilotformat", en: "See pilot format" },
-  appCta: { no: "Åpne spørreundersøkelsen", en: "Open the survey" },
+  pilotCta: { no: "Se hvordan løsningen fungerer", en: "See how the solution works" },
+  appCta: { no: "Åpne lukket testflate", en: "Open closed test environment" },
   tilgangNote: {
-    no: "Spørreundersøkelsen er tilgangsstyrt og krever avtalt tilgangskode. Ta kontakt dersom du ønsker tilgang eller vil diskutere en mulig pilot.",
-    en: "The survey is access-controlled and requires an agreed access code. Get in touch if you want access or to discuss a possible pilot.",
+    no: `${tilgangIntro.no} ${kontaktDialog.no}`,
+    en: `${tilgangIntro.en} ${kontaktDialog.en}`,
   },
   appUrl: SMB_SALGSFLYT_APP_URL,
   accent: "default" as const,
@@ -60,13 +70,13 @@ const smbSalgsflytBlokk = {
 
 const aiReadinessScanBlokk = {
   tekst: {
-    no: "Fra prosjekt til pilot: AI Readiness Scan kan brukes som en strukturert inngang til AI-mulighetsverksted, modenhetskartlegging og prioritering av konkrete forbedringstiltak.",
-    en: "From project to pilot: AI Readiness Scan can be used as a structured entry point to AI opportunity workshops, maturity mapping and prioritisation of concrete improvement measures.",
+    no: "Status, modenhet og videre anvendelse: AI Readiness Scan viser hvordan AI-modenhet, prioriteringer og konkrete forbedringstiltak kan struktureres som grunnlag for videre arbeid.",
+    en: "Status, maturity and further application: AI Readiness Scan shows how AI maturity, priorities and concrete improvement measures can be structured as a basis for further work.",
   },
-  appCta: { no: "Åpne AI Readiness Scan", en: "Open AI Readiness Scan" },
+  appCta: { no: "Åpne tilgangsstyrt løsning", en: "Open access-controlled solution" },
   tilgangNote: {
-    no: "Kartleggingen er tilgangsstyrt og krever avtalt tilgangskode. Ta kontakt dersom du ønsker tilgang eller vil diskutere en mulig pilot.",
-    en: "The assessment is access-controlled and requires an agreed access code. Get in touch if you want access or to discuss a possible pilot.",
+    no: `${tilgangIntro.no} ${kontaktDialog.no}`,
+    en: `${tilgangIntro.en} ${kontaktDialog.en}`,
   },
   appUrl: AI_READINESS_SCAN_APP_URL,
   accent: "default" as const,

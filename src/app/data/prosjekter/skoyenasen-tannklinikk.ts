@@ -56,7 +56,7 @@ Prosjektet er bevisst avgrenset mot front-end, pasientdialog og praktisk flyt, i
 
 Prosjektet er relevant for virksomheter som ønsker å forbedre kunde- eller pasientreisen uten å gå rett på høy-risiko AI. Det viser hvordan AI kan brukes i områder med tydelig forretningsverdi, god brukeropplevelse og håndterbar governance.
 
-For arbeidsgivere viser prosjektet hvordan jeg tenker praktisk AI-implementering i en reell virksomhet. For kunder viser det hvordan lignende logikk kan overføres til klinikker, servicebedrifter, rådgivningsmiljøer og SMB-virksomheter med mange manuelle henvendelser.
+For arbeidsgivere viser prosjektet hvordan jeg tenker praktisk AI-implementering i en reell virksomhet. Prosjektet viser hvordan lignende logikk kan overføres til klinikker, servicebedrifter og SMB-virksomheter med mange manuelle henvendelser.
 
 <strong>Status og modenhet</strong>
 
@@ -66,7 +66,7 @@ Konkret virksomhetscase med chatbot og booking på 6 språk. Fokus på pasientre
 
 Prosjektet kan videreutvikles med recall, digital oppfølging og enda tettere informasjonsflyt mellom pasient og klinikk.
 
-<strong>Neste steg</strong>
+<strong>Videre relevans og mulig anvendelse</strong>
 
 ${prosjektKontaktLenke("no")} dersom du ønsker å diskutere hvordan AI kan forbedre kundereise, intake, booking eller oppfølging i en service- eller helseorientert virksomhet.`,
     en: `<strong>What the project is</strong>
@@ -97,7 +97,7 @@ The project is deliberately scoped to front-end, patient dialogue and practical 
 
 The project is relevant for organisations that want to improve the customer or patient journey without going straight to high-risk AI. It shows how AI can be used in areas with clear business value, good user experience and manageable governance.
 
-For employers, the project shows how I approach practical AI implementation in a real organisation. For customers, it shows how similar logic can be transferred to clinics, service businesses, advisory environments and SMB organisations with many manual inquiries.
+For employers, the project shows how I approach practical AI implementation in a real organisation. The project shows how similar logic can be transferred to clinics, service businesses and SMB organisations with many manual inquiries.
 
 <strong>Status and maturity</strong>
 
@@ -107,7 +107,7 @@ Concrete business case with chatbot and booking in 6 languages. Focus on patient
 
 The project can be developed further with recall, digital follow-up and even tighter information flow between patient and clinic.
 
-<strong>Next steps</strong>
+<strong>Further relevance and possible application</strong>
 
 ${prosjektKontaktLenke("en")} if you would like to discuss how AI can improve customer journey, intake, booking or follow-up in a service- or health-oriented organisation.`,
   },

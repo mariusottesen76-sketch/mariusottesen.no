@@ -5,15 +5,15 @@ const data = {
     intro: "Solid erfaring på tvers av kunnskapsintensive B2B-markeder — fra industri, life science og sirkulær økonomi til teknologi og grossistvirksomhet. Gjennomgående ansvar for å profesjonalisere salgsorganisasjoner, drive vekst og lede endringsprosesser i virksomheter med høye krav til kvalitet og leveranseevne. Under følger utvalgte karrierehøydepunkter, ikke en fullstendig kronologisk CV.",
     jobs: [
       {
-        title: "Strategisk rådgiver og AI-utvikling",
-        company: "Marius Ottesen Consulting / Handelshøyskolen BI",
+        title: "Kommersiell utvikling, AI-prosjekter og metodeutvikling",
+        company: "Marius Ottesen Consulting",
         period: "2026 – Nåværende",
         mandate:
-          "Bygge en faglig og kommersiell plattform for rådgivning, pilotprosjekter og praktisk AI-anvendelse innen salg, ledelse, arbeidsflyt og kommersiell utvikling.",
+          "I 2026 har jeg videreutviklet min kompetanse innen praktisk AI, kommersiell arbeidsflyt og metodeutvikling gjennom egne AI-prosjekter, faglig samarbeid og videreutdanning. Marius Ottesen Consulting fungerer som en faglig plattform for metodeutvikling, porteføljeprosjekter og dokumentasjon av erfaring innen kommersiell ledelse, arbeidsflyt og praktisk AI.",
         strategy:
-          'Kombinert kommersiell ledererfaring med videreutvikling innen AI, digital transformasjon og praktisk implementering gjennom <a href="/consulting">Marius Ottesen Consulting</a>, <a href="/prosjekter">egne pilotprosjekter</a> og masterkurset <a href="/prosjekter#prosjektoppgave-strategisk-implementering-2026">Generative AI for Business</a> ved BI.',
+          'Arbeidet omfatter blant annet utvikling av apper, arbeidsflyter og beslutningsstøtte innen AI-modenhet, salgsutvikling, teamutvikling, kundedialog og lederstøtte. Kombinert kommersiell ledererfaring med videreutvikling innen AI og praktisk implementering gjennom <a href="/prosjekter">egenutviklede AI-prosjekter</a>, <a href="/prosjekter#ai-value-lab-oslo-2026">AI Value Lab Oslo</a> og masterkurset <a href="/prosjekter#prosjektoppgave-strategisk-implementering-2026">Generative AI for Business</a> ved BI.',
         results:
-          'Utviklet flere konkrete AI-prosjekter og pilotflater, inkludert <a href="/psc">The Predictive Sales Coach</a>, <a href="/flowsignal">FlowSignal</a>, <a href="/salgsflyt-sjekken">SMB Salgsflyt-sjekken</a> og <a href="/prosjekter#ai-readiness-scan-2026-06">AI Readiness Scan</a>, samt rådgivningskonsepter for verdilekkasjer, CRM, kundedialog, salgsutvikling og teamgjennomføring. Styrket posisjoneringen som kommersiell leder og AI-strateg gjennom <a href="/faginnlegg">faginnlegg</a>, prosjekter, <a href="/consulting">consulting</a> og en tydeligere <a href="/">digital plattform</a>.',
+          'Utviklet flere egenutviklede apper og arbeidsflyter, inkludert <a href="/psc">The Predictive Sales Coach</a>, <a href="/flowsignal">FlowSignal</a>, <a href="/salgsflyt-sjekken">SMB Salgsflyt-sjekken</a>, <a href="/prosjekter#ai-readiness-scan-2026-06">AI Readiness Scan</a>, <a href="/prosjekter#ai-assistert-innsikts-og-innholdsagent-2026">AI-assistert innsikts- og innholdsmotor</a>, <a href="/prosjekter#ai-assistert-innsikts-og-opportunity-agent-2026">agentisk arbeidsflyt</a> og <a href="/prosjekter#ai-arkitektur-beslutningsstotte-2026">AI-arkitektur for beslutningsstøtte</a>. Prosjektene dokumenterer praktisk forståelse av hvordan teknologi, kommersiell innsikt og brukerbehov kan kobles i konkrete løsninger. Deltatt i tverrfaglig læring, erfaringsutveksling og utforsking av reelle problemstillinger gjennom AI Value Lab Oslo. Styrket relevans for faste lederroller innen kommersiell ledelse, transformasjon og AI-relatert forretningsutvikling gjennom <a href="/faginnlegg">faginnlegg</a>, <a href="/prosjekter">porteføljeprosjekter</a> og en tydeligere <a href="/">digital plattform</a>.',
       },
       {
         title: "Nasjonal Salgssjef",
@@ -68,15 +68,15 @@ const data = {
     intro: "Solid experience across knowledge-intensive B2B markets — from industry, life science and circular economy to technology and wholesale. A consistent track record of professionalising sales organisations, accelerating growth, and leading transformation programmes in businesses with exacting standards for quality and delivery. Below are selected career highlights, not a complete chronological CV.",
     jobs: [
       {
-        title: "Strategic advisor and AI development",
-        company: "Marius Ottesen Consulting / BI Norwegian Business School",
+        title: "Commercial development, AI projects and methodology work",
+        company: "Marius Ottesen Consulting",
         period: "2026 – Present",
         mandate:
-          "Build a professional and commercial platform for advisory services, pilot projects and practical AI application in sales, leadership, workflow and commercial development.",
+          "In 2026 I have further developed my competence in practical AI, commercial workflow and methodology work through my own AI projects, professional collaboration and continuing education. Marius Ottesen Consulting serves as a professional platform for methodology development, portfolio projects and documentation of experience in commercial leadership, workflow and practical AI.",
         strategy:
-          'Combined commercial leadership experience with further development in AI, digital transformation and practical implementation through <a href="/consulting">Marius Ottesen Consulting</a>, <a href="/prosjekter">own pilot projects</a> and the <a href="/prosjekter#prosjektoppgave-strategisk-implementering-2026">Generative AI for Business</a> master\'s course at BI.',
+          'The work includes development of apps, workflows and decision support in areas such as AI maturity, sales development, team development, customer dialogue and leadership support. Combined commercial leadership experience with further development in AI and practical implementation through <a href="/prosjekter">custom-built AI projects</a>, <a href="/prosjekter#ai-value-lab-oslo-2026">AI Value Lab Oslo</a> and the <a href="/prosjekter#prosjektoppgave-strategisk-implementering-2026">Generative AI for Business</a> master\'s course at BI.',
         results:
-          'Developed several concrete AI projects and pilot environments, including <a href="/psc">The Predictive Sales Coach</a>, <a href="/flowsignal">FlowSignal</a>, <a href="/salgsflyt-sjekken">SMB Sales Flow Check</a> and <a href="/prosjekter#ai-readiness-scan-2026-06">AI Readiness Scan</a>, plus advisory concepts for value leaks, CRM, customer dialogue, sales development and team execution. Strengthened positioning as commercial leader and AI strategist through <a href="/faginnlegg">articles</a>, projects, <a href="/consulting">consulting</a> and a clearer <a href="/">digital platform</a>.',
+          'Developed several custom-built apps and workflows, including <a href="/psc">The Predictive Sales Coach</a>, <a href="/flowsignal">FlowSignal</a>, <a href="/salgsflyt-sjekken">SMB Sales Flow Check</a>, <a href="/prosjekter#ai-readiness-scan-2026-06">AI Readiness Scan</a>, <a href="/prosjekter#ai-assistert-innsikts-og-innholdsagent-2026">AI-assisted insight and content engine</a>, <a href="/prosjekter#ai-assistert-innsikts-og-opportunity-agent-2026">agentic workflow</a> and <a href="/prosjekter#ai-arkitektur-beslutningsstotte-2026">AI architecture for decision support</a>. The projects document practical understanding of how technology, commercial insight and user needs can be connected in concrete solutions. Participated in cross-disciplinary learning, experience sharing and exploration of real problem areas through AI Value Lab Oslo. Strengthened relevance for permanent leadership roles in commercial leadership, transformation and AI-related business development through <a href="/faginnlegg">articles</a>, <a href="/prosjekter">portfolio projects</a> and a clearer <a href="/">digital platform</a>.',
       },
       {
         title: "National Sales Director",

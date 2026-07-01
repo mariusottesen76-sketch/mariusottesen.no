@@ -64,7 +64,7 @@ Fullført prosjektoppgave, konkret casearbeid og utviklet implementeringslogikk.
 
 Metodikken kan videreutvikles til workshop-format for virksomheter som ønsker å identifisere AI-bruksområder, prioritere tiltak og lage en ansvarlig implementeringsplan.
 
-<strong>Neste steg</strong>
+<strong>Videre relevans og mulig anvendelse</strong>
 
 ${prosjektKontaktLenke("no")} dersom du ønsker å diskutere hvordan et konkret AI-case kan utvikles fra idé til praktisk og ansvarlig implementeringsplan.`,
     en: `<strong>What the project is</strong>
@@ -103,7 +103,7 @@ Completed master's project, concrete case work and developed implementation logi
 
 The methodology can be developed into a workshop format for organisations that want to identify AI use areas, prioritise initiatives and create a responsible implementation plan.
 
-<strong>Next steps</strong>
+<strong>Further relevance and possible application</strong>
 
 ${prosjektKontaktLenke("en")} if you would like to discuss how a concrete AI case can be developed from idea to practical and responsible implementation plan.`,
   },

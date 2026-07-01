@@ -46,7 +46,7 @@ Deretter henter den relevant kontekst, strukturerer innsikten og foreslår neste
 
 Prosjektet er relevant for virksomheter som ønsker å bruke AI til mer enn enkeltstående prompt-svar. Det viser hvordan AI kan støtte kommersielle arbeidsprosesser innen salg, markedsutvikling, møteforberedelse, prioritering og oppfølging.
 
-For arbeidsgivere viser prosjektet evne til å bygge arbeidsflyter som kobler strategi, innsikt og gjennomføring. For kunder viser det hvordan AI kan redusere avstanden mellom informasjon og handling.
+For arbeidsgivere viser prosjektet evne til å bygge arbeidsflyter som kobler strategi, innsikt og gjennomføring. Prosjektet viser hvordan AI kan redusere avstanden mellom informasjon og handling.
 
 <strong>Status og modenhet</strong>
 
@@ -56,7 +56,7 @@ Praktisk AI-prosjekt og arbeidsflyt under videreutvikling. Første versjon hånd
 
 Arbeidsflyten kan videreutvikles til et verktøy for salgsledere, konsulenter, gründere, rekrutterere og kommersielle team som trenger bedre struktur i innsikt, prioritering og oppfølging.
 
-<strong>Neste steg</strong>
+<strong>Videre relevans og mulig anvendelse</strong>
 
 ${prosjektKontaktLenke("no")} dersom du ønsker å diskutere hvordan agentiske arbeidsflyter kan brukes i kommersiell utvikling, salgsoppfølging eller kunnskapsarbeid.`,
     en: `<strong>What the project is</strong>
@@ -85,7 +85,7 @@ It then retrieves relevant context, structures the insight and suggests the next
 
 The project is relevant for organisations that want to use AI for more than one-off prompt responses. It shows how AI can support commercial work processes in sales, market development, meeting preparation, prioritisation and follow-up.
 
-For employers, the project shows the ability to build workflows that connect strategy, insight and execution. For customers, it shows how AI can reduce the distance between information and action.
+For employers, the project shows the ability to build workflows that connect strategy, insight and execution. The project shows how AI can reduce the distance between information and action.
 
 <strong>Status and maturity</strong>
 
@@ -95,7 +95,7 @@ Practical AI project and workflow under further development. The first version h
 
 The workflow can be developed into a tool for sales leaders, consultants, founders, recruiters and commercial teams that need better structure in insight, prioritisation and follow-up.
 
-<strong>Next steps</strong>
+<strong>Further relevance and possible application</strong>
 
 ${prosjektKontaktLenke("en")} if you would like to discuss how agentic workflows can be used in commercial development, sales follow-up or knowledge work.`,
   },

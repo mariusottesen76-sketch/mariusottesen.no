@@ -45,7 +45,7 @@ Deretter bygges et strukturert utkast som kan redigeres, kvalitetssikres og tilp
 
 Prosjektet er relevant for virksomheter som ønsker å bruke AI til å styrke kunnskapsarbeid, lederkommunikasjon, faglig synlighet, markedsinnsikt og intern læring.
 
-For arbeidsgivere viser prosjektet hvordan jeg bruker AI til å strukturere faglig arbeid og gjøre innsikt mer operativ. For kunder viser det hvordan lignende arbeidsflyter kan brukes til strategi, innhold, rådgivning, salgsstøtte eller kompetansebygging.
+For arbeidsgivere viser prosjektet hvordan jeg bruker AI til å strukturere faglig arbeid og gjøre innsikt mer operativ. Prosjektet viser hvordan lignende arbeidsflyter kan brukes til strategi, innhold, salgsstøtte og kompetansebygging.
 
 <strong>Status og modenhet</strong>
 
@@ -55,7 +55,7 @@ Egenutviklet arbeidsflyt og grunnmotor for videre agentisk utvikling. Prosjektet
 
 Løsningen kan videreutvikles til en innsiktsmotor for ledere, konsulenter, salgsorganisasjoner, fagmiljøer og virksomheter som ønsker å gjøre intern og ekstern kunnskap mer anvendbar.
 
-<strong>Neste steg</strong>
+<strong>Videre relevans og mulig anvendelse</strong>
 
 ${prosjektKontaktLenke("no")} dersom du ønsker å diskutere hvordan AI kan gjøre kunnskapsbanker, faginnhold og lederkommunikasjon mer operativt.`,
     en: `<strong>What the project is</strong>
@@ -84,7 +84,7 @@ A structured draft is then built that can be edited, quality-checked and adapted
 
 The project is relevant for organisations that want to use AI to strengthen knowledge work, leadership communication, professional visibility, market insight and internal learning.
 
-For employers, the project shows how I use AI to structure professional work and make insight more operational. For customers, it shows how similar workflows can be used for strategy, content, advisory work, sales support or competence building.
+For employers, the project shows how I use AI to structure professional work and make insight more operational. The project shows how similar workflows can be used for strategy, content, sales support and competence building.
 
 <strong>Status and maturity</strong>
 
@@ -94,7 +94,7 @@ Custom-developed workflow and core engine for further agentic development. The p
 
 The solution can be developed into an insight engine for leaders, consultants, sales organisations, professional communities and businesses that want to make internal and external knowledge more applicable.
 
-<strong>Next steps</strong>
+<strong>Further relevance and possible application</strong>
 
 ${prosjektKontaktLenke("en")} if you would like to discuss how AI can make knowledge bases, professional content and leadership communication more operational.`,
   },

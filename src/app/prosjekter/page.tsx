@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import Page from "../page";
 
 const ogDescription =
-  "AI-prosjekter og utvikling som skaper kommersiell verdi. Fra prototyper til produksjon — konkrete løsninger innen salgstrening, beslutningsstøtte og prosessoptimalisering.";
+  "Egenutviklede AI-prosjekter, apper, demonstratorer og casearbeid innen kommersiell ledelse, salgsutvikling, arbeidsflyt, transformasjon, beslutningsstøtte og praktisk AI.";
 
 export const metadata: Metadata = {
-  title: "Prosjekter | AI & Utvikling — Marius Ottesen",
+  title: "AI-prosjekter og faglig utvikling | Marius Ottesen",
   description: ogDescription,
   metadataBase: new URL("https://www.mariusottesen.no"),
   openGraph: {
-    title: "Prosjekter | AI & Utvikling — Marius Ottesen",
+    title: "AI-prosjekter og faglig utvikling | Marius Ottesen",
     description: ogDescription,
     url: "https://www.mariusottesen.no/prosjekter",
     type: "website",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Prosjekter | AI & Utvikling — Marius Ottesen",
+    title: "AI-prosjekter og faglig utvikling | Marius Ottesen",
     description: ogDescription,
     images: ["https://www.mariusottesen.no/images/prosjekt-bilde.jpg"],
   },

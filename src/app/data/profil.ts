@@ -24,10 +24,10 @@ export type ProfilData = {
 const data: Record<Lang, ProfilData> = {
   no: {
     ingress:
-      "Jeg hjelper virksomheter med å skape retning, vekst og gjennomføring i skjæringspunktet mellom kommersiell ledelse, salgsutvikling, transformasjon og praktisk bruk av AI.",
+      "Jeg har erfaring med å skape retning, vekst og gjennomføring i skjæringspunktet mellom kommersiell ledelse, salgsutvikling, transformasjon og praktisk bruk av AI.",
 
     intro:
-      "Jeg er en kommersiell leder med lang erfaring fra å bygge vekst, styrke lønnsomhet og utvikle team i komplekse B2B-virksomheter. Jeg har ledet salg, marked og kommersiell utvikling med personal- og P/L-ansvar, og trives best når strategi skal omsettes til tydelig retning, sterk gjennomføring og målbare resultater.",
+      "Jeg er en kommersiell leder med lang erfaring fra å bygge vekst, styrke lønnsomhet og utvikle team i komplekse B2B-virksomheter. Jeg har ledet salg, marked og kommersiell utvikling med personal- og P/L-ansvar, og trives best når strategi skal omsettes til tydelig retning, sterk gjennomføring og målbare resultater.\n\nJeg er aktuell for faste lederroller der virksomheten trenger tydelig retning, sterkere gjennomføring og bedre samspill mellom strategi, salg, drift og teknologi.",
 
     roller: AKTUELL_FOR_ROLLER.no,
 
@@ -51,9 +51,9 @@ const data: Record<Lang, ProfilData> = {
     ],
 
     aiSeksjon:
-      "Jeg bruker AI, data og nye arbeidsformer til å strukturere innsikt, forbedre arbeidsflyt og styrke kommersiell gjennomføring. Mer konkret vises dette i AI-prosjekter, consulting og faginnlegg.",
+      "Jeg bruker AI, data og nye arbeidsformer som lederverktøy for å strukturere innsikt, forbedre arbeidsflyt og styrke kommersiell gjennomføring.\n\nDe egenutviklede AI-prosjektene fungerer som en konkret portefølje. De viser hvordan kommersiell forståelse, brukerbehov, arbeidsflyt og AI kan kombineres i praktiske løsninger.",
 
-    utdanning: `Gjennom det fullførte masterkurset *Generative AI for Business* ved Handelshøyskolen BI har jeg utviklet strategisk AI-kompetanse med fokus på lederverktøy for beslutningsstøtte, effektiv dokumentasjon og økt kommersiell effektivitet. Jeg har også tatt initiativ til *AI Value Lab Oslo*, et tverrfaglig lærings- og utviklingsinitiativ med fokus på praktisk testing, ansvarlig bruk av AI og reell verdiskaping gjennom virksomhetsnære case.
+    utdanning: `Gjennom det fullførte masterkurset *Generative AI for Business* ved Handelshøyskolen BI har jeg utviklet strategisk AI-kompetanse med fokus på lederverktøy for beslutningsstøtte, effektiv dokumentasjon og økt kommersiell effektivitet. Jeg deltar også i *AI Value Lab Oslo*, et tverrfaglig initiativ for AI-læring, erfaringsutveksling og utforsking av praktiske problemstillinger i skjæringspunktet mellom teknologi, forretning og organisasjon.
 
 Jeg er utdannet *Master of Science in Business Administration (Siviløkonom)* fra USA, og har en *Executive Master of Management* fra BI med spesialisering i strategi, kommunikasjon og AI.`,
 
@@ -76,10 +76,10 @@ Jeg er utdannet *Master of Science in Business Administration (Siviløkonom)* fr
   },
   en: {
     ingress:
-      "I help organisations create direction, growth and execution at the intersection of commercial leadership, sales development, transformation and practical use of AI.",
+      "I have experience creating direction, growth and execution at the intersection of commercial leadership, sales development, transformation and practical use of AI.",
 
     intro:
-      "I am a commercial leader with extensive experience building growth, strengthening profitability and developing teams in complex B2B organisations. I have led sales, marketing and commercial development with people and P&L accountability, and thrive when strategy must translate into clear direction, strong execution and measurable results.",
+      "I am a commercial leader with extensive experience building growth, strengthening profitability and developing teams in complex B2B organisations. I have led sales, marketing and commercial development with people and P&L accountability, and thrive best when strategy must translate into clear direction, strong execution and measurable results.\n\nI am relevant for permanent leadership roles where the organisation needs clearer direction, stronger execution and better alignment between strategy, sales, operations and technology.",
 
     roller: AKTUELL_FOR_ROLLER.en,
 
@@ -103,9 +103,9 @@ Jeg er utdannet *Master of Science in Business Administration (Siviløkonom)* fr
     ],
 
     aiSeksjon:
-      "I use AI, data and new ways of working to structure insight, improve workflow and strengthen commercial execution. This is shown more concretely in AI projects, consulting and articles.",
+      "I use AI, data and new ways of working as leadership tools to structure insight, improve workflow and strengthen commercial execution.\n\nThe custom AI projects function as a concrete portfolio. They show how commercial understanding, user needs, workflow and AI can be combined in practical solutions.",
 
-    utdanning: `Through the completed master's course *Generative AI for Business* at BI Norwegian Business School, I have developed strategic AI competence focused on leadership tools for decision support, efficient documentation and enhanced commercial effectiveness. I have also initiated *AI Value Lab Oslo*, a cross-disciplinary learning and development initiative focused on practical testing, responsible use of AI and real value creation through business-near cases.
+    utdanning: `Through the completed master's course *Generative AI for Business* at BI Norwegian Business School, I have developed strategic AI competence focused on leadership tools for decision support, efficient documentation and enhanced commercial effectiveness. I also participate in *AI Value Lab Oslo*, a cross-disciplinary initiative for AI learning, experience sharing and exploration of practical issues at the intersection of technology, business and organisation.
 
 I hold a *Master of Science in Business Administration* from the USA, and an *Executive Master of Management* from BI specialising in strategy, communication and AI.`,
 

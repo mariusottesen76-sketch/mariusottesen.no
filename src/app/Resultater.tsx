@@ -223,14 +223,14 @@ export default function Resultater() {
       selskap: "Marius Ottesen Consulting",
       rolle:
         lang === "no"
-          ? "Strategisk rådgiver og AI-utvikling"
-          : "Strategic advisor and AI development",
+          ? "Kommersiell utvikling, AI-prosjekter og metodeutvikling"
+          : "Commercial development, AI projects and methodology work",
       periode: lang === "no" ? "2026 – Nåværende" : "2026 – Present",
       resultater: getMocResultaterPunkter(lang),
       relevans:
         lang === "no"
-          ? "Kommersiell rådgivning, digital transformasjon, interim ledelse, AI-prosjekter, pilotutvikling og faglig posisjonering for arbeidsgivere og kunder."
-          : "Commercial advisory, digital transformation, interim leadership, AI projects, pilot development and professional positioning for employers and clients.",
+          ? "Faglig porteføljearbeid, praktisk AI-kompetanse, metodeutvikling og dokumentert gjennomføringsevne. Styrker relevans for faste lederroller innen kommersiell ledelse, transformasjon og AI-relatert forretningsutvikling."
+          : "Professional portfolio work, practical AI competence, methodology development and documented execution capability. Strengthens relevance for permanent leadership roles in commercial leadership, transformation and AI-related business development.",
       farge: "indigo",
     },
     ...ovrigeSelskapsresultater,
@@ -422,11 +422,15 @@ export default function Resultater() {
           >
             <h2 id="resultater-cta-heading" className={sectionTitleClass}>
               {lang === "no"
-                ? "Vil du se hvordan erfaringen kan være relevant for din virksomhet?"
-                : "Would you like to see how this experience could be relevant for your organisation?"}
+                ? "Se erfaring, AI-prosjekter og dokumentasjon"
+                : "See experience, AI projects and documentation"}
             </h2>
             <p className="text-sm text-slate-300 leading-relaxed">
               {lang === "no" ? "Se også " : "See also "}
+              <Link href="/prosjekter" className={linkClass} aria-label="Gå til AI-prosjekter">
+                {lang === "no" ? "AI-prosjekter og apper" : "AI projects and apps"}
+              </Link>
+              {", "}
               <Link href="/erfaring" className={linkClass} aria-label="Gå til Erfaring">
                 Erfaring
               </Link>
@@ -445,10 +449,16 @@ export default function Resultater() {
             <div>
               <Link
                 href="/kontakt"
-                aria-label="Gå til kontaktsiden"
+                aria-label={
+                  lang === "no"
+                    ? "Ta kontakt om aktuell lederrolle, rekrutteringsdialog eller faglig problemstilling"
+                    : "Get in touch about a current leadership role, recruitment dialogue or professional topic"
+                }
                 className="inline-flex items-center gap-3 bg-white text-black px-8 py-4 rounded-full font-black uppercase text-sm hover:bg-indigo-500 hover:text-white transition-all italic shadow-lg"
               >
-                {lang === "no" ? "Ta kontakt" : "Get in touch"}
+                {lang === "no"
+                  ? "Ta kontakt om aktuell lederrolle"
+                  : "Get in touch about a leadership role"}
                 <ChevronRight size={18} aria-hidden="true" />
               </Link>
             </div>

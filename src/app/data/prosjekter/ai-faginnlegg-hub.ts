@@ -58,9 +58,9 @@ Løpende fagspor og levende kunnskapsarkiv, med kobling til LinkedIn, BI-arbeid,
 
 Fagsporet kan videreutvikles med anbefalte lesestier for ulike målgrupper, for eksempel rekrutterere, ledere, SMB-kunder, salgsorganisasjoner og samarbeidspartnere.
 
-<strong>Neste steg</strong>
+<strong>Videre relevans og mulig anvendelse</strong>
 
-${prosjektFaginnleggNesteStegLenker("no")} ${prosjektKontaktLenke("no")} ved ønske om foredrag, workshop, sparring eller samarbeid.`,
+${prosjektFaginnleggNesteStegLenker("no")} ${prosjektKontaktLenke("no", "Ta kontakt for faglig dialog")} om aktuell rolle, relevant problemstilling eller mulig fremtidig samarbeid.`,
     en: `<strong>What the project is</strong>
 
 This is not a single product, but a curated professional track where I explore how AI affects leadership, commercial priorities, transformation and value creation.
@@ -99,8 +99,8 @@ Ongoing professional track and living knowledge archive, linked to LinkedIn, BI 
 
 The track can be developed with recommended reading paths for different audiences, for example recruiters, leaders, SMB customers, sales organisations and partners.
 
-<strong>Next steps</strong>
+<strong>Further relevance and possible application</strong>
 
-${prosjektFaginnleggNesteStegLenker("en")} ${prosjektKontaktLenke("en")} if you would like talks, workshops, sparring or collaboration.`,
+${prosjektFaginnleggNesteStegLenker("en")} ${prosjektKontaktLenke("en", "Get in touch for a professional conversation")} about a current role, a relevant topic or possible future collaboration.`,
   },
 };

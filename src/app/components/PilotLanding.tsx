@@ -80,7 +80,7 @@ function PilotCtaer({
           href={side.pilotAppUrl}
           target="_blank"
           rel="noopener noreferrer"
-          aria-label={`${t(sekundaer, lang)} (${lang === "no" ? "tilgangsstyrt pilotflate, ny fane" : "access-controlled pilot environment, new tab"})`}
+          aria-label={`${t(sekundaer, lang)} (${lang === "no" ? "tilgangsstyrt løsning, ny fane" : "access-controlled solution, new tab"})`}
           className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-black uppercase text-xs border border-slate-600/60 text-slate-400 hover:border-indigo-500/40 hover:text-indigo-300 hover:bg-indigo-500/5 transition-all italic focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
         >
           {t(sekundaer, lang)}
@@ -139,7 +139,7 @@ function PilotLandingInner({ slug }: { slug: PilotSide["slug"] }) {
 
       <header className="border-b border-white/10 pb-8 mb-10">
         <p className="text-[10px] font-black uppercase tracking-widest text-indigo-400 mb-3">
-          {lang === "no" ? "Pilotflate" : "Pilot environment"}
+          {lang === "no" ? "Porteføljeprosjekt" : "Portfolio project"}
         </p>
         <h1 className={`${pageTitleClass} mb-3 flex flex-wrap items-baseline gap-x-2`}>
           <span>{t(side.hero.tittel, lang)}</span>
@@ -212,7 +212,7 @@ function PilotLandingInner({ slug }: { slug: PilotSide["slug"] }) {
         <p className={`text-slate-300 ${bodyTextClass}`}>{t(side.consulting.tekst, lang)}</p>
         <p className="text-sm">
           <Link href="/consulting" className={linkClass}>
-            {lang === "no" ? "Se consulting-tjenester" : "See consulting services"}
+            {lang === "no" ? "Se kompetanseområder og portefølje" : "See competence areas and portfolio"}
           </Link>
         </p>
         <PilotCtaer side={side} variant="footer" />

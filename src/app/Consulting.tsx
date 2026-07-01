@@ -29,18 +29,56 @@ import {
 
 function getKategorier(lang: "no" | "en") {
   return lang === "no"
-    ? ["Strategi", "Prosess", "Implementering", "Foredrag / workshop", "Annet"]
-    : ["Strategy", "Process", "Implementation", "Talk / workshop", "Other"];
+    ? ["Aktuell lederrolle", "Rekruttering eller kandidatdialog", "Faglig dialog", "Mulig fremtidig samarbeid", "Annet"]
+    : ["Relevant leadership role", "Recruitment or candidate dialogue", "Professional dialogue", "Possible future collaboration", "Other"];
 }
 
-function getBudsjett(lang: "no" | "en") {
+function getKategoriFeilmelding(lang: "no" | "en") {
   return lang === "no"
-    ? ["Velg budsjettramme (valgfritt)", "Under 50 000 NOK", "50 000 – 150 000 NOK", "150 000 – 500 000 NOK", "Over 500 000 NOK", "Usikker / Ønsker rådgivning"]
-    : ["Select indicative budget (optional)", "Under NOK 50,000", "NOK 50,000 – 150,000", "NOK 150,000 – 500,000", "Above NOK 500,000", "To be determined / Advisory needed"];
+    ? "Velg hva du ønsker å komme i dialog om."
+    : "Please choose what you would like to discuss.";
 }
 
 const inputClass =
   "w-full bg-slate-950/80 border border-white/10 rounded-xl px-5 py-4 text-white placeholder-slate-600 text-sm focus:outline-none focus:border-indigo-500/50 focus:ring-1 focus:ring-indigo-500/20 transition-all";
+
+function buildMailtoBody(
+  lang: "no" | "en",
+  data: {
+    navn: string;
+    epost: string;
+    telefon: string;
+    firma: string;
+    stilling: string;
+    kategoriTekst: string;
+    beskrivelse: string;
+  }
+): string {
+  const trim = (value: string) => value.trim();
+  const lines: string[] = [];
+
+  if (lang === "no") {
+    lines.push("HENVENDELSE FRA MARIUSOTTESEN.NO", "─".repeat(40), "");
+    lines.push(`Navn: ${data.navn}`);
+    lines.push(`E-post: ${data.epost}`);
+    if (trim(data.telefon)) lines.push(`Telefon: ${data.telefon}`);
+    if (trim(data.firma)) lines.push(`Firma / virksomhet: ${data.firma}`);
+    if (trim(data.stilling)) lines.push(`Stilling / rolle: ${data.stilling}`);
+    lines.push(`Hva ønsker personen å komme i dialog om?: ${data.kategoriTekst}`);
+    lines.push("", "KORT MELDING", "─".repeat(40), data.beskrivelse);
+  } else {
+    lines.push("INQUIRY FROM MARIUSOTTESEN.NO", "─".repeat(40), "");
+    lines.push(`Name: ${data.navn}`);
+    lines.push(`Email: ${data.epost}`);
+    if (trim(data.telefon)) lines.push(`Phone: ${data.telefon}`);
+    if (trim(data.firma)) lines.push(`Company / organization: ${data.firma}`);
+    if (trim(data.stilling)) lines.push(`Position / role: ${data.stilling}`);
+    lines.push(`What would they like to discuss?: ${data.kategoriTekst}`);
+    lines.push("", "SHORT MESSAGE", "─".repeat(40), data.beskrivelse);
+  }
+
+  return lines.join("\n");
+}
 
 const pakkeLabelClass = "text-[10px] font-black uppercase tracking-widest text-indigo-400 mb-1";
 const pakkeBodyClass = "text-sm text-slate-400 leading-relaxed font-light";
@@ -198,14 +236,12 @@ export default function Consulting() {
   const { lang } = useLanguage();
   const tr = (key: string) => getTranslation(key, lang);
   const kategorier = getKategorier(lang);
-  const budsjettAlternativer = getBudsjett(lang);
   const aiReiseSteps = getAiReiseSteps(lang);
   const hovedpakker = getHovedpakker(lang);
   const spesialisertePakker = getSpesialisertePakker(lang);
   const metoder = getConsultingMetoder(lang);
   const foredrag = getConsultingForedragData(lang);
-  const [valgtKategori, setValgtKategori] = useState<string[]>([]);
-  const [budsjett, setBudsjett] = useState("");
+  const [kategori, setKategori] = useState("");
   const [navn, setNavn] = useState("");
   const [firma, setFirma] = useState("");
   const [epost, setEpost] = useState("");
@@ -215,17 +251,19 @@ export default function Consulting() {
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [feilmelding, setFeilmelding] = useState("");
 
-  const toggleKategori = (k: string) => {
-    setValgtKategori((prev) => (prev.includes(k) ? prev.filter((x) => x !== k) : [...prev, k]));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setStatus("sending");
     setFeilmelding("");
 
-    const kategoriTekst = valgtKategori.length > 0 ? valgtKategori.join(", ") : "Ikke spesifisert";
-    const budsjettTekst = budsjett || "Ikke spesifisert";
+    if (!kategori.trim()) {
+      setStatus("error");
+      setFeilmelding(getKategoriFeilmelding(lang));
+      return;
+    }
+
+    setStatus("sending");
+
+    const kategoriTekst = kategori.trim();
 
     try {
       const res = await fetch("/api/send", {
@@ -237,8 +275,7 @@ export default function Consulting() {
           epost,
           telefon,
           stilling,
-          kategorier: valgtKategori,
-          budsjett,
+          kategori: kategoriTekst,
           beskrivelse,
         }),
       });
@@ -250,7 +287,9 @@ export default function Consulting() {
           sendViaMail();
           return;
         }
-        throw new Error(data.error || "Noe gikk galt");
+        setStatus("error");
+        setFeilmelding(data.error || (lang === "no" ? "Noe gikk galt" : "Something went wrong"));
+        return;
       }
 
       setStatus("success");
@@ -261,20 +300,23 @@ export default function Consulting() {
     }
 
     function sendViaMail() {
-      const emne = encodeURIComponent(`Ny forespørsel fra ${navn}${firma ? ` – ${firma}` : ""}`);
+      if (!kategori.trim()) {
+        setStatus("error");
+        setFeilmelding(getKategoriFeilmelding(lang));
+        return;
+      }
+
+      const emne = encodeURIComponent("Ny henvendelse fra mariusottesen.no");
       const kropp = encodeURIComponent(
-        `FORESPØRSEL – MARIUS OTTESEN CONSULTING\n` +
-          `${"─".repeat(40)}\n\n` +
-          `Navn: ${navn}\n` +
-          `Firma: ${firma || "–"}\n` +
-          `Stilling: ${stilling || "–"}\n` +
-          `E-post: ${epost}\n` +
-          `Telefon: ${telefon || "–"}\n` +
-          `Kategori: ${kategoriTekst}\n` +
-          `Budsjettramme: ${budsjettTekst}\n\n` +
-          `PROSJEKTBESKRIVELSE\n` +
-          `${"─".repeat(40)}\n` +
-          `${beskrivelse}\n`
+        buildMailtoBody(lang, {
+          navn,
+          epost,
+          telefon,
+          firma,
+          stilling,
+          kategoriTekst,
+          beskrivelse,
+        })
       );
       const cc = epost ? `&cc=${encodeURIComponent(epost)}` : "";
       window.open(`mailto:marius.ottesen.76@gmail.com?subject=${emne}&body=${kropp}${cc}`, "_self");
@@ -284,13 +326,12 @@ export default function Consulting() {
     }
 
     function resetSkjema() {
+      setKategori("");
       setNavn("");
       setFirma("");
       setEpost("");
       setTelefon("");
       setStilling("");
-      setValgtKategori([]);
-      setBudsjett("");
       setBeskrivelse("");
     }
   };
@@ -318,11 +359,10 @@ export default function Consulting() {
 
           <div className="flex-1 min-w-0 flex flex-col">
             <p className="text-[10px] font-black uppercase tracking-widest text-indigo-400 mb-3">{tr("cons.brand")}</p>
-            <h1 className={`${pageTitleClass} mb-4`}>
-              {tr("cons.title.1")} <br />
-              <span className="text-indigo-500">{tr("cons.title.2")}</span>
-            </h1>
+            <h1 className={`${pageTitleClass} mb-3`}>{tr("cons.title.1")}</h1>
+            <p className="text-lg md:text-xl text-indigo-300/90 font-semibold leading-snug mb-4">{tr("cons.title.2")}</p>
             <p className={pageIntroClass}>{tr("cons.intro.1")}</p>
+            <p className={`${pageIntroClass} mt-4`}>{tr("cons.intro.2")}</p>
           </div>
         </div>
       </section>
@@ -348,8 +388,10 @@ export default function Consulting() {
 
       <section aria-labelledby="cons-foredrag-heading" className="mb-12">
         <SectionHeading id="cons-foredrag-heading">{foredrag.title}</SectionHeading>
-        <p className="text-slate-400 text-base md:text-lg leading-relaxed font-light mb-4 w-full min-w-0 max-w-none">{foredrag.ingress}</p>
-        <p className="text-slate-400 text-sm leading-relaxed font-light mb-6 w-full min-w-0 max-w-none">{foredrag.stotte}</p>
+        <p className="text-slate-400 text-base md:text-lg leading-relaxed font-light mb-6 w-full min-w-0 max-w-none">{foredrag.ingress}</p>
+        {foredrag.stotte ? (
+          <p className="text-slate-400 text-sm leading-relaxed font-light mb-6 w-full min-w-0 max-w-none">{foredrag.stotte}</p>
+        ) : null}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
           {foredrag.kort.map((kort) => (
             <div key={kort.title} className="p-4 bg-slate-900/40 rounded-xl border border-slate-800 space-y-2">
@@ -421,7 +463,7 @@ export default function Consulting() {
       <section aria-labelledby="cons-dialog-heading" className="mb-12">
         <SectionHeading id="cons-dialog-heading">{tr("cons.dialog")}</SectionHeading>
         <div className="bg-slate-900/40 rounded-2xl border border-white/10 shadow-xl p-8 md:p-12">
-          <p className="text-slate-400 italic font-light text-lg mb-6 w-full min-w-0 max-w-none">{tr("cons.dialog.intro")}</p>
+          <p className="text-slate-400 italic font-light text-lg mb-6 w-full min-w-0 max-w-none whitespace-pre-line">{tr("cons.dialog.intro")}</p>
 
           <form onSubmit={handleSubmit} className="space-y-5">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -493,55 +535,35 @@ export default function Consulting() {
               />
             </div>
 
-            <div className="space-y-3">
+            <div className="space-y-2">
               <label className="text-[11px] font-black uppercase tracking-widest text-slate-500">
-                {lang === "no" ? "Hva gjelder henvendelsen?" : "What is the inquiry about?"}
+                {lang === "no" ? "Hva ønsker du å komme i dialog om?" : "What would you like to discuss?"}{" "}
+                <span className="text-indigo-500">*</span>
               </label>
-              <div className="flex flex-wrap gap-3">
-                {kategorier.map((k) => {
-                  const aktiv = valgtKategori.includes(k);
-                  return (
-                    <button
-                      key={k}
-                      type="button"
-                      onClick={() => toggleKategori(k)}
-                      className={`px-5 py-2.5 rounded-full text-sm font-bold uppercase tracking-wider transition-all duration-200 border ${
-                        aktiv
-                          ? "bg-indigo-500/20 border-indigo-400/50 text-indigo-300 shadow-lg shadow-indigo-500/10"
-                          : "bg-slate-950/60 border-white/10 text-slate-500 hover:border-white/20 hover:text-slate-300"
-                      }`}
-                    >
-                      {k}
-                    </button>
-                  );
-                })}
-              </div>
+              <select
+                required
+                value={kategori}
+                onChange={(e) => {
+                  setKategori(e.target.value);
+                  if (feilmelding) setFeilmelding("");
+                  if (status === "error") setStatus("idle");
+                }}
+                className={`${inputClass} ${kategori ? "text-white" : "text-slate-500"}`}
+              >
+                <option value="" disabled>
+                  {lang === "no" ? "Velg tema" : "Choose a topic"}
+                </option>
+                {kategorier.map((k) => (
+                  <option key={k} value={k} className="text-white">
+                    {k}
+                  </option>
+                ))}
+              </select>
             </div>
 
             <div className="space-y-2">
               <label className="text-[11px] font-black uppercase tracking-widest text-slate-500">
-                {lang === "no" ? "Budsjettramme" : "Budget range"}{" "}
-                <span className="normal-case tracking-normal font-medium">{lang === "no" ? "(valgfritt)" : "(optional)"}</span>
-              </label>
-              <div className="relative">
-                <select
-                  value={budsjett}
-                  onChange={(e) => setBudsjett(e.target.value)}
-                  className="w-full appearance-none bg-slate-950/80 border border-white/10 rounded-xl px-5 py-4 text-sm text-slate-400 focus:outline-none focus:border-indigo-500/50 focus:ring-1 focus:ring-indigo-500/20 transition-all cursor-pointer"
-                >
-                  {budsjettAlternativer.map((alt, i) => (
-                    <option key={alt} value={i === 0 ? "" : alt} className="bg-slate-950 text-slate-300">
-                      {alt}
-                    </option>
-                  ))}
-                </select>
-                <ChevronDown size={18} className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-600 pointer-events-none" aria-hidden="true" />
-              </div>
-            </div>
-
-            <div className="space-y-2">
-              <label className="text-[11px] font-black uppercase tracking-widest text-slate-500">
-                {lang === "no" ? "Prosjektbeskrivelse" : "Project description"} <span className="text-indigo-500">*</span>
+                {lang === "no" ? "Kort melding" : "Short message"} <span className="text-indigo-500">*</span>
               </label>
               <textarea
                 required
@@ -550,8 +572,8 @@ export default function Consulting() {
                 onChange={(e) => setBeskrivelse(e.target.value)}
                 placeholder={
                   lang === "no"
-                    ? "Beskriv kort hva du trenger hjelp med, hvilke utfordringer du står overfor, eller hva du ønsker å oppnå..."
-                    : "Please outline the challenge you are facing, the objectives you want to achieve, and any relevant context..."
+                    ? "Skriv kort hva du ønsker å ta dialog om, hvilken rolle eller problemstilling det gjelder, eller annen relevant kontekst..."
+                    : "Briefly describe what you would like to discuss, which role or topic it concerns, or other relevant context..."
                 }
                 className={`${inputClass} leading-relaxed resize-none`}
               />

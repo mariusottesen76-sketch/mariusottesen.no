@@ -5,23 +5,24 @@ import type { Metadata } from "next";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Marius Ottesen | Kommersiell Leder & AI-Strateg (Kunstig Intelligens)",
+  title: "Marius Ottesen | Kommersiell leder, transformasjon og praktisk AI",
   description:
-    "Kommersiell leder med 25+ års erfaring fra B2B-markeder. AI-rådgiver (kunstig intelligens) som hjelper virksomheter med å omsette teknologi til konkret kommersiell verdi. Marius Ottesen Consulting — AI-strategi, prosessoptimalisering og digital transformasjon.",
+    "Kommersiell leder med erfaring fra salgsledelse, vekst, P/L-ansvar, teamutvikling, transformasjon og praktisk AI. Aktuell for lederroller innen kommersiell ledelse, salgsledelse og forretningsutvikling.",
   keywords: [
     "Marius Ottesen",
     "kommersiell leder",
-    "AI-strateg",
+    "praktisk AI",
     "kunstig intelligens",
-    "AI-rådgiver",
+    "AI-prosjekter",
     "KI",
     "AI strategy",
     "commercial leader",
     "digital transformasjon",
-    "prosessoptimalisering",
     "salgsledelse",
+    "forretningsutvikling",
     "B2B",
     "Marius Ottesen Consulting",
+    "porteføljeprosjekter",
   ],
   authors: [{ name: "Marius Ottesen" }],
   creator: "Marius Ottesen",
@@ -39,24 +40,24 @@ export const metadata: Metadata = {
     url: "https://www.mariusottesen.no",
     siteName: "Marius Ottesen",
     // Default verdier - kan overstyres av child routes
-    title: "Marius Ottesen | Kommersiell Leder & AI-Strateg",
+    title: "Marius Ottesen | Kommersiell leder, transformasjon og praktisk AI",
     description:
-      "25+ års kommersiell ledererfaring — nå kombinert med AI-kompetanse (kunstig intelligens) for virksomheter som vil skape konkret verdi av ny teknologi.",
+      "Kommersiell leder med erfaring fra salgsledelse, vekst, P/L-ansvar, teamutvikling, transformasjon og praktisk AI. Aktuell for lederroller innen kommersiell ledelse, salgsledelse og forretningsutvikling.",
     images: [
       {
         url: "https://www.mariusottesen.no/images/profil.jpg",
         width: 1200,
         height: 630,
-        alt: "Marius Ottesen — Kommersiell Leder & AI-Strateg",
+        alt: "Marius Ottesen — Kommersiell leder",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     // Default verdier - kan overstyres av child routes
-    title: "Marius Ottesen | Kommersiell Leder & AI-Strateg",
+    title: "Marius Ottesen | Kommersiell leder, transformasjon og praktisk AI",
     description:
-      "25+ års kommersiell ledererfaring — nå kombinert med AI-kompetanse for virksomheter som vil skape konkret verdi av ny teknologi.",
+      "Kommersiell leder med erfaring fra salgsledelse, vekst, P/L-ansvar, teamutvikling, transformasjon og praktisk AI. Aktuell for lederroller innen kommersiell ledelse, salgsledelse og forretningsutvikling.",
     images: ["https://www.mariusottesen.no/images/profil.jpg"],
   },
   robots: {
@@ -110,9 +111,9 @@ export default function RootLayout({
                   "@type": "Person",
                   name: "Marius Ottesen",
                   url: "https://www.mariusottesen.no",
-                  jobTitle: "Kommersiell Leder & AI-Strateg",
+                  jobTitle: "Kommersiell leder",
                   description:
-                    "Kommersiell leder med 25+ års erfaring fra B2B-markeder. AI-rådgiver som hjelper virksomheter med å omsette teknologi til konkret kommersiell verdi.",
+                    "Kommersiell leder med erfaring fra salgsledelse, vekst, P/L-ansvar, teamutvikling, transformasjon og praktisk AI. Aktuell for lederroller innen kommersiell ledelse, salgsledelse og forretningsutvikling.",
                   image: "https://www.mariusottesen.no/images/profil.jpg",
                   sameAs: [
                     "https://www.linkedin.com/in/mariusottesen/",
@@ -124,13 +125,12 @@ export default function RootLayout({
                     taxID: "937102801",
                   },
                   knowsAbout: [
-                    "AI Strategy",
-                    "Artificial Intelligence",
-                    "Kunstig intelligens",
                     "Commercial Leadership",
-                    "Digital Transformation",
                     "Sales Management",
-                    "Process Optimization",
+                    "Digital Transformation",
+                    "Artificial Intelligence",
+                    "Business Development",
+                    "Team Development",
                     "B2B Markets",
                   ],
                   alumniOf: [
@@ -155,14 +155,8 @@ export default function RootLayout({
                     name: "Marius Ottesen",
                   },
                   description:
-                    "Rådgivning og implementering innen AI-strategi (kunstig intelligens), prosessoptimalisering og digital transformasjon.",
+                    "Faglig plattform som samler erfaring, metoder og porteføljeprosjekter innen kommersiell utvikling, AI, arbeidsflyt og lederstøtte.",
                   areaServed: "NO",
-                  serviceType: [
-                    "AI-strategi",
-                    "Prosessoptimalisering",
-                    "Digital transformasjon",
-                    "Workshops og opplæring",
-                  ],
                 },
               ],
             }),

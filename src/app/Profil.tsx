@@ -117,7 +117,7 @@ export default function Profil({ onNavigate }: { onNavigate?: (tab: string) => v
             </p>
           </header>
 
-          <p className={introClass}>{d.intro}</p>
+          <p className={introClass + " whitespace-pre-line"}>{d.intro}</p>
 
           <section aria-labelledby="profil-roller-heading" className="space-y-3">
             <h2 id="profil-roller-heading" className={sectionTitleClass}>
@@ -221,9 +221,9 @@ export default function Profil({ onNavigate }: { onNavigate?: (tab: string) => v
               {tr("profil.ai.title")}
             </h2>
             <div className={`${cardClassSubtle} space-y-2.5`}>
-              <p className="text-slate-400 text-sm leading-relaxed">{d.aiSeksjon}</p>
+              <p className="text-slate-400 text-sm leading-relaxed whitespace-pre-line">{d.aiSeksjon}</p>
               <div className="flex flex-wrap gap-x-4 gap-y-1.5 text-sm pt-1">
-              <Link href="/prosjekter" className={linkClass} aria-label="Gå til AI-prosjekter og pilotflater">
+              <Link href="/prosjekter" className={linkClass} aria-label="Gå til AI-prosjekter og demonstratorer">
                 {tr("profil.ai.link.prosjekter")}
               </Link>
               <NavLink
@@ -291,7 +291,7 @@ export default function Profil({ onNavigate }: { onNavigate?: (tab: string) => v
               href="/consulting"
               tab="Consulting"
               onNavigate={onNavigate}
-              ariaLabel="Gå til tjenestetilbud"
+              ariaLabel="Gå til kompetanseområder og portefølje"
             >
               <span className="inline-flex items-center gap-2 text-indigo-400 font-bold text-sm hover:text-white transition-all group/link not-italic no-underline">
                 {tr("profil.cta.tjenester")}
@@ -306,6 +306,7 @@ export default function Profil({ onNavigate }: { onNavigate?: (tab: string) => v
               {tr("profil.videre.title")}
             </h2>
             <div className={`${cardClass} space-y-4 !bg-slate-900/40`}>
+            <p className="text-slate-400 text-sm leading-relaxed">{tr("profil.videre.intro")}</p>
             <div className="flex flex-wrap gap-x-5 gap-y-2">
               {primaryLinks.map((item) => (
                 <Link

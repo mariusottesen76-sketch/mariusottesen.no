@@ -55,7 +55,7 @@ I selve løsningen setter brukeren opp salgssituasjon, kundetype, mål og salgsf
 
 Prosjektet viser to ting samtidig: hvordan AI kan brukes til salgstrening, og hvordan AI kan brukes til å formidle komplekse løsninger på en enkel og kommersiell måte.
 
-For arbeidsgivere viser prosjektet praktisk erfaring med AI-basert produktkommunikasjon, salgstrening og kommersiell posisjonering. For kunder viser det hvordan AI kan gjøre opplæring, møteforberedelse og salgsutvikling mer målrettet.
+For arbeidsgivere viser prosjektet praktisk erfaring med AI-basert produktkommunikasjon, salgstrening og kommersiell posisjonering. Prosjektet viser hvordan AI kan gjøre opplæring, møteforberedelse og salgsutvikling mer målrettet.
 
 <strong>Status og modenhet</strong>
 
@@ -65,7 +65,7 @@ Ferdig produsert promovideo og kommunikasjonsartefakt. Videoen støtter posisjon
 
 Videoformatet kan videreutvikles til demoer, korte forklaringsfilmer, salgsopplæring, onboarding, workshop-materiell og presentasjoner for ledere og kommersielle team.
 
-<strong>Neste steg</strong>
+<strong>Videre relevans og mulig anvendelse</strong>
 
 Se videoen for å forstå hvordan PSCv2.0 kan brukes i praktisk salgstrening, eller ${prosjektKontaktLenke("no")} for en gjennomgang av løsningen.`,
     en: `<strong>What the project is</strong>
@@ -94,7 +94,7 @@ In the solution itself, the user sets up the sales situation, customer type, obj
 
 The project demonstrates two things at once: how AI can be used for sales training, and how AI can be used to communicate complex solutions in a simple and commercial way.
 
-For employers, the project shows practical experience with AI-based product communication, sales training and commercial positioning. For customers, it shows how AI can make training, meeting preparation and sales development more targeted.
+For employers, the project shows practical experience with AI-based product communication, sales training and commercial positioning. The project shows how AI can make training, meeting preparation and sales development more targeted.
 
 <strong>Status and maturity</strong>
 
@@ -104,7 +104,7 @@ Completed promotional video and communication artefact. The video supports the p
 
 The video format can be developed into demos, short explainer films, sales training, onboarding, workshop material and presentations for leaders and commercial teams.
 
-<strong>Next steps</strong>
+<strong>Further relevance and possible application</strong>
 
 Watch the video to understand how PSCv2.0 can be used in practical sales training, or ${prosjektKontaktLenke("en")} for a walkthrough of the solution.`,
   },

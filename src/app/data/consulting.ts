@@ -8,65 +8,41 @@ export type PakkePilotStotte = {
   lenkeLabel: string;
 };
 
-const pscPilotStotte: Record<Lang, PakkePilotStotte> = {
+const portefoljeProsjektTekst: Record<Lang, string> = {
+  no: "Dette er et egenutviklet porteføljeprosjekt som viser hvordan kommersiell forståelse, arbeidsflyt og AI kan kombineres i praksis. Løsningen fungerer som en faglig demonstrator og kan være relevant som inspirasjon, referanse eller mulig utgangspunkt dersom en relevant rolle, problemstilling eller fremtidig samarbeidsmulighet oppstår.",
+  en: "This is a custom portfolio project that shows how commercial understanding, workflow and AI can be combined in practice. It functions as a professional demonstrator and may be relevant as inspiration, reference or a possible starting point if a relevant role, problem area or future collaboration opportunity arises.",
+};
+
+const pscDemonstratorStotte: Record<Lang, PakkePilotStotte> = {
   no: {
-    tekst:
-      "The Predictive Sales Coach kan brukes som trenings- og analysekomponent i Sales Meeting Performance Sprint og Leder som salgscoach.",
+    tekst: "Prosjektet viser hvordan møteforberedelse, salgstrening og refleksjon kan støttes med AI.",
     lenkeHref: "/psc",
-    lenkeLabel: "Se PSC-pilot",
+    lenkeLabel: "Se The Predictive Sales Coach som demonstrator",
   },
   en: {
-    tekst:
-      "The Predictive Sales Coach can be used as a training and analysis component in Sales Meeting Performance Sprint and Leader as sales coach.",
+    tekst: "The project shows how meeting preparation, sales training and reflection can be supported with AI.",
     lenkeHref: "/psc",
-    lenkeLabel: "See PSC pilot",
+    lenkeLabel: "See The Predictive Sales Coach as a demonstrator",
   },
 };
 
-const flowSignalPilotStotte: Record<Lang, PakkePilotStotte> = {
+const flowSignalDemonstratorStotte: Record<Lang, PakkePilotStotte> = {
   no: {
-    tekst:
-      "FlowSignal kan brukes som refleksjons- og samhandlingskomponent i Team Performance & Samhandling Sprint og SMB lederløft.",
+    tekst: "Prosjektet viser hvordan samhandling, refleksjon, trening og lederinnsikt kan struktureres i praksis.",
     lenkeHref: "/flowsignal",
-    lenkeLabel: "Se FlowSignal-pilot",
+    lenkeLabel: "Se FlowSignal som demonstrator",
   },
   en: {
-    tekst:
-      "FlowSignal can be used as a reflection and collaboration component in Team Performance & Collaboration Sprint and SMB leadership lift.",
+    tekst: "The project shows how collaboration, reflection, training and leadership insight can be structured in practice.",
     lenkeHref: "/flowsignal",
-    lenkeLabel: "See FlowSignal pilot",
+    lenkeLabel: "See FlowSignal as a demonstrator",
   },
 };
 
-const smbSalgsflytPilotStotte: Record<Lang, PakkePilotStotte> = {
-  no: {
-    tekst:
-      "SMB Salgsflyt-sjekken kan brukes som diagnose- og kvalifiseringskomponent i Verdilekkasje Sprint og CRM & Sales Follow-up Sprint. Spørreundersøkelsen er tilgangsstyrt og krever avtalt tilgangskode.",
-    lenkeHref: SMB_SALGSFLYT_PILOT_PATH,
-    lenkeLabel: "Se Salgsflyt-sjekken-pilot",
-  },
-  en: {
-    tekst:
-      "SMB Sales Flow Check can be used as a diagnosis and qualification component in Value Leak Sprint and CRM & Sales Follow-up Sprint. The survey is access-controlled and requires an agreed access code.",
-    lenkeHref: SMB_SALGSFLYT_PILOT_PATH,
-    lenkeLabel: "See Sales Flow Check pilot",
-  },
-};
-
-const aiReadinessScanPilotStotte: Record<Lang, PakkePilotStotte> = {
-  no: {
-    tekst:
-      "AI Readiness Scan kan brukes som modenhets- og prioriteringskomponent i AI-relaterte rådgivningsløp, workshops og mulighetsverksted. Kartleggingen er tilgangsstyrt og krever avtalt tilgangskode.",
-    lenkeHref: AI_READINESS_SCAN_PROSJEKT_PATH,
-    lenkeLabel: "Se AI Readiness Scan",
-  },
-  en: {
-    tekst:
-      "AI Readiness Scan can be used as a maturity and prioritisation component in AI-related advisory programmes, workshops and opportunity sessions. The assessment is access-controlled and requires an agreed access code.",
-    lenkeHref: AI_READINESS_SCAN_PROSJEKT_PATH,
-    lenkeLabel: "See AI Readiness Scan",
-  },
-};
+const prosjektLenke = (href: string): Record<Lang, PakkePilotStotte> => ({
+  no: { tekst: portefoljeProsjektTekst.no, lenkeHref: href, lenkeLabel: "Se prosjektet" },
+  en: { tekst: portefoljeProsjektTekst.en, lenkeHref: href, lenkeLabel: "See the project" },
+});
 
 export type TjenestePakke = {
   id: string;
@@ -88,93 +64,93 @@ const hovedpakker: Record<Lang, TjenestePakke[]> = {
   no: [
     {
       id: "verdilekkasje",
-      tittel: "Verdilekkasje Sprint",
-      hvem: "Virksomheter med kunder, leads, ansatte og systemer, men som mister verdi fordi salg, CRM, marketing, kundedialog og oppfølging ikke henger godt nok sammen.",
+      tittel: "Verdilekkasjer i salg, CRM og kundedialog",
+      hvem: "Virksomheter med kunder, leads, ansatte og systemer, men der salg, CRM, kundedialog og oppfølging ikke henger godt nok sammen.",
       leveranseKort:
-        "Kartlegging av kundereise, salgstrakt, CRM, oppfølging og arbeidsflyt, med prioritert liste over 3–5 verdilekkasjer og anbefalt første tiltak.",
+        "Erfaring med å analysere kundereise, salgstrakt, CRM, oppfølging og arbeidsflyt for å identifisere friksjon, forbedringsmuligheter og tydelige prioriteringer.",
       forDetalj:
-        "For virksomheter som har kunder, leads, ansatte og systemer, men mister verdi fordi salg, CRM, marketing, kundedialog og oppfølging ikke henger godt nok sammen.",
+        "Særlig når salg, marketing og kundeservice vokser i ulikt tempo, ved CRM-innfasing, lederbytte eller når vekst avdekker hull i kundereisen.",
       leveranseDetalj:
-        "Kartlegging av kundereise, salgstrakt, CRM, oppfølging og arbeidsflyt, prioritert liste over 3–5 verdilekkasjer, anbefalt første tiltak, enkel business case og 30/60/90-dagers forbedringsplan.",
+        "Kundereise, salgstrakt, CRM, oppfølging, arbeidsflyt, prioritering av forbedringsområder og struktur for videre gjennomføring.",
     },
     {
       id: "crm-sales",
-      tittel: "CRM & Sales Follow-up Sprint",
-      hvem: "B2B-virksomheter som har CRM, men ikke får nok verdi ut av systemet.",
+      tittel: "CRM og salgsoppfølging",
+      hvem: "B2B-virksomheter som har CRM, men ikke opplever at systemet gir tilstrekkelig verdi i oppfølging, prioritering eller salgsledelse.",
       leveranseKort:
-        "Forbedret CRM-logikk, minimumsfelter, salgsfaser, pipeline-struktur og møte- og oppfølgingsmaler, med mulig AI-støtte der det gir verdi.",
-      forDetalj: "For B2B-virksomheter som har CRM, men ikke får nok verdi ut av systemet.",
+        "Erfaring med CRM-logikk, salgsfaser, pipeline-struktur, minimumsfelter, møteforberedelse og lederoppfølging, inkludert praktisk AI-støtte der det er relevant.",
+      forDetalj:
+        "Særlig ved vekst i salgsteam, pipeline-prioritering, lav CRM-bruk, manglende salgslederinnsikt eller når rapportering ikke gir grunnlag for beslutninger.",
       leveranseDetalj:
-        "Forbedret CRM-logikk, minimumsfelter, salgsfaser, pipeline-struktur, møte- og oppfølgingsmaler, samt mulig AI-støtte for møtenotater, oppfølgingsforslag og lederrapportering.",
+        "CRM-struktur, salgsfaser, pipeline, møte- og oppfølgingsmaler, rapportering, datakvalitet og lederinnsikt.",
     },
     {
       id: "kundedialog",
-      tittel: "Kundedialog & Booking Sprint",
-      hvem: "Tjenestebedrifter som bruker mye tid på gjentakende spørsmål, booking, avklaringer, telefoner og e-post.",
+      tittel: "Kundedialog, booking og smart intake",
+      hvem: "Tjenestebedrifter som bruker mye tid på gjentakende spørsmål, avklaringer, booking, telefoner og e-post.",
       leveranseKort:
-        "Kartlegging av kundedialog, FAQ, bookingflyt og smart intake, med chatbot eller AI-assistert svarstruktur og tydelige eskaleringsregler.",
+        "Erfaring med å kartlegge kundedialog, FAQ, bookingflyt og smart intake, samt vurdere hvor automatisering eller AI-støttet svarstruktur kan være relevant.",
       forDetalj:
-        "For tjenestebedrifter som bruker mye tid på gjentakende spørsmål, booking, avklaringer, telefoner og e-post.",
+        "Særlig ved høyt innkommende volum, manuell booking, mange kanaler eller når frontlinjen bruker uforholdsmessig tid på gjentakende henvendelser.",
       leveranseDetalj:
-        "Kartlegging av kundedialog, FAQ, bookingflyt, smart intake, chatbot eller AI-assistert svarstruktur, eskaleringsregler og tydelige grenser for hva løsningen kan og ikke kan svare på.",
+        "Kundedialog, FAQ, bookingflyt, intake, chatbot-logikk, eskaleringsregler og tydelige grenser for hva en løsning kan og ikke kan svare på.",
     },
     {
       id: "smb-lederloft",
-      tittel: "SMB lederløft",
-      hvem: "Daglige ledere og lederteam som trenger bedre kommersiell rytme, tydeligere mål, bedre prioritering og mer strukturert oppfølging.",
+      tittel: "Kommersiell lederrytme og gjennomføring",
+      hvem: "Daglige ledere og lederteam som ønsker tydeligere prioritering, bedre kommersiell rytme, sterkere oppfølging og mer gjennomføringskraft.",
       leveranseKort:
-        "Lederintervjuer, kommersiell målbilde-workshop, KPI-er som brukes, møte- og lederrytme og 90-dagers handlingsplan.",
+        "Erfaring med lederintervjuer, kommersielle målbilder, KPI-strukturer, møte- og lederrytme, ansvarsavklaring og praktisk oppfølging.",
       forDetalj:
-        "For daglige ledere og lederteam som trenger bedre kommersiell rytme, tydeligere mål, bedre prioritering og mer strukturert oppfølging.",
+        "Særlig ved ny kommersiell retning, lederrolle eller ledergruppe som trenger tydeligere rytme, ansvar og oppfølging av prioriteringer over tid.",
       leveranseDetalj:
-        "Lederintervjuer, kommersiell målbilde-workshop, KPI-er som faktisk brukes, møte- og lederrytme, ansvarsavklaring og 90-dagers handlingsplan.",
-      pilotStotte: flowSignalPilotStotte.no,
+        "Kommersiell retning, KPI-er, møtestruktur, ansvar, prioritering, lederrytme og 90-dagers gjennomføringslogikk.",
     },
   ],
   en: [
     {
       id: "verdilekkasje",
-      tittel: "Value Leak Sprint",
-      hvem: "Businesses with customers, leads, people and systems, but losing value because sales, CRM, marketing, customer dialogue and follow-up are not connected well enough.",
+      tittel: "Value leaks in sales, CRM and customer dialogue",
+      hvem: "Businesses with customers, leads, people and systems, but where sales, CRM, customer dialogue and follow-up are not connected well enough.",
       leveranseKort:
-        "Mapping of customer journey, sales funnel, CRM, follow-up and workflow, with a prioritised list of 3–5 value leaks and a recommended first initiative.",
+        "Experience analysing customer journey, sales funnel, CRM, follow-up and workflow to identify friction, improvement opportunities and clear priorities.",
       forDetalj:
-        "For businesses that have customers, leads, people and systems, but lose value because sales, CRM, marketing, customer dialogue and follow-up are not connected well enough.",
+        "Especially when sales, marketing and customer service grow at different speeds, during CRM rollout, leadership change or when growth exposes gaps in the customer journey.",
       leveranseDetalj:
-        "Mapping of customer journey, sales funnel, CRM, follow-up and workflow, prioritised list of 3–5 value leaks, recommended first initiative, simple business case and 30/60/90-day improvement plan.",
+        "Customer journey, sales funnel, CRM, follow-up, workflow, prioritisation of improvement areas and structure for further execution.",
     },
     {
       id: "crm-sales",
-      tittel: "CRM & Sales Follow-up Sprint",
-      hvem: "B2B businesses that have CRM but are not getting enough value from the system.",
+      tittel: "CRM and sales follow-up",
+      hvem: "B2B businesses that have CRM but do not experience sufficient value from the system in follow-up, prioritisation or sales leadership.",
       leveranseKort:
-        "Improved CRM logic, minimum fields, sales stages, pipeline structure and meeting and follow-up templates, with optional AI support where it adds value.",
-      forDetalj: "For B2B businesses that have CRM but are not getting enough value from the system.",
+        "Experience with CRM logic, sales stages, pipeline structure, minimum fields, meeting preparation and leadership follow-up, including practical AI support where relevant.",
+      forDetalj:
+        "Especially when scaling the sales team, prioritising pipeline, CRM adoption is low, sales leadership lacks insight or reporting does not support decisions.",
       leveranseDetalj:
-        "Improved CRM logic, minimum fields, sales stages, pipeline structure, meeting and follow-up templates, plus optional AI support for meeting notes, follow-up suggestions and leadership reporting.",
+        "CRM structure, sales stages, pipeline, meeting and follow-up templates, reporting, data quality and leadership insight.",
     },
     {
       id: "kundedialog",
-      tittel: "Customer Dialogue & Booking Sprint",
-      hvem: "Service businesses spending too much time on recurring questions, booking, clarifications, phone calls and email.",
+      tittel: "Customer dialogue, booking and smart intake",
+      hvem: "Service businesses spending significant time on recurring questions, clarifications, booking, phone calls and email.",
       leveranseKort:
-        "Mapping of customer dialogue, FAQ, booking flow and smart intake, with chatbot or AI-assisted response structure and clear escalation rules.",
+        "Experience mapping customer dialogue, FAQ, booking flow and smart intake, and assessing where automation or AI-supported response structure may be relevant.",
       forDetalj:
-        "For service businesses spending too much time on recurring questions, booking, clarifications, phone calls and email.",
+        "Especially with high inbound volume, manual booking, many channels or when the front line spends disproportionate time on recurring enquiries.",
       leveranseDetalj:
-        "Mapping of customer dialogue, FAQ, booking flow, smart intake, chatbot or AI-assisted response structure, escalation rules and clear boundaries for what the solution can and cannot answer.",
+        "Customer dialogue, FAQ, booking flow, intake, chatbot logic, escalation rules and clear boundaries for what a solution can and cannot answer.",
     },
     {
       id: "smb-lederloft",
-      tittel: "SMB leadership lift",
-      hvem: "Managing directors and leadership teams who need better commercial rhythm, clearer goals, sharper prioritisation and more structured follow-up.",
+      tittel: "Commercial leadership rhythm and execution",
+      hvem: "Managing directors and leadership teams seeking clearer prioritisation, better commercial rhythm, stronger follow-up and more execution power.",
       leveranseKort:
-        "Leadership interviews, commercial target picture workshop, KPIs that are actually used, meeting and leadership rhythm and a 90-day action plan.",
+        "Experience with leadership interviews, commercial target pictures, KPI structures, meeting and leadership rhythm, accountability clarification and practical follow-up.",
       forDetalj:
-        "For managing directors and leadership teams who need better commercial rhythm, clearer goals, sharper prioritisation and more structured follow-up.",
+        "Especially with a new commercial direction, leadership role or leadership team that needs clearer rhythm, accountability and follow-through on priorities over time.",
       leveranseDetalj:
-        "Leadership interviews, commercial target picture workshop, KPIs that are actually used, meeting and leadership rhythm, accountability clarification and a 90-day action plan.",
-      pilotStotte: flowSignalPilotStotte.en,
+        "Commercial direction, KPIs, meeting structure, accountability, prioritisation, leadership rhythm and 90-day execution logic.",
     },
   ],
 };
@@ -183,97 +159,93 @@ const spesialisertePakker: Record<Lang, TjenestePakke[]> = {
   no: [
     {
       id: "sales-meeting",
-      tittel: "Sales Meeting Performance Sprint",
-      hvem: "Salgsorganisasjoner som vil løfte kvaliteten på kundemøter før, under og etter møtet.",
+      tittel: "Kvalitet i kundemøter",
+      hvem: "Salgsorganisasjoner som vil styrke kvaliteten på kundemøter før, under og etter møtet.",
       leveranseKort:
-        "Møteforberedelse, spørsmålsbank, innvendingsstruktur, etterarbeid og AI-støttet møtebrief, med mulig bruk av The Predictive Sales Coach som trenings- og analysekomponent.",
-      forDetalj:
-        "For salgsorganisasjoner som vil løfte kvaliteten på kundemøter før, under og etter møtet. The Predictive Sales Coach kan brukes som trenings- og analysekomponent.",
+        "Erfaring med å styrke kvaliteten i kundemøter gjennom møteforberedelse, spørsmål, innvendinger, etterarbeid, trening og lederoppfølging.",
+      forDetalj: "Salgsorganisasjoner som vil styrke kvaliteten på kundemøter før, under og etter møtet.",
       leveranseDetalj:
-        "Møteforberedelsesmal, spørsmålsbank, innvendingsstruktur, etterarbeidsmal, AI-støttet møtebrief og rollespill/trening for selgere.",
-      pilotStotte: pscPilotStotte.no,
+        "Møteforberedelse, spørsmålsbank, innvendingsstruktur, etterarbeid, trening, rollespill og lederoppfølging.",
+      pilotStotte: pscDemonstratorStotte.no,
     },
     {
       id: "team-performance",
-      tittel: "Team Performance & Samhandling Sprint",
+      tittel: "Teamutvikling og samhandling",
       hvem: "Team som opplever friksjon i kommunikasjon, prioritering, energi, ansvar eller samspill.",
       leveranseKort:
-        "Teamkartlegging, styrkebasert dialog og samhandlingsworkshop, med mulig bruk av FlowSignal som refleksjons- og samhandlingskomponent.",
-      forDetalj:
-        "For team som opplever friksjon i kommunikasjon, prioritering, energi, ansvar eller samspill. FlowSignal kan brukes som refleksjons- og samhandlingskomponent.",
+        "Erfaring med teamutvikling, samhandling, preferanser, energidrivere, tydeligere ansvar og lederens oppfølgingsgrep.",
+      forDetalj: "Team som opplever friksjon i kommunikasjon, prioritering, energi, ansvar eller samspill.",
       leveranseDetalj:
-        "Teamkartlegging, styrkebasert dialog, samhandlingsworkshop, avklaring av preferanser og energidrivere, lederens oppfølgingsgrep og fire ukers forbedringsplan.",
-      pilotStotte: flowSignalPilotStotte.no,
+        "Teamkartlegging, styrkebasert dialog, samhandling, preferanser, energidrivere og lederens oppfølgingsgrep.",
+      pilotStotte: flowSignalDemonstratorStotte.no,
     },
     {
       id: "leder-salgscoach",
       tittel: "Leder som salgscoach",
       hvem: "Salgsledere som ønsker å gå fra aktivitetskontroll til prestasjonsutvikling.",
       leveranseKort:
-        "Analyse av dagens salgsledelse, 1:1-struktur, coachingmodell og KPI-er som kombinerer aktivitet, kvalitet og fremdrift.",
-      forDetalj: "For salgsledere som ønsker å gå fra aktivitetskontroll til prestasjonsutvikling.",
+        "Erfaring med salgscoaching, 1:1-struktur, møteobservasjon, casegjennomgang og KPI-er som kombinerer aktivitet, kvalitet og fremdrift.",
+      forDetalj: "Salgsledere som ønsker å gå fra aktivitetskontroll til prestasjonsutvikling.",
       leveranseDetalj:
-        "Analyse av dagens salgsledelse, 1:1-struktur, coachingmodell, møteobservasjon eller casegjennomgang, KPI-er som kombinerer aktivitet, kvalitet og fremdrift, samt mandagsmøte-opplegg for teamutvikling.",
-      pilotStotte: pscPilotStotte.no,
+        "1:1-struktur, coachingmodell, møteobservasjon, casegjennomgang, KPI-er og lederoppfølging i salgsteam.",
+      pilotStotte: pscDemonstratorStotte.no,
     },
     {
       id: "gtm-story",
-      tittel: "GTM & Story Sprint",
+      tittel: "Go-to-market og kommersiell fortelling",
       hvem: "Startups og scaleups som har et produkt, men trenger tydeligere posisjonering, bedre pitch og mer strukturert salgsprosess.",
       leveranseKort:
-        "Målgruppe- og problemspissing, verdiforslag, pitch, kundereise, første salgsprosess og enkel CRM-/leadstruktur.",
+        "Erfaring med målgruppeforståelse, verdiforslag, pitch, kundereise, go-to-market og kommersiell struktur.",
       forDetalj:
-        "For startups og scaleups som har et produkt, men trenger tydeligere posisjonering, bedre pitch, skarpere målgruppe og mer strukturert salgsprosess.",
+        "Startups og scaleups som har et produkt, men trenger tydeligere posisjonering, bedre pitch og mer strukturert salgsprosess.",
       leveranseDetalj:
-        "Målgruppe- og problemspissing, verdiforslag, pitch, kundereise, første salgsprosess, kanalplan og enkel CRM-/leadstruktur.",
+        "Målgruppeforståelse, verdiforslag, pitch, kundereise, go-to-market, kanaler og kommersiell struktur.",
     },
   ],
   en: [
     {
       id: "sales-meeting",
-      tittel: "Sales Meeting Performance Sprint",
-      hvem: "Sales organisations that want to raise the quality of customer meetings before, during and after the meeting.",
+      tittel: "Quality in customer meetings",
+      hvem: "Sales organisations that want to strengthen the quality of customer meetings before, during and after the meeting.",
       leveranseKort:
-        "Meeting preparation, question bank, objection structure, follow-up work and AI-supported meeting brief, with optional use of The Predictive Sales Coach as a training and analysis component.",
-      forDetalj:
-        "For sales organisations that want to raise the quality of customer meetings before, during and after the meeting. The Predictive Sales Coach can be used as a training and analysis component.",
+        "Experience strengthening the quality of customer meetings through meeting preparation, questions, objections, follow-up work, training and leadership follow-up.",
+      forDetalj: "Sales organisations that want to strengthen the quality of customer meetings before, during and after the meeting.",
       leveranseDetalj:
-        "Meeting preparation template, question bank, objection structure, follow-up template, AI-supported meeting brief and role-play/training for salespeople.",
-      pilotStotte: pscPilotStotte.en,
+        "Meeting preparation, question bank, objection structure, follow-up work, training, role-play and leadership follow-up.",
+      pilotStotte: pscDemonstratorStotte.en,
     },
     {
       id: "team-performance",
-      tittel: "Team Performance & Collaboration Sprint",
+      tittel: "Team development and collaboration",
       hvem: "Teams experiencing friction in communication, prioritisation, energy, accountability or collaboration.",
       leveranseKort:
-        "Team mapping, strength-based dialogue and collaboration workshop, with optional use of FlowSignal as a reflection and collaboration component.",
-      forDetalj:
-        "For teams experiencing friction in communication, prioritisation, energy, accountability or collaboration. FlowSignal can be used as a reflection and collaboration component.",
+        "Experience with team development, collaboration, preferences, energy drivers, clearer accountability and the leader's follow-up actions.",
+      forDetalj: "Teams experiencing friction in communication, prioritisation, energy, accountability or collaboration.",
       leveranseDetalj:
-        "Team mapping, strength-based dialogue, collaboration workshop, clarification of preferences and energy drivers, leader follow-up actions and a four-week improvement plan.",
-      pilotStotte: flowSignalPilotStotte.en,
+        "Team mapping, strength-based dialogue, collaboration, preferences, energy drivers and the leader's follow-up actions.",
+      pilotStotte: flowSignalDemonstratorStotte.en,
     },
     {
       id: "leder-salgscoach",
       tittel: "Leader as sales coach",
       hvem: "Sales leaders who want to move from activity control to performance development.",
       leveranseKort:
-        "Analysis of current sales leadership, 1:1 structure, coaching model and KPIs that combine activity, quality and progress.",
-      forDetalj: "For sales leaders who want to move from activity control to performance development.",
+        "Experience with sales coaching, 1:1 structure, meeting observation, case review and KPIs that combine activity, quality and progress.",
+      forDetalj: "Sales leaders who want to move from activity control to performance development.",
       leveranseDetalj:
-        "Analysis of current sales leadership, 1:1 structure, coaching model, meeting observation or case review, KPIs that combine activity, quality and progress, plus Monday meeting setup for team development.",
-      pilotStotte: pscPilotStotte.en,
+        "1:1 structure, coaching model, meeting observation, case review, KPIs and leadership follow-up in sales teams.",
+      pilotStotte: pscDemonstratorStotte.en,
     },
     {
       id: "gtm-story",
-      tittel: "GTM & Story Sprint",
+      tittel: "Go-to-market and commercial narrative",
       hvem: "Startups and scaleups with a product but needing clearer positioning, a sharper pitch and a more structured sales process.",
       leveranseKort:
-        "Target group and problem sharpening, value proposition, pitch, customer journey, first sales process and simple CRM/lead structure.",
+        "Experience with target group understanding, value proposition, pitch, customer journey, go-to-market and commercial structure.",
       forDetalj:
-        "For startups and scaleups with a product but needing clearer positioning, a sharper pitch, sharper target group and a more structured sales process.",
+        "Startups and scaleups with a product but needing clearer positioning, a sharper pitch and a more structured sales process.",
       leveranseDetalj:
-        "Target group and problem sharpening, value proposition, pitch, customer journey, first sales process, channel plan and simple CRM/lead structure.",
+        "Target group understanding, value proposition, pitch, customer journey, go-to-market, channels and commercial structure.",
     },
   ],
 };
@@ -283,22 +255,22 @@ const metoder: Record<Lang, MetodeKomponent[]> = {
     {
       tittel: "The Predictive Sales Coach",
       beskrivelse: "Salgstrening, møteforberedelse og salgslederinnsikt",
-      pilotStotte: pscPilotStotte.no,
+      pilotStotte: prosjektLenke("/psc").no,
     },
     {
       tittel: "FlowSignal",
       beskrivelse: "Samhandling, teamutvikling, dagsform og dialog",
-      pilotStotte: flowSignalPilotStotte.no,
+      pilotStotte: prosjektLenke("/flowsignal").no,
     },
     {
       tittel: "SMB Salgsflyt-sjekken",
-      beskrivelse: "Diagnose, scoring og AI-rapportering for salgsmodenhet",
-      pilotStotte: smbSalgsflytPilotStotte.no,
+      beskrivelse: "Interaktiv demonstrator for strukturert innsikt i salgsmodenhet",
+      pilotStotte: prosjektLenke(SMB_SALGSFLYT_PILOT_PATH).no,
     },
     {
       tittel: "AI Readiness Scan",
       beskrivelse: "Modenhet, prioritering og grunnlag for AI-arbeid",
-      pilotStotte: aiReadinessScanPilotStotte.no,
+      pilotStotte: prosjektLenke(AI_READINESS_SCAN_PROSJEKT_PATH).no,
     },
     {
       tittel: "AI Value Lab Oslo",
@@ -313,22 +285,22 @@ const metoder: Record<Lang, MetodeKomponent[]> = {
     {
       tittel: "The Predictive Sales Coach",
       beskrivelse: "Sales training, meeting preparation and sales leadership insight",
-      pilotStotte: pscPilotStotte.en,
+      pilotStotte: prosjektLenke("/psc").en,
     },
     {
       tittel: "FlowSignal",
       beskrivelse: "Collaboration, team development, daily form and dialogue",
-      pilotStotte: flowSignalPilotStotte.en,
+      pilotStotte: prosjektLenke("/flowsignal").en,
     },
     {
       tittel: "SMB Sales Flow Check",
-      beskrivelse: "Diagnosis, scoring and AI reporting for sales maturity",
-      pilotStotte: smbSalgsflytPilotStotte.en,
+      beskrivelse: "Interactive demonstrator for structured insight into sales maturity",
+      pilotStotte: prosjektLenke(SMB_SALGSFLYT_PILOT_PATH).en,
     },
     {
       tittel: "AI Readiness Scan",
       beskrivelse: "Maturity, prioritisation and a basis for AI work",
-      pilotStotte: aiReadinessScanPilotStotte.en,
+      pilotStotte: prosjektLenke(AI_READINESS_SCAN_PROSJEKT_PATH).en,
     },
     {
       tittel: "AI Value Lab Oslo",

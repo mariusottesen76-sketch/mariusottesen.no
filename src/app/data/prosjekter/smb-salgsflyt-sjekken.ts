@@ -1,5 +1,5 @@
 import { SMB_SALGSFLYT_APP_URL } from "../../lib/smb-salgsflyt-brand";
-import { prosjektKontaktLenke } from "../../lib/prosjekt-lenker";
+import { prosjektKontaktLenke, prosjektKontaktDialogTekst, prosjektTilgangStandard } from "../../lib/prosjekt-lenker";
 import { type ProsjektType } from "./predictive-sales-coach";
 
 const smbAppLink = `<a href="${SMB_SALGSFLYT_APP_URL}" target="_blank" rel="noopener noreferrer" aria-label="Åpne SMB Salgsflyt-sjekken" class="text-indigo-400 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400">SMB Salgsflyt-sjekken</a>`;
@@ -27,11 +27,11 @@ export const smbSalgsflytSjekken: ProsjektType = {
 
 SMB Salgsflyt-sjekken er et interaktivt diagnoseverktøy for ledere som kartlegger friksjon og flaskehalser på tvers av ti kommersielle dimensjoner — fra leadfangst og CRM-bruk til oppfølging, tilbudsprosesser og AI-modenhet. Verktøyet er særlig relevant for SMB, men kan tilpasses andre kommersielle miljøer.
 
-Kunden får en skreddersydd PDF-rapport med konkrete tiltak sendt med en gang diagnosen er fullført. Rådgiveren får parallelt AI-generert innsikt for oppfølging og salgskvalifisering.
+Kunden får en skreddersydd PDF-rapport med konkrete tiltak sendt med en gang diagnosen er fullført. Løsningen genererer AI-støttet innsikt som kan brukes til prioritering, refleksjon og videre oppfølging.
 
 <strong>Problemet prosjektet adresserer</strong>
 
-Mange virksomheter har usynlig friksjon i salgsleddet: ubrukte CRM-systemer, ustrukturerte tilbudsprosesser og svak leadoppfølging. Utfordringen er å avdekke rotårsakene systematisk og kvalifisere potensielle kunder uten lange kartleggingsmøter.
+Mange virksomheter har usynlig friksjon i salgsleddet: ubrukte CRM-systemer, ustrukturerte tilbudsprosesser og svak leadoppfølging. Utfordringen er å avdekke rotårsakene systematisk og synliggjøre rotårsaker og forbedringsområder før videre prioritering.
 
 <strong>Hva som er bygget eller utviklet</strong>
 
@@ -45,28 +45,28 @@ Diagnosen gjennomføres i fire steg:
 
 <strong>Hvorfor dette er relevant</strong>
 
-Prosjektet viser hvordan AI kan automatisere kvalifisering og rådgivningsforberedelse — og samtidig levere umiddelbar verdi til respondenten.
+Prosjektet viser hvordan AI kan strukturere diagnose og forberede prioritering — og samtidig levere umiddelbar verdi til respondenten.
 
 <strong>Status og modenhet</strong>
 
-Tilgangsstyrt diagnose- og kvalifiseringsverktøy i pilot- og salgsløp. Hele prosessen tar under ti minutter.
+Tilgangsstyrt diagnoseverktøy med scoring, AI-analyse og adminkonsoll — moden for avgrenset testing, videreutvikling og relevant kommersiell anvendelse. Hele prosessen tar under ti minutter.
 
 <strong>Mulig videreutvikling</strong>
 
 CRM-integrasjon, bransjetilpassede spørsmålssett og utvidet pipeline-styring i adminkonsollet.
 
-<strong>Neste steg</strong>
+<strong>Videre relevans og mulig anvendelse</strong>
 
-Spørreundersøkelsen er tilgangsstyrt og krever avtalt tilgangskode. ${prosjektKontaktLenke("no")} dersom du ønsker tilgang eller vil diskutere en mulig pilot. Når tilgang er avtalt, kan ${smbAppLink} brukes som del av diagnose-, kvalifiserings- eller rådgivningsløp.`,
+${prosjektTilgangStandard.no} ${prosjektKontaktLenke("no", "Ta gjerne kontakt")} ${prosjektKontaktDialogTekst.no}. ${smbAppLink} åpner den tilgangsstyrte testflaten.`,
     en: `<strong>What the project is</strong>
 
 SMB Sales Flow Check is an interactive diagnostic tool for leaders that maps friction and bottlenecks across ten commercial dimensions — from lead capture and CRM use to follow-up, proposal processes and AI maturity. The tool is especially relevant for SMBs, but can be adapted to other commercial environments.
 
-The customer receives a tailored PDF report with concrete actions as soon as the diagnosis is complete. The advisor gets parallel AI-generated insight for follow-up and sales qualification.
+The customer receives a tailored PDF report with concrete actions as soon as the diagnosis is complete. The solution generates AI-supported insight that can be used for prioritisation, reflection and further follow-up.
 
 <strong>The problem the project addresses</strong>
 
-Many organisations have invisible friction in their sales function: unused CRM systems, unstructured proposal processes and weak lead follow-up. The challenge is to uncover root causes systematically and qualify potential clients without long discovery meetings.
+Many organisations have invisible friction in their sales function: unused CRM systems, unstructured proposal processes and weak lead follow-up. The challenge is to uncover root causes systematically and make root causes and improvement areas visible before further prioritisation.
 
 <strong>What has been built or developed</strong>
 
@@ -80,18 +80,18 @@ The diagnosis runs in four steps:
 
 <strong>Why this is relevant</strong>
 
-The project shows how AI can automate qualification and advisory preparation — while still delivering immediate value to the respondent.
+The project shows how AI can structure diagnosis and prepare prioritisation — while still delivering immediate value to the respondent.
 
 <strong>Status and maturity</strong>
 
-Access-controlled diagnostic and qualification tool in pilot and sales engagements. The full process takes under ten minutes.
+Access-controlled diagnostic tool with scoring, AI analysis and admin console — mature for limited testing, further development and relevant commercial application. The full process takes under ten minutes.
 
 <strong>Possible further development</strong>
 
 CRM integration, industry-specific question sets and extended pipeline management in the admin console.
 
-<strong>Next steps</strong>
+<strong>Further relevance and possible application</strong>
 
-The survey is access-controlled and requires an agreed access code. ${prosjektKontaktLenke("en")} if you want access or to discuss a possible pilot. Once access is agreed, ${smbAppLink} can be used as part of diagnostic, qualification or advisory engagements.`,
+${prosjektTilgangStandard.en} ${prosjektKontaktLenke("en", "Feel free to get in touch")} ${prosjektKontaktDialogTekst.en}. ${smbAppLink} opens the access-controlled test environment.`,
   },
 };

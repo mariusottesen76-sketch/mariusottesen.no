@@ -4,11 +4,10 @@ export type ForedragKort = { title: string; text: string };
 
 const data = {
   no: {
-    title: "Foredrag og workshops",
+    title: "Temaer jeg har erfaring med og kan bidra med",
     ingress:
-      "Jeg holder foredrag, workshops og ledergruppesamlinger for virksomheter som ønsker praktiske perspektiver på kommersiell ledelse, salgsutvikling, transformasjon, AI og gjennomføring.",
-    stotte:
-      "Formatet tilpasses målgruppen – fra korte inspirasjonsforedrag til praktiske workshops, ledergruppesamlinger eller oppstartsmøter som kan lede videre til konkrete forbedringsløp.",
+      "Temaene under bygger på erfaring fra kommersiell ledelse, salgsutvikling, transformasjon og praktisk bruk av AI. De kan være relevante i ledergrupper, rekrutteringsdialoger, faglige samtaler eller fremtidige sammenhenger dersom det oppstår en relevant anledning.",
+    stotte: "",
     kort: [
       {
         title: "Kommersiell ledelse i endring",
@@ -20,7 +19,7 @@ const data = {
       },
       {
         title: "Verdilekkasjer i salg, CRM og kundedialog",
-        text: "Hvor SMB-bedrifter ofte taper tid, kunder, kvalitet og kapasitet – og hvordan dette kan kartlegges og forbedres.",
+        text: "Hvor SMB-bedrifter ofte taper tid, kunder, kvalitet og kapasitet – og hvordan dette kan forstås, struktureres og prioriteres.",
       },
       {
         title: "Fra CRM-data til kommersiell handling",
@@ -35,14 +34,13 @@ const data = {
         text: "Hvordan tydeligere forventninger, styrker, dialog og lederrytme kan gi bedre prestasjon over tid.",
       },
     ] satisfies ForedragKort[],
-    cta: "Book en prat om foredrag eller workshop",
+    cta: "Ta kontakt for faglig dialog",
   },
   en: {
-    title: "Talks and workshops",
+    title: "Themes I have experience with and can contribute on",
     ingress:
-      "I deliver talks, workshops and leadership team sessions for organisations that want practical perspectives on commercial leadership, sales development, transformation, AI and execution.",
-    stotte:
-      "The format is adapted to the audience — from short inspirational talks to practical workshops, leadership team sessions or kick-off meetings that can lead into concrete improvement programmes.",
+      "The themes below build on experience from commercial leadership, sales development, transformation and practical use of AI. They may be relevant in leadership groups, recruitment dialogues, professional conversations or future contexts if a relevant opportunity arises.",
+    stotte: "",
     kort: [
       {
         title: "Commercial leadership in change",
@@ -54,7 +52,7 @@ const data = {
       },
       {
         title: "Value leaks in sales, CRM and customer dialogue",
-        text: "Where SMBs often lose time, customers, quality and capacity — and how this can be mapped and improved.",
+        text: "Where SMBs often lose time, customers, quality and capacity — and how this can be understood, structured and prioritised.",
       },
       {
         title: "From CRM data to commercial action",
@@ -69,7 +67,7 @@ const data = {
         text: "How clearer expectations, strengths, dialogue and leadership rhythm can improve performance over time.",
       },
     ] satisfies ForedragKort[],
-    cta: "Book a conversation about a talk or workshop",
+    cta: "Get in touch for a professional conversation",
   },
 };
 

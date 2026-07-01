@@ -29,6 +29,16 @@ export function prosjektKontaktLenke(lang: Lang, label?: string): string {
   return `<a href="/kontakt" aria-label="${aria.kontakt[lang]}">${text}</a>`;
 }
 
+export const prosjektKontaktDialogTekst = {
+  no: "dersom du ønsker faglig dialog om løsningen, vurderer relevant lederrolle, eller ønsker å forstå hvordan tilsvarende arbeidsflyter kan være relevante i en fremtidig sammenheng",
+  en: "if you want professional dialogue about the solution, are considering a relevant leadership role, or want to understand how similar workflows may be relevant in a future context",
+} as const;
+
+export const prosjektTilgangStandard = {
+  no: "Løsningen er tilgangsstyrt og utviklet som porteføljeprosjekt / lukket testflate. Den beskrives her for å dokumentere funksjonalitet, læring og praktisk AI-kompetanse. Tilgang vurderes kun i relevante faglige eller profesjonelle sammenhenger.",
+  en: "The solution is access-controlled and developed as a portfolio project / closed test environment. It is described here to document functionality, learning and practical AI competence. Access is considered only in relevant professional contexts.",
+} as const;
+
 export function prosjektFaginnleggLenke(lang: Lang, label?: string): string {
   const text =
     label ??
@@ -77,5 +87,5 @@ export function prosjektFaginnleggNesteStegLenker(lang: Lang): string {
  * 6. Hvorfor dette er relevant
  * 7. Status og modenhet
  * 8. Mulig videreutvikling
- * 9. Neste steg
+ * 9. Videre relevans og mulig anvendelse
  */

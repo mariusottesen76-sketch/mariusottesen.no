@@ -92,7 +92,7 @@ Dette er praktiske konsepter som kan videreutvikles og tilpasses ulike virksomhe
 
 👉 Se gjennom karusellen for en kort presentasjon av hvordan de fungerer.
 
-💥 <strong>CTA:</strong> Ønsker du å teste en eller flere av appene, eller diskutere hvordan slike verktøy kan tilpasses din virksomhet, <a href="/kontakt" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">send meg en melding</a> og be om tilgangskode.
+💥 <strong>CTA:</strong> Ønsker du faglig dialog om appene, hvordan de er bygget, eller hvordan tilsvarende arbeidsflyter kan være relevante i en fremtidig sammenheng, <a href="/kontakt" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">ta kontakt</a>.
 
 👇 En samlet oversikt over appene finner du på <a href="/prosjekter" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">prosjektsiden</a>, med videre lenker til <a href="/prosjekter#ai-readiness-scan-2026-06">AI Readiness Scan</a>, <a href="/salgsflyt-sjekken">SMB Salgsflyt-sjekken</a>, <a href="/flowsignal">FlowSignal</a> og <a href="/psc">The Predictive Sales Coach</a>.
 
@@ -2064,7 +2064,7 @@ These are practical concepts that can be developed further and adapted to differ
 
 👉 Browse the carousel for a short presentation of how they work.
 
-💥 <strong>CTA:</strong> If you want to test one or more of the apps, or discuss how such tools can be adapted to your business, <a href="/kontakt" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">send me a message</a> and request an access code.
+💥 <strong>CTA:</strong> If you want professional dialogue about the apps, how they are built, or how similar workflows may be relevant in a future context, <a href="/kontakt" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">get in touch</a>.
 
 👇 A combined overview of the apps is on the <a href="/prosjekter" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">projects page</a>, with further links to <a href="/prosjekter#ai-readiness-scan-2026-06">AI Readiness Scan</a>, <a href="/salgsflyt-sjekken">SMB Sales Flow Check</a>, <a href="/flowsignal">FlowSignal</a> and <a href="/psc">The Predictive Sales Coach</a>.
 

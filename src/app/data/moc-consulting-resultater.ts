@@ -34,37 +34,37 @@ export function getMocResultaterPunkter(lang: Lang): MocResultatPunkt[] {
   if (lang === "en") {
     return [
       {
-        tekst: `Interim manager and advisor at ${lenke(prosjektLenker.skoyenasen, "Skøyenåsen Dental Clinic")}:`,
+        tekst: `Concrete case work at ${lenke(prosjektLenker.skoyenasen, "Skøyenåsen Dental Clinic")}:`,
         underpunkter: [
-          `${lenke(prosjektLenker.skoyenasen, "Project")}: patient journey, intake and booking. Relieved reception and clinical staff. Chatbot and booking in 6 languages — simpler booking for patients and more inquiries and an increase in patient numbers`,
+          "Patient journey, smart intake, chatbot logic and booking flow in 6 languages — simpler booking for patients and more inquiries",
         ],
       },
-      `Developed ${lenke(prosjektLenker.psc, "The Predictive Sales Coach")}: AI-based sales training and meeting preparation for B2B sales`,
-      `Developed ${lenke(prosjektLenker.flowsignal, "FlowSignal")}: AI-supported collaboration, profile insight and team development`,
-      `Developed ${lenke(prosjektLenker.salgsflyt, "SMB Sales Flow Check")}: interactive diagnosis and AI reporting for commercial maturity and sales qualification`,
-      `Developed ${lenke(prosjektLenker.readinessScan, "AI Readiness Scan")}: access-controlled mapping of AI maturity, priorities and a basis for further AI work`,
-      `Built ${lenke(prosjektLenker.agent, "agentic workflow")}, ${lenke(prosjektLenker.innhold, "insight and content engine")} and ${lenke(prosjektLenker.beslutning, "AI architecture for decision support")}`,
+      `Developed ${lenke(prosjektLenker.readinessScan, "AI Readiness Scan")}: access-controlled mapping tool with structured assessment of AI maturity, priorities and admin insight`,
+      `Built ${lenke(prosjektLenker.salgsflyt, "SMB Sales Flow Check")}: diagnosis, scoring, AI-supported analysis, reporting and follow-up logic for commercial workflows`,
+      `Further developed ${lenke(prosjektLenker.flowsignal, "FlowSignal")}: AI-supported workspace for profile insight, daily form, reflection, collaboration and leadership follow-up`,
+      `Built ${lenke(prosjektLenker.psc, "The Predictive Sales Coach")}: training and analysis platform for customer dialogue, meeting preparation, simulation, evaluation and sales leadership`,
+      `Developed models and workflows for ${lenke(prosjektLenker.agent, "AI-assisted insight")}, ${lenke(prosjektLenker.innhold, "content")}, prioritisation and ${lenke(prosjektLenker.beslutning, "decision support")}`,
       `${totalt} published ${lenke(prosjektLenker.faginnlegg, "articles")} on AI, leadership and commercial value creation (updated automatically)`,
-      `Initiated ${lenke(prosjektLenker.valueLab, "AI Value Lab Oslo")} — a cross-disciplinary learning initiative focused on practical testing, responsible AI use and real value creation through business-near cases`,
-      `Completed the ${lenke(prosjektLenker.bi, "Generative AI for Business")} master's course at ${lenke(prosjektLenker.bi, "BI Norwegian Business School")} with grade A`,
+      `Participated in ${lenke(prosjektLenker.valueLab, "AI Value Lab Oslo")}: cross-disciplinary arena for AI learning, experience sharing and exploration of practical problem areas`,
+      `Completed further education in ${lenke(prosjektLenker.bi, "Generative AI for Business")} at BI Norwegian Business School with grade A`,
     ];
   }
 
   return [
     {
-      tekst: `Interim leder og rådgiver hos ${lenke(prosjektLenker.skoyenasen, "Skøyenåsen Tannklinikk")}:`,
+      tekst: `Konkret casearbeid hos ${lenke(prosjektLenker.skoyenasen, "Skøyenåsen Tannklinikk")}:`,
       underpunkter: [
-        `${lenke(prosjektLenker.skoyenasen, "Prosjekt")}: pasientreise, intake og booking. Avlastet resepsjon og klinisk team. Chatbot og booking på 6 språk — enklere booking for pasienter og flere henvendelser og økning i antall pasienter`,
+        "Pasientreise, smart intake, chatbot-logikk og bookingflyt på 6 språk — enklere booking for pasienter og flere henvendelser",
       ],
     },
-    `Utviklet ${lenke(prosjektLenker.psc, "The Predictive Sales Coach")}: AI-basert salgstrening og møteforberedelse for B2B-salg`,
-    `Utviklet ${lenke(prosjektLenker.flowsignal, "FlowSignal")}: AI-støttet samhandling, profilinnsikt og teamutvikling`,
-    `Utviklet ${lenke(prosjektLenker.salgsflyt, "SMB Salgsflyt-sjekken")}: interaktiv diagnose og AI-rapportering for kommersiell modenhet og salgskvalifisering`,
-    `Utviklet ${lenke(prosjektLenker.readinessScan, "AI Readiness Scan")}: tilgangsstyrt kartlegging av AI-modenhet, prioriteringer og grunnlag for videre AI-arbeid`,
-    `Bygget ${lenke(prosjektLenker.agent, "agentisk arbeidsflyt")}, ${lenke(prosjektLenker.innhold, "innsikts- og innholdsmotor")} og ${lenke(prosjektLenker.beslutning, "AI-arkitektur for beslutningsstøtte")}`,
+    `Utviklet ${lenke(prosjektLenker.readinessScan, "AI Readiness Scan")}: tilgangsstyrt kartleggingsverktøy med strukturert vurdering av AI-modenhet, prioriteringer og administrativ innsikt`,
+    `Bygget ${lenke(prosjektLenker.salgsflyt, "SMB Salgsflyt-sjekken")}: diagnose, scoring, AI-støttet analyse, rapportering og oppfølgingslogikk for kommersielle arbeidsflyter`,
+    `Videreutviklet ${lenke(prosjektLenker.flowsignal, "FlowSignal")}: AI-støttet arbeidsflate for profilinnsikt, dagsform, refleksjon, samhandling og lederoppfølging`,
+    `Bygget ${lenke(prosjektLenker.psc, "The Predictive Sales Coach")}: trenings- og analyseplattform for kundedialog, møteforberedelse, simulering, evaluering og salgsledelse`,
+    `Utviklet modeller og arbeidsflyter for ${lenke(prosjektLenker.agent, "AI-assistert innsikt")}, ${lenke(prosjektLenker.innhold, "innhold")}, prioritering og ${lenke(prosjektLenker.beslutning, "beslutningsstøtte")}`,
     `${totalt} ${lenke(prosjektLenker.faginnlegg, "faginnlegg")} om AI, ledelse og kommersiell verdiskaping (oppdateres løpende)`,
-    `Tatt initiativ til dannelsen av ${lenke(prosjektLenker.valueLab, "AI Value Lab Oslo")} — tverrfaglig lærings- og utviklingsinitiativ for praktisk testing, ansvarlig AI-bruk og reell verdiskaping gjennom virksomhetsnære case`,
-    `Fullført masterkurset ${lenke(prosjektLenker.bi, "Generative AI for Business")} ved ${lenke(prosjektLenker.bi, "Handelshøyskolen BI")} med karakter A`,
+    `Deltatt i ${lenke(prosjektLenker.valueLab, "AI Value Lab Oslo")}: tverrfaglig arena for AI-læring, erfaringsutveksling og utforsking av praktiske problemstillinger`,
+    `Fullført videreutdanning i ${lenke(prosjektLenker.bi, "Generative AI for Business")} ved Handelshøyskolen BI med karakter A`,
   ];
 }
 

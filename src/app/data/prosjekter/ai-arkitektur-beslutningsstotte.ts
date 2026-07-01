@@ -58,7 +58,7 @@ Modell og arkitekturspor under utvikling, med overføringsverdi til flere AI-pro
 
 Arkitekturen kan videreutvikles til dashboards, lederstøtte, salgsanalyse, gap-analyse, use case-prioritering eller beslutningsverktøy for ledergrupper.
 
-<strong>Neste steg</strong>
+<strong>Videre relevans og mulig anvendelse</strong>
 
 ${prosjektKontaktLenke("no")} dersom du ønsker å kartlegge hvordan AI kan brukes til bedre beslutningsstøtte, kommersiell prioritering eller lederrapportering i din virksomhet.`,
     en: `<strong>What the project is</strong>
@@ -99,7 +99,7 @@ Model and architecture track under development, with transfer value to several A
 
 The architecture can be developed into dashboards, leadership support, sales analysis, gap analysis, use case prioritisation or decision tools for leadership teams.
 
-<strong>Next steps</strong>
+<strong>Further relevance and possible application</strong>
 
 ${prosjektKontaktLenke("en")} if you would like to map how AI can be used for better decision support, commercial prioritisation or leadership reporting in your organisation.`,
   },

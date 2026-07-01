@@ -1,5 +1,5 @@
 import { FLOW_SIGNAL_APP_URL } from "../../lib/flowsignal-brand";
-import { prosjektKontaktLenke } from "../../lib/prosjekt-lenker";
+import { prosjektKontaktLenke, prosjektKontaktDialogTekst, prosjektTilgangStandard } from "../../lib/prosjekt-lenker";
 import { type ProsjektType } from "./predictive-sales-coach";
 
 const fsAppLink = `<a href="${FLOW_SIGNAL_APP_URL}" target="_blank" rel="noopener noreferrer" aria-label="Åpne FlowSignal v1.0" class="fs-app-link focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"><span class="fs-mark">FlowSignal</span> <span class="fs-v">v1.0</span></a>`;
@@ -72,7 +72,7 @@ FlowSignal er ikke utviklet som et kontroll-, vurderings- eller diagnoseverktøy
 
 FlowSignal er relevant for arbeidsgivere, ledere og team som ønsker bedre samhandling, mer presis kommunikasjon og mer praktisk bruk av menneskelig innsikt.
 
-For arbeidsgivere viser prosjektet hvordan AI kan brukes til å støtte ledelse, teamutvikling, onboarding, rolleforståelse og bedre dialog. For kunder viser det hvordan personprofil, refleksjon og dagsform kan kobles til konkrete anbefalinger i arbeidshverdagen.
+For arbeidsgivere viser prosjektet hvordan AI kan brukes til å støtte ledelse, teamutvikling, onboarding, rolleforståelse og bedre dialog. Prosjektet viser hvordan personprofil, refleksjon og dagsform kan kobles til konkrete anbefalinger i arbeidshverdagen.
 
 <strong>Status og modenhet</strong>
 
@@ -92,9 +92,9 @@ FlowSignal handler primært om mennesker, roller, dagsform og intern samhandling
 
 Der FlowSignal hjelper team å samarbeide bedre, trener PSCv2.0 selgere på konkrete kundedialoger.
 
-<strong>Neste steg</strong>
+<strong>Videre relevans og mulig anvendelse</strong>
 
-Pilotflaten er tilgangsstyrt og brukes i avtalte testløp. ${prosjektKontaktLenke("no")} dersom du ønsker tilgang eller vil diskutere en mulig pilot. Når tilgang er avtalt, kan ${fsAppLink} brukes som del av et avgrenset testløp, workshop eller kommersielt utviklingsarbeid.`,
+${prosjektTilgangStandard.no} ${prosjektKontaktLenke("no", "Ta gjerne kontakt")} ${prosjektKontaktDialogTekst.no}. ${fsAppLink} åpner den tilgangsstyrte løsningen.`,
     en: `<strong>What the project is</strong>
 
 FlowSignal is built for leaders, commercial teams and organisations that want better insight into how people create value, collaborate and are affected by daily form.
@@ -125,7 +125,7 @@ FlowSignal is not built as a control, assessment or diagnostic tool. The purpose
 
 FlowSignal is relevant for employers, leaders and teams that want better collaboration, more precise communication and more practical use of human insight.
 
-For employers, the project shows how AI can support leadership, team development, onboarding, role understanding and better dialogue. For customers, it shows how person profile, reflection and daily form can be connected to concrete recommendations in everyday work.
+For employers, the project shows how AI can support leadership, team development, onboarding, role understanding and better dialogue. The project shows how person profile, reflection and daily form can be connected to concrete recommendations in everyday work.
 
 <strong>Status and maturity</strong>
 
@@ -145,8 +145,8 @@ FlowSignal is primarily about people, roles, daily form and internal collaborati
 
 Where FlowSignal helps teams collaborate better, PSCv2.0 trains sales reps on concrete customer dialogues.
 
-<strong>Next steps</strong>
+<strong>Further relevance and possible application</strong>
 
-The pilot environment is access-controlled and used in agreed test runs. ${prosjektKontaktLenke("en")} if you want access or to discuss a possible pilot. Once access is agreed, ${fsAppLink} can be used as part of a scoped test run, workshop or commercial development engagement.`,
+${prosjektTilgangStandard.en} ${prosjektKontaktLenke("en", "Feel free to get in touch")} ${prosjektKontaktDialogTekst.en}. ${fsAppLink} opens the access-controlled solution.`,
   },
 };

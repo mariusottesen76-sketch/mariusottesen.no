@@ -102,21 +102,7 @@ export default function Prosjekter({ onNavigate }: { onNavigate?: (tab: string) 
               {tr("prosjekter.intro.1b")}
             </p>
             <p className="text-lg md:text-xl text-slate-400 italic leading-relaxed font-light mb-4 break-words">
-              {tr("prosjekter.intro.2")}{" "}
-              {onNavigate ? (
-                <button
-                  type="button"
-                  onClick={() => onNavigate("Consulting")}
-                  className={`${linkClass} bg-transparent border-0 p-0 cursor-pointer font-light italic`}
-                >
-                  {tr("prosjekter.intro.2.link")}
-                </button>
-              ) : (
-                <Link href="/consulting" className={linkClass}>
-                  {tr("prosjekter.intro.2.link")}
-                </Link>
-              )}
-              .
+              {tr("prosjekter.intro.2")}
             </p>
             <p className="text-base md:text-lg text-slate-400 font-medium mb-3">
               {tr("prosjekter.intro.gridLead")}

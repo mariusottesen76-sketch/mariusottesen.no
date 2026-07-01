@@ -1,4 +1,4 @@
-import { prosjektKontaktLenke } from "../../lib/prosjekt-lenker";
+import { prosjektKontaktLenke, prosjektKontaktDialogTekst } from "../../lib/prosjekt-lenker";
 import { type ProsjektType } from "./predictive-sales-coach";
 
 export const aiValueLabOslo: ProsjektType = {
@@ -57,19 +57,19 @@ Kjernen er ansvarlig bruk, praktisk læring og løsninger som tåler virkelighet
 
 Prosjektet er relevant for SMB-ledere, ledergrupper, samarbeidspartnere og kunder som ønsker å forstå hvor AI faktisk kan skape verdi.
 
-For arbeidsgivere viser initiativet evne til å bygge faglige arenaer, samle kompetanse og utvikle praktisk AI-forståelse. For kunder viser det hvordan AI-rådgivning kan gjøres konkret, forretningsnært og handlingsorientert.
+For arbeidsgivere viser initiativet evne til å bygge faglige arenaer, samle kompetanse og utvikle praktisk AI-forståelse. Prosjektet viser hvordan AI kan kobles til forretningsnære problemstillinger, ansvarlig bruk og praktisk læring.
 
 <strong>Status og modenhet</strong>
 
-Tverrfaglig lærings- og utviklingsinitiativ i videre utvikling, med potensial for workshops, rådgivning, pilotprosjekter og kommersielle tjenestepakker.
+Tverrfaglig lærings- og utviklingsinitiativ i videre utvikling, med potensial for videre faglig utvikling, praktiske læringsarenaer og relevante samarbeidsformer dersom det oppstår en passende kontekst.
 
 <strong>Mulig videreutvikling</strong>
 
-Initiativet kan videreutvikles til konkrete tilbud for SMB-markedet, eksempelvis AI-mulighetsverksted, AI Growth Sprint, use case-prioritering, prosesskartlegging og governance light.
+Initiativet kan videreutvikles med praktiske læringsarenaer, AI Growth Sprint-spor, use case-prioritering, prosesskartlegging og governance light.
 
-<strong>Neste steg</strong>
+<strong>Videre relevans og mulig anvendelse</strong>
 
-${prosjektKontaktLenke("no")} dersom du ønsker å diskutere samarbeid, workshop, pilotprosjekt eller praktisk AI-verdi for din virksomhet.`,
+${prosjektKontaktLenke("no", "Ta kontakt for faglig dialog")} ${prosjektKontaktDialogTekst.no}.`,
     en: `<strong>What the project is</strong>
 
 AI Value Lab Oslo is a cross-disciplinary initiative where technology, business and practical development meet. The goal is to explore how AI can be understood, tested and used responsibly in business-near challenges.
@@ -98,18 +98,18 @@ The core is responsible use, practical learning and solutions that work in reali
 
 The project is relevant for SMB leaders, leadership teams, partners and customers who want to understand where AI can actually create value.
 
-For employers, the initiative shows the ability to build professional arenas, gather competence and develop practical AI understanding. For customers, it shows how AI advisory work can be made concrete, business-oriented and action-focused.
+For employers, the initiative shows the ability to build professional arenas, gather competence and develop practical AI understanding. The project shows how AI can be connected to business-near challenges, responsible use and practical learning.
 
 <strong>Status and maturity</strong>
 
-Cross-disciplinary learning and development initiative under further development, with potential for workshops, advisory services, pilot projects and commercial service packages.
+Cross-disciplinary learning and development initiative under further development, with potential for further professional development, practical learning arenas and relevant forms of collaboration if a suitable context arises.
 
 <strong>Possible further development</strong>
 
-The initiative can be developed into concrete offerings for the SMB market, such as AI opportunity workshops, AI Growth Sprint, use case prioritisation, process mapping and governance light.
+The initiative can be developed with practical learning arenas, AI Growth Sprint tracks, use case prioritisation, process mapping and governance light.
 
-<strong>Next steps</strong>
+<strong>Further relevance and possible application</strong>
 
-${prosjektKontaktLenke("en")} if you would like to discuss collaboration, workshops, pilot projects or practical AI value for your organisation.`,
+${prosjektKontaktLenke("en", "Get in touch for a professional conversation")} ${prosjektKontaktDialogTekst.en}.`,
   },
 };

@@ -2,10 +2,10 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Mail, Smartphone, Linkedin, ChevronRight, Target, Briefcase, MessageSquare, Globe } from "lucide-react";
+import { Mail, Smartphone, Linkedin, ChevronRight, Target, MessageSquare, Globe } from "lucide-react";
 import { useLanguage } from "./LanguageContext";
 import { getTranslation } from "./data/translations";
-import { iconSectionTitleClass, pageEyebrowClass, pageTitleClass, sectionTitleClass } from "./lib/typography";
+import { iconSectionTitleClass, pageTitleClass, sectionTitleClass } from "./lib/typography";
 
 const linkClass =
   "text-indigo-400 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400";
@@ -30,11 +30,11 @@ export default function Kontakt() {
         </div>
 
         <div className="flex-1 min-w-0 space-y-6">
-          <div className="space-y-2">
-            <h1 className={pageTitleClass}>
-              {tr("kontakt.title")}
-            </h1>
-            <p className={pageEyebrowClass}>Marius Ottesen</p>
+          <div className="space-y-4">
+            <h1 className={pageTitleClass}>{tr("kontakt.title")}</h1>
+            <p className="text-lg text-slate-300 border-l-4 border-indigo-600 pl-6 italic font-medium leading-relaxed whitespace-pre-line">
+              {tr("kontakt.intro")}
+            </p>
           </div>
 
           <div className="w-full bg-slate-900/40 rounded-2xl border border-slate-800 overflow-hidden shadow-xl">
@@ -45,20 +45,20 @@ export default function Kontakt() {
                 </h2>
                 <p className="italic font-medium text-base leading-relaxed">
                   {tr("kontakt.profil.desc")}{" "}
-                  <Link href="/cv" className={linkClass} aria-label="Gå til CV og åpen søknad">
+                  <Link href="/cv" className={linkClass} aria-label="Gå til CV og lederprofil">
                     {tr("kontakt.link.cv")}
                   </Link>
-                  .
-                </p>
-              </div>
-              <div className="space-y-2">
-                <h2 className={iconSectionTitleClass}>
-                  <Briefcase size={18} aria-hidden="true" /> {tr("kontakt.ambisjon")}
-                </h2>
-                <p className="italic font-medium text-base leading-relaxed">
-                  {tr("kontakt.ambisjon.desc")}{" "}
+                  {", "}
+                  <Link href="/erfaring" className={linkClass} aria-label="Gå til erfaring">
+                    {tr("kontakt.link.erfaring")}
+                  </Link>
+                  {lang === "no" ? ", " : ", "}
                   <Link href="/resultater" className={linkClass} aria-label="Gå til resultater">
                     {tr("kontakt.link.resultater")}
+                  </Link>
+                  {lang === "no" ? " og " : " and "}
+                  <Link href="/prosjekter" className={linkClass} aria-label="Gå til AI-prosjekter">
+                    {tr("kontakt.link.prosjekter")}
                   </Link>
                   .
                 </p>
@@ -69,8 +69,8 @@ export default function Kontakt() {
                 </h2>
                 <p className="italic font-medium text-base leading-relaxed">
                   {tr("kontakt.dialog.desc")}{" "}
-                  <Link href="/consulting" className={linkClass} aria-label="Gå til Consulting">
-                    {tr("kontakt.link.consulting")}
+                  <Link href="/consulting#cons-dialog-heading" className={linkClass} aria-label="Gå til kontaktskjema">
+                    {tr("kontakt.link.skjema")}
                   </Link>
                   .
                 </p>
