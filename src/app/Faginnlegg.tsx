@@ -168,37 +168,50 @@ const Faginnlegg = ({ onNavigate }: { onNavigate?: (tab: string) => void }) => {
           </h1>
           <div className="w-full min-w-0 max-w-none">
             <p className={`${pageIntroClass} mb-4`}>{tr("fag.intro.1")}</p>
-            <p className="text-lg md:text-xl text-slate-400 italic leading-relaxed font-light mb-4">{tr("fag.intro.why")}</p>
-            <p className="text-lg md:text-xl text-slate-400 italic leading-relaxed font-light mb-4">{tr("fag.intro.why.bridge")}</p>
-            <p className="text-lg md:text-xl text-slate-400 italic leading-relaxed font-light mb-4">{tr("fag.intro.2")}</p>
-            <p className="text-base md:text-lg text-slate-300 leading-relaxed font-light mb-4">
+            <p className="text-base md:text-lg text-slate-300 leading-relaxed font-light">
               <a href="#fag-innlegg-oversikt" className={linkClass}>
                 {tr("fag.intro.scroll")}
               </a>
               {lang === "no" ? " ↓" : " ↓"}
             </p>
-            <p className="text-base md:text-lg text-slate-300 leading-relaxed font-light">
-              {lang === "no" ? "Vil du se dette omsettes i prosjekter eller rådgivning, finner du mer under " : "To see this translated into projects or advisory work, see "}
-              <Link href="/prosjekter" className={linkClass}>AI-prosjekter</Link>
-              {lang === "no" ? " og " : " and "}
-              {onNavigate ? (
-                <button
-                  type="button"
-                  onClick={() => onNavigate("Consulting")}
-                  className={`${linkClass} bg-transparent border-0 p-0 cursor-pointer font-light`}
-                >
-                  Consulting
-                </button>
-              ) : (
-                <Link href="/consulting" className={linkClass}>Consulting</Link>
-              )}
-              .
-            </p>
           </div>
         </div>
       </div>
 
-      <section aria-labelledby="fag-lesestier-heading" className="mt-8 mb-10 pt-6 border-t border-slate-800/40">
+      <section
+        aria-labelledby="fag-formidling-heading"
+        className="mt-8 mb-10 pt-6 border-t border-slate-800/40 min-w-0"
+      >
+        <h2 id="fag-formidling-heading" className={`${sectionTitleClass} mb-4`}>
+          {tr("fag.formidling.title")}
+        </h2>
+        <p className="text-base md:text-lg text-slate-400 leading-relaxed font-light break-words whitespace-pre-line mb-4">
+          {tr("fag.formidling.body")}
+        </p>
+        <p className="text-base md:text-lg text-slate-400 leading-relaxed font-light break-words mb-6">
+          {tr("fag.formidling.kilde.lead")}{" "}
+          <Link href="/prosjekter#ai-value-lab-oslo-2026" className={linkClass}>
+            {tr("fag.formidling.kilde.valueLab")}
+          </Link>{" "}
+          {tr("fag.formidling.kilde.mid1")}
+        </p>
+        <div className="flex flex-wrap gap-x-5 gap-y-2">
+          <Link href="/prosjekter" className={`${linkClass} text-sm font-medium`}>
+            {tr("fag.formidling.link.prosjekter")}
+          </Link>
+          <Link href="/erfaring" className={`${linkClass} text-sm font-medium`}>
+            {tr("fag.formidling.link.erfaring")}
+          </Link>
+          <Link href="/resultater" className={`${linkClass} text-sm font-medium`}>
+            {tr("fag.formidling.link.resultater")}
+          </Link>
+        </div>
+      </section>
+
+      <section aria-labelledby="fag-lesestier-heading" className="mb-10 pt-6 border-t border-slate-800/40">
+        <p className="text-base md:text-lg text-slate-400 leading-relaxed font-light mb-5 w-full min-w-0 max-w-none">
+          {tr("fag.intro.2")}
+        </p>
         <h2 id="fag-lesestier-heading" className={`${sectionTitleClass} mb-2`}>
           {tr("fag.lesestier.title")}
         </h2>
@@ -717,7 +730,7 @@ const InnleggModal = ({ innlegg, lang, onClose, onNavigate, linkedinLabel, ctaTe
               <div className="p-5 bg-slate-900/60 border border-indigo-500/15 rounded-xl">
                 <p className="text-slate-400 text-sm italic mb-3">{ctaText}</p>
                 <button
-                  onClick={() => { onClose(); onNavigate("Consulting"); }}
+                  onClick={() => { onClose(); onNavigate("Kontakt"); }}
                   className="inline-flex items-center gap-2 text-indigo-400 font-black text-sm uppercase tracking-widest hover:text-white transition-all group/cta"
                 >
                   {ctaLink}

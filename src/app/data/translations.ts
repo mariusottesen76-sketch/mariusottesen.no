@@ -104,13 +104,34 @@ const translations: Translations = {
     no: "Under finner du anbefalte lesestier og innholdsfortegnelse etter tema. Alle innlegg er nærmere beskrevet lenger ned på siden — med ingress, bilde og mulighet til å lese hele teksten.",
     en: "Below you will find recommended reading paths and a table of contents by topic. Every article is described in more detail further down the page — with a teaser, image and option to read the full text.",
   },
-  "fag.intro.why": {
-    no: "For meg er formidling av fag en av de mest effektive metodene for egen læring; ved å strukturere og lære bort komplekse emner, tvinges man til å se nye sammenhenger.",
-    en: "I regard knowledge sharing as one of the most powerful vehicles for continuous learning — structuring and articulating complex topics compels you to uncover new connections and sharper insights.",
+  "fag.formidling.title": {
+    no: "Faglig formidling som arbeidsmetode",
+    en: "Professional communication as a working method",
   },
-  "fag.intro.why.bridge": {
-    no: "Innleggene bygger derfor på det jeg faktisk jobber med. Det er kommersiell ledelse, transformasjon og praktisk AI der det skal omsettes til arbeidsflyt, beslutninger og gjennomføring.",
-    en: "The articles therefore build on what I actually work with. That is commercial leadership, transformation and practical AI where it must translate into workflow, decisions and execution.",
+  "fag.formidling.body": {
+    no: "Fagkompetanse, læring og formidling har alltid vært viktige deler av hvordan jeg utvikler mennesker, team og virksomheter. Jeg har tidligere arbeidet med kursutvikling, salgs- og ledertrening og utvikling av team, og bruker samme tilnærming i arbeidet med AI, transformasjon og kommersiell utvikling.\n\nFor meg er formidling en av de mest effektive metodene for egen læring: Når komplekse temaer må struktureres, forklares og gjøres anvendbare for andre, blir også nye sammenhenger og forbedringsmuligheter tydeligere.\n\nInnleggene er ment som refleksjoner og praktiske perspektiver for ledere og virksomheter som arbeider med vekst, endring, teknologi og gjennomføring.",
+    en: "Subject expertise, learning and communication have always been important parts of how I develop people, teams and organisations. I have previously worked on course development, sales and leadership training and team development, and apply the same approach in work on AI, transformation and commercial development.\n\nFor me, communication is one of the most effective methods for my own learning: when complex topics must be structured, explained and made applicable for others, new connections and improvement opportunities also become clearer.\n\nThe articles are intended as reflections and practical perspectives for leaders and organisations working with growth, change, technology and execution.",
+  },
+  "fag.formidling.kilde.lead": {
+    no: "Underbygget av ledererfaring, videreutdanning og bygde AI-prosjekter har jeg også tatt initiativ til",
+    en: "Supported by leadership experience, further education and built AI projects, I have also initiated",
+  },
+  "fag.formidling.kilde.valueLab": { no: "AI Value Lab Oslo", en: "AI Value Lab Oslo" },
+  "fag.formidling.kilde.mid1": {
+    no: "— et tverrfaglig initiativ for praktisk AI-verdi, læring og virksomhetsnære problemstillinger.",
+    en: "— a cross-disciplinary initiative for practical AI value, learning and business-oriented problem areas.",
+  },
+  "fag.formidling.link.prosjekter": {
+    no: "Se AI-prosjekter og portefølje",
+    en: "See AI projects and portfolio",
+  },
+  "fag.formidling.link.erfaring": {
+    no: "Se erfaring og lederprofil",
+    en: "See experience and leadership profile",
+  },
+  "fag.formidling.link.resultater": {
+    no: "Se dokumenterte resultater",
+    en: "See documented results",
   },
   "fag.intro.scroll": {
     no: "Hopp til alle innlegg i detalj",
@@ -139,19 +160,26 @@ const translations: Translations = {
   "fag.les": { no: "Les hele innlegget", en: "Read full article" },
   "fag.nye": { no: "Nye innlegg under utarbeidelse...", en: "New articles in progress..." },
   "fag.linkedin": { no: "Les på LinkedIn", en: "Read on LinkedIn" },
-  "fag.cta": { no: "Trenger din bedrift hjelp med å sette dette i system?", en: "Does your organisation need help turning these insights into action?" },
-  "fag.cta.link": { no: "Gå til Consulting", en: "Explore Consulting Services" },
+  "fag.cta": {
+    no: "Vil du diskutere et relatert tema, er du velkommen til å ta kontakt.",
+    en: "If you would like to discuss a related topic, feel free to get in touch.",
+  },
+  "fag.cta.link": { no: "Gå til kontakt", en: "Go to contact" },
 
   // Prosjekter
   "prosjekter.title.1": { no: "AI-prosjekter &", en: "AI Projects &" },
   "prosjekter.title.2": { no: "Utvikling", en: "Development" },
   "prosjekter.intro.1": {
-    no: "Her finner du AI-prosjekter, apper, casearbeid og arbeidsflyter som kobler AI til konkrete kommersielle og operative behov.",
-    en: "Here you will find AI projects, apps, case work and workflows that connect AI to concrete commercial and operational needs.",
+    no: "Her finner du AI-prosjekter, apper, casearbeid og arbeidsflyter i skjæringspunktet mellom AI, digital transformasjon og konkrete kommersielle og operative behov.",
+    en: "Here you will find AI projects, apps, case work and workflows at the intersection of AI, digital transformation and concrete commercial and operational needs.",
+  },
+  "prosjekter.intro.scroll": {
+    no: "Hopp til alle AI-prosjekter i detalj",
+    en: "Jump to all AI projects in detail",
   },
   "prosjekter.intro.1b": {
-    no: "Prosjektene viser hva som faktisk er bygget, hvordan løsningene fungerer og hvilken praktisk relevans de kan ha innen salg, kundeopplevelse, ledelse, arbeidsflyt, beslutningsstøtte og ansvarlig AI-bruk.",
-    en: "The projects show what has actually been built, how the solutions work and what practical relevance they can have in sales, customer experience, leadership, workflow, decision support and responsible use of AI.",
+    no: "Prosjektene viser hva som faktisk er bygget, hvordan løsningene fungerer og hvilken praktisk relevans de kan ha innen kommersiell utvikling, salg, kundeopplevelse, ledelse, arbeidsflyt, beslutningsstøtte og ansvarlig AI-bruk.",
+    en: "The projects show what has actually been built, how the solutions work and what practical relevance they can have in commercial development, sales, customer experience, leadership, workflow, decision support and responsible use of AI.",
   },
   "prosjekter.intro.gridLead": {
     no: "Kort oversikt — klikk på navnet for å lese mer:",
@@ -183,6 +211,11 @@ const translations: Translations = {
     en: "GenAI for concept communication and commercial positioning — transferable to your own branding",
   },
   "prosjekter.intro.punkt.strategisk.label": { no: "Strategisk AI-implementering", en: "Strategic AI implementation" },
+  "prosjekter.intro.punkt.nettside.label": { no: "Nettside for mariusottesen.no", en: "Website for mariusottesen.no" },
+  "prosjekter.intro.punkt.nettside.desc": {
+    no: "Nettside for lederprofil, portefølje, faginnlegg og tilgangsstyrte AI-demonstratorer",
+    en: "Website for leadership profile, portfolio, articles and access-controlled AI demonstrators",
+  },
   "prosjekter.intro.punkt.strategisk.desc": {
     no: "Fra case til gjennomførbar plan (BI) — modell for ansvarlig implementering",
     en: "From case to executable plan (BI) — a model for responsible implementation",
@@ -218,8 +251,29 @@ const translations: Translations = {
     en: "Ongoing track on AI, leadership and value creation — where theory meets practice",
   },
   "prosjekter.intro.2": {
-    no: "Siden fungerer som en portefølje for arbeidsgivere, rekrutterere og beslutningstakere som ønsker å se praktisk AI-forståelse, produktutvikling og kommersiell gjennomføringsevne i praksis.",
-    en: "This page serves as a portfolio for employers, recruiters and decision-makers who want to see practical AI understanding, product development and commercial execution capability in practice.",
+    no: "Siden fungerer som en portefølje for arbeidsgivere, rekrutterere og beslutningstakere som ønsker å se praktisk AI-forståelse, digital transformasjon, produktutvikling og kommersiell gjennomføringsevne i praksis.",
+    en: "This page serves as a portfolio for employers, recruiters and decision-makers who want to see practical AI understanding, digital transformation, product development and commercial execution capability in practice.",
+  },
+  "prosjekter.videreutdanning.title": {
+    no: "Fra videreutdanning til bygde løsninger",
+    en: "From further education to built solutions",
+  },
+  "prosjekter.videreutdanning.para1": {
+    no: "I 2026 fullførte jeg masterkurset Generative AI for Business ved BI med karakter A. Parallelt har jeg bygget og publisert flere virksomhetsnære AI-prosjekter som utforsker hvordan AI kan brukes til AI-beredskap, salgsflyt, kundedialog, teamutvikling, arbeidsflyt og kommersiell prioritering.",
+    en: "In 2026 I completed the master's course Generative AI for Business at BI Norwegian Business School with grade A. In parallel I have built and published several business-oriented AI projects exploring how AI can be used for AI readiness, sales flow, customer dialogue, team development, workflow and commercial prioritisation.",
+  },
+  "prosjekter.videreutdanning.para2": {
+    no: "Arbeidet omfatter blant annet AI-støttet pasientreise, intake og booking for tannklinikk, AI-arkitektur for beslutningsstøtte og prioritering, samt en AI-assistert innsikts- og innholdsmotor som gjør kunnskap og markedssignaler mer anvendbare.",
+    en: "The work includes, among other things, AI-supported patient journey, intake and booking for a dental clinic, AI architecture for decision support and prioritisation, and an AI-assisted insight and content engine that makes knowledge and market signals more actionable.",
+  },
+  "prosjekter.videreutdanning.para3.lead": {
+    no: "Jeg har også tatt initiativ til",
+    en: "I have also initiated",
+  },
+  "prosjekter.videreutdanning.valueLab": { no: "AI Value Lab Oslo", en: "AI Value Lab Oslo" },
+  "prosjekter.videreutdanning.para3.tail": {
+    no: ", med mål om å utforske praktisk AI-verdi, læring og virksomhetsnære problemstillinger sammen med andre. Prosjektene nedenfor viser konkrete løsninger, modeller og arbeidsflyter som kobler forretning, brukerbehov, teknologi og gjennomføring i praksis.",
+    en: ", with the aim of exploring practical AI value, learning and business-oriented problem areas together with others. The projects below show concrete solutions, models and workflows that connect business, user needs, technology and execution in practice.",
   },
   "prosjekter.kort.seksjon.title": { no: "Alle AI-prosjekter i detalj", en: "All AI projects in detail" },
   "prosjekter.kort.seksjon.intro": {

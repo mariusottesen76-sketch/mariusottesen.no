@@ -1,4 +1,5 @@
 import { prosjektKontaktLenke } from "../../lib/prosjekt-lenker";
+import { prosjektVidereutviklingTekst } from "../prosjekt-videreutvikling";
 import { type ProsjektType } from "./predictive-sales-coach";
 
 export const aiArkitekturBeslutningsstotte: ProsjektType = {
@@ -56,7 +57,7 @@ Modell og arkitekturspor under utvikling, med overføringsverdi til flere AI-pro
 
 <strong>Mulig videreutvikling</strong>
 
-Arkitekturen kan videreutvikles til dashboards, lederstøtte, salgsanalyse, gap-analyse, use case-prioritering eller beslutningsverktøy for ledergrupper.
+${prosjektVidereutviklingTekst("ai-arkitektur-beslutningsstotte-2026", "no")}
 
 <strong>Videre relevans og mulig anvendelse</strong>
 
@@ -97,7 +98,7 @@ Model and architecture track under development, with transfer value to several A
 
 <strong>Possible further development</strong>
 
-The architecture can be developed into dashboards, leadership support, sales analysis, gap analysis, use case prioritisation or decision tools for leadership teams.
+${prosjektVidereutviklingTekst("ai-arkitektur-beslutningsstotte-2026", "en")}
 
 <strong>Further relevance and possible application</strong>
 

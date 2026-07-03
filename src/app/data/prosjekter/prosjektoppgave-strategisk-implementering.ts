@@ -1,4 +1,5 @@
 import { prosjektKontaktLenke } from "../../lib/prosjekt-lenker";
+import { prosjektVidereutviklingTekst } from "../prosjekt-videreutvikling";
 import { type ProsjektType } from "./predictive-sales-coach";
 
 export const prosjektoppgaveStrategiskImplementering: ProsjektType = {
@@ -62,7 +63,7 @@ Fullført prosjektoppgave, konkret casearbeid og utviklet implementeringslogikk.
 
 <strong>Mulig videreutvikling</strong>
 
-Metodikken kan videreutvikles til workshop-format for virksomheter som ønsker å identifisere AI-bruksområder, prioritere tiltak og lage en ansvarlig implementeringsplan.
+${prosjektVidereutviklingTekst("prosjektoppgave-strategisk-implementering-2026", "no")}
 
 <strong>Videre relevans og mulig anvendelse</strong>
 
@@ -101,7 +102,7 @@ Completed master's project, concrete case work and developed implementation logi
 
 <strong>Possible further development</strong>
 
-The methodology can be developed into a workshop format for organisations that want to identify AI use areas, prioritise initiatives and create a responsible implementation plan.
+${prosjektVidereutviklingTekst("prosjektoppgave-strategisk-implementering-2026", "en")}
 
 <strong>Further relevance and possible application</strong>
 

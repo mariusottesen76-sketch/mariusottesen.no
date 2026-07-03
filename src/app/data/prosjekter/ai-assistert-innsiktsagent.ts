@@ -1,4 +1,5 @@
 import { prosjektKontaktLenke } from "../../lib/prosjekt-lenker";
+import { prosjektVidereutviklingTekst } from "../prosjekt-videreutvikling";
 import { type ProsjektType } from "./predictive-sales-coach";
 
 export const aiAssistertInnsiktsagent: ProsjektType = {
@@ -54,7 +55,7 @@ Praktisk AI-prosjekt og arbeidsflyt under videreutvikling. Første versjon hånd
 
 <strong>Mulig videreutvikling</strong>
 
-Arbeidsflyten kan videreutvikles til et verktøy for salgsledere, konsulenter, gründere, rekrutterere og kommersielle team som trenger bedre struktur i innsikt, prioritering og oppfølging.
+${prosjektVidereutviklingTekst("ai-assistert-innsikts-og-opportunity-agent-2026", "no")}
 
 <strong>Videre relevans og mulig anvendelse</strong>
 
@@ -93,7 +94,7 @@ Practical AI project and workflow under further development. The first version h
 
 <strong>Possible further development</strong>
 
-The workflow can be developed into a tool for sales leaders, consultants, founders, recruiters and commercial teams that need better structure in insight, prioritisation and follow-up.
+${prosjektVidereutviklingTekst("ai-assistert-innsikts-og-opportunity-agent-2026", "en")}
 
 <strong>Further relevance and possible application</strong>
 

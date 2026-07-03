@@ -1,5 +1,6 @@
 import { AI_READINESS_SCAN_APP_URL } from "../../lib/ai-readiness-scan-brand";
 import { prosjektKontaktLenke, prosjektKontaktDialogTekst, prosjektTilgangStandard } from "../../lib/prosjekt-lenker";
+import { prosjektVidereutviklingTekst } from "../prosjekt-videreutvikling";
 import { type ProsjektType } from "./predictive-sales-coach";
 
 const readinessAppLink = `<a href="${AI_READINESS_SCAN_APP_URL}" target="_blank" rel="noopener noreferrer" aria-label="Åpne AI Readiness Scan" class="text-indigo-400 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400">AI Readiness Scan</a>`;
@@ -62,7 +63,7 @@ Bygget som tilgangsstyrt kartleggingsverktøy med modenhet for avgrenset testing
 
 <strong>Mulig videreutvikling</strong>
 
-AI-generert oppsummering, modenhetsprofil, bransjetilpassede spørsmål og integrasjon mot praktiske læringsarenaer og videre faglig utvikling.
+${prosjektVidereutviklingTekst("ai-readiness-scan-2026-06", "no")}
 
 <strong>Videre relevans og mulig anvendelse</strong>
 
@@ -97,7 +98,7 @@ Built as an access-controlled mapping tool with maturity for limited testing and
 
 <strong>Possible further development</strong>
 
-AI-generated summary, maturity profile, industry-specific questions and integration with practical learning arenas and further professional development.
+${prosjektVidereutviklingTekst("ai-readiness-scan-2026-06", "en")}
 
 <strong>Further relevance and possible application</strong>
 

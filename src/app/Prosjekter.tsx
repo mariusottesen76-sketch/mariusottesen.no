@@ -18,6 +18,7 @@ import { prosjektoppgaveStrategiskImplementering } from "./data/prosjekter/prosj
 import { flowSignal } from "./data/prosjekter/flowsignal";
 import { smbSalgsflytSjekken } from "./data/prosjekter/smb-salgsflyt-sjekken";
 import { aiReadinessScan } from "./data/prosjekter/ai-readiness-scan";
+import { mariusottesenNettside } from "./data/prosjekter/mariusottesen-nettside";
 import { isFlowSignalProsjekt } from "./lib/flowsignal-brand";
 import { isPscProsjekt } from "./lib/psc-brand";
 import { isSmbSalgsflytProsjekt } from "./lib/smb-salgsflyt-brand";
@@ -25,7 +26,7 @@ import { isAiReadinessScanProsjekt } from "./lib/ai-readiness-scan-brand";
 import { formatProsjektHtml, formatProsjektPlain } from "./lib/product-brand";
 import ProsjektPilotBlokk from "./components/ProsjektPilotBlokk";
 
-const prosjektKort: ProsjektType[] = [aiReadinessScan, smbSalgsflytSjekken, flowSignal, prosjektoppgaveStrategiskImplementering, pscPromoVideo, aiAssistertInnsiktsagent, aiAssistertInnsiktsOgInnholdsagent, predictiveSalesCoach, aiValueLabOslo, skoyenasenTannklinikk, aiArkitekturBeslutningsstotte].sort(
+const prosjektKort: ProsjektType[] = [mariusottesenNettside, aiReadinessScan, smbSalgsflytSjekken, flowSignal, prosjektoppgaveStrategiskImplementering, pscPromoVideo, aiAssistertInnsiktsagent, aiAssistertInnsiktsOgInnholdsagent, predictiveSalesCoach, aiValueLabOslo, skoyenasenTannklinikk, aiArkitekturBeslutningsstotte].sort(
   (a, b) => new Date(b.dato).getTime() - new Date(a.dato).getTime()
 );
 
@@ -78,7 +79,7 @@ export default function Prosjekter({ onNavigate }: { onNavigate?: (tab: string) 
 
   return (
     <div className="py-4 text-left w-full overflow-x-hidden min-w-0">
-      {/* HERO SEKSJON */}
+      {/* HERO SEKSJON — bilde + kort intro (som faginnlegg) */}
       <div className="flex flex-col md:flex-row gap-6 items-start border-b border-slate-800/40 pb-6 min-w-0">
         <div className="w-full md:w-[400px] shrink-0 min-w-0">
           <Image
@@ -89,49 +90,81 @@ export default function Prosjekter({ onNavigate }: { onNavigate?: (tab: string) 
             className="w-full h-auto rounded-2xl shadow-2xl border border-slate-800 object-cover max-w-full"
           />
         </div>
-        <div className="flex-1 min-w-0 pt-2 overflow-hidden">
+        <div className="flex-1 min-w-0 pt-2">
           <h1 className={`${pageTitleClass} mb-6`}>
             {tr("prosjekter.title.1")} <br />
             <span className="text-indigo-500">{tr("prosjekter.title.2")}</span>
           </h1>
           <div className="w-full min-w-0 max-w-none">
-            <p className={`${pageIntroClass} mb-3 break-words`}>
-              {tr("prosjekter.intro.1")}
+            <p className={`${pageIntroClass} mb-4 break-words`}>{tr("prosjekter.intro.1")}</p>
+            <p className="text-base md:text-lg text-slate-300 leading-relaxed font-light">
+              <a href="#prosjekter-detalj" className={linkClass}>
+                {tr("prosjekter.intro.scroll")}
+              </a>
+              {lang === "no" ? " ↓" : " ↓"}
             </p>
-            <p className="text-lg md:text-xl text-slate-300 leading-relaxed font-light mb-4 break-words">
-              {tr("prosjekter.intro.1b")}
-            </p>
-            <p className="text-lg md:text-xl text-slate-400 italic leading-relaxed font-light mb-4 break-words">
-              {tr("prosjekter.intro.2")}
-            </p>
-            <p className="text-base md:text-lg text-slate-400 font-medium mb-3">
-              {tr("prosjekter.intro.gridLead")}
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
-              {hurtigoversikt.map((kategori) => (
-                <div
-                  key={kategori.title.no}
-                  className="p-4 md:p-5 bg-slate-900/40 rounded-xl border border-slate-800 space-y-3 min-w-0"
-                >
-                  <h3 className="text-base font-black text-indigo-400 italic tracking-tight">{kategori.title[lang]}</h3>
-                  <ul className="space-y-3">
-                    {kategori.lenker.map((lenke) => (
-                      <li key={lenke.prosjektId} className="space-y-1">
-                        <a href={`#${lenke.prosjektId}`} className={prosjektIntroLinkClass}>
-                          {tr(`prosjekter.intro.punkt.${lenke.introSlug}.label`)}
-                        </a>
-                        <p className="text-base text-slate-400 leading-snug font-light">
-                          {tr(`prosjekter.intro.punkt.${lenke.introSlug}.desc`)}
-                        </p>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </div>
+
+      <section
+        aria-labelledby="prosjekter-intro-heading"
+        className="mt-8 mb-10 pt-6 border-t border-slate-800/40 min-w-0"
+      >
+        <h2 id="prosjekter-intro-heading" className="sr-only">
+          {lang === "no" ? "Om AI-prosjektene" : "About the AI projects"}
+        </h2>
+        <p className="text-lg md:text-xl text-slate-300 leading-relaxed font-light mb-4 break-words">
+          {tr("prosjekter.intro.1b")}
+        </p>
+        <p className="text-lg md:text-xl text-slate-400 italic leading-relaxed font-light mb-6 break-words">
+          {tr("prosjekter.intro.2")}
+        </p>
+        <section
+          aria-labelledby="prosjekter-videreutdanning-heading"
+          className="mb-6 pt-5 border-t border-slate-800/50 space-y-3"
+        >
+          <h3 id="prosjekter-videreutdanning-heading" className="text-lg md:text-xl font-black text-slate-200 italic tracking-tight">
+            {tr("prosjekter.videreutdanning.title")}
+          </h3>
+          <div className="text-base md:text-lg text-slate-400 leading-relaxed font-light break-words space-y-4">
+            <p>{tr("prosjekter.videreutdanning.para1")}</p>
+            <p>{tr("prosjekter.videreutdanning.para2")}</p>
+            <p>
+              {tr("prosjekter.videreutdanning.para3.lead")}{" "}
+              <a href="#ai-value-lab-oslo-2026" className={linkClass}>
+                {tr("prosjekter.videreutdanning.valueLab")}
+              </a>
+              {tr("prosjekter.videreutdanning.para3.tail")}
+            </p>
+          </div>
+        </section>
+        <p className="text-base md:text-lg text-slate-400 font-medium mb-3">
+          {tr("prosjekter.intro.gridLead")}
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          {hurtigoversikt.map((kategori) => (
+            <div
+              key={kategori.title.no}
+              className="p-4 md:p-5 bg-slate-900/40 rounded-xl border border-slate-800 space-y-3 min-w-0"
+            >
+              <h3 className="text-base font-black text-indigo-400 italic tracking-tight">{kategori.title[lang]}</h3>
+              <ul className="space-y-3">
+                {kategori.lenker.map((lenke) => (
+                  <li key={lenke.prosjektId} className="space-y-1">
+                    <a href={`#${lenke.prosjektId}`} className={prosjektIntroLinkClass}>
+                      {tr(`prosjekter.intro.punkt.${lenke.introSlug}.label`)}
+                    </a>
+                    <p className="text-base text-slate-400 leading-snug font-light">
+                      {tr(`prosjekter.intro.punkt.${lenke.introSlug}.desc`)}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </section>
 
       {/* PROSJEKTLISTE – smalere bilde, tekst innenfor ramme */}
       <section

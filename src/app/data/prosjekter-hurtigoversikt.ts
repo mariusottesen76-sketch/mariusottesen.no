@@ -11,6 +11,7 @@ import { aiAssistertInnsiktsOgInnholdsagent } from "./prosjekter/ai-assistert-in
 import { aiArkitekturBeslutningsstotte } from "./prosjekter/ai-arkitektur-beslutningsstotte";
 import { aiValueLabOslo } from "./prosjekter/ai-value-lab-oslo";
 import { aiFaginnleggHub } from "./prosjekter/ai-faginnlegg-hub";
+import { mariusottesenNettside } from "./prosjekter/mariusottesen-nettside";
 
 export type ProsjektHurtigLenke = {
   prosjektId: string;
@@ -54,6 +55,11 @@ const kategorier: ProsjektHurtigKategori[] = [
   {
     title: { no: "Case og implementering", en: "Case and implementation" },
     lenker: [
+      {
+        prosjektId: "mariusottesen-no-2025",
+        introSlug: "nettside",
+        label: { no: "Nettside for mariusottesen.no", en: "Website for mariusottesen.no" },
+      },
       {
         prosjektId: "prosjektoppgave-strategisk-implementering-2026",
         introSlug: "strategisk",
@@ -126,6 +132,7 @@ const prosjektDatoById = Object.fromEntries(
     aiArkitekturBeslutningsstotte,
     aiValueLabOslo,
     aiFaginnleggHub,
+    mariusottesenNettside,
   ].map((prosjekt) => [prosjekt.id, prosjekt.dato])
 );
 

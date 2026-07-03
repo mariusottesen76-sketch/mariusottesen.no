@@ -1,4 +1,5 @@
 import { prosjektFaginnleggNesteStegLenker, prosjektKontaktLenke } from "../../lib/prosjekt-lenker";
+import { prosjektVidereutviklingTekst } from "../prosjekt-videreutvikling";
 import { type ProsjektType } from "./predictive-sales-coach";
 
 /** Kuratert «hub» under AI-prosjekter som peker leseren til alle AI-innlegg under Faginnlegg. */
@@ -56,7 +57,7 @@ Løpende fagspor og levende kunnskapsarkiv, med kobling til LinkedIn, BI-arbeid,
 
 <strong>Mulig videreutvikling</strong>
 
-Fagsporet kan videreutvikles med anbefalte lesestier for ulike målgrupper, for eksempel rekrutterere, ledere, SMB-kunder, salgsorganisasjoner og samarbeidspartnere.
+${prosjektVidereutviklingTekst("ai-faginnlegg-serie-2026", "no")}
 
 <strong>Videre relevans og mulig anvendelse</strong>
 
@@ -97,7 +98,7 @@ Ongoing professional track and living knowledge archive, linked to LinkedIn, BI 
 
 <strong>Possible further development</strong>
 
-The track can be developed with recommended reading paths for different audiences, for example recruiters, leaders, SMB customers, sales organisations and partners.
+${prosjektVidereutviklingTekst("ai-faginnlegg-serie-2026", "en")}
 
 <strong>Further relevance and possible application</strong>
 

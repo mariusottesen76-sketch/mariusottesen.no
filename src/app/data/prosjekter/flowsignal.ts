@@ -1,5 +1,6 @@
 import { FLOW_SIGNAL_APP_URL } from "../../lib/flowsignal-brand";
 import { prosjektKontaktLenke, prosjektKontaktDialogTekst, prosjektTilgangStandard } from "../../lib/prosjekt-lenker";
+import { prosjektVidereutviklingTekst } from "../prosjekt-videreutvikling";
 import { type ProsjektType } from "./predictive-sales-coach";
 
 const fsAppLink = `<a href="${FLOW_SIGNAL_APP_URL}" target="_blank" rel="noopener noreferrer" aria-label="Åpne FlowSignal v1.0" class="fs-app-link focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"><span class="fs-mark">FlowSignal</span> <span class="fs-v">v1.0</span></a>`;
@@ -82,9 +83,7 @@ Prosjektet er fortsatt under utvikling, med særlig fokus på bedre rapportimpor
 
 <strong>Mulig videreutvikling</strong>
 
-FlowSignal kan videreutvikles til et bredere samhandlingssystem for ledergrupper, kommersielle team, prosjektmiljøer og organisasjoner.
-
-Aktuelle videre spor er onboarding, lederutvikling, rolleavklaring, ukesplanlegging, teamutvikling, organisasjonsendring og samhandlingsstøtte i kommersielle miljøer.
+${prosjektVidereutviklingTekst("flowsignal-2026-05", "no")}
 
 <strong>Hvordan FlowSignal skiller seg fra PSCv2.0</strong>
 
@@ -135,9 +134,7 @@ The project is still under development, with particular focus on better report i
 
 <strong>Possible further development</strong>
 
-FlowSignal can be developed into a broader collaboration system for leadership groups, commercial teams, project environments and organisations.
-
-Relevant further tracks include onboarding, leadership development, role clarification, weekly planning, team development, organisational change and collaboration support in commercial environments.
+${prosjektVidereutviklingTekst("flowsignal-2026-05", "en")}
 
 <strong>How FlowSignal differs from PSCv2.0</strong>
 

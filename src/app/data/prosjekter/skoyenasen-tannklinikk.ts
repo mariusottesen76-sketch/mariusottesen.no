@@ -1,4 +1,5 @@
 import { prosjektKontaktLenke } from "../../lib/prosjekt-lenker";
+import { prosjektVidereutviklingTekst } from "../prosjekt-videreutvikling";
 import { type ProsjektType } from "./predictive-sales-coach";
 
 export const skoyenasenTannklinikk: ProsjektType = {
@@ -64,7 +65,7 @@ Konkret virksomhetscase med chatbot og booking på 6 språk. Fokus på pasientre
 
 <strong>Mulig videreutvikling</strong>
 
-Prosjektet kan videreutvikles med recall, digital oppfølging og enda tettere informasjonsflyt mellom pasient og klinikk.
+${prosjektVidereutviklingTekst("skoyenasen-tannklinikk-2026", "no")}
 
 <strong>Videre relevans og mulig anvendelse</strong>
 
@@ -105,7 +106,7 @@ Concrete business case with chatbot and booking in 6 languages. Focus on patient
 
 <strong>Possible further development</strong>
 
-The project can be developed further with recall, digital follow-up and even tighter information flow between patient and clinic.
+${prosjektVidereutviklingTekst("skoyenasen-tannklinikk-2026", "en")}
 
 <strong>Further relevance and possible application</strong>
 

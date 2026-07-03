@@ -1,4 +1,5 @@
 import { prosjektKontaktLenke, prosjektKontaktDialogTekst } from "../../lib/prosjekt-lenker";
+import { prosjektVidereutviklingTekst } from "../prosjekt-videreutvikling";
 import { type ProsjektType } from "./predictive-sales-coach";
 
 export const aiValueLabOslo: ProsjektType = {
@@ -65,7 +66,7 @@ Tverrfaglig lærings- og utviklingsinitiativ i videre utvikling, med potensial f
 
 <strong>Mulig videreutvikling</strong>
 
-Initiativet kan videreutvikles med praktiske læringsarenaer, AI Growth Sprint-spor, use case-prioritering, prosesskartlegging og governance light.
+${prosjektVidereutviklingTekst("ai-value-lab-oslo-2026", "no")}
 
 <strong>Videre relevans og mulig anvendelse</strong>
 
@@ -106,7 +107,7 @@ Cross-disciplinary learning and development initiative under further development
 
 <strong>Possible further development</strong>
 
-The initiative can be developed with practical learning arenas, AI Growth Sprint tracks, use case prioritisation, process mapping and governance light.
+${prosjektVidereutviklingTekst("ai-value-lab-oslo-2026", "en")}
 
 <strong>Further relevance and possible application</strong>
 

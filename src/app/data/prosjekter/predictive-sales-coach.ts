@@ -1,5 +1,6 @@
 import { PSC_APP_URL } from "../../lib/psc-brand";
 import { prosjektKontaktLenke, prosjektKontaktDialogTekst, prosjektTilgangStandard } from "../../lib/prosjekt-lenker";
+import { prosjektVidereutviklingTekst } from "../prosjekt-videreutvikling";
 
 const pscAppLink = `<a href="${PSC_APP_URL}" target="_blank" rel="noopener noreferrer" aria-label="Åpne The Predictive Sales Coach v2.0" class="psc-app-link focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400">The Predictive Sales Coach <span class="psc-v">v2.0</span></a>`;
 
@@ -109,9 +110,7 @@ Løsningen er tekstbasert for å trene presisjon i formuleringer, spørsmål, ak
 
 <strong>Mulig videreutvikling</strong>
 
-PSCv2.0 er bygget for salgstrening, men grunnmodellen kan brukes i flere profesjonelle samtalesituasjoner.
-
-Videre potensial inkluderer forhandlingstrening, intervjutrening, lederdialoger, kundeservice, rådgivning, vanskelige samtaler og andre situasjoner der trygghet, presisjon og tilpasning er avgjørende.
+${prosjektVidereutviklingTekst("predictive-sales-coach-2026", "no")}
 
 <strong>Hvordan PSCv2.0 skiller seg fra FlowSignal</strong>
 
@@ -164,9 +163,7 @@ The solution is text-based to train precision in wording, questions, active list
 
 <strong>Possible further development</strong>
 
-PSCv2.0 is built for sales training, but the core model can be used in more professional conversation situations.
-
-Further potential includes negotiation training, interview training, leadership dialogues, customer service, advisory conversations, difficult conversations and other situations where confidence, precision and adaptation are critical.
+${prosjektVidereutviklingTekst("predictive-sales-coach-2026", "en")}
 
 <strong>How PSCv2.0 differs from FlowSignal</strong>
 

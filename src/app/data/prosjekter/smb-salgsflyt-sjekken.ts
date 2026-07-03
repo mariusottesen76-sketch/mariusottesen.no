@@ -1,5 +1,6 @@
 import { SMB_SALGSFLYT_APP_URL } from "../../lib/smb-salgsflyt-brand";
 import { prosjektKontaktLenke, prosjektKontaktDialogTekst, prosjektTilgangStandard } from "../../lib/prosjekt-lenker";
+import { prosjektVidereutviklingTekst } from "../prosjekt-videreutvikling";
 import { type ProsjektType } from "./predictive-sales-coach";
 
 const smbAppLink = `<a href="${SMB_SALGSFLYT_APP_URL}" target="_blank" rel="noopener noreferrer" aria-label="Åpne SMB Salgsflyt-sjekken" class="text-indigo-400 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400">SMB Salgsflyt-sjekken</a>`;
@@ -53,7 +54,7 @@ Tilgangsstyrt diagnoseverktøy med scoring, AI-analyse og adminkonsoll — moden
 
 <strong>Mulig videreutvikling</strong>
 
-CRM-integrasjon, bransjetilpassede spørsmålssett og utvidet pipeline-styring i adminkonsollet.
+${prosjektVidereutviklingTekst("smb-salgsflyt-sjekken-2026", "no")}
 
 <strong>Videre relevans og mulig anvendelse</strong>
 
@@ -88,7 +89,7 @@ Access-controlled diagnostic tool with scoring, AI analysis and admin console �
 
 <strong>Possible further development</strong>
 
-CRM integration, industry-specific question sets and extended pipeline management in the admin console.
+${prosjektVidereutviklingTekst("smb-salgsflyt-sjekken-2026", "en")}
 
 <strong>Further relevance and possible application</strong>
 

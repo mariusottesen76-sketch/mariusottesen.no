@@ -1,5 +1,6 @@
 import { PSC_APP_URL } from "../../lib/psc-brand";
 import { prosjektKontaktLenke } from "../../lib/prosjekt-lenker";
+import { prosjektVidereutviklingTekst } from "../prosjekt-videreutvikling";
 import type { ProsjektType } from "./predictive-sales-coach";
 
 const linkClass =
@@ -63,7 +64,7 @@ Ferdig produsert promovideo og kommunikasjonsartefakt. Videoen støtter posisjon
 
 <strong>Mulig videreutvikling</strong>
 
-Videoformatet kan videreutvikles til demoer, korte forklaringsfilmer, salgsopplæring, onboarding, workshop-materiell og presentasjoner for ledere og kommersielle team.
+${prosjektVidereutviklingTekst("psc-promo-video-moc-2026", "no")}
 
 <strong>Videre relevans og mulig anvendelse</strong>
 
@@ -102,7 +103,7 @@ Completed promotional video and communication artefact. The video supports the p
 
 <strong>Possible further development</strong>
 
-The video format can be developed into demos, short explainer films, sales training, onboarding, workshop material and presentations for leaders and commercial teams.
+${prosjektVidereutviklingTekst("psc-promo-video-moc-2026", "en")}
 
 <strong>Further relevance and possible application</strong>
 

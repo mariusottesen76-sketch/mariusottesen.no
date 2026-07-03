@@ -1,4 +1,5 @@
 import { prosjektKontaktLenke } from "../../lib/prosjekt-lenker";
+import { prosjektVidereutviklingTekst } from "../prosjekt-videreutvikling";
 import { type ProsjektType } from "./predictive-sales-coach";
 
 export const aiAssistertInnsiktsOgInnholdsagent: ProsjektType = {
@@ -53,7 +54,7 @@ Egenutviklet arbeidsflyt og grunnmotor for videre agentisk utvikling. Prosjektet
 
 <strong>Mulig videreutvikling</strong>
 
-Løsningen kan videreutvikles til en innsiktsmotor for ledere, konsulenter, salgsorganisasjoner, fagmiljøer og virksomheter som ønsker å gjøre intern og ekstern kunnskap mer anvendbar.
+${prosjektVidereutviklingTekst("ai-assistert-innsikts-og-innholdsagent-2026", "no")}
 
 <strong>Videre relevans og mulig anvendelse</strong>
 
@@ -92,7 +93,7 @@ Custom-developed workflow and core engine for further agentic development. The p
 
 <strong>Possible further development</strong>
 
-The solution can be developed into an insight engine for leaders, consultants, sales organisations, professional communities and businesses that want to make internal and external knowledge more applicable.
+${prosjektVidereutviklingTekst("ai-assistert-innsikts-og-innholdsagent-2026", "en")}
 
 <strong>Further relevance and possible application</strong>
 
