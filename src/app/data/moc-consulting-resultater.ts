@@ -15,6 +15,7 @@ const prosjektLenker = {
   valueLab: "/prosjekter#ai-value-lab-oslo-2026",
   bi: "/prosjekter#prosjektoppgave-strategisk-implementering-2026",
   nettside: "/prosjekter#mariusottesen-no-2025",
+  controlTower: "/prosjekter#control-tower-2026-07",
 } as const;
 
 function lenke(href: string, label: string): string {
@@ -40,6 +41,7 @@ export function getMocResultaterPunkter(lang: Lang): MocResultatPunkt[] {
           "Patient journey, smart intake, chatbot logic and booking flow in 6 languages — simpler booking for patients and more inquiries",
         ],
       },
+      `Built ${lenke(prosjektLenker.controlTower, "Control Tower")}: decision and execution platform for operational and commercial prioritisation, action and follow-up`,
       `Developed ${lenke(prosjektLenker.readinessScan, "AI Readiness Scan")}: access-controlled mapping tool with structured assessment of AI maturity, priorities and admin insight`,
       `Built ${lenke(prosjektLenker.salgsflyt, "SMB Sales Flow Check")}: diagnosis, scoring, AI-supported analysis, reporting and follow-up logic for commercial workflows`,
       `Further developed ${lenke(prosjektLenker.flowsignal, "FlowSignal")}: AI-supported workspace for profile insight, daily form, reflection, collaboration and leadership follow-up`,
@@ -59,6 +61,7 @@ export function getMocResultaterPunkter(lang: Lang): MocResultatPunkt[] {
         "Pasientreise, smart intake, chatbot-logikk og bookingflyt på 6 språk — enklere booking for pasienter og flere henvendelser",
       ],
     },
+    `Bygget ${lenke(prosjektLenker.controlTower, "Control Tower")}: beslutnings- og gjennomføringsplattform for operativ og kommersiell prioritering, tiltak og oppfølging`,
     `Utviklet ${lenke(prosjektLenker.readinessScan, "AI Readiness Scan")}: tilgangsstyrt kartleggingsverktøy med strukturert vurdering av AI-modenhet, prioriteringer og administrativ innsikt`,
     `Bygget ${lenke(prosjektLenker.salgsflyt, "SMB Salgsflyt-sjekken")}: diagnose, scoring, AI-støttet analyse, rapportering og oppfølgingslogikk for kommersielle arbeidsflyter`,
     `Videreutviklet ${lenke(prosjektLenker.flowsignal, "FlowSignal")}: AI-støttet arbeidsflate for profilinnsikt, dagsform, refleksjon, samhandling og lederoppfølging`,

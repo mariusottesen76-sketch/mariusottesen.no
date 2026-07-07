@@ -51,7 +51,7 @@ En lederprofil med mye erfaring, dokumenterte resultater, faginnlegg og egne AI-
 
 • Faginnlegg med anbefalte lesestier, innholdsfortegnelse, kortoversikt og modal for hele innlegg
 
-• AI-prosjektside med portefølje, hurtigoversikt og detaljerte prosjektbeskrivelser
+• AI-prosjektside med portefølje, hurtigoversikt og detaljerte prosjektbeskrivelser — inkludert Control Tower som beslutnings- og gjennomføringsplattform
 
 • Tilgangsstyrte AI-demonstratorer og merkevareprofiler for utvalgte løsninger: The Predictive Sales Coach (/psc), FlowSignal (/flowsignal), SMB Salgsflyt-sjekken (/salgsflyt-sjekken) og AI Readiness Scan
 
@@ -100,7 +100,7 @@ A leadership profile with extensive experience, documented results, articles and
 
 • Articles section with recommended reading paths, table of contents, card overview and modal for full posts
 
-• AI projects page with portfolio, quick overview and detailed project descriptions
+• AI projects page with portfolio, quick overview and detailed project descriptions — including Control Tower as a decision and execution platform
 
 • Access-controlled AI demonstrators and brand profiles for selected solutions: The Predictive Sales Coach (/psc), FlowSignal (/flowsignal), SMB Sales Flow Check (/salgsflyt-sjekken) and AI Readiness Scan
 

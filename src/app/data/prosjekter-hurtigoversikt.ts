@@ -1,4 +1,5 @@
 import { Lang } from "../LanguageContext";
+import { controlTower } from "./prosjekter/control-tower";
 import { aiReadinessScan } from "./prosjekter/ai-readiness-scan";
 import { flowSignal } from "./prosjekter/flowsignal";
 import { predictiveSalesCoach } from "./prosjekter/predictive-sales-coach";
@@ -29,6 +30,11 @@ const kategorier: ProsjektHurtigKategori[] = [
   {
     title: { no: "App og prototype", en: "App and prototype" },
     lenker: [
+      {
+        prosjektId: "control-tower-2026-07",
+        introSlug: "control-tower",
+        label: { no: "Control Tower", en: "Control Tower" },
+      },
       {
         prosjektId: "ai-readiness-scan-2026-06",
         introSlug: "readiness-scan",
@@ -120,6 +126,7 @@ const kategorier: ProsjektHurtigKategori[] = [
 
 const prosjektDatoById = Object.fromEntries(
   [
+    controlTower,
     aiReadinessScan,
     flowSignal,
     predictiveSalesCoach,

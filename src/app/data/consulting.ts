@@ -253,6 +253,11 @@ const spesialisertePakker: Record<Lang, TjenestePakke[]> = {
 const metoder: Record<Lang, MetodeKomponent[]> = {
   no: [
     {
+      tittel: "Control Tower",
+      beskrivelse: "Beslutnings- og gjennomføringsplattform for operativ og kommersiell prioritering",
+      pilotStotte: prosjektLenke("/prosjekter#control-tower-2026-07").no,
+    },
+    {
       tittel: "The Predictive Sales Coach",
       beskrivelse: "Salgstrening, møteforberedelse og salgslederinnsikt",
       pilotStotte: prosjektLenke("/psc").no,
@@ -282,6 +287,11 @@ const metoder: Record<Lang, MetodeKomponent[]> = {
     },
   ],
   en: [
+    {
+      tittel: "Control Tower",
+      beskrivelse: "Decision and execution platform for operational and commercial prioritisation",
+      pilotStotte: prosjektLenke("/prosjekter#control-tower-2026-07").en,
+    },
     {
       tittel: "The Predictive Sales Coach",
       beskrivelse: "Sales training, meeting preparation and sales leadership insight",

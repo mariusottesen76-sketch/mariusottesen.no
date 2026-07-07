@@ -186,6 +186,11 @@ const translations: Translations = {
     en: "Quick overview — click a name to read more:",
   },
   "prosjekter.intro.punkt.readiness-scan.label": { no: "AI Readiness Scan", en: "AI Readiness Scan" },
+  "prosjekter.intro.punkt.control-tower.label": { no: "Control Tower", en: "Control Tower" },
+  "prosjekter.intro.punkt.control-tower.desc": {
+    no: "Beslutnings- og gjennomføringsplattform for operativ og kommersiell prioritering",
+    en: "Decision and execution platform for operational and commercial prioritisation",
+  },
   "prosjekter.intro.punkt.readiness-scan.desc": {
     no: "AI-modenhet, prioriteringer og konkret grunnlag for videre AI-arbeid",
     en: "AI maturity, priorities and a concrete basis for further AI work",

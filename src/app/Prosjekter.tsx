@@ -17,6 +17,7 @@ import { aiAssistertInnsiktsOgInnholdsagent } from "./data/prosjekter/ai-assiste
 import { prosjektoppgaveStrategiskImplementering } from "./data/prosjekter/prosjektoppgave-strategisk-implementering";
 import { flowSignal } from "./data/prosjekter/flowsignal";
 import { smbSalgsflytSjekken } from "./data/prosjekter/smb-salgsflyt-sjekken";
+import { controlTower } from "./data/prosjekter/control-tower";
 import { aiReadinessScan } from "./data/prosjekter/ai-readiness-scan";
 import { mariusottesenNettside } from "./data/prosjekter/mariusottesen-nettside";
 import { isFlowSignalProsjekt } from "./lib/flowsignal-brand";
@@ -26,7 +27,7 @@ import { isAiReadinessScanProsjekt } from "./lib/ai-readiness-scan-brand";
 import { formatProsjektHtml, formatProsjektPlain } from "./lib/product-brand";
 import ProsjektPilotBlokk from "./components/ProsjektPilotBlokk";
 
-const prosjektKort: ProsjektType[] = [mariusottesenNettside, aiReadinessScan, smbSalgsflytSjekken, flowSignal, prosjektoppgaveStrategiskImplementering, pscPromoVideo, aiAssistertInnsiktsagent, aiAssistertInnsiktsOgInnholdsagent, predictiveSalesCoach, aiValueLabOslo, skoyenasenTannklinikk, aiArkitekturBeslutningsstotte].sort(
+const prosjektKort: ProsjektType[] = [controlTower, mariusottesenNettside, aiReadinessScan, smbSalgsflytSjekken, flowSignal, prosjektoppgaveStrategiskImplementering, pscPromoVideo, aiAssistertInnsiktsagent, aiAssistertInnsiktsOgInnholdsagent, predictiveSalesCoach, aiValueLabOslo, skoyenasenTannklinikk, aiArkitekturBeslutningsstotte].sort(
   (a, b) => new Date(b.dato).getTime() - new Date(a.dato).getTime()
 );
 
