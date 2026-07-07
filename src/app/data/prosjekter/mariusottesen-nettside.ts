@@ -25,6 +25,15 @@ export const mariusottesenNettside: ProsjektType = {
     no: "Klikk på bildet for å se mariusottesen.no i større format.",
     en: "Click the image to view mariusottesen.no in a larger format.",
   },
+  bilderUnderHovedbilde: [
+    {
+      src: "/images/mariusottesen-no-faginnlegg.png?v=20260707",
+      alt: {
+        no: "Skjermbilde av faginnlegg-siden på mariusottesen.no",
+        en: "Screenshot of the articles page on mariusottesen.no",
+      },
+    },
+  ],
   innhold: {
     no: `<strong>Hva prosjektet er</strong>
 
@@ -36,14 +45,22 @@ En lederprofil med mye erfaring, dokumenterte resultater, faginnlegg og egne AI-
 
 <strong>Hva som er bygget eller utviklet</strong>
 
-• Publisert nettside på ${siteLinkNo} med norsk og engelsk innhold
+• Publisert nettside med norsk og engelsk innhold
+
 • Lederprofil, erfaring, dokumenterte resultater, referanser, faginnlegg, AI-prosjekter, consulting-oversikt, CV og kontakt
+
 • Faginnlegg med anbefalte lesestier, innholdsfortegnelse, kortoversikt og modal for hele innlegg
+
 • AI-prosjektside med portefølje, hurtigoversikt og detaljerte prosjektbeskrivelser
-• Tilgangsstyrte AI-demonstratorer integrert i porteføljen: AI Readiness Scan, FlowSignal, The Predictive Sales Coach v2.0 og SMB Salgsflyt-sjekken
+
+• Tilgangsstyrte AI-demonstratorer integrert i porteføljen: AI Readiness Scan, FlowSignal, The Predictive Sales Coach og SMB Salgsflyt-sjekken
+
 • Egne landingssider og merkevareprofiler for utvalgte løsninger, inkludert /psc, /flowsignal og /salgsflyt-sjekken
+
 • Kontaktskjema med e-postintegrasjon for faglig dialog og henvendelser
+
 • SEO, Open Graph, JSON-LD, sitemap og språkvelger for profesjonell synlighet
+
 • Responsivt design med mobilnavigasjon og gjennomgående visuell profil
 
 <strong>Hvordan det fungerer</strong>
@@ -79,14 +96,22 @@ A leadership profile with extensive experience, documented results, articles and
 
 <strong>What has been built or developed</strong>
 
-• Published website at ${siteLinkEn} with Norwegian and English content
+• Published website with Norwegian and English content
+
 • Leadership profile, experience, documented results, references, articles, AI projects, consulting overview, CV and contact
+
 • Articles section with recommended reading paths, table of contents, card overview and modal for full posts
+
 • AI projects page with portfolio, quick overview and detailed project descriptions
-• Access-controlled AI demonstrators integrated in the portfolio: AI Readiness Scan, FlowSignal, The Predictive Sales Coach v2.0 and SMB Sales Flow Check
+
+• Access-controlled AI demonstrators integrated in the portfolio: AI Readiness Scan, FlowSignal, The Predictive Sales Coach and SMB Sales Flow Check
+
 • Dedicated landing pages and brand profiles for selected solutions, including /psc, /flowsignal and /salgsflyt-sjekken
+
 • Contact form with email integration for professional dialogue and inquiries
+
 • SEO, Open Graph, JSON-LD, sitemap and language toggle for professional visibility
+
 • Responsive design with mobile navigation and consistent visual profile
 
 <strong>How it works</strong>
