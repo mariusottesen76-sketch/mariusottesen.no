@@ -51,9 +51,9 @@ const data: Record<Lang, ProfilData> = {
     ],
 
     aiSeksjon:
-      "Jeg bruker AI, data og nye arbeidsformer som lederverktøy for å strukturere innsikt, forbedre arbeidsflyt og styrke kommersiell gjennomføring.\n\nDe egenutviklede AI-prosjektene fungerer som en konkret portefølje. De viser hvordan kommersiell forståelse, brukerbehov, arbeidsflyt og AI kan kombineres i praktiske løsninger.",
+      "Jeg bruker AI, data og nye arbeidsformer som lederverktøy for å strukturere innsikt, forbedre arbeidsflyt og styrke kommersiell gjennomføring.\n\nDe egenutviklede AI-prosjektene fungerer som en konkret portefølje, presentert på en egenutviklet og publisert nettside. De viser hvordan kommersiell forståelse, brukerbehov, arbeidsflyt og AI kan kombineres i praktiske løsninger.",
 
-    utdanning: `Gjennom det fullførte masterkurset *Generative AI for Business* ved Handelshøyskolen BI har jeg utviklet strategisk AI-kompetanse med fokus på lederverktøy for beslutningsstøtte, effektiv dokumentasjon og økt kommersiell effektivitet. Jeg deltar også i *AI Value Lab Oslo*, et tverrfaglig initiativ for AI-læring, erfaringsutveksling og utforsking av praktiske problemstillinger i skjæringspunktet mellom teknologi, forretning og organisasjon.
+    utdanning: `Gjennom det fullførte masterkurset *Generative AI for Business* ved Handelshøyskolen BI har jeg utviklet strategisk AI-kompetanse med fokus på lederverktøy for beslutningsstøtte, effektiv dokumentasjon og økt kommersiell effektivitet. Initiativtaker til *AI Value Lab Oslo*, et tverrfaglig initiativ for AI-læring, erfaringsutveksling og utforsking av praktiske problemstillinger i skjæringspunktet mellom teknologi, forretning og organisasjon.
 
 Jeg er utdannet *Master of Science in Business Administration (Siviløkonom)* fra USA, og har en *Executive Master of Management* fra BI med spesialisering i strategi, kommunikasjon og AI.`,
 
@@ -103,9 +103,9 @@ Jeg er utdannet *Master of Science in Business Administration (Siviløkonom)* fr
     ],
 
     aiSeksjon:
-      "I use AI, data and new ways of working as leadership tools to structure insight, improve workflow and strengthen commercial execution.\n\nThe custom AI projects function as a concrete portfolio. They show how commercial understanding, user needs, workflow and AI can be combined in practical solutions.",
+      "I use AI, data and new ways of working as leadership tools to structure insight, improve workflow and strengthen commercial execution.\n\nThe custom AI projects function as a concrete portfolio, presented on a custom-built and published website. They show how commercial understanding, user needs, workflow and AI can be combined in practical solutions.",
 
-    utdanning: `Through the completed master's course *Generative AI for Business* at BI Norwegian Business School, I have developed strategic AI competence focused on leadership tools for decision support, efficient documentation and enhanced commercial effectiveness. I also participate in *AI Value Lab Oslo*, a cross-disciplinary initiative for AI learning, experience sharing and exploration of practical issues at the intersection of technology, business and organisation.
+    utdanning: `Through the completed master's course *Generative AI for Business* at BI Norwegian Business School, I have developed strategic AI competence focused on leadership tools for decision support, efficient documentation and enhanced commercial effectiveness. Initiator of *AI Value Lab Oslo*, a cross-disciplinary initiative for AI learning, experience sharing and exploration of practical issues at the intersection of technology, business and organisation.
 
 I hold a *Master of Science in Business Administration* from the USA, and an *Executive Master of Management* from BI specialising in strategy, communication and AI.`,
 

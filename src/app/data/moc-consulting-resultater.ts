@@ -14,6 +14,7 @@ const prosjektLenker = {
   faginnlegg: "/faginnlegg",
   valueLab: "/prosjekter#ai-value-lab-oslo-2026",
   bi: "/prosjekter#prosjektoppgave-strategisk-implementering-2026",
+  nettside: "/prosjekter#mariusottesen-no-2025",
 } as const;
 
 function lenke(href: string, label: string): string {
@@ -44,8 +45,9 @@ export function getMocResultaterPunkter(lang: Lang): MocResultatPunkt[] {
       `Further developed ${lenke(prosjektLenker.flowsignal, "FlowSignal")}: AI-supported workspace for profile insight, daily form, reflection, collaboration and leadership follow-up`,
       `Built ${lenke(prosjektLenker.psc, "The Predictive Sales Coach")}: training and analysis platform for customer dialogue, meeting preparation, simulation, evaluation and sales leadership`,
       `Developed models and workflows for ${lenke(prosjektLenker.agent, "AI-assisted insight")}, ${lenke(prosjektLenker.innhold, "content")}, prioritisation and ${lenke(prosjektLenker.beslutning, "decision support")}`,
+      `Built and published ${lenke(prosjektLenker.nettside, "mariusottesen.no")}: leadership profile, portfolio, articles and access-controlled AI demonstrators`,
       `${totalt} published ${lenke(prosjektLenker.faginnlegg, "articles")} on AI, leadership and commercial value creation (updated automatically)`,
-      `Participated in ${lenke(prosjektLenker.valueLab, "AI Value Lab Oslo")}: cross-disciplinary arena for AI learning, experience sharing and exploration of practical problem areas`,
+      `Initiator of ${lenke(prosjektLenker.valueLab, "AI Value Lab Oslo")}: cross-disciplinary arena for AI learning, experience sharing and exploration of practical problem areas`,
       `Completed further education in ${lenke(prosjektLenker.bi, "Generative AI for Business")} at BI Norwegian Business School with grade A`,
     ];
   }
@@ -62,8 +64,9 @@ export function getMocResultaterPunkter(lang: Lang): MocResultatPunkt[] {
     `Videreutviklet ${lenke(prosjektLenker.flowsignal, "FlowSignal")}: AI-støttet arbeidsflate for profilinnsikt, dagsform, refleksjon, samhandling og lederoppfølging`,
     `Bygget ${lenke(prosjektLenker.psc, "The Predictive Sales Coach")}: trenings- og analyseplattform for kundedialog, møteforberedelse, simulering, evaluering og salgsledelse`,
     `Utviklet modeller og arbeidsflyter for ${lenke(prosjektLenker.agent, "AI-assistert innsikt")}, ${lenke(prosjektLenker.innhold, "innhold")}, prioritering og ${lenke(prosjektLenker.beslutning, "beslutningsstøtte")}`,
+    `Bygget og publisert ${lenke(prosjektLenker.nettside, "mariusottesen.no")}: lederprofil, portefølje, faginnlegg og tilgangsstyrte AI-demonstratorer`,
     `${totalt} ${lenke(prosjektLenker.faginnlegg, "faginnlegg")} om AI, ledelse og kommersiell verdiskaping (oppdateres løpende)`,
-    `Deltatt i ${lenke(prosjektLenker.valueLab, "AI Value Lab Oslo")}: tverrfaglig arena for AI-læring, erfaringsutveksling og utforsking av praktiske problemstillinger`,
+    `Initiativtaker til ${lenke(prosjektLenker.valueLab, "AI Value Lab Oslo")}: tverrfaglig arena for AI-læring, erfaringsutveksling og utforsking av praktiske problemstillinger`,
     `Fullført videreutdanning i ${lenke(prosjektLenker.bi, "Generative AI for Business")} ved Handelshøyskolen BI med karakter A`,
   ];
 }

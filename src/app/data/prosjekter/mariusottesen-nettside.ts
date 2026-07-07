@@ -53,13 +53,11 @@ En lederprofil med mye erfaring, dokumenterte resultater, faginnlegg og egne AI-
 
 • AI-prosjektside med portefølje, hurtigoversikt og detaljerte prosjektbeskrivelser
 
-• Tilgangsstyrte AI-demonstratorer integrert i porteføljen: AI Readiness Scan, FlowSignal, The Predictive Sales Coach og SMB Salgsflyt-sjekken
-
-• Egne landingssider og merkevareprofiler for utvalgte løsninger, inkludert /psc, /flowsignal og /salgsflyt-sjekken
+• Tilgangsstyrte AI-demonstratorer og merkevareprofiler for utvalgte løsninger: The Predictive Sales Coach (/psc), FlowSignal (/flowsignal), SMB Salgsflyt-sjekken (/salgsflyt-sjekken) og AI Readiness Scan
 
 • Kontaktskjema med e-postintegrasjon for faglig dialog og henvendelser
 
-• SEO, Open Graph, JSON-LD, sitemap og språkvelger for profesjonell synlighet
+• Forberedt for profesjonell deling og synlighet på LinkedIn og X, med forhåndsvisning ved deling, strukturert data og flerspråklig profil
 
 • Responsivt design med mobilnavigasjon og gjennomgående visuell profil
 
@@ -67,7 +65,7 @@ En lederprofil med mye erfaring, dokumenterte resultater, faginnlegg og egne AI-
 
 Nettsiden fungerer som en samlet profesjonell flate: først profil og dokumentert leveranseevne, deretter faglig dybde gjennom innlegg, og til slutt konkrete AI-prosjekter og demonstratorer som viser hva som faktisk er bygget.
 
-AI er brukt både i innholdsproduksjon, strukturering, prototyping og videreutvikling av egne løsninger — ikke bare som tema, men som arbeidsmetode i hele prosjektet.
+Nettsiden er bygget med Next.js, publisert via Vercel og GitHub, og utviklet med AI-assistert arbeidsflyt i Cursor — fra struktur og innhold til prototyping og videreutvikling.
 
 <strong>Hvorfor dette er relevant</strong>
 
@@ -104,13 +102,11 @@ A leadership profile with extensive experience, documented results, articles and
 
 • AI projects page with portfolio, quick overview and detailed project descriptions
 
-• Access-controlled AI demonstrators integrated in the portfolio: AI Readiness Scan, FlowSignal, The Predictive Sales Coach and SMB Sales Flow Check
-
-• Dedicated landing pages and brand profiles for selected solutions, including /psc, /flowsignal and /salgsflyt-sjekken
+• Access-controlled AI demonstrators and brand profiles for selected solutions: The Predictive Sales Coach (/psc), FlowSignal (/flowsignal), SMB Sales Flow Check (/salgsflyt-sjekken) and AI Readiness Scan
 
 • Contact form with email integration for professional dialogue and inquiries
 
-• SEO, Open Graph, JSON-LD, sitemap and language toggle for professional visibility
+• Prepared for professional sharing and visibility on LinkedIn and X, with link previews, structured data and a bilingual profile
 
 • Responsive design with mobile navigation and consistent visual profile
 
@@ -118,7 +114,7 @@ A leadership profile with extensive experience, documented results, articles and
 
 The website functions as a unified professional surface: first profile and documented delivery capability, then subject depth through articles, and finally concrete AI projects and demonstrators showing what has actually been built.
 
-AI is used in content production, structuring, prototyping and further development of my own solutions — not only as a topic, but as a working method across the project.
+The site is built with Next.js, published via Vercel and GitHub, and developed with an AI-assisted workflow in Cursor — from structure and content to prototyping and further development.
 
 <strong>Why this is relevant</strong>
 
