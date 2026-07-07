@@ -60,6 +60,63 @@ const fireApperKarusellBilder = Array.from({ length: 10 }, (_, i) => ({
 
 const aiGovernanceRaw = [
     {
+      id: "control-tower-operasjon-kommers-2026-07",
+      tittel: "Når operasjon og kommers må styres sammen",
+      teaser:
+        "COO-dialog, tidlig oppdagelse av friksjon og avvik — og hvorfor jeg bygget Control Tower som konseptprototype for operativ og kommersiell styring.",
+      bildeUrl: "/images/control-tower-linkedin.png",
+      bildeVersjon: "2026-07-08-v2",
+      dato: "2026-07-08",
+      visningsDato: "08.07.26",
+      kategori: "AI / KI",
+      link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
+      innhold: `I slutten av forrige uke ble jeg kontaktet av et rekrutteringsselskap om en COO-rolle.
+
+Min tyngste erfaring ligger i kommersiell ledelse, forretningsutvikling og endring. Likevel vekket både rollen, selskapet og bransjen stor nysgjerrighet.
+
+Det er en bransje og et selskap jeg kjenner fra før, og som jeg lenge har hatt et godt øye til. Den rommer komplekse verdikjeder, mange avhengigheter og et tydelig behov for å få drift, kunde, partnernettverk, kvalitet og økonomi til å fungere bedre sammen.
+
+Det fikk meg til å reflektere over en utfordring som er relevant i langt flere virksomheter:
+
+Hvordan oppdager ledere friksjon, avvik og suboptimale situasjoner tidlig nok til å prioritere riktig handling og bruke ressursene der de faktisk gir effekt?
+
+En utfordring hos en partner kan påvirke leveransekvalitet, kapasitet og kostnad.
+
+En svak kundeutvikling kan utfordre margin, avtaleverdi og fremtidig vekst.
+
+Et avvik i drift kan få konsekvenser både for kundeopplevelse, lønnsomhet og tillit.
+
+Dette var ikke en caseoppgave jeg fikk servert. Jeg ønsket selv å utfordre problemstillingen før den videre dialogen i august.
+
+💥 Derfor startet jeg prosjektet <strong>Control Tower</strong>.
+
+Jeg har bygget en funksjonell konseptprototype med én felles inngang og to moduler:
+
+👉 <strong>Operations Control Tower</strong>, med fokus på partnerprestasjon, kvalitet, kapasitet, kostnad og risiko.
+
+👉 <strong>Commercial Control Tower</strong>, med fokus på kundehelse, margin, avtaler, pipeline og kommersiell oppfølging.
+
+Prosjektet bygger på en enkel, men krevende styringslogikk:
+
+<strong>Signal → vurdering → prioritering → tiltak → ansvar → læring</strong>
+
+Målet er ikke flere KPI-er eller enda et dashboard.
+
+Målet er å gjøre det lettere å identifisere hva som faktisk krever oppmerksomhet, forstå konsekvensene og synliggjøre neste beste handling.
+
+For ledere handler dette i stor grad om å prioritere handlinger og ressurser optimalt, før utfordringer blir større, dyrere eller vanskeligere å løse.
+
+Jeg tror dette er relevant for langt flere enn typiske COO- og CCO-roller. De fleste virksomheter har data, rapporter og statusmøter. Det som ofte mangler, er en tydelig kobling mellom signaler, prioriteringer, ansvar og faktisk gjennomføring.
+
+Jeg gleder meg til å utforske både stillingen og prosjektet videre.
+
+👇 Se <a href="/prosjekter#control-tower-2026-07" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">Control Tower og prosjektbeskrivelsen</a> på prosjektsiden.
+
+Og dersom du ønsker å diskutere hvordan tilsvarende problemstillinger kan utfordres i din rolle eller virksomhet, er det bare å <a href="/kontakt" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">ta kontakt</a>.
+
+#OperativLedelse #KommersiellLedelse #Beslutningsstøtte #Gjennomføringsevne #KunstigIntelligens`,
+    },
+    {
       id: "fire-egne-ai-apper-friksjon-prioritering-2026-06",
       tittel: "4 egneutviklede AI-apper for å finne friksjon og prioritere neste steg",
       teaser:
@@ -2038,6 +2095,56 @@ AI-dømmekraft er ikke en teknisk nisjeferdighet. Det er en lederkompetanse.`
 ];
 
 const aiGovernanceEn: Record<string, LocalizedTextMap> = {
+  "control-tower-operasjon-kommers-2026-07": {
+    tittel: "When operations and commercial must be governed together",
+    teaser:
+      "A COO conversation, early detection of friction and deviations — and why I built Control Tower as a concept prototype for operational and commercial governance.",
+    innhold: `Late last week I was contacted by a recruitment firm about a COO role.
+
+My deepest experience lies in commercial leadership, business development and change. Still, the role, the company and the industry sparked genuine curiosity.
+
+It is an industry and a company I know from before, and one I have had my eye on for a long time. It involves complex value chains, many dependencies and a clear need to get operations, customers, partner networks, quality and economics working better together.
+
+That made me reflect on a challenge that is relevant in far more organisations:
+
+How do leaders discover friction, deviations and suboptimal situations early enough to prioritise the right action and use resources where they actually create impact?
+
+A challenge with one partner can affect delivery quality, capacity and cost.
+
+Weak customer development can challenge margin, contract value and future growth.
+
+An operational deviation can have consequences for customer experience, profitability and trust.
+
+This was not a case assignment I was handed. I wanted to challenge the problem myself before the further dialogue in August.
+
+💥 That is why I started the <strong>Control Tower</strong> project.
+
+I have built a functional concept prototype with one shared entry point and two modules:
+
+👉 <strong>Operations Control Tower</strong>, focused on partner performance, quality, capacity, cost and risk.
+
+👉 <strong>Commercial Control Tower</strong>, focused on customer health, margin, contracts, pipeline and commercial follow-up.
+
+The project is built on a simple but demanding governance logic:
+
+<strong>Signal → assessment → prioritisation → action → ownership → learning</strong>
+
+The goal is not more KPIs or yet another dashboard.
+
+The goal is to make it easier to identify what actually needs attention, understand the consequences and make the next best action visible.
+
+For leaders, this is largely about prioritising actions and resources optimally before challenges become larger, more expensive or harder to solve.
+
+I believe this is relevant for far more than typical COO and CCO roles. Most organisations have data, reports and status meetings. What is often missing is a clear link between signals, priorities, ownership and actual execution.
+
+I look forward to exploring both the role and the project further.
+
+👇 See <a href="/prosjekter#control-tower-2026-07" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">Control Tower and the project description</a> on the projects page.
+
+And if you want to discuss how similar challenges can be addressed in your role or organisation, feel free to <a href="/kontakt" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">get in touch</a>.
+
+#OperativLedelse #KommersiellLedelse #Beslutningsstøtte #Gjennomføringsevne #KunstigIntelligens`,
+  },
   "fire-egne-ai-apper-friksjon-prioritering-2026-06": {
     tittel: "4 custom-built AI apps to find friction and prioritise next steps",
     teaser:

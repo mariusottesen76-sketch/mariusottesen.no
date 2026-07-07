@@ -156,6 +156,7 @@ export const AI_SUBTEMA: FaginnleggSubtema[] = [
     id: "ai-praksis",
     label: { no: "Praksis, lab og prosjekter", en: "Practice, lab and projects" },
     innleggIds: [
+      "control-tower-operasjon-kommers-2026-07",
       "fire-egne-ai-apper-friksjon-prioritering-2026-06",
       "ai-value-lab-01",
       "ai-value-lab-smb-praksis-2026-06",
