@@ -51,6 +51,7 @@ export const LEDELSE_SUBTEMA: FaginnleggSubtema[] = [
     id: "ledelse-kultur",
     label: { no: "Lederstil, kultur og team", en: "Leadership style, culture and teams" },
     innleggIds: [
+      "vi-rodde-sammen-fotball-vm-2026-07",
       "verdier-kultur-kommersiell-ledelse-2026-06",
       "psykologisk-trygghet-krav-2026-01",
       "kjeft-psykologisk-trygghet-01",

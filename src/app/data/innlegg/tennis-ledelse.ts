@@ -16,6 +16,58 @@ const localize = (no: string, en: string = no): LocalizedText => ({ no, en });
 
 const tennisLedelseRaw = [
     {
+      id: "vi-rodde-sammen-fotball-vm-2026-07",
+      tittel: "Vi rodde sammen",
+      teaser:
+        "Ro-ropet under fotball-VM ble en bevegelse — og et bilde på hva gode team, tydelig retning og varig kultur kan skape langt utenfor selve kampen.",
+      bildeUrl: "/images/ro-folkehav-vm.png",
+      dato: "2026-07-14",
+      visningsDato: "14.07.26",
+      kategori: "Lederstil, kultur og team",
+      link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
+      innhold: `Norge tapte en dramatisk kvartfinale mot England. Likevel skapte laget noe som kan vare langt lenger enn selve mesterskapet.
+
+Det som startet som et supporterrop, ble bokstavelig talt en bevegelse.
+
+Gjennom VM har nordmenn rodd på tribuner, storskjermer, torg og utesteder. Roingen har også vakt internasjonal oppsikt.
+
+Det har vært utrolig artig å delta.
+
+Jeg har sett fire Norge-kamper på storskjermer rundt i Oslo. Stemningen og samholdet har vært fantastisk. Mennesker som ikke kjente hverandre, satt side ved side og beveget seg i samme retning. Det ble spandert i alle retninger. Plutselig var vi alle venner, og da føltes det naturlig å gi.
+
+Det er et sterkt bilde på hva gode team får til.
+
+Norge har store enkeltspillere. Haaland, Ødegaard, Nyland og Schjelderup har alle levert viktige bidrag. Resultatene kom likevel fordi laget fungerte innenfor en tydelig retning, med roller som utfylte hverandre.
+
+Her fortjener Solbakken tydelig anerkjennelse som leder. Han har stått i kritikk, holdt fast ved retningen og bygget et lag der sterke profiler inngår i en større helhet. Det krever både mot, tydelighet og tillit til eget lederteam.
+
+Portugal viser risikoen ved å bygge laget rundt én stjerne. Ronaldo har levert på et nivå få kan matche, men statusen hans kan gjøre laget mindre fleksibelt. Når lagkamerater søker stjernen og treneren får mindre handlingsrom, må lederteamet sette helheten først.
+
+Det gjelder også i virksomheter.
+
+Gode ledere utvikler sterke individer, men bygger samtidig systemer, kultur og lederteam som gjør organisasjonen mindre personavhengig. Flere må kunne ta ansvar når situasjonen krever det.
+
+Kampen mot England viste også hvor viktig tillit til systemene er. VAR-avgjørelser, det annullerte målet og kameravaieren skapte sterke reaksjoner. FIFA har en belastet korrupsjonshistorikk, og da får mistanken om at de største og mest kommersielle lagene favoriseres raskt fotfeste.
+
+Det finnes ingen dokumentasjon på at kampen ble manipulert. Likevel må beslutninger være transparente og forståelige dersom systemet skal beholde legitimitet.
+
+Mandag satt jeg på Gardermoen med familien og ventet på vår egen ferieavgang. Da NCR720 landet med landslaget, sto det «Ro Ro Ro Ro Airlines» på Flightradar24. Over 100 000 fulgte flyvningen. Vi så flyets touchdown live.
+
+Jeg så iveren i barnas øyne. Kanskje kunne de få et glimt av VM-spillerne. Plutselig handlet fotball ikke bare om å spille selv, men også om å følge laget, dele opplevelsene og kjenne tilhørighet til noe større.
+
+Norge kom hjem til en nasjon som sto bak dem.
+
+Å være en god taper handler ikke om å bagatellisere nederlaget eller bruke energien på ytre forklaringer. Det handler om å ta ansvar, lære av det som skjedde og bruke erfaringen til å komme sterkere tilbake.
+
+Nå er lederoppgaven å gjøre dette til mer enn et sommerminne.
+
+Samholdet, kulturen og troen må videreføres. 💯
+
+Vi må fortsette å ro sammen. 🚣
+
+#Ledelse #Teamutvikling #Kultur #Prestasjon #FotballVM`,
+    },
+    {
       id: "verdier-kultur-kommersiell-ledelse-2026-06",
       tittel: "Hva tillater du at blir kultur?",
       teaser:
@@ -933,6 +985,52 @@ Virksomheter feiler ofte av samme grunn.`,
 ];
 
 const tennisLedelseEn: Record<string, LocalizedTextMap> = {
+  "vi-rodde-sammen-fotball-vm-2026-07": {
+    tittel: "We rowed together",
+    teaser:
+      "The ro chant at the World Cup became a movement — and a picture of what good teams, clear direction and lasting culture can create long after the match itself.",
+    innhold: `Norway lost a dramatic quarter-final against England. Still, the team created something that may last far longer than the tournament itself.
+
+What started as a supporter chant literally became a movement.
+
+Throughout the World Cup, Norwegians have rowed in stands, on big screens, in town squares and at bars. The rowing has also attracted international attention.
+
+It has been incredibly fun to take part.
+
+I watched four Norway matches on big screens around Oslo. The atmosphere and sense of togetherness have been fantastic. People who did not know each other sat side by side and moved in the same direction. People bought drinks for one another. Suddenly we were all friends, and then it felt natural to give.
+
+That is a strong picture of what good teams achieve.
+
+Norway has great individual players. Haaland, Ødegaard, Nyland and Schjelderup have all delivered important contributions. The results still came because the team worked within a clear direction, with roles that complemented each other.
+
+Here Solbakken deserves clear recognition as a leader. He has stood in criticism, held to the direction and built a team where strong profiles fit into a larger whole. That requires courage, clarity and trust in your own leadership team.
+
+Portugal shows the risk of building the team around one star. Ronaldo has delivered at a level few can match, but his status can make the team less flexible. When teammates look to the star and the coach gets less room to act, the leadership team must put the whole first.
+
+The same applies in organisations.
+
+Good leaders develop strong individuals, but at the same time build systems, culture and leadership teams that make the organisation less dependent on one person. More people must be able to take responsibility when the situation requires it.
+
+The match against England also showed how important trust in the systems is. VAR decisions, the disallowed goal and the camera operator created strong reactions. FIFA has a troubled corruption history, and then suspicion that the biggest and most commercial teams are favoured quickly takes hold.
+
+There is no documentation that the match was manipulated. Still, decisions must be transparent and understandable if the system is to retain legitimacy.
+
+On Monday I sat at Gardermoen with my family waiting for our own holiday departure. When NCR720 landed with the national team, Flightradar24 showed «Ro Ro Ro Ro Airlines». More than 100,000 followed the flight. We watched the touchdown live.
+
+I saw the excitement in my children's eyes. Maybe they could catch a glimpse of the World Cup players. Suddenly football was not only about playing yourself, but also about following the team, sharing the experiences and feeling part of something bigger.
+
+Norway came home to a nation that stood behind them.
+
+Being a good loser is not about downplaying defeat or spending energy on external explanations. It is about taking responsibility, learning from what happened and using the experience to come back stronger.
+
+Now the leadership task is to make this more than a summer memory.
+
+The togetherness, culture and belief must be carried forward. 💯
+
+We must keep rowing together. 🚣
+
+#Ledelse #Teamutvikling #Kultur #Prestasjon #FotballVM`,
+  },
   "verdier-kultur-kommersiell-ledelse-2026-06": {
     tittel: "What do you allow to become culture?",
     teaser:
