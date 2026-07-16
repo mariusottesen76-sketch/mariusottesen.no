@@ -9,7 +9,10 @@ export type StrategicPlatformSlug =
   | "predictive-sales-coach"
   | "flowsignal"
   | "ai-readiness-scan"
-  | "salgsflyt-sjekken";
+  | "salgsflyt-sjekken"
+  | "strategisk-ai-implementering"
+  | "skoyenasen-tannklinikk"
+  | "mariusottesen-nettside";
 
 export type StrategicPlatformTeaserBlock = {
   utfordring: LocalizedString;

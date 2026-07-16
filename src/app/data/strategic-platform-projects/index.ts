@@ -5,6 +5,9 @@ import { predictiveSalesCoachPlatform } from "./predictive-sales-coach-platform"
 import { flowSignalPlatform } from "./flowsignal-platform";
 import { aiReadinessScanPlatform } from "./ai-readiness-scan-platform";
 import { salgsflytSjekkenPlatform } from "./salgsflyt-sjekken-platform";
+import { strategiskAiImplementeringPlatform } from "./strategisk-ai-implementering-platform";
+import { skoyenasenTannklinikkPlatform } from "./skoyenasen-tannklinikk-platform";
+import { mariusottesenNettsidePlatform } from "./mariusottesen-nettside-platform";
 
 export type { StrategicPlatformProject, StrategicPlatformSlug } from "./types";
 export { t } from "./i18n";
@@ -16,6 +19,9 @@ const strategicPlatforms: StrategicPlatformProject[] = [
   flowSignalPlatform,
   aiReadinessScanPlatform,
   salgsflytSjekkenPlatform,
+  strategiskAiImplementeringPlatform,
+  skoyenasenTannklinikkPlatform,
+  mariusottesenNettsidePlatform,
 ];
 
 const bySlug = Object.fromEntries(

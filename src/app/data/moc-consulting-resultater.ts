@@ -3,7 +3,7 @@ import { getFaginnleggTelling } from "../lib/faginnlegg-data";
 import { AI_READINESS_SCAN_PROSJEKT_PATH } from "../lib/ai-readiness-scan-brand";
 
 const prosjektLenker = {
-  skoyenasen: "/prosjekter#skoyenasen-tannklinikk-2026",
+  skoyenasen: "/skoyenasen-tannklinikk",
   psc: "/psc",
   flowsignal: "/flowsignal",
   salgsflyt: "/salgsflyt-sjekken",
@@ -13,8 +13,8 @@ const prosjektLenker = {
   beslutning: "/prosjekter#ai-arkitektur-beslutningsstotte-2026",
   faginnlegg: "/faginnlegg",
   valueLab: "/prosjekter#ai-value-lab-oslo-2026",
-  bi: "/prosjekter#prosjektoppgave-strategisk-implementering-2026",
-  nettside: "/prosjekter#mariusottesen-no-2025",
+  bi: "/strategisk-ai-implementering",
+  nettside: "/mariusottesen-nettside",
   controlTower: "/prosjekter#control-tower",
 } as const;
 
@@ -38,7 +38,7 @@ export function getMocResultaterPunkter(lang: Lang): MocResultatPunkt[] {
       {
         tekst: `Concrete case work at ${lenke(prosjektLenker.skoyenasen, "Skøyenåsen Dental Clinic")}:`,
         underpunkter: [
-          "Patient journey, smart intake, chatbot logic and booking flow in 6 languages — simpler booking for patients and more inquiries",
+          "Patient journey, smart intake, chatbot logic and booking flow in 6 languages — developed as a case and prototype",
         ],
       },
       `Built ${lenke(prosjektLenker.controlTower, "Control Tower")}: decision and execution platform for operational and commercial prioritisation, action and follow-up`,
@@ -57,9 +57,9 @@ export function getMocResultaterPunkter(lang: Lang): MocResultatPunkt[] {
   return [
     {
       tekst: `Konkret casearbeid hos ${lenke(prosjektLenker.skoyenasen, "Skøyenåsen Tannklinikk")}:`,
-      underpunkter: [
-        "Pasientreise, smart intake, chatbot-logikk og bookingflyt på 6 språk — enklere booking for pasienter og flere henvendelser",
-      ],
+        underpunkter: [
+          "Pasientreise, smart intake, chatbot-logikk og bookingflyt på 6 språk — utviklet som case og prototype",
+        ],
     },
     `Bygget ${lenke(prosjektLenker.controlTower, "Control Tower")}: beslutnings- og gjennomføringsplattform for operativ og kommersiell prioritering, tiltak og oppfølging`,
     `Utviklet ${lenke(prosjektLenker.readinessScan, "AI Readiness Scan")}: tilgangsstyrt kartleggingsverktøy med strukturert vurdering av AI-modenhet, prioriteringer og administrativ innsikt`,

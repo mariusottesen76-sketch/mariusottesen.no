@@ -14,6 +14,9 @@ import { predictiveSalesCoach } from "../../data/prosjekter/predictive-sales-coa
 import { flowSignal } from "../../data/prosjekter/flowsignal";
 import { aiReadinessScan } from "../../data/prosjekter/ai-readiness-scan";
 import { smbSalgsflytSjekken } from "../../data/prosjekter/smb-salgsflyt-sjekken";
+import { prosjektoppgaveStrategiskImplementering } from "../../data/prosjekter/prosjektoppgave-strategisk-implementering";
+import { skoyenasenTannklinikk } from "../../data/prosjekter/skoyenasen-tannklinikk";
+import { mariusottesenNettside } from "../../data/prosjekter/mariusottesen-nettside";
 import type { ProsjektType } from "../../data/prosjekter/predictive-sales-coach";
 import {
   blockTitleClass,
@@ -65,6 +68,9 @@ const prosjektBySlug: Record<StrategicPlatformSlug, ProsjektType> = {
   flowsignal: flowSignal,
   "ai-readiness-scan": aiReadinessScan,
   "salgsflyt-sjekken": smbSalgsflytSjekken,
+  "strategisk-ai-implementering": prosjektoppgaveStrategiskImplementering,
+  "skoyenasen-tannklinikk": skoyenasenTannklinikk,
+  "mariusottesen-nettside": mariusottesenNettside,
 };
 
 function SectionHeading({ id, children }: { id: string; children: React.ReactNode }) {

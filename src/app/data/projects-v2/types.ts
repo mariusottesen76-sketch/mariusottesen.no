@@ -90,6 +90,12 @@ export type ProjectV2Record = {
   detailDestination: string;
   liveSolutionUrl?: string;
   externalDestinationLabel?: LocalizedString;
+  /** Valgfri overstyring av CTA-etiketter (f.eks. «Åpne nettsiden» / «Ta kontakt»). */
+  ctaLabels?: {
+    overviewSecondary?: LocalizedString;
+    detailPrimary?: LocalizedString;
+    detailSecondary?: LocalizedString;
+  };
   seo: ProjectSeo;
   /** Detaljinnhold hentes fra strategic platform inntil egen v2-detail er migrert. */
   strategicPlatformSlug?: StrategicPlatformSlug;

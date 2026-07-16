@@ -235,8 +235,8 @@ const translations: Translations = {
   },
   "prosjekter.intro.punkt.tannklinikk.label": { no: "Skøyenåsen Tannklinikk", en: "Skøyenåsen Dental Clinic" },
   "prosjekter.intro.punkt.tannklinikk.desc": {
-    no: "Chatbot og booking på 6 språk — enklere booking, flere henvendelser og sterkere pasientreise",
-    en: "Chatbot and booking in 6 languages — simpler booking, more inquiries and a stronger patient journey",
+    no: "Case og prototype for pasientreise, chatbot og booking på 6 språk — ikke produksjonssatt",
+    en: "Case and prototype for patient journey, chatbot and booking in 6 languages — not production-deployed",
   },
   "prosjekter.intro.punkt.agent.label": { no: "Agentisk arbeidsflyt", en: "Agentic workflow" },
   "prosjekter.intro.punkt.agent.desc": {

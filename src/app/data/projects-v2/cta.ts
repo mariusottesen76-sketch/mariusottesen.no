@@ -42,6 +42,10 @@ const labels = {
     no: "Tilbake til AI-prosjekter",
     en: "Back to AI projects",
   },
+  contactShort: {
+    no: "Ta kontakt",
+    en: "Contact",
+  },
 } as const;
 
 const conceptNote: LocalizedString = {
@@ -68,7 +72,7 @@ function secondaryOverviewAction(project: ProjectV2Record): ProjectCtaAction {
     case "public":
       return {
         href: liveUrl ?? project.detailDestination,
-        label: labels.openSolution,
+        label: project.ctaLabels?.overviewSecondary ?? labels.openSolution,
         external: Boolean(liveUrl),
       };
     case "external_destination":
@@ -96,7 +100,7 @@ function primaryDetailAction(project: ProjectV2Record): ProjectCtaAction {
     case "public":
       return {
         href: liveUrl ?? project.detailDestination,
-        label: labels.openSolution,
+        label: project.ctaLabels?.detailPrimary ?? labels.openSolution,
         external: Boolean(liveUrl),
       };
     case "external_destination":
@@ -121,7 +125,10 @@ function secondaryDetailAction(project: ProjectV2Record): ProjectCtaAction | und
         ? { href: liveUrl, label: labels.openAccessControlled, external: true }
         : undefined;
     case "public":
-      return { href: defaultContactHref, label: labels.contactApplication };
+      return {
+        href: defaultContactHref,
+        label: project.ctaLabels?.detailSecondary ?? labels.contactApplication,
+      };
     case "closed_demo":
     case "concept":
     case "no_live_solution":
