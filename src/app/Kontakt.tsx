@@ -1,11 +1,16 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Mail, Smartphone, Linkedin, ChevronRight, Target, MessageSquare, Globe } from "lucide-react";
 import { useLanguage } from "./LanguageContext";
 import { getTranslation } from "./data/translations";
 import { iconSectionTitleClass, pageTitleClass, sectionTitleClass } from "./lib/typography";
+import {
+  buildConsultingAccessCodeHref,
+  getProjectSlugDisplayName,
+  parseAccessCodeContactQuery,
+} from "./lib/project-contact-query";
 
 const linkClass =
   "text-indigo-400 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400";
@@ -13,9 +18,39 @@ const linkClass =
 export default function Kontakt() {
   const { lang } = useLanguage();
   const tr = (key: string) => getTranslation(key, lang);
+  const [accessQuery, setAccessQuery] = useState<ReturnType<typeof parseAccessCodeContactQuery>>(null);
+
+  useEffect(() => {
+    setAccessQuery(parseAccessCodeContactQuery(window.location.search));
+  }, []);
 
   return (
     <div className="py-4 text-left w-full overflow-x-hidden">
+      {accessQuery && (
+        <div className="mb-6 p-5 rounded-2xl border border-indigo-500/30 bg-indigo-500/10 space-y-2">
+          <p className="text-sm font-bold uppercase tracking-widest text-indigo-300">
+            {lang === "no" ? "Forespørsel om tilgangskode" : "Request access code"}
+          </p>
+          <p className="text-base text-slate-300 leading-relaxed">
+            {lang === "no" ? "Prosjekt:" : "Project:"}{" "}
+            <span className="text-white font-medium">
+              {getProjectSlugDisplayName(accessQuery.prosjekt, lang)}
+            </span>
+          </p>
+          <p className="text-sm text-slate-400 leading-relaxed">
+            {lang === "no"
+              ? "Bruk kontaktskjemaet for å sende en henvendelse. Feltene kan redigeres før innsending."
+              : "Use the contact form to send your request. You can edit the fields before submitting."}
+          </p>
+          <Link
+            href={buildConsultingAccessCodeHref(accessQuery.prosjekt)}
+            className="inline-flex items-center gap-2 text-sm font-medium text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-100 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
+          >
+            {lang === "no" ? "Gå til kontaktskjema" : "Go to contact form"}
+            <ChevronRight size={14} aria-hidden="true" />
+          </Link>
+        </div>
+      )}
       <div className="flex flex-col md:flex-row gap-8 items-start">
         <div className="w-full md:w-60 shrink-0">
           <div className="rounded-2xl overflow-hidden border border-slate-800 shadow-xl bg-slate-900">

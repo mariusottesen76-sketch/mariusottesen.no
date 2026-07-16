@@ -65,15 +65,15 @@ export const aiTransformationV2: ProjectV2Record = {
     },
   },
   overviewImage: "/images/ai-transformation-value-realization-hjemmeside.png",
-  detailHeroImage: "/images/ai-transformation-value-realization-hjemmeside.png",
-  detailHeroObjectPosition: "center top",
-  needsNewDetailHero: true,
+  detailHeroImage: "/images/ai-transformation-value-realization-hjemmeside-bak.png?v=20260716",
+  detailHeroObjectPosition: "center",
+  needsNewDetailHero: false,
   altText: {
     no: "AI Transformation & Value Realization – executive plattform for prioritering, skalering og målbar forretningseffekt fra AI",
     en: "AI Transformation & Value Realization – executive platform for prioritisation, scaling and measurable business impact from AI",
   },
   overviewImageFormat: "standard_1x3",
-  detailHeroMissing: true,
+  detailHeroMissing: false,
   detailDestination: "/ai-transformation-value-realization",
   seo: {
     title: {
@@ -84,7 +84,7 @@ export const aiTransformationV2: ProjectV2Record = {
       no: "Executive konseptplattform for prioritering av AI-initiativer, transformasjonsstyring, skalering og dokumentert forretningseffekt.",
       en: "Executive concept platform for prioritising AI initiatives, transformation governance, scaling and documented business impact.",
     },
-    ogImage: "/images/ai-transformation-value-realization-hjemmeside.png",
+    ogImage: "/images/ai-transformation-value-realization-hjemmeside-bak.png",
     canonicalPath: "/ai-transformation-value-realization",
   },
   strategicPlatformSlug: "ai-transformation-value-realization",

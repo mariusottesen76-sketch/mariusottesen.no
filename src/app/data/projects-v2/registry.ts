@@ -1,10 +1,21 @@
 import type { ProjectV2Record } from "./types";
 import { controlTowerV2 } from "./projects/control-tower";
 import { aiTransformationV2 } from "./projects/ai-transformation-value-realization";
+import { predictiveSalesCoachV2 } from "./projects/predictive-sales-coach";
+import { flowsignalV2 } from "./projects/flowsignal";
+import { aiReadinessScanV2 } from "./projects/ai-readiness-scan";
+import { salgsflytSjekkenV2 } from "./projects/salgsflyt-sjekken";
 
 export { t } from "../strategic-platform-projects/i18n";
 
-const projectV2Records: ProjectV2Record[] = [controlTowerV2, aiTransformationV2];
+const projectV2Records: ProjectV2Record[] = [
+  controlTowerV2,
+  aiTransformationV2,
+  predictiveSalesCoachV2,
+  flowsignalV2,
+  aiReadinessScanV2,
+  salgsflytSjekkenV2,
+];
 
 const byId = Object.fromEntries(projectV2Records.map((p) => [p.id, p])) as Record<string, ProjectV2Record>;
 

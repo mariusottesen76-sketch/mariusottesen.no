@@ -79,6 +79,8 @@ export type ProjectV2Record = {
   detailHeroBackground?: string;
   /** CSS object-position for hero-banner (f.eks. center, center top, 50% 35%). */
   detailHeroObjectPosition?: string;
+  /** true = eksisterende bilde bør produseres på nytt i 1:3; vises med contain-fallback. */
+  needsNewOverviewImage?: boolean;
   /** true = eksisterende bilde bør produseres på nytt i 3:1; vises med contain-fallback. */
   needsNewDetailHero?: boolean;
   /** Mangler dedikert 3:1 hero — bruker overview-bilde inntil nytt asset finnes. */

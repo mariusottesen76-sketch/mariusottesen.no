@@ -1,36 +1,11 @@
 import type { Metadata } from "next";
-import PilotLanding from "../components/PilotLanding";
-import { getPilotSide } from "../data/pilot-pages";
+import ProjectDetailPage from "../components/project-v2/ProjectDetailPage";
+import { getProjectV2ById, buildProjectV2Metadata } from "../data/projects-v2/registry";
 
-const side = getPilotSide("flowsignal");
+const project = getProjectV2ById("flowsignal-2026-05")!;
 
-export const metadata: Metadata = {
-  title: side.meta.title.no,
-  description: side.meta.description.no,
-  metadataBase: new URL("https://www.mariusottesen.no"),
-  openGraph: {
-    title: side.meta.title.no,
-    description: side.meta.description.no,
-    url: "https://www.mariusottesen.no/flowsignal",
-    type: "website",
-    siteName: "Marius Ottesen",
-    images: [
-      {
-        url: "https://www.mariusottesen.no/images/profil.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Team Performance & Samhandling Pilot med FlowSignal",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: side.meta.title.no,
-    description: side.meta.description.no,
-    images: ["https://www.mariusottesen.no/images/profil.jpg"],
-  },
-};
+export const metadata: Metadata = buildProjectV2Metadata(project);
 
-export default function FlowSignalPilotPage() {
-  return <PilotLanding slug="flowsignal" />;
+export default function FlowsignalPage() {
+  return <ProjectDetailPage slug="flowsignal" />;
 }

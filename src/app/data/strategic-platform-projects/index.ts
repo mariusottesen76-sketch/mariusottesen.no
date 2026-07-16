@@ -1,6 +1,10 @@
 import type { StrategicPlatformProject, StrategicPlatformSlug } from "./types";
 import { controlTowerPlatform } from "./control-tower-platform";
 import { aiTransformationPlatform } from "./ai-transformation-platform";
+import { predictiveSalesCoachPlatform } from "./predictive-sales-coach-platform";
+import { flowSignalPlatform } from "./flowsignal-platform";
+import { aiReadinessScanPlatform } from "./ai-readiness-scan-platform";
+import { salgsflytSjekkenPlatform } from "./salgsflyt-sjekken-platform";
 
 export type { StrategicPlatformProject, StrategicPlatformSlug } from "./types";
 export { t } from "./i18n";
@@ -8,6 +12,10 @@ export { t } from "./i18n";
 const strategicPlatforms: StrategicPlatformProject[] = [
   controlTowerPlatform,
   aiTransformationPlatform,
+  predictiveSalesCoachPlatform,
+  flowSignalPlatform,
+  aiReadinessScanPlatform,
+  salgsflytSjekkenPlatform,
 ];
 
 const bySlug = Object.fromEntries(

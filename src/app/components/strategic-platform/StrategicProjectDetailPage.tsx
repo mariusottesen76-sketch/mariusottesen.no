@@ -10,6 +10,10 @@ import type { StrategicPlatformSlug } from "../../data/strategic-platform-projec
 import { getStrategicPlatformBySlug, t } from "../../data/strategic-platform-projects";
 import { controlTower } from "../../data/prosjekter/control-tower";
 import { aiTransformationValueRealization } from "../../data/prosjekter/ai-transformation-value-realization";
+import { predictiveSalesCoach } from "../../data/prosjekter/predictive-sales-coach";
+import { flowSignal } from "../../data/prosjekter/flowsignal";
+import { aiReadinessScan } from "../../data/prosjekter/ai-readiness-scan";
+import { smbSalgsflytSjekken } from "../../data/prosjekter/smb-salgsflyt-sjekken";
 import type { ProsjektType } from "../../data/prosjekter/predictive-sales-coach";
 import {
   blockTitleClass,
@@ -20,13 +24,14 @@ import {
 } from "../../lib/typography";
 import { formatProsjektPlain } from "../../lib/product-brand";
 import ProjectStatusBadge from "./ProjectStatusBadge";
-import ProjectCTA, { strategicDetailCtaLabels } from "./ProjectCTA";
+import ProjectCTAGroup from "../project-v2/ProjectCTAGroup";
 import ProjectModuleGrid from "./ProjectModuleGrid";
 import ScalabilitySection from "./ScalabilitySection";
 import ProjectHero from "../project-v2/ProjectHero";
 import ProjectImageModal from "../project-v2/ProjectImageModal";
 import ProjectApplicationGroups from "../project-v2/ProjectApplicationGroups";
 import { getProjectV2ById } from "../../data/projects-v2/registry";
+import { buildProjectDetailCta } from "../../data/projects-v2/cta";
 import { PROJECT_CATEGORY_LABELS } from "../../lib/project-v2-category";
 import { resolveDetailHeroFit } from "../../lib/project-v2-image";
 
@@ -56,6 +61,10 @@ const bodyTextClass = "text-base leading-relaxed font-light w-full min-w-0 max-w
 const prosjektBySlug: Record<StrategicPlatformSlug, ProsjektType> = {
   "control-tower": controlTower,
   "ai-transformation-value-realization": aiTransformationValueRealization,
+  "predictive-sales-coach": predictiveSalesCoach,
+  flowsignal: flowSignal,
+  "ai-readiness-scan": aiReadinessScan,
+  "salgsflyt-sjekken": smbSalgsflytSjekken,
 };
 
 function SectionHeading({ id, children }: { id: string; children: React.ReactNode }) {
@@ -96,6 +105,7 @@ function StrategicProjectDetailInner({ slug }: { slug: StrategicPlatformSlug }) 
   const platform = getStrategicPlatformBySlug(slug);
   const prosjekt = prosjektBySlug[slug];
   const projectV2 = getProjectV2ById(prosjekt.id);
+  const detailCta = projectV2 ? buildProjectDetailCta(projectV2) : null;
   const { detail } = platform;
   const heroSrc = projectV2?.detailHeroImage ?? prosjekt.bildeUrl;
   const heroAlt = projectV2?.altText ?? detail.hero.bildeAlt;
@@ -155,14 +165,9 @@ function StrategicProjectDetailInner({ slug }: { slug: StrategicPlatformSlug }) 
           fit={resolveDetailHeroFit(projectV2?.needsNewDetailHero ?? projectV2?.detailHeroMissing)}
         />
 
-        <ProjectCTA
-          lang={lang}
-          primaryHref="/kontakt"
-          primaryLabel={strategicDetailCtaLabels.primary}
-          secondaryHref="#plattform-moduler"
-          secondaryLabel={strategicDetailCtaLabels.secondary}
-          note={strategicDetailCtaLabels.note}
-        />
+        {projectV2 && detailCta ? (
+          <ProjectCTAGroup lang={lang} config={detailCta} />
+        ) : null}
       </header>
 
       <section aria-labelledby="plattform-utfordring" className="mb-10">
@@ -285,20 +290,21 @@ function StrategicProjectDetailInner({ slug }: { slug: StrategicPlatformSlug }) 
           {t(detail.avslutning.heading, lang)}
         </h2>
         <p className={`text-slate-300 ${bodyTextClass}`}>{t(detail.avslutning.body, lang)}</p>
-        <ProjectCTA
-          lang={lang}
-          primaryHref="/kontakt"
-          primaryLabel={strategicDetailCtaLabels.primary}
-          secondaryHref="/prosjekter"
-          secondaryLabel={
-            detail.avslutning.secondaryLabel ?? {
-              no: "Se flere AI-prosjekter",
-              en: "See more AI projects",
-            }
-          }
-          variant="footer"
-          note={strategicDetailCtaLabels.note}
-        />
+        {projectV2 && detailCta ? (
+          <ProjectCTAGroup
+            lang={lang}
+            config={{
+              ...detailCta,
+              secondary: {
+                href: "/prosjekter",
+                label: detail.avslutning.secondaryLabel ?? {
+                  no: "Tilbake til AI-prosjekter",
+                  en: "Back to AI projects",
+                },
+              },
+            }}
+          />
+        ) : null}
       </section>
 
       <footer className="mt-10 pt-6 border-t border-slate-800/40 text-center">

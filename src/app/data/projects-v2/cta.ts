@@ -1,10 +1,15 @@
-import type { AccessMode, LocalizedString, ProjectV2Record } from "./types";
+import type { LocalizedString, ProjectV2Record } from "./types";
+import { buildAccessCodeContactHref } from "../../lib/project-contact-query";
+
+export type ProjectCtaAction = {
+  href: string;
+  label: LocalizedString;
+  external?: boolean;
+};
 
 export type ProjectCtaConfig = {
-  primary: { href: string; label: LocalizedString; external?: boolean };
-  secondary: { href: string; label: LocalizedString };
-  tertiary?: { href: string; label: LocalizedString; external?: boolean };
-  contact?: { href: string; label: LocalizedString };
+  primary: ProjectCtaAction;
+  secondary?: ProjectCtaAction;
   note?: LocalizedString;
 };
 
@@ -16,6 +21,10 @@ const labels = {
   openSolution: {
     no: "Åpne løsningen",
     en: "Open the solution",
+  },
+  openAccessControlled: {
+    no: "Åpne tilgangsstyrt løsning",
+    en: "Open access-controlled solution",
   },
   requestAccess: {
     no: "Be om tilgangskode",
@@ -29,9 +38,9 @@ const labels = {
     no: "Ta kontakt om demonstrasjon",
     en: "Get in touch about a demonstration",
   },
-  contactDialog: {
-    no: "Ta kontakt for faglig dialog",
-    en: "Get in touch for professional dialogue",
+  backToProjects: {
+    no: "Tilbake til AI-prosjekter",
+    en: "Back to AI projects",
   },
 } as const;
 
@@ -40,59 +49,110 @@ const conceptNote: LocalizedString = {
   en: "The solution is developed as a concept prototype and portfolio demonstration — not presented as a production-ready system.",
 };
 
-export function buildProjectCta(project: ProjectV2Record): ProjectCtaConfig {
-  const detail = project.detailDestination;
-  const contactHref = "/kontakt";
+const accessCodeNote: LocalizedString = {
+  no: "Løsningen er tilgangsstyrt og utviklet som porteføljeprosjekt / lukket testflate — ikke presentert som ferdig kommersielt produkt.",
+  en: "The solution is access-controlled and developed as a portfolio project / closed test environment — not presented as a finished commercial product.",
+};
+
+const defaultContactHref = "/kontakt";
+
+function secondaryOverviewAction(project: ProjectV2Record): ProjectCtaAction {
+  const accessContactHref = buildAccessCodeContactHref(project.slug);
   const liveUrl = project.liveSolutionUrl;
 
   switch (project.accessMode) {
     case "access_code":
-      return {
-        primary: { href: contactHref, label: labels.requestAccess },
-        secondary: { href: detail, label: labels.explore },
-        tertiary: liveUrl
-          ? { href: liveUrl, label: labels.openSolution, external: true }
-          : undefined,
-        note: conceptNote,
-      };
-
+      return { href: accessContactHref, label: labels.requestAccess };
+    case "closed_demo":
+      return { href: defaultContactHref, label: labels.contactDemo };
     case "public":
       return {
-        primary: {
-          href: liveUrl ?? detail,
-          label: labels.openSolution,
-          external: Boolean(liveUrl),
-        },
-        secondary: { href: detail, label: labels.explore },
-        contact: { href: contactHref, label: labels.contactApplication },
+        href: liveUrl ?? project.detailDestination,
+        label: labels.openSolution,
+        external: Boolean(liveUrl),
       };
-
-    case "closed_demo":
-      return {
-        primary: { href: contactHref, label: labels.contactDemo },
-        secondary: { href: detail, label: labels.explore },
-        contact: { href: contactHref, label: labels.contactDialog },
-      };
-
     case "external_destination":
       return {
-        primary: {
-          href: liveUrl ?? detail,
-          label: project.externalDestinationLabel ?? labels.explore,
-          external: Boolean(liveUrl?.startsWith("http")),
-        },
-        secondary: { href: detail, label: labels.explore },
-        contact: { href: contactHref, label: labels.contactDialog },
+        href: liveUrl ?? project.detailDestination,
+        label: project.externalDestinationLabel ?? labels.explore,
+        external: Boolean(liveUrl?.startsWith("http")),
       };
-
     case "concept":
     case "no_live_solution":
     default:
-      return {
-        primary: { href: contactHref, label: labels.contactApplication },
-        secondary: { href: detail, label: labels.explore },
-        contact: { href: contactHref, label: labels.contactDialog },
-        note: conceptNote,
-      };
+      return { href: defaultContactHref, label: labels.contactApplication };
   }
+}
+
+function primaryDetailAction(project: ProjectV2Record): ProjectCtaAction {
+  const accessContactHref = buildAccessCodeContactHref(project.slug);
+  const liveUrl = project.liveSolutionUrl;
+
+  switch (project.accessMode) {
+    case "access_code":
+      return { href: accessContactHref, label: labels.requestAccess };
+    case "closed_demo":
+      return { href: defaultContactHref, label: labels.contactDemo };
+    case "public":
+      return {
+        href: liveUrl ?? project.detailDestination,
+        label: labels.openSolution,
+        external: Boolean(liveUrl),
+      };
+    case "external_destination":
+      return {
+        href: liveUrl ?? project.detailDestination,
+        label: project.externalDestinationLabel ?? labels.explore,
+        external: Boolean(liveUrl?.startsWith("http")),
+      };
+    case "concept":
+    case "no_live_solution":
+    default:
+      return { href: defaultContactHref, label: labels.contactApplication };
+  }
+}
+
+function secondaryDetailAction(project: ProjectV2Record): ProjectCtaAction | undefined {
+  const liveUrl = project.liveSolutionUrl;
+
+  switch (project.accessMode) {
+    case "access_code":
+      return liveUrl
+        ? { href: liveUrl, label: labels.openAccessControlled, external: true }
+        : undefined;
+    case "public":
+      return { href: defaultContactHref, label: labels.contactApplication };
+    case "closed_demo":
+    case "concept":
+    case "no_live_solution":
+      return { href: "/prosjekter", label: labels.backToProjects };
+    case "external_destination":
+      return { href: "/prosjekter", label: labels.backToProjects };
+    default:
+      return { href: "/prosjekter", label: labels.backToProjects };
+  }
+}
+
+function overviewNote(project: ProjectV2Record): LocalizedString | undefined {
+  if (project.accessMode === "access_code") return accessCodeNote;
+  if (project.accessMode === "concept" || project.accessMode === "no_live_solution") return conceptNote;
+  return undefined;
+}
+
+/** CTA-er på /prosjekter — to knapper: utforsk (primær) + kontakt/tilgang (sekundær). */
+export function buildProjectCta(project: ProjectV2Record): ProjectCtaConfig {
+  return {
+    primary: { href: project.detailDestination, label: labels.explore },
+    secondary: secondaryOverviewAction(project),
+    note: overviewNote(project),
+  };
+}
+
+/** CTA-er på project_v2-detaljsider — kontakt/tilgang/løsning primær, støttende handling sekundær. */
+export function buildProjectDetailCta(project: ProjectV2Record): ProjectCtaConfig {
+  return {
+    primary: primaryDetailAction(project),
+    secondary: secondaryDetailAction(project),
+    note: overviewNote(project),
+  };
 }

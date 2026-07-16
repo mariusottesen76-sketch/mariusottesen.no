@@ -5,7 +5,11 @@ export type LocalizedString = {
 
 export type StrategicPlatformSlug =
   | "control-tower"
-  | "ai-transformation-value-realization";
+  | "ai-transformation-value-realization"
+  | "predictive-sales-coach"
+  | "flowsignal"
+  | "ai-readiness-scan"
+  | "salgsflyt-sjekken";
 
 export type StrategicPlatformTeaserBlock = {
   utfordring: LocalizedString;

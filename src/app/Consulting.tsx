@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import {
   Send,
@@ -26,11 +26,29 @@ import {
   sectionHeadingClass,
   sectionHeadingWrapClass,
 } from "./lib/typography";
+import {
+  getProjectSlugDisplayName,
+  parseAccessCodeContactQuery,
+} from "./lib/project-contact-query";
 
 function getKategorier(lang: "no" | "en") {
   return lang === "no"
-    ? ["Aktuell lederrolle", "Rekruttering eller kandidatdialog", "Faglig dialog", "Mulig fremtidig samarbeid", "Annet"]
-    : ["Relevant leadership role", "Recruitment or candidate dialogue", "Professional dialogue", "Possible future collaboration", "Other"];
+    ? [
+        "Aktuell lederrolle",
+        "Rekruttering eller kandidatdialog",
+        "Faglig dialog",
+        "Forespørsel om tilgangskode",
+        "Mulig fremtidig samarbeid",
+        "Annet",
+      ]
+    : [
+        "Relevant leadership role",
+        "Recruitment or candidate dialogue",
+        "Professional dialogue",
+        "Request access code",
+        "Possible future collaboration",
+        "Other",
+      ];
 }
 
 function getKategoriFeilmelding(lang: "no" | "en") {
@@ -91,7 +109,7 @@ const produktLenker = [
   { label: "The Predictive Sales Coach", href: "/psc" },
   { label: "FlowSignal", href: "/flowsignal" },
   { label: "SMB Salgsflyt-sjekken", href: "/salgsflyt-sjekken" },
-  { label: "AI Readiness Scan", href: "/prosjekter#ai-readiness-scan-2026-06" },
+  { label: "AI Readiness Scan", href: "/ai-readiness-scan" },
 ] as const;
 
 function PakkeTekst({ text }: { text: string }) {
@@ -251,6 +269,22 @@ export default function Consulting() {
   const [beskrivelse, setBeskrivelse] = useState("");
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [feilmelding, setFeilmelding] = useState("");
+
+  useEffect(() => {
+    const query = parseAccessCodeContactQuery(window.location.search);
+    if (!query) return;
+
+    const kategoriLabel =
+      lang === "no" ? "Forespørsel om tilgangskode" : "Request access code";
+    const prosjektNavn = getProjectSlugDisplayName(query.prosjekt, lang);
+    const prefix =
+      lang === "no"
+        ? `Jeg ønsker tilgangskode til ${prosjektNavn}.`
+        : `I would like an access code for ${prosjektNavn}.`;
+
+    setKategori(kategoriLabel);
+    setBeskrivelse((current) => (current.trim() ? current : prefix));
+  }, [lang]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();

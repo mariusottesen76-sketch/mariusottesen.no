@@ -13,7 +13,7 @@ export const aiTransformationPlatform: StrategicPlatformProject = {
       no: "Executive konseptplattform for prioritering av AI-initiativer, transformasjonsstyring, skalering og dokumentert forretningseffekt.",
       en: "Executive concept platform for prioritising AI initiatives, transformation governance, scaling and documented business impact.",
     },
-    ogImage: "/images/ai-transformation-value-realization-hjemmeside.png",
+    ogImage: "/images/ai-transformation-value-realization-hjemmeside-bak.png",
     canonicalPath: "/ai-transformation-value-realization",
   },
   teaser: {
