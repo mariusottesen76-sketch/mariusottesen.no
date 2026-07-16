@@ -110,7 +110,7 @@ Jeg tror dette er relevant for langt flere enn typiske COO- og CCO-roller. De fl
 
 Jeg gleder meg til å utforske både stillingen og prosjektet videre.
 
-👇 Se <a href="/prosjekter#control-tower-2026-07" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">Control Tower og prosjektbeskrivelsen</a> på prosjektsiden.
+👇 Se <a href="/prosjekter#control-tower" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">Control Tower og prosjektbeskrivelsen</a> på prosjektsiden.
 
 Og dersom du ønsker å diskutere hvordan tilsvarende problemstillinger kan utfordres i din rolle eller virksomhet, er det bare å <a href="/kontakt" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">ta kontakt</a>.
 
@@ -2139,7 +2139,7 @@ I believe this is relevant for far more than typical COO and CCO roles. Most org
 
 I look forward to exploring both the role and the project further.
 
-👇 See <a href="/prosjekter#control-tower-2026-07" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">Control Tower and the project description</a> on the projects page.
+👇 See <a href="/prosjekter#control-tower" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">Control Tower and the project description</a> on the projects page.
 
 And if you want to discuss how similar challenges can be addressed in your role or organisation, feel free to <a href="/kontakt" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">get in touch</a>.
 

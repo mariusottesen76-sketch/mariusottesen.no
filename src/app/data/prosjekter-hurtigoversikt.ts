@@ -1,5 +1,6 @@
 import { Lang } from "../LanguageContext";
 import { controlTower } from "./prosjekter/control-tower";
+import { aiTransformationValueRealization } from "./prosjekter/ai-transformation-value-realization";
 import { aiReadinessScan } from "./prosjekter/ai-readiness-scan";
 import { flowSignal } from "./prosjekter/flowsignal";
 import { predictiveSalesCoach } from "./prosjekter/predictive-sales-coach";
@@ -31,7 +32,12 @@ const kategorier: ProsjektHurtigKategori[] = [
     title: { no: "App og prototype", en: "App and prototype" },
     lenker: [
       {
-        prosjektId: "control-tower-2026-07",
+        prosjektId: "ai-transformation-value-realization",
+        introSlug: "ai-transformation",
+        label: { no: "AI Transformation & Value Realization", en: "AI Transformation & Value Realization" },
+      },
+      {
+        prosjektId: "control-tower",
         introSlug: "control-tower",
         label: { no: "Control Tower", en: "Control Tower" },
       },
@@ -126,6 +132,7 @@ const kategorier: ProsjektHurtigKategori[] = [
 
 const prosjektDatoById = Object.fromEntries(
   [
+    aiTransformationValueRealization,
     controlTower,
     aiReadinessScan,
     flowSignal,

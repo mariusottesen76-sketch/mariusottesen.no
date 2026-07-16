@@ -1,0 +1,25 @@
+---
+description: Control Tower pilot-URL — ikke synliggjør før innlogging er klar
+alwaysApply: true
+---
+
+# Control Tower pilot
+
+Deployet app-URL lagres i `src/app/lib/control-tower-brand.ts`:
+
+- `CONTROL_TOWER_APP_URL` — https://control-tower-1049194963104.europe-west2.run.app/
+- `CONTROL_TOWER_PILOT_PUBLIC` — **false** til Marius har laget innlogging
+
+## Ikke gjør før `CONTROL_TOWER_PILOT_PUBLIC` er true
+
+- Legg ikke ut direkte lenke til app-URL på prosjektsiden, consulting, faginnlegg eller andre offentlige flater
+- Ikke opprett `/control-tower`-landingsside med CTA til appen
+- Ikke legg Control Tower i `ProsjektPilotBlokk` eller `produktLenker` med ekstern app-URL
+
+## Når innlogging er klar
+
+1. Sett `CONTROL_TOWER_PILOT_PUBLIC = true`
+2. Koble pilot i `ProsjektPilotBlokk` (som PSC, FlowSignal, Readiness Scan)
+3. Vurder landingsside og synk på tvers (jf. `prosjekt-synk-paa-tvers.mdc`)
+
+Inntil da: lenker til Control Tower skal peke til `/prosjekter#control-tower` (prosjektbeskrivelse).

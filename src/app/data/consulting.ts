@@ -255,7 +255,7 @@ const metoder: Record<Lang, MetodeKomponent[]> = {
     {
       tittel: "Control Tower",
       beskrivelse: "Beslutnings- og gjennomføringsplattform for operativ og kommersiell prioritering",
-      pilotStotte: prosjektLenke("/prosjekter#control-tower-2026-07").no,
+      pilotStotte: prosjektLenke("/prosjekter#control-tower").no,
     },
     {
       tittel: "The Predictive Sales Coach",
@@ -290,7 +290,7 @@ const metoder: Record<Lang, MetodeKomponent[]> = {
     {
       tittel: "Control Tower",
       beskrivelse: "Decision and execution platform for operational and commercial prioritisation",
-      pilotStotte: prosjektLenke("/prosjekter#control-tower-2026-07").en,
+      pilotStotte: prosjektLenke("/prosjekter#control-tower").en,
     },
     {
       tittel: "The Predictive Sales Coach",

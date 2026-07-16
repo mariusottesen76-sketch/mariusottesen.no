@@ -191,6 +191,14 @@ const translations: Translations = {
     no: "Beslutnings- og gjennomføringsplattform for operativ og kommersiell prioritering",
     en: "Decision and execution platform for operational and commercial prioritisation",
   },
+  "prosjekter.intro.punkt.ai-transformation.label": {
+    no: "AI Transformation & Value Realization",
+    en: "AI Transformation & Value Realization",
+  },
+  "prosjekter.intro.punkt.ai-transformation.desc": {
+    no: "Executive konseptplattform for prioritering, transformasjonsstyring og målbar forretningseffekt",
+    en: "Executive concept platform for prioritisation, transformation governance and measurable business impact",
+  },
   "prosjekter.intro.punkt.readiness-scan.desc": {
     no: "AI-modenhet, prioriteringer og konkret grunnlag for videre AI-arbeid",
     en: "AI maturity, priorities and a concrete basis for further AI work",

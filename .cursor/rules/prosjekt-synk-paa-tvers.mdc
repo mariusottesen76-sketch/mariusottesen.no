@@ -1,0 +1,40 @@
+---
+description: Ved nye prosjekter — synk nettsiden og alle relevante sider på mariusottesen.no
+alwaysApply: true
+---
+
+# Prosjekt-synk på tvers av nettsiden
+
+Når Marius legger til eller endrer et prosjektarbeid, skal **mariusottesen.no selv** regnes som noe som er bygget og publisert — ikke bare en ramme rundt andre prosjekter.
+
+## Grunnregel
+
+For **hvert nytt eller vesentlig oppdatert prosjekt**: oppdater alle steder det naturlig hører hjemme. Ikke stopp ved én prosjektfil — tenk hele porteføljen og hele nettsiden.
+
+## Sjekkliste ved nytt prosjekt
+
+1. **Prosjektdata** — `src/app/data/prosjekter/<prosjekt>.ts`
+2. **Prosjektliste** — `src/app/Prosjekter.tsx` (`prosjektKort`, sortering)
+3. **Hurtigoversikt** — `src/app/data/prosjekter-hurtigoversikt.ts`
+4. **Mulig videreutvikling** — `src/app/data/prosjekt-videreutvikling.ts`
+5. **AI-prosjekter intro / punktliste** — `src/app/data/translations.ts` (`prosjekter.intro.punkt.*`)
+6. **Profil / proof points** — `src/app/data/proof-points.ts`, `src/app/data/profil.ts`
+7. **Resultater** — `src/app/Resultater.tsx` og `src/app/data/moc-consulting-resultater.ts` der det passer
+8. **Faginnlegg** — krysslenker og kontekst i `src/app/Faginnlegg.tsx` / `translations.ts` (`fag.*`)
+9. **Consulting** — `src/app/Consulting.tsx` og tilhørende data
+10. **Forside / Profil** — hero, CTA-er og «hva som er bygget» der det gir mening
+11. **Landingssider** — egne ruter under `src/app/` (f.eks. `/psc`, `/flowsignal`) og `pilot-pages.ts`
+12. **Bilder** — `public/images/` + `bilderUnderHovedbilde` der det viser at løsningen er live
+
+## Nettsideprosjektet
+
+`mariusottesen-no-2025` skal alltid reflektere at nettsiden er en **egen leveranse**: publisert side, portefølje, faginnlegg, demonstratorer og evne til å bygge/publisere nettsider for andre.
+
+Når andre prosjekter endres, vurder om nettsideprosjektets punktliste, teaser eller skjermbilde bør oppdateres.
+
+## Arbeidsmåte
+
+- Gjør endringene **proaktivt** når brukeren ber om nytt prosjekt — ikke vent på at brukeren minner om hver enkelt side.
+- Hold norsk og engelsk i sync.
+- Unngå dupliserte lenker og repetisjon på tvers av sider.
+- Deploy kun når brukeren ber om det.

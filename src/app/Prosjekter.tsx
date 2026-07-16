@@ -18,6 +18,7 @@ import { prosjektoppgaveStrategiskImplementering } from "./data/prosjekter/prosj
 import { flowSignal } from "./data/prosjekter/flowsignal";
 import { smbSalgsflytSjekken } from "./data/prosjekter/smb-salgsflyt-sjekken";
 import { controlTower } from "./data/prosjekter/control-tower";
+import { aiTransformationValueRealization } from "./data/prosjekter/ai-transformation-value-realization";
 import { aiReadinessScan } from "./data/prosjekter/ai-readiness-scan";
 import { mariusottesenNettside } from "./data/prosjekter/mariusottesen-nettside";
 import { isFlowSignalProsjekt } from "./lib/flowsignal-brand";
@@ -26,8 +27,12 @@ import { isSmbSalgsflytProsjekt } from "./lib/smb-salgsflyt-brand";
 import { isAiReadinessScanProsjekt } from "./lib/ai-readiness-scan-brand";
 import { formatProsjektHtml, formatProsjektPlain } from "./lib/product-brand";
 import ProsjektPilotBlokk from "./components/ProsjektPilotBlokk";
+import StrategicProjectTeaser from "./components/strategic-platform/StrategicProjectTeaser";
+import { getStrategicPlatformByProsjektId } from "./data/strategic-platform-projects";
+import { getProjectV2ById } from "./data/projects-v2/registry";
+import ProjectOverviewV2 from "./components/project-v2/ProjectOverviewV2";
 
-const prosjektKort: ProsjektType[] = [controlTower, mariusottesenNettside, aiReadinessScan, smbSalgsflytSjekken, flowSignal, prosjektoppgaveStrategiskImplementering, pscPromoVideo, aiAssistertInnsiktsagent, aiAssistertInnsiktsOgInnholdsagent, predictiveSalesCoach, aiValueLabOslo, skoyenasenTannklinikk, aiArkitekturBeslutningsstotte].sort(
+const prosjektKort: ProsjektType[] = [aiTransformationValueRealization, controlTower, mariusottesenNettside, aiReadinessScan, smbSalgsflytSjekken, flowSignal, prosjektoppgaveStrategiskImplementering, pscPromoVideo, aiAssistertInnsiktsagent, aiAssistertInnsiktsOgInnholdsagent, predictiveSalesCoach, aiValueLabOslo, skoyenasenTannklinikk, aiArkitekturBeslutningsstotte].sort(
   (a, b) => new Date(b.dato).getTime() - new Date(a.dato).getTime()
 );
 
@@ -186,6 +191,8 @@ export default function Prosjekter({ onNavigate }: { onNavigate?: (tab: string) 
           const erFlowSignal = isFlowSignalProsjekt(prosjekt.id);
           const erSmbSalgsflyt = isSmbSalgsflytProsjekt(prosjekt.id);
           const erAiReadinessScan = isAiReadinessScanProsjekt(prosjekt.id);
+          const strategicPlatform = getStrategicPlatformByProsjektId(prosjekt.id);
+          const projectV2 = getProjectV2ById(prosjekt.id);
           return (
           <article
             key={prosjekt.id}
@@ -196,6 +203,22 @@ export default function Prosjekter({ onNavigate }: { onNavigate?: (tab: string) 
                 : "bg-slate-900/40 rounded-2xl border border-indigo-500/20 overflow-hidden shadow-xl min-w-0"
             }`}
           >
+            {projectV2 ? (
+              <ProjectOverviewV2
+                project={projectV2}
+                lang={lang}
+                onImageClick={(src, alt) => setActiveImage({ src, alt })}
+                bildeHint={bildeHintKort}
+              />
+            ) : strategicPlatform ? (
+              <StrategicProjectTeaser
+                prosjekt={prosjekt}
+                platform={strategicPlatform}
+                lang={lang}
+                onImageClick={(src, alt) => setActiveImage({ src, alt })}
+                bildeHint={bildeHintKort}
+              />
+            ) : (
             <div className="flex flex-col md:flex-row gap-2 md:gap-3 items-start p-2.5 md:p-3 min-w-0">
               {/* Smalere bildekolonne – predictive / predictive-sales-coach */}
               <div className="w-full md:w-[220px] lg:w-[260px] shrink-0 flex flex-col items-center gap-1.5 self-start">
@@ -355,6 +378,7 @@ export default function Prosjekter({ onNavigate }: { onNavigate?: (tab: string) 
                 {(erPsc || erFlowSignal || erSmbSalgsflyt || erAiReadinessScan) && (
                   <ProsjektPilotBlokk prosjektId={prosjekt.id} lang={lang} />
                 )}
+                {prosjekt.innhold[lang].trim() && (
                 <div>
                   <div
                     className={getProsjektInnholdProseClass(
@@ -388,6 +412,7 @@ export default function Prosjekter({ onNavigate }: { onNavigate?: (tab: string) 
                     )}
                   </div>
                 </div>
+                )}
                 {prosjekt.navigasjonsCta && onNavigate && !prosjekt.navigasjonsCta.beskrivelse && (
                   <button
                     type="button"
@@ -404,6 +429,7 @@ export default function Prosjekter({ onNavigate }: { onNavigate?: (tab: string) 
                 )}
               </div>
             </div>
+            )}
           </article>
           );
         })}

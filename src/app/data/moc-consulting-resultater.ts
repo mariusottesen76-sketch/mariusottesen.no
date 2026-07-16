@@ -15,7 +15,7 @@ const prosjektLenker = {
   valueLab: "/prosjekter#ai-value-lab-oslo-2026",
   bi: "/prosjekter#prosjektoppgave-strategisk-implementering-2026",
   nettside: "/prosjekter#mariusottesen-no-2025",
-  controlTower: "/prosjekter#control-tower-2026-07",
+  controlTower: "/prosjekter#control-tower",
 } as const;
 
 function lenke(href: string, label: string): string {

@@ -87,7 +87,7 @@ const linkClass =
   "text-indigo-400 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400";
 
 const produktLenker = [
-  { label: "Control Tower", href: "/prosjekter#control-tower-2026-07" },
+  { label: "Control Tower", href: "/prosjekter#control-tower" },
   { label: "The Predictive Sales Coach", href: "/psc" },
   { label: "FlowSignal", href: "/flowsignal" },
   { label: "SMB Salgsflyt-sjekken", href: "/salgsflyt-sjekken" },
