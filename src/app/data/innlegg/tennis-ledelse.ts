@@ -16,6 +16,58 @@ const localize = (no: string, en: string = no): LocalizedText => ({ no, en });
 
 const tennisLedelseRaw = [
     {
+      id: "verdensklasse-bygges-sammen-cnn-2026-07",
+      tittel: "Verdensklasse bygges sammen",
+      teaser:
+        "CNN spør hvordan Norge skaper verdensklasse — svaret ligger i systemet, ikke bare i stjernene. Læring fra norsk idrettsutvikling og hva det betyr for prestasjonskultur i virksomheter.",
+      bildeUrl: "/images/cnn-verdensklasse.png",
+      dato: "2026-07-16",
+      visningsDato: "16.07.26",
+      kategori: "Lederstil, kultur og team",
+      link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
+      innhold: `Norge er for lite til å kaste bort talent.
+
+Fotballguttas VM-prestasjon ga verden et nytt eksempel på noe norsk idrett har vist lenge:
+
+Et lite land kan skape resultater i verdensklasse når utvikling settes foran tidlig utvelgelse.
+
+<a href="https://edition.cnn.com/2026/07/11/sport/norway-sports-culture" target="_blank" rel="noopener noreferrer" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">CNN</a> spør hvordan 5,5 millioner mennesker kan hevde seg i fotball, vinteridrett, golf, tennis og triatlon.
+
+Svaret ligger ikke først og fremst i stjernene. Det ligger i systemet rundt dem.
+
+Barn får være med lenge, prøve flere idretter og utvikle en bred base før de spesialiserer seg.
+
+Sondre Brunstad Fet slo Johannes Høsflot Klæbo i langrenn som tenåring. Klæbo trodde selv at han skulle bli fotballspiller.
+
+Alexander Sørloth kombinerte fotball med håndball og hurtigløp, mens Patrick Berg fortsatt viser ferdigheter fra basketballbanen.
+
+Poenget er å unngå å forveksle tidlig modenhet med langsiktig potensial.
+
+Bodø/Glimt viser hva som skjer når læring også blir en del av elitekulturen. CNN trekker frem hvordan klubben fra nord for polarsirkelen har utfordret noen av Europas største lag i Champions League.
+
+Resultatet er viktig. Men kontinuerlig læring er motoren bak prestasjonen.
+
+Også Norge må beskytte balansen mellom stjernen og laget. Haaland er en enorm ressurs, men når fraværet hans kan overskygge feiringen av kollektivet, viser det hvilken kraft én superstjerne kan få. Portugal har tidvis illustrert samme risiko rundt Ronaldo: Laget kan bli mindre fleksibelt når spillerne søker stjernen og trenerens handlingsrom reduseres. De beste lagene gir stjernene rom, uten å la dem bli større enn helheten.
+
+Når utøverne når toppen, kombineres utviklingskulturen med høye krav, forskning, teknologi, psykologi og kunnskapsdeling på tvers av idretter.
+
+Den norske modellen er derfor ikke «myk». Den kombinerer samarbeid, kommunikasjon og omsorg med kompromissløs utvikling på elitenivå.
+
+CNN setter dette opp mot miljøer hvor kostbare reiselag, topping og tidlig spesialisering kan starte allerede i barneskolen.
+
+Forskjellen handler ikke om ønsket om å vinne, men om når konkurransen skal definere utviklingen.
+
+Som tidligere tennistrener har jeg hatt gleden av å trene alt fra små nybegynnere til spillere i Norgestoppen. Jeg har sett hvordan bredde, allsidighet og mestringsglede styrker motivasjon, læringsevne og robusthet over tid.
+
+Det samme gjelder i virksomheter. Mange ønsker en prestasjonskultur, men organiserer samtidig salg, drift, kundesenter, marked og økonomi som separate lag. Kunden opplever derimot én samlet leveranse.
+
+Som kommersiell leder har jeg erfart at de beste resultatene kommer når fagområdene gjør hverandre bedre.
+
+Verdensklasse skapes ikke ved å finne få stjerner tidlig. Den skapes gjennom retning, læring og et system som gjør at flere utvikler seg, og at de beste løfter helheten. 💯
+
+#ledelse #prestasjonskultur #kommersiellledelse #organisasjonsutvikling #lagspill`,
+    },
+    {
       id: "vi-rodde-sammen-fotball-vm-2026-07",
       tittel: "Vi rodde sammen",
       teaser:
@@ -985,6 +1037,52 @@ Virksomheter feiler ofte av samme grunn.`,
 ];
 
 const tennisLedelseEn: Record<string, LocalizedTextMap> = {
+  "verdensklasse-bygges-sammen-cnn-2026-07": {
+    tittel: "World-class performance is built together",
+    teaser:
+      "CNN asks how Norway creates world-class results — the answer lies in the system, not just the stars. Lessons from Norwegian sports development and what it means for performance culture in organisations.",
+    innhold: `Norway is too small to waste talent.
+
+The men's football team's World Cup performance gave the world a fresh example of something Norwegian sport has shown for a long time:
+
+A small country can create world-class results when development comes before early selection.
+
+<a href="https://edition.cnn.com/2026/07/11/sport/norway-sports-culture" target="_blank" rel="noopener noreferrer" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">CNN</a> asks how 5.5 million people can compete at the top in football, winter sports, golf, tennis and triathlon.
+
+The answer lies not first and foremost in the stars. It lies in the system around them.
+
+Children are allowed to stay involved for longer, try several sports and build a broad base before they specialise.
+
+Sondre Brunstad Fet beat Johannes Høsflot Klæbo in cross-country skiing as a teenager. Klæbo himself thought he would become a football player.
+
+Alexander Sørloth combined football with handball and speed skating, while Patrick Berg still shows skills from the basketball court.
+
+The point is to avoid mistaking early maturity for long-term potential.
+
+Bodø/Glimt shows what happens when learning also becomes part of elite culture. CNN highlights how the club from north of the Arctic Circle has challenged some of Europe's biggest teams in the Champions League.
+
+The result matters. But continuous learning is the engine behind performance.
+
+Norway must also protect the balance between the star and the team. Haaland is an enormous asset, but when his absence can overshadow celebration of the collective, it shows the power one superstar can have. Portugal has at times illustrated the same risk around Ronaldo: the team can become less flexible when players look to the star and the coach's room to act is reduced. The best teams give stars space without letting them become bigger than the whole.
+
+When athletes reach the top, the development culture is combined with high demands, research, technology, psychology and knowledge sharing across sports.
+
+The Norwegian model is therefore not "soft". It combines collaboration, communication and care with uncompromising development at elite level.
+
+CNN contrasts this with environments where expensive travel teams, early ranking and specialisation can start as early as primary school.
+
+The difference is not about the desire to win, but about when competition should define development.
+
+As a former tennis coach, I have had the pleasure of coaching everyone from young beginners to players at the top of Norwegian rankings. I have seen how breadth, versatility and the joy of mastery strengthen motivation, learning ability and resilience over time.
+
+The same applies in organisations. Many want a performance culture, but at the same time organise sales, operations, customer service, marketing and finance as separate layers. The customer, however, experiences one combined delivery.
+
+As a commercial leader, I have experienced that the best results come when disciplines make each other better.
+
+World-class performance is not created by finding a few stars early. It is created through direction, learning and a system that helps more people develop, and where the best lift the whole. 💯
+
+#ledelse #prestasjonskultur #kommersiellledelse #organisasjonsutvikling #lagspill`,
+  },
   "vi-rodde-sammen-fotball-vm-2026-07": {
     tittel: "We rowed together",
     teaser:
