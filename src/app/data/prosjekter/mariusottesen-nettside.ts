@@ -11,7 +11,7 @@ export const mariusottesenNettside: ProsjektType = {
     no: "Publisert profil- og porteføljeplattform — dokumentert på egen prosjektside.",
     en: "Published profile and portfolio platform — documented on a dedicated project page.",
   },
-  bildeUrl: "/images/profil.jpg",
+  bildeUrl: "/images/mariusottesen-nettside-hjemmeside.png?v=20260717",
   bildeRamme: "natural",
   dato: "2025-11-15",
   visningsDato: "15.11.25",

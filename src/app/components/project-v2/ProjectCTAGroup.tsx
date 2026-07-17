@@ -11,47 +11,75 @@ import { PROJECT_CTA_PRIMARY_CLASS, PROJECT_CTA_SECONDARY_CLASS } from "../../li
 type ProjectCTAGroupProps = {
   lang: Lang;
   config: ProjectCtaConfig;
+  onOpenVideo?: (payload: { src: string; poster: string; title: string }) => void;
+  videoModalTitle?: string;
 };
 
 function CtaButton({
-  href,
-  label,
+  action,
   lang,
-  external,
   variant,
+  onOpenVideo,
+  videoModalTitle,
 }: {
-  href: string;
-  label: LocalizedString;
+  action: ProjectCtaAction;
   lang: Lang;
-  external?: boolean;
   variant: "primary" | "secondary";
+  onOpenVideo?: (payload: { src: string; poster: string; title: string }) => void;
+  videoModalTitle?: string;
 }) {
   const className = variant === "primary" ? PROJECT_CTA_PRIMARY_CLASS : PROJECT_CTA_SECONDARY_CLASS;
+  const label = t(action.label, lang);
 
-  if (external) {
+  if (action.opensVideoModal && onOpenVideo) {
     return (
-      <a href={href} target="_blank" rel="noopener noreferrer" className={className}>
-        {t(label, lang)}
+      <button
+        type="button"
+        onClick={() =>
+          onOpenVideo({
+            src: action.href,
+            poster: action.videoPoster ?? "",
+            title: videoModalTitle ?? label,
+          })
+        }
+        className={className}
+      >
+        {label}
+        <ChevronRight size={16} aria-hidden="true" />
+      </button>
+    );
+  }
+
+  if (action.external) {
+    return (
+      <a href={action.href} target="_blank" rel="noopener noreferrer" className={className}>
+        {label}
         <ChevronRight size={16} aria-hidden="true" />
       </a>
     );
   }
 
   return (
-    <Link href={href} className={className}>
-      {t(label, lang)}
+    <Link href={action.href} className={className}>
+      {label}
       <ChevronRight size={16} aria-hidden="true" />
     </Link>
   );
 }
 
-export default function ProjectCTAGroup({ lang, config }: ProjectCTAGroupProps) {
+export default function ProjectCTAGroup({ lang, config, onOpenVideo, videoModalTitle }: ProjectCTAGroupProps) {
   return (
     <div className="space-y-3 min-w-0">
       <div className="flex flex-col sm:flex-row flex-wrap gap-3 items-stretch sm:items-center">
-        <CtaButton href={config.primary.href} label={config.primary.label} lang={lang} external={config.primary.external} variant="primary" />
+        <CtaButton
+          action={config.primary}
+          lang={lang}
+          variant="primary"
+          onOpenVideo={onOpenVideo}
+          videoModalTitle={videoModalTitle}
+        />
         {config.secondary && (
-          <CtaButton href={config.secondary.href} label={config.secondary.label} lang={lang} external={config.secondary.external} variant="secondary" />
+          <CtaButton action={config.secondary} lang={lang} variant="secondary" />
         )}
       </div>
       {config.note && (

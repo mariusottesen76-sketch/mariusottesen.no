@@ -14,11 +14,31 @@ type ProjectOverviewV2Props = {
   project: ProjectV2Record;
   lang: Lang;
   onImageClick: (src: string, alt: string) => void;
+  onOpenVideo?: (payload: { src: string; poster: string; title: string }) => void;
   bildeHint: string;
 };
 
-export default function ProjectOverviewV2({ project, lang, onImageClick, bildeHint }: ProjectOverviewV2Props) {
+export default function ProjectOverviewV2({
+  project,
+  lang,
+  onImageClick,
+  onOpenVideo,
+  bildeHint,
+}: ProjectOverviewV2Props) {
   const cta = buildProjectCta(project);
+  const title = t(project.title, lang);
+
+  const handleImageClick = () => {
+    if (project.playbackVideo && onOpenVideo) {
+      onOpenVideo({
+        src: project.playbackVideo.src,
+        poster: project.playbackVideo.poster,
+        title,
+      });
+      return;
+    }
+    onImageClick(project.overviewImage, t(project.altText, lang));
+  };
 
   return (
     <div className="flex flex-col md:flex-row gap-2 md:gap-3 items-start p-2.5 md:p-3 min-w-0">
@@ -26,7 +46,7 @@ export default function ProjectOverviewV2({ project, lang, onImageClick, bildeHi
         src={project.overviewImage}
         alt={t(project.altText, lang)}
         bildeHint={bildeHint}
-        onImageClick={onImageClick}
+        onImageClick={handleImageClick}
         imageFormat={project.overviewImageFormat}
         backgroundSrc={project.overviewImageBackground}
       />
@@ -54,7 +74,7 @@ export default function ProjectOverviewV2({ project, lang, onImageClick, bildeHi
           editorialReviewRequired={project.editorialReviewRequired}
         />
 
-        <ProjectCTAGroup lang={lang} config={cta} />
+        <ProjectCTAGroup lang={lang} config={cta} onOpenVideo={onOpenVideo} videoModalTitle={title} />
       </div>
     </div>
   );

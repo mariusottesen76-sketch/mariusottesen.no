@@ -163,8 +163,8 @@ export const mariusottesenNettsidePlatform: StrategicPlatformProject = {
         {
           tittel: { no: "Demonstratorer", en: "Demonstrators" },
           beskrivelse: {
-            no: "Tilgangsstyrte piloter og landingssider for PSC, FlowSignal, AI Readiness Scan og SMB Salgsflyt-sjekken.",
-            en: "Access-controlled pilots and landing pages for PSC, FlowSignal, AI Readiness Scan and SMB Sales Flow Check.",
+            no: "Tilgangsstyrte piloter, executive konseptplattformer og landingssider — blant annet AI Transformation & Value Realization, Control Tower, PSC, FlowSignal, AI Readiness Scan og SMB Salgsflyt-sjekken.",
+            en: "Access-controlled pilots, executive concept platforms and landing pages — including AI Transformation & Value Realization, Control Tower, PSC, FlowSignal, AI Readiness Scan and SMB Sales Flow Check.",
           },
           bygget: true,
         },

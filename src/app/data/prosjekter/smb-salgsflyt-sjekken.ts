@@ -11,7 +11,7 @@ export const smbSalgsflytSjekken: ProsjektType = {
     no: "Tilgangsstyrt diagnoseverktøy med scoring, AI-analyse, rapportering og administrativ oppfølging — dokumentert på egen prosjektside.",
     en: "Access-controlled diagnostic tool with scoring, AI analysis, reporting and administrative follow-up — documented on a dedicated project page.",
   },
-  bildeUrl: "/images/smb-salgsflyt-sjekken.png?v=2026061612",
+  bildeUrl: "/images/smb-salgsflyt-sjekken-hjemmeside.png?v=20260717",
   bildeRamme: "natural",
   dato: "2026-06-16",
   visningsDato: "16.06.26",

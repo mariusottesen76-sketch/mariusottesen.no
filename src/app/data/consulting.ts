@@ -253,6 +253,11 @@ const spesialisertePakker: Record<Lang, TjenestePakke[]> = {
 const metoder: Record<Lang, MetodeKomponent[]> = {
   no: [
     {
+      tittel: "AI Transformation & Value Realization",
+      beskrivelse: "Executive plattform for prioritering, transformasjonsstyring og målbar forretningseffekt",
+      pilotStotte: prosjektLenke("/ai-transformation-value-realization").no,
+    },
+    {
       tittel: "Control Tower",
       beskrivelse: "Beslutnings- og gjennomføringsplattform for operativ og kommersiell prioritering",
       pilotStotte: prosjektLenke("/prosjekter#control-tower").no,
@@ -287,6 +292,11 @@ const metoder: Record<Lang, MetodeKomponent[]> = {
     },
   ],
   en: [
+    {
+      tittel: "AI Transformation & Value Realization",
+      beskrivelse: "Executive platform for prioritisation, transformation governance and measurable business impact",
+      pilotStotte: prosjektLenke("/ai-transformation-value-realization").en,
+    },
     {
       tittel: "Control Tower",
       beskrivelse: "Decision and execution platform for operational and commercial prioritisation",

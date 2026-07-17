@@ -8,6 +8,10 @@ import { salgsflytSjekkenPlatform } from "./salgsflyt-sjekken-platform";
 import { strategiskAiImplementeringPlatform } from "./strategisk-ai-implementering-platform";
 import { skoyenasenTannklinikkPlatform } from "./skoyenasen-tannklinikk-platform";
 import { mariusottesenNettsidePlatform } from "./mariusottesen-nettside-platform";
+import { agentiskArbeidsflytPlatform } from "./agentisk-arbeidsflyt-platform";
+import { aiInnsiktsOgInnholdsmotorPlatform } from "./ai-innsikts-og-innholdsmotor-platform";
+import { aiArkitekturBeslutningsstottePlatform } from "./ai-arkitektur-beslutningsstotte-platform";
+import { aiValueLabOsloPlatform } from "./ai-value-lab-oslo-platform";
 
 export type { StrategicPlatformProject, StrategicPlatformSlug } from "./types";
 export { t } from "./i18n";
@@ -22,6 +26,10 @@ const strategicPlatforms: StrategicPlatformProject[] = [
   strategiskAiImplementeringPlatform,
   skoyenasenTannklinikkPlatform,
   mariusottesenNettsidePlatform,
+  agentiskArbeidsflytPlatform,
+  aiInnsiktsOgInnholdsmotorPlatform,
+  aiArkitekturBeslutningsstottePlatform,
+  aiValueLabOsloPlatform,
 ];
 
 const bySlug = Object.fromEntries(

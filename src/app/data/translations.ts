@@ -272,8 +272,8 @@ const translations: Translations = {
     en: "From further education to built solutions",
   },
   "prosjekter.videreutdanning.para1": {
-    no: "I 2026 fullførte jeg masterkurset Generative AI for Business ved BI med karakter A. Parallelt har jeg bygget og publisert flere virksomhetsnære AI-prosjekter som utforsker hvordan AI kan brukes til AI-beredskap, salgsflyt, kundedialog, teamutvikling, arbeidsflyt og kommersiell prioritering.",
-    en: "In 2026 I completed the master's course Generative AI for Business at BI Norwegian Business School with grade A. In parallel I have built and published several business-oriented AI projects exploring how AI can be used for AI readiness, sales flow, customer dialogue, team development, workflow and commercial prioritisation.",
+    no: "I 2026 fullførte jeg masterkurset Generative AI for Business ved BI med karakter A. Parallelt har jeg bygget og publisert flere virksomhetsnære AI-prosjekter som utforsker hvordan AI kan brukes til transformasjonsstyring, AI-beredskap, salgsflyt, kundedialog, teamutvikling, arbeidsflyt og kommersiell prioritering — inkludert executive plattformen AI Transformation & Value Realization.",
+    en: "In 2026 I completed the master's course Generative AI for Business at BI Norwegian Business School with grade A. In parallel I have built and published several business-oriented AI projects exploring how AI can be used for transformation governance, AI readiness, sales flow, customer dialogue, team development, workflow and commercial prioritisation — including the executive platform AI Transformation & Value Realization.",
   },
   "prosjekter.videreutdanning.para2": {
     no: "Arbeidet omfatter blant annet AI-støttet pasientreise, intake og booking for tannklinikk, AI-arkitektur for beslutningsstøtte og prioritering, samt en AI-assistert innsikts- og innholdsmotor som gjør kunnskap og markedssignaler mer anvendbare.",

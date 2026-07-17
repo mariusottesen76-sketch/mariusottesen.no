@@ -12,7 +12,11 @@ export type StrategicPlatformSlug =
   | "salgsflyt-sjekken"
   | "strategisk-ai-implementering"
   | "skoyenasen-tannklinikk"
-  | "mariusottesen-nettside";
+  | "mariusottesen-nettside"
+  | "agentisk-arbeidsflyt"
+  | "ai-innsikts-og-innholdsmotor"
+  | "ai-arkitektur-beslutningsstotte"
+  | "ai-value-lab-oslo";
 
 export type StrategicPlatformTeaserBlock = {
   utfordring: LocalizedString;

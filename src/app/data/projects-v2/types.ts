@@ -90,8 +90,14 @@ export type ProjectV2Record = {
   detailDestination: string;
   liveSolutionUrl?: string;
   externalDestinationLabel?: LocalizedString;
+  /** Videavspilling i modal (f.eks. promovideo) — primær CTA åpner modal i stedet for direkte filnavigasjon. */
+  playbackVideo?: {
+    src: string;
+    poster: string;
+  };
   /** Valgfri overstyring av CTA-etiketter (f.eks. «Åpne nettsiden» / «Ta kontakt»). */
   ctaLabels?: {
+    overviewPrimary?: LocalizedString;
     overviewSecondary?: LocalizedString;
     detailPrimary?: LocalizedString;
     detailSecondary?: LocalizedString;

@@ -11,7 +11,7 @@ export const prosjektoppgaveStrategiskImplementering: ProsjektType = {
     no: "Fullført prosjektoppgave fra Generative AI for Business ved BI — dokumentert på egen prosjektside.",
     en: "Completed master's project from Generative AI for Business at BI — documented on a dedicated project page.",
   },
-  bildeUrl: "/images/prosjektoppgave-strategisk-implementering.png",
+  bildeUrl: "/images/strategisk-ai-implementering-hjemmeside.png?v=20260717",
   dato: "2026-05-20",
   visningsDato: "20.05.26",
   bildeHint: {

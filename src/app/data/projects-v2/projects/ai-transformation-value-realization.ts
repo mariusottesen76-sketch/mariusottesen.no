@@ -8,8 +8,8 @@ export const aiTransformationV2: ProjectV2Record = {
   layoutVersion: "project_v2",
   accessMode: "concept",
   detailLevel: "full",
-  date: "2026-07-16",
-  displayDate: { no: "16.07.26", en: "16.07.26" },
+  date: "2026-07-17",
+  displayDate: { no: "17.07.26", en: "17.07.26" },
   title: {
     no: "AI Transformation & Value Realization",
     en: "AI Transformation & Value Realization",

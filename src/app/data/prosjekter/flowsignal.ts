@@ -11,7 +11,7 @@ export const flowSignal: ProsjektType = {
     no: "Lukket pilot og tilgangsstyrt arbeidsflate for profilinnsikt, dagsform, samhandling og lederoppfølging — dokumentert på egen prosjektside.",
     en: "Closed pilot and access-controlled workspace for profile insight, daily form, collaboration and leadership follow-up — documented on a dedicated project page.",
   },
-  bildeUrl: "/images/flow-signal1.png?v=20260529",
+  bildeUrl: "/images/flowsignal-hjemmeside.png?v=20260717",
   bildeRamme: "natural",
   dato: "2026-05-29",
   visningsDato: "29.05.26",

@@ -8,6 +8,12 @@ import { salgsflytSjekkenV2 } from "./projects/salgsflyt-sjekken";
 import { strategiskAiImplementeringV2 } from "./projects/strategisk-ai-implementering";
 import { skoyenasenTannklinikkV2 } from "./projects/skoyenasen-tannklinikk";
 import { mariusottesenNettsideV2 } from "./projects/mariusottesen-nettside";
+import { agentiskArbeidsflytV2 } from "./projects/agentisk-arbeidsflyt";
+import { aiInnsiktsOgInnholdsmotorV2 } from "./projects/ai-innsikts-og-innholdsmotor";
+import { aiArkitekturBeslutningsstotteV2 } from "./projects/ai-arkitektur-beslutningsstotte";
+import { pscPromoVideoV2 } from "./projects/psc-promo-video";
+import { aiValueLabOsloV2 } from "./projects/ai-value-lab-oslo";
+import { aiFaginnleggHubV2 } from "./projects/ai-faginnlegg-hub";
 
 export { t } from "../strategic-platform-projects/i18n";
 
@@ -21,6 +27,12 @@ const projectV2Records: ProjectV2Record[] = [
   strategiskAiImplementeringV2,
   skoyenasenTannklinikkV2,
   mariusottesenNettsideV2,
+  agentiskArbeidsflytV2,
+  aiInnsiktsOgInnholdsmotorV2,
+  aiArkitekturBeslutningsstotteV2,
+  pscPromoVideoV2,
+  aiValueLabOsloV2,
+  aiFaginnleggHubV2,
 ];
 
 const byId = Object.fromEntries(projectV2Records.map((p) => [p.id, p])) as Record<string, ProjectV2Record>;

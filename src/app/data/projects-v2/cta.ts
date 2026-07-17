@@ -5,6 +5,8 @@ export type ProjectCtaAction = {
   href: string;
   label: LocalizedString;
   external?: boolean;
+  opensVideoModal?: boolean;
+  videoPoster?: string;
 };
 
 export type ProjectCtaConfig = {
@@ -60,7 +62,33 @@ const accessCodeNote: LocalizedString = {
 
 const defaultContactHref = "/kontakt";
 
+function isExternalProjectHref(href: string): boolean {
+  return href.startsWith("http") || /\.(mov|mp4|webm|m4v)(\?|$)/i.test(href);
+}
+
+function primaryOverviewAction(project: ProjectV2Record): ProjectCtaAction {
+  if (project.playbackVideo) {
+    return {
+      href: project.playbackVideo.src,
+      label: project.ctaLabels?.overviewPrimary ?? labels.explore,
+      opensVideoModal: true,
+      videoPoster: project.playbackVideo.poster,
+    };
+  }
+
+  const href = project.liveSolutionUrl ?? project.detailDestination;
+  return {
+    href,
+    label: project.ctaLabels?.overviewPrimary ?? labels.explore,
+    external: isExternalProjectHref(href),
+  };
+}
+
 function secondaryOverviewAction(project: ProjectV2Record): ProjectCtaAction {
+  if (project.ctaLabels?.overviewSecondary) {
+    return { href: defaultContactHref, label: project.ctaLabels.overviewSecondary };
+  }
+
   const accessContactHref = buildAccessCodeContactHref(project.slug);
   const liveUrl = project.liveSolutionUrl;
 
@@ -76,11 +104,7 @@ function secondaryOverviewAction(project: ProjectV2Record): ProjectCtaAction {
         external: Boolean(liveUrl),
       };
     case "external_destination":
-      return {
-        href: liveUrl ?? project.detailDestination,
-        label: project.externalDestinationLabel ?? labels.explore,
-        external: Boolean(liveUrl?.startsWith("http")),
-      };
+      return { href: defaultContactHref, label: labels.contactApplication };
     case "concept":
     case "no_live_solution":
     default:
@@ -103,16 +127,21 @@ function primaryDetailAction(project: ProjectV2Record): ProjectCtaAction {
         label: project.ctaLabels?.detailPrimary ?? labels.openSolution,
         external: Boolean(liveUrl),
       };
-    case "external_destination":
+    case "external_destination": {
+      const href = liveUrl ?? project.detailDestination;
       return {
-        href: liveUrl ?? project.detailDestination,
-        label: project.externalDestinationLabel ?? labels.explore,
-        external: Boolean(liveUrl?.startsWith("http")),
+        href,
+        label: project.externalDestinationLabel ?? project.ctaLabels?.overviewPrimary ?? labels.explore,
+        external: isExternalProjectHref(href),
       };
+    }
     case "concept":
     case "no_live_solution":
     default:
-      return { href: defaultContactHref, label: labels.contactApplication };
+      return {
+        href: defaultContactHref,
+        label: project.ctaLabels?.detailPrimary ?? labels.contactApplication,
+      };
   }
 }
 
@@ -142,6 +171,9 @@ function secondaryDetailAction(project: ProjectV2Record): ProjectCtaAction | und
 
 function overviewNote(project: ProjectV2Record): LocalizedString | undefined {
   if (project.accessMode === "access_code") return accessCodeNote;
+  if (project.category === "professional_initiative" || project.category === "video_communication") {
+    return undefined;
+  }
   if (project.accessMode === "concept" || project.accessMode === "no_live_solution") return conceptNote;
   return undefined;
 }
@@ -149,7 +181,7 @@ function overviewNote(project: ProjectV2Record): LocalizedString | undefined {
 /** CTA-er på /prosjekter — to knapper: utforsk (primær) + kontakt/tilgang (sekundær). */
 export function buildProjectCta(project: ProjectV2Record): ProjectCtaConfig {
   return {
-    primary: { href: project.detailDestination, label: labels.explore },
+    primary: primaryOverviewAction(project),
     secondary: secondaryOverviewAction(project),
     note: overviewNote(project),
   };

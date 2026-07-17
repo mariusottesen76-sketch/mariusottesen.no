@@ -11,7 +11,7 @@ export const aiReadinessScan: ProsjektType = {
     no: "Tilgangsstyrt kartleggingsverktøy med modenhet for avgrenset testing og videre utvikling — dokumentert på egen prosjektside.",
     en: "Access-controlled mapping tool with maturity for limited testing and further development — documented on a dedicated project page.",
   },
-  bildeUrl: "/images/ai-ready-scan-nettside1.png?v=20260625",
+  bildeUrl: "/images/ai-readiness-scan-hjemmeside.png?v=20260717",
   bildeRamme: "natural",
   dato: "2026-06-25",
   visningsDato: "25.06.26",
