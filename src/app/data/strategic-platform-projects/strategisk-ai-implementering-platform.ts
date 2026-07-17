@@ -4,7 +4,7 @@ const utvikler = {
   navn: { no: "Marius Ottesen", en: "Marius Ottesen" },
   rolle: { no: "Kommersiell leder og AI-strateg", en: "Commercial leader and AI strategist" },
   beskrivelse: {
-    no: "Utvikler virksomhetsnære koncepter, arbeidsflyter og digitale løsninger i skjæringspunktet mellom kommersiell ledelse, mennesker, teknologi og praktisk AI.",
+    no: "Utvikler virksomhetsnære konsepter, arbeidsflyter og digitale løsninger i skjæringspunktet mellom kommersiell ledelse, mennesker, teknologi og praktisk AI.",
     en: "Develops business-oriented concepts, workflows and digital solutions at the intersection of commercial leadership, people, technology and practical AI.",
   },
 };

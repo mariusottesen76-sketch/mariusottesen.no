@@ -79,6 +79,12 @@ export type ProjectV2Record = {
   detailHeroBackground?: string;
   /** CSS object-position for hero-banner (f.eks. center, center top, 50% 35%). */
   detailHeroObjectPosition?: string;
+  /** Overstyr standard 3:1 hero (f.eks. "1 / 3" for vertikalt prosjektbilde på detaljside). */
+  detailHeroAspectRatio?: string;
+  /** Maks bredde i px når detailHeroAspectRatio er vertikal — sentreres i layouten. */
+  detailHeroMaxWidthPx?: number;
+  /** Maks høyde i px for vertikal hero (standard 3:1 bruker 400 px). */
+  detailHeroMaxHeightPx?: number;
   /** true = eksisterende bilde bør produseres på nytt i 1:3; vises med contain-fallback. */
   needsNewOverviewImage?: boolean;
   /** true = eksisterende bilde bør produseres på nytt i 3:1; vises med contain-fallback. */

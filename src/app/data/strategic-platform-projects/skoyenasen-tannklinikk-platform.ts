@@ -4,7 +4,7 @@ const utvikler = {
   navn: { no: "Marius Ottesen", en: "Marius Ottesen" },
   rolle: { no: "Kommersiell leder og AI-strateg", en: "Commercial leader and AI strategist" },
   beskrivelse: {
-    no: "Utvikler virksomhetsnære koncepter, arbeidsflyter og digitale løsninger i skjæringspunktet mellom kommersiell ledelse, mennesker, teknologi og praktisk AI.",
+    no: "Utvikler virksomhetsnære konsepter, arbeidsflyter og digitale løsninger i skjæringspunktet mellom kommersiell ledelse, mennesker, teknologi og praktisk AI.",
     en: "Develops business-oriented concepts, workflows and digital solutions at the intersection of commercial leadership, people, technology and practical AI.",
   },
 };
@@ -22,7 +22,7 @@ export const skoyenasenTannklinikkPlatform: StrategicPlatformProject = {
       no: "Utviklet case og prototype for digital pasientreise med chatbot, behovsavklaring og booking på seks språk — ikke produksjonssatt pasientløsning.",
       en: "Developed case and prototype for digital patient journey with chatbot, needs clarification and booking in six languages — not a production-deployed patient solution.",
     },
-    ogImage: "/images/skoyenasen-tk.gif",
+    ogImage: "/images/skoyenasen-tannklinikk-hjemmeside-bak.png?v=20260717f",
     canonicalPath: "/skoyenasen-tannklinikk",
   },
   teaser: {
@@ -284,7 +284,7 @@ export const skoyenasenTannklinikkPlatform: StrategicPlatformProject = {
         punkter: [
           { no: "Andre klinikker og tannhelsesektor", en: "Other clinics and dental care sector" },
           { no: "Servicebedrifter med manuelle henvendelser", en: "Service businesses with manual inquiries" },
-          { no: "Beauty, rådgivning og konsulentintensive tjenester", en: "Beauty, advisory and consultation-intensive services" },
+          { no: "Andre klinikker, helsetjenester og servicevirksomheter med omfattende kundedialog og booking", en: "Other clinics, healthcare services and service businesses with extensive customer dialogue and booking" },
         ],
       },
     },

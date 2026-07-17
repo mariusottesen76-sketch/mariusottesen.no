@@ -65,8 +65,8 @@ export const flowSignalPlatform: StrategicPlatformProject = {
         en: "AI-supported collaboration and development with practical insight into people, daily form and dialogue.",
       },
       executiveSummary: {
-        no: "FlowSignal v1.0 er utviklet for ledere, kommersielle team og organisasjoner som vil forstå bedre hvordan mennesker skaper verdi, samarbeider og påvirkes av dagsform. Løsningen samler personprofil, dagsform, dialogstøtte, samhandlingstrening, refleksjon og anbefalte neste steg i én tilgangsstyrt arbeidsflate.",
-        en: "FlowSignal v1.0 is built for leaders, commercial teams and organisations that want to better understand how people create value, collaborate and are affected by daily form. The solution brings together person profile, daily form, dialogue support, collaboration training, reflection and recommended next steps in one access-controlled workspace.",
+        no: "FlowSignal v1.0 er utviklet for ledere, kommersielle team og organisasjoner som vil gjøre profilinnsikt, dagsform og dialog mer praktisk anvendbart i hverdagen — i én tilgangsstyrt arbeidsflate.",
+        en: "FlowSignal v1.0 is built for leaders, commercial teams and organisations that want to make profile insight, daily form and dialogue more practically useful in everyday work — in one access-controlled workspace.",
       },
       bildeAlt: {
         no: "FlowSignal v1.0 – profilinnsikt, dagsform og samhandling",
@@ -76,8 +76,8 @@ export const flowSignalPlatform: StrategicPlatformProject = {
     utfordring: {
       heading: { no: "Utfordringen prosjektet adresserer", en: "The challenge the project addresses" },
       body: {
-        no: "Mange team har tilgang til personprofiler, medarbeiderinnsikt og utviklingsverktøy, men sliter med å bruke innsikten i hverdagen.\n\nProfilrapporter blir ofte liggende statisk, mens reelle utfordringer oppstår i møter, prioriteringer, samhandling, kapasitet, rolleforståelse og krevende dialoger. FlowSignal er utviklet for å gjøre denne innsikten mer levende, praktisk og situasjonsnær.",
-        en: "Many teams have access to person profiles, employee insight and development tools, but struggle to use that insight in everyday work.\n\nProfile reports often remain static, while real challenges arise in meetings, prioritisation, collaboration, capacity, role understanding and demanding dialogues. FlowSignal is built to make this insight more alive, practical and situation-specific.",
+        no: "Profilrapporter blir ofte liggende statisk, mens reelle utfordringer oppstår i møter, prioriteringer, samhandling, kapasitet, rolleforståelse og krevende dialoger. FlowSignal er utviklet for å gjøre innsikten mer levende, praktisk og situasjonsnær.",
+        en: "Profile reports often remain static, while real challenges arise in meetings, prioritisation, collaboration, capacity, role understanding and demanding dialogues. FlowSignal is built to make that insight more alive, practical and situation-specific.",
       },
     },
     logikk: {
@@ -99,10 +99,7 @@ export const flowSignalPlatform: StrategicPlatformProject = {
     bygget: {
       heading: { no: "Hva som er bygget eller utviklet", en: "What has been built or developed" },
       items: [
-        { no: "Profilgrunnlag", en: "Profile foundation" },
         { no: "Talent Dynamics-inspirert flytrefleksjon", en: "Talent Dynamics-inspired flow reflection" },
-        { no: "Dagsformregistrering og Fyrtårnet", en: "Daily form registration and the Lighthouse" },
-        { no: "Dialogstøtte, trening og refleksjon", en: "Dialogue support, training and reflection" },
         { no: "Anbefalte neste steg", en: "Recommended next steps" },
         { no: "Tilgangsstyrt lukket pilotflate", en: "Access-controlled closed pilot environment" },
       ],
@@ -122,12 +119,19 @@ export const flowSignalPlatform: StrategicPlatformProject = {
     },
     hvordan: {
       heading: { no: "Hvordan løsningen fungerer", en: "How the solution works" },
-      intro: { no: "Brukeren arbeider med profilgrunnlag, dagsform og situasjonsnær dialog som grunnlag for refleksjon og neste steg.", en: "The user works with profile foundation, daily form and situation-specific dialogue as a basis for reflection and next steps." },
-      steps: [
-        { tittel: { no: "Profilgrunnlag", en: "Profile foundation" }, beskrivelse: { no: "Bruk en formell Talent Dynamics-rapport eller start med enklere flytrefleksjon.", en: "Use a formal Talent Dynamics report or start with simpler flow reflection." } },
-        { tittel: { no: "Dagsform", en: "Daily form" }, beskrivelse: { no: "Reflekter over energi, fokus, arbeidspress, flyt og handlingsrom gjennom Fyrtårnet.", en: "Reflect on energy, focus, work pressure, flow and room to act through the Lighthouse." } },
-        { tittel: { no: "Dialog og trening", en: "Dialogue and training" }, beskrivelse: { no: "Bruk innsikten i 1:1-samtaler, teammøter, rolleavklaringer eller krevende dialoger.", en: "Use the insight in 1:1 conversations, team meetings, role clarifications or demanding dialogues." } },
-        { tittel: { no: "Neste steg", en: "Next steps" }, beskrivelse: { no: "Reflekter over valg og bruk anbefalte neste steg i arbeidshverdagen.", en: "Reflect on choices and use recommended next steps in everyday work." } },
+      intro: {
+        no: "Brukeren arbeider med profilgrunnlag, dagsform og situasjonsnær dialog som grunnlag for refleksjon og neste steg.",
+        en: "The user works with profile foundation, daily form and situation-specific dialogue as a basis for reflection and next steps.",
+      },
+      detaljpunkter: [
+        {
+          no: "Profil og Fyrtårnet gir språk for arbeidsstil, dagsform og handlingsrom.",
+          en: "Profile and the Lighthouse provide language for work style, daily form and room to act.",
+        },
+        {
+          no: "Dialogstøtte og refleksjon kobles til anbefalte neste steg i arbeidshverdagen.",
+          en: "Dialogue support and reflection connect to recommended next steps in everyday work.",
+        },
       ],
     },
     relevans: {

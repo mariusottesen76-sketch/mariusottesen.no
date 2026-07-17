@@ -114,6 +114,115 @@ export const controlTowerPlatform: StrategicPlatformProject = {
         en: "«Next best action» is a central part of the solution. The goal is to prioritise actions and resources optimally — not just display status.",
       },
     },
+    governanceScenarios: {
+      heading: { no: "To eksempler på styringsreisen", en: "Two examples of the governance journey" },
+      disclaimer: {
+        no: "Scenarioene er illustrative og bruker fiktive data.",
+        en: "The scenarios are illustrative and use fictional data.",
+      },
+      scenarios: [
+        {
+          heading: {
+            no: "Operativt scenario: Leveranseavvik",
+            en: "Operational scenario: Delivery deviation",
+          },
+          fields: [
+            {
+              label: { no: "Signal", en: "Signal" },
+              value: {
+                no: "Leveringspresisjonen faller i en kritisk region eller partnerstruktur.",
+                en: "Delivery precision is falling in a critical region or partner structure.",
+              },
+            },
+            {
+              label: { no: "Konsekvens", en: "Consequence" },
+              value: {
+                no: "Kundetilfredshet, kostnader og kapasitet kan bli påvirket.",
+                en: "Customer satisfaction, costs and capacity may be affected.",
+              },
+            },
+            {
+              label: { no: "Prioritet", en: "Priority" },
+              value: {
+                no: "Avviket må vurderes mot øvrige operative risikoer.",
+                en: "The deviation must be assessed against other operational risks.",
+              },
+            },
+            {
+              label: { no: "Tiltak", en: "Action" },
+              value: {
+                no: "Undersøk drivere, avklar kapasitet og etabler korrigerende handling.",
+                en: "Investigate drivers, clarify capacity and establish corrective action.",
+              },
+            },
+            {
+              label: { no: "Ansvar", en: "Ownership" },
+              value: {
+                no: "Tiltaket får tydelig eier og frist.",
+                en: "The action is assigned a clear owner and deadline.",
+              },
+            },
+            {
+              label: { no: "Effekt", en: "Impact" },
+              value: {
+                no: "Utviklingen følges til leveringspresisjon og risiko er stabilisert.",
+                en: "Progress is tracked until delivery precision and risk are stabilised.",
+              },
+            },
+          ],
+        },
+        {
+          heading: {
+            no: "Kommersielt scenario: Marginfall eller kontraktutløp",
+            en: "Commercial scenario: Margin decline or contract expiry",
+          },
+          fields: [
+            {
+              label: { no: "Signal", en: "Signal" },
+              value: {
+                no: "Marginen faller eller en viktig kontrakt nærmer seg utløp.",
+                en: "Margin is falling or an important contract is nearing expiry.",
+              },
+            },
+            {
+              label: { no: "Konsekvens", en: "Consequence" },
+              value: {
+                no: "Kundeinntekt, lønnsomhet og prognose kan bli påvirket.",
+                en: "Customer revenue, profitability and forecast may be affected.",
+              },
+            },
+            {
+              label: { no: "Prioritet", en: "Priority" },
+              value: {
+                no: "Kunden vurderes mot strategisk verdi, risiko og tilgjengelig kapasitet.",
+                en: "The customer is assessed against strategic value, risk and available capacity.",
+              },
+            },
+            {
+              label: { no: "Tiltak", en: "Action" },
+              value: {
+                no: "Forbered ny kundedialog, prisstrategi eller avtaleoppfølging.",
+                en: "Prepare new customer dialogue, pricing strategy or contract follow-up.",
+              },
+            },
+            {
+              label: { no: "Ansvar", en: "Ownership" },
+              value: {
+                no: "Kundeansvarlig og kommersiell leder får avklarte roller.",
+                en: "Account owner and commercial leader are assigned clear roles.",
+              },
+            },
+            {
+              label: { no: "Effekt", en: "Impact" },
+              value: {
+                no: "Tiltaket måles mot margin, fornyelse og kundeutvikling.",
+                en: "The action is measured against margin, renewal and customer development.",
+              },
+            },
+          ],
+        },
+      ],
+    },
     bygget: {
       heading: { no: "Hva som er bygget", en: "What has been built" },
       items: [
@@ -259,7 +368,7 @@ export const controlTowerPlatform: StrategicPlatformProject = {
       },
     },
     skalerbarhet: {
-      heading: { no: "Videreutvikling og skaleringspotensial", en: "Further development and scaling potential" },
+      heading: { no: "Videreutvikling og skalerbar anvendelse", en: "Further development and scalable application" },
       platform: {
         heading: { no: "Videreutvikling av plattformen", en: "Further platform development" },
         punkter: [

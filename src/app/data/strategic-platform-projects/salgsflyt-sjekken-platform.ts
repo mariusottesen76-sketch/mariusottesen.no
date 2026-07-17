@@ -65,8 +65,8 @@ export const salgsflytSjekkenPlatform: StrategicPlatformProject = {
         en: "Interactive diagnosis and AI reporting to uncover sales friction and prioritise next steps.",
       },
       executiveSummary: {
-        no: "SMB Salgsflyt-sjekken er utviklet for ledere og kommersielle miljøer som vil kartlegge friksjon og flaskehalser i salgsflyten. Løsningen undersøker ti kommersielle dimensjoner, genererer AI-støttet innsikt og sender kunden en skreddersydd PDF-rapport med konkrete tiltak når diagnosen er fullført.",
-        en: "SMB Sales Flow Check is built for leaders and commercial environments that want to map friction and bottlenecks in sales flow. The solution examines ten commercial dimensions, generates AI-supported insight and sends the customer a tailored PDF report with concrete actions when the diagnosis is complete.",
+        no: "SMB Salgsflyt-sjekken er utviklet for ledere og kommersielle miljøer som vil kartlegge friksjon og flaskehalser i salgsflyten — på tvers av ti kommersielle dimensjoner, med AI-støttet rapport og adminkonsoll.",
+        en: "SMB Sales Flow Check is built for leaders and commercial environments that want to map friction and bottlenecks in sales flow — across ten commercial dimensions, with AI-supported reporting and an admin console.",
       },
       bildeAlt: {
         no: "SMB Salgsflyt-sjekken – interaktiv diagnose og AI-rapportering",
@@ -92,18 +92,11 @@ export const salgsflytSjekkenPlatform: StrategicPlatformProject = {
         { tittel: { no: "AI-analyse", en: "AI analysis" }, beskrivelse: { no: "Gemini tolker score og fritekst og genererer kunderapport og intern salgsvurdering parallelt.", en: "Gemini interprets scores and free text and generates a customer report and internal sales assessment in parallel." } },
         { tittel: { no: "Oppfølging", en: "Follow-up" }, beskrivelse: { no: "Besvarelser samles med kontaktinfo, score, lead-kvalitet og anbefalt oppfølging.", en: "Responses are collected with contact details, score, lead quality and recommended follow-up." } },
       ],
-      after: {
-        no: "Kunden får en skreddersydd PDF-rapport med konkrete tiltak sendt med en gang diagnosen er fullført.",
-        en: "The customer receives a tailored PDF report with concrete actions as soon as the diagnosis is complete.",
-      },
     },
     bygget: {
       heading: { no: "Hva som er bygget eller utviklet", en: "What has been built or developed" },
       items: [
         { no: "Tilgangsstyrt diagnoseapp med strukturert spørsmålsflyt", en: "Access-controlled diagnostic app with structured question flow" },
-        { no: "Automatisk scoring på tvers av ti kommersielle dimensjoner", en: "Automatic scoring across ten commercial dimensions" },
-        { no: "Dypdykk i svake områder", en: "Deep dives into weak areas" },
-        { no: "Gemini AI-generering av kunderapport og intern salgsvurdering", en: "Gemini AI generation of customer report and internal sales assessment" },
         { no: "Skreddersydd PDF-rapport med konkrete tiltak", en: "Tailored PDF report with concrete actions" },
         { no: "Adminkonsoll for oppfølging", en: "Admin console for follow-up" },
       ],
@@ -124,11 +117,15 @@ export const salgsflytSjekkenPlatform: StrategicPlatformProject = {
     hvordan: {
       heading: { no: "Hvordan løsningen fungerer", en: "How the solution works" },
       intro: { no: "Diagnosen gjennomføres i fire steg og tar under ti minutter.", en: "The diagnosis is completed in four steps and takes under ten minutes." },
-      steps: [
-        { tittel: { no: "Hovedkartlegging", en: "Main assessment" }, beskrivelse: { no: "20 flervalgsspørsmål fordelt på ti dimensjoner gir dimensjons- og totalscore.", en: "20 multiple-choice questions across ten dimensions produce dimension and total scores." } },
-        { tittel: { no: "Dypdykk", en: "Deep dive" }, beskrivelse: { no: "De svakeste områdene utløser oppfølgingsspørsmål om rotårsaker, varighet og historiske feilskjær.", en: "The weakest areas trigger follow-up questions on root causes, duration and historical missteps." } },
-        { tittel: { no: "AI-analyse", en: "AI analysis" }, beskrivelse: { no: "Gemini tolker score og fritekst og genererer kunderapport og intern salgsvurdering parallelt.", en: "Gemini interprets scores and free text and generates a customer report and internal sales assessment in parallel." } },
-        { tittel: { no: "Adminkonsoll", en: "Admin console" }, beskrivelse: { no: "Besvarelser samles med kontaktinfo, score, lead-kvalitet og anbefalt oppfølging.", en: "Responses are collected with contact details, score, lead quality and recommended follow-up." } },
+      detaljpunkter: [
+        {
+          no: "Hovedkartlegging og dypdykk gir score og rotårsaksinnsikt på tvers av ti dimensjoner.",
+          en: "Main assessment and deep dives provide scores and root-cause insight across ten dimensions.",
+        },
+        {
+          no: "Gemini genererer kunderapport og intern vurdering; PDF og adminkonsoll støtter oppfølging.",
+          en: "Gemini generates a customer report and internal assessment; PDF and admin console support follow-up.",
+        },
       ],
     },
     relevans: {
@@ -136,7 +133,7 @@ export const salgsflytSjekkenPlatform: StrategicPlatformProject = {
       sections: [
         { tittel: { no: "For SMB-ledere og kommersielle team", en: "For SMB leaders and commercial teams" }, tekst: { no: "Gir en strukturert diagnose av salgsfriksjon, CRM-bruk, oppfølging og tilbudsprosesser.", en: "Provides a structured diagnosis of sales friction, CRM use, follow-up and proposal processes." } },
         { tittel: { no: "For rådgivere", en: "For advisors" }, tekst: { no: "Kan gi raskere kvalifisering av potensielle kunder og et bedre grunnlag for prioritering og oppfølging.", en: "Can provide faster qualification of potential clients and a better basis for prioritisation and follow-up." } },
-        { tittel: { no: "Umiddelbar verdi", en: "Immediate value" }, tekst: { no: "Respondenten får en skreddersydd PDF-rapport med konkrete tiltak når diagnosen er fullført.", en: "The respondent receives a tailored PDF report with concrete actions when the diagnosis is complete." } },
+        { tittel: { no: "Umiddelbar verdi", en: "Immediate value" }, tekst: { no: "Respondenten får en skreddersydd PDF-rapport med konkrete tiltak ved fullført diagnose.", en: "The respondent receives a tailored PDF report with concrete actions when the diagnosis is complete." } },
       ],
     },
     status: {

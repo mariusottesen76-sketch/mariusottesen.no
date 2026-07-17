@@ -68,8 +68,8 @@ export const predictiveSalesCoachPlatform: StrategicPlatformProject = {
         en: "AI-based sales training and meeting preparation for B2B sales, with realistic customer simulations and structured feedback.",
       },
       executiveSummary: {
-        no: "The Predictive Sales Coach v2.0 er utviklet for selgere, salgsledere og kommersielle team som ønsker å trene mer målrettet før viktige kundemøter. Løsningen kombinerer scenario-oppsett, simulert kundedialog, DISC-inspirert kommunikasjon, scorecard og grunnlag for lederinnsikt — som tilgangsstyrt lukket pilot, ikke som ferdig kommersielt produkt.",
-        en: "The Predictive Sales Coach v2.0 is built for sales reps, sales leaders and commercial teams who want to train more purposefully before important customer meetings. The solution combines scenario setup, simulated customer dialogue, DISC-inspired communication, scorecard and a foundation for leadership insight — as an access-controlled closed pilot, not as a finished commercial product.",
+        no: "The Predictive Sales Coach v2.0 er utviklet for selgere, salgsledere og kommersielle team som ønsker mer målrettet trening før viktige kundemøter — som tilgangsstyrt lukket pilot, ikke ferdig kommersielt produkt.",
+        en: "The Predictive Sales Coach v2.0 is built for sales reps, sales leaders and commercial teams who want more purposeful training before important customer meetings — as an access-controlled closed pilot, not a finished commercial product.",
       },
       bildeAlt: {
         no: "The Predictive Sales Coach v2.0 – AI-basert salgstrening og møteforberedelse",
@@ -79,8 +79,8 @@ export const predictiveSalesCoachPlatform: StrategicPlatformProject = {
     utfordring: {
       heading: { no: "Utfordringen prosjektet adresserer", en: "The challenge the project addresses" },
       body: {
-        no: "Mange selgere trener for lite før viktige kundemøter. Forberedelser blir ofte generelle, kundeinnsikt brukes ujevnt, og salgsledere mangler strukturert innsikt i hvilke ferdigheter teamet faktisk må utvikle.\n\nMange salgsorganisasjoner måler aktivitet, pipeline og resultat, men trener for lite på selve kundedialogen. Selgere går ofte i møter med ulik forberedelse, svakere struktur enn ønskelig og lite systematisk læring i etterkant.",
-        en: "Many sales reps train too little before important customer meetings. Preparation is often generic, customer insight is used unevenly, and sales leaders lack structured insight into which skills the team actually needs to develop.\n\nMany sales organisations measure activity, pipeline and results, but train too little on the customer dialogue itself. Salespeople often enter meetings with uneven preparation, weaker structure than desired and little systematic learning afterwards.",
+        no: "Mange salgsorganisasjoner måler aktivitet, pipeline og resultat, men trener for lite på selve kundedialogen. Selgere går ofte i møter med ulik forberedelse, svakere struktur enn ønskelig og lite systematisk læring i etterkant.",
+        en: "Many sales organisations measure activity, pipeline and results, but train too little on the customer dialogue itself. Salespeople often enter meetings with uneven preparation, weaker structure than desired and little systematic learning afterwards.",
       },
     },
     logikk: {
@@ -127,10 +127,7 @@ export const predictiveSalesCoachPlatform: StrategicPlatformProject = {
     bygget: {
       heading: { no: "Hva som er bygget eller utviklet", en: "What has been built or developed" },
       items: [
-        { no: "Scenario-oppsett med kundetype, bransje og salgsfase", en: "Scenario setup with customer type, industry and sales phase" },
-        { no: "Simulert kundedialog med AI", en: "Simulated customer dialogue with AI" },
         { no: "DISC-inspirert selvkartlegging og kommunikasjonstilpasning", en: "DISC-inspired self-assessment and communication adaptation" },
-        { no: "Scorecard og strukturert feedback", en: "Scorecard and structured feedback" },
         { no: "Arkiv og historikk over treningsøkter", en: "Archive and history of training sessions" },
         { no: "Grunnlag for lederinnsikt og oppsummering", en: "Foundation for leadership insight and summarisation" },
         { no: "Tilgangsstyrt innlogging og lukket testflate", en: "Access-controlled login and closed test environment" },
@@ -180,37 +177,17 @@ export const predictiveSalesCoachPlatform: StrategicPlatformProject = {
     hvordan: {
       heading: { no: "Hvordan løsningen fungerer", en: "How the solution works" },
       intro: {
-        no: "Brukeren setter opp et scenario, trener på kundedialogen, og mottar evaluering og læringspunkter etter økten.",
+        no: "Brukeren setter opp scenario, trener på kundedialogen og mottar evaluering og læringspunkter etter økten.",
         en: "The user sets up a scenario, trains on the customer dialogue, and receives evaluation and learning points after the session.",
       },
-      steps: [
+      detaljpunkter: [
         {
-          tittel: { no: "Oppsett", en: "Setup" },
-          beskrivelse: {
-            no: "Definer kundetype, bransje, salgsfase, holdning, vanskelighetsgrad og mål for møtet.",
-            en: "Define customer type, industry, sales phase, attitude, difficulty level and meeting goals.",
-          },
+          no: "Scenario-oppsett knytter kundetype, bransje, salgsfase og møteutfall til simulert kundedialog.",
+          en: "Scenario setup links customer type, industry, sales phase and meeting outcome to simulated customer dialogue.",
         },
         {
-          tittel: { no: "Trening", en: "Training" },
-          beskrivelse: {
-            no: "Gjennomfør simulert kundedialog med AI som utfordrer og responderer realistisk.",
-            en: "Run simulated customer dialogue with AI that challenges and responds realistically.",
-          },
-        },
-        {
-          tittel: { no: "Evaluering", en: "Evaluation" },
-          beskrivelse: {
-            no: "Motta scorecard og strukturert feedback på hva som fungerte og hva som bør trenes videre.",
-            en: "Receive scorecard and structured feedback on what worked and what should be practised further.",
-          },
-        },
-        {
-          tittel: { no: "Oppfølging", en: "Follow-up" },
-          beskrivelse: {
-            no: "Arkiver økten og bruk innsikt til neste møteforberedelse eller lederdialog.",
-            en: "Archive the session and use insight for the next meeting preparation or leadership dialogue.",
-          },
+          no: "Scorecard og strukturert feedback gir grunnlag for oppfølging, arkiv og lederinnsikt.",
+          en: "Scorecard and structured feedback provide a basis for follow-up, archive and leadership insight.",
         },
       ],
     },

@@ -13,7 +13,7 @@ export const mariusottesenNettside: ProsjektType = {
   },
   bildeUrl: "/images/mariusottesen-nettside-hjemmeside.png?v=20260717",
   bildeRamme: "natural",
-  dato: "2025-11-15",
+  dato: "2026-05-22",
   visningsDato: "15.11.25",
   bildeHint: {
     no: "Klikk på bildet for å se mariusottesen.no i større format.",

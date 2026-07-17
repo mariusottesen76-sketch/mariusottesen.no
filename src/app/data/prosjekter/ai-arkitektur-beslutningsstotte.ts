@@ -11,9 +11,9 @@ export const aiArkitekturBeslutningsstotte: ProsjektType = {
     no: "Arkitekturmodell for beslutningsstøtte og prioritering — dokumentert på egen prosjektside.",
     en: "Architecture model for decision support and prioritisation — documented on a dedicated project page.",
   },
-  bildeUrl: "/images/ai-arkitektur-beslutningsstotte-hjemmeside.png?v=20260717",
+  bildeUrl: "/images/ai-arkitektur-beslutningsstotte-dashboard.jpg?v=20260717d",
   bildeRamme: "natural",
-  dato: "2026-03-05",
+  dato: "2026-04-10",
   visningsDato: "05.03.26",
   bildeHint: {
     no: "Klikk på bildet for å se AI-arkitektur for beslutningsstøtte i større format.",

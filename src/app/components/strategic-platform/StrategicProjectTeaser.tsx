@@ -41,7 +41,7 @@ const blockLabels = {
   bygget: { no: "Hva som er bygget", en: "What has been built" },
   relevans: { no: "Relevans", en: "Relevance" },
   status: { no: "Status", en: "Status" },
-  videreutvikling: { no: "Videreutvikling og skaleringspotensial", en: "Further development and scaling potential" },
+  videreutvikling: { no: "Videreutvikling og skalerbar anvendelse", en: "Further development and scalable application" },
 } as const;
 
 export default function StrategicProjectTeaser({

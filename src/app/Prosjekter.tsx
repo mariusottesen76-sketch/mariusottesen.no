@@ -26,25 +26,26 @@ import { getProjectV2ById } from "./data/projects-v2/registry";
 import ProjectOverviewV2 from "./components/project-v2/ProjectOverviewV2";
 import ProjectImageModal from "./components/project-v2/ProjectImageModal";
 import ProjectVideoModal from "./components/project-v2/ProjectVideoModal";
+import { sortProsjekterByPortfolioOrder } from "./lib/prosjekt-portfolio-order";
 
 const prosjektKort: ProsjektType[] = [
   aiTransformationValueRealization,
   controlTower,
-  mariusottesenNettside,
+  predictiveSalesCoach,
+  flowSignal,
   aiReadinessScan,
   smbSalgsflytSjekken,
-  flowSignal,
-  prosjektoppgaveStrategiskImplementering,
   pscPromoVideo,
+  mariusottesenNettside,
+  prosjektoppgaveStrategiskImplementering,
+  skoyenasenTannklinikk,
   aiAssistertInnsiktsagent,
   aiAssistertInnsiktsOgInnholdsagent,
-  predictiveSalesCoach,
-  aiValueLabOslo,
-  skoyenasenTannklinikk,
   aiArkitekturBeslutningsstotte,
-].sort((a, b) => new Date(b.dato).getTime() - new Date(a.dato).getTime());
+  aiValueLabOslo,
+];
 
-const alleProsjekter: ProsjektType[] = [...prosjektKort, aiFaginnleggHub];
+const alleProsjekter: ProsjektType[] = sortProsjekterByPortfolioOrder([...prosjektKort, aiFaginnleggHub]);
 
 function getProsjektBildeHint(prosjekt: ProsjektType, lang: Lang) {
   const custom = prosjekt.bildeHint?.[lang];
@@ -160,6 +161,9 @@ export default function Prosjekter({ onNavigate: _onNavigate }: { onNavigate?: (
               className="p-4 md:p-5 bg-slate-900/40 rounded-xl border border-slate-800 space-y-3 min-w-0"
             >
               <h3 className="text-base font-black text-indigo-400 italic tracking-tight">{kategori.title[lang]}</h3>
+              {kategori.description && (
+                <p className="text-sm text-slate-400 leading-snug font-light">{kategori.description[lang]}</p>
+              )}
               <ul className="space-y-3">
                 {kategori.lenker.map((lenke) => (
                   <li key={lenke.prosjektId} className="space-y-1">

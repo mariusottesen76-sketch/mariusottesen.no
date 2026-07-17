@@ -1,16 +1,22 @@
 "use client";
 
+import { ChevronRight } from "lucide-react";
 import type { Lang } from "../../LanguageContext";
+import type { ProjectCategory } from "../../data/projects-v2/types";
 import type { StrategicPlatformModule } from "../../data/strategic-platform-projects/types";
 import { t } from "../../data/strategic-platform-projects/i18n";
+import { getModuleBuiltStatusLabel } from "../../lib/project-module-status-label";
 import { cardTitleClass } from "../../lib/typography";
 
 type ProjectModuleGridProps = {
   modules: StrategicPlatformModule[];
   lang: Lang;
+  category?: ProjectCategory;
+  slug?: string;
 };
 
-export default function ProjectModuleGrid({ modules, lang }: ProjectModuleGridProps) {
+export default function ProjectModuleGrid({ modules, lang, category, slug }: ProjectModuleGridProps) {
+  const builtLabel = getModuleBuiltStatusLabel(lang, category, slug);
   const hasExtended = modules.some((modul) => modul.fokusomrader?.length || modul.relevantFor);
 
   return (
@@ -33,21 +39,19 @@ export default function ProjectModuleGrid({ modules, lang }: ProjectModuleGridPr
                   : "border-slate-600/50 bg-slate-800/50 text-slate-500"
               }`}
             >
-              {modul.bygget
-                ? lang === "no"
-                  ? "Bygget"
-                  : "Built"
-                : lang === "no"
-                  ? "Fremtidig"
-                  : "Future"}
+              {modul.bygget ? builtLabel : lang === "no" ? "Fremtidig" : "Future"}
             </span>
           </div>
           <p className="text-sm text-slate-400 font-light leading-relaxed">{t(modul.beskrivelse, lang)}</p>
           {modul.fokusomrader && modul.fokusomrader.length > 0 && (
             <ul className="space-y-1.5">
               {modul.fokusomrader.map((omrade) => (
-                <li key={omrade.no} className="text-xs text-slate-500 font-light leading-relaxed">
-                  • {t(omrade, lang)}
+                <li
+                  key={omrade.no}
+                  className="flex items-start gap-1.5 text-xs text-slate-500 font-light leading-relaxed"
+                >
+                  <ChevronRight size={12} className="text-indigo-400/80 shrink-0 mt-0.5" aria-hidden="true" />
+                  <span>{t(omrade, lang)}</span>
                 </li>
               ))}
             </ul>

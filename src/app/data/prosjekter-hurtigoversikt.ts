@@ -24,12 +24,20 @@ export type ProsjektHurtigLenke = {
 
 export type ProsjektHurtigKategori = {
   title: { no: string; en: string };
+  description?: { no: string; en: string };
+  /** Behold eksplisitt rekkefølge når true — ellers sorteres lenker etter dato. */
+  fixedOrder?: boolean;
   lenker: ProsjektHurtigLenke[];
 };
 
 const kategorier: ProsjektHurtigKategori[] = [
   {
-    title: { no: "App og prototype", en: "App and prototype" },
+    title: { no: "Strategiske plattformer", en: "Strategic platforms" },
+    description: {
+      no: "Lederorienterte plattformer for prioritering, transformasjon, beslutningsstøtte og gjennomføring.",
+      en: "Leadership-oriented platforms for prioritisation, transformation, decision support and execution.",
+    },
+    fixedOrder: true,
     lenker: [
       {
         prosjektId: "ai-transformation-value-realization",
@@ -41,16 +49,26 @@ const kategorier: ProsjektHurtigKategori[] = [
         introSlug: "control-tower",
         label: { no: "Control Tower", en: "Control Tower" },
       },
-      {
-        prosjektId: "ai-readiness-scan-2026-06",
-        introSlug: "readiness-scan",
-        label: { no: "AI Readiness Scan", en: "AI Readiness Scan" },
-      },
-      { prosjektId: "flowsignal-2026-05", introSlug: "flowsignal", label: { no: "FlowSignal", en: "FlowSignal" } },
+    ],
+  },
+  {
+    title: { no: "Apper og prototyper", en: "Apps and prototypes" },
+    description: {
+      no: "Funksjonelle AI-løsninger for salgstrening, teamutvikling, AI-beredskap og kommersiell forbedring.",
+      en: "Functional AI solutions for sales training, team development, AI readiness and commercial improvement.",
+    },
+    fixedOrder: true,
+    lenker: [
       {
         prosjektId: "predictive-sales-coach-2026",
         introSlug: "psc",
         label: { no: "The Predictive Sales Coach v2.0", en: "The Predictive Sales Coach v2.0" },
+      },
+      { prosjektId: "flowsignal-2026-05", introSlug: "flowsignal", label: { no: "FlowSignal", en: "FlowSignal" } },
+      {
+        prosjektId: "ai-readiness-scan-2026-06",
+        introSlug: "readiness-scan",
+        label: { no: "AI Readiness Scan", en: "AI Readiness Scan" },
       },
       {
         prosjektId: "smb-salgsflyt-sjekken-2026",
@@ -160,6 +178,6 @@ function sortLenkerEtterDato(lenker: ProsjektHurtigLenke[]): ProsjektHurtigLenke
 export function getProsjektHurtigoversikt(_lang: Lang): ProsjektHurtigKategori[] {
   return kategorier.map((kategori) => ({
     ...kategori,
-    lenker: sortLenkerEtterDato(kategori.lenker),
+    lenker: kategori.fixedOrder ? kategori.lenker : sortLenkerEtterDato(kategori.lenker),
   }));
 }

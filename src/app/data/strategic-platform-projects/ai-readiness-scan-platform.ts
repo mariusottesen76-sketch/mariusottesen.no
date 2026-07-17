@@ -37,8 +37,8 @@ export const aiReadinessScanPlatform: StrategicPlatformProject = {
         en: "Many organisations want to adopt AI, but lack a shared picture of the current situation and what should come first.",
       },
       bygget: {
-        no: "En tilgangsstyrt diagnoseapp med strukturert spørsmålsflyt, sikker innlogging, tilgangskoder og administrativ oppfølging av virksomheter og kartlegginger.",
-        en: "An access-controlled diagnostic app with structured question flow, secure login, access codes and administrative follow-up of organisations and assessments.",
+        no: "Et tilgangsstyrt kartleggingsverktøy med strukturert spørsmålsflyt, sikker innlogging, tilgangskoder og administrativ oppfølging av virksomheter og kartlegginger.",
+        en: "An access-controlled mapping tool with structured question flow, secure login, access codes and administrative follow-up of organisations and assessments.",
       },
       relevans: {
         no: "Prosjektet viser hvordan strukturert kartlegging kan gi bedre prioritering og forberedelse før virksomheten investerer bredt i AI.",
@@ -65,8 +65,8 @@ export const aiReadinessScanPlatform: StrategicPlatformProject = {
         en: "Structured mapping of AI maturity, priorities and next steps.",
       },
       executiveSummary: {
-        no: "AI Readiness Scan er utviklet for ledere og virksomheter som vil avklare AI-modenhet, prioriteringer og neste steg — fra strategi og kompetanse til data, arbeidsprosesser og ansvarlig bruk. Administrasjonsflaten gir oversikt over besvarelser, mønstre og aktuelle prioriteringer som grunnlag for strukturert oppfølging.",
-        en: "AI Readiness Scan is built for leaders and organisations that want to clarify AI maturity, priorities and next steps — from strategy and competence to data, work processes and responsible use. The admin environment provides an overview of responses, patterns and current priorities as a basis for structured follow-up.",
+        no: "AI Readiness Scan er utviklet for ledere og virksomheter som vil avklare AI-modenhet, prioriteringer og neste steg — fra strategi og kompetanse til data, arbeidsprosesser og ansvarlig bruk.",
+        en: "AI Readiness Scan is built for leaders and organisations that want to clarify AI maturity, priorities and next steps — from strategy and competence to data, work processes and responsible use.",
       },
       bildeAlt: {
         no: "AI Readiness Scan – kartlegging av AI-beredskap og gjennomføringsevne",
@@ -97,11 +97,9 @@ export const aiReadinessScanPlatform: StrategicPlatformProject = {
     bygget: {
       heading: { no: "Hva som er bygget eller utviklet", en: "What has been built or developed" },
       items: [
-        { no: "Strukturert spørsmålsflyt", en: "Structured question flow" },
-        { no: "Kartlegging av AI-modenhet på tvers av sju områder, blant annet strategi, kompetanse, prosesser, data, risiko og ansvarlig bruk", en: "AI maturity assessment across seven areas, including strategy, competence, processes, data, risk and responsible use" },
+        { no: "Strukturert spørsmålsflyt på tvers av sju modenhetsområder", en: "Structured question flow across seven maturity areas" },
         { no: "Sikker innlogging og tilgangskoder", en: "Secure login and access codes" },
         { no: "Administrasjonsflate for virksomheter og kartlegginger", en: "Admin environment for organisations and assessments" },
-        { no: "Oversikt over besvarelser, mønstre og aktuelle prioriteringer", en: "Overview of responses, patterns and current priorities" },
       ],
     },
     moduler: {
@@ -114,17 +112,21 @@ export const aiReadinessScanPlatform: StrategicPlatformProject = {
         { tittel: { no: "Tilgang og innlogging", en: "Access and login" }, beskrivelse: { no: "Virksomheten får tilgang gjennom unik tilgangskode eller sikker innlogging.", en: "The organisation gains access through a unique access code or secure login." }, bygget: true },
         { tittel: { no: "Kartlegging", en: "Assessment" }, beskrivelse: { no: "Strukturert spørsmål om strategi, kompetanse, prosesser, data, risiko og ansvarlig bruk.", en: "Structured questions about strategy, competence, processes, data, risk and responsible use." }, bygget: true },
         { tittel: { no: "Administrativ oppfølging", en: "Administrative follow-up" }, beskrivelse: { no: "Besvarelser samles for oversikt over mønstre og aktuelle prioriteringer.", en: "Responses are collected for an overview of patterns and current priorities." }, bygget: true },
-        { tittel: { no: "Prioritering", en: "Prioritisation" }, beskrivelse: { no: "Resultatet brukes som grunnlag for dialog om neste steg og forbedringsområder.", en: "The result is used as a basis for dialogue on next steps and improvement areas." }, bygget: true },
+        { tittel: { no: "Prioritering", en: "Prioritisation" }, beskrivelse: { no: "Resultatet brukes som grunnlag for dialog om neste steg — ikke som formell sertifisering.", en: "The result is used as a basis for dialogue on next steps — not as formal certification." }, bygget: true },
       ],
     },
     hvordan: {
       heading: { no: "Hvordan løsningen fungerer", en: "How the solution works" },
-      intro: { no: "Kartleggingen gjennomføres i fire steg.", en: "The assessment is completed in four steps." },
-      steps: [
-        { tittel: { no: "Tilgang", en: "Access" }, beskrivelse: { no: "Virksomheten får tilgang gjennom unik tilgangskode eller sikker innlogging.", en: "The organisation gains access through a unique access code or secure login." } },
-        { tittel: { no: "Kartlegging", en: "Assessment" }, beskrivelse: { no: "Deltakeren svarer på spørsmål om strategi, kompetanse, prosesser, data, risiko og ansvarlig bruk.", en: "The participant answers questions about strategy, competence, processes, data, risk and responsible use." } },
-        { tittel: { no: "Oppslag", en: "Overview" }, beskrivelse: { no: "Besvarelser samles og er tilgjengelige for oppfølging i administrasjonsflaten.", en: "Responses are collected and available for follow-up in the admin environment." } },
-        { tittel: { no: "Prioritering", en: "Prioritisation" }, beskrivelse: { no: "Resultatet brukes som grunnlag for dialog om neste steg og mulige forbedringsområder.", en: "The result is used as a basis for dialogue on next steps and possible improvement areas." } },
+      intro: { no: "Virksomheten får tilgang, deltakeren svarer på kartlegging, og resultatet brukes til prioritering og oppfølging.", en: "The organisation gains access, the participant completes the assessment, and the result is used for prioritisation and follow-up." },
+      detaljpunkter: [
+        {
+          no: "Kartleggingen dekker strategi, kompetanse, prosesser, data, risiko og ansvarlig bruk.",
+          en: "The assessment covers strategy, competence, processes, data, risk and responsible use.",
+        },
+        {
+          no: "Administrasjonsflaten samler besvarelser og mønstre som grunnlag for dialog om neste steg.",
+          en: "The admin environment collects responses and patterns as a basis for dialogue on next steps.",
+        },
       ],
     },
     relevans: {

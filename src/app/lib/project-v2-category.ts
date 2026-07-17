@@ -2,12 +2,12 @@ import type { ProjectCategory } from "../data/projects-v2/types";
 
 export const PROJECT_CATEGORY_LABELS: Record<ProjectCategory, { no: string; en: string }> = {
   strategic_platform: {
-    no: "Strategisk plattform",
-    en: "Strategic platform",
+    no: "Strategiske plattformer",
+    en: "Strategic platforms",
   },
   app_prototype: {
-    no: "App og funksjonell prototype",
-    en: "App and functional prototype",
+    no: "Apper og prototyper",
+    en: "Apps and prototypes",
   },
   case_implementation: {
     no: "Case og implementering",

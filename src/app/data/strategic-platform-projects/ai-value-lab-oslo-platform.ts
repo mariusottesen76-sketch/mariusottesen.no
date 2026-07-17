@@ -217,7 +217,7 @@ export const aiValueLabOsloPlatform: StrategicPlatformProject = {
     skalerbarhet: {
       heading: { no: "Tilpasning til nettverk og bransjer", en: "Adaptation to networks and industries" },
       platform: {
-        heading: { no: "Mulig videreutvikling", en: "Possible further development" },
+        heading: { no: "Videreutvikling av initiativet", en: "Further development of the initiative" },
         punkter: [
           { no: "AI Growth Sprint-spor", en: "AI Growth Sprint tracks" },
           { no: "Use case-prioritering og prosesskartlegging", en: "Use case prioritisation and process mapping" },

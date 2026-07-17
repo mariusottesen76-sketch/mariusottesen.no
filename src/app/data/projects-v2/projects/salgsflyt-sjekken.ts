@@ -8,8 +8,8 @@ export const salgsflytSjekkenV2: ProjectV2Record = {
   layoutVersion: "project_v2",
   accessMode: "access_code",
   detailLevel: "full",
-  date: "2026-06-16",
-  displayDate: { no: "16.06.26", en: "16.06.26" },
+  date: "2026-06-10",
+  displayDate: { no: "10.06.26", en: "10.06.26" },
   title: {
     no: "SMB Salgsflyt-sjekken: Interaktiv diagnose og AI-rapportering",
     en: "SMB Sales Flow Check: Interactive diagnosis and AI reporting",

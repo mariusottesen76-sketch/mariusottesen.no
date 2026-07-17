@@ -13,7 +13,7 @@ export const aiReadinessScan: ProsjektType = {
   },
   bildeUrl: "/images/ai-readiness-scan-hjemmeside.png?v=20260717",
   bildeRamme: "natural",
-  dato: "2026-06-25",
+  dato: "2026-06-17",
   visningsDato: "25.06.26",
   bildeHint: {
     no: "Klikk på bildet for å se AI Readiness Scan i større format.",

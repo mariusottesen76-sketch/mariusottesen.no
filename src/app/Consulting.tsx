@@ -27,8 +27,12 @@ import {
   sectionHeadingWrapClass,
 } from "./lib/typography";
 import {
+  getContactTemaBannerTitle,
+  getContactTemaBeskrivelsePrefix,
+  getContactTemaKategori,
   getProjectSlugDisplayName,
-  parseAccessCodeContactQuery,
+  parseProjectContactQuery,
+  type ProjectContactQuery,
 } from "./lib/project-contact-query";
 
 function getKategorier(lang: "no" | "en") {
@@ -38,6 +42,8 @@ function getKategorier(lang: "no" | "en") {
         "Rekruttering eller kandidatdialog",
         "Faglig dialog",
         "Forespørsel om tilgangskode",
+        "Forespørsel om demonstrasjon",
+        "Mulig anvendelse av prosjekt",
         "Mulig fremtidig samarbeid",
         "Annet",
       ]
@@ -46,6 +52,8 @@ function getKategorier(lang: "no" | "en") {
         "Recruitment or candidate dialogue",
         "Professional dialogue",
         "Request access code",
+        "Request for demonstration",
+        "Potential project application",
         "Possible future collaboration",
         "Other",
       ];
@@ -270,18 +278,22 @@ export default function Consulting() {
   const [beskrivelse, setBeskrivelse] = useState("");
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [feilmelding, setFeilmelding] = useState("");
+  const [contactQuery, setContactQuery] = useState<ProjectContactQuery | null>(null);
 
   useEffect(() => {
-    const query = parseAccessCodeContactQuery(window.location.search);
+    const query = parseProjectContactQuery(window.location.search);
+    setContactQuery(query);
+
+    if (query || window.location.hash === "#cons-dialog-heading") {
+      requestAnimationFrame(() => {
+        document.getElementById("cons-dialog-heading")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    }
+
     if (!query) return;
 
-    const kategoriLabel =
-      lang === "no" ? "Forespørsel om tilgangskode" : "Request access code";
-    const prosjektNavn = getProjectSlugDisplayName(query.prosjekt, lang);
-    const prefix =
-      lang === "no"
-        ? `Jeg ønsker tilgangskode til ${prosjektNavn}.`
-        : `I would like an access code for ${prosjektNavn}.`;
+    const kategoriLabel = getContactTemaKategori(query.tema, lang);
+    const prefix = getContactTemaBeskrivelsePrefix(query.tema, query.prosjekt, lang);
 
     setKategori(kategoriLabel);
     setBeskrivelse((current) => (current.trim() ? current : prefix));
@@ -499,6 +511,24 @@ export default function Consulting() {
       <section aria-labelledby="cons-dialog-heading" className="mb-12">
         <SectionHeading id="cons-dialog-heading">{tr("cons.dialog")}</SectionHeading>
         <div className="bg-slate-900/40 rounded-2xl border border-white/10 shadow-xl p-8 md:p-12">
+          {contactQuery && (
+            <div className="mb-6 p-5 rounded-2xl border border-indigo-500/30 bg-indigo-500/10 space-y-2">
+              <p className="text-sm font-bold uppercase tracking-widest text-indigo-300">
+                {getContactTemaBannerTitle(contactQuery.tema, lang)}
+              </p>
+              <p className="text-base text-slate-300 leading-relaxed">
+                {lang === "no" ? "Valgt prosjekt:" : "Selected project:"}{" "}
+                <span className="text-white font-medium">
+                  {getProjectSlugDisplayName(contactQuery.prosjekt, lang)}
+                </span>
+              </p>
+              <p className="text-sm text-slate-400 leading-relaxed">
+                {lang === "no"
+                  ? "Henvendelsestype og melding er forhåndsutfylt — du kan redigere før innsending."
+                  : "Inquiry type and message are pre-filled — you can edit before submitting."}
+              </p>
+            </div>
+          )}
           <p className="text-slate-400 italic font-light text-lg mb-6 w-full min-w-0 max-w-none whitespace-pre-line">{tr("cons.dialog.intro")}</p>
 
           <form onSubmit={handleSubmit} className="space-y-5">

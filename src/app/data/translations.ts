@@ -174,8 +174,8 @@ const translations: Translations = {
     en: "Here you will find AI projects, apps, websites, case work and workflows at the intersection of AI, digital transformation and concrete commercial and operational needs.",
   },
   "prosjekter.intro.scroll": {
-    no: "Hopp til alle AI-prosjekter i detalj",
-    en: "Jump to all AI projects in detail",
+    no: "Bla ned for å utforske prosjektene.",
+    en: "Scroll down to explore the projects.",
   },
   "prosjekter.intro.1b": {
     no: "Prosjektene viser hva som faktisk er bygget, hvordan løsningene fungerer og hvilken praktisk relevans de kan ha innen kommersiell utvikling, salg, kundeopplevelse, ledelse, arbeidsflyt, beslutningsstøtte og ansvarlig AI-bruk.",
@@ -288,10 +288,10 @@ const translations: Translations = {
     no: ", med mål om å utforske praktisk AI-verdi, læring og virksomhetsnære problemstillinger sammen med andre. Prosjektene nedenfor viser konkrete løsninger, modeller og arbeidsflyter som kobler forretning, brukerbehov, teknologi og gjennomføring i praksis.",
     en: ", with the aim of exploring practical AI value, learning and business-oriented problem areas together with others. The projects below show concrete solutions, models and workflows that connect business, user needs, technology and execution in practice.",
   },
-  "prosjekter.kort.seksjon.title": { no: "Alle AI-prosjekter i detalj", en: "All AI projects in detail" },
+  "prosjekter.kort.seksjon.title": { no: "AI-prosjekter – kort forklart", en: "AI projects – briefly explained" },
   "prosjekter.kort.seksjon.intro": {
-    no: "Her finner du hvert prosjekt med kort beskrivelse. Scroll for å lese hva som er bygget, hvordan det fungerer og hvorfor det er relevant.",
-    en: "Here you will find each project with a short description. Scroll to read what has been built, how it works and why it matters.",
+    no: "Her får du en kort oversikt over hva som er utviklet, hvordan prosjektet fungerer og hvorfor det er relevant. Utforsk hvert prosjekt for mer dybde.",
+    en: "Here you get a brief overview of what has been built, how each project works and why it matters. Explore each project for more depth.",
   },
   "prosjekter.les": { no: "Les mer", en: "Read more" },
   "prosjekter.hurtig.title": { no: "Utforsk prosjektene etter type", en: "Explore projects by type" },

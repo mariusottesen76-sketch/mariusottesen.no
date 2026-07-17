@@ -12,7 +12,7 @@ export const aiFaginnleggHub: ProsjektType = {
     en: "Theory, frameworks, BI master's work, report excerpts, tools and practical experience gathered in an ongoing professional track — with link to /articles.",
   },
   bildeUrl: "/images/ai-faginnlegg-hjemmeside.png?v=20260717",
-  dato: "2026-04-13",
+  dato: "2026-03-25",
   visningsDato: "Løpende oppdatert",
   bildeHint: {
     no: "Klikk på bildet for å se illustrasjonen i større format.",

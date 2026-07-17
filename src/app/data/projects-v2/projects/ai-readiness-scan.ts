@@ -8,8 +8,8 @@ export const aiReadinessScanV2: ProjectV2Record = {
   layoutVersion: "project_v2",
   accessMode: "access_code",
   detailLevel: "full",
-  date: "2026-06-25",
-  displayDate: { no: "25.06.26", en: "25.06.26" },
+  date: "2026-06-17",
+  displayDate: { no: "17.06.26", en: "17.06.26" },
   title: {
     no: "AI Readiness Scan: Kartlegging av AI-beredskap og gjennomføringsevne",
     en: "AI Readiness Scan: Mapping AI readiness and execution capability",
@@ -32,16 +32,16 @@ export const aiReadinessScanV2: ProjectV2Record = {
   },
   overview: {
     what: {
-      no: "En tilgangsstyrt diagnoseapp som gir virksomheter et strukturert bilde av AI-modenhet, prioriterte utviklingsområder og grunnlag for neste steg — ikke en formell sertifisering.",
-      en: "An access-controlled diagnostic app that gives organisations a structured picture of AI maturity, prioritised development areas and a basis for next steps — not a formal certification.",
+      no: "Et tilgangsstyrt kartleggingsverktøy som gir virksomheter et strukturert bilde av AI-modenhet, prioriterte utviklingsområder og grunnlag for neste steg — ikke en formell sertifisering.",
+      en: "An access-controlled mapping tool that gives organisations a structured picture of AI maturity, prioritised development areas and a basis for next steps — not a formal certification.",
     },
     challenge: {
       no: "Mange virksomheter ønsker å ta i bruk AI, men mangler felles bilde av nåsituasjonen og hva som bør komme først. Utfordringen er å skape struktur før man investerer i større initiativer.",
       en: "Many organisations want to adopt AI, but lack a shared picture of the current situation and what should come first. The challenge is to create structure before investing in larger initiatives.",
     },
     built: {
-      no: "Det er utviklet en tilgangsstyrt diagnoseapp med strukturert spørsmålsflyt, sikker innlogging, tilgangskoder og administrativ oppfølging av virksomheter og kartlegginger.",
-      en: "An access-controlled diagnostic app has been developed with structured question flow, secure login, access codes and administrative follow-up of organisations and assessments.",
+      no: "Det er utviklet et tilgangsstyrt kartleggingsverktøy med strukturert spørsmålsflyt, sikker innlogging, tilgangskoder og administrativ oppfølging av virksomheter og kartlegginger.",
+      en: "An access-controlled mapping tool has been developed with structured question flow, secure login, access codes and administrative follow-up of organisations and assessments.",
     },
     how: {
       no: "Virksomheten får tilgang via kode eller innlogging, deltakeren svarer på spørsmål om strategi, kompetanse, prosesser, data og risiko, og resultatet brukes til prioritering og oppfølging.",
@@ -52,8 +52,8 @@ export const aiReadinessScanV2: ProjectV2Record = {
       en: "The project shows how structured mapping can provide better prioritisation and preparation before the organisation invests broadly in AI — without being presented as audit or guarantee.",
     },
     status: {
-      no: "Tilgangsstyrt kartleggingsverktøy med modenhet for avgrenset testing og videre utvikling. Resultatet er et grunnlag for dialog, ikke formell fasit på AI-modenhet.",
-      en: "Access-controlled mapping tool with maturity for limited testing and further development. The result is a basis for dialogue, not a formal verdict on AI maturity.",
+      no: "Tilgangsstyrt kartleggingsverktøy med modenhet for avgrenset testing og videre utvikling. Resultatet er et grunnlag for dialog og prioritering, ikke en autoritativ vurdering av AI-modenhet.",
+      en: "Access-controlled mapping tool with maturity for limited testing and further development. The result is a basis for dialogue and prioritisation, not an authoritative assessment of AI maturity.",
     },
     development: {
       no: "Videre potensial inkluderer bransjespesifikke spørsmålssett, AI-generert oppsummering, modenhetsprofiler, prioriteringsmatriser og kobling mot implementeringsløp.",

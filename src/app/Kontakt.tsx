@@ -2,14 +2,17 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { Mail, Smartphone, Linkedin, ChevronRight, Target, MessageSquare, Globe } from "lucide-react";
 import { useLanguage } from "./LanguageContext";
 import { getTranslation } from "./data/translations";
 import { iconSectionTitleClass, pageTitleClass, sectionTitleClass } from "./lib/typography";
 import {
-  buildConsultingAccessCodeHref,
+  buildProjectContactHref,
+  getContactTemaBannerTitle,
   getProjectSlugDisplayName,
-  parseAccessCodeContactQuery,
+  parseProjectContactQuery,
+  type ProjectContactQuery,
 } from "./lib/project-contact-query";
 
 const linkClass =
@@ -17,33 +20,39 @@ const linkClass =
 
 export default function Kontakt() {
   const { lang } = useLanguage();
+  const router = useRouter();
   const tr = (key: string) => getTranslation(key, lang);
-  const [accessQuery, setAccessQuery] = useState<ReturnType<typeof parseAccessCodeContactQuery>>(null);
+  const [contactQuery, setContactQuery] = useState<ProjectContactQuery | null>(null);
 
   useEffect(() => {
-    setAccessQuery(parseAccessCodeContactQuery(window.location.search));
-  }, []);
+    const query = parseProjectContactQuery(window.location.search);
+    if (query) {
+      router.replace(buildProjectContactHref(query.tema, query.prosjekt));
+      return;
+    }
+    setContactQuery(null);
+  }, [router]);
 
   return (
     <div className="py-4 text-left w-full overflow-x-hidden">
-      {accessQuery && (
+      {contactQuery && (
         <div className="mb-6 p-5 rounded-2xl border border-indigo-500/30 bg-indigo-500/10 space-y-2">
           <p className="text-sm font-bold uppercase tracking-widest text-indigo-300">
-            {lang === "no" ? "Forespørsel om tilgangskode" : "Request access code"}
+            {getContactTemaBannerTitle(contactQuery.tema, lang)}
           </p>
           <p className="text-base text-slate-300 leading-relaxed">
             {lang === "no" ? "Prosjekt:" : "Project:"}{" "}
             <span className="text-white font-medium">
-              {getProjectSlugDisplayName(accessQuery.prosjekt, lang)}
+              {getProjectSlugDisplayName(contactQuery.prosjekt, lang)}
             </span>
           </p>
           <p className="text-sm text-slate-400 leading-relaxed">
             {lang === "no"
-              ? "Bruk kontaktskjemaet for å sende en henvendelse. Feltene kan redigeres før innsending."
-              : "Use the contact form to send your request. You can edit the fields before submitting."}
+              ? "Omdirigerer til kontaktskjema …"
+              : "Redirecting to the contact form …"}
           </p>
           <Link
-            href={buildConsultingAccessCodeHref(accessQuery.prosjekt)}
+            href={buildProjectContactHref(contactQuery.tema, contactQuery.prosjekt)}
             className="inline-flex items-center gap-2 text-sm font-medium text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-100 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
           >
             {lang === "no" ? "Gå til kontaktskjema" : "Go to contact form"}

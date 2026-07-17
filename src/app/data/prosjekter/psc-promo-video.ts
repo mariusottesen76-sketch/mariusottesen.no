@@ -12,7 +12,7 @@ export const pscPromoVideo: ProsjektType = {
     en: "PSCv2.0, DISC and structured sales training, conveyed through my first AI-generated commercial — documented on /projects.",
   },
   bildeUrl: "/images/predictive-sales-coach-promovideo-hjemmeside.png?v=20260717",
-  dato: "2026-05-06",
+  dato: "2026-05-30",
   visningsDato: "06.05.26",
   videoUrl: "/images/promovideo-final.mov",
   videoFormat: "portrait",

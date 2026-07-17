@@ -205,7 +205,7 @@ Mer om dette fremover. Men det handler om kommersielle løsninger, og bedre flyt
       id: "rocket-verdilekkasje-ai-kommersiell-2026-06",
       tittel: "Hvor lekker verdien i virksomheten din?",
       teaser:
-        "Rocket og NOVA om operativ AI-læring, DNBs læringssløyfe og kommersielle skiller — og et SMB-koncept for konkret verdiskaping.",
+        "Rocket og NOVA om operativ AI-læring, DNBs læringssløyfe og kommersielle skiller — og et SMB-konsept for konkret verdiskaping.",
       bildeUrl: `${rocketKarusellBase}/R1.png`,
       bildeVersjon: "2026-06-12",
       dato: "2026-06-12",

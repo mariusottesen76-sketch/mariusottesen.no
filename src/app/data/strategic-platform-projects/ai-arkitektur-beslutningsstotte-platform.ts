@@ -4,7 +4,7 @@ const utvikler = {
   navn: { no: "Marius Ottesen", en: "Marius Ottesen" },
   rolle: { no: "Kommersiell leder og AI-strateg", en: "Commercial leader and AI strategist" },
   beskrivelse: {
-    no: "Utvikler virksomhetsnære modeller, arbeidsflyter og koncepter i skjæringspunktet mellom kommersiell ledelse, beslutningsstøtte, kunnskapsarbeid, teknologi og praktisk AI.",
+    no: "Utvikler virksomhetsnære modeller, arbeidsflyter og konsepter i skjæringspunktet mellom kommersiell ledelse, beslutningsstøtte, kunnskapsarbeid, teknologi og praktisk AI.",
     en: "Develops business-oriented models, workflows and concepts at the intersection of commercial leadership, decision support, knowledge work, technology and practical AI.",
   },
 };
@@ -22,7 +22,7 @@ export const aiArkitekturBeslutningsstottePlatform: StrategicPlatformProject = {
       no: "Arkitekturmodell og beslutningslogikk for hvordan data, analyse og AI kan støtte kommersiell prioritering — konsept, ikke produksjonssystem.",
       en: "Architecture model and decision logic for how data, analysis and AI can support commercial prioritisation — concept, not a production system.",
     },
-    ogImage: "/images/ai-beslutningsstotte-dashboard.png?v=20260519",
+    ogImage: "/images/ai-arkitektur-beslutningsstotte-dashboard.jpg?v=20260717d",
     canonicalPath: "/ai-arkitektur-beslutningsstotte",
   },
   teaser: {

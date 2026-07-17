@@ -13,7 +13,7 @@ export const aiAssistertInnsiktsagent: ProsjektType = {
   },
   bildeUrl: "/images/agentisk-arbeidsflyt-hjemmeside.png?v=20260717b",
   bildeRamme: "natural",
-  dato: "2026-04-24",
+  dato: "2026-04-28",
   visningsDato: "24.04.26",
   bildeHint: {
     no: "Klikk på bildet for å se innsikt-handling i større format.",

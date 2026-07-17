@@ -78,6 +78,34 @@ export type StrategicPlatformMeta = {
   canonicalPath: string;
 };
 
+export type StrategicPlatformGovernanceScenarioField = {
+  label: LocalizedString;
+  value: LocalizedString;
+};
+
+export type StrategicPlatformGovernanceScenario = {
+  heading: LocalizedString;
+  fields: StrategicPlatformGovernanceScenarioField[];
+};
+
+export type StrategicPlatformGovernanceScenarios = {
+  heading: LocalizedString;
+  disclaimer: LocalizedString;
+  scenarios: StrategicPlatformGovernanceScenario[];
+};
+
+export type StrategicPlatformDemoPortfolioCategory = {
+  heading: LocalizedString;
+  initiatives: LocalizedString[];
+};
+
+export type StrategicPlatformDemoPortfolio = {
+  heading: LocalizedString;
+  intro: LocalizedString;
+  closing: LocalizedString;
+  categories: StrategicPlatformDemoPortfolioCategory[];
+};
+
 export type StrategicPlatformDetail = {
   statusBadge: LocalizedString;
   hero: {
@@ -92,7 +120,7 @@ export type StrategicPlatformDetail = {
   hvordan: {
     heading: LocalizedString;
     intro?: LocalizedString;
-    steps: StrategicPlatformStep[];
+    steps?: StrategicPlatformStep[];
     detaljpunkter?: LocalizedString[];
   };
   relevans: {
@@ -100,6 +128,10 @@ export type StrategicPlatformDetail = {
     body?: LocalizedString;
     sections?: StrategicPlatformRelevansSection[];
   };
+  /** Demoportefølje — kun på utvalgte plattformdetaljsider. */
+  demoPortfolio?: StrategicPlatformDemoPortfolio;
+  /** Illustrative styringscenarioer — kun på utvalgte plattformdetaljsider. */
+  governanceScenarios?: StrategicPlatformGovernanceScenarios;
   status: { heading: LocalizedString; body: LocalizedString };
   skalerbarhet: StrategicPlatformScalability & { heading: LocalizedString };
   avslutning: { heading: LocalizedString; body: LocalizedString; secondaryLabel?: LocalizedString };

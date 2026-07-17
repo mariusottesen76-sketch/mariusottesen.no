@@ -37,6 +37,8 @@ import ScalabilitySection from "./ScalabilitySection";
 import ProjectHero from "../project-v2/ProjectHero";
 import ProjectImageModal from "../project-v2/ProjectImageModal";
 import ProjectApplicationGroups from "../project-v2/ProjectApplicationGroups";
+import DemoPortfolioSection from "./DemoPortfolioSection";
+import GovernanceScenariosSection from "./GovernanceScenariosSection";
 import { getProjectV2ById } from "../../data/projects-v2/registry";
 import { buildProjectDetailCta } from "../../data/projects-v2/cta";
 import { PROJECT_CATEGORY_LABELS } from "../../lib/project-v2-category";
@@ -177,6 +179,9 @@ function StrategicProjectDetailInner({ slug }: { slug: StrategicPlatformSlug }) 
           onImageClick={(src, alt) => setActiveImage({ src, alt })}
           objectPosition={projectV2?.detailHeroObjectPosition}
           fit={resolveDetailHeroFit(projectV2?.needsNewDetailHero ?? projectV2?.detailHeroMissing)}
+          aspectRatio={projectV2?.detailHeroAspectRatio}
+          maxWidthPx={projectV2?.detailHeroMaxWidthPx}
+          maxHeightPx={projectV2?.detailHeroMaxHeightPx}
         />
 
         {projectV2 && detailCta ? (
@@ -208,6 +213,10 @@ function StrategicProjectDetailInner({ slug }: { slug: StrategicPlatformSlug }) 
         {detail.logikk.after && <p className={bodyTextClass}>{t(detail.logikk.after, lang)}</p>}
       </section>
 
+      {detail.governanceScenarios && (
+        <GovernanceScenariosSection data={detail.governanceScenarios} lang={lang} />
+      )}
+
       <section aria-labelledby="plattform-bygget" className="mb-10">
         <SectionHeading id="plattform-bygget">{t(detail.bygget.heading, lang)}</SectionHeading>
         {detail.bygget.body && <p className={`${bodyTextClass} mb-4`}>{t(detail.bygget.body, lang)}</p>}
@@ -224,7 +233,12 @@ function StrategicProjectDetailInner({ slug }: { slug: StrategicPlatformSlug }) 
       <section id="plattform-moduler" aria-labelledby="plattform-moduler-heading" className="mb-10 scroll-mt-24">
         <SectionHeading id="plattform-moduler-heading">{t(detail.moduler.heading, lang)}</SectionHeading>
         {detail.moduler.intro && <p className={`${bodyTextClass} mb-4`}>{t(detail.moduler.intro, lang)}</p>}
-        <ProjectModuleGrid modules={detail.moduler.modules} lang={lang} />
+        <ProjectModuleGrid
+          modules={detail.moduler.modules}
+          lang={lang}
+          category={projectV2?.category}
+          slug={slug}
+        />
       </section>
 
       <section aria-labelledby="plattform-hvordan" className="mb-10">
@@ -239,7 +253,7 @@ function StrategicProjectDetailInner({ slug }: { slug: StrategicPlatformSlug }) 
               </li>
             ))}
           </ul>
-        ) : (
+        ) : detail.hvordan.steps && detail.hvordan.steps.length > 0 ? (
           <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
             {detail.hvordan.steps.map((steg, index) => (
               <li key={steg.tittel.no} className="p-4 bg-slate-900/40 rounded-xl border border-slate-800 space-y-2 min-w-0">
@@ -251,8 +265,10 @@ function StrategicProjectDetailInner({ slug }: { slug: StrategicPlatformSlug }) 
               </li>
             ))}
           </ol>
-        )}
+        ) : null}
       </section>
+
+      {detail.demoPortfolio && <DemoPortfolioSection data={detail.demoPortfolio} lang={lang} />}
 
       <section aria-labelledby="plattform-relevans" className="mb-10">
         <SectionHeading id="plattform-relevans">{t(detail.relevans.heading, lang)}</SectionHeading>

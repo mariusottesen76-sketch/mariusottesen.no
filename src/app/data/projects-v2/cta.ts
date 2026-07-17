@@ -1,5 +1,10 @@
 import type { LocalizedString, ProjectV2Record } from "./types";
-import { buildAccessCodeContactHref } from "../../lib/project-contact-query";
+import {
+  buildAccessCodeContactHref,
+  buildProjectContactHref,
+  CONTACT_QUERY_TEMA,
+  type ContactQueryTema,
+} from "../../lib/project-contact-query";
 
 export type ProjectCtaAction = {
   href: string;
@@ -60,12 +65,25 @@ const accessCodeNote: LocalizedString = {
   en: "The solution is access-controlled and developed as a portfolio project / closed test environment — not presented as a finished commercial product.",
 };
 
-const defaultContactHref = "/kontakt";
-
 function isExternalProjectHref(href: string): boolean {
   return href.startsWith("http") || /\.(mov|mp4|webm|m4v)(\?|$)/i.test(href);
 }
 
+function contactHref(tema: ContactQueryTema, slug: string): string {
+  return buildProjectContactHref(tema, slug);
+}
+
+function secondaryContactTema(project: ProjectV2Record): ContactQueryTema {
+  if (project.slug === "ai-value-lab-oslo" || project.slug === "psc-promo-video") {
+    return CONTACT_QUERY_TEMA.samarbeid;
+  }
+  if (project.slug === "ai-faginnlegg-hub") {
+    return CONTACT_QUERY_TEMA.samarbeid;
+  }
+  return CONTACT_QUERY_TEMA.anvendelse;
+}
+
+/** Primær på /prosjekter: alltid detaljside når den finnes (ikke live-løsning). */
 function primaryOverviewAction(project: ProjectV2Record): ProjectCtaAction {
   if (project.playbackVideo) {
     return {
@@ -76,7 +94,7 @@ function primaryOverviewAction(project: ProjectV2Record): ProjectCtaAction {
     };
   }
 
-  const href = project.liveSolutionUrl ?? project.detailDestination;
+  const href = project.detailDestination;
   return {
     href,
     label: project.ctaLabels?.overviewPrimary ?? labels.explore,
@@ -86,17 +104,26 @@ function primaryOverviewAction(project: ProjectV2Record): ProjectCtaAction {
 
 function secondaryOverviewAction(project: ProjectV2Record): ProjectCtaAction {
   if (project.ctaLabels?.overviewSecondary) {
-    return { href: defaultContactHref, label: project.ctaLabels.overviewSecondary };
+    if (project.liveSolutionUrl && project.accessMode === "public") {
+      return {
+        href: project.liveSolutionUrl,
+        label: project.ctaLabels.overviewSecondary,
+        external: true,
+      };
+    }
+    return {
+      href: contactHref(secondaryContactTema(project), project.slug),
+      label: project.ctaLabels.overviewSecondary,
+    };
   }
 
-  const accessContactHref = buildAccessCodeContactHref(project.slug);
   const liveUrl = project.liveSolutionUrl;
 
   switch (project.accessMode) {
     case "access_code":
-      return { href: accessContactHref, label: labels.requestAccess };
+      return { href: buildAccessCodeContactHref(project.slug), label: labels.requestAccess };
     case "closed_demo":
-      return { href: defaultContactHref, label: labels.contactDemo };
+      return { href: contactHref(CONTACT_QUERY_TEMA.demonstrasjon, project.slug), label: labels.contactDemo };
     case "public":
       return {
         href: liveUrl ?? project.detailDestination,
@@ -104,23 +131,22 @@ function secondaryOverviewAction(project: ProjectV2Record): ProjectCtaAction {
         external: Boolean(liveUrl),
       };
     case "external_destination":
-      return { href: defaultContactHref, label: labels.contactApplication };
+      return { href: contactHref(CONTACT_QUERY_TEMA.anvendelse, project.slug), label: labels.contactApplication };
     case "concept":
     case "no_live_solution":
     default:
-      return { href: defaultContactHref, label: labels.contactApplication };
+      return { href: contactHref(CONTACT_QUERY_TEMA.anvendelse, project.slug), label: labels.contactApplication };
   }
 }
 
 function primaryDetailAction(project: ProjectV2Record): ProjectCtaAction {
-  const accessContactHref = buildAccessCodeContactHref(project.slug);
   const liveUrl = project.liveSolutionUrl;
 
   switch (project.accessMode) {
     case "access_code":
-      return { href: accessContactHref, label: labels.requestAccess };
+      return { href: buildAccessCodeContactHref(project.slug), label: labels.requestAccess };
     case "closed_demo":
-      return { href: defaultContactHref, label: labels.contactDemo };
+      return { href: contactHref(CONTACT_QUERY_TEMA.demonstrasjon, project.slug), label: labels.contactDemo };
     case "public":
       return {
         href: liveUrl ?? project.detailDestination,
@@ -137,11 +163,14 @@ function primaryDetailAction(project: ProjectV2Record): ProjectCtaAction {
     }
     case "concept":
     case "no_live_solution":
-    default:
+    default: {
+      const tema =
+        project.slug === "ai-value-lab-oslo" ? CONTACT_QUERY_TEMA.samarbeid : CONTACT_QUERY_TEMA.anvendelse;
       return {
-        href: defaultContactHref,
+        href: contactHref(tema, project.slug),
         label: project.ctaLabels?.detailPrimary ?? labels.contactApplication,
       };
+    }
   }
 }
 
@@ -155,7 +184,7 @@ function secondaryDetailAction(project: ProjectV2Record): ProjectCtaAction | und
         : undefined;
     case "public":
       return {
-        href: defaultContactHref,
+        href: contactHref(CONTACT_QUERY_TEMA.anvendelse, project.slug),
         label: project.ctaLabels?.detailSecondary ?? labels.contactApplication,
       };
     case "closed_demo":

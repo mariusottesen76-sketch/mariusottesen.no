@@ -7,8 +7,8 @@ export const agentiskArbeidsflytV2: ProjectV2Record = {
   layoutVersion: "project_v2",
   accessMode: "concept",
   detailLevel: "concise",
-  date: "2026-04-24",
-  displayDate: { no: "24.04.26", en: "24.04.26" },
+  date: "2026-04-28",
+  displayDate: { no: "28.04.26", en: "28.04.26" },
   title: {
     no: "Fra innsikt til kommersiell handling: Agentisk arbeidsflyt",
     en: "From insight to commercial action: Agentic workflow",

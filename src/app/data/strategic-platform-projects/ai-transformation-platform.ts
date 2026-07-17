@@ -208,6 +208,55 @@ export const aiTransformationPlatform: StrategicPlatformProject = {
         { no: "Neste beste handling", en: "Next best action" },
       ],
     },
+    demoPortfolio: {
+      heading: {
+        no: "Demoportefølje og eksempler på AI-initiativer",
+        en: "Demo portfolio and examples of AI initiatives",
+      },
+      intro: {
+        no: "Plattformen er demonstrert med 18 realistiske, men fiktive AI-initiativer. Initiativene dekker flere virksomhetsområder og ulike stadier fra pilot og implementering til skalering og realisert verdi.",
+        en: "The platform is demonstrated with 18 realistic but fictional AI initiatives. The initiatives cover multiple business areas and different stages from pilot and implementation to scaling and realised value.",
+      },
+      closing: {
+        no: "Demoporteføljen illustrerer hvordan plattformen kan prioritere initiativer med ulik verdi, modenhet, risiko, eierskap og organisatoriske avhengigheter.",
+        en: "The demo portfolio illustrates how the platform can prioritise initiatives with varying value, maturity, risk, ownership and organisational dependencies.",
+      },
+      categories: [
+        {
+          heading: { no: "Kunde, salg og marked", en: "Customer, sales and marketing" },
+          initiatives: [
+            { no: "Kundeserviceassistent", en: "Customer service assistant" },
+            { no: "Churn-prediksjon", en: "Churn prediction" },
+            { no: "Tilbuds- og anbudsassistent", en: "Tender and bid assistant" },
+            { no: "Salgsprognoser", en: "Sales forecasts" },
+            { no: "Neste beste kundehandling", en: "Next best customer action" },
+            { no: "Markeds- og konkurrentinnsikt", en: "Market and competitor insight" },
+            { no: "Produktinnholdsproduksjon", en: "Product content production" },
+          ],
+        },
+        {
+          heading: { no: "Drift, kvalitet og administrasjon", en: "Operations, quality and administration" },
+          initiatives: [
+            { no: "Prediktivt vedlikehold", en: "Predictive maintenance" },
+            { no: "Kapasitets- og bemanningsplanlegging", en: "Capacity and staffing planning" },
+            { no: "Automatisk kvalitetskontroll", en: "Automated quality control" },
+            { no: "Faktura- og avviksbehandling", en: "Invoice and deviation handling" },
+            { no: "Kontraktsanalyse", en: "Contract analysis" },
+          ],
+        },
+        {
+          heading: { no: "Mennesker, kunnskap og ledelse", en: "People, knowledge and leadership" },
+          initiatives: [
+            { no: "Automatisk møtereferat og oppfølging", en: "Automatic meeting minutes and follow-up" },
+            { no: "Intern kunnskapsassistent", en: "Internal knowledge assistant" },
+            { no: "Rekrutteringsstøtte", en: "Recruitment support" },
+            { no: "Kompetansekartlegging", en: "Competence mapping" },
+            { no: "Lederbrief og beslutningsstøtte", en: "Leadership brief and decision support" },
+            { no: "Intern chatbot-pilot", en: "Internal chatbot pilot" },
+          ],
+        },
+      ],
+    },
     relevans: {
       heading: { no: "Hvorfor prosjektet er relevant", en: "Why the project is relevant" },
       sections: [
@@ -249,7 +298,7 @@ export const aiTransformationPlatform: StrategicPlatformProject = {
       },
     },
     skalerbarhet: {
-      heading: { no: "Videreutvikling og skaleringspotensial", en: "Further development and scaling potential" },
+      heading: { no: "Videreutvikling og skalerbar anvendelse", en: "Further development and scalable application" },
       platform: {
         heading: { no: "Videreutvikling av plattformen", en: "Further platform development" },
         punkter: [
