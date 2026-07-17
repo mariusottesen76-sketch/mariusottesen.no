@@ -12,7 +12,7 @@ export const aiValueLabOslo: ProsjektType = {
     en: "Cross-disciplinary learning and development initiative where technology, business and practical development meet — documented on a dedicated project page.",
   },
   bildeUrl: "/images/ai-value-lab-oslo-hjemmeside.png?v=20260717",
-  dato: "2026-04-01",
+  dato: "2026-03-29",
   visningsDato: "29.03.26",
   bildeHint: {
     no: "Klikk på bildet for å se AI Value Lab Oslo i større format.",

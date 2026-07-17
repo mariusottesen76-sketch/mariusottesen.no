@@ -12,7 +12,7 @@ export const aiAssistertInnsiktsOgInnholdsagent: ProsjektType = {
     en: "Model and workflow for AI-assisted insight work — documented on a dedicated project page.",
   },
   bildeUrl: "/images/ai-innsikts-og-innholdsmotor-hjemmeside.png?v=20260717",
-  dato: "2026-04-19",
+  dato: "2026-02-13",
   visningsDato: "20.04.26",
   bildeHint: {
     no: "Klikk på bildet for å se arbeidsflyten i større format.",

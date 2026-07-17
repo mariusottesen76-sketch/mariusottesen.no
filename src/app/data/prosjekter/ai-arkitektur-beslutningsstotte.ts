@@ -13,7 +13,7 @@ export const aiArkitekturBeslutningsstotte: ProsjektType = {
   },
   bildeUrl: "/images/ai-arkitektur-beslutningsstotte-dashboard.jpg?v=20260717d",
   bildeRamme: "natural",
-  dato: "2026-04-10",
+  dato: "2026-01-30",
   visningsDato: "05.03.26",
   bildeHint: {
     no: "Klikk på bildet for å se AI-arkitektur for beslutningsstøtte i større format.",

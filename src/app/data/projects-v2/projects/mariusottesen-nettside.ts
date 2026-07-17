@@ -9,8 +9,8 @@ export const mariusottesenNettsideV2: ProjectV2Record = {
   layoutVersion: "project_v2",
   accessMode: "public",
   detailLevel: "full",
-  date: "2026-05-22",
-  displayDate: { no: "22.05.26", en: "22.05.26" },
+  date: "2026-04-10",
+  displayDate: { no: "10.04.26", en: "10.04.26" },
   title: {
     no: "Nettside for lederprofil, portefølje og AI-demonstratorer (mariusottesen.no)",
     en: "Website for leadership profile, portfolio and AI demonstrators (mariusottesen.no)",

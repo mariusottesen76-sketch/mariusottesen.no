@@ -8,8 +8,8 @@ export const aiReadinessScanV2: ProjectV2Record = {
   layoutVersion: "project_v2",
   accessMode: "access_code",
   detailLevel: "full",
-  date: "2026-06-17",
-  displayDate: { no: "17.06.26", en: "17.06.26" },
+  date: "2026-05-22",
+  displayDate: { no: "22.05.26", en: "22.05.26" },
   title: {
     no: "AI Readiness Scan: Kartlegging av AI-beredskap og gjennomføringsevne",
     en: "AI Readiness Scan: Mapping AI readiness and execution capability",

@@ -47,7 +47,7 @@ export const predictiveSalesCoach: ProsjektType = {
   },
   bildeUrl: "/images/psc2.png",
   bildeRamme: "natural",
-  dato: "2026-07-01",
+  dato: "2026-06-19",
   visningsDato: "25.05.26",
   bildeHint: {
     no: "Klikk på bildet for å se The Predictive Sales Coach i større format.",

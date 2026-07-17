@@ -7,8 +7,8 @@ export const aiInnsiktsOgInnholdsmotorV2: ProjectV2Record = {
   layoutVersion: "project_v2",
   accessMode: "concept",
   detailLevel: "concise",
-  date: "2026-04-19",
-  displayDate: { no: "19.04.26", en: "19.04.26" },
+  date: "2026-02-13",
+  displayDate: { no: "13.02.26", en: "13.02.26" },
   title: {
     no: "AI-assistert innsikts- og innholdsmotor",
     en: "AI-assisted insight and content engine",

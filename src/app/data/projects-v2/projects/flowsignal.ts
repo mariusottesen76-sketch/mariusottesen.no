@@ -8,8 +8,8 @@ export const flowsignalV2: ProjectV2Record = {
   layoutVersion: "project_v2",
   accessMode: "access_code",
   detailLevel: "full",
-  date: "2026-06-24",
-  displayDate: { no: "24.06.26", en: "24.06.26" },
+  date: "2026-06-05",
+  displayDate: { no: "05.06.26", en: "05.06.26" },
   title: {
     no: "FlowSignal v1.0: Profilinnsikt, dagsform og samhandling",
     en: "FlowSignal v1.0: Profile insight, daily form and collaboration",

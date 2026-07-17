@@ -12,7 +12,7 @@ export const skoyenasenTannklinikk: ProsjektType = {
     en: "Developed case, concept and prototype for digital patient journey — documented on a dedicated project page.",
   },
   bildeUrl: "/images/skoyenasen-tannklinikk-hjemmeside.png?v=20260717f",
-  dato: "2026-05-06",
+  dato: "2026-03-13",
   visningsDato: "26.03.26",
   bildeHint: {
     no: "Klikk på bildet for å se Skøyenåsen Tannklinikk i større format.",

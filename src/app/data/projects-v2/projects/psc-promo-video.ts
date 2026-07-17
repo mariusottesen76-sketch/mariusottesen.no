@@ -9,8 +9,8 @@ export const pscPromoVideoV2: ProjectV2Record = {
   layoutVersion: "project_v2",
   accessMode: "external_destination",
   detailLevel: "external_destination",
-  date: "2026-05-30",
-  displayDate: { no: "30.05.26", en: "30.05.26" },
+  date: "2026-04-24",
+  displayDate: { no: "24.04.26", en: "24.04.26" },
   title: {
     no: "Promovideo: The Predictive Sales Coach og Marius Ottesen Consulting",
     en: "Promo video: The Predictive Sales Coach and Marius Ottesen Consulting",

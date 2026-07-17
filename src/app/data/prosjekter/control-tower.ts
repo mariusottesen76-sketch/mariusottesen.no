@@ -12,7 +12,7 @@ export const controlTower: ProsjektType = {
   },
   bildeUrl: "/images/control-tower-hjemmeside.png?v=20260716",
   bildeRamme: "natural",
-  dato: "2026-07-09",
+  dato: "2026-07-03",
   visningsDato: "07.07.26",
   bildeHint: {
     no: "Klikk på bildet for å se Control Tower i større format.",

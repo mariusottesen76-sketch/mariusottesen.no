@@ -7,8 +7,8 @@ export const aiValueLabOsloV2: ProjectV2Record = {
   layoutVersion: "project_v2",
   accessMode: "concept",
   detailLevel: "concise",
-  date: "2026-04-01",
-  displayDate: { no: "01.04.26", en: "01.04.26" },
+  date: "2026-03-29",
+  displayDate: { no: "29.03.26", en: "29.03.26" },
   title: {
     no: "AI Value Lab Oslo: Praktisk AI-verdi for virksomheter",
     en: "AI Value Lab Oslo: Practical AI value for organisations",

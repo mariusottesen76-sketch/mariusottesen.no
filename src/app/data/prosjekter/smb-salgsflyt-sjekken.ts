@@ -13,7 +13,7 @@ export const smbSalgsflytSjekken: ProsjektType = {
   },
   bildeUrl: "/images/smb-salgsflyt-sjekken-hjemmeside.png?v=20260717",
   bildeRamme: "natural",
-  dato: "2026-06-10",
+  dato: "2026-05-08",
   visningsDato: "16.06.26",
   bildeHint: {
     no: "Klikk på bildet for å se SMB Salgsflyt-sjekken i større format.",

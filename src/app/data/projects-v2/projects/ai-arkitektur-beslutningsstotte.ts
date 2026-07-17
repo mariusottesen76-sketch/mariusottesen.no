@@ -7,8 +7,8 @@ export const aiArkitekturBeslutningsstotteV2: ProjectV2Record = {
   layoutVersion: "project_v2",
   accessMode: "concept",
   detailLevel: "concise",
-  date: "2026-04-10",
-  displayDate: { no: "10.04.26", en: "10.04.26" },
+  date: "2026-01-30",
+  displayDate: { no: "30.01.26", en: "30.01.26" },
   title: {
     no: "AI-arkitektur for beslutningsstøtte og kommersiell prioritering",
     en: "AI architecture for decision support and commercial prioritisation",

@@ -8,8 +8,8 @@ export const controlTowerV2: ProjectV2Record = {
   layoutVersion: "project_v2",
   accessMode: "concept",
   detailLevel: "full",
-  date: "2026-07-09",
-  displayDate: { no: "09.07.26", en: "09.07.26" },
+  date: "2026-07-03",
+  displayDate: { no: "03.07.26", en: "03.07.26" },
   title: {
     no: "Control Tower: Decision & Execution Intelligence",
     en: "Control Tower: Decision & Execution Intelligence",

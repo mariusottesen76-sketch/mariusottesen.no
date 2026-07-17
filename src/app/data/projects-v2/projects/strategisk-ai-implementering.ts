@@ -7,8 +7,8 @@ export const strategiskAiImplementeringV2: ProjectV2Record = {
   layoutVersion: "project_v2",
   accessMode: "no_live_solution",
   detailLevel: "full",
-  date: "2026-05-14",
-  displayDate: { no: "14.05.26", en: "14.05.26" },
+  date: "2026-03-27",
+  displayDate: { no: "27.03.26", en: "27.03.26" },
   title: {
     no: "Strategisk AI-implementering: Fra case til gjennomførbar plan",
     en: "Strategic AI implementation: From case to executable plan",

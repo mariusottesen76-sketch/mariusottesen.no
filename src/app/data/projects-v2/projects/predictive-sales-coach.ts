@@ -8,8 +8,8 @@ export const predictiveSalesCoachV2: ProjectV2Record = {
   layoutVersion: "project_v2",
   accessMode: "access_code",
   detailLevel: "full",
-  date: "2026-07-01",
-  displayDate: { no: "01.07.26", en: "01.07.26" },
+  date: "2026-06-19",
+  displayDate: { no: "19.06.26", en: "19.06.26" },
   title: {
     no: "The Predictive Sales Coach v2.0: AI-basert salgstrening og møteforberedelse",
     en: "The Predictive Sales Coach v2.0: AI-based sales training and meeting preparation",

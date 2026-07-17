@@ -13,7 +13,7 @@ export const flowSignal: ProsjektType = {
   },
   bildeUrl: "/images/flowsignal-hjemmeside.png?v=20260717",
   bildeRamme: "natural",
-  dato: "2026-06-24",
+  dato: "2026-06-05",
   visningsDato: "29.05.26",
   bildeHint: {
     no: "Klikk på bildet for å se FlowSignal i større format.",

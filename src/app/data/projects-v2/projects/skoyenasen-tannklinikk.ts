@@ -7,8 +7,8 @@ export const skoyenasenTannklinikkV2: ProjectV2Record = {
   layoutVersion: "project_v2",
   accessMode: "no_live_solution",
   detailLevel: "full",
-  date: "2026-05-06",
-  displayDate: { no: "06.05.26", en: "06.05.26" },
+  date: "2026-03-13",
+  displayDate: { no: "13.03.26", en: "13.03.26" },
   title: {
     no: "Skøyenåsen Tannklinikk: AI i pasientreise, intake og booking",
     en: "Skøyenåsen Dental Clinic: AI in patient journey, intake and booking",
