@@ -10,8 +10,8 @@ export const aiTransformationPlatform: StrategicPlatformProject = {
       en: "AI Transformation & Value Realization | Marius Ottesen",
     },
     description: {
-      no: "Executive konseptplattform for prioritering av AI-initiativer, transformasjonsstyring, skalering og dokumentert forretningseffekt.",
-      en: "Executive concept platform for prioritising AI initiatives, transformation governance, scaling and documented business impact.",
+      no: "Executive konseptplattform for prioritering av AI-initiativer, transformasjonsstyring, skalering og strukturert oppfølging av forventet og realisert forretningsverdi.",
+      en: "Executive concept platform for prioritising AI initiatives, transformation governance, scaling and structured follow-up of expected and realised business value.",
     },
     ogImage: "/images/ai-transformation-value-realization-hjemmeside-bak.png",
     canonicalPath: "/ai-transformation-value-realization",
@@ -55,8 +55,8 @@ export const aiTransformationPlatform: StrategicPlatformProject = {
     },
     hero: {
       verdiforslag: {
-        no: "En executive plattform for virksomheter som skal bevege AI fra enkeltstående piloter til prioriterte initiativer, skalert gjennomføring og dokumentert forretningseffekt.",
-        en: "An executive platform for organisations moving AI from standalone pilots to prioritised initiatives, scaled execution and documented business impact.",
+        no: "En executive plattform for virksomheter som skal bevege AI fra enkeltstående piloter til prioriterte initiativer, skalert gjennomføring og strukturert oppfølging av forventet og realisert forretningsverdi.",
+        en: "An executive platform for organisations moving AI from standalone pilots to prioritised initiatives, scaled execution and structured follow-up of expected and realised business value.",
       },
       executiveSummary: {
         no: "Plattformen gir ledergrupper et samlet bilde av hvilke AI-initiativer virksomheten har, hvor de befinner seg i transformasjonsreisen, hvilke beslutninger som kreves, og om forventede gevinster faktisk blir realisert.",
@@ -70,8 +70,8 @@ export const aiTransformationPlatform: StrategicPlatformProject = {
     utfordring: {
       heading: { no: "Utfordringen plattformen adresserer", en: "The challenge the platform addresses" },
       body: {
-        no: "Mange virksomheter har fått flere AI-verktøy, idéer og piloter, men mangler en samlet styringsmodell. Initiativene vurderes ulikt, ansvar og avhengigheter er uklare, og overgangen fra pilot til ny praksis blir svak.\n\nDet sentrale gapet er derfor ikke bare teknologisk:\n\nAI-idé → pilot → forankring → implementering → skalering → ny praksis → dokumentert effekt\n\nPlattformen er utviklet for å gjøre denne reisen mer synlig, prioritert og styrbar.",
-        en: "Many organisations have acquired multiple AI tools, ideas and pilots, but lack a unified governance model. Initiatives are assessed inconsistently, ownership and dependencies are unclear, and the transition from pilot to new practice is weak.\n\nThe central gap is therefore not only technological:\n\nAI idea → pilot → anchoring → implementation → scaling → new practice → documented impact\n\nThe platform is designed to make this journey more visible, prioritised and governable.",
+        no: "Mange virksomheter har fått flere AI-verktøy, idéer og piloter, men mangler en samlet styringsmodell. Initiativene vurderes ulikt, ansvar og avhengigheter er uklare, og overgangen fra pilot til ny praksis blir svak.\n\nDet sentrale gapet er derfor ikke bare teknologisk:\n\nAI-idé → pilot → forankring → implementering → skalering → ny praksis → effektoppfølging\n\nPlattformen er utviklet for å gjøre denne reisen mer synlig, prioritert og styrbar.",
+        en: "Many organisations have acquired multiple AI tools, ideas and pilots, but lack a unified governance model. Initiatives are assessed inconsistently, ownership and dependencies are unclear, and the transition from pilot to new practice is weak.\n\nThe central gap is therefore not only technological:\n\nAI idea → pilot → anchoring → implementation → scaling → new practice → impact follow-up\n\nThe platform is designed to make this journey more visible, prioritised and governable.",
       },
     },
     logikk: {
@@ -343,7 +343,7 @@ export const aiTransformationPlatform: StrategicPlatformProject = {
       },
     },
     avslutning: {
-      heading: { no: "Fra AI-piloter til dokumentert verdi", en: "From AI pilots to documented value" },
+      heading: { no: "Fra AI-piloter til realisert verdi", en: "From AI pilots to realised value" },
       body: {
         no: "Prosjektet er utviklet som en faglig og praktisk demonstrasjon av hvordan AI-transformasjon kan prioriteres, styres og følges opp. Ta kontakt dersom du ønsker å diskutere tilsvarende problemstillinger i en lederrolle, virksomhet eller mulig faglig sammenheng.",
         en: "The project is developed as a professional and practical demonstration of how AI transformation can be prioritised, governed and followed up. Get in touch if you would like to discuss similar challenges in a leadership role, organisation or potential professional context.",

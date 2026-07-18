@@ -26,9 +26,17 @@ export default function Referanser() {
 
         <div className="flex-1 min-w-0 space-y-6">
           <div className="space-y-2">
-            <h2 className={pageTitleClass}>
-              {lang === "no" ? (<>Referanser & <span className="text-indigo-500">anbefalinger</span></>) : (<>References & <span className="text-indigo-500">recommendations</span></>)}
-            </h2>
+            <h1 className={pageTitleClass}>
+              {lang === "no" ? (
+                <>
+                  Referanser og <span className="text-indigo-500">anbefalinger</span>
+                </>
+              ) : (
+                <>
+                  References and <span className="text-indigo-500">recommendations</span>
+                </>
+              )}
+            </h1>
             <p className={pageEyebrowClass}>
               {tr("ref.sub")}
             </p>

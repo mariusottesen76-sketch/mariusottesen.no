@@ -99,7 +99,7 @@ export default function Prosjekter({ onNavigate: _onNavigate }: { onNavigate?: (
         <div className="w-full md:w-[400px] shrink-0 min-w-0">
           <Image
             src="/images/etikk.jfif"
-            alt="Etikk og ansvarlig bruk av AI — illustrasjon"
+            alt="AI-prosjekter, apper og virksomhetsnære AI-modeller utviklet av Marius Ottesen"
             width={400}
             height={500}
             priority

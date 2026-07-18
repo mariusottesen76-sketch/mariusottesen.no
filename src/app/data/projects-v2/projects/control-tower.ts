@@ -8,8 +8,8 @@ export const controlTowerV2: ProjectV2Record = {
   layoutVersion: "project_v2",
   accessMode: "concept",
   detailLevel: "full",
-  date: "2026-07-03",
-  displayDate: { no: "03.07.26", en: "03.07.26" },
+  date: "2026-07-07",
+  displayDate: { no: "07.07.26", en: "07.07.26" },
   title: {
     no: "Control Tower: Decision & Execution Intelligence",
     en: "Control Tower: Decision & Execution Intelligence",
@@ -27,13 +27,13 @@ export const controlTowerV2: ProjectV2Record = {
     en: "Concept prototype",
   },
   overviewIntroduction: {
-    no: "Control Tower er en ferdigstilt beslutnings- og gjennomføringsplattform som omsetter spredte data, KPI-er og risikosignaler til tydelige prioriteringer, tiltak, ansvar og dokumentert effekt.",
-    en: "Control Tower is a completed decision and execution platform that turns scattered data, KPIs and risk signals into clear priorities, actions, ownership and documented impact.",
+    no: "Control Tower er en ferdigstilt beslutnings- og gjennomføringsplattform som omsetter spredte data, KPI-er og risikosignaler til tydelige prioriteringer, tiltak, ansvar og systematisk effektoppfølging.",
+    en: "Control Tower is a completed decision and execution platform that turns scattered data, KPIs and risk signals into clear priorities, actions, ownership and systematic impact follow-up.",
   },
   overview: {
     what: {
-      no: "En modulær lederplattform som gjør spredte virksomhetssignaler om til prioriteringer, tiltak, ansvar og dokumentert effekt.",
-      en: "A modular leadership platform that turns scattered business signals into priorities, actions, ownership and documented impact.",
+      no: "En modulær lederplattform som gjør spredte virksomhetssignaler om til prioriteringer, tiltak, ansvar og systematisk effektoppfølging.",
+      en: "A modular leadership platform that turns scattered business signals into priorities, actions, ownership and systematic impact follow-up.",
     },
     challenge: {
       no: "Mange virksomheter har nok data og rapporter, men mangler tydelig prioritering, eierskap og kobling til konkret handling. Kritiske signaler kan derfor oppdages sent, mens tiltak og effekt blir svakt fulgt opp.",
@@ -81,8 +81,8 @@ export const controlTowerV2: ProjectV2Record = {
       en: "Control Tower – Decision & Execution Intelligence | Marius Ottesen",
     },
     description: {
-      no: "Modulær lederplattform for operativ og kommersiell prioritering, neste beste handling, ansvar og dokumentert effekt.",
-      en: "Modular leadership platform for operational and commercial prioritisation, next best action, ownership and documented impact.",
+      no: "Modulær lederplattform for operativ og kommersiell prioritering, neste beste handling, ansvar og systematisk effektoppfølging.",
+      en: "Modular leadership platform for operational and commercial prioritisation, next best action, ownership and systematic impact follow-up.",
     },
     ogImage: "/images/control-tower-hjemmeside-bak.png",
     canonicalPath: "/control-tower",

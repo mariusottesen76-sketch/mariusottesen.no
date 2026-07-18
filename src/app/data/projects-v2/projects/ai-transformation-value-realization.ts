@@ -32,8 +32,8 @@ export const aiTransformationV2: ProjectV2Record = {
   },
   overview: {
     what: {
-      no: "En executive plattform for virksomheter som skal bevege AI fra enkeltstående piloter til prioriterte initiativer, skalert gjennomføring og dokumentert forretningseffekt.",
-      en: "An executive platform for organisations moving AI from standalone pilots to prioritised initiatives, scaled execution and documented business impact.",
+      no: "En executive plattform for virksomheter som skal bevege AI fra enkeltstående piloter til prioriterte initiativer, skalert gjennomføring og strukturert oppfølging av forventet og realisert forretningsverdi.",
+      en: "An executive platform for organisations moving AI from standalone pilots to prioritised initiatives, scaled execution and structured follow-up of expected and realised business value.",
     },
     challenge: {
       no: "Mange virksomheter har startet med AI-verktøy, eksperimenter og piloter. Utfordringen oppstår når initiativene skal prioriteres, forankres, implementeres og skaleres, samtidig som forventede gevinster skal dokumenteres.",
@@ -81,8 +81,8 @@ export const aiTransformationV2: ProjectV2Record = {
       en: "AI Transformation & Value Realization | Marius Ottesen",
     },
     description: {
-      no: "Executive konseptplattform for prioritering av AI-initiativer, transformasjonsstyring, skalering og dokumentert forretningseffekt.",
-      en: "Executive concept platform for prioritising AI initiatives, transformation governance, scaling and documented business impact.",
+      no: "Executive konseptplattform for prioritering av AI-initiativer, transformasjonsstyring, skalering og strukturert oppfølging av forventet og realisert forretningsverdi.",
+      en: "Executive concept platform for prioritising AI initiatives, transformation governance, scaling and structured follow-up of expected and realised business value.",
     },
     ogImage: "/images/ai-transformation-value-realization-hjemmeside-bak.png",
     canonicalPath: "/ai-transformation-value-realization",

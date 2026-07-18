@@ -121,3 +121,14 @@ html, body {
 main, section, div {
   max-width: 100%;
 }
+
+/* Nummererte steg — semantisk ol uten duplisert listemarkør i maskinlest innhold */
+.numbered-step-grid,
+.numbered-step-grid__item {
+  list-style: none;
+  list-style-type: none;
+}
+
+.numbered-step-grid__item::marker {
+  content: "";
+}

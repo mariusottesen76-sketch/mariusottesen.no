@@ -42,9 +42,17 @@ export default function Erfaring() {
 
         <div className="flex-1 min-w-0 space-y-6">
           <div className="space-y-4 text-left">
-            <h2 className={pageTitleClass}>
-              {lang === "no" ? (<>Karriere <span className="text-indigo-500">høydepunkter</span></>) : (<>Career <span className="text-indigo-500">highlights</span></>)}
-            </h2>
+            <h1 className={pageTitleClass}>
+              {lang === "no" ? (
+                <>
+                  Erfaring og <span className="text-indigo-500">karrierehøydepunkter</span>
+                </>
+              ) : (
+                <>
+                  Experience and <span className="text-indigo-500">career highlights</span>
+                </>
+              )}
+            </h1>
             <div className="text-lg text-slate-300 border-l-4 border-indigo-600 pl-6 italic font-medium leading-relaxed">
               {CONTENT.intro}
             </div>
