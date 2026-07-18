@@ -71,6 +71,11 @@ export type StrategicPlatformUtvikler = {
   beskrivelse: LocalizedString;
 };
 
+export type StrategicPlatformFaqItem = {
+  question: LocalizedString;
+  answer: LocalizedString;
+};
+
 export type StrategicPlatformMeta = {
   title: LocalizedString;
   description: LocalizedString;
@@ -103,6 +108,7 @@ export type StrategicPlatformDemoPortfolio = {
   heading: LocalizedString;
   intro: LocalizedString;
   closing: LocalizedString;
+  disclaimer?: LocalizedString;
   categories: StrategicPlatformDemoPortfolioCategory[];
 };
 
@@ -113,8 +119,19 @@ export type StrategicPlatformDetail = {
     executiveSummary: LocalizedString;
     bildeAlt: LocalizedString;
   };
+  /** Kompakt posisjonering — etter hero, før utvidet beskrivelse. */
+  kortFortalt?: { heading: LocalizedString; body: LocalizedString };
   utfordring: { heading: LocalizedString; body: LocalizedString };
-  logikk: { heading: LocalizedString; body: LocalizedString; steps?: StrategicPlatformStep[]; after?: LocalizedString };
+  logikk: {
+    heading: LocalizedString;
+    body: LocalizedString;
+    steps?: StrategicPlatformStep[];
+    after?: LocalizedString;
+    /** Forklaring av «Predictive» — plasseres i logikk-seksjonen. */
+    predictiveForklaring?: { heading: LocalizedString; body: LocalizedString };
+  };
+  /** Datagrunnlag og integrasjoner — avgrenser mot CRM/live-data. */
+  datagrunnlag?: { heading: LocalizedString; body: LocalizedString };
   bygget: { heading: LocalizedString; body?: LocalizedString; items: LocalizedString[] };
   moduler: { heading: LocalizedString; intro?: LocalizedString; modules: StrategicPlatformModule[] };
   hvordan: {
@@ -128,12 +145,18 @@ export type StrategicPlatformDetail = {
     body?: LocalizedString;
     sections?: StrategicPlatformRelevansSection[];
   };
+  /** Aktuelle effektområder — utvalgte pilotdetaljsider (PSC, FlowSignal). */
+  effektomrader?: { heading: LocalizedString; punkter: LocalizedString[] };
+  /** Mulig anvendelsesformat — utvalgte pilotdetaljsider. */
+  anvendelsesformat?: { heading: LocalizedString; steg: StrategicPlatformStep[] };
   /** Demoportefølje — kun på utvalgte plattformdetaljsider. */
   demoPortfolio?: StrategicPlatformDemoPortfolio;
   /** Illustrative styringscenarioer — kun på utvalgte plattformdetaljsider. */
   governanceScenarios?: StrategicPlatformGovernanceScenarios;
   status: { heading: LocalizedString; body: LocalizedString };
   skalerbarhet: StrategicPlatformScalability & { heading: LocalizedString };
+  /** Kompakt FAQ — semantisk details/summary, fullt lesbar uten JS. */
+  faq?: { heading: LocalizedString; items: StrategicPlatformFaqItem[] };
   avslutning: { heading: LocalizedString; body: LocalizedString; secondaryLabel?: LocalizedString };
   utvikler?: StrategicPlatformUtvikler;
 };

@@ -15,6 +15,7 @@ import {
   sectionHeadingWrapClass,
   sectionTitleClass,
 } from "../lib/typography";
+import NumberedStepGrid from "./strategic-platform/NumberedStepGrid";
 
 const linkClass =
   "text-indigo-400 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400";
@@ -164,17 +165,7 @@ function PilotLandingInner({ slug }: { slug: PilotSide["slug"] }) {
 
       <section aria-labelledby="pilot-gjennomforing" className="mb-10">
         <SectionHeading id="pilot-gjennomforing">{t(side.gjennomforing.tittel, lang)}</SectionHeading>
-        <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-          {side.gjennomforing.steg.map((steg, index) => (
-            <li key={steg.tittel.no} className="p-4 bg-slate-900/40 rounded-xl border border-slate-800 space-y-2">
-              <span className="flex items-center justify-center w-7 h-7 rounded-full bg-indigo-500/15 border border-indigo-500/30 text-indigo-300 text-xs font-black">
-                {index + 1}
-              </span>
-              <h3 className={cardTitleClass}>{t(steg.tittel, lang)}</h3>
-              <p className="text-slate-400 text-sm font-light leading-relaxed">{t(steg.beskrivelse, lang)}</p>
-            </li>
-          ))}
-        </ol>
+        <NumberedStepGrid steps={side.gjennomforing.steg} lang={lang} />
       </section>
 
       <section aria-labelledby="pilot-utvikler" className="mb-10">

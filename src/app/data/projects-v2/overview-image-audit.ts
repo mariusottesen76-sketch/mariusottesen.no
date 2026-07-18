@@ -126,13 +126,13 @@ export const overviewImageAudit: OverviewImageAuditEntry[] = [
   },
   {
     projectId: "ai-arkitektur-beslutningsstotte-2026",
-    overviewImage: "/images/ai-arkitektur-beslutningsstotte-dashboard.jpg?v=20260717d",
-    aspectNote: "Norsk dashboard (2:1) — object-fit: contain i 1:3",
+    overviewImage: "/images/ai-arkitektur-beslutningsstotte-hjemmeside.png?v=20260718",
+    aspectNote: "Vertikalt 1:3 oversiktsbilde",
     fit: "contain",
     needsNewOverviewImage: false,
-    recommendedFilename: "ai-arkitektur-beslutningsstotte-dashboard.jpg",
-    recommendedDimensions: "1024×512 px (2:1)",
-    notes: "Samme dashboard-bilde på oversikt og detalj. Hero: object-cover i 3:1.",
+    recommendedFilename: "ai-arkitektur-beslutningsstotte-hjemmeside.png",
+    recommendedDimensions: "1200×3600 px",
+    notes: "1:3 oversiktsbilde på /prosjekter. Detaljhero beholder dashboard-bildet.",
   },
   {
     projectId: "ai-value-lab-oslo-2026",

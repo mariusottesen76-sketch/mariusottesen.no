@@ -1,5 +1,6 @@
 import { Lang } from "../LanguageContext";
 import { AI_READINESS_SCAN_PROSJEKT_PATH } from "../lib/ai-readiness-scan-brand";
+import { PSC_SHORT_DESCRIPTION } from "../lib/psc-brand";
 import { SMB_SALGSFLYT_PILOT_PATH } from "../lib/smb-salgsflyt-brand";
 
 export type PakkePilotStotte = {
@@ -17,12 +18,25 @@ const pscDemonstratorStotte: Record<Lang, PakkePilotStotte> = {
   no: {
     tekst: "Prosjektet viser hvordan møteforberedelse, salgstrening og refleksjon kan støttes med AI.",
     lenkeHref: "/psc",
-    lenkeLabel: "Se The Predictive Sales Coach som demonstrator",
+    lenkeLabel: "Se AI-basert salgstrening og kundesimulering",
   },
   en: {
     tekst: "The project shows how meeting preparation, sales training and reflection can be supported with AI.",
     lenkeHref: "/psc",
-    lenkeLabel: "See The Predictive Sales Coach as a demonstrator",
+    lenkeLabel: "See AI-based sales training and customer simulation",
+  },
+};
+
+const pscProsjektLenke: Record<Lang, PakkePilotStotte> = {
+  no: {
+    tekst: portefoljeProsjektTekst.no,
+    lenkeHref: "/psc",
+    lenkeLabel: "Utforsk The Predictive Sales Coach",
+  },
+  en: {
+    tekst: portefoljeProsjektTekst.en,
+    lenkeHref: "/psc",
+    lenkeLabel: "Explore The Predictive Sales Coach",
   },
 };
 
@@ -264,8 +278,8 @@ const metoder: Record<Lang, MetodeKomponent[]> = {
     },
     {
       tittel: "The Predictive Sales Coach",
-      beskrivelse: "Salgstrening, møteforberedelse og salgslederinnsikt",
-      pilotStotte: prosjektLenke("/psc").no,
+      beskrivelse: PSC_SHORT_DESCRIPTION.no,
+      pilotStotte: pscProsjektLenke.no,
     },
     {
       tittel: "FlowSignal",
@@ -304,8 +318,8 @@ const metoder: Record<Lang, MetodeKomponent[]> = {
     },
     {
       tittel: "The Predictive Sales Coach",
-      beskrivelse: "Sales training, meeting preparation and sales leadership insight",
-      pilotStotte: prosjektLenke("/psc").en,
+      beskrivelse: PSC_SHORT_DESCRIPTION.en,
+      pilotStotte: pscProsjektLenke.en,
     },
     {
       tittel: "FlowSignal",

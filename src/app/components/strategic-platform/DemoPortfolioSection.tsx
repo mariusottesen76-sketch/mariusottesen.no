@@ -41,6 +41,9 @@ export default function DemoPortfolioSection({ data, lang }: DemoPortfolioSectio
         ))}
       </div>
       <p className="text-sm text-slate-500 font-light leading-relaxed mt-5 italic">{t(data.closing, lang)}</p>
+      {data.disclaimer && (
+        <p className="text-xs text-slate-500 font-light leading-relaxed mt-2">{t(data.disclaimer, lang)}</p>
+      )}
     </section>
   );
 }

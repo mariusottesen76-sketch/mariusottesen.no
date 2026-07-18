@@ -1,4 +1,5 @@
 import type { StrategicPlatformProject } from "./types";
+import { PSC_SEO_DESCRIPTION, PSC_SEO_TITLE, PSC_SHORT_DESCRIPTION } from "../../lib/psc-brand";
 
 const utvikler = {
   navn: { no: "Marius Ottesen", en: "Marius Ottesen" },
@@ -14,14 +15,8 @@ export const predictiveSalesCoachPlatform: StrategicPlatformProject = {
   prosjektId: "predictive-sales-coach-2026",
   detailPath: "/psc",
   meta: {
-    title: {
-      no: "The Predictive Sales Coach v2.0 | Marius Ottesen",
-      en: "The Predictive Sales Coach v2.0 | Marius Ottesen",
-    },
-    description: {
-      no: "AI-basert salgstrening og møteforberedelse med realistiske kundesimuleringer, scorecard, DISC-inspirert kommunikasjon og lederinnsikt — tilgangsstyrt lukket pilot.",
-      en: "AI-based sales training and meeting preparation with realistic customer simulations, scorecard, DISC-inspired communication and leadership insight — access-controlled closed pilot.",
-    },
+    title: PSC_SEO_TITLE,
+    description: PSC_SEO_DESCRIPTION,
     ogImage: "/images/predictive-sales-coach-hero.png",
     canonicalPath: "/psc",
   },
@@ -30,10 +25,7 @@ export const predictiveSalesCoachPlatform: StrategicPlatformProject = {
       no: "Lukket pilot og tilgangsstyrt trenings-, evaluerings- og lederinnsiktsplattform for B2B-salg",
       en: "Closed pilot and access-controlled training, evaluation and leadership insight platform for B2B sales",
     },
-    intro: {
-      no: "The Predictive Sales Coach v2.0 er en AI-basert salgstrenings- og analyseplattform for selgere, salgsledere og kommersielle team som vil trene mer målrettet før viktige kundemøter.",
-      en: "The Predictive Sales Coach v2.0 is an AI-based sales training and analysis platform for sales reps, sales leaders and commercial teams who want to train more purposefully before important customer meetings.",
-    },
+    intro: PSC_SHORT_DESCRIPTION,
     blokker: {
       utfordring: {
         no: "Mange selgere trener for lite før viktige kundemøter. Forberedelser blir ofte generelle, kundeinnsikt brukes ujevnt, og salgsledere mangler strukturert innsikt i hvilke ferdigheter teamet faktisk må utvikle.",
@@ -63,17 +55,21 @@ export const predictiveSalesCoachPlatform: StrategicPlatformProject = {
       en: "Closed pilot and access-controlled training, evaluation and leadership insight platform",
     },
     hero: {
-      verdiforslag: {
-        no: "AI-basert salgstrening og møteforberedelse for B2B-salg, med realistiske kundesimuleringer og strukturert feedback.",
-        en: "AI-based sales training and meeting preparation for B2B sales, with realistic customer simulations and structured feedback.",
-      },
+      verdiforslag: PSC_SHORT_DESCRIPTION,
       executiveSummary: {
-        no: "The Predictive Sales Coach v2.0 er utviklet for selgere, salgsledere og kommersielle team som ønsker mer målrettet trening før viktige kundemøter — som tilgangsstyrt lukket pilot, ikke ferdig kommersielt produkt.",
-        en: "The Predictive Sales Coach v2.0 is built for sales reps, sales leaders and commercial teams who want more purposeful training before important customer meetings — as an access-controlled closed pilot, not a finished commercial product.",
+        no: "Utviklet for selgere, salgsledere og kommersielle team — som tilgangsstyrt lukket pilot for trenings-, simulerings- og evalueringsbruk, ikke som CRM-system, salgsprognoseverktøy eller ferdig kommersielt produkt.",
+        en: "Built for sales reps, sales leaders and commercial teams — as an access-controlled closed pilot for training, simulation and evaluation use, not as a CRM system, sales forecasting tool or finished commercial product.",
       },
       bildeAlt: {
         no: "The Predictive Sales Coach v2.0 – AI-basert salgstrening og møteforberedelse",
         en: "The Predictive Sales Coach v2.0 – AI-based sales training and meeting preparation",
+      },
+    },
+    kortFortalt: {
+      heading: { no: "Kort fortalt", en: "In brief" },
+      body: {
+        no: "The Predictive Sales Coach v2.0 er en AI-basert trenings- og evalueringsplattform for B2B-kundedialog. Brukeren setter opp et scenario, gjennomfører en simulert kundesamtale og mottar strukturert feedback, score og læringspunkter. Dagens løsning er ikke et CRM-system, et salgsprognoseverktøy eller en motor for lead scoring og kundeprioritering.",
+        en: "The Predictive Sales Coach v2.0 is an AI-based training and evaluation platform for B2B customer dialogue. The user sets up a scenario, runs a simulated customer conversation and receives structured feedback, scores and learning points. The current solution is not a CRM system, a sales forecasting tool or an engine for lead scoring and customer prioritisation.",
       },
     },
     utfordring: {
@@ -86,8 +82,15 @@ export const predictiveSalesCoachPlatform: StrategicPlatformProject = {
     logikk: {
       heading: { no: "Prosjektets modell og hovedlogikk", en: "The project's model and core logic" },
       body: {
-        no: "PSCv2.0 skiller tydelig mellom trening før kundemøtet og evaluering etterpå. Modellen følger en praktisk læringssløyfe:",
-        en: "PSCv2.0 clearly separates training before the customer meeting and evaluation afterwards. The model follows a practical learning loop:",
+        no: "PSCv2.0 skiller tydelig mellom trening før kundemøtet og evaluering etterpå. Modellen følger en praktisk læringssløyfe for simulert B2B-kundedialog:",
+        en: "PSCv2.0 clearly separates training before the customer meeting and evaluation afterwards. The model follows a practical learning loop for simulated B2B customer dialogue:",
+      },
+      predictiveForklaring: {
+        heading: { no: "Hva betyr «Predictive»?", en: "What does «Predictive» mean?" },
+        body: {
+          no: "«Predictive» viser til at selgeren kan forberede seg på mulige kundereaksjoner, innvendinger og samtaleforløp før møtet. Det betyr ikke at dagens løsning predikerer pipeline, salgssannsynlighet eller økonomiske resultater.",
+          en: "«Predictive» means the salesperson can prepare for possible customer reactions, objections and conversation flows before the meeting. It does not mean the current solution predicts pipeline, win probability or financial results.",
+        },
       },
       steps: [
         {
@@ -120,8 +123,15 @@ export const predictiveSalesCoachPlatform: StrategicPlatformProject = {
         },
       ],
       after: {
-        no: "Målet er ikke bare å evaluere én samtale, men å vise hva som fungerte, hva som bør trenes videre på, og hvordan neste kundemøte kan gjennomføres bedre.",
-        en: "The goal is not only to evaluate one conversation, but to show what worked, what should be practised further, and how the next customer meeting can be conducted better.",
+        no: "Målet er å gi grunnlag for evaluering av samtalen, trening på utviklingsområder og forberedelse til neste kundemøte — ikke å score pipeline, prioritere leads eller forutsi salgsresultater.",
+        en: "The goal is to provide a basis for evaluating the conversation, training on development areas and preparing for the next customer meeting — not to score pipeline, prioritise leads or predict sales results.",
+      },
+    },
+    datagrunnlag: {
+      heading: { no: "Datagrunnlag og integrasjoner", en: "Data foundation and integrations" },
+      body: {
+        no: "I dagens versjon bygger simuleringen på scenarioinformasjonen brukeren legger inn, valgte kunde- og kommunikasjonsprofiler og dialogen som gjennomføres i løsningen. PSC leser ikke live-data fra CRM, e-post, Teams eller kalender. CRM-kobling, talegrensesnitt og mer avansert analyse er mulige videreutviklingsspor, men er ikke en del av dagens løsning.",
+        en: "In the current version, the simulation is based on scenario information entered by the user, selected customer and communication profiles, and the dialogue conducted in the solution. PSC does not read live data from CRM, email, Teams or calendar. CRM integration, voice interface and more advanced analysis are possible further development tracks, but are not part of the current solution.",
       },
     },
     bygget: {
@@ -176,10 +186,6 @@ export const predictiveSalesCoachPlatform: StrategicPlatformProject = {
     },
     hvordan: {
       heading: { no: "Hvordan løsningen fungerer", en: "How the solution works" },
-      intro: {
-        no: "Brukeren setter opp scenario, trener på kundedialogen og mottar evaluering og læringspunkter etter økten.",
-        en: "The user sets up a scenario, trains on the customer dialogue, and receives evaluation and learning points after the session.",
-      },
       detaljpunkter: [
         {
           no: "Scenario-oppsett knytter kundetype, bransje, salgsfase og møteutfall til simulert kundedialog.",
@@ -197,15 +203,15 @@ export const predictiveSalesCoachPlatform: StrategicPlatformProject = {
         {
           tittel: { no: "For selgere og salgsteam", en: "For sales reps and sales teams" },
           tekst: {
-            no: "Mer strukturert trening før viktige kundemøter, bedre behovsavklaring, verdiargumentasjon og håndtering av innvendinger.",
-            en: "More structured training before important customer meetings, better needs clarification, value argumentation and handling of objections.",
+            no: "Kan støtte mer strukturert trening før viktige kundemøter, trening på behovsavklaring, verdiargumentasjon og håndtering av innvendinger.",
+            en: "Can support more structured training before important customer meetings, practice in needs clarification, value argumentation and handling of objections.",
           },
         },
         {
           tittel: { no: "For salgsledere", en: "For sales leaders" },
           tekst: {
-            no: "Grunnlag for mer presis coaching, systematisk læring på tvers av teamet og tydeligere innsikt i utviklingsområder.",
-            en: "A basis for more precise coaching, systematic learning across the team and clearer insight into development areas.",
+            no: "Kan gi grunnlag for mer presis coaching, systematisk læring på tvers av teamet og tydeligere innsikt i utviklingsområder.",
+            en: "Can provide a basis for more precise coaching, systematic learning across the team and clearer insight into development areas.",
           },
         },
         {
@@ -217,11 +223,62 @@ export const predictiveSalesCoachPlatform: StrategicPlatformProject = {
         },
       ],
     },
+    effektomrader: {
+      heading: { no: "Aktuelle effektområder", en: "Relevant effect areas" },
+      punkter: [
+        { no: "Trening på forberedelse før kundemøter", en: "Training on preparation before customer meetings" },
+        { no: "Aktuelle områder for måling og evaluering av møtekvalitet", en: "Relevant areas for measuring and evaluating meeting quality" },
+        { no: "Gir grunnlag for trening på behovsavklaring", en: "Provides a basis for training in needs clarification" },
+        { no: "Kan brukes til å utvikle trening på innvendinger", en: "Can be used to develop training on objections" },
+        { no: "Kan støtte mer strukturert salgsledelse og coaching", en: "Can support more structured sales leadership and coaching" },
+        { no: "Kan bidra til mer systematisk læring på tvers av teamet", en: "Can contribute to more systematic learning across the team" },
+      ],
+    },
+    anvendelsesformat: {
+      heading: { no: "Mulig anvendelsesformat", en: "Possible application format" },
+      steg: [
+        {
+          tittel: { no: "Avklaring", en: "Clarification" },
+          beskrivelse: {
+            no: "Kort kartlegging av salgsprosess, typiske kundemøter, målgrupper og ønsket læring.",
+            en: "Brief mapping of sales process, typical customer meetings, target groups and desired learning.",
+          },
+        },
+        {
+          tittel: { no: "Scenarioer", en: "Scenarios" },
+          beskrivelse: {
+            no: "Utvikling av 2–3 realistiske salgsscenarioer tilpasset virksomheten.",
+            en: "Development of 2–3 realistic sales scenarios tailored to the organisation.",
+          },
+        },
+        {
+          tittel: { no: "Trening", en: "Training" },
+          beskrivelse: {
+            no: "Selgere trener individuelt gjennom AI-basert rollespill og får strukturert tilbakemelding.",
+            en: "Salespeople train individually through AI-based role play and receive structured feedback.",
+          },
+        },
+        {
+          tittel: { no: "Innsikt", en: "Insight" },
+          beskrivelse: {
+            no: "Mønstre, styrker og utviklingsområder oppsummeres for leder eller team.",
+            en: "Patterns, strengths and development areas are summarised for the leader or team.",
+          },
+        },
+        {
+          tittel: { no: "Neste steg", en: "Next steps" },
+          beskrivelse: {
+            no: "Anbefalt videre treningsopplegg og mulige forbedringer i møteforberedelse, salgsfase og oppfølging.",
+            en: "Recommended further training setup and possible improvements in meeting preparation, sales stage and follow-up.",
+          },
+        },
+      ],
+    },
     status: {
       heading: { no: "Status, modenhet og avgrensninger", en: "Status, maturity and limitations" },
       body: {
-        no: "PSCv2.0 er en lukket pilot og tilgangsstyrt trenings-, evaluerings- og lederinnsiktsplattform — ikke presentert som ferdig kommersielt produkt.\n\nLøsningen er tekstbasert for å trene presisjon i formuleringer, spørsmål, aktiv lytting og kundetilpasning. Speech-to-text og tale kan være aktuelle videreutviklingsspor, men tekstformatet er bevisst valgt i dagens versjon.\n\nTilgang vurderes kun i relevante faglige eller profesjonelle sammenhenger.",
-        en: "PSCv2.0 is a closed pilot and access-controlled training, evaluation and leadership insight platform — not presented as a finished commercial product.\n\nThe solution is text-based to train precision in wording, questions, active listening and customer adaptation. Speech-to-text and voice may be relevant further development tracks, but the text format is deliberately chosen in the current version.\n\nAccess is considered only in relevant professional contexts.",
+        no: "PSCv2.0 er en lukket pilot og tilgangsstyrt trenings-, simulerings-, evaluerings- og lederinnsiktsplattform — ikke et CRM-system, salgsprognoseverktøy, lead scoring-verktøy eller ferdig kommersielt produkt.\n\nLøsningen er tekstbasert for å trene presisjon i formuleringer, spørsmål, aktiv lytting og kundetilpasning. Speech-to-text og tale kan være aktuelle videreutviklingsspor, men tekstformatet er bevisst valgt i dagens versjon.\n\nTilgang vurderes kun i relevante faglige eller profesjonelle sammenhenger.",
+        en: "PSCv2.0 is a closed pilot and access-controlled training, simulation, evaluation and leadership insight platform — not a CRM system, sales forecasting tool, lead scoring tool or finished commercial product.\n\nThe solution is text-based to train precision in wording, questions, active listening and customer adaptation. Speech-to-text and voice may be relevant further development tracks, but the text format is deliberately chosen in the current version.\n\nAccess is considered only in relevant professional contexts.",
       },
     },
     skalerbarhet: {
@@ -245,6 +302,58 @@ export const predictiveSalesCoachPlatform: StrategicPlatformProject = {
           { no: "Andre B2B-salgssituasjoner der presisjon og tilpasning er avgjørende", en: "Other B2B sales situations where precision and adaptation are critical" },
         ],
       },
+    },
+    faq: {
+      heading: { no: "Ofte stilte spørsmål", en: "Frequently asked questions" },
+      items: [
+        {
+          question: { no: "Hva er The Predictive Sales Coach?", en: "What is The Predictive Sales Coach?" },
+          answer: {
+            no: "The Predictive Sales Coach er en AI-basert trenings- og evalueringsplattform for B2B-kundedialog. Brukeren kan forberede og gjennomføre simulerte kundesamtaler og motta strukturert feedback og læringspunkter.",
+            en: "The Predictive Sales Coach is an AI-based training and evaluation platform for B2B customer dialogue. Users can prepare for and run simulated customer conversations and receive structured feedback and learning points.",
+          },
+        },
+        {
+          question: {
+            no: "Hva betyr «Predictive» i prosjektets navn?",
+            en: "What does «Predictive» mean in the project name?",
+          },
+          answer: {
+            no: "Begrepet viser til forberedelse på mulige kundereaksjoner, innvendinger og samtaleforløp før et møte. Dagens løsning predikerer ikke pipeline, salgssannsynlighet eller økonomiske resultater.",
+            en: "The term refers to preparing for possible customer reactions, objections and conversation flows before a meeting. The current solution does not predict pipeline, win probability or financial results.",
+          },
+        },
+        {
+          question: {
+            no: "Er PSC et CRM- eller salgsprognoseverktøy?",
+            en: "Is PSC a CRM or sales forecasting tool?",
+          },
+          answer: {
+            no: "Nei. PSC er utviklet for trening, møteforberedelse og evaluering av kundedialog. CRM-integrasjon og mer avansert analyse kan være mulige videreutviklingsspor, men er ikke en del av dagens løsning.",
+            en: "No. PSC is built for training, meeting preparation and evaluation of customer dialogue. CRM integration and more advanced analysis may be possible further development tracks, but are not part of the current solution.",
+          },
+        },
+        {
+          question: {
+            no: "Hvilke data bruker dagens løsning?",
+            en: "What data does the current solution use?",
+          },
+          answer: {
+            no: "Løsningen bruker informasjonen brukeren legger inn i scenarioet, valgte profiler og dialogen som gjennomføres i simuleringen. Den leser ikke live-data fra CRM, e-post, Teams eller kalender.",
+            en: "The solution uses information the user enters in the scenario, selected profiles and the dialogue conducted in the simulation. It does not read live data from CRM, email, Teams or calendar.",
+          },
+        },
+        {
+          question: {
+            no: "Hva er bygget, og hva er mulig videreutvikling?",
+            en: "What is built, and what is possible further development?",
+          },
+          answer: {
+            no: "Dagens løsning inkluderer scenariooppsett, AI-basert kundesimulering, strukturert feedback, scorecard og lederorientert innsikt. Mulig videreutvikling omfatter blant annet talegrensesnitt, integrasjoner, mer avansert analyse og tilpasning til flere roller og bransjer.",
+            en: "The current solution includes scenario setup, AI-based customer simulation, structured feedback, scorecard and leadership-oriented insight. Possible further development includes voice interfaces, integrations, more advanced analysis and adaptation to more roles and industries.",
+          },
+        },
+      ],
     },
     avslutning: {
       heading: { no: "Utforsk prosjektet videre", en: "Explore the project further" },

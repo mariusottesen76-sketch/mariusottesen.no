@@ -25,14 +25,24 @@ export type ProsjektHurtigLenke = {
 export type ProsjektHurtigKategori = {
   title: { no: string; en: string };
   description?: { no: string; en: string };
+  /** Stabil anker-slug for kategorinavigasjon på /prosjekter. */
+  anchorId: string;
+  /** Tidligere anker-ID-er som peker til denne kategorien. */
+  legacyAnchorIds?: string[];
   /** Behold eksplisitt rekkefølge når true — ellers sorteres lenker etter dato. */
   fixedOrder?: boolean;
   lenker: ProsjektHurtigLenke[];
 };
 
+/** Tidligere kategori-ankere → nåværende anchorId (for eksterne lenker). */
+export const PROSJEKT_KATEGORI_LEGACY_ANCHORS: Record<string, string> = {
+  "fag-og-samarbeid": "fag-samarbeid-og-formidling",
+};
+
 const kategorier: ProsjektHurtigKategori[] = [
   {
     title: { no: "Strategiske plattformer", en: "Strategic platforms" },
+    anchorId: "strategiske-plattformer",
     description: {
       no: "Lederorienterte plattformer for prioritering, transformasjon, beslutningsstøtte og gjennomføring.",
       en: "Leadership-oriented platforms for prioritisation, transformation, decision support and execution.",
@@ -53,6 +63,7 @@ const kategorier: ProsjektHurtigKategori[] = [
   },
   {
     title: { no: "Apper og prototyper", en: "Apps and prototypes" },
+    anchorId: "apper-og-prototyper",
     description: {
       no: "Funksjonelle AI-løsninger for salgstrening, teamutvikling, AI-beredskap og kommersiell forbedring.",
       en: "Functional AI solutions for sales training, team development, AI readiness and commercial improvement.",
@@ -75,15 +86,11 @@ const kategorier: ProsjektHurtigKategori[] = [
         introSlug: "salgsflyt",
         label: { no: "SMB Salgsflyt-sjekken", en: "SMB Sales Flow Check" },
       },
-      {
-        prosjektId: "psc-promo-video-moc-2026",
-        introSlug: "psc-video",
-        label: { no: "Promovideo PSC", en: "PSC promo video" },
-      },
     ],
   },
   {
     title: { no: "Case og implementering", en: "Case and implementation" },
+    anchorId: "case-og-implementering",
     lenker: [
       {
         prosjektId: "mariusottesen-no-2025",
@@ -104,6 +111,7 @@ const kategorier: ProsjektHurtigKategori[] = [
   },
   {
     title: { no: "Modell og arbeidsflyt", en: "Model and workflow" },
+    anchorId: "modell-og-arbeidsflyt",
     lenker: [
       {
         prosjektId: "ai-assistert-innsikts-og-opportunity-agent-2026",
@@ -129,7 +137,14 @@ const kategorier: ProsjektHurtigKategori[] = [
     ],
   },
   {
-    title: { no: "Fag og samarbeid", en: "Knowledge and collaboration" },
+    title: { no: "Fag, samarbeid og formidling", en: "Knowledge, collaboration and communication" },
+    anchorId: "fag-samarbeid-og-formidling",
+    legacyAnchorIds: ["fag-og-samarbeid"],
+    description: {
+      no: "Faglige initiativer og formater for læring, samarbeid, formidling og praktisk deling av AI-erfaringer.",
+      en: "Professional initiatives and formats for learning, collaboration, communication and practical sharing of AI experience.",
+    },
+    fixedOrder: true,
     lenker: [
       {
         prosjektId: "ai-value-lab-oslo-2026",
@@ -142,6 +157,14 @@ const kategorier: ProsjektHurtigKategori[] = [
         label: {
           no: "Faginnlegg: AI og fremtidens teknologiledelse",
           en: "Articles: AI and next-generation technology leadership",
+        },
+      },
+      {
+        prosjektId: "psc-promo-video-moc-2026",
+        introSlug: "psc-video",
+        label: {
+          no: "Promovideo: The Predictive Sales Coach og Marius Ottesen Consulting",
+          en: "Promo video: The Predictive Sales Coach and Marius Ottesen Consulting",
         },
       },
     ],
@@ -180,4 +203,14 @@ export function getProsjektHurtigoversikt(_lang: Lang): ProsjektHurtigKategori[]
     ...kategori,
     lenker: kategori.fixedOrder ? kategori.lenker : sortLenkerEtterDato(kategori.lenker),
   }));
+}
+
+/** Løser hash til gyldig anker — støtter legacy kategori-ankere. */
+export function resolveProsjektPageHash(hash: string): string {
+  if (!hash) return hash;
+  if (PROSJEKT_KATEGORI_LEGACY_ANCHORS[hash]) return PROSJEKT_KATEGORI_LEGACY_ANCHORS[hash];
+  for (const kategori of kategorier) {
+    if (kategori.legacyAnchorIds?.includes(hash)) return kategori.anchorId;
+  }
+  return hash;
 }

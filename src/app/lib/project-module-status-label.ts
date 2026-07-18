@@ -17,6 +17,7 @@ export function getModuleBuiltStatusLabel(
       case "professional_initiative":
         if (slug === "ai-value-lab-oslo") return "Established";
         if (slug === "ai-faginnlegg-hub") return "Published";
+        if (slug === "psc-promo-video") return "Produced";
         return "Developed";
       case "strategic_platform":
       case "app_prototype":
@@ -34,6 +35,7 @@ export function getModuleBuiltStatusLabel(
     case "professional_initiative":
       if (slug === "ai-value-lab-oslo") return "Etablert";
       if (slug === "ai-faginnlegg-hub") return "Publisert";
+      if (slug === "psc-promo-video") return "Produsert";
       return "Utviklet";
     case "strategic_platform":
     case "app_prototype":

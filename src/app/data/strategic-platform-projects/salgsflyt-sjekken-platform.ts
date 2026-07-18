@@ -136,6 +136,46 @@ export const salgsflytSjekkenPlatform: StrategicPlatformProject = {
         { tittel: { no: "Umiddelbar verdi", en: "Immediate value" }, tekst: { no: "Respondenten får en skreddersydd PDF-rapport med konkrete tiltak ved fullført diagnose.", en: "The respondent receives a tailored PDF report with concrete actions when the diagnosis is complete." } },
       ],
     },
+    anvendelsesformat: {
+      heading: { no: "Mulig anvendelsesformat", en: "Possible application format" },
+      steg: [
+        {
+          tittel: { no: "Avtale og tilgang", en: "Agreement and access" },
+          beskrivelse: {
+            no: "Kort avklaring av formål, målgruppe og oppfølging. Respondent får tilsendt tilgangskode til spørreundersøkelsen.",
+            en: "Brief clarification of purpose, target group and follow-up. The respondent receives an access code for the survey.",
+          },
+        },
+        {
+          tittel: { no: "Diagnose", en: "Diagnosis" },
+          beskrivelse: {
+            no: "Respondent gjennomfører spørreundersøkelsen på tvers av ti kommersielle dimensjoner — typisk under ti minutter.",
+            en: "The respondent completes the survey across ten commercial dimensions — typically in under ten minutes.",
+          },
+        },
+        {
+          tittel: { no: "Dypdykk", en: "Deep dive" },
+          beskrivelse: {
+            no: "Svakeste områder utløser oppfølgingsspørsmål om rotårsaker, varighet og historiske feilskjær.",
+            en: "The weakest areas trigger follow-up questions on root causes, duration and historical missteps.",
+          },
+        },
+        {
+          tittel: { no: "Rapportering", en: "Reporting" },
+          beskrivelse: {
+            no: "AI genererer kunderapport og intern salgsvurdering parallelt — med score, lead-kvalitet og anbefalt oppfølging. Kunden får en skreddersydd PDF-rapport sendt med en gang diagnosen er fullført.",
+            en: "AI generates customer report and internal sales assessment in parallel — with score, lead quality and recommended follow-up. The customer receives a tailored PDF report as soon as the diagnosis is complete.",
+          },
+        },
+        {
+          tittel: { no: "Oppfølging", en: "Follow-up" },
+          beskrivelse: {
+            no: "Debrief og anbefalt neste steg — for eksempel prioritering av kommersielle tiltak, CRM-forbedring eller videre arbeidsflyt.",
+            en: "Debrief and recommended next step — for example prioritisation of commercial initiatives, CRM improvement or further workflow work.",
+          },
+        },
+      ],
+    },
     status: {
       heading: { no: "Status, modenhet og avgrensninger", en: "Status, maturity and limitations" },
       body: {

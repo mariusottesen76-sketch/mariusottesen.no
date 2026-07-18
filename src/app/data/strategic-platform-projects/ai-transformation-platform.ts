@@ -221,6 +221,10 @@ export const aiTransformationPlatform: StrategicPlatformProject = {
         no: "Demoporteføljen illustrerer hvordan plattformen kan prioritere initiativer med ulik verdi, modenhet, risiko, eierskap og organisatoriske avhengigheter.",
         en: "The demo portfolio illustrates how the platform can prioritise initiatives with varying value, maturity, risk, ownership and organisational dependencies.",
       },
+      disclaimer: {
+        no: "Initiativene og tilhørende data er illustrative og fiktive.",
+        en: "The initiatives and associated data are illustrative and fictional.",
+      },
       categories: [
         {
           heading: { no: "Kunde, salg og marked", en: "Customer, sales and marketing" },

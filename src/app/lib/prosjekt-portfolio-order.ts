@@ -6,7 +6,6 @@ export const PROSJEKT_PORTFOLIO_ORDER: string[] = [
   "flowsignal-2026-05",
   "ai-readiness-scan-2026-06",
   "smb-salgsflyt-sjekken-2026",
-  "psc-promo-video-moc-2026",
   "mariusottesen-no-2025",
   "prosjektoppgave-strategisk-implementering-2026",
   "skoyenasen-tannklinikk-2026",
@@ -15,6 +14,7 @@ export const PROSJEKT_PORTFOLIO_ORDER: string[] = [
   "ai-arkitektur-beslutningsstotte-2026",
   "ai-value-lab-oslo-2026",
   "ai-faginnlegg-serie-2026",
+  "psc-promo-video-moc-2026",
 ];
 
 export function sortProsjekterByPortfolioOrder<T extends { id: string }>(projects: T[]): T[] {

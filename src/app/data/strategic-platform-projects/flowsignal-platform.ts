@@ -137,9 +137,60 @@ export const flowSignalPlatform: StrategicPlatformProject = {
     relevans: {
       heading: { no: "Anvendelse og relevans", en: "Application and relevance" },
       sections: [
-        { tittel: { no: "For ledere og team", en: "For leaders and teams" }, tekst: { no: "Støtter bedre samhandling, mer presis kommunikasjon, onboarding, rolleforståelse og lederoppfølging.", en: "Supports better collaboration, more precise communication, onboarding, role understanding and leadership follow-up." } },
+        { tittel: { no: "For ledere og team", en: "For leaders and teams" }, tekst: { no: "Kan bidra til bedre samhandling, mer presis kommunikasjon, onboarding, rolleforståelse og lederoppfølging.", en: "Can contribute to better collaboration, more precise communication, onboarding, role understanding and leadership follow-up." } },
         { tittel: { no: "For kommersielle og tverrfaglige miljøer", en: "For commercial and cross-functional environments" }, tekst: { no: "Kobler profil, refleksjon og dagsform til konkrete anbefalinger i arbeidshverdagen.", en: "Connects profile, reflection and daily form to concrete recommendations in everyday work." } },
         { tittel: { no: "Skille mot PSCv2.0", en: "Distinction from PSCv2.0" }, tekst: { no: "FlowSignal handler primært om mennesker, roller, dagsform og intern samhandling. PSCv2.0 handler primært om salgstrening, kundemøter og kommersiell samtalepresisjon.", en: "FlowSignal is primarily about people, roles, daily form and internal collaboration. PSCv2.0 is primarily about sales training, customer meetings and commercial conversation precision." } },
+      ],
+    },
+    effektomrader: {
+      heading: { no: "Aktuelle effektområder", en: "Relevant effect areas" },
+      punkter: [
+        { no: "Kan bidra til bedre samhandling i team", en: "Can contribute to better collaboration in teams" },
+        { no: "Gir grunnlag for å redusere misforståelser", en: "Provides a basis for reducing misunderstandings" },
+        { no: "Kan støtte tydeligere ansvar og forventninger", en: "Can support clearer accountability and expectations" },
+        { no: "Kan støtte mer strukturert lederdialog", en: "Can support more structured leadership dialogue" },
+        { no: "Gjør det mulig å trene på bevisst bruk av styrker", en: "Makes it possible to train on conscious use of strengths" },
+        { no: "Aktuelle områder for måling av samhandling og oppfølging", en: "Relevant areas for measuring collaboration and follow-up" },
+      ],
+    },
+    anvendelsesformat: {
+      heading: { no: "Mulig anvendelsesformat", en: "Possible application format" },
+      steg: [
+        {
+          tittel: { no: "Oppstart", en: "Kick-off" },
+          beskrivelse: {
+            no: "Avklaring av teamets mål, situasjon, utfordringer og ønsket læring.",
+            en: "Clarification of the team's goals, situation, challenges and desired learning.",
+          },
+        },
+        {
+          tittel: { no: "Kartlegging", en: "Mapping" },
+          beskrivelse: {
+            no: "Enkel profil-, styrke- og samhandlingskartlegging kombinert med refleksjon rundt dagsform, arbeidsstil og flyt.",
+            en: "Simple profile, strength and collaboration mapping combined with reflection on daily form, working style and flow.",
+          },
+        },
+        {
+          tittel: { no: "Teamdialog", en: "Team dialogue" },
+          beskrivelse: {
+            no: "Workshop der teamet utforsker preferanser, styrker, friksjonspunkter og bedre samspill.",
+            en: "Workshop where the team explores preferences, strengths, friction points and better collaboration.",
+          },
+        },
+        {
+          tittel: { no: "Lederinnsikt", en: "Leadership insight" },
+          beskrivelse: {
+            no: "Oppsummering av praktiske grep lederen kan bruke i oppfølging, dialog og prioritering.",
+            en: "Summary of practical actions the leader can use in follow-up, dialogue and prioritisation.",
+          },
+        },
+        {
+          tittel: { no: "Forbedringsplan", en: "Improvement plan" },
+          beskrivelse: {
+            no: "Fire ukers plan med konkrete grep for bedre samhandling, dialog og prioritering.",
+            en: "Four-week plan with concrete actions for better collaboration, dialogue and prioritisation.",
+          },
+        },
       ],
     },
     status: {

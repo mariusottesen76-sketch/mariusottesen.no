@@ -282,9 +282,8 @@ export const skoyenasenTannklinikkPlatform: StrategicPlatformProject = {
       tilpasning: {
         heading: { no: "Tilpasning til funksjoner og bransjer", en: "Adaptation to functions and industries" },
         punkter: [
-          { no: "Andre klinikker og tannhelsesektor", en: "Other clinics and dental care sector" },
+          { no: "Andre klinikker, helsetjenester og servicevirksomheter med omfattende kundedialog, intake og booking", en: "Other clinics, healthcare services and service businesses with extensive customer dialogue, intake and booking" },
           { no: "Servicebedrifter med manuelle henvendelser", en: "Service businesses with manual inquiries" },
-          { no: "Andre klinikker, helsetjenester og servicevirksomheter med omfattende kundedialog og booking", en: "Other clinics, healthcare services and service businesses with extensive customer dialogue and booking" },
         ],
       },
     },

@@ -53,8 +53,8 @@ export const mariusottesenNettsideV2: ProjectV2Record = {
       en: "Published and continuously developed professional profile and portfolio platform. The site is live and updated as new projects, articles and solutions mature.",
     },
     development: {
-      no: "Videre potensial inkluderer prosjektmigrering, bedre målgruppetilpassede brukerreiser, analyse av CTA-er, forbedret SEO, flere engelske sider og bedre kobling mellom faginnlegg, prosjekter og resultater.",
-      en: "Further potential includes project migration, better audience-tailored user journeys, CTA analysis, improved SEO, more English pages and better links between articles, projects and results.",
+      no: "Videre potensial inkluderer bedre analyse av brukerreiser og CTA-er, sterkere internlenking, videre SEO-optimalisering, flere engelske sider og tydeligere kobling mellom prosjekter, faginnlegg, erfaring og resultater.",
+      en: "Further potential includes better analysis of user journeys and CTAs, stronger internal linking, further SEO optimisation, more English pages and clearer links between projects, articles, experience and results.",
     },
     adaptation: {
       no: "Arbeidsmetoden kan overføres til andre profesjonelle profilplattformer, lederprofiler, fagporteføljer, prosjektarkiver og rådgiver- og ekspertprofiler — uten å fremstilles som leverte kundeprosjekter.",

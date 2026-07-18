@@ -120,7 +120,7 @@ export const projectMigrationOverview: ProjectMigrationEntry[] = [
   {
     id: "psc-promo-video-moc-2026",
     name: { no: "Promovideo PSC", en: "PSC promo video" },
-    category: "video_communication",
+    category: "professional_initiative",
     layoutVersion: "project_v2",
     existingDetailPage: undefined,
     recommendedDetailLevel: "external_destination",

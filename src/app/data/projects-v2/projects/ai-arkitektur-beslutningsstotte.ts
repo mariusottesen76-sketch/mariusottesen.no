@@ -59,7 +59,7 @@ export const aiArkitekturBeslutningsstotteV2: ProjectV2Record = {
       en: "The architecture is built for prioritisation and decision support, but can be adapted for other governance models — for gap analysis, sales and market overview and leadership tools for strategy and commercial governance.",
     },
   },
-  overviewImage: "/images/ai-arkitektur-beslutningsstotte-dashboard.jpg?v=20260717d",
+  overviewImage: "/images/ai-arkitektur-beslutningsstotte-hjemmeside.png?v=20260718",
   detailHeroImage: "/images/ai-arkitektur-beslutningsstotte-dashboard.jpg?v=20260717d",
   detailHeroObjectPosition: "center",
   needsNewDetailHero: false,

@@ -259,11 +259,11 @@ export const mariusottesenNettsidePlatform: StrategicPlatformProject = {
       platform: {
         heading: { no: "Videreutvikling av løsningen", en: "Further development of the solution" },
         punkter: [
-          { no: "Ytterligere prosjektmigrering til project_v2", en: "Further project migration to project_v2" },
-          { no: "Bedre målgruppetilpassede brukerreiser", en: "Better audience-tailored user journeys" },
-          { no: "Analyse av CTA-er og brukeradferd", en: "Analysis of CTAs and user behaviour" },
-          { no: "Forbedret SEO og flere engelske sider", en: "Improved SEO and more English pages" },
-          { no: "Bedre kobling mellom faginnlegg, prosjekter, erfaring og resultater", en: "Better links between articles, projects, experience and results" },
+          { no: "Bedre analyse av brukerreiser og CTA-er", en: "Better analysis of user journeys and CTAs" },
+          { no: "Sterkere internlenking", en: "Stronger internal linking" },
+          { no: "Videre SEO-optimalisering", en: "Further SEO optimisation" },
+          { no: "Flere engelske sider", en: "More English pages" },
+          { no: "Tydeligere kobling mellom prosjekter, faginnlegg, erfaring og resultater", en: "Clearer links between projects, articles, experience and results" },
           { no: "Videre universell utforming og redaksjonell QA", en: "Further universal design and editorial QA" },
         ],
       },

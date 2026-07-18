@@ -210,8 +210,8 @@ const translations: Translations = {
   },
   "prosjekter.intro.punkt.psc.label": { no: "The Predictive Sales Coach v2.0", en: "The Predictive Sales Coach v2.0" },
   "prosjekter.intro.punkt.psc.desc": {
-    no: "AI-basert salgstrening og møteforberedelse — relevant for B2B og kommersielle team",
-    en: "AI-based sales training and meeting preparation — relevant for B2B and commercial teams",
+    no: "AI-basert salgstrening og møteforberedelse for B2B-salg, med realistiske kundesimuleringer, strukturert feedback og salgslederinnsikt.",
+    en: "AI-based sales training and meeting preparation for B2B sales, with realistic customer simulations, structured feedback and sales leadership insight.",
   },
   "prosjekter.intro.punkt.salgsflyt.label": { no: "SMB Salgsflyt-sjekken", en: "SMB Sales Flow Check" },
   "prosjekter.intro.punkt.salgsflyt.desc": {

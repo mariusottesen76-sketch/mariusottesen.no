@@ -1,4 +1,4 @@
-import { PSC_APP_URL } from "../../../lib/psc-brand";
+import { PSC_APP_URL, PSC_SEO_DESCRIPTION, PSC_SEO_TITLE, PSC_SHORT_DESCRIPTION } from "../../../lib/psc-brand";
 import type { ProjectV2Record } from "../types";
 
 export const predictiveSalesCoachV2: ProjectV2Record = {
@@ -27,13 +27,13 @@ export const predictiveSalesCoachV2: ProjectV2Record = {
     en: "Closed pilot",
   },
   overviewIntroduction: {
-    no: "The Predictive Sales Coach v2.0 er en AI-basert salgstrenings- og analyseplattform for selgere, salgsledere og kommersielle team som vil trene mer målrettet før viktige kundemøter — med realistiske simuleringer, scorecard og lederinnsikt.",
-    en: "The Predictive Sales Coach v2.0 is an AI-based sales training and analysis platform for sales reps, sales leaders and commercial teams who want to train more purposefully before important customer meetings — with realistic simulations, scorecard and leadership insight.",
+    no: `${PSC_SHORT_DESCRIPTION.no} — tilgangsstyrt lukket pilot.`,
+    en: `${PSC_SHORT_DESCRIPTION.en} — access-controlled closed pilot.`,
   },
   overview: {
     what: {
-      no: "En tilgangsstyrt salgstreningsplattform som kombinerer realistiske kundesimuleringer, DISC-inspirert kommunikasjon, salgsfaser, scenario-oppsett, evaluering og lederinnsikt.",
-      en: "An access-controlled sales training platform combining realistic customer simulations, DISC-inspired communication, sales phases, scenario setup, evaluation and leadership insight.",
+      no: "En tilgangsstyrt trenings-, simulerings- og evalueringsplattform for B2B-kundedialog — med scenario-oppsett, kundesimulering, scorecard, DISC-inspirert kommunikasjon og lederinnsikt.",
+      en: "An access-controlled training, simulation and evaluation platform for B2B customer dialogue — with scenario setup, customer simulation, scorecard, DISC-inspired communication and leadership insight.",
     },
     challenge: {
       no: "Mange selgere trener for lite før viktige kundemøter. Forberedelser blir ofte generelle, kundeinnsikt brukes ujevnt, og salgsledere mangler strukturert innsikt i hvilke ferdigheter teamet faktisk må utvikle.",
@@ -78,14 +78,8 @@ export const predictiveSalesCoachV2: ProjectV2Record = {
   detailDestination: "/psc",
   liveSolutionUrl: PSC_APP_URL,
   seo: {
-    title: {
-      no: "The Predictive Sales Coach v2.0 | Marius Ottesen",
-      en: "The Predictive Sales Coach v2.0 | Marius Ottesen",
-    },
-    description: {
-      no: "AI-basert salgstrening og møteforberedelse med realistiske kundesimuleringer, scorecard, DISC-inspirert kommunikasjon og lederinnsikt — tilgangsstyrt lukket pilot.",
-      en: "AI-based sales training and meeting preparation with realistic customer simulations, scorecard, DISC-inspired communication and leadership insight — access-controlled closed pilot.",
-    },
+    title: PSC_SEO_TITLE,
+    description: PSC_SEO_DESCRIPTION,
     ogImage: "/images/predictive-sales-coach-hero.png",
     canonicalPath: "/psc",
   },

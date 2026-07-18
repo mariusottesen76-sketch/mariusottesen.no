@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useLanguage, type Lang } from "./LanguageContext";
 import { getTranslation } from "./data/translations";
 import { pageIntroClass, pageTitleClass, sectionTitleClass } from "./lib/typography";
-import { getProsjektHurtigoversikt } from "./data/prosjekter-hurtigoversikt";
+import { getProsjektHurtigoversikt, resolveProsjektPageHash } from "./data/prosjekter-hurtigoversikt";
 import { type ProsjektType, predictiveSalesCoach } from "./data/prosjekter/predictive-sales-coach";
 import { pscPromoVideo } from "./data/prosjekter/psc-promo-video";
 import { aiValueLabOslo } from "./data/prosjekter/ai-value-lab-oslo";
@@ -78,8 +78,12 @@ export default function Prosjekter({ onNavigate: _onNavigate }: { onNavigate?: (
 
   useEffect(() => {
     const scrollTilProsjekt = () => {
-      const hash = window.location.hash.slice(1);
-      if (!hash) return;
+      const rawHash = window.location.hash.slice(1);
+      if (!rawHash) return;
+      const hash = resolveProsjektPageHash(rawHash);
+      if (hash !== rawHash) {
+        window.history.replaceState(null, "", `#${hash}`);
+      }
       requestAnimationFrame(() => {
         document.getElementById(hash)?.scrollIntoView({ behavior: "smooth", block: "start" });
       });
@@ -157,8 +161,9 @@ export default function Prosjekter({ onNavigate: _onNavigate }: { onNavigate?: (
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           {hurtigoversikt.map((kategori) => (
             <div
-              key={kategori.title.no}
-              className="p-4 md:p-5 bg-slate-900/40 rounded-xl border border-slate-800 space-y-3 min-w-0"
+              key={kategori.anchorId}
+              id={kategori.anchorId}
+              className="p-4 md:p-5 bg-slate-900/40 rounded-xl border border-slate-800 space-y-3 min-w-0 scroll-mt-24"
             >
               <h3 className="text-base font-black text-indigo-400 italic tracking-tight">{kategori.title[lang]}</h3>
               {kategori.description && (

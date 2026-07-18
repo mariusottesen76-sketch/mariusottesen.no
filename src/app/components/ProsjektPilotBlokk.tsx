@@ -22,11 +22,11 @@ const tilgangIntro = {
 
 const pscBlokk = {
   tekst: {
-    no: "Status, modenhet og videre anvendelse: The Predictive Sales Coach er utviklet som en praktisk trenings- og analyseplattform for kundedialog, møteforberedelse og salgsledelse.",
-    en: "Status, maturity and further application: The Predictive Sales Coach is developed as a practical training and analysis platform for customer dialogue, meeting preparation and sales leadership.",
+    no: "Status, modenhet og videre anvendelse: The Predictive Sales Coach er utviklet for salgstrening, møteforberedelse, simulering og evaluering av B2B-kundedialog.",
+    en: "Status, maturity and further application: The Predictive Sales Coach is built for sales training, meeting preparation, simulation and evaluation of B2B customer dialogue.",
   },
   pilotHref: "/psc",
-  pilotCta: { no: "Se hvordan løsningen fungerer", en: "See how the solution works" },
+  pilotCta: { no: "Utforsk The Predictive Sales Coach", en: "Explore The Predictive Sales Coach" },
   appCta: { no: "Åpne tilgangsstyrt løsning", en: "Open access-controlled solution" },
   tilgangNote: {
     no: `${tilgangIntro.no} ${kontaktDialog.no}`,

@@ -5,7 +5,7 @@ const PROMO_VIDEO_URL = "/images/promovideo-final.mov";
 export const pscPromoVideoV2: ProjectV2Record = {
   id: "psc-promo-video-moc-2026",
   slug: "psc-promo-video",
-  category: "video_communication",
+  category: "professional_initiative",
   layoutVersion: "project_v2",
   accessMode: "external_destination",
   detailLevel: "external_destination",

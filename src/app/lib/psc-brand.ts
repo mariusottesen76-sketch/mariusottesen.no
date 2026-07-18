@@ -10,6 +10,32 @@ export const PSC_APP_URL = "https://pscv6-744893320985.europe-west2.run.app/";
 export const PSC_VERSION = "v2.0";
 export const PSC_VERSION_LABEL = "PSCv2.0";
 
+export const PSC_FULL_TITLE = {
+  no: "The Predictive Sales Coach v2.0",
+  en: "The Predictive Sales Coach v2.0",
+} as const;
+
+/** Primær kortbeskrivelse — brukes konsekvent på kort, metadata og internlenker. */
+export const PSC_SHORT_DESCRIPTION = {
+  no: "AI-basert salgstrening og møteforberedelse for B2B-salg, med realistiske kundesimuleringer, strukturert feedback og salgslederinnsikt.",
+  en: "AI-based sales training and meeting preparation for B2B sales, with realistic customer simulations, structured feedback and sales leadership insight.",
+} as const;
+
+/** SEO title og description for /psc — unike metadata, uten dobbelt merkenavn. */
+export const PSC_SEO_TITLE = {
+  no: "The Predictive Sales Coach v2.0 | AI-basert salgstrening",
+  en: "The Predictive Sales Coach v2.0 | AI-based sales training",
+} as const;
+
+export const PSC_SEO_DESCRIPTION = {
+  no: "AI-basert salgstrening og møteforberedelse for B2B-salg, med realistiske kundesimuleringer, strukturert feedback, scorecard og salgslederinnsikt.",
+  en: "AI-based sales training and meeting preparation for B2B sales, with realistic customer simulations, structured feedback, scorecard and sales leadership insight.",
+} as const;
+
+export const PSC_CANONICAL_URL = "https://www.mariusottesen.no/psc";
+
+export const PSC_OG_IMAGE = "https://www.mariusottesen.no/images/predictive-sales-coach-hero.png";
+
 export const PSC_PROSJEKT_IDS = new Set([
   "predictive-sales-coach-2026",
   "psc-promo-video-moc-2026",

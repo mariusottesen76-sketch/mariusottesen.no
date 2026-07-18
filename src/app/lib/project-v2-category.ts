@@ -18,8 +18,8 @@ export const PROJECT_CATEGORY_LABELS: Record<ProjectCategory, { no: string; en: 
     en: "Model, architecture and workflow",
   },
   professional_initiative: {
-    no: "Faglig initiativ og samarbeid",
-    en: "Professional initiative and collaboration",
+    no: "Fag, samarbeid og formidling",
+    en: "Knowledge, collaboration and communication",
   },
   video_communication: {
     no: "Video og formidling",

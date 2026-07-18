@@ -37,8 +37,10 @@ import ScalabilitySection from "./ScalabilitySection";
 import ProjectHero from "../project-v2/ProjectHero";
 import ProjectImageModal from "../project-v2/ProjectImageModal";
 import ProjectApplicationGroups from "../project-v2/ProjectApplicationGroups";
+import NumberedStepGrid from "./NumberedStepGrid";
 import DemoPortfolioSection from "./DemoPortfolioSection";
 import GovernanceScenariosSection from "./GovernanceScenariosSection";
+import ProjectFaqSection from "./ProjectFaqSection";
 import { getProjectV2ById } from "../../data/projects-v2/registry";
 import { buildProjectDetailCta } from "../../data/projects-v2/cta";
 import { PROJECT_CATEGORY_LABELS } from "../../lib/project-v2-category";
@@ -189,6 +191,18 @@ function StrategicProjectDetailInner({ slug }: { slug: StrategicPlatformSlug }) 
         ) : null}
       </header>
 
+      {detail.kortFortalt && (
+        <section
+          aria-labelledby="plattform-kort-fortalt"
+          className="mb-10 p-6 bg-slate-900/40 rounded-2xl border border-slate-800"
+        >
+          <h2 id="plattform-kort-fortalt" className={`${blockTitleClass} mb-3`}>
+            {t(detail.kortFortalt.heading, lang)}
+          </h2>
+          <p className={`text-sm ${bodyTextClass}`}>{t(detail.kortFortalt.body, lang)}</p>
+        </section>
+      )}
+
       <section aria-labelledby="plattform-utfordring" className="mb-10">
         <SectionHeading id="plattform-utfordring">{t(detail.utfordring.heading, lang)}</SectionHeading>
         <MultilineBody text={t(detail.utfordring.body, lang)} className={bodyTextClass} />
@@ -197,21 +211,26 @@ function StrategicProjectDetailInner({ slug }: { slug: StrategicPlatformSlug }) 
       <section aria-labelledby="plattform-logikk" className="mb-10">
         <SectionHeading id="plattform-logikk">{t(detail.logikk.heading, lang)}</SectionHeading>
         <p className={`${bodyTextClass} mb-4`}>{t(detail.logikk.body, lang)}</p>
+        {detail.logikk.predictiveForklaring && (
+          <div className="mb-4 p-4 bg-slate-900/40 rounded-xl border border-slate-800 space-y-2 min-w-0">
+            <h3 className={cardTitleClass}>{t(detail.logikk.predictiveForklaring.heading, lang)}</h3>
+            <p className="text-sm text-slate-400 font-light leading-relaxed">
+              {t(detail.logikk.predictiveForklaring.body, lang)}
+            </p>
+          </div>
+        )}
         {detail.logikk.steps && detail.logikk.steps.length > 0 && (
-          <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-4">
-            {detail.logikk.steps.map((steg, index) => (
-              <li key={steg.tittel.no} className="p-4 bg-slate-900/40 rounded-xl border border-slate-800 space-y-2 min-w-0">
-                <span className="flex items-center justify-center w-7 h-7 rounded-full bg-indigo-500/15 border border-indigo-500/30 text-indigo-300 text-xs font-black">
-                  {index + 1}
-                </span>
-                <h3 className={cardTitleClass}>{t(steg.tittel, lang)}</h3>
-                <p className="text-slate-400 text-sm font-light leading-relaxed">{t(steg.beskrivelse, lang)}</p>
-              </li>
-            ))}
-          </ol>
+          <NumberedStepGrid steps={detail.logikk.steps} lang={lang} className="mb-4" />
         )}
         {detail.logikk.after && <p className={bodyTextClass}>{t(detail.logikk.after, lang)}</p>}
       </section>
+
+      {detail.datagrunnlag && (
+        <section aria-labelledby="plattform-datagrunnlag" className="mb-10">
+          <SectionHeading id="plattform-datagrunnlag">{t(detail.datagrunnlag.heading, lang)}</SectionHeading>
+          <p className={bodyTextClass}>{t(detail.datagrunnlag.body, lang)}</p>
+        </section>
+      )}
 
       {detail.governanceScenarios && (
         <GovernanceScenariosSection data={detail.governanceScenarios} lang={lang} />
@@ -254,17 +273,7 @@ function StrategicProjectDetailInner({ slug }: { slug: StrategicPlatformSlug }) 
             ))}
           </ul>
         ) : detail.hvordan.steps && detail.hvordan.steps.length > 0 ? (
-          <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            {detail.hvordan.steps.map((steg, index) => (
-              <li key={steg.tittel.no} className="p-4 bg-slate-900/40 rounded-xl border border-slate-800 space-y-2 min-w-0">
-                <span className="flex items-center justify-center w-7 h-7 rounded-full bg-indigo-500/15 border border-indigo-500/30 text-indigo-300 text-xs font-black">
-                  {index + 1}
-                </span>
-                <h3 className={cardTitleClass}>{t(steg.tittel, lang)}</h3>
-                <p className="text-slate-400 text-sm font-light leading-relaxed">{t(steg.beskrivelse, lang)}</p>
-              </li>
-            ))}
-          </ol>
+          <NumberedStepGrid steps={detail.hvordan.steps} lang={lang} />
         ) : null}
       </section>
 
@@ -286,6 +295,27 @@ function StrategicProjectDetailInner({ slug }: { slug: StrategicPlatformSlug }) 
         ) : null}
       </section>
 
+      {detail.effektomrader && (
+        <section aria-labelledby="plattform-effektomrader" className="mb-10">
+          <SectionHeading id="plattform-effektomrader">{t(detail.effektomrader.heading, lang)}</SectionHeading>
+          <ul className="space-y-2">
+            {detail.effektomrader.punkter.map((punkt) => (
+              <li key={punkt.no} className="flex items-start gap-2 text-sm text-slate-400 font-light leading-relaxed">
+                <ChevronRight size={14} className="text-indigo-400 shrink-0 mt-0.5" aria-hidden="true" />
+                <span>{t(punkt, lang)}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {detail.anvendelsesformat && (
+        <section aria-labelledby="plattform-anvendelsesformat" className="mb-10">
+          <SectionHeading id="plattform-anvendelsesformat">{t(detail.anvendelsesformat.heading, lang)}</SectionHeading>
+          <NumberedStepGrid steps={detail.anvendelsesformat.steg} lang={lang} />
+        </section>
+      )}
+
       {projectV2?.applicationGroups && (
         <ProjectApplicationGroups groups={projectV2.applicationGroups} lang={lang} />
       )}
@@ -301,6 +331,10 @@ function StrategicProjectDetailInner({ slug }: { slug: StrategicPlatformSlug }) 
         <SectionHeading id="plattform-skalerbarhet">{t(detail.skalerbarhet.heading, lang)}</SectionHeading>
         <ScalabilitySection data={detail.skalerbarhet} lang={lang} />
       </section>
+
+      {detail.faq && (
+        <ProjectFaqSection heading={detail.faq.heading} items={detail.faq.items} lang={lang} />
+      )}
 
       {detail.utvikler && (
         <section aria-labelledby="plattform-utvikler" className="mb-10 p-6 bg-slate-900/40 rounded-2xl border border-slate-800 space-y-2">

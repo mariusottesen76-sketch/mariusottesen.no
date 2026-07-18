@@ -1,6 +1,6 @@
 import { Lang } from "../LanguageContext";
 import { FLOW_SIGNAL_APP_URL } from "../lib/flowsignal-brand";
-import { PSC_APP_URL } from "../lib/psc-brand";
+import { PSC_APP_URL, PSC_SHORT_DESCRIPTION } from "../lib/psc-brand";
 import { SMB_SALGSFLYT_APP_URL } from "../lib/smb-salgsflyt-brand";
 
 type L = { no: string; en: string };
@@ -43,21 +43,15 @@ const pscSide: PilotSide = {
   slug: "psc",
   meta: {
     title: {
-      no: "Sales Meeting Performance Pilot med The Predictive Sales Coach | Marius Ottesen",
-      en: "Sales Meeting Performance Pilot with The Predictive Sales Coach | Marius Ottesen",
+      no: "The Predictive Sales Coach v2.0 | Marius Ottesen",
+      en: "The Predictive Sales Coach v2.0 | Marius Ottesen",
     },
-    description: {
-      no: "AI-basert salgstrening og møteforberedelse for salgsorganisasjoner som vil styrke kundedialog, behovsavklaring, salgsledelse og læring.",
-      en: "AI-based sales training and meeting preparation for sales organisations that want to strengthen customer dialogue, needs clarification, sales leadership and learning.",
-    },
+    description: PSC_SHORT_DESCRIPTION,
   },
   hero: {
-    tittel: { no: "Sales Meeting Performance Pilot med", en: "Sales Meeting Performance Pilot with" },
-    tittelAccent: { no: "The Predictive Sales Coach", en: "The Predictive Sales Coach" },
-    undertittel: {
-      no: "AI-basert salgstrening og møteforberedelse for salgsorganisasjoner som vil øke kvaliteten på kundedialog, behovsavklaring og læring.",
-      en: "AI-based sales training and meeting preparation for sales organisations that want to raise the quality of customer dialogue, needs clarification and learning.",
-    },
+    tittel: { no: "The Predictive Sales Coach", en: "The Predictive Sales Coach" },
+    tittelAccent: { no: "v2.0", en: "v2.0" },
+    undertittel: PSC_SHORT_DESCRIPTION,
     tekst: {
       no: "The Predictive Sales Coach er utviklet som et tilgangsstyrt porteføljeprosjekt og lukket testflate for salgsledere, selgere og kommersielle team som ønsker bedre forberedelse, tydeligere møtegjennomføring og mer systematisk læring etter kundedialoger. Målet er ikke å erstatte salgsledelse, men å styrke trening, refleksjon og kvalitet i salgsarbeidet.",
       en: "The Predictive Sales Coach is built as an access-controlled portfolio project and closed test environment for sales leaders, salespeople and commercial teams who want better preparation, clearer meeting execution and more systematic learning after customer dialogues. The goal is not to replace sales leadership, but to strengthen training, reflection and quality in sales work.",
@@ -94,7 +88,7 @@ const pscSide: PilotSide = {
     ],
   },
   gjennomforing: {
-    tittel: { no: "Slik kan en pilot gjennomføres", en: "How a pilot can be run" },
+    tittel: { no: "Mulig anvendelsesformat", en: "Possible application format" },
     steg: [
       {
         tittel: { no: "Avklaring", en: "Clarification" },
@@ -160,14 +154,14 @@ const pscSide: PilotSide = {
     ],
   },
   utbytte: {
-    tittel: { no: "Hva løsningen dokumenterer", en: "What the solution demonstrates" },
+    tittel: { no: "Aktuelle effektområder", en: "Relevant effect areas" },
     punkter: [
-      { no: "Bedre forberedte selgere", en: "Better prepared salespeople" },
-      { no: "Høyere kvalitet i kundemøter", en: "Higher quality in customer meetings" },
-      { no: "Mer presis behovsavklaring", en: "More precise needs clarification" },
-      { no: "Bedre håndtering av innvendinger", en: "Better handling of objections" },
-      { no: "Sterkere salgsledelse og coaching", en: "Stronger sales leadership and coaching" },
-      { no: "Mer systematisk læring på tvers av teamet", en: "More systematic learning across the team" },
+      { no: "Trening på forberedelse før kundemøter", en: "Training on preparation before customer meetings" },
+      { no: "Aktuelle områder for måling og evaluering av møtekvalitet", en: "Relevant areas for measuring and evaluating meeting quality" },
+      { no: "Gir grunnlag for trening på behovsavklaring", en: "Provides a basis for training in needs clarification" },
+      { no: "Kan brukes til å utvikle trening på innvendinger", en: "Can be used to develop training on objections" },
+      { no: "Kan støtte mer strukturert salgsledelse og coaching", en: "Can support more structured sales leadership and coaching" },
+      { no: "Kan bidra til mer systematisk læring på tvers av teamet", en: "Can contribute to more systematic learning across the team" },
     ],
   },
   consulting: {
@@ -240,7 +234,7 @@ const flowSignalSide: PilotSide = {
     ],
   },
   gjennomforing: {
-    tittel: { no: "Slik kan en pilot gjennomføres", en: "How a pilot can be run" },
+    tittel: { no: "Mulig anvendelsesformat", en: "Possible application format" },
     steg: [
       {
         tittel: { no: "Oppstart", en: "Kick-off" },
@@ -306,14 +300,14 @@ const flowSignalSide: PilotSide = {
     ],
   },
   utbytte: {
-    tittel: { no: "Hva løsningen dokumenterer", en: "What the solution demonstrates" },
+    tittel: { no: "Aktuelle effektområder", en: "Relevant effect areas" },
     punkter: [
-      { no: "Bedre samarbeid", en: "Better collaboration" },
-      { no: "Mindre misforståelser", en: "Fewer misunderstandings" },
-      { no: "Tydeligere ansvar og forventninger", en: "Clearer accountability and expectations" },
-      { no: "Bedre lederdialog", en: "Better leadership dialogue" },
-      { no: "Mer bevisst bruk av styrker", en: "More conscious use of strengths" },
-      { no: "Større trygghet og bedre gjennomføring", en: "Greater confidence and better execution" },
+      { no: "Kan bidra til bedre samhandling i team", en: "Can contribute to better collaboration in teams" },
+      { no: "Gir grunnlag for å redusere misforståelser", en: "Provides a basis for reducing misunderstandings" },
+      { no: "Kan støtte tydeligere ansvar og forventninger", en: "Can support clearer accountability and expectations" },
+      { no: "Kan støtte mer strukturert lederdialog", en: "Can support more structured leadership dialogue" },
+      { no: "Gjør det mulig å trene på bevisst bruk av styrker", en: "Makes it possible to train on conscious use of strengths" },
+      { no: "Aktuelle områder for måling av samhandling og oppfølging", en: "Relevant areas for measuring collaboration and follow-up" },
     ],
   },
   avgrensning: {
@@ -392,7 +386,7 @@ const salgsflytSjekkenSide: PilotSide = {
     ],
   },
   gjennomforing: {
-    tittel: { no: "Slik kan en pilot gjennomføres", en: "How a pilot can be run" },
+    tittel: { no: "Mulig anvendelsesformat", en: "Possible application format" },
     steg: [
       {
         tittel: { no: "Avtale og tilgang", en: "Agreement and access" },
@@ -457,7 +451,7 @@ const salgsflytSjekkenSide: PilotSide = {
     ],
   },
   utbytte: {
-    tittel: { no: "Hva løsningen dokumenterer", en: "What the solution demonstrates" },
+    tittel: { no: "Aktuelle effektområder", en: "Relevant effect areas" },
     punkter: [
       { no: "Skreddersydd PDF-rapport med konkrete tiltak", en: "Tailored PDF report with concrete actions" },
       { no: "Raskere avklaring av salgsmodenhet og friksjon", en: "Faster clarification of sales maturity and friction" },
