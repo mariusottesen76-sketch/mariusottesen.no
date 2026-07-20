@@ -60,6 +60,59 @@ const fireApperKarusellBilder = Array.from({ length: 10 }, (_, i) => ({
 
 const aiGovernanceRaw = [
     {
+      id: "ai-transformation-value-realization-strand-2026-07",
+      tittel: "Fra strandidé til AI-plattform",
+      teaser:
+        "Fra ferie og strand til AI Transformation & Value Realization — samlet arbeidsflate for prioritering, forankring, implementering og dokumentert effekt av AI-initiativer.",
+      bildeUrl: "/images/AI-trans.linkedin.png",
+      bildeVersjon: "2026-07-21",
+      dato: "2026-07-21",
+      visningsDato: "21.07.26",
+      kategori: "AI / KI",
+      link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
+      innhold: `Noen klarer å la jobbideene ligge i ferien.
+
+Jeg lå på stranden da en kjent AI-utfordring dukket opp i hodet:
+
+Mange virksomheter mangler ikke AI-verktøy, ideer eller piloter. De mangler en tydelig måte å prioritere initiativene, få dem inn i driften og dokumentere om de skaper verdi.
+
+Så mye for den pausen.
+
+De siste dagene har jeg derfor utviklet <strong>AI Transformation & Value Realization</strong>.
+
+Plattformen gir ledergrupper en samlet arbeidsflate for å prioritere AI-initiativer etter blant annet verdi, strategisk relevans, gjennomførbarhet, risiko, datagrunnlag og organisatorisk beredskap.
+
+Prioriteringen er transparent og regelbasert. AI kan forklare, utfordre og utarbeide beslutningsgrunnlag, men bestemmer ikke scorene alene.
+
+Plattformen følger initiativene fra idé og kvalifisering til pilot, forankring, implementering, skalering, ny praksis og dokumentert effekt. Samtidig synliggjør den eierskap, kritiske hindringer, beslutningsbehov og neste beste handling.
+
+Den inneholder blant annet business case, beslutningsporter, beslutningslogg, scenarioanalyse, verdirealisering og en sporbar lederbrief basert på de strukturerte porteføljedataene.
+
+Plattformen kan også fungere som et strategisk overbygg for AI-prosjektene jeg har bygget de siste månedene:
+
+💥 <a href="/prosjekter#ai-readiness-scan-2026-06" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">AI Readiness Scan</a> vurderer hvor virksomheten bør starte, og hvilke områder som bør prioriteres.
+
+💥 <a href="/salgsflyt-sjekken" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">SMB Salgsflyt-sjekken</a>, <a href="/psc" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">The Predictive Sales Coach</a> og <a href="/flowsignal" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">FlowSignal</a> adresserer behov innen salg, kundedialog, samspill, teamsamarbeid, læring og prestasjonsutvikling.
+
+💥 <a href="/prosjekter#control-tower" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">Control Tower – Decision & Execution Intelligence</a> støtter kommersielle og operative funksjoner ved å omsette signaler til konsekvens, prioritet, tiltak, ansvar og effekt.
+
+Løsningene er utviklet rundt ulike lederutfordringer, men kan brukes på tvers av bransjer, funksjoner og organisasjoner.
+
+Den nye plattformen løfter perspektivet til virksomhetsnivå. Den viser hvilke AI-initiativer som bør prioriteres, hva som hindrer fremdrift, hvem som eier neste steg, og hvordan forventet og godkjent verdi utvikler seg til målt og realisert effekt.
+
+Dette er foreløpig en funksjonell konseptprototype med fiktive demodata. Problemstillingen er derimot høyst reell:
+
+Den virkelige utfordringen er å flytte AI fra idé, pilot og intensjon til ny praksis og dokumentert forretningsverdi.
+
+👇 Se <a href="/prosjekter" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">prosjektoversikten</a> med plattformen og alle AI-prosjektene mine, og <a href="/ai-transformation-value-realization" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">AI Transformation & Value Realization</a> som egen prosjektbeskrivelse.
+
+👉 Har du ansvar for AI, transformasjon eller forretningsutvikling og ønsker å se eller teste plattformen, er det bare å <a href="/kontakt" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">ta kontakt</a>.
+
+Ønsker alle en fin og avslappende sommer! 🌞
+
+#AIStrategi #AITransformasjon #Gevinstrealisering #AILedelse #Forretningsutvikling`,
+    },
+    {
       id: "control-tower-operasjon-kommers-2026-07",
       tittel: "Når operasjon og kommers må styres sammen",
       teaser:
@@ -2095,6 +2148,52 @@ AI-dømmekraft er ikke en teknisk nisjeferdighet. Det er en lederkompetanse.`
 ];
 
 const aiGovernanceEn: Record<string, LocalizedTextMap> = {
+  "ai-transformation-value-realization-strand-2026-07": {
+    tittel: "From beach idea to AI platform",
+    teaser:
+      "From holiday and beach to AI Transformation & Value Realization — a shared workspace for prioritisation, anchoring, implementation and documented impact of AI initiatives.",
+    innhold: `Some people manage to leave work ideas alone on holiday.
+
+I was lying on the beach when a familiar AI challenge came to mind:
+
+Many organisations do not lack AI tools, ideas or pilots. They lack a clear way to prioritise initiatives, bring them into operations and document whether they create value.
+
+So much for the break.
+
+Over the last few days I have therefore developed <strong>AI Transformation & Value Realization</strong>.
+
+The platform gives leadership teams a shared workspace for prioritising AI initiatives based on among other things value, strategic relevance, feasibility, risk, data foundations and organisational readiness.
+
+The prioritisation is transparent and rules-based. AI can explain, challenge and prepare decision material, but it does not determine the scores alone.
+
+The platform follows initiatives from idea and qualification through pilot, anchoring, implementation, scaling, new practice and documented impact. At the same time it makes ownership, critical blockers, decision needs and next best action visible.
+
+It includes among other things business case, decision gates, decision log, scenario analysis, value realisation and a traceable leadership brief based on structured portfolio data.
+
+The platform can also function as a strategic overlay for the AI projects I have built over recent months:
+
+💥 <a href="/prosjekter#ai-readiness-scan-2026-06" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">AI Readiness Scan</a> assesses where the organisation should start and which areas should be prioritised.
+
+💥 <a href="/salgsflyt-sjekken" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">SMB Sales Flow Check</a>, <a href="/psc" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">The Predictive Sales Coach</a> and <a href="/flowsignal" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">FlowSignal</a> address needs in sales, customer dialogue, interaction, team collaboration, learning and performance development.
+
+💥 <a href="/prosjekter#control-tower" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">Control Tower – Decision & Execution Intelligence</a> supports commercial and operational functions by turning signals into consequence, priority, action, ownership and impact.
+
+The solutions are built around different leadership challenges, but can be used across industries, functions and organisations.
+
+The new platform lifts the perspective to enterprise level. It shows which AI initiatives should be prioritised, what is blocking progress, who owns the next step, and how expected and approved value develops into measured and realised impact.
+
+This is currently a functional concept prototype with fictional demo data. The problem statement is nevertheless very real:
+
+The real challenge is moving AI from idea, pilot and intention to new practice and documented business value.
+
+👇 See the <a href="/prosjekter" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">project overview</a> with the platform and all my AI projects, and <a href="/ai-transformation-value-realization" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">AI Transformation & Value Realization</a> as its own project description.
+
+👉 If you are responsible for AI, transformation or business development and want to see or test the platform, feel free to <a href="/kontakt" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">get in touch</a>.
+
+Wishing everyone a pleasant and relaxing summer! 🌞
+
+#AIStrategy #AITransformation #ValueRealisation #AILeadership #BusinessDevelopment`,
+  },
   "control-tower-operasjon-kommers-2026-07": {
     tittel: "When operations and commercial must be governed together",
     teaser:
