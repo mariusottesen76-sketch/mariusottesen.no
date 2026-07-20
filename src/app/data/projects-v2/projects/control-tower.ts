@@ -12,6 +12,7 @@ export const controlTowerV2: ProjectV2Record = {
   accessMode: "public",
   detailLevel: "full",
   publishedAt: "2026-06-30",
+  updatedAt: "2026-07-21",
   date: "2026-07-07",
   displayDate: { no: "07.07.26", en: "07.07.26" },
   title: {

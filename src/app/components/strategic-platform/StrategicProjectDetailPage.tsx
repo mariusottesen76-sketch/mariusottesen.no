@@ -360,8 +360,7 @@ function StrategicProjectDetailInner({ slug }: { slug: StrategicPlatformSlug }) 
           <ProjectCTAGroup
             lang={lang}
             config={{
-              ...detailCta,
-              secondary: {
+              primary: {
                 href: "/prosjekter",
                 label: detail.avslutning.secondaryLabel ?? {
                   no: "Tilbake til AI-prosjekter",

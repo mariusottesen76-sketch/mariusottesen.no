@@ -258,7 +258,7 @@ export const controlTowerPlatform: StrategicPlatformProject = {
             { no: "Risiko", en: "Risk" },
             { no: "Avvik", en: "Deviations" },
             { no: "Tiltak", en: "Actions" },
-            { no: "Closed-loop-verifisering", en: "Closed-loop verification" },
+            { no: "Verifikasjon fra tiltak til effekt", en: "Verification from action to impact" },
           ],
           relevantFor: {
             no: "Relevant for COO-er, driftsledere, operasjonelle ledergrupper og virksomheter med komplekse partner- eller leveransemodeller.",
@@ -295,8 +295,8 @@ export const controlTowerPlatform: StrategicPlatformProject = {
         {
           tittel: { no: "Normalisering", en: "Normalisation" },
           beskrivelse: {
-            no: "Strukturerte data fra Excel eller CSV normaliseres til en felles modell.",
-            en: "Structured data from Excel or CSV is normalised into a shared model.",
+            no: "Plattformen demonstrerer hvordan strukturerte Excel- eller CSV-data kan normaliseres til en felles styringsmodell.",
+            en: "The platform demonstrates how structured Excel or CSV data can be normalized into a shared management model.",
           },
         },
         {
@@ -389,10 +389,10 @@ export const controlTowerPlatform: StrategicPlatformProject = {
           punkter: [
             { no: "CFO og økonomistyring", en: "CFO and financial management" },
             { no: "HR og organisasjonsutvikling", en: "HR and organisational development" },
-            { no: "Customer Service", en: "Customer Service" },
+            { no: "Kundeservice", en: "Customer service" },
             { no: "Prosjekt- og programledelse", en: "Project and programme management" },
             { no: "Innkjøp og leverandørstyring", en: "Procurement and supplier management" },
-            { no: "Bærekraft og compliance", en: "Sustainability and compliance" },
+            { no: "Bærekraft og etterlevelse", en: "Sustainability and compliance" },
             { no: "Produkt- og innovasjonsportefølje", en: "Product and innovation portfolio" },
             { no: "Daglig leder og samlet virksomhetsstyring", en: "CEO and overall business governance" },
           ],
