@@ -7,6 +7,7 @@ export const strategiskAiImplementeringV2: ProjectV2Record = {
   layoutVersion: "project_v2",
   accessMode: "no_live_solution",
   detailLevel: "full",
+  publishedAt: "2026-05-27",
   date: "2026-03-27",
   displayDate: { no: "27.03.26", en: "27.03.26" },
   title: {
@@ -60,9 +61,9 @@ export const strategiskAiImplementeringV2: ProjectV2Record = {
     },
   },
   overviewImage: "/images/strategisk-ai-implementering-hjemmeside.png?v=20260717",
-  detailHeroImage: "/images/prosjektoppgave-strategisk-implementering.png",
+  detailHeroImage: "/images/strategisk-ai-implementering-hero.png?v=20260719",
   detailHeroObjectPosition: "center",
-  needsNewDetailHero: true,
+  needsNewDetailHero: false,
   altText: {
     no: "Strategisk AI-implementering – prosjektoppgave og implementeringscase",
     en: "Strategic AI implementation – master's project and implementation case",
@@ -79,7 +80,7 @@ export const strategiskAiImplementeringV2: ProjectV2Record = {
       no: "Prosjektoppgave fra Generative AI for Business ved BI: fra AI-mulighet til gjennomførbar implementeringsplan med behovsanalyse, governance og ansvarlig gjennomføring.",
       en: "Master's project from Generative AI for Business at BI: from AI opportunity to executable implementation plan with needs analysis, governance and responsible execution.",
     },
-    ogImage: "/images/strategisk-ai-implementering-hjemmeside.png?v=20260717",
+    ogImage: "/images/strategisk-ai-implementering-hero.png?v=20260719",
     canonicalPath: "/strategisk-ai-implementering",
   },
   strategicPlatformSlug: "strategisk-ai-implementering",

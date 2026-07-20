@@ -4,6 +4,7 @@ import type { Lang } from "../../LanguageContext";
 import type { ProjectV2Record } from "../../data/projects-v2/types";
 import { buildProjectCta } from "../../data/projects-v2/cta";
 import { t } from "../../data/projects-v2/registry";
+import { ProjectOverviewMetadataRow } from "./ProjectDateMetadata";
 import { blockTitleClass, prosjektTeaserClass } from "../../lib/typography";
 import { formatProsjektPlain } from "../../lib/product-brand";
 import ProjectOverviewImage from "./ProjectOverviewImage";
@@ -16,6 +17,10 @@ type ProjectOverviewV2Props = {
   onImageClick: (src: string, alt: string) => void;
   onOpenVideo?: (payload: { src: string; poster: string; title: string }) => void;
   bildeHint: string;
+  /** Semantisk nivå for prosjekttittel — H3 når kortet ligger under kategori-H2. */
+  titleHeadingLevel?: 2 | 3;
+  /** Kort kategori-etikett for metadatarekken (kun på /prosjekter). */
+  metadataCategoryLabel?: string;
 };
 
 export default function ProjectOverviewV2({
@@ -24,9 +29,12 @@ export default function ProjectOverviewV2({
   onImageClick,
   onOpenVideo,
   bildeHint,
+  titleHeadingLevel = 2,
+  metadataCategoryLabel,
 }: ProjectOverviewV2Props) {
   const cta = buildProjectCta(project);
   const title = t(project.title, lang);
+  const TitleTag = titleHeadingLevel === 3 ? "h3" : "h2";
 
   const handleImageClick = () => {
     if (project.playbackVideo && onOpenVideo) {
@@ -52,12 +60,18 @@ export default function ProjectOverviewV2({
       />
 
       <div className="flex-1 min-w-0 flex flex-col justify-start overflow-hidden space-y-3">
-        <span className="text-[10px] font-mono uppercase tracking-widest font-bold block leading-none text-indigo-400">
-          {t(project.displayDate, lang)}
-        </span>
+        {metadataCategoryLabel ? (
+          <ProjectOverviewMetadataRow
+            project={project}
+            categoryLabel={metadataCategoryLabel}
+            lang={lang}
+          />
+        ) : (
+          <ProjectOverviewMetadataRow project={project} lang={lang} />
+        )}
 
         <div className="space-y-1">
-          <h2
+          <TitleTag
             className={`${blockTitleClass} text-xl md:text-2xl break-words [overflow-wrap:anywhere]`}
             dangerouslySetInnerHTML={{
               __html: formatProsjektPlain(t(project.title, lang), project.id),

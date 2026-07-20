@@ -7,6 +7,7 @@ export const aiInnsiktsOgInnholdsmotorV2: ProjectV2Record = {
   layoutVersion: "project_v2",
   accessMode: "concept",
   detailLevel: "concise",
+  publishedAt: "2026-04-26",
   date: "2026-02-13",
   displayDate: { no: "13.02.26", en: "13.02.26" },
   title: {
@@ -60,9 +61,9 @@ export const aiInnsiktsOgInnholdsmotorV2: ProjectV2Record = {
     },
   },
   overviewImage: "/images/ai-innsikts-og-innholdsmotor-hjemmeside.png?v=20260717",
-  detailHeroImage: "/images/ai-assistert-arbeidsflyt.jfif",
+  detailHeroImage: "/images/ai-innsikts-og-innholdsmotor-hero.png?v=20260719",
   detailHeroObjectPosition: "center",
-  needsNewDetailHero: true,
+  needsNewDetailHero: false,
   altText: {
     no: "AI-assistert innsikts- og innholdsmotor – modell og arbeidsflyt",
     en: "AI-assisted insight and content engine – model and workflow",
@@ -79,7 +80,7 @@ export const aiInnsiktsOgInnholdsmotorV2: ProjectV2Record = {
       no: "Modell og arbeidsflyt for AI-assistert innsiktsarbeid og innholdsutvikling — med redaksjonell kontroll, ikke autonom publisering.",
       en: "Model and workflow for AI-assisted insight work and content development — with editorial control, not autonomous publishing.",
     },
-    ogImage: "/images/ai-innsikts-og-innholdsmotor-hjemmeside.png?v=20260717",
+    ogImage: "/images/ai-innsikts-og-innholdsmotor-hero.png?v=20260719",
     canonicalPath: "/ai-innsikts-og-innholdsmotor",
   },
   strategicPlatformSlug: "ai-innsikts-og-innholdsmotor",

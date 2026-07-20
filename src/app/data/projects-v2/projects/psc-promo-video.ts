@@ -9,6 +9,7 @@ export const pscPromoVideoV2: ProjectV2Record = {
   layoutVersion: "project_v2",
   accessMode: "external_destination",
   detailLevel: "external_destination",
+  publishedAt: "2026-05-27",
   date: "2026-04-24",
   displayDate: { no: "24.04.26", en: "24.04.26" },
   title: {

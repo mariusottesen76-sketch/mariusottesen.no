@@ -13,7 +13,7 @@ export const controlTowerPlatform: StrategicPlatformProject = {
       no: "Modulær lederplattform for operativ og kommersiell prioritering, neste beste handling, ansvar og systematisk effektoppfølging.",
       en: "Modular leadership platform for operational and commercial prioritisation, next best action, ownership and systematic impact follow-up.",
     },
-    ogImage: "/images/control-tower-hjemmeside-bak.png",
+    ogImage: "/images/control-tower-hjemmeside-bak.png?v=20260720",
     canonicalPath: "/control-tower",
   },
   teaserCta: {

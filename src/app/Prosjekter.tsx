@@ -6,46 +6,18 @@ import { useLanguage, type Lang } from "./LanguageContext";
 import { getTranslation } from "./data/translations";
 import { pageIntroClass, pageTitleClass, sectionTitleClass } from "./lib/typography";
 import { getProsjektHurtigoversikt, resolveProsjektPageHash } from "./data/prosjekter-hurtigoversikt";
-import { type ProsjektType, predictiveSalesCoach } from "./data/prosjekter/predictive-sales-coach";
-import { pscPromoVideo } from "./data/prosjekter/psc-promo-video";
-import { aiValueLabOslo } from "./data/prosjekter/ai-value-lab-oslo";
-import { skoyenasenTannklinikk } from "./data/prosjekter/skoyenasen-tannklinikk";
-import { aiArkitekturBeslutningsstotte } from "./data/prosjekter/ai-arkitektur-beslutningsstotte";
-import { aiFaginnleggHub } from "./data/prosjekter/ai-faginnlegg-hub";
-import { aiAssistertInnsiktsagent } from "./data/prosjekter/ai-assistert-innsiktsagent";
-import { aiAssistertInnsiktsOgInnholdsagent } from "./data/prosjekter/ai-assistert-innsikts-og-innholdsagent";
-import { prosjektoppgaveStrategiskImplementering } from "./data/prosjekter/prosjektoppgave-strategisk-implementering";
-import { flowSignal } from "./data/prosjekter/flowsignal";
-import { smbSalgsflytSjekken } from "./data/prosjekter/smb-salgsflyt-sjekken";
-import { controlTower } from "./data/prosjekter/control-tower";
-import { aiTransformationValueRealization } from "./data/prosjekter/ai-transformation-value-realization";
-import { aiReadinessScan } from "./data/prosjekter/ai-readiness-scan";
-import { mariusottesenNettside } from "./data/prosjekter/mariusottesen-nettside";
+import {
+  getLegacyProsjektById,
+  PROSJEKT_PORTFOLIO_KATEGORIER,
+  getProsjektPortfolioKategoriMetadataLabel,
+} from "./data/prosjekter-portfolio";
+import { type ProsjektType } from "./data/prosjekter/predictive-sales-coach";
 import { isPscProsjekt } from "./lib/psc-brand";
 import { getProjectV2ById } from "./data/projects-v2/registry";
 import ProjectOverviewV2 from "./components/project-v2/ProjectOverviewV2";
+import ProjectCategorySection from "./components/project-v2/ProjectCategorySection";
 import ProjectImageModal from "./components/project-v2/ProjectImageModal";
 import ProjectVideoModal from "./components/project-v2/ProjectVideoModal";
-import { sortProsjekterByPortfolioOrder } from "./lib/prosjekt-portfolio-order";
-
-const prosjektKort: ProsjektType[] = [
-  aiTransformationValueRealization,
-  controlTower,
-  predictiveSalesCoach,
-  flowSignal,
-  aiReadinessScan,
-  smbSalgsflytSjekken,
-  pscPromoVideo,
-  mariusottesenNettside,
-  prosjektoppgaveStrategiskImplementering,
-  skoyenasenTannklinikk,
-  aiAssistertInnsiktsagent,
-  aiAssistertInnsiktsOgInnholdsagent,
-  aiArkitekturBeslutningsstotte,
-  aiValueLabOslo,
-];
-
-const alleProsjekter: ProsjektType[] = sortProsjekterByPortfolioOrder([...prosjektKort, aiFaginnleggHub]);
 
 function getProsjektBildeHint(prosjekt: ProsjektType, lang: Lang) {
   const custom = prosjekt.bildeHint?.[lang];
@@ -60,6 +32,9 @@ const linkClass =
 
 const prosjektIntroLinkClass =
   "text-indigo-300 text-base font-medium underline underline-offset-2 decoration-indigo-500/60 hover:text-indigo-100 hover:decoration-indigo-400 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400 rounded-sm";
+
+const kategoriNavLinkClass =
+  "text-indigo-400 underline-offset-2 decoration-indigo-500/60 hover:text-indigo-200 hover:underline transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400 rounded-sm";
 
 type ActiveVideo = {
   src: string;
@@ -162,17 +137,20 @@ export default function Prosjekter({ onNavigate: _onNavigate }: { onNavigate?: (
           {hurtigoversikt.map((kategori) => (
             <div
               key={kategori.anchorId}
-              id={kategori.anchorId}
-              className="p-4 md:p-5 bg-slate-900/40 rounded-xl border border-slate-800 space-y-3 min-w-0 scroll-mt-24"
+              className="p-4 md:p-5 bg-slate-900/40 rounded-xl border border-slate-800 space-y-3 min-w-0"
             >
-              <h3 className="text-base font-black text-indigo-400 italic tracking-tight">{kategori.title[lang]}</h3>
+              <h3 className="text-base font-black text-indigo-400 italic tracking-tight">
+                <a href={`#${kategori.anchorId}`} className={kategoriNavLinkClass}>
+                  {kategori.title[lang]}
+                </a>
+              </h3>
               {kategori.description && (
                 <p className="text-sm text-slate-400 leading-snug font-light">{kategori.description[lang]}</p>
               )}
               <ul className="space-y-3">
                 {kategori.lenker.map((lenke) => (
-                  <li key={lenke.prosjektId} className="space-y-1">
-                    <a href={`#${lenke.prosjektId}`} className={prosjektIntroLinkClass}>
+                  <li key={lenke.id} className="space-y-1">
+                    <a href={`#${lenke.id}`} className={prosjektIntroLinkClass}>
                       {tr(`prosjekter.intro.punkt.${lenke.introSlug}.label`)}
                     </a>
                     <p className="text-base text-slate-400 leading-snug font-light">
@@ -194,35 +172,59 @@ export default function Prosjekter({ onNavigate: _onNavigate }: { onNavigate?: (
         <h2 id="prosjekter-kort-heading" className={`${sectionTitleClass} mb-2`}>
           {tr("prosjekter.kort.seksjon.title")}
         </h2>
-        <p className="text-sm text-slate-400 leading-relaxed mb-6">
+        <p className="text-sm text-slate-400 leading-relaxed mb-3">
           {tr("prosjekter.kort.seksjon.intro")}
         </p>
-        <div className="space-y-6 min-w-0">
-          {alleProsjekter.map((prosjekt) => {
-            const projectV2 = getProjectV2ById(prosjekt.id);
-            if (!projectV2) return null;
+        <p className="text-sm text-slate-500 leading-relaxed mb-6 max-w-3xl">
+          {tr("prosjekter.kort.seksjon.sorting")}
+        </p>
 
-            const bildeHintKort = getProsjektBildeHint(prosjekt, lang);
-            const erPsc = isPscProsjekt(prosjekt.id);
+        <div className="min-w-0">
+          {PROSJEKT_PORTFOLIO_KATEGORIER.map((kategori, kategoriIndex) => {
+            const headingId = `${kategori.anchorId}-heading`;
+            const metadataLabel = getProsjektPortfolioKategoriMetadataLabel(kategori, lang);
 
             return (
-              <article
-                key={prosjekt.id}
-                id={prosjekt.id}
-                className={`scroll-mt-24 ${
-                  erPsc
-                    ? "bg-[#0B1120] rounded-2xl border border-slate-800/80 overflow-hidden shadow-xl min-w-0"
-                    : "bg-slate-900/40 rounded-2xl border border-indigo-500/20 overflow-hidden shadow-xl min-w-0"
-                }`}
+              <ProjectCategorySection
+                key={kategori.anchorId}
+                id={kategori.anchorId}
+                headingId={headingId}
+                title={kategori.title[lang]}
+                description={kategori.listDescription[lang]}
+                lang={lang}
+                isFirst={kategoriIndex === 0}
               >
-                <ProjectOverviewV2
-                  project={projectV2}
-                  lang={lang}
-                  onImageClick={(src, alt) => setActiveImage({ src, alt })}
-                  onOpenVideo={(payload) => setActiveVideo(payload)}
-                  bildeHint={bildeHintKort}
-                />
-              </article>
+                {kategori.projects.map((entry) => {
+                  const projectV2 = getProjectV2ById(entry.id);
+                  const legacyProsjekt = getLegacyProsjektById(entry.id);
+                  if (!projectV2 || !legacyProsjekt) return null;
+
+                  const bildeHintKort = getProsjektBildeHint(legacyProsjekt, lang);
+                  const erPsc = isPscProsjekt(entry.id);
+
+                  return (
+                    <article
+                      key={entry.id}
+                      id={entry.id}
+                      className={`scroll-mt-24 ${
+                        erPsc
+                          ? "bg-[#0B1120] rounded-2xl border border-slate-800/80 overflow-hidden shadow-xl min-w-0"
+                          : "bg-slate-900/40 rounded-2xl border border-indigo-500/20 overflow-hidden shadow-xl min-w-0"
+                      }`}
+                    >
+                      <ProjectOverviewV2
+                        project={projectV2}
+                        lang={lang}
+                        onImageClick={(src, alt) => setActiveImage({ src, alt })}
+                        onOpenVideo={(payload) => setActiveVideo(payload)}
+                        bildeHint={bildeHintKort}
+                        titleHeadingLevel={3}
+                        metadataCategoryLabel={metadataLabel}
+                      />
+                    </article>
+                  );
+                })}
+              </ProjectCategorySection>
             );
           })}
         </div>

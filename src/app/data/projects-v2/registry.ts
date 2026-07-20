@@ -1,4 +1,4 @@
-import type { ProjectV2Record } from "./types";
+import type { ProjectV2BaseRecord, ProjectV2Record } from "./types";
 import { controlTowerV2 } from "./projects/control-tower";
 import { aiTransformationV2 } from "./projects/ai-transformation-value-realization";
 import { predictiveSalesCoachV2 } from "./projects/predictive-sales-coach";
@@ -14,12 +14,14 @@ import { aiArkitekturBeslutningsstotteV2 } from "./projects/ai-arkitektur-beslut
 import { pscPromoVideoV2 } from "./projects/psc-promo-video";
 import { aiValueLabOsloV2 } from "./projects/ai-value-lab-oslo";
 import { aiFaginnleggHubV2 } from "./projects/ai-faginnlegg-hub";
+import { resolveProjectDates } from "./project-date-resolvers";
+import { projectSchemaDates } from "../../lib/project-overview-metadata";
 
 export { t } from "../strategic-platform-projects/i18n";
 
-const projectV2Records: ProjectV2Record[] = [
-  controlTowerV2,
+const baseProjectV2Records: ProjectV2BaseRecord[] = [
   aiTransformationV2,
+  controlTowerV2,
   predictiveSalesCoachV2,
   flowsignalV2,
   aiReadinessScanV2,
@@ -30,10 +32,12 @@ const projectV2Records: ProjectV2Record[] = [
   agentiskArbeidsflytV2,
   aiInnsiktsOgInnholdsmotorV2,
   aiArkitekturBeslutningsstotteV2,
-  pscPromoVideoV2,
   aiValueLabOsloV2,
   aiFaginnleggHubV2,
+  pscPromoVideoV2,
 ];
+
+const projectV2Records: ProjectV2Record[] = resolveProjectDates(baseProjectV2Records);
 
 const byId = Object.fromEntries(projectV2Records.map((p) => [p.id, p])) as Record<string, ProjectV2Record>;
 
@@ -51,12 +55,17 @@ export function getAllProjectV2Records(): ProjectV2Record[] {
   return projectV2Records;
 }
 
+export function getBaseProjectV2Records(): ProjectV2BaseRecord[] {
+  return baseProjectV2Records;
+}
+
 export function buildProjectV2Metadata(project: ProjectV2Record, lang: "no" | "en" = "no") {
   const SITE = "https://www.mariusottesen.no";
   const title = project.seo.title[lang];
   const description = project.seo.description[lang];
   const url = `${SITE}${project.seo.canonicalPath}`;
   const ogImage = project.seo.ogImage.startsWith("http") ? project.seo.ogImage : `${SITE}${project.seo.ogImage}`;
+  const { datePublished, dateModified } = projectSchemaDates(project);
 
   return {
     title,
@@ -69,6 +78,9 @@ export function buildProjectV2Metadata(project: ProjectV2Record, lang: "no" | "e
       type: "website" as const,
       siteName: "Marius Ottesen",
       images: [{ url: ogImage, width: 1200, height: 400, alt: title }],
+      ...(dateModified
+        ? { publishedTime: datePublished, modifiedTime: dateModified }
+        : { publishedTime: datePublished }),
     },
     twitter: {
       card: "summary_large_image" as const,

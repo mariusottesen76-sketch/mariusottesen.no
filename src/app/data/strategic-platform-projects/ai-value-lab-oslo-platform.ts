@@ -22,7 +22,7 @@ export const aiValueLabOsloPlatform: StrategicPlatformProject = {
       no: "Tverrfaglig initiativ for praktisk utforskning av AI-verdi, ansvarlig bruk og virksomhetsnære problemstillinger — med fokus på SMB-relevans og use case-prioritering.",
       en: "Cross-disciplinary initiative for practical exploration of AI value, responsible use and business-near challenges — with focus on SMB relevance and use case prioritisation.",
     },
-    ogImage: "/images/ai-value-lab-banner.png",
+    ogImage: "/images/ai-value-lab-oslo-hero.png?v=20260720",
     canonicalPath: "/ai-value-lab-oslo",
   },
   teaser: {

@@ -22,7 +22,7 @@ export const strategiskAiImplementeringPlatform: StrategicPlatformProject = {
       no: "Prosjektoppgave fra Generative AI for Business ved BI: fra AI-mulighet til gjennomførbar implementeringsplan med behovsanalyse, governance og ansvarlig gjennomføring.",
       en: "Master's project from Generative AI for Business at BI: from AI opportunity to executable implementation plan with needs analysis, governance and responsible execution.",
     },
-    ogImage: "/images/prosjektoppgave-strategisk-implementering.png",
+    ogImage: "/images/strategisk-ai-implementering-hero.png?v=20260719",
     canonicalPath: "/strategisk-ai-implementering",
   },
   teaser: {

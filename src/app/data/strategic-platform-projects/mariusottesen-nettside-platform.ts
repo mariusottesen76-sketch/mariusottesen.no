@@ -22,7 +22,7 @@ export const mariusottesenNettsidePlatform: StrategicPlatformProject = {
       no: "Utviklings- og porteføljecase: hvordan mariusottesen.no er bygget som profilplattform, fagarkiv og digital inngang — med Next.js, Cursor og AI-assistert produktutvikling.",
       en: "Development and portfolio case: how mariusottesen.no is built as a profile platform, subject archive and digital entry point — with Next.js, Cursor and AI-assisted product development.",
     },
-    ogImage: "/images/mariusottesen-no-faginnlegg.png?v=20260707",
+    ogImage: "/images/mariusottesen-nettside-hero.png?v=20260719",
     canonicalPath: "/mariusottesen-nettside",
   },
   teaser: {

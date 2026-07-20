@@ -7,6 +7,7 @@ export const agentiskArbeidsflytV2: ProjectV2Record = {
   layoutVersion: "project_v2",
   accessMode: "concept",
   detailLevel: "concise",
+  publishedAt: "2026-04-20",
   date: "2026-02-27",
   displayDate: { no: "27.02.26", en: "27.02.26" },
   title: {
@@ -60,9 +61,9 @@ export const agentiskArbeidsflytV2: ProjectV2Record = {
     },
   },
   overviewImage: "/images/agentisk-arbeidsflyt-hjemmeside.png?v=20260717b",
-  detailHeroImage: "/images/innsikt-handling.png",
+  detailHeroImage: "/images/agentisk-arbeidsflyt-hero.png?v=20260720",
   detailHeroObjectPosition: "center",
-  needsNewDetailHero: true,
+  needsNewDetailHero: false,
   altText: {
     no: "Agentisk arbeidsflyt – fra innsikt til kommersiell handling",
     en: "Agentic workflow – from insight to commercial action",
@@ -79,7 +80,7 @@ export const agentiskArbeidsflytV2: ProjectV2Record = {
       no: "Konsept og demonstrert arbeidsflyt for hvordan AI kan strukturere veien fra innsikt til prioritert kommersiell handling — med human-in-the-loop.",
       en: "Concept and demonstrated workflow for how AI can structure the path from insight to prioritised commercial action — with human-in-the-loop.",
     },
-    ogImage: "/images/agentisk-arbeidsflyt-hjemmeside.png?v=20260717b",
+    ogImage: "/images/agentisk-arbeidsflyt-hero.png?v=20260720",
     canonicalPath: "/agentisk-arbeidsflyt",
   },
   strategicPlatformSlug: "agentisk-arbeidsflyt",

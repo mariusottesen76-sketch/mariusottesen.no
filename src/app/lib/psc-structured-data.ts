@@ -1,4 +1,5 @@
 import { predictiveSalesCoachPlatform } from "../data/strategic-platform-projects/predictive-sales-coach-platform";
+import { getProjectV2ById } from "../data/projects-v2/registry";
 import {
   PSC_CANONICAL_URL,
   PSC_FULL_TITLE,
@@ -6,6 +7,7 @@ import {
   PSC_SEO_DESCRIPTION,
   PSC_VERSION,
 } from "./psc-brand";
+import { projectSchemaDates } from "./project-overview-metadata";
 
 const SITE = "https://www.mariusottesen.no";
 
@@ -13,6 +15,10 @@ const SITE = "https://www.mariusottesen.no";
 export function buildPscStructuredData(lang: "no" | "en" = "no") {
   const faq = predictiveSalesCoachPlatform.detail.faq;
   const description = `${PSC_SEO_DESCRIPTION[lang]} Tilgangsstyrt lukket pilot for trenings-, simulerings- og evalueringsbruk.`;
+  const pscProject = getProjectV2ById("predictive-sales-coach-2026");
+  const { datePublished, dateModified } = pscProject
+    ? projectSchemaDates(pscProject)
+    : { datePublished: "2026-02-26", dateModified: "2026-06-17" };
 
   const graph: Record<string, unknown>[] = [
     {
@@ -26,7 +32,8 @@ export function buildPscStructuredData(lang: "no" | "en" = "no") {
       softwareVersion: PSC_VERSION,
       inLanguage: lang === "no" ? "nb-NO" : "en",
       image: PSC_OG_IMAGE,
-      dateModified: "2026-06-19",
+      datePublished,
+      ...(dateModified ? { dateModified } : {}),
       creator: {
         "@type": "Person",
         name: "Marius Ottesen",

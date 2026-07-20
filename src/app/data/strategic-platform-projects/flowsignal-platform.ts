@@ -19,7 +19,7 @@ export const flowSignalPlatform: StrategicPlatformProject = {
       no: "AI-støttet samhandlings- og utviklingsverktøy for profilinnsikt, dagsform, dialog og praktisk teamutvikling — tilgangsstyrt lukket pilot.",
       en: "AI-supported collaboration and development tool for profile insight, daily form, dialogue and practical team development — access-controlled closed pilot.",
     },
-    ogImage: "/images/flowsignal-hero.png",
+    ogImage: "/images/flowsignal-hero.png?v=20260719",
     canonicalPath: "/flowsignal",
   },
   teaser: {

@@ -57,14 +57,33 @@ export type ProjectApplicationGroup = {
   items: LocalizedString[];
 };
 
-export type ProjectV2Record = {
+/** Statisk grunnrecord — updatedAt kan overstyres ved resolveProjectDates(). */
+export type ProjectV2BaseRecord = {
   id: string;
   slug: string;
   category: ProjectCategory;
   layoutVersion: "project_v2";
   accessMode: AccessMode;
   detailLevel: DetailLevel;
+  /** Første offentlige publisering på mariusottesen.no (ISO YYYY-MM-DD). */
+  publishedAt: string;
+  /** Statisk prosjektoppdatering, eller satt dynamisk av resolveProjectDates(). */
+  updatedAt?: string;
+  /** Valgfri kort oppsummering av siste vesentlige endring (ikke vist på oversiktskort). */
+  updateSummary?: LocalizedString;
+  /**
+   * Manuell dato for vesentlige nettsideendringer som ikke avledes fra innholdsdata.
+   * Kun for mariusottesen-no-2025.
+   */
+  manualSiteUpdatedAt?: string;
+  /**
+   * @deprecated Redaksjonell dato — ikke bruk som publiseringskilde for project_v2.
+   * Beholdes midlertidig for legacy og redaksjonell tekst (f.eks. «Løpende oppdatert»).
+   */
   date: string;
+  /**
+   * @deprecated Redaksjonell visningsdato — ikke bruk som publiseringskilde for project_v2.
+   */
   displayDate: LocalizedString;
   title: LocalizedString;
   subtitle: LocalizedString;
@@ -73,35 +92,27 @@ export type ProjectV2Record = {
   overviewIntroduction: LocalizedString;
   overview: ProjectOverviewContent;
   overviewImage: string;
-  /** Valgfritt bakgrunnsbilde bak hovedvisualiseringen (f.eks. 16:9 scene). */
   overviewImageBackground?: string;
   detailHeroImage: string;
   detailHeroBackground?: string;
-  /** CSS object-position for hero-banner (f.eks. center, center top, 50% 35%). */
   detailHeroObjectPosition?: string;
-  /** Overstyr standard 3:1 hero (f.eks. "1 / 3" for vertikalt prosjektbilde på detaljside). */
   detailHeroAspectRatio?: string;
-  /** Maks bredde i px når detailHeroAspectRatio er vertikal — sentreres i layouten. */
   detailHeroMaxWidthPx?: number;
-  /** Maks høyde i px for vertikal hero (standard 3:1 bruker 400 px). */
   detailHeroMaxHeightPx?: number;
-  /** true = eksisterende bilde bør produseres på nytt i 1:3; vises med contain-fallback. */
+  /** Ingen ramme/bakgrunn rundt hero — for bilder som skal fløte rett på siden. */
+  detailHeroFrameless?: boolean;
   needsNewOverviewImage?: boolean;
-  /** true = eksisterende bilde bør produseres på nytt i 3:1; vises med contain-fallback. */
   needsNewDetailHero?: boolean;
-  /** Mangler dedikert 3:1 hero — bruker overview-bilde inntil nytt asset finnes. */
   detailHeroMissing?: boolean;
   altText: LocalizedString;
   overviewImageFormat: OverviewImageFormat;
   detailDestination: string;
   liveSolutionUrl?: string;
   externalDestinationLabel?: LocalizedString;
-  /** Videavspilling i modal (f.eks. promovideo) — primær CTA åpner modal i stedet for direkte filnavigasjon. */
   playbackVideo?: {
     src: string;
     poster: string;
   };
-  /** Valgfri overstyring av CTA-etiketter (f.eks. «Åpne nettsiden» / «Ta kontakt»). */
   ctaLabels?: {
     overviewPrimary?: LocalizedString;
     overviewSecondary?: LocalizedString;
@@ -109,13 +120,13 @@ export type ProjectV2Record = {
     detailSecondary?: LocalizedString;
   };
   seo: ProjectSeo;
-  /** Detaljinnhold hentes fra strategic platform inntil egen v2-detail er migrert. */
   strategicPlatformSlug?: StrategicPlatformSlug;
-  /** Felt som krever manuell redaksjonell gjennomgang før publisering. */
   editorialReviewRequired?: (keyof ProjectOverviewContent | "overviewIntroduction")[];
-  /** Struktur for fremtidige demo-initiativer — tom = skjult seksjon. */
   applicationGroups?: ProjectApplicationGroup[];
 };
+
+/** Resolved record etter dynamisk datoberegning — brukes i UI og metadata. */
+export type ProjectV2Record = ProjectV2BaseRecord;
 
 export type ProjectMigrationEntry = {
   id: string;

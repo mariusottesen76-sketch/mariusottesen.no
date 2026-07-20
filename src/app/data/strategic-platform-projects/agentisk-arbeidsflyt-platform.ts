@@ -22,7 +22,7 @@ export const agentiskArbeidsflytPlatform: StrategicPlatformProject = {
       no: "Konsept og demonstrert arbeidsflyt for hvordan AI kan strukturere veien fra innsikt til prioritert kommersiell handling — med human-in-the-loop.",
       en: "Concept and demonstrated workflow for how AI can structure the path from insight to prioritised commercial action — with human-in-the-loop.",
     },
-    ogImage: "/images/innsikt-handling.png",
+    ogImage: "/images/agentisk-arbeidsflyt-hero.png?v=20260720",
     canonicalPath: "/agentisk-arbeidsflyt",
   },
   teaser: {

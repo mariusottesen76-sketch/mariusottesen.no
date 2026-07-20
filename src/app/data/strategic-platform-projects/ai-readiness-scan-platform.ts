@@ -19,7 +19,7 @@ export const aiReadinessScanPlatform: StrategicPlatformProject = {
       no: "Tilgangsstyrt kartlegging av AI-beredskap og gjennomføringsevne — med prioriterte utviklingsområder og administrativ oppfølging.",
       en: "Access-controlled mapping of AI readiness and execution capability — with prioritised development areas and administrative follow-up.",
     },
-    ogImage: "/images/ai-readiness-scan-hero.png",
+    ogImage: "/images/ai-readiness-scan-hero.png?v=20260719",
     canonicalPath: "/ai-readiness-scan",
   },
   teaser: {

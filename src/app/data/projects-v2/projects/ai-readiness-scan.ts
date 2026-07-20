@@ -8,6 +8,7 @@ export const aiReadinessScanV2: ProjectV2Record = {
   layoutVersion: "project_v2",
   accessMode: "access_code",
   detailLevel: "full",
+  publishedAt: "2026-06-29",
   date: "2026-05-22",
   displayDate: { no: "22.05.26", en: "22.05.26" },
   title: {
@@ -65,9 +66,9 @@ export const aiReadinessScanV2: ProjectV2Record = {
     },
   },
   overviewImage: "/images/ai-readiness-scan-hjemmeside.png?v=20260717",
-  detailHeroImage: "/images/ai-readiness-scan-hero.png",
+  detailHeroImage: "/images/ai-readiness-scan-hero.png?v=20260719",
   detailHeroObjectPosition: "center",
-  needsNewDetailHero: true,
+  needsNewDetailHero: false,
   altText: {
     no: "AI Readiness Scan – kartlegging av AI-beredskap og gjennomføringsevne",
     en: "AI Readiness Scan – mapping AI readiness and execution capability",
@@ -85,7 +86,7 @@ export const aiReadinessScanV2: ProjectV2Record = {
       no: "Tilgangsstyrt kartlegging av AI-modenhet, strategi, data, organisasjon og styring — med administrativ oppfølging og grunnlag for prioritering.",
       en: "Access-controlled mapping of AI maturity, strategy, data, organisation and governance — with administrative follow-up and a basis for prioritisation.",
     },
-    ogImage: "/images/ai-readiness-scan-hero.png",
+    ogImage: "/images/ai-readiness-scan-hero.png?v=20260719",
     canonicalPath: "/ai-readiness-scan",
   },
   strategicPlatformSlug: "ai-readiness-scan",

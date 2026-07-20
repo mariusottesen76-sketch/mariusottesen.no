@@ -44,6 +44,7 @@ import ProjectFaqSection from "./ProjectFaqSection";
 import { getProjectV2ById } from "../../data/projects-v2/registry";
 import { buildProjectDetailCta } from "../../data/projects-v2/cta";
 import { PROJECT_CATEGORY_LABELS } from "../../lib/project-v2-category";
+import ProjectDateMetadata from "../project-v2/ProjectDateMetadata";
 import { resolveDetailHeroFit } from "../../lib/project-v2-image";
 
 const linkClass =
@@ -160,7 +161,7 @@ function StrategicProjectDetailInner({ slug }: { slug: StrategicPlatformSlug }) 
         <ProjectStatusBadge label={detail.statusBadge} lang={lang} />
         {projectV2 && (
           <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[10px] font-mono uppercase tracking-widest text-slate-500">
-            <span className="text-indigo-400 font-bold">{t(projectV2.displayDate, lang)}</span>
+            <ProjectDateMetadata project={projectV2} lang={lang} className="text-indigo-400 font-bold" />
             <span aria-hidden="true">·</span>
             <span>{PROJECT_CATEGORY_LABELS[projectV2.category][lang]}</span>
           </div>
@@ -184,6 +185,7 @@ function StrategicProjectDetailInner({ slug }: { slug: StrategicPlatformSlug }) 
           aspectRatio={projectV2?.detailHeroAspectRatio}
           maxWidthPx={projectV2?.detailHeroMaxWidthPx}
           maxHeightPx={projectV2?.detailHeroMaxHeightPx}
+          frameless={projectV2?.detailHeroFrameless}
         />
 
         {projectV2 && detailCta ? (

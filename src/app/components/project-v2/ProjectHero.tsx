@@ -19,10 +19,13 @@ type ProjectHeroProps = {
   aspectRatio?: string;
   maxWidthPx?: number;
   maxHeightPx?: number;
+  frameless?: boolean;
 };
 
-const frameClass =
+const framedClass =
   "relative bg-slate-900 overflow-hidden rounded-xl border border-slate-700/60 focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:outline-none";
+const framelessClass =
+  "relative overflow-hidden focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:outline-none";
 
 /** Hero-banner på detaljsider — standard 3:1, valgfritt vertikalt format. */
 export default function ProjectHero({
@@ -36,11 +39,13 @@ export default function ProjectHero({
   aspectRatio: aspectRatioProp,
   maxWidthPx: maxWidthPxProp,
   maxHeightPx: maxHeightPxProp,
+  frameless = false,
 }: ProjectHeroProps) {
   const aspectRatio = aspectRatioProp ?? PROJECT_DETAIL_HERO.aspectRatio;
   const maxWidthPx = maxWidthPxProp ?? PROJECT_DETAIL_HERO.maxWidthPx;
   const maxHeightPx = maxHeightPxProp ?? PROJECT_DETAIL_HERO.maxHeightPx;
   const objectFitClass = fit === "contain" ? "object-contain" : "object-cover";
+  const frameClass = frameless ? framelessClass : framedClass;
 
   const image = (
     <Image

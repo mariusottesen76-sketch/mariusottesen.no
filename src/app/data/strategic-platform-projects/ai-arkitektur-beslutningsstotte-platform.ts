@@ -22,7 +22,7 @@ export const aiArkitekturBeslutningsstottePlatform: StrategicPlatformProject = {
       no: "Arkitekturmodell og beslutningslogikk for hvordan data, analyse og AI kan støtte kommersiell prioritering — konsept, ikke produksjonssystem.",
       en: "Architecture model and decision logic for how data, analysis and AI can support commercial prioritisation — concept, not a production system.",
     },
-    ogImage: "/images/ai-arkitektur-beslutningsstotte-dashboard.jpg?v=20260717d",
+    ogImage: "/images/ai-arkitektur-beslutningsstotte-hero.png?v=20260720",
     canonicalPath: "/ai-arkitektur-beslutningsstotte",
   },
   teaser: {

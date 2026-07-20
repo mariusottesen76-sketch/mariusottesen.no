@@ -22,7 +22,7 @@ export const skoyenasenTannklinikkPlatform: StrategicPlatformProject = {
       no: "Utviklet case og prototype for digital pasientreise med chatbot, behovsavklaring og booking på seks språk — ikke produksjonssatt pasientløsning.",
       en: "Developed case and prototype for digital patient journey with chatbot, needs clarification and booking in six languages — not a production-deployed patient solution.",
     },
-    ogImage: "/images/skoyenasen-tannklinikk-hjemmeside-bak.png?v=20260717f",
+    ogImage: "/images/skoyenasen-tannklinikk-hero.png?v=20260719",
     canonicalPath: "/skoyenasen-tannklinikk",
   },
   teaser: {

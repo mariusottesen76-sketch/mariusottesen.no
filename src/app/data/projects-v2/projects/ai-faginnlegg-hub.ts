@@ -7,8 +7,9 @@ export const aiFaginnleggHubV2: ProjectV2Record = {
   layoutVersion: "project_v2",
   accessMode: "external_destination",
   detailLevel: "external_destination",
+  publishedAt: "2026-01-13",
   date: "2026-01-02",
-  displayDate: { no: "Løpende oppdatert", en: "Continuously updated" },
+  displayDate: { no: "", en: "" },
   title: {
     no: "Faginnlegg: AI og fremtidens teknologiledelse",
     en: "Articles: AI and next-generation technology leadership",

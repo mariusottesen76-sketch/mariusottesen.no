@@ -17,7 +17,7 @@ export const predictiveSalesCoachPlatform: StrategicPlatformProject = {
   meta: {
     title: PSC_SEO_TITLE,
     description: PSC_SEO_DESCRIPTION,
-    ogImage: "/images/predictive-sales-coach-hero.png",
+    ogImage: "/images/predictive-sales-coach-hero.png?v=20260719b",
     canonicalPath: "/psc",
   },
   teaser: {

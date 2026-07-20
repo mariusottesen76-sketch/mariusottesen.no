@@ -22,7 +22,7 @@ export const aiInnsiktsOgInnholdsmotorPlatform: StrategicPlatformProject = {
       no: "Modell og arbeidsflyt for AI-assistert innsiktsarbeid og innholdsutvikling — med redaksjonell kontroll, ikke autonom publisering.",
       en: "Model and workflow for AI-assisted insight work and content development — with editorial control, not autonomous publishing.",
     },
-    ogImage: "/images/ai-assistert-arbeidsflyt.jfif",
+    ogImage: "/images/ai-innsikts-og-innholdsmotor-hero.png?v=20260719",
     canonicalPath: "/ai-innsikts-og-innholdsmotor",
   },
   teaser: {

@@ -34,7 +34,7 @@ export const PSC_SEO_DESCRIPTION = {
 
 export const PSC_CANONICAL_URL = "https://www.mariusottesen.no/psc";
 
-export const PSC_OG_IMAGE = "https://www.mariusottesen.no/images/predictive-sales-coach-hero.png";
+export const PSC_OG_IMAGE = "https://www.mariusottesen.no/images/predictive-sales-coach-hero.png?v=20260719b";
 
 export const PSC_PROSJEKT_IDS = new Set([
   "predictive-sales-coach-2026",

@@ -7,6 +7,7 @@ export const aiValueLabOsloV2: ProjectV2Record = {
   layoutVersion: "project_v2",
   accessMode: "concept",
   detailLevel: "concise",
+  publishedAt: "2026-03-31",
   date: "2026-03-29",
   displayDate: { no: "29.03.26", en: "29.03.26" },
   title: {
@@ -64,9 +65,9 @@ export const aiValueLabOsloV2: ProjectV2Record = {
     },
   },
   overviewImage: "/images/ai-value-lab-oslo-hjemmeside.png?v=20260717",
-  detailHeroImage: "/images/ai-value-lab-banner.png",
+  detailHeroImage: "/images/ai-value-lab-oslo-hero.png?v=20260720",
   detailHeroObjectPosition: "center",
-  needsNewDetailHero: true,
+  needsNewDetailHero: false,
   altText: {
     no: "AI Value Lab Oslo – praktisk AI-verdi for virksomheter",
     en: "AI Value Lab Oslo – practical AI value for organisations",
@@ -88,7 +89,7 @@ export const aiValueLabOsloV2: ProjectV2Record = {
       no: "Tverrfaglig initiativ for praktisk utforskning av AI-verdi, ansvarlig bruk og virksomhetsnære problemstillinger — med fokus på SMB-relevans og use case-prioritering.",
       en: "Cross-disciplinary initiative for practical exploration of AI value, responsible use and business-near challenges — with focus on SMB relevance and use case prioritisation.",
     },
-    ogImage: "/images/ai-value-lab-banner.png",
+    ogImage: "/images/ai-value-lab-oslo-hero.png?v=20260720",
     canonicalPath: "/ai-value-lab-oslo",
   },
   strategicPlatformSlug: "ai-value-lab-oslo",

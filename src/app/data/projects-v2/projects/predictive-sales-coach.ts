@@ -8,6 +8,12 @@ export const predictiveSalesCoachV2: ProjectV2Record = {
   layoutVersion: "project_v2",
   accessMode: "access_code",
   detailLevel: "full",
+  publishedAt: "2026-02-26",
+  updatedAt: "2026-06-17",
+  updateSummary: {
+    no: "Offentlig publisering av ekspressmodus v2.0 i PSC-appen med flervalgstrening, egen evalueringslogikk og Express Mode Scoring.",
+    en: "Public release of Express Mode v2.0 in the PSC app with multiple-choice training, dedicated evaluation logic and Express Mode scoring.",
+  },
   date: "2026-06-19",
   displayDate: { no: "19.06.26", en: "19.06.26" },
   title: {
@@ -65,10 +71,10 @@ export const predictiveSalesCoachV2: ProjectV2Record = {
     },
   },
   overviewImage: "/images/psc2.png",
-  detailHeroImage: "/images/predictive-sales-coach-hero.png",
-  detailHeroObjectPosition: "center top",
+  detailHeroImage: "/images/predictive-sales-coach-hero.png?v=20260719b",
+  detailHeroObjectPosition: "center",
   needsNewOverviewImage: true,
-  needsNewDetailHero: true,
+  needsNewDetailHero: false,
   altText: {
     no: "The Predictive Sales Coach v2.0 – AI-basert salgstrening og møteforberedelse",
     en: "The Predictive Sales Coach v2.0 – AI-based sales training and meeting preparation",
@@ -80,7 +86,7 @@ export const predictiveSalesCoachV2: ProjectV2Record = {
   seo: {
     title: PSC_SEO_TITLE,
     description: PSC_SEO_DESCRIPTION,
-    ogImage: "/images/predictive-sales-coach-hero.png",
+    ogImage: "/images/predictive-sales-coach-hero.png?v=20260719b",
     canonicalPath: "/psc",
   },
   strategicPlatformSlug: "predictive-sales-coach",

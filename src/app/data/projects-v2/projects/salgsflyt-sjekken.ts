@@ -8,6 +8,7 @@ export const salgsflytSjekkenV2: ProjectV2Record = {
   layoutVersion: "project_v2",
   accessMode: "access_code",
   detailLevel: "full",
+  publishedAt: "2026-06-16",
   date: "2026-05-08",
   displayDate: { no: "08.05.26", en: "08.05.26" },
   title: {
@@ -65,9 +66,9 @@ export const salgsflytSjekkenV2: ProjectV2Record = {
     },
   },
   overviewImage: "/images/smb-salgsflyt-sjekken-hjemmeside.png?v=20260717",
-  detailHeroImage: "/images/salgsflyt-sjekken-hero.png",
+  detailHeroImage: "/images/salgsflyt-sjekken-hero.png?v=20260720",
   detailHeroObjectPosition: "center",
-  needsNewDetailHero: true,
+  needsNewDetailHero: false,
   altText: {
     no: "SMB Salgsflyt-sjekken – interaktiv diagnose og AI-rapportering",
     en: "SMB Sales Flow Check – interactive diagnosis and AI reporting",
@@ -85,7 +86,7 @@ export const salgsflytSjekkenV2: ProjectV2Record = {
       no: "Tilgangsstyrt salgsdiagnose med ti kommersielle dimensjoner, AI-analyse, PDF-kunderapport og adminkonsoll — utviklet for avgrenset testing og videreutvikling.",
       en: "Access-controlled sales diagnosis with ten commercial dimensions, AI analysis, PDF customer report and admin console — developed for limited testing and further development.",
     },
-    ogImage: "/images/salgsflyt-sjekken-hero.png",
+    ogImage: "/images/salgsflyt-sjekken-hero.png?v=20260720",
     canonicalPath: "/salgsflyt-sjekken",
   },
   strategicPlatformSlug: "salgsflyt-sjekken",

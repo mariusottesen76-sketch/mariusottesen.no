@@ -8,6 +8,7 @@ export const controlTowerV2: ProjectV2Record = {
   layoutVersion: "project_v2",
   accessMode: "concept",
   detailLevel: "full",
+  publishedAt: "2026-06-30",
   date: "2026-07-07",
   displayDate: { no: "07.07.26", en: "07.07.26" },
   title: {
@@ -65,7 +66,7 @@ export const controlTowerV2: ProjectV2Record = {
     },
   },
   overviewImage: "/images/control-tower-hjemmeside.png?v=20260716",
-  detailHeroImage: "/images/control-tower-hjemmeside-bak.png?v=20260717",
+  detailHeroImage: "/images/control-tower-hjemmeside-bak.png?v=20260720",
   detailHeroObjectPosition: "center",
   needsNewDetailHero: false,
   altText: {
@@ -84,7 +85,7 @@ export const controlTowerV2: ProjectV2Record = {
       no: "Modulær lederplattform for operativ og kommersiell prioritering, neste beste handling, ansvar og systematisk effektoppfølging.",
       en: "Modular leadership platform for operational and commercial prioritisation, next best action, ownership and systematic impact follow-up.",
     },
-    ogImage: "/images/control-tower-hjemmeside-bak.png",
+    ogImage: "/images/control-tower-hjemmeside-bak.png?v=20260720",
     canonicalPath: "/control-tower",
   },
   strategicPlatformSlug: "control-tower",

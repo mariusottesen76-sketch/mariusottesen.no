@@ -19,7 +19,7 @@ export const salgsflytSjekkenPlatform: StrategicPlatformProject = {
       no: "Interaktiv diagnose og AI-rapportering for salgsfriksjon på tvers av ti kommersielle dimensjoner — med PDF-rapport og adminkonsoll.",
       en: "Interactive diagnosis and AI reporting for sales friction across ten commercial dimensions — with a PDF report and admin console.",
     },
-    ogImage: "/images/salgsflyt-sjekken-hero.png",
+    ogImage: "/images/salgsflyt-sjekken-hero.png?v=20260720",
     canonicalPath: "/salgsflyt-sjekken",
   },
   teaser: {
