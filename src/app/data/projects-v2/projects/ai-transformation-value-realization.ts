@@ -12,7 +12,7 @@ export const aiTransformationV2: ProjectV2Record = {
   accessMode: "public",
   detailLevel: "full",
   publishedAt: "2026-07-16",
-  updatedAt: "2026-07-19",
+  updatedAt: "2026-07-21",
   updateSummary: {
     no: "Vesentlig videreutvikling av plattformen med verdirealiseringslogikk, dynamiske beregninger og ferdigstilte plattformmoduler.",
     en: "Significant further development of the platform with value realisation logic, dynamic calculations and completed platform modules.",
