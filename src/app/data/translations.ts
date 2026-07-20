@@ -290,12 +290,8 @@ const translations: Translations = {
   },
   "prosjekter.kort.seksjon.title": { no: "AI-prosjekter – kort forklart", en: "AI projects – briefly explained" },
   "prosjekter.kort.seksjon.intro": {
-    no: "Her får du en kort oversikt over hva som er utviklet, hvordan prosjektet fungerer og hvorfor det er relevant. Utforsk hvert prosjekt for mer dybde.",
-    en: "Here you get a brief overview of what has been built, how each project works and why it matters. Explore each project for more depth.",
-  },
-  "prosjekter.kort.seksjon.sorting": {
-    no: "Prosjektene er gruppert etter type og sortert etter strategisk relevans, modenhet og verdi som porteføljebevis – ikke bare etter publiseringsdato. De lederorienterte plattformene vises først, etterfulgt av funksjonelle apper, implementeringscase, modeller og faglige initiativer.",
-    en: "Projects are grouped by type and ordered by strategic relevance, maturity and value as portfolio evidence — not by publication date alone. Leadership-oriented platforms come first, followed by functional apps, implementation cases, models and professional initiatives.",
+    no: "Kort oversikt over hva som er utviklet, hvordan det fungerer og hvorfor det er relevant. Prosjektene er gruppert etter type og sortert etter strategisk relevans og modenhet — lederorienterte plattformer først, deretter apper, case, modeller og faglige initiativer.",
+    en: "Brief overview of what has been built, how it works and why it matters. Projects are grouped by type and ordered by strategic relevance and maturity — leadership-oriented platforms first, then apps, cases, models and professional initiatives.",
   },
   "prosjekter.les": { no: "Les mer", en: "Read more" },
   "prosjekter.hurtig.title": { no: "Utforsk prosjektene etter type", en: "Explore projects by type" },

@@ -80,7 +80,7 @@ export default function ProjectOverviewV2({
           <p className="text-sm text-indigo-300/90 font-medium italic">{t(project.subtitle, lang)}</p>
         </div>
 
-        <p className={`${prosjektTeaserClass} text-base`}>{t(project.overviewIntroduction, lang)}</p>
+        <p className={`${prosjektTeaserClass} text-base w-full min-w-0 max-w-none`}>{t(project.overviewIntroduction, lang)}</p>
 
         <ProjectInformationGrid
           overview={project.overview}

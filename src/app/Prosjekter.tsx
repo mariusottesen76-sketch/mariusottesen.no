@@ -167,16 +167,13 @@ export default function Prosjekter({ onNavigate: _onNavigate }: { onNavigate?: (
       <section
         id="prosjekter-detalj"
         aria-labelledby="prosjekter-kort-heading"
-        className="scroll-mt-24 mt-10 pt-8 border-t border-slate-800/60 min-w-0"
+        className="scroll-mt-24 mt-8 pt-6 border-t border-slate-800/60 min-w-0"
       >
         <h2 id="prosjekter-kort-heading" className={`${sectionTitleClass} mb-2`}>
           {tr("prosjekter.kort.seksjon.title")}
         </h2>
-        <p className="text-sm text-slate-400 leading-relaxed mb-3">
+        <p className="text-sm text-slate-400 leading-snug mb-7 w-full min-w-0 max-w-none">
           {tr("prosjekter.kort.seksjon.intro")}
-        </p>
-        <p className="text-sm text-slate-500 leading-relaxed mb-6 max-w-3xl">
-          {tr("prosjekter.kort.seksjon.sorting")}
         </p>
 
         <div className="min-w-0">
@@ -191,7 +188,6 @@ export default function Prosjekter({ onNavigate: _onNavigate }: { onNavigate?: (
                 headingId={headingId}
                 title={kategori.title[lang]}
                 description={kategori.listDescription[lang]}
-                lang={lang}
                 isFirst={kategoriIndex === 0}
               >
                 {kategori.projects.map((entry) => {
