@@ -7,9 +7,11 @@ import {
 } from "../../lib/project-contact-query";
 
 export type ProjectCtaAction = {
-  href: string;
+  href?: string;
   label: LocalizedString;
   external?: boolean;
+  disabled?: boolean;
+  ariaLabel?: LocalizedString;
   opensVideoModal?: boolean;
   videoPoster?: string;
 };
@@ -17,17 +19,27 @@ export type ProjectCtaAction = {
 export type ProjectCtaConfig = {
   primary: ProjectCtaAction;
   secondary?: ProjectCtaAction;
+  tertiary?: ProjectCtaAction;
   note?: LocalizedString;
+  demoBadge?: LocalizedString;
 };
 
 const labels = {
   explore: {
     no: "Utforsk prosjektet",
-    en: "Explore the project",
+    en: "Explore project",
   },
   openSolution: {
     no: "Åpne løsningen",
     en: "Open the solution",
+  },
+  openPlatform: {
+    no: "Åpne plattformen",
+    en: "Open platform",
+  },
+  publishingPending: {
+    no: "Publisering pågår",
+    en: "Publishing in progress",
   },
   openAccessControlled: {
     no: "Åpne tilgangsstyrt løsning",
@@ -39,7 +51,7 @@ const labels = {
   },
   contactApplication: {
     no: "Ta kontakt om mulig anvendelse",
-    en: "Get in touch about potential use",
+    en: "Contact me about potential use",
   },
   contactDemo: {
     no: "Ta kontakt om demonstrasjon",
@@ -65,6 +77,16 @@ const accessCodeNote: LocalizedString = {
   en: "The solution is access-controlled and developed as a portfolio project / closed test environment — not presented as a finished commercial product.",
 };
 
+const openDemoNote: LocalizedString = {
+  no: "Åpen konseptprototype med fiktive, sesjonsbaserte demodata. Endringer lagres ikke.",
+  en: "Open concept prototype with fictional, session-based demo data. Changes are not saved.",
+};
+
+const openDemoBadge: LocalizedString = {
+  no: "Åpen demo · Fiktive data · Endringer lagres ikke",
+  en: "Open demo · Fictional data · Changes are not saved",
+};
+
 function isExternalProjectHref(href: string): boolean {
   return href.startsWith("http") || /\.(mov|mp4|webm|m4v)(\?|$)/i.test(href);
 }
@@ -81,6 +103,44 @@ function secondaryContactTema(project: ProjectV2Record): ContactQueryTema {
     return CONTACT_QUERY_TEMA.samarbeid;
   }
   return CONTACT_QUERY_TEMA.anvendelse;
+}
+
+function isOpenDemoPlatform(project: ProjectV2Record): boolean {
+  return (
+    project.category === "strategic_platform" &&
+    project.accessMode === "public" &&
+    Boolean(project.liveSolutionUrl)
+  );
+}
+
+function isPlatformLive(project: ProjectV2Record): boolean {
+  if (!project.liveSolutionUrl) return false;
+  if (project.isLive === false) return false;
+  return true;
+}
+
+function externalPlatformAriaLabel(project: ProjectV2Record): LocalizedString {
+  return {
+    no: `Åpne ${project.title.no} i ny fane`,
+    en: `Open ${project.title.en} in a new tab`,
+  };
+}
+
+function openPlatformAction(project: ProjectV2Record): ProjectCtaAction {
+  const liveUrl = project.liveSolutionUrl!;
+  return {
+    href: liveUrl,
+    label: project.ctaLabels?.overviewSecondary ?? project.ctaLabels?.detailPrimary ?? labels.openPlatform,
+    external: true,
+    ariaLabel: externalPlatformAriaLabel(project),
+  };
+}
+
+function pendingPlatformAction(): ProjectCtaAction {
+  return {
+    label: labels.publishingPending,
+    disabled: true,
+  };
 }
 
 /** Primær på /prosjekter: alltid detaljside når den finnes (ikke live-løsning). */
@@ -103,6 +163,10 @@ function primaryOverviewAction(project: ProjectV2Record): ProjectCtaAction {
 }
 
 function secondaryOverviewAction(project: ProjectV2Record): ProjectCtaAction {
+  if (isOpenDemoPlatform(project)) {
+    return isPlatformLive(project) ? openPlatformAction(project) : pendingPlatformAction();
+  }
+
   if (project.ctaLabels?.overviewSecondary) {
     if (project.liveSolutionUrl && project.accessMode === "public") {
       return {
@@ -140,6 +204,15 @@ function secondaryOverviewAction(project: ProjectV2Record): ProjectCtaAction {
 }
 
 function primaryDetailAction(project: ProjectV2Record): ProjectCtaAction {
+  if (isOpenDemoPlatform(project)) {
+    return isPlatformLive(project)
+      ? {
+          ...openPlatformAction(project),
+          label: project.ctaLabels?.detailPrimary ?? labels.openPlatform,
+        }
+      : pendingPlatformAction();
+  }
+
   const liveUrl = project.liveSolutionUrl;
 
   switch (project.accessMode) {
@@ -175,6 +248,13 @@ function primaryDetailAction(project: ProjectV2Record): ProjectCtaAction {
 }
 
 function secondaryDetailAction(project: ProjectV2Record): ProjectCtaAction | undefined {
+  if (isOpenDemoPlatform(project)) {
+    return {
+      href: contactHref(CONTACT_QUERY_TEMA.anvendelse, project.slug),
+      label: project.ctaLabels?.detailSecondary ?? labels.contactApplication,
+    };
+  }
+
   const liveUrl = project.liveSolutionUrl;
 
   switch (project.accessMode) {
@@ -198,7 +278,15 @@ function secondaryDetailAction(project: ProjectV2Record): ProjectCtaAction | und
   }
 }
 
+function tertiaryDetailAction(project: ProjectV2Record): ProjectCtaAction | undefined {
+  if (isOpenDemoPlatform(project)) {
+    return { href: "/prosjekter", label: labels.backToProjects };
+  }
+  return undefined;
+}
+
 function overviewNote(project: ProjectV2Record): LocalizedString | undefined {
+  if (isOpenDemoPlatform(project)) return openDemoNote;
   if (project.accessMode === "access_code") return accessCodeNote;
   if (project.category === "professional_initiative" || project.category === "video_communication") {
     return undefined;
@@ -207,20 +295,28 @@ function overviewNote(project: ProjectV2Record): LocalizedString | undefined {
   return undefined;
 }
 
-/** CTA-er på /prosjekter — to knapper: utforsk (primær) + kontakt/tilgang (sekundær). */
+function overviewDemoBadge(project: ProjectV2Record): LocalizedString | undefined {
+  if (isOpenDemoPlatform(project) && isPlatformLive(project)) return openDemoBadge;
+  return undefined;
+}
+
+/** CTA-er på /prosjekter — to knapper: utforsk (primær) + plattform/kontakt (sekundær). */
 export function buildProjectCta(project: ProjectV2Record): ProjectCtaConfig {
   return {
     primary: primaryOverviewAction(project),
     secondary: secondaryOverviewAction(project),
     note: overviewNote(project),
+    demoBadge: overviewDemoBadge(project),
   };
 }
 
-/** CTA-er på project_v2-detaljsider — kontakt/tilgang/løsning primær, støttende handling sekundær. */
+/** CTA-er på project_v2-detaljsider — plattform/kontakt primær, støttende handlinger sekundær/tertiær. */
 export function buildProjectDetailCta(project: ProjectV2Record): ProjectCtaConfig {
   return {
     primary: primaryDetailAction(project),
     secondary: secondaryDetailAction(project),
+    tertiary: tertiaryDetailAction(project),
     note: overviewNote(project),
+    demoBadge: isOpenDemoPlatform(project) && isPlatformLive(project) ? openDemoBadge : undefined,
   };
 }

@@ -11,7 +11,7 @@ export const aiTransformationValueRealization: ProsjektType = {
     no: "Executive konseptplattform for prioritering, transformasjonsstyring og målbar forretningseffekt — dokumentert på egen prosjektside.",
     en: "Executive concept platform for prioritisation, transformation governance and measurable business impact — documented on a dedicated project page.",
   },
-  bildeUrl: "/images/ai-transformation-value-realization-hjemmeside.png",
+  bildeUrl: "/images/ai-transformation-value-realization-overview.png?v=20260721",
   bildeRamme: "natural",
   dato: "2026-07-17",
   visningsDato: "17.07.26",

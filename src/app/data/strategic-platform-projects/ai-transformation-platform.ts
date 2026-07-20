@@ -10,20 +10,20 @@ export const aiTransformationPlatform: StrategicPlatformProject = {
       en: "AI Transformation & Value Realization | Marius Ottesen",
     },
     description: {
-      no: "Executive konseptplattform for prioritering av AI-initiativer, transformasjonsstyring, skalering og strukturert oppfølging av forventet og realisert forretningsverdi.",
-      en: "Executive concept platform for prioritising AI initiatives, transformation governance, scaling and structured follow-up of expected and realised business value.",
+      no: "Executive konseptplattform for prioritering, gjennomføring, scenarioanalyse og dokumentert verdirealisering av AI-initiativer.",
+      en: "Executive concept platform for prioritisation, execution, scenario analysis and documented value realisation of AI initiatives.",
     },
-    ogImage: "/images/ai-transformation-value-realization-hjemmeside-bak.png",
+    ogImage: "/images/ai-transformation-value-realization-hero.png?v=20260721",
     canonicalPath: "/ai-transformation-value-realization",
   },
   teaser: {
     undertittel: {
-      no: "Executive plattform for prioritering, skalering og målbar forretningseffekt fra AI",
-      en: "Executive platform for prioritisation, scaling and measurable business impact from AI",
+      no: "Executive konseptplattform for prioritering, gjennomføring og dokumentert verdirealisering av AI-initiativer",
+      en: "Executive concept platform for prioritisation, execution and documented value realisation of AI initiatives",
     },
     intro: {
-      no: "AI Transformation & Value Realization er en ferdigstilt executive konseptplattform som hjelper ledergrupper å prioritere AI-initiativer, følge transformasjonsreisen og koble investeringer til gjennomføring, ny praksis og målbar forretningseffekt.",
-      en: "AI Transformation & Value Realization is a completed executive concept platform that helps leadership teams prioritise AI initiatives, follow the transformation journey and connect investments to execution, new practice and measurable business impact.",
+      no: "AI Transformation & Value Realization gir ledergrupper en samlet arbeidsflate for å prioritere AI-initiativer, håndtere beslutninger og faseporter, følge gjennomførbarhet og styring, sammenligne scenarioer og dokumentere forventet, godkjent og realisert verdi.",
+      en: "AI Transformation & Value Realization gives leadership teams a unified workspace to prioritise AI initiatives, manage decisions and phase gates, track feasibility and governance, compare scenarios and document expected, approved and realised value.",
     },
     blokker: {
       utfordring: {
@@ -39,13 +39,13 @@ export const aiTransformationPlatform: StrategicPlatformProject = {
         en: "The project shows how strategic prioritisation, portfolio management, organisational understanding and practical AI can be connected in one leadership-oriented workspace.",
       },
       status: {
-        no: "Ferdigstilt funksjonell konseptprototype med fiktive demodata og uten aktive virksomhetsintegrasjoner.",
-        en: "Completed functional concept prototype with fictional demo data and no active enterprise integrations.",
+        no: "Funksjonell konseptprototype med fiktive, sesjonsbaserte demodata.",
+        en: "Functional concept prototype with fictional, session-based demo data.",
       },
     },
     videreutvikling: {
-      no: "Plattformen kan videreutvikles med systemintegrasjoner, scenarioanalyse, automatiserte lederbriefs og rollebasert tilgang. Grunnmodellen kan også tilpasses ulike bransjer, virksomhetsstørrelser og transformasjonsporteføljer.",
-      en: "The platform can be developed further with system integrations, scenario analysis, automated executive briefs and role-based access. The core model can also be adapted to different industries, organisation sizes and transformation portfolios.",
+      no: "Videreutvikling kan omfatte sikker autentisering og rollebasert tilgang, serverbasert organisasjonsisolasjon, permanent datalagring og revisjonshistorikk, integrasjoner mot CRM-, ERP-, HR-, økonomi- og BI-systemer, sikker serverbasert modellintegrasjon, varslinger og automatiserte oppfølgingsløp samt lagrede scenarioer og lederbriefer.",
+      en: "Further development may include secure authentication and role-based access, server-based organisation isolation, permanent data storage and revision history, integrations with CRM, ERP, HR, finance and BI systems, secure server-based model integration, alerts and automated follow-up flows, and saved scenarios and leadership briefs.",
     },
   },
   detail: {
@@ -55,16 +55,16 @@ export const aiTransformationPlatform: StrategicPlatformProject = {
     },
     hero: {
       verdiforslag: {
-        no: "En executive plattform for virksomheter som skal bevege AI fra enkeltstående piloter til prioriterte initiativer, skalert gjennomføring og strukturert oppfølging av forventet og realisert forretningsverdi.",
-        en: "An executive platform for organisations moving AI from standalone pilots to prioritised initiatives, scaled execution and structured follow-up of expected and realised business value.",
+        no: "En lederorientert konseptplattform for virksomheter som skal bevege AI fra ideer og enkeltstående piloter til prioriterte initiativer, kontrollert gjennomføring, ny praksis og dokumentert forretningsverdi.",
+        en: "A leadership-oriented concept platform for organisations moving AI from ideas and standalone pilots to prioritised initiatives, controlled execution, new practice and documented business value.",
       },
       executiveSummary: {
-        no: "Plattformen gir ledergrupper et samlet bilde av hvilke AI-initiativer virksomheten har, hvor de befinner seg i transformasjonsreisen, hvilke beslutninger som kreves, og om forventede gevinster faktisk blir realisert.",
-        en: "The platform gives leadership teams a consolidated view of which AI initiatives the organisation has, where they are on the transformation journey, which decisions are required, and whether expected benefits are actually being realised.",
+        no: "Plattformen gir ledergrupper et samlet bilde av hvilke AI-initiativer virksomheten har, hva som bør prioriteres nå, hvilke beslutninger og kritiske hindringer som bremser fremdrift, hvem som eier neste steg, og hvordan forventet og godkjent verdi utvikler seg til målt og realisert effekt.",
+        en: "The platform gives leadership teams a consolidated view of which AI initiatives the organisation has, what should be prioritised now, which decisions and critical blockers are slowing progress, who owns the next step, and how expected and approved value develops into measured and realised impact.",
       },
       bildeAlt: {
-        no: "AI Transformation & Value Realization – executive plattform for prioritering, skalering og målbar forretningseffekt fra AI",
-        en: "AI Transformation & Value Realization – executive platform for prioritisation, scaling and measurable business impact from AI",
+        no: "AI Transformation & Value Realization – horisontalt banner med transformasjonsreisen og verdirealisering med AI",
+        en: "AI Transformation & Value Realization – horizontal banner with the transformation journey and value realisation with AI",
       },
     },
     utfordring: {
@@ -114,49 +114,38 @@ export const aiTransformationPlatform: StrategicPlatformProject = {
     bygget: {
       heading: { no: "Hva som er bygget", en: "What has been built" },
       body: {
-        no: "Konseptprototypen samler executive oversikt, porteføljestyring og gevinstrealisering i én sammenhengende arbeidsflate:",
-        en: "The concept prototype brings executive overview, portfolio management and value realisation together in one coherent workspace:",
+        no: "Konseptprototypen samler lederoversikt, initiativportefølje, transformasjonsreise og verdirealisering i én sammenhengende arbeidsflate:",
+        en: "The concept prototype brings leadership overview, initiative portfolio, transformation journey and value realisation together in one coherent workspace:",
       },
       items: [
-        {
-          no: "Executive hovedside med toppprioriteringer og kritiske signaler",
-          en: "Executive home page with top priorities and critical signals",
-        },
-        {
-          no: "Use Case Portfolio med initiativer, verdi, modenhet, risiko og ansvar",
-          en: "Use Case Portfolio with initiatives, value, maturity, risk and ownership",
-        },
-        {
-          no: "Permanente detaljsider for hvert AI-initiativ",
-          en: "Permanent detail pages for each AI initiative",
-        },
-        {
-          no: "Transformation Path fra pilot til transformasjon",
-          en: "Transformation Path from pilot to transformation",
-        },
-        {
-          no: "Value Realization for forventet, validert og realisert verdi",
-          en: "Value Realization for expected, validated and realised value",
-        },
-        {
-          no: "Executive Brief med beslutningsbehov og anbefalte tiltak",
-          en: "Executive Brief with decision needs and recommended actions",
-        },
+        { no: "Lederoversikt med porteføljestatus og prioriterte saker", en: "Leadership overview with portfolio status and prioritised items" },
+        { no: "Initiativportefølje med 18 realistiske, fiktive initiativer", en: "Initiative portfolio with 18 realistic, fictional initiatives" },
+        { no: "Oppretting og redigering av initiativer", en: "Creating and editing initiatives" },
+        { no: "Transparent og deterministisk prioriteringsmodell", en: "Transparent and deterministic prioritisation model" },
+        { no: "Detaljsider med verdi, risiko, ansvar og avhengigheter", en: "Detail pages with value, risk, ownership and dependencies" },
+        { no: "Business Case og godkjent verdihypotese", en: "Business Case and approved value hypothesis" },
+        { no: "Transformasjonsreise og faseporter", en: "Transformation journey and phase gates" },
+        { no: "Action Centre med neste beste handling", en: "Action Centre with next best action" },
+        { no: "Beslutningslogg og kontrollerte beslutningsutfall", en: "Decision log and controlled decision outcomes" },
+        { no: "Verdirealisering med måling, evidens og realisert verdi", en: "Value realisation with measurement, evidence and realised value" },
+        { no: "Gjennomførbarhet og styring for Workforce og Governance", en: "Feasibility and governance for Workforce and Governance" },
+        { no: "Scenarioanalyse med alternative vekter, budsjett og kapasitet", en: "Scenario analysis with alternative weights, budget and capacity" },
+        { no: "Sporbar, deterministisk lederbrief basert på strukturerte data", en: "Traceable, deterministic leadership brief based on structured data" },
       ],
     },
     moduler: {
       heading: { no: "Sentrale moduler", en: "Core modules" },
       modules: [
         {
-          tittel: { no: "Executive Overview", en: "Executive Overview" },
+          tittel: { no: "Lederoversikt", en: "Leadership overview" },
           beskrivelse: {
-            no: "Samler toppprioriteringer, porteføljestatus, kritiske signaler og beslutninger som krever lederoppmerksomhet.",
-            en: "Brings together top priorities, portfolio status, critical signals and decisions requiring leadership attention.",
+            no: "Samler porteføljestatus, prioriterte saker, kritiske signaler og beslutninger som krever lederoppmerksomhet.",
+            en: "Brings together portfolio status, prioritised items, critical signals and decisions requiring leadership attention.",
           },
           bygget: true,
         },
         {
-          tittel: { no: "Use Case Portfolio", en: "Use Case Portfolio" },
+          tittel: { no: "Initiativportefølje", en: "Initiative portfolio" },
           beskrivelse: {
             no: "Gir samlet oversikt over initiativer, eierskap, strategisk relevans, verdi, modenhet, risiko og neste handling.",
             en: "Provides a consolidated view of initiatives, ownership, strategic relevance, value, maturity, risk and next action.",
@@ -164,26 +153,42 @@ export const aiTransformationPlatform: StrategicPlatformProject = {
           bygget: true,
         },
         {
-          tittel: { no: "Transformation Path", en: "Transformation Path" },
+          tittel: { no: "Transformasjonsreise", en: "Transformation journey" },
           beskrivelse: {
-            no: "Viser hvor initiativene befinner seg fra pilot og forankring til implementering, skalering og transformasjon.",
-            en: "Shows where initiatives stand from pilot and anchoring to implementation, scaling and transformation.",
+            no: "Viser hvor initiativene befinner seg fra pilot og forankring til implementering, skalering og transformasjon, inkludert faseporter.",
+            en: "Shows where initiatives stand from pilot and anchoring to implementation, scaling and transformation, including phase gates.",
           },
           bygget: true,
         },
         {
-          tittel: { no: "Value Realization", en: "Value Realization" },
+          tittel: { no: "Verdirealisering", en: "Value realisation" },
           beskrivelse: {
-            no: "Følger forventet, validert og realisert verdi og kobler effekten til eierskap og måleindikatorer.",
-            en: "Tracks expected, validated and realised value and links impact to ownership and metrics.",
+            no: "Følger forventet, godkjent og realisert verdi og kobler effekten til eierskap, måling og evidens.",
+            en: "Tracks expected, approved and realised value and links impact to ownership, measurement and evidence.",
           },
           bygget: true,
         },
         {
-          tittel: { no: "Executive Brief", en: "Executive Brief" },
+          tittel: { no: "Lederbrief", en: "Leadership brief" },
           beskrivelse: {
-            no: "Konsentrerer porteføljen til lederrelevante prioriteringer, blokkeringer, beslutningsbehov og anbefalte tiltak.",
-            en: "Distils the portfolio into leadership-relevant priorities, blockers, decision needs and recommended actions.",
+            no: "Konsentrerer porteføljen til lederrelevante prioriteringer, blokkeringer, beslutningsbehov og anbefalte tiltak — deterministisk basert på strukturerte data.",
+            en: "Distils the portfolio into leadership-relevant priorities, blockers, decision needs and recommended actions — deterministically based on structured data.",
+          },
+          bygget: true,
+        },
+        {
+          tittel: { no: "Gjennomførbarhet og styring", en: "Feasibility and governance" },
+          beskrivelse: {
+            no: "Støtter vurdering av workforce, governance, kapasitet og organisatorisk beredskap for gjennomføring.",
+            en: "Supports assessment of workforce, governance, capacity and organisational readiness for execution.",
+          },
+          bygget: true,
+        },
+        {
+          tittel: { no: "Scenarioanalyse", en: "Scenario analysis" },
+          beskrivelse: {
+            no: "Gir mulighet til å sammenligne alternative vekter, budsjett, kapasitet og porteføljeprioriteringer.",
+            en: "Enables comparison of alternative weights, budget, capacity and portfolio prioritisation.",
           },
           bygget: true,
         },
@@ -297,8 +302,8 @@ export const aiTransformationPlatform: StrategicPlatformProject = {
     status: {
       heading: { no: "Status og avgrensninger", en: "Status and limitations" },
       body: {
-        no: "Plattformen er ferdigstilt som en funksjonell konseptprototype med executive hovedside, interaktiv initiativportefølje, permanente detaljsider, fem styringsmoduler og konsistente fiktive demodata.\n\nLøsningen har foreløpig ikke produksjonsbackend, aktive virksomhetsintegrasjoner eller implementert flerbrukerinnlogging. Den er utviklet for å demonstrere produktlogikk, styringsmodell og mulig praktisk anvendelse.",
-        en: "The platform is completed as a functional concept prototype with an executive home page, interactive initiative portfolio, permanent detail pages, five governance modules and consistent fictional demo data.\n\nThe solution currently has no production backend, active enterprise integrations or implemented multi-user login. It is developed to demonstrate product logic, governance model and potential practical application.",
+        no: "Plattformen er ferdigstilt som en funksjonell, interaktiv konseptprototype med fiktive og sesjonsbaserte demodata. Endringer gjelder bare den aktuelle appøkten og nullstilles ved oppdatering av siden. Løsningen har ikke produksjonsbackend, aktive virksomhetsintegrasjoner, permanent datalagring eller implementert flerbrukerinnlogging.",
+        en: "The platform is completed as a functional, interactive concept prototype with fictional and session-based demo data. Changes apply only to the current app session and reset when the page is refreshed. The solution has no production backend, active enterprise integrations, permanent data storage or implemented multi-user login.",
       },
     },
     skalerbarhet: {
@@ -306,16 +311,16 @@ export const aiTransformationPlatform: StrategicPlatformProject = {
       platform: {
         heading: { no: "Videreutvikling av plattformen", en: "Further platform development" },
         punkter: [
+          { no: "Sikker autentisering og rollebasert tilgang", en: "Secure authentication and role-based access" },
+          { no: "Serverbasert organisasjonsisolasjon", en: "Server-based organisation isolation" },
+          { no: "Permanent datalagring og revisjonshistorikk", en: "Permanent data storage and revision history" },
           {
-            no: "Integrasjoner mot økonomi-, prosjekt-, HR-, CRM-, ERP- og BI-systemer",
-            en: "Integrations with finance, project, HR, CRM, ERP and BI systems",
+            no: "Integrasjoner mot CRM-, ERP-, HR-, økonomi- og BI-systemer",
+            en: "Integrations with CRM, ERP, HR, finance and BI systems",
           },
-          { no: "Automatiserte executive briefs", en: "Automated executive briefs" },
-          { no: "Scenarioanalyse og gevinstprognoser", en: "Scenario analysis and benefit forecasts" },
-          { no: "Varslinger om risiko, blokkeringer og verdiavvik", en: "Alerts on risk, blockers and value deviations" },
-          { no: "AI-støttede anbefalinger og neste beste handling", en: "AI-supported recommendations and next best action" },
-          { no: "Rollebasert innlogging og tilgangsstyring", en: "Role-based login and access control" },
-          { no: "Historikk, beslutningslogg og dokumentert læring", en: "History, decision log and documented learning" },
+          { no: "Sikker serverbasert modellintegrasjon", en: "Secure server-based model integration" },
+          { no: "Varslinger og automatiserte oppfølgingsløp", en: "Alerts and automated follow-up flows" },
+          { no: "Lagrede scenarioer og lederbriefer", en: "Saved scenarios and leadership briefs" },
         ],
       },
       tilpasning: {

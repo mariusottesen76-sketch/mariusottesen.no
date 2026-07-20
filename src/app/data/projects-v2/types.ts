@@ -108,6 +108,8 @@ export type ProjectV2BaseRecord = {
   overviewImageFormat: OverviewImageFormat;
   detailDestination: string;
   liveSolutionUrl?: string;
+  /** Når false: vis «Publisering pågår» i stedet for ekstern plattformlenke. Standard true hvis liveSolutionUrl finnes. */
+  isLive?: boolean;
   externalDestinationLabel?: LocalizedString;
   playbackVideo?: {
     src: string;

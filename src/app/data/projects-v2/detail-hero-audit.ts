@@ -27,12 +27,12 @@ export const detailHeroAudit: DetailHeroAuditEntry[] = [
   {
     route: "/ai-transformation-value-realization",
     projectId: "ai-transformation-value-realization",
-    heroImage: "/images/ai-transformation-value-realization-hjemmeside-bak.png",
-    aspectNote: "Horisontalt banner — egnet for 3:1 med cover",
+    heroImage: "/images/ai-transformation-value-realization-hero.png?v=20260721",
+    aspectNote: "Horisontalt banner — transformasjonsreise og verdirealisering",
     objectPosition: "center",
     fit: "cover",
     needsNewDetailHero: false,
-    notes: "Produsert i bannerformat; kontrollert beskjæring OK.",
+    notes: "Oppdatert horisontalt hjemmesidebanner med AI-transformasjonsreisen og verdirealiseringsmodell.",
   },
   {
     route: "/psc",

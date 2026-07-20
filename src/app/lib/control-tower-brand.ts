@@ -1,9 +1,9 @@
-/** Control Tower — deployet pilot (Cloud Run). Ikke synliggjør på nettsiden før innlogging er på plass. */
+/** Control Tower — deployet offentlig konseptprototype (Cloud Run). */
 export const CONTROL_TOWER_APP_URL =
   "https://control-tower-1049194963104.europe-west2.run.app/";
 
-/** Sett til true når innlogging er klar og pilotlenke skal vises på prosjektsiden m.m. */
-export const CONTROL_TOWER_PILOT_PUBLIC = false;
+/** Offentlig åpen demo — ingen innlogging kreves. */
+export const CONTROL_TOWER_PILOT_PUBLIC = true;
 
 export const CONTROL_TOWER_PROSJEKT_PATH = "/prosjekter#control-tower";
 

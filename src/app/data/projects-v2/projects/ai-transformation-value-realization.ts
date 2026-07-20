@@ -1,12 +1,15 @@
+import {
+  AI_TRANSFORMATION_APP_URL,
+  AI_TRANSFORMATION_PILOT_PUBLIC,
+} from "../../../lib/ai-transformation-brand";
 import type { ProjectV2Record } from "../types";
 
-/** Godkjent oversiktsinnhold — hentet fra eksisterende strategic platform-data, ikke omskrevet. */
 export const aiTransformationV2: ProjectV2Record = {
   id: "ai-transformation-value-realization",
   slug: "ai-transformation-value-realization",
   category: "strategic_platform",
   layoutVersion: "project_v2",
-  accessMode: "concept",
+  accessMode: "public",
   detailLevel: "full",
   publishedAt: "2026-07-16",
   updatedAt: "2026-07-19",
@@ -21,76 +24,78 @@ export const aiTransformationV2: ProjectV2Record = {
     en: "AI Transformation & Value Realization",
   },
   subtitle: {
-    no: "Executive plattform for prioritering, skalering og målbar forretningseffekt fra AI",
-    en: "Executive platform for prioritisation, scaling and measurable business impact from AI",
+    no: "Executive konseptplattform for prioritering, gjennomføring og dokumentert verdirealisering av AI-initiativer",
+    en: "Executive concept platform for prioritisation, execution and documented value realisation of AI initiatives",
   },
   statusLabel: {
-    no: "Ferdigstilt funksjonell konseptprototype med fiktive demodata",
-    en: "Completed functional concept prototype with fictional demo data",
+    no: "Funksjonell konseptprototype med fiktive, sesjonsbaserte demodata",
+    en: "Functional concept prototype with fictional, session-based demo data",
   },
   maturityLevel: {
     no: "Konseptprototype",
     en: "Concept prototype",
   },
   overviewIntroduction: {
-    no: "AI Transformation & Value Realization er en ferdigstilt executive konseptplattform som hjelper ledergrupper å prioritere AI-initiativer, følge transformasjonsreisen og koble investeringer til gjennomføring, ny praksis og målbar forretningseffekt.",
-    en: "AI Transformation & Value Realization is a completed executive concept platform that helps leadership teams prioritise AI initiatives, follow the transformation journey and connect investments to execution, new practice and measurable business impact.",
+    no: "AI Transformation & Value Realization gir ledergrupper en samlet arbeidsflate for å prioritere AI-initiativer, håndtere beslutninger og faseporter, følge gjennomførbarhet og styring, sammenligne scenarioer og dokumentere forventet, godkjent og realisert verdi.",
+    en: "AI Transformation & Value Realization gives leadership teams a unified workspace to prioritise AI initiatives, manage decisions and phase gates, track feasibility and governance, compare scenarios and document expected, approved and realised value.",
   },
   overview: {
     what: {
-      no: "En executive plattform for virksomheter som skal bevege AI fra enkeltstående piloter til prioriterte initiativer, skalert gjennomføring og strukturert oppfølging av forventet og realisert forretningsverdi.",
-      en: "An executive platform for organisations moving AI from standalone pilots to prioritised initiatives, scaled execution and structured follow-up of expected and realised business value.",
+      no: "En lederorientert konseptplattform for virksomheter som skal bevege AI fra ideer og enkeltstående piloter til prioriterte initiativer, kontrollert gjennomføring, ny praksis og dokumentert forretningsverdi.",
+      en: "A leadership-oriented concept platform for organisations moving AI from ideas and standalone pilots to prioritised initiatives, controlled execution, new practice and documented business value.",
     },
     challenge: {
       no: "Mange virksomheter har startet med AI-verktøy, eksperimenter og piloter. Utfordringen oppstår når initiativene skal prioriteres, forankres, implementeres og skaleres, samtidig som forventede gevinster skal dokumenteres.",
       en: "Many organisations have started with AI tools, experiments and pilots. The challenge arises when initiatives must be prioritised, anchored, implemented and scaled — while expected benefits need to be documented.",
     },
     built: {
-      no: "Det er utviklet en funksjonell konseptprototype med executive hovedside, initiativportefølje, permanente detaljsider og sammenhengende moduler for transformasjonsstyring og gevinstrealisering.",
-      en: "A functional concept prototype has been developed with an executive home page, initiative portfolio, permanent detail pages and integrated modules for transformation governance and value realisation.",
+      no: "Det er utviklet en funksjonell konseptprototype med lederoversikt, initiativportefølje med 18 fiktive initiativer, prioriteringsmodell, transformasjonsreise, verdirealisering, lederbrief, gjennomførbarhet og styring samt scenarioanalyse.",
+      en: "A functional concept prototype has been developed with leadership overview, initiative portfolio with 18 fictional initiatives, prioritisation model, transformation journey, value realisation, leadership brief, feasibility and governance, and scenario analysis.",
     },
     how: {
-      no: "Brukeren starter i executive oversikten, går videre til porteføljen og kan åpne hvert initiativ i en permanent detaljside.",
-      en: "The user starts in the executive overview, moves to the portfolio and can open each initiative on a permanent detail page.",
+      no: "Ledergruppen starter i lederoversikten, går videre til initiativporteføljen og kan åpne hvert initiativ med verdi, risiko, ansvar, avhengigheter og neste beste handling.",
+      en: "The leadership team starts in the leadership overview, moves to the initiative portfolio and can open each initiative with value, risk, ownership, dependencies and next best action.",
     },
     relevance: {
       no: "Prosjektet viser hvordan strategisk prioritering, porteføljestyring, organisasjonsforståelse og praktisk AI kan kobles i én lederorientert arbeidsflate.",
       en: "The project shows how strategic prioritisation, portfolio management, organisational understanding and practical AI can be connected in one leadership-oriented workspace.",
     },
     status: {
-      no: "Ferdigstilt funksjonell konseptprototype med fiktive demodata og uten aktive virksomhetsintegrasjoner.",
-      en: "Completed functional concept prototype with fictional demo data and no active enterprise integrations.",
+      no: "Funksjonell konseptprototype med fiktive, sesjonsbaserte demodata.",
+      en: "Functional concept prototype with fictional, session-based demo data.",
     },
     development: {
-      no: "Plattformen kan videreutvikles med systemintegrasjoner, scenarioanalyse, automatiserte lederbriefs og rollebasert tilgang.",
-      en: "The platform can be developed further with system integrations, scenario analysis, automated executive briefs and role-based access.",
+      no: "Videreutvikling kan omfatte sikker autentisering, serverbasert organisasjonsisolasjon, permanent datalagring, virksomhetsintegrasjoner og varslinger.",
+      en: "Further development may include secure authentication, server-based organisation isolation, permanent data storage, enterprise integrations and alerts.",
     },
     adaptation: {
       no: "Grunnmodellen kan tilpasses ulike bransjer, virksomhetsstørrelser og transformasjonsporteføljer.",
       en: "The core model can be adapted to different industries, organisation sizes and transformation portfolios.",
     },
   },
-  overviewImage: "/images/ai-transformation-value-realization-hjemmeside.png",
-  detailHeroImage: "/images/ai-transformation-value-realization-hjemmeside-bak.png?v=20260716",
+  overviewImage: "/images/ai-transformation-value-realization-overview.png?v=20260721",
+  detailHeroImage: "/images/ai-transformation-value-realization-hero.png?v=20260721",
   detailHeroObjectPosition: "center",
   needsNewDetailHero: false,
   altText: {
-    no: "AI Transformation & Value Realization – executive plattform for prioritering, skalering og målbar forretningseffekt fra AI",
-    en: "AI Transformation & Value Realization – executive platform for prioritisation, scaling and measurable business impact from AI",
+    no: "AI Transformation & Value Realization – transformasjonsreisen fra løft og bruksområde til skalering og verdirealisering",
+    en: "AI Transformation & Value Realization – the transformation journey from lift and use cases to scaling and value realisation",
   },
   overviewImageFormat: "standard_1x3",
   detailHeroMissing: false,
   detailDestination: "/ai-transformation-value-realization",
+  liveSolutionUrl: AI_TRANSFORMATION_APP_URL,
+  isLive: AI_TRANSFORMATION_PILOT_PUBLIC,
   seo: {
     title: {
       no: "AI Transformation & Value Realization | Marius Ottesen",
       en: "AI Transformation & Value Realization | Marius Ottesen",
     },
     description: {
-      no: "Executive konseptplattform for prioritering av AI-initiativer, transformasjonsstyring, skalering og strukturert oppfølging av forventet og realisert forretningsverdi.",
-      en: "Executive concept platform for prioritising AI initiatives, transformation governance, scaling and structured follow-up of expected and realised business value.",
+      no: "Executive konseptplattform for prioritering, gjennomføring, scenarioanalyse og dokumentert verdirealisering av AI-initiativer.",
+      en: "Executive concept platform for prioritisation, execution, scenario analysis and documented value realisation of AI initiatives.",
     },
-    ogImage: "/images/ai-transformation-value-realization-hjemmeside-bak.png",
+    ogImage: "/images/ai-transformation-value-realization-hero.png?v=20260721",
     canonicalPath: "/ai-transformation-value-realization",
   },
   strategicPlatformSlug: "ai-transformation-value-realization",

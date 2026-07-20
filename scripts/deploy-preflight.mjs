@@ -27,8 +27,8 @@ const routes = [
 ];
 
 const projectImages = [
-  "/images/ai-transformation-value-realization-hjemmeside.png",
-  "/images/ai-transformation-value-realization-hjemmeside-bak.png",
+  "/images/ai-transformation-value-realization-overview.png",
+  "/images/ai-transformation-value-realization-hero.png",
   "/images/control-tower-hjemmeside.png",
   "/images/control-tower-hjemmeside-bak.png",
   "/images/psc2.png",

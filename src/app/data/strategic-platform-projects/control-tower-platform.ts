@@ -10,8 +10,8 @@ export const controlTowerPlatform: StrategicPlatformProject = {
       en: "Control Tower – Decision & Execution Intelligence | Marius Ottesen",
     },
     description: {
-      no: "Modulær lederplattform for operativ og kommersiell prioritering, neste beste handling, ansvar og systematisk effektoppfølging.",
-      en: "Modular leadership platform for operational and commercial prioritisation, next best action, ownership and systematic impact follow-up.",
+      no: "Beslutnings- og gjennomføringsplattform som omsetter operative og kommersielle signaler til prioritering, handling, ansvar og effekt.",
+      en: "Decision and execution platform that turns operational and commercial signals into prioritisation, action, ownership and impact.",
     },
     ogImage: "/images/control-tower-hjemmeside-bak.png?v=20260720",
     canonicalPath: "/control-tower",
@@ -25,8 +25,8 @@ export const controlTowerPlatform: StrategicPlatformProject = {
       en: "Decision and execution platform for operational and commercial prioritisation",
     },
     intro: {
-      no: "Control Tower er en ferdigstilt beslutnings- og gjennomføringsplattform som omsetter spredte data, KPI-er og risikosignaler til tydelige prioriteringer, tiltak, ansvar og systematisk effektoppfølging.",
-      en: "Control Tower is a completed decision and execution platform that turns scattered data, KPIs and risk signals into clear priorities, actions, ownership and systematic impact follow-up.",
+      no: "Control Tower omsetter operative og kommersielle signaler til konsekvens, prioritet, neste beste handling, tydelig ansvar og strukturert effektoppfølging.",
+      en: "Control Tower turns operational and commercial signals into consequence, priority, next best action, clear ownership and structured impact follow-up.",
     },
     blokker: {
       utfordring: {
@@ -42,13 +42,13 @@ export const controlTowerPlatform: StrategicPlatformProject = {
         en: "The project shows how operational and commercial leadership information can be turned into next best action, clear ownership and more structured execution.",
       },
       status: {
-        no: "Ferdigstilt konseptprototype med fungerende Operations- og Commercial-modul, fiktive demodata og uten aktive systemintegrasjoner.",
-        en: "Completed concept prototype with working Operations and Commercial modules, fictional demo data and no active system integrations.",
+        no: "Funksjonell konseptprototype med Operations- og Commercial-modul, transparent regelmotor og fiktive demodata.",
+        en: "Functional concept prototype with Operations and Commercial modules, transparent rules engine and fictional demo data.",
       },
     },
     videreutvikling: {
-      no: "Plattformen kan videreutvikles med systemintegrasjoner, rollebaserte arbeidsflater, varslinger, scenarioanalyse og mer avansert AI-støtte. Grunnmodellen kan samtidig tilpasses flere lederroller, funksjoner og bransjer.",
-      en: "The platform can be developed further with system integrations, role-based workspaces, alerts, scenario analysis and more advanced AI support. The core model can also be adapted to more leadership roles, functions and industries.",
+      no: "Videreutvikling kan omfatte produksjonsintegrasjoner, sikker innlogging og rollebasert tilgang, permanent historikk, varslinger og eskalering, periodiske eller sanntidsbaserte dataoppdateringer og mer avansert prediktiv analyse.",
+      en: "Further development may include production integrations, secure login and role-based access, permanent history, alerts and escalation, periodic or real-time data updates and more advanced predictive analysis.",
     },
   },
   detail: {
@@ -58,12 +58,12 @@ export const controlTowerPlatform: StrategicPlatformProject = {
     },
     hero: {
       verdiforslag: {
-        no: "En modulær lederplattform som gjør spredte virksomhetssignaler om til prioriteringer, tiltak, ansvar og systematisk effektoppfølging.",
-        en: "A modular leadership platform that turns scattered business signals into priorities, actions, ownership and systematic impact follow-up.",
+        no: "En modulær lederplattform som omsetter spredte operative og kommersielle signaler til tydelige prioriteringer, neste beste handling, ansvar og strukturert effektoppfølging.",
+        en: "A modular leadership platform that turns scattered operational and commercial signals into clear priorities, next best action, ownership and structured impact follow-up.",
       },
       executiveSummary: {
-        no: "Control Tower er utviklet for ledere som trenger å forstå hva som krever oppmerksomhet nå, hvorfor det betyr noe, og hva organisasjonen bør gjøre videre. Plattformen kombinerer en transparent styringslogikk med AI-støttet analyse og konkrete handlingsflater.",
-        en: "Control Tower is developed for leaders who need to understand what requires attention now, why it matters, and what the organisation should do next. The platform combines transparent governance logic with AI-supported analysis and concrete action surfaces.",
+        no: "Control Tower er utviklet for ledere som trenger å forstå hva som krever oppmerksomhet nå, hvorfor det betyr noe, hvem som eier neste steg, og hvordan gjennomførte tiltak skal følges opp.",
+        en: "Control Tower is developed for leaders who need to understand what requires attention now, why it matters, who owns the next step, and how executed actions should be followed up.",
       },
       bildeAlt: {
         no: "Control Tower – beslutnings- og gjennomføringsplattform for operativ og kommersiell prioritering",
@@ -226,16 +226,18 @@ export const controlTowerPlatform: StrategicPlatformProject = {
     bygget: {
       heading: { no: "Hva som er bygget", en: "What has been built" },
       items: [
-        { no: "Felles landingsside for plattformen", en: "Shared landing page for the platform" },
+        { no: "Felles landingsside og lederorientert appskall", en: "Shared landing page and leadership-oriented app shell" },
         { no: "Operations Control Tower", en: "Operations Control Tower" },
         { no: "Commercial Control Tower", en: "Commercial Control Tower" },
-        { no: "Executive Overview og health scores", en: "Executive Overview and health scores" },
-        { no: "Prioritert risiko- og tiltaksoversikt", en: "Prioritised risk and action overview" },
+        { no: "Lederoversikt med porteføljehelse og prioriterte signaler", en: "Leadership overview with portfolio health and prioritised signals" },
+        { no: "Transparent regelmotor", en: "Transparent rules engine" },
+        { no: "Prioriterte risikoer og avvik", en: "Prioritised risks and deviations" },
         { no: "Action Centre med eier, frist og forventet effekt", en: "Action Centre with owner, deadline and expected impact" },
-        { no: "AI Brief med forklarte drivere og anbefalte handlinger", en: "AI Brief with explained drivers and recommended actions" },
-        { no: "Scenario-simulator", en: "Scenario simulator" },
-        { no: "Beslutnings- og effektlogikk", en: "Decision and impact logic" },
-        { no: "Import og bruk av tydelig merkede fiktive demodata", en: "Import and use of clearly labelled fictional demo data" },
+        { no: "Neste beste handling", en: "Next best action" },
+        { no: "Beslutnings- og verifikasjonslogikk", en: "Decision and verification logic" },
+        { no: "Scenarioanalyse", en: "Scenario analysis" },
+        { no: "AI-støttet brief med forklarte drivere og anbefalte handlinger", en: "AI-supported brief with explained drivers and recommended actions" },
+        { no: "Fiktive og tydelig merkede demodata", en: "Fictional and clearly labelled demo data" },
       ],
     },
     moduler: {
@@ -244,8 +246,8 @@ export const controlTowerPlatform: StrategicPlatformProject = {
         {
           tittel: { no: "Operations Control Tower", en: "Operations Control Tower" },
           beskrivelse: {
-            no: "Operativ styringsmodul for partnerprestasjon, leveranse, kapasitet, kostnad og risiko.",
-            en: "Operational governance module for partner performance, delivery, capacity, cost and risk.",
+            no: "Operativ styringsmodul for partnerprestasjon, levering, kapasitet, kostnad, kvalitet og risiko.",
+            en: "Operational governance module for partner performance, delivery, capacity, cost, quality and risk.",
           },
           bygget: true,
           fokusomrader: [
@@ -266,8 +268,8 @@ export const controlTowerPlatform: StrategicPlatformProject = {
         {
           tittel: { no: "Commercial Control Tower", en: "Commercial Control Tower" },
           beskrivelse: {
-            no: "Kommersiell styringsmodul for kundehelse, margin, pipeline, kontrakter og oppfølging.",
-            en: "Commercial governance module for customer health, margin, pipeline, contracts and follow-up.",
+            no: "Kommersiell styringsmodul for kundehelse, margin, volum, pipeline, kontrakter, pris og neste beste kommersielle handling.",
+            en: "Commercial governance module for customer health, margin, volume, pipeline, contracts, pricing and next best commercial action.",
           },
           bygget: true,
           fokusomrader: [
@@ -363,8 +365,8 @@ export const controlTowerPlatform: StrategicPlatformProject = {
     status: {
       heading: { no: "Status og avgrensninger", en: "Status and limitations" },
       body: {
-        no: "Control Tower er ferdigstilt som en funksjonell konseptprototype med Operations- og Commercial-modul, felles datamodell, regelmotor, prioriteringslogikk, Action Centre, AI Brief og fiktive demodata.\n\nLøsningen har foreløpig ikke produksjonsbackend eller aktive integrasjoner mot virksomheters CRM-, ERP-, BI- eller kontraktssystemer. Den er utviklet som porteføljedemonstrasjon av styringslogikk, produktforståelse og mulig anvendelse.",
-        en: "Control Tower is completed as a functional concept prototype with Operations and Commercial modules, shared data model, rules engine, prioritisation logic, Action Centre, AI Brief and fictional demo data.\n\nThe solution currently has no production backend or active integrations with organisations' CRM, ERP, BI or contract systems. It is developed as a portfolio demonstration of governance logic, product understanding and potential application.",
+        no: "Control Tower er ferdigstilt som en funksjonell konseptprototype med Operations- og Commercial-modul, felles styringslogikk, transparent regelmotor, Action Centre og fiktive demodata. Løsningen har ikke produksjonsbackend eller aktive integrasjoner mot virksomheters CRM-, ERP-, BI-, økonomi- eller kontraktssystemer.",
+        en: "Control Tower is completed as a functional concept prototype with Operations and Commercial modules, shared governance logic, transparent rules engine, Action Centre and fictional demo data. The solution has no production backend or active integrations with organisations' CRM, ERP, BI, finance or contract systems.",
       },
     },
     skalerbarhet: {
@@ -372,14 +374,12 @@ export const controlTowerPlatform: StrategicPlatformProject = {
       platform: {
         heading: { no: "Videreutvikling av plattformen", en: "Further platform development" },
         punkter: [
-          { no: "Integrasjoner mot CRM, ERP, BI, økonomi- og kontraktssystemer", en: "Integrations with CRM, ERP, BI, finance and contract systems" },
-          { no: "Automatiske varslinger og eskaleringslogikk", en: "Automatic alerts and escalation logic" },
-          { no: "Mer avansert scenarioanalyse", en: "More advanced scenario analysis" },
-          { no: "Prognoser og prediktive signaler", en: "Forecasts and predictive signals" },
-          { no: "Rollebaserte arbeidsflater og tilgangsstyring", en: "Role-based workspaces and access control" },
-          { no: "Beslutningslogg og closed-loop-effektmåling", en: "Decision log and closed-loop impact measurement" },
-          { no: "AI-støttet executive brief", en: "AI-supported executive brief" },
-          { no: "Mulighet for sanntids- eller periodiske dataoppdateringer", en: "Real-time or periodic data updates" },
+          { no: "Produksjonsintegrasjoner mot CRM, ERP, BI, økonomi- og kontraktssystemer", en: "Production integrations with CRM, ERP, BI, finance and contract systems" },
+          { no: "Sikker innlogging og rollebasert tilgang", en: "Secure login and role-based access" },
+          { no: "Permanent historikk", en: "Permanent history" },
+          { no: "Varslinger og eskalering", en: "Alerts and escalation" },
+          { no: "Periodiske eller sanntidsbaserte dataoppdateringer", en: "Periodic or real-time data updates" },
+          { no: "Mer avansert prediktiv analyse", en: "More advanced predictive analysis" },
         ],
       },
       tilpasning: {

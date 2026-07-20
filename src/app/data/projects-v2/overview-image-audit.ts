@@ -16,13 +16,13 @@ export type OverviewImageAuditEntry = {
 export const overviewImageAudit: OverviewImageAuditEntry[] = [
   {
     projectId: "ai-transformation-value-realization",
-    overviewImage: "/images/ai-transformation-value-realization-hjemmeside.png",
-    aspectNote: "Vertikalt 1:3 — godkjent oversiktsformat",
+    overviewImage: "/images/ai-transformation-value-realization-overview.png?v=20260721",
+    aspectNote: "Vertikalt 1:3 — norsk hjemmesideinfografikk",
     fit: "contain",
     needsNewOverviewImage: false,
-    recommendedFilename: "ai-transformation-value-realization-hjemmeside.png",
+    recommendedFilename: "ai-transformation-value-realization-overview.png",
     recommendedDimensions: "1200×3600 px",
-    notes: "1:3 på plass. Valgfritt: overviewImageBackground for landscape-scene.",
+    notes: "Vertikal infografikk med AI-transformasjonsreisen og verdirealiseringsmodell.",
   },
   {
     projectId: "control-tower",

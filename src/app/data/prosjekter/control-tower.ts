@@ -3,8 +3,8 @@ import { type ProsjektType } from "./predictive-sales-coach";
 export const controlTower: ProsjektType = {
   id: "control-tower",
   tittel: {
-    no: "Control Tower: Decision & Execution Intelligence",
-    en: "Control Tower: Decision & Execution Intelligence",
+    no: "Control Tower – Decision & Execution Intelligence",
+    en: "Control Tower – Decision & Execution Intelligence",
   },
   teaser: {
     no: "Beslutnings- og gjennomføringsplattform for operativ og kommersiell prioritering — dokumentert på egen prosjektside.",
