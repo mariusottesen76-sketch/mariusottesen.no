@@ -16,6 +16,58 @@ const localize = (no: string, en: string = no): LocalizedText => ({ no, en });
 
 const tennisLedelseRaw = [
     {
+      id: "du-arver-laget-landslag-2026-07",
+      tittel: "Du arver laget. Du eier utviklingen.",
+      teaser:
+        "Landslagssjefen velger laget. De fleste ledere arver det — og må likevel eie utviklingen, rollene og resultatene sammen med teamet.",
+      bildeUrl: "/images/ledelse-landslag.png",
+      dato: "2026-07-28",
+      visningsDato: "28.07.26",
+      kategori: "Lederstil, kultur og team",
+      link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
+      innhold: `I <a href="https://e24.no/karriere-og-ledelse/i/L491aP/arbeidslivet-er-ikke-et-landslag" target="_blank" rel="noopener noreferrer" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">E24-kronikken «Arbeidslivet er ikke et landslag»</a> utfordrer Øystein Bonvik hvor langt vi kan overføre læring fra toppidretten til arbeidslivet.
+
+Hovedpoenget er enkelt:
+
+Landslagssjefen velger laget. De fleste ledere arver det.
+
+Det kjenner jeg godt igjen.
+
+Jeg har overtatt flere etablerte salgsteam. Noen hadde et godt fundament som skulle videreutvikles. Andre ganger var mandatet tydelig: rydde opp, styrke kvaliteten, bygge kapasitet og løfte resultatene.
+
+Du får ikke alltid velge utgangspunktet. Men du kan heller ikke bruke det som forklaring på manglende utvikling.
+
+Lederens første oppgave er derfor ikke å bedømme laget på avstand. Det er å forstå menneskene, kompetansen, dynamikken og kravene virksomheten faktisk står overfor.
+
+Hva skal bevares? Hvem kan utvikles? Hvilke roller må tydeliggjøres? Hvor mangler det kompetanse? Og når er det nødvendig å gjøre endringer?
+
+Her ligger en grunnleggende forskjell mellom landslaget og arbeidslivet.
+
+En landslagssjef forbereder et allerede selektert lag til noen få avgjørende kamper. En leder i arbeidslivet eier hele medarbeiderreisen.
+
+Du skal rekruttere, integrere, utvikle, motivere og korrigere. Samtidig skal du beholde viktig kompetanse og noen ganger ta krevende personalvalg.
+
+Kundene skal følges opp, målene nås og driften fungere. Sesongen stopper aldri mens laget bygges.
+
+Det gjør lederoppgaven mindre glamorøs, men ofte langt mer kompleks.
+
+Likevel kan arbeidslivet lære av gode lag. Ikke ved å kopiere toppidretten, men ved å overføre prinsippene i form av tydelige roller, trygghet nok til å tåle korreksjon, vilje til å unne andre suksess og ansvar for helheten.
+
+Ledelse alene skaper heller ikke resultatene. Medarbeiderskapet er like avgjørende. Ingen leder kan kompensere for mennesker som ikke tar ansvar for samarbeidet, kulturen og oppdraget.
+
+Et annet paradoks er at vi i arbeidslivet ofte spiller kamp hver dag, men trener for lite. Vi måler resultatene kontinuerlig, men setter sjeldnere av nok tid til øvelse, refleksjon og utvikling.
+
+Bonvik har rett i at forutsetningene er grunnleggende forskjellige.
+
+Men ledere blir fortsatt målt på hva laget utvikler seg til, og hvordan resultatene skapes sammen.
+
+Det er kanskje ikke landslagsledelse.
+
+Men det er lederansvar.
+
+#Ledelse #Salgsledelse #Teamutvikling #Medarbeiderskap #Kultur`,
+    },
+    {
       id: "verdensklasse-bygges-sammen-cnn-2026-07",
       tittel: "Verdensklasse bygges sammen",
       teaser:
@@ -1037,6 +1089,52 @@ Virksomheter feiler ofte av samme grunn.`,
 ];
 
 const tennisLedelseEn: Record<string, LocalizedTextMap> = {
+  "du-arver-laget-landslag-2026-07": {
+    tittel: "You inherit the team. You own the development.",
+    teaser:
+      "The national team coach picks the squad. Most leaders inherit theirs — and must still own development, roles and results together with the team.",
+    innhold: `In <a href="https://e24.no/karriere-og-ledelse/i/L491aP/arbeidslivet-er-ikke-et-landslag" target="_blank" rel="noopener noreferrer" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">E24's column «Work life is not a national team»</a>, Øystein Bonvik challenges how far we can transfer learning from elite sport to working life.
+
+The main point is simple:
+
+The national team coach picks the squad. Most leaders inherit theirs.
+
+I recognise that well.
+
+I have taken over several established sales teams. Some had a solid foundation that needed to be developed further. Other times the mandate was clear: clean up, strengthen quality, build capacity and lift results.
+
+You do not always get to choose the starting point. But you cannot use that as an explanation for a lack of development.
+
+The leader's first task is therefore not to judge the team from a distance. It is to understand the people, the competence, the dynamics and the demands the organisation actually faces.
+
+What should be preserved? Who can be developed? Which roles need to be clarified? Where is competence missing? And when is it necessary to make changes?
+
+Here lies a fundamental difference between the national team and working life.
+
+A national team coach prepares an already selected squad for a few decisive matches. A leader in working life owns the entire employee journey.
+
+You must recruit, integrate, develop, motivate and correct. At the same time, you must retain important competence and sometimes make demanding people decisions.
+
+Customers must be followed up, targets must be met and operations must work. The season never stops while the team is being built.
+
+That makes the leadership task less glamorous, but often far more complex.
+
+Still, working life can learn from good teams. Not by copying elite sport, but by transferring the principles through clear roles, enough safety to tolerate correction, willingness to celebrate others' success and responsibility for the whole.
+
+Leadership alone does not create the results either. Employee ownership matters just as much. No leader can compensate for people who do not take responsibility for collaboration, culture and the mission.
+
+Another paradox is that in working life we often play a match every day, but train too little. We measure results continuously, but set aside less time for practice, reflection and development.
+
+Bonvik is right that the preconditions are fundamentally different.
+
+But leaders are still measured on what the team develops into, and how results are created together.
+
+It may not be national team leadership.
+
+But it is leadership responsibility.
+
+#Ledelse #Salgsledelse #Teamutvikling #Medarbeiderskap #Kultur`,
+  },
   "verdensklasse-bygges-sammen-cnn-2026-07": {
     tittel: "World-class performance is built together",
     teaser:

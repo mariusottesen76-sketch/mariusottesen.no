@@ -20,57 +20,58 @@ export const FAGINNLEGG_SORT_OPTIONS: { value: FaginnleggSortMode; label: { no: 
 
 /**
  * Ledelse-innlegg gruppert etter helhetlig tematikk (id-lister, ikke enkeltord).
- * Rekkefølge: bred strategi → gjennomføring → kultur → smal kommersiell kjerne.
+ * Hvert innlegg ligger i nøyaktig ett subtema.
  */
 export const LEDELSE_SUBTEMA: FaginnleggSubtema[] = [
   {
-    id: "ledelse-strategi",
-    label: { no: "Strategi og virksomhetsutvikling", en: "Strategy and business development" },
+    id: "ledelse-kommersiell",
+    label: { no: "Kommersiell ledelse, salg og kunder", en: "Commercial leadership, sales and customers" },
     innleggIds: [
-      "gronne-exceltall-transformasjon-2026-05",
-      "alle-enige-ingen-gjor-noe-01",
-      "to-parallelle-spor-ledelse-ai-01",
-      "obf-klar-2025-01",
-      "obf-2025-big-shift-01",
-      "landet-rikt-01",
-      "norge-virksomhet-01",
-      "skalering-01",
-      "tennis-01",
-      "econa-innovasjon-ideer-verdi-01",
-    ],
-  },
-  {
-    id: "ledelse-endring",
-    label: { no: "Endring og gjennomføring", en: "Change and execution" },
-    innleggIds: [
-      "tillit-endring-gjennomforing-2025-01",
+      "du-arver-laget-landslag-2026-07",
       "trykk-prestasjon-kommersiell-ledelse-2026-05",
+      "verdier-kultur-kommersiell-ledelse-2026-06",
+      "frastotende-salg-2026-01",
+      "skalering-01",
+      "alle-enige-ingen-gjor-noe-01",
+      "econa-innovasjon-ideer-verdi-01",
+      "hva-motiverer-kunnskapsarbeid-2026-01",
+      "brains-not-included-01",
     ],
   },
   {
     id: "ledelse-kultur",
-    label: { no: "Lederstil, kultur og team", en: "Leadership style, culture and teams" },
+    label: { no: "Team, kultur og prestasjon", en: "Teams, culture and performance" },
     innleggIds: [
       "verdensklasse-bygges-sammen-cnn-2026-07",
       "vi-rodde-sammen-fotball-vm-2026-07",
-      "verdier-kultur-kommersiell-ledelse-2026-06",
       "psykologisk-trygghet-krav-2026-01",
       "kjeft-psykologisk-trygghet-01",
       "pappa-forst-trener-etterpa-2026-01",
-      "hva-motiverer-kunnskapsarbeid-2026-01",
-      "brains-not-included-01",
       "attitude-2016-01",
       "kapasitet-maraton-01",
     ],
   },
   {
-    id: "ledelse-kommersiell",
-    label: { no: "Kommersiell ledelse og salg", en: "Commercial leadership and sales" },
+    id: "ledelse-endring",
+    label: { no: "Transformasjon, endring og gjennomføring", en: "Transformation, change and execution" },
+    innleggIds: ["tillit-endring-gjennomforing-2025-01", "gronne-exceltall-transformasjon-2026-05"],
+  },
+  {
+    id: "ledelse-strategi",
+    label: { no: "Strategi og virksomhetsutvikling", en: "Strategy and business development" },
     innleggIds: [
-      "frastotende-salg-2026-01",
-      "videre-franzefoss-2026-01",
-      "visindi-rekruttering-2024-01",
+      "to-parallelle-spor-ledelse-ai-01",
+      "tennis-01",
+      "landet-rikt-01",
+      "norge-virksomhet-01",
+      "obf-klar-2025-01",
+      "obf-2025-big-shift-01",
     ],
+  },
+  {
+    id: "ledelse-karriere",
+    label: { no: "Karriere, erfaring og nettverk", en: "Career, experience and network" },
+    innleggIds: ["videre-franzefoss-2026-01", "visindi-rekruttering-2024-01"],
   },
 ];
 
@@ -243,7 +244,7 @@ export function finnUmappedeAiInnlegg(innlegg: FaginnleggPost[]): string[] {
   return innlegg.filter((item) => erAiInnlegg(item.kategori) && !mappedeIds.has(item.id)).map((item) => item.id);
 }
 
-/** Validerer at alle ledelse-innlegg er mappet til et subtema (kun dev-hjelp). */
+/** Validerer at alle ledelse-innlegg er mappet til minst ett subtema (kun dev-hjelp). */
 export function finnUmappedeLedelseInnlegg(innlegg: FaginnleggPost[]): string[] {
   const mappedeIds = new Set(LEDELSE_SUBTEMA.flatMap((s) => s.innleggIds ?? []));
   return innlegg
