@@ -23,7 +23,7 @@ const lesestier: LeseSti[] = [
       en: "Get a quick view of leadership profile, commercial experience, execution capability and how I think about AI as part of modern leadership.",
     },
     topics: [
-      { label: { no: "Kommersiell ledelse", en: "Commercial leadership" }, subtemaId: "ledelse-kommersiell" },
+      { label: { no: "Kommersiell og operasjonell ledelse", en: "Commercial and operational leadership" }, subtemaId: "ledelse-kommersiell" },
       { label: { no: "Team og kultur", en: "Teams and culture" }, subtemaId: "ledelse-kultur" },
       { label: { no: "Transformasjon", en: "Transformation" }, subtemaId: "ledelse-endring" },
       { label: { no: "Karriere", en: "Career" }, subtemaId: "ledelse-karriere" },
@@ -40,7 +40,7 @@ const lesestier: LeseSti[] = [
       en: "Read articles on strategy, change, performance, sales leadership and how teams can create better execution over time.",
     },
     topics: [
-      { label: { no: "Kommersiell praksis", en: "Commercial practice" }, subtemaId: "ledelse-kommersiell" },
+      { label: { no: "Kommersiell og operativ praksis", en: "Commercial and operational practice" }, subtemaId: "ledelse-kommersiell" },
       { label: { no: "Team og prestasjon", en: "Teams and performance" }, subtemaId: "ledelse-kultur" },
       { label: { no: "Endring og gjennomføring", en: "Change and execution" }, subtemaId: "ledelse-endring" },
       { label: { no: "Strategi", en: "Strategy" }, subtemaId: "ledelse-strategi" },

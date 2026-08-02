@@ -25,8 +25,9 @@ export const FAGINNLEGG_SORT_OPTIONS: { value: FaginnleggSortMode; label: { no: 
 export const LEDELSE_SUBTEMA: FaginnleggSubtema[] = [
   {
     id: "ledelse-kommersiell",
-    label: { no: "Kommersiell ledelse, salg og kunder", en: "Commercial leadership, sales and customers" },
+    label: { no: "Kommersiell og operasjonell ledelse", en: "Commercial and operational leadership" },
     innleggIds: [
+      "control-tower-verdikjede-ledelse-2026-08",
       "du-arver-laget-landslag-2026-07",
       "trykk-prestasjon-kommersiell-ledelse-2026-05",
       "verdier-kultur-kommersiell-ledelse-2026-06",

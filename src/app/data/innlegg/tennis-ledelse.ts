@@ -16,6 +16,50 @@ const localize = (no: string, en: string = no): LocalizedText => ({ no, en });
 
 const tennisLedelseRaw = [
     {
+      id: "control-tower-verdikjede-ledelse-2026-08",
+      tittel: "Når du som leder ikke eier hele verdikjeden",
+      teaser:
+        "Resultatet skapes ofte av aktører utenfor egen linje. For kommersielle og operative ledere handler det om styring på tvers — og kortere vei fra signal til handling.",
+      bildeUrl: "/images/control-tower-ledelse.png",
+      dato: "2026-08-04",
+      visningsDato: "04.08.26",
+      kategori: "Kommersiell ledelse og salg",
+      link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
+      innhold: `Mange ledere har god kontroll på egen organisasjon.
+
+Utfordringen begynner når resultatet skapes av aktører de ikke leder.
+
+For en kommersiell leder påvirkes resultatet langt utover salgsorganisasjonen. Produkt, marked, kundeservice, drift, leverandører og eksterne partnere påvirker alle kundeløftet, kundeopplevelsen og lønnsomheten.
+
+For en operativ leder gjelder det samme. Leverandører, logistikkpartnere, produksjon, behandling og andre deler av verdikjeden kan være avgjørende for resultatet, uten at de ligger i egen linje.
+
+I egne lederroller har jeg erfart hvor avgjørende dette samspillet er. Et sterkt salgsteam alene skaper ikke resultatet dersom leveranse, kapasitet, kvalitet, pris eller samarbeid i resten av verdikjeden svikter.
+
+Du kan sette ut deler av verdikjeden. Du kan ikke sette ut resultatansvaret.
+
+Det stiller andre krav til ledelse.
+
+Når verdiskapingen skjer på tvers av egne og eksterne miljøer, holder det ikke å følge KPI-er og reagere når noe allerede har gått galt. Ledelsen trenger en styringsmodell som gjør det mulig å oppdage signaler tidlig, forstå konsekvensene, prioritere riktig og få ansvarlige til å handle.
+
+Jo mindre av verdikjeden du kontrollerer direkte, desto viktigere blir kvaliteten på styringen.
+
+McKinsey beskriver økosystemet som en sentral del av moderne operasjonsmodeller, hvor verdiskaping i økende grad skjer sammen med aktører utenfor egne organisatoriske grenser. PwC peker samtidig på synlighet, transparens og samhandling som viktige forutsetninger for mer robuste verdikjeder.
+
+Denne problemstillingen var også en viktig del av bakgrunnen for at jeg utviklet <strong>Control Tower – Decision & Execution Intelligence</strong>, en modulær styringsplattform som kobler operative og kommersielle signaler til prioriteringer, tiltak, ansvar og dokumentert effekt.
+
+Konseptet bygger på en enkel styringslogikk:
+
+<strong>Signal → Konsekvens → Prioritet → Tiltak → Ansvar → Effekt</strong>
+
+Poenget er ikke mer data. Poenget er kortere vei fra det virksomheten ser, til det ledelsen faktisk gjør.
+
+For meg er dette en stadig viktigere lederoppgave, både kommersielt og operasjonelt. Verdiskaping følger sjelden organisasjonskartet. Styringen kan heller ikke gjøre det.
+
+👇 Se <a href="/control-tower" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">Control Tower – Decision & Execution Intelligence</a> og <a href="/prosjekter#control-tower" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">prosjektbeskrivelsen</a> på nettsiden.
+
+#Ledelse #Strategi #KommersiellLedelse #OperasjonellLedelse #Transformasjon`,
+    },
+    {
       id: "du-arver-laget-landslag-2026-07",
       tittel: "Du arver laget. Du eier utviklingen.",
       teaser:
@@ -1089,6 +1133,44 @@ Virksomheter feiler ofte av samme grunn.`,
 ];
 
 const tennisLedelseEn: Record<string, LocalizedTextMap> = {
+  "control-tower-verdikjede-ledelse-2026-08": {
+    tittel: "When you as a leader do not own the entire value chain",
+    teaser:
+      "Results are often created by actors outside your line. For commercial and operational leaders, the task is cross-boundary governance — and a shorter path from signal to action.",
+    innhold: `Many leaders have good control of their own organisation.
+
+The challenge begins when results are created by actors they do not manage.
+
+For a commercial leader, results are influenced far beyond the sales organisation. Product, marketing, customer service, operations, suppliers and external partners all affect the customer promise, customer experience and profitability.
+
+For an operational leader, the same applies. Suppliers, logistics partners, production, treatment and other parts of the value chain can be decisive for results without sitting in your own line.
+
+In my own leadership roles, I have experienced how critical this interplay is. A strong sales team alone does not create results if delivery, capacity, quality, pricing or collaboration across the rest of the value chain fails.
+
+You can outsource parts of the value chain. You cannot outsource accountability for results.
+
+That places different demands on leadership.
+
+When value creation happens across internal and external environments, it is not enough to follow KPIs and react when something has already gone wrong. Leadership needs a governance model that makes it possible to detect signals early, understand consequences, prioritise correctly and get the right people to act.
+
+The less of the value chain you control directly, the more important the quality of governance becomes.
+
+McKinsey describes the ecosystem as a central part of modern operating models, where value creation increasingly happens together with actors outside organisational boundaries. PwC, meanwhile, points to visibility, transparency and collaboration as important prerequisites for more robust value chains.
+
+This problem area was also an important part of why I developed <strong>Control Tower – Decision & Execution Intelligence</strong>, a modular governance platform that connects operational and commercial signals to prioritisation, actions, ownership and documented impact.
+
+The concept is built on a simple governance logic:
+
+<strong>Signal → Consequence → Priority → Action → Ownership → Impact</strong>
+
+The point is not more data. The point is a shorter path from what the business sees to what leadership actually does.
+
+For me, this is an increasingly important leadership task, both commercially and operationally. Value creation rarely follows the org chart. Governance cannot either.
+
+👇 See <a href="/control-tower" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">Control Tower – Decision & Execution Intelligence</a> and the <a href="/prosjekter#control-tower" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">project description</a> on the website.
+
+#Ledelse #Strategi #KommersiellLedelse #OperasjonellLedelse #Transformasjon`,
+  },
   "du-arver-laget-landslag-2026-07": {
     tittel: "You inherit the team. You own the development.",
     teaser:
