@@ -178,8 +178,8 @@ const translations: Translations = {
     en: "Scroll down to explore the projects.",
   },
   "prosjekter.intro.1b": {
-    no: "Prosjektene viser hva som faktisk er bygget, hvordan løsningene fungerer og hvilken praktisk relevans de kan ha innen kommersiell utvikling, salg, kundeopplevelse, ledelse, arbeidsflyt, beslutningsstøtte og ansvarlig AI-bruk.",
-    en: "The projects show what has actually been built, how the solutions work and what practical relevance they can have in commercial development, sales, customer experience, leadership, workflow, decision support and responsible use of AI.",
+    no: "Prosjektene viser hva som faktisk er bygget, hvordan løsningene fungerer og hvilken praktisk relevans de kan ha innen kommersiell utvikling, salg, drift og operasjonell styring, kundeopplevelse, ledelse, arbeidsflyt, beslutningsstøtte og ansvarlig AI-bruk.",
+    en: "The projects show what has actually been built, how the solutions work and what practical relevance they can have in commercial development, sales, operations and operational governance, customer experience, leadership, workflow, decision support and responsible use of AI.",
   },
   "prosjekter.intro.gridLead": {
     no: "Kort oversikt — klikk på navnet for å lese mer:",
@@ -250,8 +250,8 @@ const translations: Translations = {
   },
   "prosjekter.intro.punkt.beslutning.label": { no: "AI-arkitektur for beslutningsstøtte", en: "AI architecture for decision support" },
   "prosjekter.intro.punkt.beslutning.desc": {
-    no: "Prioritering, gap og mønstre — relevant for strategi og kommersiell styring",
-    en: "Prioritisation, gaps and patterns — relevant for strategy and commercial governance",
+    no: "Prioritering, gap og mønstre — relevant for strategi, drift og kommersiell styring",
+    en: "Prioritisation, gaps and patterns — relevant for strategy, operations and commercial governance",
   },
   "prosjekter.intro.punkt.value-lab.label": { no: "AI Value Lab Oslo", en: "AI Value Lab Oslo" },
   "prosjekter.intro.punkt.value-lab.desc": {
@@ -264,20 +264,20 @@ const translations: Translations = {
     en: "Ongoing track on AI, leadership and value creation — where theory meets practice",
   },
   "prosjekter.intro.2": {
-    no: "Siden fungerer som en portefølje for arbeidsgivere, rekrutterere og beslutningstakere som ønsker å se praktisk AI-forståelse, digital transformasjon, produktutvikling og kommersiell gjennomføringsevne i praksis.",
-    en: "This page serves as a portfolio for employers, recruiters and decision-makers who want to see practical AI understanding, digital transformation, product development and commercial execution capability in practice.",
+    no: "Siden fungerer som en portefølje for arbeidsgivere, rekrutterere og beslutningstakere som ønsker å se praktisk AI-forståelse, digital transformasjon, produktutvikling og kommersiell og operasjonell gjennomføringsevne i praksis.",
+    en: "This page serves as a portfolio for employers, recruiters and decision-makers who want to see practical AI understanding, digital transformation, product development and commercial and operational execution capability in practice.",
   },
   "prosjekter.videreutdanning.title": {
     no: "Fra videreutdanning til bygde løsninger",
     en: "From further education to built solutions",
   },
   "prosjekter.videreutdanning.para1": {
-    no: "I 2026 fullførte jeg masterkurset Generative AI for Business ved BI med karakter A. Parallelt har jeg bygget og publisert flere virksomhetsnære AI-prosjekter som utforsker hvordan AI kan brukes til transformasjonsstyring, AI-beredskap, salgsflyt, kundedialog, teamutvikling, arbeidsflyt og kommersiell prioritering — inkludert executive plattformen AI Transformation & Value Realization.",
-    en: "In 2026 I completed the master's course Generative AI for Business at BI Norwegian Business School with grade A. In parallel I have built and published several business-oriented AI projects exploring how AI can be used for transformation governance, AI readiness, sales flow, customer dialogue, team development, workflow and commercial prioritisation — including the executive platform AI Transformation & Value Realization.",
+    no: "I 2026 fullførte jeg masterkurset Generative AI for Business ved BI med karakter A. Parallelt har jeg bygget og publisert flere virksomhetsnære AI-prosjekter som utforsker hvordan AI kan brukes til transformasjonsstyring, AI-beredskap, operativ prioritering, salgsflyt, kundedialog, teamutvikling, arbeidsflyt og kommersiell gjennomføring — inkludert executive-plattformene AI Transformation & Value Realization og Control Tower.",
+    en: "In 2026 I completed the master's course Generative AI for Business at BI Norwegian Business School with grade A. In parallel I have built and published several business-oriented AI projects exploring how AI can be used for transformation governance, AI readiness, operational prioritisation, sales flow, customer dialogue, team development, workflow and commercial execution — including the executive platforms AI Transformation & Value Realization and Control Tower.",
   },
   "prosjekter.videreutdanning.para2": {
-    no: "Arbeidet omfatter blant annet AI-støttet pasientreise, intake og booking for tannklinikk, AI-arkitektur for beslutningsstøtte og prioritering, samt en AI-assistert innsikts- og innholdsmotor som gjør kunnskap og markedssignaler mer anvendbare.",
-    en: "The work includes, among other things, AI-supported patient journey, intake and booking for a dental clinic, AI architecture for decision support and prioritisation, and an AI-assisted insight and content engine that makes knowledge and market signals more actionable.",
+    no: "Arbeidet omfatter blant annet beslutnings- og gjennomføringsplattformer for operativ og kommersiell styring, AI-støttet pasientreise, intake og booking for tannklinikk, AI-arkitektur for beslutningsstøtte og prioritering, samt en AI-assistert innsikts- og innholdsmotor som gjør kunnskap og markedssignaler mer anvendbare.",
+    en: "The work includes, among other things, decision and execution platforms for operational and commercial governance, AI-supported patient journey, intake and booking for a dental clinic, AI architecture for decision support and prioritisation, and an AI-assisted insight and content engine that makes knowledge and market signals more actionable.",
   },
   "prosjekter.videreutdanning.para3.lead": {
     no: "Jeg har også tatt initiativ til",
@@ -285,8 +285,8 @@ const translations: Translations = {
   },
   "prosjekter.videreutdanning.valueLab": { no: "AI Value Lab Oslo", en: "AI Value Lab Oslo" },
   "prosjekter.videreutdanning.para3.tail": {
-    no: ", med mål om å utforske praktisk AI-verdi, læring og virksomhetsnære problemstillinger sammen med andre. Prosjektene nedenfor viser konkrete løsninger, modeller og arbeidsflyter som kobler forretning, brukerbehov, teknologi og gjennomføring i praksis.",
-    en: ", with the aim of exploring practical AI value, learning and business-oriented problem areas together with others. The projects below show concrete solutions, models and workflows that connect business, user needs, technology and execution in practice.",
+    no: ", med mål om å utforske praktisk AI-verdi, læring og virksomhetsnære problemstillinger sammen med andre. Prosjektene nedenfor viser konkrete løsninger, modeller og arbeidsflyter som kobler forretning, drift, brukerbehov, teknologi og gjennomføring i praksis.",
+    en: ", with the aim of exploring practical AI value, learning and business-oriented problem areas together with others. The projects below show concrete solutions, models and workflows that connect business, operations, user needs, technology and execution in practice.",
   },
   "prosjekter.kort.seksjon.title": { no: "AI-prosjekter – kort forklart", en: "AI projects – briefly explained" },
   "prosjekter.kort.seksjon.intro": {

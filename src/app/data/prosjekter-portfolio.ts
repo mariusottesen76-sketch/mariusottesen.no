@@ -39,17 +39,18 @@ export const PROSJEKT_KATEGORI_LEGACY_ANCHORS: Record<string, string> = {
   "modell-og-arbeidsflyt": "modeller-og-arbeidsflyter",
 };
 
+/** Portefølje og hurtigoversikt — ved nytt prosjekt: oppdater kategorier her og `prosjekter.intro.punkt.*` i translations.ts. */
 export const PROSJEKT_PORTFOLIO_KATEGORIER: ProsjektPortfolioKategori[] = [
   {
     anchorId: "strategiske-plattformer",
     title: { no: "Strategiske plattformer", en: "Strategic platforms" },
     overviewDescription: {
-      no: "Lederorienterte plattformer for prioritering, transformasjon, beslutningsstøtte og gjennomføring.",
-      en: "Leadership-oriented platforms for prioritisation, transformation, decision support and execution.",
+      no: "Lederorienterte plattformer for prioritering, transformasjon, operativ og kommersiell styring, beslutningsstøtte og gjennomføring.",
+      en: "Leadership-oriented platforms for prioritisation, transformation, operational and commercial governance, decision support and execution.",
     },
     listDescription: {
-      no: "Lederorienterte plattformer som viser hvordan AI, transformasjon, prioritering, beslutningsstøtte og praktisk gjennomføring kan kobles sammen.",
-      en: "Leadership-oriented platforms showing how AI, transformation, prioritisation, decision support and practical execution can be connected.",
+      no: "Lederorienterte plattformer som viser hvordan AI, transformasjon, prioritering, operativ og kommersiell styring, beslutningsstøtte og praktisk gjennomføring kan kobles sammen.",
+      en: "Leadership-oriented platforms showing how AI, transformation, prioritisation, operational and commercial governance, decision support and practical execution can be connected.",
     },
     metadataLabel: { no: "Strategisk plattform", en: "Strategic platform" },
     projects: [
@@ -61,12 +62,12 @@ export const PROSJEKT_PORTFOLIO_KATEGORIER: ProsjektPortfolioKategori[] = [
     anchorId: "apper-og-prototyper",
     title: { no: "Apper og prototyper", en: "Apps and prototypes" },
     overviewDescription: {
-      no: "Funksjonelle AI-løsninger for salgstrening, teamutvikling, AI-beredskap og kommersiell forbedring.",
-      en: "Functional AI solutions for sales training, team development, AI readiness and commercial improvement.",
+      no: "Funksjonelle AI-løsninger for salgstrening, teamutvikling, AI-beredskap, operasjonell forbedring og kommersiell utvikling.",
+      en: "Functional AI solutions for sales training, team development, AI readiness, operational improvement and commercial development.",
     },
     listDescription: {
-      no: "Funksjonelle og testbare løsninger som viser produktutvikling, brukerflyt og praktisk bruk av AI innen salg, teamutvikling, AI-beredskap og kommersiell forbedring.",
-      en: "Functional, testable solutions showing product development, user flow and practical use of AI in sales, team development, AI readiness and commercial improvement.",
+      no: "Funksjonelle og testbare løsninger som viser produktutvikling, brukerflyt og praktisk bruk av AI innen salg, teamutvikling, AI-beredskap, drift og kommersiell forbedring.",
+      en: "Functional, testable solutions showing product development, user flow and practical use of AI in sales, team development, AI readiness, operations and commercial improvement.",
     },
     metadataLabel: { no: "App og prototype", en: "App and prototype" },
     projects: [
