@@ -55,7 +55,7 @@ Poenget er ikke mer data. Poenget er kortere vei fra det virksomheten ser, til d
 
 For meg er dette en stadig viktigere lederoppgave, både kommersielt og operasjonelt. Verdiskaping følger sjelden organisasjonskartet. Styringen kan heller ikke gjøre det.
 
-👇 Se <a href="/control-tower" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">Control Tower – Decision & Execution Intelligence</a> og <a href="/prosjekter#control-tower" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">prosjektbeskrivelsen</a> på nettsiden.
+👉 Se <a href="/control-tower" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">Control Tower – Decision & Execution Intelligence</a> og <a href="/prosjekter#control-tower" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">prosjektbeskrivelsen</a> på nettsiden.
 
 #Ledelse #Strategi #KommersiellLedelse #OperasjonellLedelse #Transformasjon`,
     },
@@ -1167,7 +1167,7 @@ The point is not more data. The point is a shorter path from what the business s
 
 For me, this is an increasingly important leadership task, both commercially and operationally. Value creation rarely follows the org chart. Governance cannot either.
 
-👇 See <a href="/control-tower" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">Control Tower – Decision & Execution Intelligence</a> and the <a href="/prosjekter#control-tower" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">project description</a> on the website.
+👉 See <a href="/control-tower" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">Control Tower – Decision & Execution Intelligence</a> and the <a href="/prosjekter#control-tower" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">project description</a> on the website.
 
 #Ledelse #Strategi #KommersiellLedelse #OperasjonellLedelse #Transformasjon`,
   },

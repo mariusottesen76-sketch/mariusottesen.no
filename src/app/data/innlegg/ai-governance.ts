@@ -104,7 +104,7 @@ Dette er foreløpig en funksjonell konseptprototype med fiktive demodata. Proble
 
 Den virkelige utfordringen er å flytte AI fra idé, pilot og intensjon til ny praksis og dokumentert forretningsverdi.
 
-👇 Se <a href="/prosjekter" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">prosjektoversikten</a> med plattformen og alle AI-prosjektene mine, og <a href="/ai-transformation-value-realization" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">AI Transformation & Value Realization</a> som egen prosjektbeskrivelse.
+👉 Se <a href="/prosjekter" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">prosjektoversikten</a> med plattformen og alle AI-prosjektene mine, og <a href="/ai-transformation-value-realization" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">AI Transformation & Value Realization</a> som egen prosjektbeskrivelse.
 
 👉 Har du ansvar for AI, transformasjon eller forretningsutvikling og ønsker å se eller teste plattformen, er det bare å <a href="/kontakt" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">ta kontakt</a>.
 
@@ -163,7 +163,7 @@ Jeg tror dette er relevant for langt flere enn typiske COO- og CCO-roller. De fl
 
 Jeg gleder meg til å utforske både stillingen og prosjektet videre.
 
-👇 Se <a href="/prosjekter#control-tower" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">Control Tower og prosjektbeskrivelsen</a> på prosjektsiden.
+👉 Se <a href="/prosjekter#control-tower" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">Control Tower og prosjektbeskrivelsen</a> på prosjektsiden.
 
 Og dersom du ønsker å diskutere hvordan tilsvarende problemstillinger kan utfordres i din rolle eller virksomhet, er det bare å <a href="/kontakt" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">ta kontakt</a>.
 
@@ -204,7 +204,7 @@ Dette er praktiske konsepter som kan videreutvikles og tilpasses ulike virksomhe
 
 💥 <strong>CTA:</strong> Ønsker du faglig dialog om appene, hvordan de er bygget, eller hvordan tilsvarende arbeidsflyter kan være relevante i en fremtidig sammenheng, <a href="/kontakt" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">ta kontakt</a>.
 
-👇 En samlet oversikt over appene finner du på <a href="/prosjekter" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">prosjektsiden</a>, med videre lenker til <a href="/prosjekter#ai-readiness-scan-2026-06">AI Readiness Scan</a>, <a href="/salgsflyt-sjekken">SMB Salgsflyt-sjekken</a>, <a href="/flowsignal">FlowSignal</a> og <a href="/psc">The Predictive Sales Coach</a>.
+👉 En samlet oversikt over appene finner du på <a href="/prosjekter" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">prosjektsiden</a>, med videre lenker til <a href="/prosjekter#ai-readiness-scan-2026-06">AI Readiness Scan</a>, <a href="/salgsflyt-sjekken">SMB Salgsflyt-sjekken</a>, <a href="/flowsignal">FlowSignal</a> og <a href="/psc">The Predictive Sales Coach</a>.
 
 #AIstrategi #AIimplementering #kommersiellledelse #salgsutvikling #organisasjonsutvikling`,
       karusellBilder: fireApperKarusellBilder,
@@ -2238,7 +2238,7 @@ I believe this is relevant for far more than typical COO and CCO roles. Most org
 
 I look forward to exploring both the role and the project further.
 
-👇 See <a href="/prosjekter#control-tower" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">Control Tower and the project description</a> on the projects page.
+👉 See <a href="/prosjekter#control-tower" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">Control Tower and the project description</a> on the projects page.
 
 And if you want to discuss how similar challenges can be addressed in your role or organisation, feel free to <a href="/kontakt" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">get in touch</a>.
 
@@ -2272,7 +2272,7 @@ These are practical concepts that can be developed further and adapted to differ
 
 💥 <strong>CTA:</strong> If you want professional dialogue about the apps, how they are built, or how similar workflows may be relevant in a future context, <a href="/kontakt" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">get in touch</a>.
 
-👇 A combined overview of the apps is on the <a href="/prosjekter" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">projects page</a>, with further links to <a href="/prosjekter#ai-readiness-scan-2026-06">AI Readiness Scan</a>, <a href="/salgsflyt-sjekken">SMB Sales Flow Check</a>, <a href="/flowsignal">FlowSignal</a> and <a href="/psc">The Predictive Sales Coach</a>.
+👉 A combined overview of the apps is on the <a href="/prosjekter" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">projects page</a>, with further links to <a href="/prosjekter#ai-readiness-scan-2026-06">AI Readiness Scan</a>, <a href="/salgsflyt-sjekken">SMB Sales Flow Check</a>, <a href="/flowsignal">FlowSignal</a> and <a href="/psc">The Predictive Sales Coach</a>.
 
 #AIstrategi #AIimplementering #kommersiellledelse #salgsutvikling #organisasjonsutvikling`,
   },
