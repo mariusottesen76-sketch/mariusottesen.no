@@ -1,5 +1,6 @@
 import { Lang } from "../LanguageContext";
 import { AI_READINESS_SCAN_PROSJEKT_PATH } from "../lib/ai-readiness-scan-brand";
+import { EVENT_PLANNER_PILOT_PATH } from "../lib/event-planner-brand";
 import { PSC_SHORT_DESCRIPTION } from "../lib/psc-brand";
 import { SMB_SALGSFLYT_PILOT_PATH } from "../lib/smb-salgsflyt-brand";
 
@@ -10,8 +11,8 @@ export type PakkePilotStotte = {
 };
 
 const portefoljeProsjektTekst: Record<Lang, string> = {
-  no: "Dette er et egenutviklet porteføljeprosjekt som viser hvordan kommersiell forståelse, arbeidsflyt og AI kan kombineres i praksis. Løsningen fungerer som en faglig demonstrator og kan være relevant som inspirasjon, referanse eller mulig utgangspunkt dersom en relevant rolle, problemstilling eller fremtidig samarbeidsmulighet oppstår.",
-  en: "This is a custom portfolio project that shows how commercial understanding, workflow and AI can be combined in practice. It functions as a professional demonstrator and may be relevant as inspiration, reference or a possible starting point if a relevant role, problem area or future collaboration opportunity arises.",
+  no: "Dette er et egenutviklet porteføljeprosjekt som viser hvordan kommersiell forståelse, arbeidsflyt og AI kan kombineres i praksis — også der operativ gjennomføring er viktig. Løsningen fungerer som en faglig demonstrator og kan være relevant som inspirasjon, referanse eller mulig utgangspunkt dersom en relevant rolle, problemstilling eller fremtidig samarbeidsmulighet oppstår.",
+  en: "This is a custom portfolio project that shows how commercial understanding, workflow and AI can be combined in practice — including where operational execution matters. It functions as a professional demonstrator and may be relevant as inspiration, reference or a possible starting point if a relevant role, problem area or future collaboration opportunity arises.",
 };
 
 const pscDemonstratorStotte: Record<Lang, PakkePilotStotte> = {
@@ -53,6 +54,58 @@ const flowSignalDemonstratorStotte: Record<Lang, PakkePilotStotte> = {
   },
 };
 
+const salgsflytDemonstratorStotte: Record<Lang, PakkePilotStotte> = {
+  no: {
+    tekst: "Prosjektet viser hvordan salgsmodenhet, friksjon og prioriteringer kan kartlegges strukturert.",
+    lenkeHref: SMB_SALGSFLYT_PILOT_PATH,
+    lenkeLabel: "Se SMB Salgsflyt-sjekken",
+  },
+  en: {
+    tekst: "The project shows how sales maturity, friction and priorities can be mapped in a structured way.",
+    lenkeHref: SMB_SALGSFLYT_PILOT_PATH,
+    lenkeLabel: "See SMB Sales Flow Check",
+  },
+};
+
+const skoyenasenDemonstratorStotte: Record<Lang, PakkePilotStotte> = {
+  no: {
+    tekst: "Caset viser hvordan kundedialog, intake, booking og ansvarlig AI-avgrensning kan utformes i praksis.",
+    lenkeHref: "/skoyenasen-tannklinikk",
+    lenkeLabel: "Se Skøyenåsen Tannklinikk-case",
+  },
+  en: {
+    tekst: "The case shows how customer dialogue, intake, booking and responsible AI boundaries can be designed in practice.",
+    lenkeHref: "/skoyenasen-tannklinikk",
+    lenkeLabel: "See Skøyenåsen Dental Clinic case",
+  },
+};
+
+const eventPlannerDemonstratorStotte: Record<Lang, PakkePilotStotte> = {
+  no: {
+    tekst: "Prosjektet viser hvordan planlegging, deltakere, oppgaver, program og oppfølging kan samles i én arbeidsflate.",
+    lenkeHref: EVENT_PLANNER_PILOT_PATH,
+    lenkeLabel: "Se Event Planner",
+  },
+  en: {
+    tekst: "The project shows how planning, participants, tasks, programme and follow-up can be brought together in one workspace.",
+    lenkeHref: EVENT_PLANNER_PILOT_PATH,
+    lenkeLabel: "See Event Planner",
+  },
+};
+
+const readinessScanDemonstratorStotte: Record<Lang, PakkePilotStotte> = {
+  no: {
+    tekst: "Prosjektet viser hvordan AI-modenhet, prioriteringer og beslutningsgrunnlag kan struktureres for ledergrupper.",
+    lenkeHref: AI_READINESS_SCAN_PROSJEKT_PATH,
+    lenkeLabel: "Se AI Readiness Scan",
+  },
+  en: {
+    tekst: "The project shows how AI maturity, priorities and decision basis can be structured for leadership teams.",
+    lenkeHref: AI_READINESS_SCAN_PROSJEKT_PATH,
+    lenkeLabel: "See AI Readiness Scan",
+  },
+};
+
 const prosjektLenke = (href: string): Record<Lang, PakkePilotStotte> => ({
   no: { tekst: portefoljeProsjektTekst.no, lenkeHref: href, lenkeLabel: "Se prosjektet" },
   en: { tekst: portefoljeProsjektTekst.en, lenkeHref: href, lenkeLabel: "See the project" },
@@ -86,6 +139,7 @@ const hovedpakker: Record<Lang, TjenestePakke[]> = {
         "Særlig når salg, marketing og kundeservice vokser i ulikt tempo, ved CRM-innfasing, lederbytte eller når vekst avdekker hull i kundereisen.",
       leveranseDetalj:
         "Kundereise, salgstrakt, CRM, oppfølging, arbeidsflyt, prioritering av forbedringsområder og struktur for videre gjennomføring.",
+      pilotStotte: salgsflytDemonstratorStotte.no,
     },
     {
       id: "crm-sales",
@@ -108,13 +162,14 @@ const hovedpakker: Record<Lang, TjenestePakke[]> = {
         "Særlig ved høyt innkommende volum, manuell booking, mange kanaler eller når frontlinjen bruker uforholdsmessig tid på gjentakende henvendelser.",
       leveranseDetalj:
         "Kundedialog, FAQ, bookingflyt, intake, chatbot-logikk, eskaleringsregler og tydelige grenser for hva en løsning kan og ikke kan svare på.",
+      pilotStotte: skoyenasenDemonstratorStotte.no,
     },
     {
       id: "smb-lederloft",
-      tittel: "Kommersiell lederrytme og gjennomføring",
-      hvem: "Daglige ledere og lederteam som ønsker tydeligere prioritering, bedre kommersiell rytme, sterkere oppfølging og mer gjennomføringskraft.",
+      tittel: "Kommersiell og operasjonell lederrytme og gjennomføring",
+      hvem: "Daglige ledere og lederteam som ønsker tydeligere prioritering, bedre samspill mellom salg og drift, sterkere oppfølging og mer gjennomføringskraft.",
       leveranseKort:
-        "Erfaring med lederintervjuer, kommersielle målbilder, KPI-strukturer, møte- og lederrytme, ansvarsavklaring og praktisk oppfølging.",
+        "Erfaring med lederintervjuer, kommersielle målbilder, KPI-strukturer, møte- og lederrytme, ansvarsavklaring og praktisk oppfølging på tvers av salg, drift og kommersiell utvikling.",
       forDetalj:
         "Særlig ved ny kommersiell retning, lederrolle eller ledergruppe som trenger tydeligere rytme, ansvar og oppfølging av prioriteringer over tid.",
       leveranseDetalj:
@@ -132,6 +187,7 @@ const hovedpakker: Record<Lang, TjenestePakke[]> = {
         "Especially when sales, marketing and customer service grow at different speeds, during CRM rollout, leadership change or when growth exposes gaps in the customer journey.",
       leveranseDetalj:
         "Customer journey, sales funnel, CRM, follow-up, workflow, prioritisation of improvement areas and structure for further execution.",
+      pilotStotte: salgsflytDemonstratorStotte.en,
     },
     {
       id: "crm-sales",
@@ -154,13 +210,14 @@ const hovedpakker: Record<Lang, TjenestePakke[]> = {
         "Especially with high inbound volume, manual booking, many channels or when the front line spends disproportionate time on recurring enquiries.",
       leveranseDetalj:
         "Customer dialogue, FAQ, booking flow, intake, chatbot logic, escalation rules and clear boundaries for what a solution can and cannot answer.",
+      pilotStotte: skoyenasenDemonstratorStotte.en,
     },
     {
       id: "smb-lederloft",
-      tittel: "Commercial leadership rhythm and execution",
-      hvem: "Managing directors and leadership teams seeking clearer prioritisation, better commercial rhythm, stronger follow-up and more execution power.",
+      tittel: "Commercial and operational leadership rhythm and execution",
+      hvem: "Managing directors and leadership teams seeking clearer prioritisation, better alignment between sales and operations, stronger follow-up and more execution power.",
       leveranseKort:
-        "Experience with leadership interviews, commercial target pictures, KPI structures, meeting and leadership rhythm, accountability clarification and practical follow-up.",
+        "Experience with leadership interviews, commercial target pictures, KPI structures, meeting and leadership rhythm, accountability clarification and practical follow-up across sales, operations and commercial development.",
       forDetalj:
         "Especially with a new commercial direction, leadership role or leadership team that needs clearer rhythm, accountability and follow-through on priorities over time.",
       leveranseDetalj:
@@ -215,6 +272,30 @@ const spesialisertePakker: Record<Lang, TjenestePakke[]> = {
       leveranseDetalj:
         "Målgruppeforståelse, verdiforslag, pitch, kundereise, go-to-market, kanaler og kommersiell struktur.",
     },
+    {
+      id: "operasjonell-planlegging",
+      tittel: "Operasjonell planlegging og oppfølging",
+      hvem: "Virksomheter og team som planlegger arrangementer, prosjekter eller leveranser på tvers av regneark, meldinger, e-post og ulike sjekklister.",
+      leveranseKort:
+        "Erfaring med å strukturere planlegging, ansvar, prioritering, oppfølging og samhandling — inkludert hvor AI-assistanse kan redusere fragmentering og styrke gjennomføring.",
+      forDetalj:
+        "Særlig når flere personer bidrar, frister nærmer seg, ansvar er uklart eller informasjonen finnes, men ikke er operativt samlet.",
+      leveranseDetalj:
+        "Planleggingsmodell, deltakere og oppgaver, ansvar, program, prioritering, oppfølging og AI-støttet registrering der det gir verdi.",
+      pilotStotte: eventPlannerDemonstratorStotte.no,
+    },
+    {
+      id: "ai-modenhet",
+      tittel: "AI-modenhet, prioritering og beslutningsgrunnlag",
+      hvem: "Ledergrupper som vil forstå hvor virksomheten bør starte med AI, hva som bør prioriteres og hvordan modenhet og risiko bør vurderes.",
+      leveranseKort:
+        "Erfaring med strukturert kartlegging av AI-modenhet, prioriteringer, gap, tiltak og lederinnsikt som grunnlag for videre AI-arbeid.",
+      forDetalj:
+        "Særlig ved ny AI-retning, uklar prioritering, mange idéer men lite struktur, eller behov for felles beslutningsgrunnlag i ledergruppen.",
+      leveranseDetalj:
+        "Modenhetsvurdering, prioritering, gap-analyse, tiltak, risiko, ansvar og grunnlag for neste steg i AI-arbeid.",
+      pilotStotte: readinessScanDemonstratorStotte.no,
+    },
   ],
   en: [
     {
@@ -261,6 +342,30 @@ const spesialisertePakker: Record<Lang, TjenestePakke[]> = {
       leveranseDetalj:
         "Target group understanding, value proposition, pitch, customer journey, go-to-market, channels and commercial structure.",
     },
+    {
+      id: "operasjonell-planlegging",
+      tittel: "Operational planning and follow-up",
+      hvem: "Businesses and teams planning events, projects or deliveries across spreadsheets, messages, email and separate checklists.",
+      leveranseKort:
+        "Experience structuring planning, ownership, prioritisation, follow-up and collaboration — including where AI assistance can reduce fragmentation and strengthen execution.",
+      forDetalj:
+        "Especially when several people contribute, deadlines are approaching, ownership is unclear or the information exists but is not operationally consolidated.",
+      leveranseDetalj:
+        "Planning model, participants and tasks, ownership, programme, prioritisation, follow-up and AI-supported registration where it adds value.",
+      pilotStotte: eventPlannerDemonstratorStotte.en,
+    },
+    {
+      id: "ai-modenhet",
+      tittel: "AI maturity, prioritisation and decision basis",
+      hvem: "Leadership teams that want to understand where the organisation should start with AI, what to prioritise and how maturity and risk should be assessed.",
+      leveranseKort:
+        "Experience with structured mapping of AI maturity, priorities, gaps, actions and leadership insight as a basis for further AI work.",
+      forDetalj:
+        "Especially with a new AI direction, unclear prioritisation, many ideas but little structure, or a need for shared decision basis in the leadership team.",
+      leveranseDetalj:
+        "Maturity assessment, prioritisation, gap analysis, actions, risk, ownership and basis for the next step in AI work.",
+      pilotStotte: readinessScanDemonstratorStotte.en,
+    },
   ],
 };
 
@@ -285,6 +390,11 @@ const metoder: Record<Lang, MetodeKomponent[]> = {
       tittel: "FlowSignal",
       beskrivelse: "Samhandling, teamutvikling, dagsform og dialog",
       pilotStotte: prosjektLenke("/flowsignal").no,
+    },
+    {
+      tittel: "Event Planner",
+      beskrivelse: "Planlegging, deltakere, oppgaver, program og oppfølging av arrangementer",
+      pilotStotte: prosjektLenke(EVENT_PLANNER_PILOT_PATH).no,
     },
     {
       tittel: "SMB Salgsflyt-sjekken",
@@ -325,6 +435,11 @@ const metoder: Record<Lang, MetodeKomponent[]> = {
       tittel: "FlowSignal",
       beskrivelse: "Collaboration, team development, daily form and dialogue",
       pilotStotte: prosjektLenke("/flowsignal").en,
+    },
+    {
+      tittel: "Event Planner",
+      beskrivelse: "Planning, participants, tasks, programme and follow-up for events",
+      pilotStotte: prosjektLenke(EVENT_PLANNER_PILOT_PATH).en,
     },
     {
       tittel: "SMB Sales Flow Check",

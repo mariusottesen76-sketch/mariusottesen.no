@@ -8,7 +8,7 @@ export async function generateMetadata(
   return {
     title: "CV & åpen søknad — Marius Ottesen",
     description:
-      "CV, åpen søknad og executive summary for rekrutterere, headhuntere og arbeidsgivere. Rollefit, utvalgte resultater og kjernekompetanse — med lang erfaring fra kommersiell ledelse.",
+      "CV, åpen søknad og executive summary for rekrutterere, headhuntere og arbeidsgivere. Rollefit, utvalgte resultater og kjernekompetanse — kommersiell leder med operasjonell erfaring fra salg, drift og gjennomføring.",
     metadataBase: new URL("https://www.mariusottesen.no"),
     openGraph: {
       title: "CV & åpen søknad — Marius Ottesen",
@@ -30,7 +30,7 @@ export async function generateMetadata(
       card: "summary_large_image",
       title: "CV & åpen søknad — Marius Ottesen",
       description:
-        "CV, åpen søknad og executive summary. Kommersiell leder med lang erfaring og dokumenterte resultater.",
+        "CV, åpen søknad og executive summary. Kommersiell leder med dokumenterte resultater og operasjonell erfaring fra salg, drift og gjennomføring.",
       images: ["https://www.mariusottesen.no/images/profil.jpg"],
     },
   };

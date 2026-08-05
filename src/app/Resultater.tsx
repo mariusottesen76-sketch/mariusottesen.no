@@ -229,8 +229,8 @@ export default function Resultater() {
       resultater: getMocResultaterPunkter(lang),
       relevans:
         lang === "no"
-          ? "Faglig porteføljearbeid, praktisk AI-kompetanse, metodeutvikling og dokumentert gjennomføringsevne. Styrker relevans for faste lederroller innen kommersiell ledelse, transformasjon og AI-relatert forretningsutvikling."
-          : "Professional portfolio work, practical AI competence, methodology development and documented execution capability. Strengthens relevance for permanent leadership roles in commercial leadership, transformation and AI-related business development.",
+          ? "Faglig porteføljearbeid, praktisk AI-kompetanse, metodeutvikling og dokumentert gjennomføringsevne. Styrker relevans for faste lederroller innen kommersiell ledelse, transformasjon og AI-relatert forretningsutvikling — inkludert operasjonell erfaring fra salg og drift."
+          : "Professional portfolio work, practical AI competence, methodology development and documented execution capability. Strengthens relevance for permanent leadership roles in commercial leadership, transformation and AI-related business development — including operational experience from sales and operations.",
       farge: "indigo",
     },
     ...ovrigeSelskapsresultater,

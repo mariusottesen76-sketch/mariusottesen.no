@@ -6,7 +6,7 @@ export async function generateMetadata(
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   const description =
-    "Dokumenterte resultater fra kommersiell ledelse, salgsutvikling, vekst, transformasjon og teamutvikling – supplert med egenutviklede AI-prosjekter, apper og arbeidsflyter.";
+    "Dokumenterte resultater fra kommersiell ledelse, salgsutvikling, vekst, transformasjon og teamutvikling — inkludert operasjonell erfaring fra salg og drift — supplert med egenutviklede AI-prosjekter, apper, plattformer og arbeidsflyter.";
 
   return {
     title: "Dokumenterte resultater og praktisk AI-kompetanse | Marius Ottesen",

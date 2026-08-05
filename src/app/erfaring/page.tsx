@@ -6,7 +6,7 @@ export async function generateMetadata(
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   const description =
-    "Kommersiell leder med erfaring fra salgsledelse, vekst, P/L-ansvar, teamutvikling, transformasjon og praktisk AI. Se karriere, resultater og faglig portefølje.";
+    "Kommersiell leder med erfaring fra salgsledelse, vekst, P/L-ansvar, teamutvikling, transformasjon og praktisk AI — inkludert operasjonell ledererfaring fra salg og drift. Se karriere, resultater og faglig portefølje.";
 
   return {
     title: "Erfaring og resultater | Kommersiell leder – Marius Ottesen",

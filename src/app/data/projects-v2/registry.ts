@@ -5,6 +5,7 @@ import { predictiveSalesCoachV2 } from "./projects/predictive-sales-coach";
 import { flowsignalV2 } from "./projects/flowsignal";
 import { aiReadinessScanV2 } from "./projects/ai-readiness-scan";
 import { salgsflytSjekkenV2 } from "./projects/salgsflyt-sjekken";
+import { eventPlannerV2 } from "./projects/event-planner";
 import { strategiskAiImplementeringV2 } from "./projects/strategisk-ai-implementering";
 import { skoyenasenTannklinikkV2 } from "./projects/skoyenasen-tannklinikk";
 import { mariusottesenNettsideV2 } from "./projects/mariusottesen-nettside";
@@ -26,6 +27,7 @@ const baseProjectV2Records: ProjectV2BaseRecord[] = [
   flowsignalV2,
   aiReadinessScanV2,
   salgsflytSjekkenV2,
+  eventPlannerV2,
   strategiskAiImplementeringV2,
   skoyenasenTannklinikkV2,
   mariusottesenNettsideV2,

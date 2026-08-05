@@ -140,4 +140,12 @@ export const projectDateAudit: ProjectDateAuditEntry[] = [
     reason: "Prosjektkort på /prosjekter.",
     commit: "c075979",
   },
+  {
+    projectId: "event-planner-2026-08",
+    publishedAt: "2026-08-04",
+    updatedAt: "2026-08-04",
+    source: "user_brief",
+    confidence: "user_confirmed",
+    reason: "Event Planner v1 registrert på porteføljen 04.08.26.",
+  },
 ];

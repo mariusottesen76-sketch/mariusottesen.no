@@ -92,7 +92,7 @@ Plattformen kan også fungere som et strategisk overbygg for AI-prosjektene jeg 
 
 💥 <a href="/prosjekter#ai-readiness-scan-2026-06" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">AI Readiness Scan</a> vurderer hvor virksomheten bør starte, og hvilke områder som bør prioriteres.
 
-💥 <a href="/salgsflyt-sjekken" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">SMB Salgsflyt-sjekken</a>, <a href="/psc" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">The Predictive Sales Coach</a> og <a href="/flowsignal" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">FlowSignal</a> adresserer behov innen salg, kundedialog, samspill, teamsamarbeid, læring og prestasjonsutvikling.
+💥 <a href="/salgsflyt-sjekken" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">SMB Salgsflyt-sjekken</a>, <a href="/psc" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">The Predictive Sales Coach</a>, <a href="/flowsignal" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">FlowSignal</a> og <a href="/event-planner" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">Event Planner</a> adresserer behov innen salg, kundedialog, samspill, teamsamarbeid, arrangementsplanlegging, læring og prestasjonsutvikling.
 
 💥 <a href="/prosjekter#control-tower" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">Control Tower – Decision & Execution Intelligence</a> støtter kommersielle og operative funksjoner ved å omsette signaler til konsekvens, prioritet, tiltak, ansvar og effekt.
 
@@ -204,7 +204,7 @@ Dette er praktiske konsepter som kan videreutvikles og tilpasses ulike virksomhe
 
 💥 <strong>CTA:</strong> Ønsker du faglig dialog om appene, hvordan de er bygget, eller hvordan tilsvarende arbeidsflyter kan være relevante i en fremtidig sammenheng, <a href="/kontakt" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">ta kontakt</a>.
 
-👉 En samlet oversikt over appene finner du på <a href="/prosjekter" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">prosjektsiden</a>, med videre lenker til <a href="/prosjekter#ai-readiness-scan-2026-06">AI Readiness Scan</a>, <a href="/salgsflyt-sjekken">SMB Salgsflyt-sjekken</a>, <a href="/flowsignal">FlowSignal</a> og <a href="/psc">The Predictive Sales Coach</a>.
+👉 En samlet oversikt over appene finner du på <a href="/prosjekter" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">prosjektsiden</a>, med videre lenker til <a href="/prosjekter#ai-readiness-scan-2026-06">AI Readiness Scan</a>, <a href="/salgsflyt-sjekken">SMB Salgsflyt-sjekken</a>, <a href="/flowsignal">FlowSignal</a>, <a href="/event-planner">Event Planner</a> og <a href="/psc">The Predictive Sales Coach</a>.
 
 #AIstrategi #AIimplementering #kommersiellledelse #salgsutvikling #organisasjonsutvikling`,
       karusellBilder: fireApperKarusellBilder,
@@ -2174,7 +2174,7 @@ The platform can also function as a strategic overlay for the AI projects I have
 
 💥 <a href="/prosjekter#ai-readiness-scan-2026-06" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">AI Readiness Scan</a> assesses where the organisation should start and which areas should be prioritised.
 
-💥 <a href="/salgsflyt-sjekken" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">SMB Sales Flow Check</a>, <a href="/psc" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">The Predictive Sales Coach</a> and <a href="/flowsignal" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">FlowSignal</a> address needs in sales, customer dialogue, interaction, team collaboration, learning and performance development.
+💥 <a href="/salgsflyt-sjekken" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">SMB Sales Flow Check</a>, <a href="/psc" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">The Predictive Sales Coach</a>, <a href="/flowsignal" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">FlowSignal</a> and <a href="/event-planner" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">Event Planner</a> address needs in sales, customer dialogue, interaction, team collaboration, event planning, learning and performance development.
 
 💥 <a href="/prosjekter#control-tower" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">Control Tower – Decision & Execution Intelligence</a> supports commercial and operational functions by turning signals into consequence, priority, action, ownership and impact.
 
@@ -2272,7 +2272,7 @@ These are practical concepts that can be developed further and adapted to differ
 
 💥 <strong>CTA:</strong> If you want professional dialogue about the apps, how they are built, or how similar workflows may be relevant in a future context, <a href="/kontakt" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">get in touch</a>.
 
-👉 A combined overview of the apps is on the <a href="/prosjekter" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">projects page</a>, with further links to <a href="/prosjekter#ai-readiness-scan-2026-06">AI Readiness Scan</a>, <a href="/salgsflyt-sjekken">SMB Sales Flow Check</a>, <a href="/flowsignal">FlowSignal</a> and <a href="/psc">The Predictive Sales Coach</a>.
+👉 A combined overview of the apps is on the <a href="/prosjekter" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">projects page</a>, with further links to <a href="/prosjekter#ai-readiness-scan-2026-06">AI Readiness Scan</a>, <a href="/salgsflyt-sjekken">SMB Sales Flow Check</a>, <a href="/flowsignal">FlowSignal</a>, <a href="/event-planner">Event Planner</a> and <a href="/psc">The Predictive Sales Coach</a>.
 
 #AIstrategi #AIimplementering #kommersiellledelse #salgsutvikling #organisasjonsutvikling`,
   },

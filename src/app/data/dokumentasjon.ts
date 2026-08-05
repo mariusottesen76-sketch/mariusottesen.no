@@ -31,7 +31,7 @@ const data = {
     ],
     aiTitle: "AI, data og nye arbeidsformer",
     aiText: [
-      "Jeg har videreutviklet min kommersielle og strategiske lederkompetanse gjennom masterkurset <em class=\"italic\">Generative AI for Business</em> ved BI, kombinert med egne AI-prosjekter innen transformasjonsstyring, salgstrening, samhandling, innsiktsarbeid, beslutningsstøtte og agentiske arbeidsflyter. Dette inkluderer executive konseptplattformen <em class=\"italic\">AI Transformation & Value Realization</em>. Jeg har også tatt initiativ til <em class=\"italic\">AI Value Lab Oslo</em>, et tverrfaglig lærings- og utviklingsinitiativ med fokus på praktisk testing, ansvarlig bruk av AI og reell verdiskaping gjennom virksomhetsnære case.",
+      "Jeg har videreutviklet min kommersielle og strategiske lederkompetanse gjennom masterkurset <em class=\"italic\">Generative AI for Business</em> ved BI, kombinert med egne AI-prosjekter innen transformasjonsstyring, operasjonell planlegging, salgstrening, samhandling, innsiktsarbeid, beslutningsstøtte og agentiske arbeidsflyter. Dette inkluderer executive konseptplattformen <em class=\"italic\">AI Transformation & Value Realization</em>, <em class=\"italic\">Control Tower</em> og apper som <em class=\"italic\">Event Planner</em>. Jeg har også tatt initiativ til <em class=\"italic\">AI Value Lab Oslo</em>, et tverrfaglig lærings- og utviklingsinitiativ med fokus på praktisk testing, ansvarlig bruk av AI og reell verdiskaping gjennom virksomhetsnære case.",
     ],
     aiLink: "Se AI-prosjekter",
     pdfTitle: "CV og åpen søknad",
@@ -69,7 +69,7 @@ const data = {
     ],
     aiTitle: "AI, data and new ways of working",
     aiText: [
-      "I have further developed my commercial and strategic leadership competence through the <em class=\"italic\">Generative AI for Business</em> master's programme at BI, combined with my own AI projects in transformation governance, sales training, collaboration, insight work, decision support and agentic workflows. This includes the executive concept platform <em class=\"italic\">AI Transformation & Value Realization</em>. I have also initiated <em class=\"italic\">AI Value Lab Oslo</em>, a cross-disciplinary learning and development initiative focused on practical testing, responsible use of AI and real value creation through business-near cases.",
+      "I have further developed my commercial and strategic leadership competence through the <em class=\"italic\">Generative AI for Business</em> master's programme at BI, combined with my own AI projects in transformation governance, operational planning, sales training, collaboration, insight work, decision support and agentic workflows. This includes the executive concept platform <em class=\"italic\">AI Transformation & Value Realization</em>, <em class=\"italic\">Control Tower</em> and apps such as <em class=\"italic\">Event Planner</em>. I have also initiated <em class=\"italic\">AI Value Lab Oslo</em>, a cross-disciplinary learning and development initiative focused on practical testing, responsible use of AI and real value creation through business-near cases.",
     ],
     aiLink: "See AI projects",
     pdfTitle: "CV and open application",

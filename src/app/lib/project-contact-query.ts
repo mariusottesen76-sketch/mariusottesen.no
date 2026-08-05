@@ -72,6 +72,10 @@ export const PROJECT_SLUG_DISPLAY: Record<string, { no: string; en: string }> = 
     no: "SMB Salgsflyt-sjekken",
     en: "SMB Sales Flow Check",
   },
+  "event-planner": {
+    no: "Event Planner",
+    en: "Event Planner",
+  },
 };
 
 export function getProjectSlugDisplayName(slug: string, lang: "no" | "en"): string {

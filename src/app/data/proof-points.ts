@@ -8,7 +8,7 @@ export const PROFIL_PROOF_POINTS: Record<Lang, string[]> = {
     "67 % salgsvekst i Norengros Johs. Olsen.",
     "Ledet team til global #1-ranking i Mundipharma.",
     "Etablerte tydeligere KPI-, styrings- og salgsmodell på tvers av 18 driftssteder i Franzefoss.",
-    "Bygget praktiske AI-prototyper, arbeidsflyter og beslutningsmodeller.",
+    "Bygget praktiske AI-prototyper, plattformer, arbeidsflyter og beslutningsmodeller for salg, team, beredskap og operativ planlegging.",
   ],
   en: [
     "Led national sales organisations with 10–20 people.",
@@ -16,7 +16,7 @@ export const PROFIL_PROOF_POINTS: Record<Lang, string[]> = {
     "67% revenue growth at Norengros Johs. Olsen.",
     "Led the team to a global #1 ranking at Mundipharma.",
     "Established a clearer KPI, governance and sales model across 18 operational sites at Franzefoss.",
-    "Built practical AI prototypes, workflows and decision models.",
+    "Built practical AI prototypes, platforms, workflows and decision models for sales, team development, readiness and operational planning.",
   ],
 };
 

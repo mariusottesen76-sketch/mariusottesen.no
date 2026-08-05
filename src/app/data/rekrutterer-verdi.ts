@@ -20,7 +20,7 @@ const data = {
         },
         {
           title: "Når salg, drift og teknologi må spille bedre sammen",
-          text: "Når virksomheten trenger bedre samspill mellom kommersiell ledelse, kundeinnsikt, arbeidsflyt, data og digitale verktøy.",
+          text: "Når virksomheten trenger bedre samspill mellom kommersiell og operasjonell ledelse, kundeinnsikt, arbeidsflyt, data og digitale verktøy.",
         },
         {
           title: "Når AI skal brukes praktisk og forretningsnært",
@@ -63,7 +63,7 @@ const data = {
         },
         {
           title: "When sales, operations and technology must work better together",
-          text: "When the organisation needs better alignment between commercial leadership, customer insight, workflow, data and digital tools.",
+          text: "When the organisation needs better alignment between commercial and operational leadership, customer insight, workflow, data and digital tools.",
         },
         {
           title: "When AI must be used practically and close to the business",

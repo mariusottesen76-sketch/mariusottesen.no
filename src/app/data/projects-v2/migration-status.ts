@@ -215,4 +215,18 @@ export const projectMigrationOverview: ProjectMigrationEntry[] = [
     editorialReviewRequired: false,
     recommendedMigrationOrder: 15,
   },
+  {
+    id: "event-planner-2026-08",
+    name: { no: "Event Planner", en: "Event Planner" },
+    category: "app_prototype",
+    layoutVersion: "project_v2",
+    existingDetailPage: "/event-planner",
+    recommendedDetailLevel: "full",
+    accessMode: "access_code",
+    overviewImageFormat: "standard_1x3",
+    detailHeroMissing: true,
+    missingOverviewFields: [],
+    editorialReviewRequired: false,
+    recommendedMigrationOrder: 16,
+  },
 ];

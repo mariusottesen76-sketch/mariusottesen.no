@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Page from "../page";
 
 const ogDescription =
-  "Egenutviklede AI-prosjekter, apper, demonstratorer og casearbeid innen kommersiell ledelse, salgsutvikling, arbeidsflyt, transformasjon, beslutningsstøtte og praktisk AI.";
+  "Egenutviklede AI-prosjekter, apper, plattformer, demonstratorer og casearbeid innen kommersiell ledelse, salgsutvikling, arbeidsflyt, transformasjon, beslutningsstøtte og praktisk AI — med operasjonell erfaring fra salg, drift og gjennomføring.";
 
 export const metadata: Metadata = {
   title: "AI-prosjekter og faglig utvikling | Marius Ottesen",

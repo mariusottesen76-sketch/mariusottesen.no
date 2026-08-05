@@ -21,6 +21,7 @@ import { aiAssistertInnsiktsagent } from "../../data/prosjekter/ai-assistert-inn
 import { aiAssistertInnsiktsOgInnholdsagent } from "../../data/prosjekter/ai-assistert-innsikts-og-innholdsagent";
 import { aiArkitekturBeslutningsstotte } from "../../data/prosjekter/ai-arkitektur-beslutningsstotte";
 import { aiValueLabOslo } from "../../data/prosjekter/ai-value-lab-oslo";
+import { eventPlanner } from "../../data/prosjekter/event-planner";
 import type { ProsjektType } from "../../data/prosjekter/predictive-sales-coach";
 import {
   blockTitleClass,
@@ -84,6 +85,7 @@ const prosjektBySlug: Record<StrategicPlatformSlug, ProsjektType> = {
   "ai-innsikts-og-innholdsmotor": aiAssistertInnsiktsOgInnholdsagent,
   "ai-arkitektur-beslutningsstotte": aiArkitekturBeslutningsstotte,
   "ai-value-lab-oslo": aiValueLabOslo,
+  "event-planner": eventPlanner,
 };
 
 function SectionHeading({ id, children }: { id: string; children: React.ReactNode }) {

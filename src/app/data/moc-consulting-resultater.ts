@@ -1,6 +1,7 @@
 import { Lang } from "../LanguageContext";
 import { getFaginnleggTelling } from "../lib/faginnlegg-data";
 import { AI_READINESS_SCAN_PROSJEKT_PATH } from "../lib/ai-readiness-scan-brand";
+import { EVENT_PLANNER_PILOT_PATH } from "../lib/event-planner-brand";
 
 const prosjektLenker = {
   skoyenasen: "/skoyenasen-tannklinikk",
@@ -8,6 +9,7 @@ const prosjektLenker = {
   flowsignal: "/flowsignal",
   salgsflyt: "/salgsflyt-sjekken",
   readinessScan: AI_READINESS_SCAN_PROSJEKT_PATH,
+  eventPlanner: EVENT_PLANNER_PILOT_PATH,
   agent: "/agentisk-arbeidsflyt",
   innhold: "/ai-innsikts-og-innholdsmotor",
   beslutning: "/ai-arkitektur-beslutningsstotte",
@@ -47,6 +49,7 @@ export function getMocResultaterPunkter(lang: Lang): MocResultatPunkt[] {
       `Developed ${lenke(prosjektLenker.readinessScan, "AI Readiness Scan")}: access-controlled mapping tool with structured assessment of AI maturity, priorities and admin insight`,
       `Built ${lenke(prosjektLenker.salgsflyt, "SMB Sales Flow Check")}: diagnosis, scoring, AI-supported analysis, reporting and follow-up logic for commercial workflows`,
       `Built ${lenke(prosjektLenker.flowsignal, "FlowSignal")}: AI-supported workspace for profile insight, daily form, reflection, collaboration and leadership follow-up`,
+      `Built ${lenke(prosjektLenker.eventPlanner, "Event Planner")}: AI-assisted workspace for planning, participants, tasks, programme and follow-up for events`,
       `Built ${lenke(prosjektLenker.psc, "The Predictive Sales Coach")}: AI-based training and evaluation platform for B2B customer dialogue and meeting preparation`,
       `Developed models and workflows for ${lenke(prosjektLenker.agent, "AI-assisted insight")}, ${lenke(prosjektLenker.innhold, "content")}, prioritisation and ${lenke(prosjektLenker.beslutning, "decision support")}`,
       `Built and published ${lenke(prosjektLenker.nettside, "mariusottesen.no")}: leadership profile, portfolio, articles and access-controlled AI demonstrators`,
@@ -68,6 +71,7 @@ export function getMocResultaterPunkter(lang: Lang): MocResultatPunkt[] {
     `Utviklet ${lenke(prosjektLenker.readinessScan, "AI Readiness Scan")}: tilgangsstyrt kartleggingsverktøy med strukturert vurdering av AI-modenhet, prioriteringer og administrativ innsikt`,
     `Bygget ${lenke(prosjektLenker.salgsflyt, "SMB Salgsflyt-sjekken")}: diagnose, scoring, AI-støttet analyse, rapportering og oppfølgingslogikk for kommersielle arbeidsflyter`,
     `Bygget ${lenke(prosjektLenker.flowsignal, "FlowSignal")}: AI-støttet arbeidsflate for profilinnsikt, dagsform, refleksjon, samhandling og lederoppfølging`,
+    `Bygget ${lenke(prosjektLenker.eventPlanner, "Event Planner")}: AI-assistert arbeidsflate for planlegging, deltakere, oppgaver, program og oppfølging av arrangementer`,
     `Bygget ${lenke(prosjektLenker.psc, "The Predictive Sales Coach")}: AI-basert salgstrening og møteforberedelse med kundesimulering, strukturert feedback, evaluering og salgslederinnsikt`,
     `Utviklet modeller og arbeidsflyter for ${lenke(prosjektLenker.agent, "AI-assistert innsikt")}, ${lenke(prosjektLenker.innhold, "innhold")}, prioritering og ${lenke(prosjektLenker.beslutning, "beslutningsstøtte")}`,
     `Bygget og publisert ${lenke(prosjektLenker.nettside, "mariusottesen.no")}: lederprofil, portefølje, faginnlegg og tilgangsstyrte AI-demonstratorer`,

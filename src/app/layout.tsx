@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Marius Ottesen | Kommersiell leder, transformasjon og praktisk AI",
   description:
-    "Kommersiell leder med erfaring fra salgsledelse, vekst, P/L-ansvar, teamutvikling, transformasjon og praktisk AI. Aktuell for lederroller innen kommersiell ledelse, salgsledelse og forretningsutvikling.",
+    "Kommersiell leder med erfaring fra salgsledelse, vekst, P/L-ansvar, teamutvikling, transformasjon og praktisk AI — inkludert operasjonell ledererfaring fra salg, drift og gjennomføring. Aktuell for lederroller innen kommersiell ledelse, salgsledelse og forretningsutvikling.",
   keywords: [
     "Marius Ottesen",
     "kommersiell leder",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     // Default verdier - kan overstyres av child routes
     title: "Marius Ottesen | Kommersiell leder, transformasjon og praktisk AI",
     description:
-      "Kommersiell leder med erfaring fra salgsledelse, vekst, P/L-ansvar, teamutvikling, transformasjon og praktisk AI. Aktuell for lederroller innen kommersiell ledelse, salgsledelse og forretningsutvikling.",
+      "Kommersiell leder med erfaring fra salgsledelse, vekst, P/L-ansvar, teamutvikling, transformasjon og praktisk AI — inkludert operasjonell ledererfaring fra salg, drift og gjennomføring. Aktuell for lederroller innen kommersiell ledelse, salgsledelse og forretningsutvikling.",
     images: [
       {
         url: "https://www.mariusottesen.no/images/profil.jpg",
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     // Default verdier - kan overstyres av child routes
     title: "Marius Ottesen | Kommersiell leder, transformasjon og praktisk AI",
     description:
-      "Kommersiell leder med erfaring fra salgsledelse, vekst, P/L-ansvar, teamutvikling, transformasjon og praktisk AI. Aktuell for lederroller innen kommersiell ledelse, salgsledelse og forretningsutvikling.",
+      "Kommersiell leder med erfaring fra salgsledelse, vekst, P/L-ansvar, teamutvikling, transformasjon og praktisk AI — inkludert operasjonell ledererfaring fra salg, drift og gjennomføring. Aktuell for lederroller innen kommersiell ledelse, salgsledelse og forretningsutvikling.",
     images: ["https://www.mariusottesen.no/images/profil.jpg"],
   },
   robots: {
@@ -113,7 +113,7 @@ export default function RootLayout({
                   url: "https://www.mariusottesen.no",
                   jobTitle: "Kommersiell leder",
                   description:
-                    "Kommersiell leder med erfaring fra salgsledelse, vekst, P/L-ansvar, teamutvikling, transformasjon og praktisk AI. Aktuell for lederroller innen kommersiell ledelse, salgsledelse og forretningsutvikling.",
+                    "Kommersiell leder med erfaring fra salgsledelse, vekst, P/L-ansvar, teamutvikling, transformasjon og praktisk AI — inkludert operasjonell ledererfaring fra salg, drift og gjennomføring. Aktuell for lederroller innen kommersiell ledelse, salgsledelse og forretningsutvikling.",
                   image: "https://www.mariusottesen.no/images/profil.jpg",
                   sameAs: [
                     "https://www.linkedin.com/in/mariusottesen/",

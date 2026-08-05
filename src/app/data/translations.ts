@@ -109,8 +109,8 @@ const translations: Translations = {
     en: "Professional communication as a working method",
   },
   "fag.formidling.body": {
-    no: "Fagkompetanse, læring og formidling har alltid vært viktige deler av hvordan jeg utvikler mennesker, team og virksomheter. Jeg har tidligere arbeidet med kursutvikling, salgs- og ledertrening og utvikling av team, og bruker samme tilnærming i arbeidet med AI, transformasjon og kommersiell utvikling.\n\nFor meg er formidling en av de mest effektive metodene for egen læring: Når komplekse temaer må struktureres, forklares og gjøres anvendbare for andre, blir også nye sammenhenger og forbedringsmuligheter tydeligere.\n\nInnleggene er ment som refleksjoner og praktiske perspektiver for ledere og virksomheter som arbeider med vekst, endring, teknologi og gjennomføring.",
-    en: "Subject expertise, learning and communication have always been important parts of how I develop people, teams and organisations. I have previously worked on course development, sales and leadership training and team development, and apply the same approach in work on AI, transformation and commercial development.\n\nFor me, communication is one of the most effective methods for my own learning: when complex topics must be structured, explained and made applicable for others, new connections and improvement opportunities also become clearer.\n\nThe articles are intended as reflections and practical perspectives for leaders and organisations working with growth, change, technology and execution.",
+    no: "Fagkompetanse, læring og formidling har alltid vært viktige deler av hvordan jeg utvikler mennesker, team og virksomheter. Jeg har tidligere arbeidet med kursutvikling, salgs- og ledertrening og utvikling av team, og bruker samme tilnærming i arbeidet med AI, transformasjon og kommersiell og operasjonell utvikling.\n\nFor meg er formidling en av de mest effektive metodene for egen læring: Når komplekse temaer må struktureres, forklares og gjøres anvendbare for andre, blir også nye sammenhenger og forbedringsmuligheter tydeligere.\n\nInnleggene er ment som refleksjoner og praktiske perspektiver for ledere og virksomheter som arbeider med vekst, endring, teknologi og gjennomføring.",
+    en: "Subject expertise, learning and communication have always been important parts of how I develop people, teams and organisations. I have previously worked on course development, sales and leadership training and team development, and apply the same approach in work on AI, transformation and commercial and operational development.\n\nFor me, communication is one of the most effective methods for my own learning: when complex topics must be structured, explained and made applicable for others, new connections and improvement opportunities also become clearer.\n\nThe articles are intended as reflections and practical perspectives for leaders and organisations working with growth, change, technology and execution.",
   },
   "fag.formidling.kilde.lead": {
     no: "Underbygget av ledererfaring, videreutdanning og bygde AI-prosjekter har jeg også tatt initiativ til",
@@ -170,16 +170,16 @@ const translations: Translations = {
   "prosjekter.title.1": { no: "AI-prosjekter &", en: "AI Projects &" },
   "prosjekter.title.2": { no: "Utvikling", en: "Development" },
   "prosjekter.intro.1": {
-    no: "Her finner du AI-prosjekter, apper, nettsider, casearbeid og arbeidsflyter i skjæringspunktet mellom AI, digital transformasjon og konkrete kommersielle og operative behov.",
-    en: "Here you will find AI projects, apps, websites, case work and workflows at the intersection of AI, digital transformation and concrete commercial and operational needs.",
+    no: "Her finner du AI-prosjekter, apper, nettsider, casearbeid og arbeidsflyter i skjæringspunktet mellom AI, digital transformasjon og konkrete kommersielle, operative og arrangementsrelaterte behov.",
+    en: "Here you will find AI projects, apps, websites, case work and workflows at the intersection of AI, digital transformation and concrete commercial, operational and event-related needs.",
   },
   "prosjekter.intro.scroll": {
     no: "Bla ned for å utforske prosjektene.",
     en: "Scroll down to explore the projects.",
   },
   "prosjekter.intro.1b": {
-    no: "Prosjektene viser hva som faktisk er bygget, hvordan løsningene fungerer og hvilken praktisk relevans de kan ha innen kommersiell utvikling, salg, drift og operasjonell styring, kundeopplevelse, ledelse, arbeidsflyt, beslutningsstøtte og ansvarlig AI-bruk.",
-    en: "The projects show what has actually been built, how the solutions work and what practical relevance they can have in commercial development, sales, operations and operational governance, customer experience, leadership, workflow, decision support and responsible use of AI.",
+    no: "Prosjektene viser hva som faktisk er bygget, hvordan løsningene fungerer og hvilken praktisk relevans de kan ha innen kommersiell utvikling, salg, drift og operasjonell styring, arrangementsplanlegging, kundeopplevelse, ledelse, arbeidsflyt, beslutningsstøtte og ansvarlig AI-bruk.",
+    en: "The projects show what has actually been built, how the solutions work and what practical relevance they can have in commercial development, sales, operations and operational governance, event planning, customer experience, leadership, workflow, decision support and responsible use of AI.",
   },
   "prosjekter.intro.gridLead": {
     no: "Kort oversikt — klikk på navnet for å lese mer:",
@@ -217,6 +217,11 @@ const translations: Translations = {
   "prosjekter.intro.punkt.salgsflyt.desc": {
     no: "Interaktiv SMB-diagnose med AI-rapportering, strukturert innsikt og oppfølgingslogikk",
     en: "Interactive SMB diagnosis with AI reporting, structured insight and follow-up logic",
+  },
+  "prosjekter.intro.punkt.event-planner.label": { no: "Event Planner", en: "Event Planner" },
+  "prosjekter.intro.punkt.event-planner.desc": {
+    no: "AI-assistert arrangementsplanlegging som samler deltakere, oppgaver, ansvar, program og oppfølging i én arbeidsflate",
+    en: "AI-assisted event planning that brings participants, tasks, ownership, programme and follow-up together in one workspace",
   },
   "prosjekter.intro.punkt.psc-video.label": { no: "Promovideo PSC", en: "PSC promo video" },
   "prosjekter.intro.punkt.psc-video.desc": {
@@ -272,12 +277,12 @@ const translations: Translations = {
     en: "From further education to built solutions",
   },
   "prosjekter.videreutdanning.para1": {
-    no: "I 2026 fullførte jeg masterkurset Generative AI for Business ved BI med karakter A. Parallelt har jeg bygget og publisert flere virksomhetsnære AI-prosjekter som utforsker hvordan AI kan brukes til transformasjonsstyring, AI-beredskap, operativ prioritering, salgsflyt, kundedialog, teamutvikling, arbeidsflyt og kommersiell gjennomføring — inkludert executive-plattformene AI Transformation & Value Realization og Control Tower.",
-    en: "In 2026 I completed the master's course Generative AI for Business at BI Norwegian Business School with grade A. In parallel I have built and published several business-oriented AI projects exploring how AI can be used for transformation governance, AI readiness, operational prioritisation, sales flow, customer dialogue, team development, workflow and commercial execution — including the executive platforms AI Transformation & Value Realization and Control Tower.",
+    no: "I 2026 fullførte jeg masterkurset Generative AI for Business ved BI med karakter A. Parallelt har jeg bygget og publisert flere virksomhetsnære AI-prosjekter som utforsker hvordan AI kan brukes til transformasjonsstyring, AI-beredskap, operativ prioritering, salgsflyt, kundedialog, teamutvikling, arrangementsplanlegging, arbeidsflyt og kommersiell gjennomføring — inkludert executive-plattformene AI Transformation & Value Realization og Control Tower, samt apper som Event Planner.",
+    en: "In 2026 I completed the master's course Generative AI for Business at BI Norwegian Business School with grade A. In parallel I have built and published several business-oriented AI projects exploring how AI can be used for transformation governance, AI readiness, operational prioritisation, sales flow, customer dialogue, team development, event planning, workflow and commercial execution — including the executive platforms AI Transformation & Value Realization and Control Tower, and apps such as Event Planner.",
   },
   "prosjekter.videreutdanning.para2": {
-    no: "Arbeidet omfatter blant annet beslutnings- og gjennomføringsplattformer for operativ og kommersiell styring, AI-støttet pasientreise, intake og booking for tannklinikk, AI-arkitektur for beslutningsstøtte og prioritering, samt en AI-assistert innsikts- og innholdsmotor som gjør kunnskap og markedssignaler mer anvendbare.",
-    en: "The work includes, among other things, decision and execution platforms for operational and commercial governance, AI-supported patient journey, intake and booking for a dental clinic, AI architecture for decision support and prioritisation, and an AI-assisted insight and content engine that makes knowledge and market signals more actionable.",
+    no: "Arbeidet omfatter blant annet beslutnings- og gjennomføringsplattformer for operativ og kommersiell styring, AI-assistert planlegging og oppfølging av arrangementer, AI-støttet pasientreise, intake og booking for tannklinikk, AI-arkitektur for beslutningsstøtte og prioritering, samt en AI-assistert innsikts- og innholdsmotor som gjør kunnskap og markedssignaler mer anvendbare.",
+    en: "The work includes, among other things, decision and execution platforms for operational and commercial governance, AI-assisted planning and follow-up for events, AI-supported patient journey, intake and booking for a dental clinic, AI architecture for decision support and prioritisation, and an AI-assisted insight and content engine that makes knowledge and market signals more actionable.",
   },
   "prosjekter.videreutdanning.para3.lead": {
     no: "Jeg har også tatt initiativ til",
@@ -299,16 +304,16 @@ const translations: Translations = {
   // Consulting
   "cons.brand": { no: "Marius Ottesen Consulting", en: "Marius Ottesen Consulting" },
   "cons.title.1": {
-    no: "Kommersiell utvikling, arbeidsflyt og praktisk AI",
-    en: "Commercial development, workflow and practical AI",
+    no: "Kommersiell utvikling, drift, arbeidsflyt og praktisk AI",
+    en: "Commercial development, operations, workflow and practical AI",
   },
   "cons.title.2": {
     no: "Relevant erfaring, arbeidsmetoder og mulige bidragsområder",
     en: "Relevant experience, working methods and possible areas of contribution",
   },
   "cons.intro.1": {
-    no: "Denne siden samler erfaring, metoder og egenutviklede prosjekter innen kommersiell ledelse, salgsutvikling, CRM, arbeidsflyt, transformasjon og praktisk bruk av AI.",
-    en: "This page brings together experience, methods and custom projects in commercial leadership, sales development, CRM, workflow, transformation and practical use of AI.",
+    no: "Denne siden samler erfaring, metoder og egenutviklede prosjekter innen kommersiell ledelse, salgsutvikling, CRM, arbeidsflyt, transformasjon og praktisk bruk av AI — med operasjonell erfaring fra salg, drift og gjennomføring.",
+    en: "This page brings together experience, methods and custom projects in commercial leadership, sales development, CRM, workflow, transformation and practical use of AI — with operational experience from sales, operations and execution.",
   },
   "cons.intro.2": {
     no: "Innholdet viser problemstillinger jeg har erfaring med og områder jeg kan bidra innenfor i en relevant lederrolle, rekrutteringsdialog eller et mulig fremtidig samarbeid.",
@@ -316,14 +321,14 @@ const translations: Translations = {
   },
   "cons.tjenester.title": { no: "Kompetanseområder og arbeidsmetoder", en: "Competence areas and working methods" },
   "cons.tjenester.intro": {
-    no: "AI kan være en del av løsningen, men utgangspunktet er alltid forretningsproblemet: hvor taper virksomheten tid, kunder, kapasitet, kvalitet eller kommersiell kraft?",
-    en: "AI can be part of the solution, but the starting point is always the business problem: where is the organisation losing time, customers, capacity, quality or commercial momentum?",
+    no: "AI kan være en del av løsningen, men utgangspunktet er alltid forretningsproblemet: hvor taper virksomheten tid, kunder, kapasitet, kvalitet eller kommersiell og operasjonell kraft?",
+    en: "AI can be part of the solution, but the starting point is always the business problem: where is the organisation losing time, customers, capacity, quality or commercial and operational momentum?",
   },
   "cons.spesialisert.title": { no: "Flere aktuelle kompetanseområder", en: "Further relevant competence areas" },
   "cons.metoder.title": { no: "Metoder og porteføljeprosjekter", en: "Methods and portfolio projects" },
   "cons.metoder.intro": {
-    no: "Noen av temaene på denne siden er dokumentert gjennom egne metoder, arbeidsflyter og porteføljeprosjekter. De viser hvordan kommersiell forståelse, ledelse, brukerbehov og AI kan kombineres i praksis.",
-    en: "Some of the themes on this page are documented through my own methods, workflows and portfolio projects. They show how commercial understanding, leadership, user needs and AI can be combined in practice.",
+    no: "Noen av temaene på denne siden er dokumentert gjennom egne metoder, arbeidsflyter og porteføljeprosjekter. De viser hvordan kommersiell forståelse, ledelse, brukerbehov og AI kan kombineres i praksis — også der operativ gjennomføring er viktig.",
+    en: "Some of the themes on this page are documented through my own methods, workflows and portfolio projects. They show how commercial understanding, leadership, user needs and AI can be combined in practice — including where operational execution matters.",
   },
   "cons.pakke.hvem": { no: "Typiske problemstillinger", en: "Typical problem areas" },
   "cons.pakke.nummer": { no: "Fokusområde", en: "Focus area" },
@@ -396,8 +401,8 @@ const translations: Translations = {
   },
   "kontakt.profil": { no: "Erfaring og profil", en: "Experience and profile" },
   "kontakt.profil.desc": {
-    no: "Jeg har erfaring fra kommersiell ledelse, nasjonal salgsledelse, P/L-ansvar, teamutvikling, endring, CRM, arbeidsflyt og praktisk AI. Nettsiden samler dokumenterte resultater, erfaring, AI-prosjekter og faglig porteføljearbeid.",
-    en: "I have experience in commercial leadership, national sales leadership, P&L accountability, team development, change, CRM, workflow and practical AI. The website brings together documented results, experience, AI projects and professional portfolio work.",
+    no: "Jeg har erfaring fra kommersiell ledelse, nasjonal salgsledelse, P/L-ansvar, teamutvikling, endring, CRM, arbeidsflyt og praktisk AI — inkludert operasjonell ledererfaring fra salg og drift. Nettsiden samler dokumenterte resultater, erfaring, AI-prosjekter og faglig porteføljearbeid.",
+    en: "I have experience in commercial leadership, national sales leadership, P&L accountability, team development, change, CRM, workflow and practical AI — including operational leadership experience from sales and operations. The website brings together documented results, experience, AI projects and professional portfolio work.",
   },
   "kontakt.dialog": { no: "Komme i dialog", en: "Start a conversation" },
   "kontakt.dialog.desc": {

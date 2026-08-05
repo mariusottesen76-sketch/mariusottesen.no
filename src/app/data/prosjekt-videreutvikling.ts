@@ -27,6 +27,10 @@ const tekster: Record<string, Record<Lang, string>> = {
     no: "SMB Salgsflyt-sjekken er bygget for SMB-salg, men kan tilpasses andre selskaper, bransjer og salgsmodeller. Videre potensial inkluderer CRM-integrasjon, bransjetilpassede diagnostikk-spørsmål, pipeline-styring, oppfølgingslogikk og rapportering for ulike kommersielle team.",
     en: "SMB Sales Flow Check is built for SMB sales, but can be adapted for other organisations, industries and sales models. Further potential includes CRM integration, industry-specific diagnostic questions, pipeline management, follow-up logic and reporting for different commercial teams.",
   },
+  "event-planner-2026-08": {
+    no: "Event Planner er bygget rundt en generell arrangementsmodell, men kan tilpasses ulike arrangementstyper og organisasjoner. Videre potensial inkluderer maler, budsjettstyring, leverandør- og tilbudsoppfølging, varsler, integrasjoner og rapportering etter gjennomføring.",
+    en: "Event Planner is built around a general event model, but can be adapted to different event types and organisations. Further potential includes templates, budget management, supplier and quote follow-up, alerts, integrations and post-event reporting.",
+  },
   "mariusottesen-no-2025": {
     no: "Nettsiden er bygget som min egen leder- og porteføljeplattform, men viser også at jeg kan bygge og publisere profesjonelle nettsider fra idé til live løsning. Modellen kan tilpasses andre profiler, selskaper, bransjer og formål — for eksempel employer branding, consulting-porteføljer, case-sider, produktlandingssider og integrerte demonstratorer.",
     en: "The website is built as my own leadership and portfolio platform, but also demonstrates that I can build and publish professional websites from idea to live solution. The model can be adapted for other profiles, organisations, industries and purposes — for example employer branding, consulting portfolios, case pages, product landing pages and integrated demonstrators.",

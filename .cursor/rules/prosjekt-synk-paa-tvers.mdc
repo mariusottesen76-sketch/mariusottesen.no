@@ -1,40 +1,107 @@
 ---
-description: Ved nye prosjekter — synk nettsiden og alle relevante sider på mariusottesen.no
+description: Ved nye prosjekter, resultater eller porteføljeendringer — synk hele mariusottesen.no automatisk
 alwaysApply: true
 ---
 
 # Prosjekt-synk på tvers av nettsiden
 
-Når Marius legger til eller endrer et prosjektarbeid, skal **mariusottesen.no selv** regnes som noe som er bygget og publisert — ikke bare en ramme rundt andre prosjekter.
+Når Marius legger til eller endrer et prosjektarbeid, nytt resultat eller vesentlig porteføljeinnhold, skal **mariusottesen.no selv** regnes som noe som er bygget og publisert — ikke bare en ramme rundt andre prosjekter.
+
+**Gjør synken proaktivt.** Marius skal ikke måtte sjekke manuelt om tekst, lister og metadata henger sammen.
 
 ## Grunnregel
 
-For **hvert nytt eller vesentlig oppdatert prosjekt**: oppdater alle steder det naturlig hører hjemme. Ikke stopp ved én prosjektfil — tenk hele porteføljen og hele nettsiden.
+For **hvert nytt eller vesentlig oppdatert prosjekt/resultat**: oppdater alle steder det naturlig hører hjemme. Ikke stopp ved én prosjektfil — tenk hele porteføljen og hele nettsiden.
+
+Hold **norsk og engelsk** i sync.
 
 ## Sjekkliste ved nytt prosjekt
 
 1. **Prosjektdata** — `src/app/data/prosjekter/<prosjekt>.ts`
-2. **Prosjektliste** — `src/app/Prosjekter.tsx` (`prosjektKort`, sortering)
-3. **Hurtigoversikt** — `src/app/data/prosjekter-hurtigoversikt.ts`
-4. **Mulig videreutvikling** — `src/app/data/prosjekt-videreutvikling.ts`
-5. **AI-prosjekter intro / punktliste** — `src/app/data/translations.ts` (`prosjekter.intro.punkt.*`)
-6. **Profil / proof points** — `src/app/data/proof-points.ts`, `src/app/data/profil.ts`
-7. **Resultater** — `src/app/Resultater.tsx` og `src/app/data/moc-consulting-resultater.ts` der det passer
-8. **Faginnlegg** — krysslenker og kontekst i `src/app/Faginnlegg.tsx` / `translations.ts` (`fag.*`)
-9. **Consulting** — `src/app/Consulting.tsx` og tilhørende data
-10. **Forside / Profil** — hero, CTA-er og «hva som er bygget» der det gir mening
-11. **Landingssider** — egne ruter under `src/app/` (f.eks. `/psc`, `/flowsignal`) og `pilot-pages.ts`
-12. **Bilder** — `public/images/` + `bilderUnderHovedbilde` der det viser at løsningen er live
+2. **Projects v2** — `src/app/data/projects-v2/projects/<prosjekt>.ts`, `registry.ts`, `migration-status.ts`
+3. **Strategic platform** — `src/app/data/strategic-platform-projects/<prosjekt>-platform.ts`, `index.ts`, `types.ts`
+4. **Prosjektliste** — `src/app/data/prosjekter-portfolio.ts` (kategori, sortering, introSlug)
+5. **Hurtigoversikt** — re-eksporteres fra `prosjekter-portfolio.ts`
+6. **Mulig videreutvikling** — `src/app/data/prosjekt-videreutvikling.ts`
+7. **AI-prosjekter intro / punktliste** — `src/app/data/translations.ts` (`prosjekter.intro.punkt.*`, kategori-tekster)
+8. **Profil / proof points** — `src/app/data/proof-points.ts`, `src/app/data/profil.ts`
+9. **Resultater** — `src/app/data/moc-consulting-resultater.ts`, ev. `Resultater.tsx`
+10. **Erfaring** — `src/app/data/erfaringInnhold.ts` (MOC-prosjektliste)
+11. **Consulting** — `src/app/data/consulting.ts` (metoder), `src/app/Consulting.tsx` (`produktLenker`), `src/app/data/consulting-foredrag.ts` (temaer der det passer)
+12. **CV & åpen søknad** — `src/app/data/dokumentasjon.ts` (aiText, kompetanse), `src/app/data/rekrutterer-verdi.ts` (`cvRekrutterere`)
+13. **Kontakt** — `src/app/data/translations.ts` (`kontakt.*`), `src/app/lib/project-contact-query.ts`
+14. **Faginnlegg** — oppdater **porteføljelenker** i nyere innlegg (`src/app/data/innlegg/ai-governance.ts` m.fl.) — ikke omskriv historiske innlegg med feil antall apper
+15. **Nettsideprosjektet** — `mariusottesen-nettside` v2 + platform: demonstratorliste, teaser, skjermbilde
+16. **Landingssider** — `src/app/<slug>/page.tsx`, brand-fil under `src/app/lib/*-brand.ts`
+17. **Bilder** — `public/images/` + `needsNewOverviewImage` / `needsNewDetailHero` i v2-record
+18. **Side-metadata** — `src/app/<rute>/page.tsx`, `src/app/layout.tsx` der det er relevant
+
+## Sjekkliste ved nytt resultat / ny erfaring
+
+1. **Resultater** — `moc-consulting-resultater.ts`, `Resultater.tsx` (relevans-tekst)
+2. **Erfaring** — `erfaringInnhold.ts`
+3. **CV-siden** — `dokumentasjon.ts` (resultater-liste)
+4. **Proof points** — `proof-points.ts` hvis det er et nytt topplinje-resultat
+5. **Profil** — ingress/aiSeksjon kun hvis det endrer helhetsbildet vesentlig
+
+## Alle faner — rask oversikt
+
+| Fane | Hovedfiler |
+|---|---|
+| Profil | `profil.ts`, `rekrutterer-verdi.ts`, `proof-points.ts` |
+| Erfaring | `erfaringInnhold.ts` |
+| Resultater | `moc-consulting-resultater.ts`, `Resultater.tsx`, `proof-points.ts` |
+| Prosjekter | `prosjekter-portfolio.ts`, `translations.ts`, prosjekt-filer |
+| Consulting | `consulting.ts`, `consulting-foredrag.ts`, `Consulting.tsx`, `translations.ts` |
+| Faginnlegg | `innlegg/*.ts` (porteføljelenker), `translations.ts` |
+| CV & Åpen søknad | `dokumentasjon.ts`, `rekrutterer-verdi.ts`, `cv/page.tsx`, PDF-er i `public/pdf/` |
+| Referanser | `referanser.ts` (testimonialer — oppdateres sjelden) |
+| Kontakt | `translations.ts`, `project-contact-query.ts` |
+
+## Posisjonering — kommersiell leder først
+
+Marius skal **fremstå først og fremst som kommersiell leder**, med operasjonell ledererfaring som et **tillegg** — ikke som likeverdig hovedidentitet.
+
+**Bruk operasjonelt der det styrker bildet:**
+- Franzefoss, salg/drift-samspill, Control Tower, Event Planner, arrangementsplanlegging
+- Formuleringer som «inkludert operasjonell ledererfaring fra salg, drift og gjennomføring»
+
+**Ikke overdriv:**
+- Ikke erstatt «kommersiell ledelse» overalt med «kommersiell og operasjonell ledelse»
+- Ikke endre rolletitler («Kommersiell leder» i `aktuell-for-roller.ts`)
+- Ikke omskriv historiske faginnlegg eller plattform-taglines uten grunn
+
+## Terminologi — hold konsistent
+
+- **Primær:** kommersiell leder / kommersiell ledelse / salgsutvikling / transformasjon / praktisk AI
+- **Tillegg:** operasjonell ledererfaring, salg og drift, operativ gjennomføring — der det er relevant
+- **Portefølje:** «apper, plattformer og arbeidsflyter» når prosjekter oppsummeres
+- **Samspill:** «salg, drift og teknologi» der det er poenget — ikke som erstatning for kommersiell profil
+
+**Unntak (ikke endre uten grunn):**
+- Historiske faginnlegg med datert antall apper/karusell
+- Plattform-taglines som generisk «kommersiell ledelse, mennesker, arbeidsflyt…»
+- Consulting-fokusområder der operasjonelt er selve temaet (f.eks. arrangementsplanlegging)
+
+## Vurdering før endring
+
+Spør deg selv:
+1. Mangler et **prosjekt** i en liste der søskenprosjekter nevnes?
+2. Er **metadata/JSON-LD** synk med synlig tekst?
+3. Er operasjonelt lagt til fordi det **styrker** — eller bare for symmetri?
+
+Etter synk, søk etter prosjektnavn og kjør `npm run build` ved større endringer.
+
+## CV & åpen søknad — ekstra
+
+Web-innhold (`dokumentasjon.ts`) skal speile porteføljen. **PDF-filer** oppdateres manuelt av Marius — minn om PDF og bump `CV_PDF_VERSJON` når nye filer lastes opp.
 
 ## Nettsideprosjektet
 
-`mariusottesen-no-2025` skal alltid reflektere at nettsiden er en **egen leveranse**: publisert side, portefølje, faginnlegg, demonstratorer og evne til å bygge/publisere nettsider for andre.
-
-Når andre prosjekter endres, vurder om nettsideprosjektets punktliste, teaser eller skjermbilde bør oppdateres.
+`mariusottesen-no-2025` skal reflektere nettsiden som egen leveranse. Oppdater demonstratorliste og teaser når porteføljen endres.
 
 ## Arbeidsmåte
 
-- Gjør endringene **proaktivt** når brukeren ber om nytt prosjekt — ikke vent på at brukeren minner om hver enkelt side.
-- Hold norsk og engelsk i sync.
-- Unngå dupliserte lenker og repetisjon på tvers av sider.
-- Deploy kun når brukeren ber om det.
+- Gjør endringene **proaktivt** — ikke vent på at Marius minner om hver enkelt side
+- Unngå dupliserte lenker og repetisjon på tvers av sider
+- Deploy kun når brukeren ber om det

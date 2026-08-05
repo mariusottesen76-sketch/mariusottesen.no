@@ -79,8 +79,8 @@ export const mariusottesenNettsidePlatform: StrategicPlatformProject = {
     utfordring: {
       heading: { no: "Utfordringen prosjektet adresserer", en: "The challenge the project addresses" },
       body: {
-        no: "En lederprofil med mye erfaring, dokumenterte resultater, faginnlegg og egne AI-prosjekter blir fort fragmentert på tvers av LinkedIn, CV, presentasjoner og enkeltstående demoer. Det gir et ufullstendig bilde av både kommersiell ledelse og praktisk AI-forståelse — og gjør det vanskelig for rekrutterere, arbeidsgivere og samarbeidspartnere å vurdere helheten.",
-        en: "A leadership profile with extensive experience, documented results, articles and own AI projects easily becomes fragmented across LinkedIn, CV, presentations and one-off demos. That gives an incomplete picture of both commercial leadership and practical AI understanding — and makes it difficult for recruiters, employers and partners to assess the whole.",
+        no: "En lederprofil med mye erfaring, dokumenterte resultater, faginnlegg og egne AI-prosjekter blir fort fragmentert på tvers av LinkedIn, CV, presentasjoner og enkeltstående demoer. Det gir et ufullstendig bilde av både kommersiell og operasjonell ledelse og praktisk AI-forståelse — og gjør det vanskelig for rekrutterere, arbeidsgivere og samarbeidspartnere å vurdere helheten.",
+        en: "A leadership profile with extensive experience, documented results, articles and own AI projects easily becomes fragmented across LinkedIn, CV, presentations and one-off demos. That gives an incomplete picture of both commercial and operational leadership and practical AI understanding — and makes it difficult for recruiters, employers and partners to assess the whole.",
       },
     },
     logikk: {
@@ -163,8 +163,8 @@ export const mariusottesenNettsidePlatform: StrategicPlatformProject = {
         {
           tittel: { no: "Demonstratorer", en: "Demonstrators" },
           beskrivelse: {
-            no: "Tilgangsstyrte piloter, executive konseptplattformer og landingssider — blant annet AI Transformation & Value Realization, Control Tower, PSC, FlowSignal, AI Readiness Scan og SMB Salgsflyt-sjekken.",
-            en: "Access-controlled pilots, executive concept platforms and landing pages — including AI Transformation & Value Realization, Control Tower, PSC, FlowSignal, AI Readiness Scan and SMB Sales Flow Check.",
+            no: "Tilgangsstyrte piloter, executive konseptplattformer og landingssider — blant annet AI Transformation & Value Realization, Control Tower, PSC, FlowSignal, Event Planner, AI Readiness Scan og SMB Salgsflyt-sjekken.",
+            en: "Access-controlled pilots, executive concept platforms and landing pages — including AI Transformation & Value Realization, Control Tower, PSC, FlowSignal, Event Planner, AI Readiness Scan and SMB Sales Flow Check.",
           },
           bygget: true,
         },

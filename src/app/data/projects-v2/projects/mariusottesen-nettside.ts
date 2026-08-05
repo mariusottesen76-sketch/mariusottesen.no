@@ -34,8 +34,8 @@ export const mariusottesenNettsideV2: ProjectV2Record = {
       en: "A professional portfolio platform for employers, recruiters and decision-makers who want to understand experience, results, subject expertise and practical AI competence in one place.",
     },
     challenge: {
-      no: "En lederprofil med mye erfaring, dokumenterte resultater, faginnlegg og egne AI-prosjekter blir fort fragmentert på tvers av LinkedIn, CV, presentasjoner og enkeltstående demoer — og gir et ufullstendig bilde av både kommersiell ledelse og praktisk AI-forståelse.",
-      en: "A leadership profile with extensive experience, documented results, articles and own AI projects easily becomes fragmented across LinkedIn, CV, presentations and one-off demos — giving an incomplete picture of both commercial leadership and practical AI understanding.",
+      no: "En lederprofil med mye erfaring, dokumenterte resultater, faginnlegg og egne AI-prosjekter blir fort fragmentert på tvers av LinkedIn, CV, presentasjoner og enkeltstående demoer — og gir et ufullstendig bilde av både kommersiell og operasjonell ledelse og praktisk AI-forståelse.",
+      en: "A leadership profile with extensive experience, documented results, articles and own AI projects easily becomes fragmented across LinkedIn, CV, presentations and one-off demos — giving an incomplete picture of both commercial and operational leadership and practical AI understanding.",
     },
     built: {
       no: "Publisert nettside med norsk og engelsk innhold: lederprofil, erfaring, resultater, referanser, faginnlegg, AI-prosjekter, consulting, CV og kontakt — inkludert tilgangsstyrte demonstratorer og landingssider for utvalgte løsninger.",

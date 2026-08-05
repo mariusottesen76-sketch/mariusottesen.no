@@ -117,6 +117,7 @@ const produktLenker = [
   { label: "Control Tower", href: "/prosjekter#control-tower" },
   { label: "The Predictive Sales Coach", href: "/psc" },
   { label: "FlowSignal", href: "/flowsignal" },
+  { label: "Event Planner", href: "/event-planner" },
   { label: "SMB Salgsflyt-sjekken", href: "/salgsflyt-sjekken" },
   { label: "AI Readiness Scan", href: "/ai-readiness-scan" },
 ] as const;

@@ -5,6 +5,7 @@ import { aiReadinessScan } from "./prosjekter/ai-readiness-scan";
 import { flowSignal } from "./prosjekter/flowsignal";
 import { predictiveSalesCoach, type ProsjektType } from "./prosjekter/predictive-sales-coach";
 import { smbSalgsflytSjekken } from "./prosjekter/smb-salgsflyt-sjekken";
+import { eventPlanner } from "./prosjekter/event-planner";
 import { pscPromoVideo } from "./prosjekter/psc-promo-video";
 import { prosjektoppgaveStrategiskImplementering } from "./prosjekter/prosjektoppgave-strategisk-implementering";
 import { skoyenasenTannklinikk } from "./prosjekter/skoyenasen-tannklinikk";
@@ -62,12 +63,12 @@ export const PROSJEKT_PORTFOLIO_KATEGORIER: ProsjektPortfolioKategori[] = [
     anchorId: "apper-og-prototyper",
     title: { no: "Apper og prototyper", en: "Apps and prototypes" },
     overviewDescription: {
-      no: "Funksjonelle AI-løsninger for salgstrening, teamutvikling, AI-beredskap, operasjonell forbedring og kommersiell utvikling.",
-      en: "Functional AI solutions for sales training, team development, AI readiness, operational improvement and commercial development.",
+      no: "Funksjonelle AI-løsninger for salgstrening, teamutvikling, AI-beredskap, arrangementsplanlegging, operasjonell forbedring og kommersiell utvikling.",
+      en: "Functional AI solutions for sales training, team development, AI readiness, event planning, operational improvement and commercial development.",
     },
     listDescription: {
-      no: "Funksjonelle og testbare løsninger som viser produktutvikling, brukerflyt og praktisk bruk av AI innen salg, teamutvikling, AI-beredskap, drift og kommersiell forbedring.",
-      en: "Functional, testable solutions showing product development, user flow and practical use of AI in sales, team development, AI readiness, operations and commercial improvement.",
+      no: "Funksjonelle og testbare løsninger som viser produktutvikling, brukerflyt og praktisk bruk av AI innen salg, teamutvikling, AI-beredskap, arrangementsplanlegging, drift og kommersiell forbedring.",
+      en: "Functional, testable solutions showing product development, user flow and practical use of AI in sales, team development, AI readiness, event planning, operations and commercial improvement.",
     },
     metadataLabel: { no: "App og prototype", en: "App and prototype" },
     projects: [
@@ -75,6 +76,7 @@ export const PROSJEKT_PORTFOLIO_KATEGORIER: ProsjektPortfolioKategori[] = [
       { id: "flowsignal-2026-05", introSlug: "flowsignal" },
       { id: "ai-readiness-scan-2026-06", introSlug: "readiness-scan" },
       { id: "smb-salgsflyt-sjekken-2026", introSlug: "salgsflyt" },
+      { id: "event-planner-2026-08", introSlug: "event-planner" },
     ],
   },
   {
@@ -139,6 +141,7 @@ const legacyProsjekter: ProsjektType[] = [
   flowSignal,
   aiReadinessScan,
   smbSalgsflytSjekken,
+  eventPlanner,
   pscPromoVideo,
   mariusottesenNettside,
   prosjektoppgaveStrategiskImplementering,

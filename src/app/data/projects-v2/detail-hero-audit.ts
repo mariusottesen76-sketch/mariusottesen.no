@@ -144,4 +144,15 @@ export const detailHeroAudit: DetailHeroAuditEntry[] = [
     needsNewDetailHero: false,
     notes: "ai-value-lab-oslo-hero.png — logo venstre, teamfoto høyre.",
   },
+  {
+    route: "/event-planner",
+    projectId: "event-planner-2026-08",
+    heroImage: "/images/event-planner-hero.png?v=20260804f",
+    aspectNote: "Horisontalt banner — 3:1 landscape for detaljside",
+    objectPosition: "center",
+    fit: "contain",
+    needsNewDetailHero: true,
+    notes:
+      "Mangler — 1800×600 px (3:1). Anonymisert demo-UI, f.eks. «Kick-off 2026». Standard hero-logikk uten prosjektspesifikke aspect-overrides.",
+  },
 ];
