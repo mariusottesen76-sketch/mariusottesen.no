@@ -1,4 +1,5 @@
 import type { StrategicPlatformProject } from "./types";
+import { EVENT_PLANNER_HERO_IMAGE } from "../../lib/event-planner-brand";
 
 const utvikler = {
   navn: { no: "Marius Ottesen", en: "Marius Ottesen" },
@@ -22,7 +23,7 @@ export const eventPlannerPlatform: StrategicPlatformProject = {
       no: "Event Planner samler deltakere, oppgaver, ansvar, program, filer og AI-assistert oppfølging i én arbeidsflate — fungerende full-stack prototype i private beta.",
       en: "Event Planner brings participants, tasks, ownership, programme, files and AI-assisted follow-up together in one workspace — working full-stack prototype in private beta.",
     },
-    ogImage: "/images/event-planner-hero.png?v=20260804f",
+    ogImage: EVENT_PLANNER_HERO_IMAGE,
     canonicalPath: "/event-planner",
   },
   teaser: {
@@ -79,8 +80,8 @@ export const eventPlannerPlatform: StrategicPlatformProject = {
     kortFortalt: {
       heading: { no: "Kort fortalt", en: "In brief" },
       body: {
-        no: "Event Planner er en AI-assistert full-stack applikasjon for planlegging og gjennomføring av private og profesjonelle arrangementer. Løsningen gir én samlet arbeidsflate for deltakere, RSVP, oppgaver, ansvar, program, filer og neste aktiviteter — med permanent datalagring, sanntidsoppdatering, flerbrukersamarbeid og kontrollert AI der brukeren forhåndsviser og godkjenner endringer før lagring.",
-        en: "Event Planner is an AI-assisted full-stack application for planning and execution of private and professional events. The solution provides one shared workspace for participants, RSVP, tasks, ownership, programme, files and next activities — with persistent storage, real-time updates, multi-user collaboration and controlled AI where the user previews and approves changes before saving.",
+        no: "Event Planner er en AI-assistert full-stack applikasjon for planlegging og gjennomføring av private og profesjonelle arrangementer. Løsningen gir én samlet arbeidsflate for deltakere, RSVP, oppgaver, ansvar, program, filer og neste aktiviteter — med permanent datalagring, sanntidsoppdatering, flerbrukersamarbeid og kontrollert AI der brukeren forhåndsviser og godkjenner endringer før lagring. En read-only demo gjør det mulig å utforske arbeidsflyten og sentrale funksjoner uten tilgang til produksjonsdata eller mulighet til å lagre endringer.",
+        en: "Event Planner is an AI-assisted full-stack application for planning and execution of private and professional events. The solution provides one shared workspace for participants, RSVP, tasks, ownership, programme, files and next activities — with persistent storage, real-time updates, multi-user collaboration and controlled AI where the user previews and approves changes before saving. A read-only demo makes it possible to explore the workflow and core features without access to production data or the ability to save changes.",
       },
     },
     utfordring: {
@@ -134,21 +135,21 @@ export const eventPlannerPlatform: StrategicPlatformProject = {
     datagrunnlag: {
       heading: { no: "Teknisk grunnlag", en: "Technical foundation" },
       body: {
-        no: "Event Planner er utviklet som en AI-assistert full-stack applikasjon med React/TypeScript og serverbasert applikasjonslogikk, deployet på Google Cloud Run. Firebase Authentication og Firestore håndterer tilgangsstyring, permanent datalagring og sanntidsoppdatering. Private filer og arrangementsmedia lagres i Cloud Storage. Gemini fungerer som AI-motor, og secrets håndteres separat fra klienten. Produksjonsflyten går via GitHub og Cloud Build.\n\nArkitekturen kombinerer generativ AI med deterministisk produktlogikk og human-in-the-loop. AI foreslår strukturerte handlinger, mens brukeren forhåndsviser og godkjenner endringer før de lagres.",
-        en: "Event Planner is developed as an AI-assisted full-stack application with React/TypeScript and server-based application logic, deployed on Google Cloud Run. Firebase Authentication and Firestore handle access control, persistent data storage and real-time updates. Private files and event media are stored in Cloud Storage. Gemini serves as the AI engine, and secrets are handled separately from the client. The production pipeline runs via GitHub and Cloud Build.\n\nThe architecture combines generative AI with deterministic product logic and human-in-the-loop. AI suggests structured actions, while the user previews and approves changes before they are saved.",
+        no: "Event Planner er utviklet med React/TypeScript og serverbasert applikasjonslogikk, deployet på Google Cloud Run. Firebase Authentication og Firestore håndterer tilgangsstyring, permanent datalagring og sanntidsoppdatering. Private filer lagres i Cloud Storage. Gemini fungerer som AI-motor, secrets håndteres separat fra klienten, og produksjonsflyten går via GitHub og Cloud Build.\n\nArkitekturen kombinerer generativ AI, deterministisk produktlogikk, sikker tilgangsstyring og human-in-the-loop — der AI foreslår strukturerte handlinger som brukeren forhåndsviser og godkjenner før lagring.",
+        en: "Event Planner is developed with React/TypeScript and server-based application logic, deployed on Google Cloud Run. Firebase Authentication and Firestore handle access control, persistent data storage and real-time updates. Private files are stored in Cloud Storage. Gemini serves as the AI engine, secrets are handled separately from the client, and the production pipeline runs via GitHub and Cloud Build.\n\nThe architecture combines generative AI, deterministic product logic, secure access control and human-in-the-loop — where AI suggests structured actions that the user previews and approves before saving.",
       },
     },
     bygget: {
       heading: { no: "Hva som er bygget eller utviklet", en: "What has been built or developed" },
       items: [
-        { no: "Arrangementsoversikt med nøkkeltall, planleggingsmangler, nedtelling og anbefalte neste aktiviteter", en: "Event overview with key metrics, planning gaps, countdown and recommended next activities" },
-        { no: "Deltakere og RSVP med grupper, par/husholdninger, ledsagere, roller, allergier, sitteplass og deltakelsesform", en: "Participants and RSVP with groups, couples/households, companions, roles, allergies, seating and participation mode" },
+        { no: "Arrangementsoversikt med nøkkeltall, planleggingsmangler og anbefalte neste aktiviteter", en: "Event overview with key metrics, planning gaps and recommended next activities" },
+        { no: "Deltakere og RSVP med grupper, par/husholdninger, ledsagere, roller, allergier og deltakelsesform", en: "Participants and RSVP with groups, couples/households, companions, roles, allergies and participation mode" },
         { no: "Oppgaver og ansvar med frist, prioritet, status, kategori og avhengigheter", en: "Tasks and ownership with deadline, priority, status, category and dependencies" },
         { no: "Program og kjøreplan for planlegging og operativ bruk", en: "Programme and run sheet for planning and operational use" },
-        { no: "Quick Entry og Smart Paste med naturlig språk, forhåndsvisning og eksplisitt godkjenning", en: "Quick Entry and Smart Paste with natural language, preview and explicit approval" },
-        { no: "Intelligent Excel/CSV-import", en: "Intelligent Excel/CSV import" },
+        { no: "Quick Entry og naturlig språk med forhåndsvisning og eksplisitt godkjenning", en: "Quick Entry and natural language with preview and explicit approval" },
+        { no: "Smart Paste og intelligent Excel/CSV-import", en: "Smart Paste and intelligent Excel/CSV import" },
         { no: "Private filer, invitasjoner og arrangementsbilder", en: "Private files, invitations and event images" },
-        { no: "Samarbeid med tilgangsstyring og roller for eier, redigerer og leser — med sanntidslagring og flerbrukerarbeid", en: "Collaboration with access control and roles for owner, editor and reader — with real-time storage and multi-user work" },
+        { no: "Rollebasert samarbeid og sanntidslagring for flerbrukerarbeid", en: "Role-based collaboration and real-time storage for multi-user work" },
       ],
     },
     moduler: {
@@ -215,8 +216,8 @@ export const eventPlannerPlatform: StrategicPlatformProject = {
     status: {
       heading: { no: "Status, modenhet og avgrensninger", en: "Status, maturity and limitations" },
       body: {
-        no: "Event Planner er bygget som en fungerende full-stack prototype og lukket private beta med permanent datalagring, autentisering, privat filhåndtering og rollebasert flerbrukersamarbeid. Løsningen brukes og testes med realistiske arrangementsdata og reelle arbeidsflyter for arrangementsopprettelse, deltakerhåndtering, oppgaver, program, dokumenter, AI-assistert registrering, prioritering og samarbeid.\n\nLøsningen er fortsatt et portefølje- og utviklingsprosjekt, ikke et ferdig kommersielt SaaS-produkt med betalende kunder. Den er heller ikke utviklet som billett-, betalings- eller markedsføringsplattform.",
-        en: "Event Planner is built as a working full-stack prototype and closed private beta with persistent storage, authentication, private file handling and role-based multi-user collaboration. The solution is used and tested with realistic event data and real workflows for event creation, participant management, tasks, programme, documents, AI-assisted registration, prioritisation and collaboration.\n\nThe solution remains a portfolio and development project, not a finished commercial SaaS product with paying customers. It is also not developed as a ticketing, payment or marketing platform.",
+        no: "Event Planner er bygget som en fungerende full-stack prototype og lukket private beta med permanent datalagring, autentisering, privat filhåndtering og rollebasert flerbrukersamarbeid. En separat read-only demo bruker fiktive data og gir innsyn i produktets arbeidsflyt uten tilgang til private arrangementer.\n\nLøsningen er fortsatt et portefølje- og utviklingsprosjekt, ikke et ferdig kommersielt SaaS-produkt med betalende kunder. Den er heller ikke utviklet som billett-, betalings- eller markedsføringsplattform.",
+        en: "Event Planner is built as a working full-stack prototype and closed private beta with persistent storage, authentication, private file handling and role-based multi-user collaboration. A separate read-only demo uses fictional data and provides insight into the product workflow without access to private events.\n\nThe solution remains a portfolio and development project, not a finished commercial SaaS product with paying customers. It is also not developed as a ticketing, payment or marketing platform.",
       },
     },
     skalerbarhet: {
@@ -250,8 +251,8 @@ export const eventPlannerPlatform: StrategicPlatformProject = {
     avslutning: {
       heading: { no: "Utforsk prosjektet videre", en: "Explore the project further" },
       body: {
-        no: "Åpne Event Planner for å se løsningen i praksis, eller ta kontakt for faglig dialog om tilgang, videreutvikling og relevante arrangementsbehov.",
-        en: "Open Event Planner to see the solution in practice, or get in touch for professional dialogue on access, further development and relevant event needs.",
+        no: "Se demoen for å utforske arbeidsflyten og sentrale funksjoner, eller ta kontakt for tilgang til private beta og faglig dialog om videreutvikling.",
+        en: "View the demo to explore the workflow and core features, or get in touch for access to the private beta and professional dialogue on further development.",
       },
     },
     utvikler,

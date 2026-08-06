@@ -1,4 +1,4 @@
-import { EVENT_PLANNER_APP_URL } from "../../../lib/event-planner-brand";
+import { EVENT_PLANNER_DEMO_URL, EVENT_PLANNER_HERO_IMAGE, EVENT_PLANNER_OVERVIEW_IMAGE } from "../../../lib/event-planner-brand";
 import type { ProjectV2Record } from "../types";
 
 export const eventPlannerV2: ProjectV2Record = {
@@ -54,8 +54,8 @@ export const eventPlannerV2: ProjectV2Record = {
       en: "The project shows how generative AI can be integrated directly into an operational workflow — not as a separate chatbot — with controlled AI, preview and user confirmation before changes are saved.",
     },
     status: {
-      no: "Fungerende full-stack prototype og lukket private beta med permanent datalagring, autentisering og rollebasert flerbrukersamarbeid. Løsningen er et portefølje- og utviklingsprosjekt — ikke et ferdig kommersielt SaaS-produkt.",
-      en: "Working full-stack prototype and closed private beta with persistent storage, authentication and role-based multi-user collaboration. The solution is a portfolio and development project — not a finished commercial SaaS product.",
+      no: "Fungerende full-stack prototype og lukket private beta — med read-only demo og portefølje-/utviklingsprosjekt, ikke kommersielt SaaS.",
+      en: "Working full-stack prototype and closed private beta — with read-only demo and portfolio/development project, not commercial SaaS.",
     },
     development: {
       no: "Videre utvikling kan omfatte maler for ulike arrangementstyper, budsjett- og kostnadsstyring, leverandør- og tilbudsoppfølging, varsler, kalender- og e-postintegrasjoner, selvbetjent RSVP og rapportering etter gjennomføring.",
@@ -66,8 +66,8 @@ export const eventPlannerV2: ProjectV2Record = {
       en: "The core model is general and can be adapted for company parties, customer events, meetings, conferences, weddings, birthdays, confirmations and other private and professional events through configurable groups, roles and planning principles.",
     },
   },
-  overviewImage: "/images/event-planner-hjemmeside.png?v=20260804f",
-  detailHeroImage: "/images/event-planner-hero.png?v=20260804f",
+  overviewImage: EVENT_PLANNER_OVERVIEW_IMAGE,
+  detailHeroImage: EVENT_PLANNER_HERO_IMAGE,
   detailHeroObjectPosition: "center",
   needsNewOverviewImage: false,
   needsNewDetailHero: false,
@@ -78,10 +78,10 @@ export const eventPlannerV2: ProjectV2Record = {
   overviewImageFormat: "standard_1x3",
   detailHeroMissing: true,
   detailDestination: "/event-planner",
-  liveSolutionUrl: EVENT_PLANNER_APP_URL,
+  liveSolutionUrl: EVENT_PLANNER_DEMO_URL,
   ctaLabels: {
     overviewSecondary: { no: "Be om tilgang", en: "Request access" },
-    detailPrimary: { no: "Åpne Event Planner", en: "Open Event Planner" },
+    detailPrimary: { no: "Se demo", en: "View demo" },
     detailSecondary: { no: "Be om tilgang", en: "Request access" },
   },
   seo: {
@@ -90,10 +90,10 @@ export const eventPlannerV2: ProjectV2Record = {
       en: "Event Planner | AI-assisted event planning | Marius Ottesen",
     },
     description: {
-      no: "Event Planner samler deltakere, oppgaver, ansvar, program, filer og AI-assistert oppfølging i én arbeidsflate — fungerende full-stack prototype i private beta.",
-      en: "Event Planner brings participants, tasks, ownership, programme, files and AI-assisted follow-up together in one workspace — working full-stack prototype in private beta.",
+      no: "Event Planner samler deltakere, oppgaver, ansvar, program, filer og AI-assistert oppfølging i én arbeidsflate — med read-only demo og private beta.",
+      en: "Event Planner brings participants, tasks, ownership, programme, files and AI-assisted follow-up together in one workspace — with read-only demo and private beta.",
     },
-    ogImage: "/images/event-planner-hero.png?v=20260804f",
+    ogImage: EVENT_PLANNER_HERO_IMAGE,
     canonicalPath: "/event-planner",
   },
   strategicPlatformSlug: "event-planner",
