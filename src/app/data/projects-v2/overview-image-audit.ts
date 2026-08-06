@@ -166,13 +166,13 @@ export const overviewImageAudit: OverviewImageAuditEntry[] = [
   },
   {
     projectId: "event-planner-2026-08",
-    overviewImage: "/images/event-planner-hjemmeside.png?v=20260804f",
-    aspectNote: "Vertikalt 1:3 oversiktsbilde — Event Planner (anonymisert demo)",
+    overviewImage: "/images/event-planner-hjemmeside.png?v=20260807a",
+    aspectNote: "Vertikalt 1:3 oversiktsbilde — Nordic Growth Summit 2026 public demo (fiktive data)",
     fit: "contain",
-    needsNewOverviewImage: true,
+    needsNewOverviewImage: false,
     recommendedFilename: "event-planner-hjemmeside.png",
     recommendedDimensions: "341×1024 px (1:3, samme leveransestørrelse som øvrige prosjekter)",
     notes:
-      "Mangler — 1:3 portrett for prosjektkort på /prosjekter. Anonymisert demo (f.eks. «Kick-off 2026»), deltakere — ingen private navn eller sensitive data.",
+      "Skjermbilde fra read-only demo. Nordic Growth Summit 2026 — ingen private navn eller sensitive data.",
   },
 ];

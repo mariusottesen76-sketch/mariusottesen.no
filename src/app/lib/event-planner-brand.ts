@@ -12,7 +12,7 @@ export const EVENT_PLANNER_DEMO_URL = `${EVENT_PLANNER_APP_URL}?demo=1`;
  * Cache-buster for prosjektbilder. Oppdater når nye skjermbilder fra demo er klare
  * (erstatt filene i public/images/ — samme filnavn og dimensjoner).
  */
-export const EVENT_PLANNER_IMAGE_VERSION = "20260804f";
+export const EVENT_PLANNER_IMAGE_VERSION = "20260807a";
 
 /**
  * Event Planner — porteføljesti og merkevare.
@@ -21,7 +21,7 @@ export const EVENT_PLANNER_IMAGE_VERSION = "20260804f";
  * - Oversikt (/prosjekter): `public/images/event-planner-hjemmeside.png` — 341×1024 px (1:3)
  * - Detalj (/event-planner): `public/images/event-planner-hero.png` — 1800×600 px (3:1 landscape)
  *
- * Bytt til skjermbilde fra read-only demo når tilgjengelig — ingen ekte private arrangementsdata.
+ * Innhold: skjermbilde fra offentlig read-only demo (Nordic Growth Summit 2026, fiktive data).
  */
 export const EVENT_PLANNER_PILOT_PATH = "/event-planner";
 

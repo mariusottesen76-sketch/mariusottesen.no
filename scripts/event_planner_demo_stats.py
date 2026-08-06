@@ -1,21 +1,21 @@
-"""Shared anonymised demo stats for Event Planner project images."""
+"""Shared anonymised demo stats for Event Planner project images — Nordic Growth Summit 2026 public demo."""
 
-EVENT_NAME = "Kick-off 2026"
-EVENT_DATE = "14. juni 2026"
-DAYS_LEFT = "42"
-STATUS_LABEL = "Planlegging"
+EVENT_NAME = "NORDIC GROWTH SUMMIT 2026"
+EVENT_DATE = "15. oktober 2026 · kl. 09:00"
+DAYS_LEFT = "69"
+STATUS_LABEL = "Demo"
 
-RSVP_CONFIRMED = "48"
-RSVP_PENDING = "12"
-RSVP_UNCLEAR = "4"
-RSVP_TOTAL = "64"  # 48 + 12 + 4
+RSVP_CONFIRMED = "54"
+RSVP_PENDING = "9"
+RSVP_UNCLEAR = "5"
+RSVP_TOTAL = "72"
 
-TASKS_FOLLOWUP = "3"  # «3 oppgaver krever oppfølging»
+TASKS_FOLLOWUP = "7"
 
 PROGRAM_COUNT = "3"
 
 PROGRAM_ITEMS = [
-    ("09:00", "Kick-off"),
-    ("12:00", "Workshop"),
-    ("15:00", "Avslutning"),
+    ("09:00", "Innledning"),
+    ("12:00", "Panel: AI og vekst"),
+    ("16:00", "Avslutning"),
 ]

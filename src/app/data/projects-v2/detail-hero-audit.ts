@@ -147,12 +147,12 @@ export const detailHeroAudit: DetailHeroAuditEntry[] = [
   {
     route: "/event-planner",
     projectId: "event-planner-2026-08",
-    heroImage: "/images/event-planner-hero.png?v=20260804f",
+    heroImage: "/images/event-planner-hero.png?v=20260807a",
     aspectNote: "Horisontalt banner — 3:1 landscape for detaljside",
     objectPosition: "center",
     fit: "contain",
-    needsNewDetailHero: true,
+    needsNewDetailHero: false,
     notes:
-      "Mangler — 1800×600 px (3:1). Anonymisert demo-UI, f.eks. «Kick-off 2026». Standard hero-logikk uten prosjektspesifikke aspect-overrides.",
+      "1800×600 px (3:1). Skjermbilde fra Nordic Growth Summit 2026 read-only demo — fiktive data.",
   },
 ];
