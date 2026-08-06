@@ -220,8 +220,8 @@ const translations: Translations = {
   },
   "prosjekter.intro.punkt.event-planner.label": { no: "Event Planner", en: "Event Planner" },
   "prosjekter.intro.punkt.event-planner.desc": {
-    no: "AI-assistert arrangementsplanlegging som samler deltakere, oppgaver, ansvar, program og oppfølging i én arbeidsflate",
-    en: "AI-assisted event planning that brings participants, tasks, ownership, programme and follow-up together in one workspace",
+    no: "AI-assistert planlegging, koordinering og gjennomføring av arrangementer i én felles arbeidsflate – med deltakere, oppgaver, program, filer, naturlig språk og flerbrukersamarbeid",
+    en: "AI-assisted planning, coordination and execution of events in one shared workspace — with participants, tasks, programme, files, natural language and multi-user collaboration",
   },
   "prosjekter.intro.punkt.psc-video.label": { no: "Promovideo PSC", en: "PSC promo video" },
   "prosjekter.intro.punkt.psc-video.desc": {

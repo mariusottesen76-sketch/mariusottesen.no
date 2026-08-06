@@ -19,20 +19,20 @@ export const eventPlannerPlatform: StrategicPlatformProject = {
       en: "Event Planner | AI-assisted event planning | Marius Ottesen",
     },
     description: {
-      no: "Event Planner samler deltakere, oppgaver, ansvar, program og AI-assistert oppfølging i én arbeidsflate for private og profesjonelle arrangementer.",
-      en: "Event Planner brings participants, tasks, ownership, programme and AI-assisted follow-up together in one workspace for private and professional events.",
+      no: "Event Planner samler deltakere, oppgaver, ansvar, program, filer og AI-assistert oppfølging i én arbeidsflate — fungerende full-stack prototype i private beta.",
+      en: "Event Planner brings participants, tasks, ownership, programme, files and AI-assisted follow-up together in one workspace — working full-stack prototype in private beta.",
     },
     ogImage: "/images/event-planner-hero.png?v=20260804f",
     canonicalPath: "/event-planner",
   },
   teaser: {
     undertittel: {
-      no: "AI-assistert planlegging, koordinering og oppfølging av arrangementer",
-      en: "AI-assisted planning, coordination and follow-up for events",
+      no: "AI-assistert planlegging, koordinering og gjennomføring av arrangementer",
+      en: "AI-assisted planning, coordination and execution of events",
     },
     intro: {
-      no: "Event Planner samler deltakere, oppgaver, ansvar, program, dokumenter og løpende beslutninger i én felles arbeidsflate — med AI-assistanse for strukturering, import og prioritering.",
-      en: "Event Planner brings participants, tasks, ownership, programme, documents and ongoing decisions together in one shared workspace — with AI assistance for structuring, import and prioritisation.",
+      no: "Event Planner samler deltakere, RSVP, oppgaver, ansvar, program, filer og planleggingsbehov i én arbeidsflate — med naturlig språk, Smart Paste og flerbrukersamarbeid.",
+      en: "Event Planner brings participants, RSVP, tasks, ownership, programme, files and planning needs together in one workspace — with natural language, Smart Paste and multi-user collaboration.",
     },
     blokker: {
       utfordring: {
@@ -40,27 +40,27 @@ export const eventPlannerPlatform: StrategicPlatformProject = {
         en: "Event planning is often fragmented across spreadsheets, email, messages and separate checklists — without clear overview of ownership, deadlines and blockers.",
       },
       bygget: {
-        no: "Fungerende v1-prototype med dashboard, deltakere og RSVP, oppgaver og ansvar, program, Smart Paste, Excel/CSV-import, AI-prioritering og samarbeid i sanntid.",
-        en: "Working v1 prototype with dashboard, participants and RSVP, tasks and ownership, programme, Smart Paste, Excel/CSV import, AI prioritisation and real-time collaboration.",
+        no: "Fungerende full-stack prototype i private beta — med permanent datalagring, autentisering, private filer, AI-assistert registrering og rollebasert samarbeid.",
+        en: "Working full-stack prototype in private beta — with persistent storage, authentication, private files, AI-assisted registration and role-based collaboration.",
       },
       relevans: {
-        no: "Viser hvordan generativ AI kan integreres i operativ arbeidsflyt — fra ustrukturert informasjon til strukturerte data og prioritering.",
-        en: "Shows how generative AI can be integrated into operational workflow — from unstructured information to structured data and prioritisation.",
+        no: "Viser hvordan generativ AI kan integreres i operativ arbeidsflyt — med kontrollert AI, forhåndsvisning og brukerbekreftelse før lagring.",
+        en: "Shows how generative AI can be integrated into operational workflow — with controlled AI, preview and user confirmation before saving.",
       },
       status: {
-        no: "Ferdig bygget v1 · Fungerende prototype — ikke presentert som kommersielt SaaS-produkt.",
-        en: "Built v1 · Working prototype — not presented as a commercial SaaS product.",
+        no: "Fungerende full-stack prototype · Private beta — portefølje- og utviklingsprosjekt, ikke kommersielt SaaS.",
+        en: "Working full-stack prototype · Private beta — portfolio and development project, not commercial SaaS.",
       },
     },
     videreutvikling: {
-      no: "Videre potensial inkluderer arrangementmaler, budsjettstyring, leverandør- og tilbudsoppfølging, varsler, integrasjoner og rapportering etter gjennomføring.",
-      en: "Further potential includes event templates, budget management, supplier and quote follow-up, alerts, integrations and post-event reporting.",
+      no: "Videre potensial inkluderer arrangementmaler, budsjett- og kostnadsstyring, leverandør- og tilbudsoppfølging, varsler, integrasjoner, selvbetjent RSVP og rapportering etter gjennomføring.",
+      en: "Further potential includes event templates, budget and cost management, supplier and quote follow-up, alerts, integrations, self-service RSVP and post-event reporting.",
     },
   },
   detail: {
     statusBadge: {
-      no: "Ferdig bygget v1 · Fungerende prototype",
-      en: "Built v1 · Working prototype",
+      no: "Fungerende full-stack prototype · Private beta",
+      en: "Working full-stack prototype · Private beta",
     },
     hero: {
       verdiforslag: {
@@ -68,8 +68,8 @@ export const eventPlannerPlatform: StrategicPlatformProject = {
         en: "Plan. Assign ownership. Follow up.",
       },
       executiveSummary: {
-        no: "Event Planner er utviklet for å redusere fragmenteringen som ofte oppstår når arrangementer planlegges gjennom regneark, meldinger, e-post, notater og separate sjekklister. Løsningen kombinerer strukturert arrangementsstyring med AI-assistert registrering, analyse og prioritering — slik at flere arrangører kan arbeide i samme arrangement og følge status i sanntid.",
-        en: "Event Planner is built to reduce the fragmentation that often arises when events are planned through spreadsheets, messages, email, notes and separate checklists. The solution combines structured event governance with AI-assisted registration, analysis and prioritisation — so multiple organisers can work on the same event and follow status in real time.",
+        no: "Event Planner er en AI-assistert planleggings- og gjennomføringsløsning som samler deltakere, RSVP, oppgaver, ansvar, program, filer og planleggingsbehov i én arbeidsflate. Naturlig språk, Smart Paste og intelligent import gjør det mulig å strukturere og oppdatere informasjon raskt, mens tilgangsstyring, roller og sanntidsoppdatering støtter samarbeid mellom flere arrangører.",
+        en: "Event Planner is an AI-assisted planning and execution solution that brings participants, RSVP, tasks, ownership, programme, files and planning needs together in one workspace. Natural language, Smart Paste and intelligent import make it possible to structure and update information quickly, while access control, roles and real-time updates support collaboration between multiple organisers.",
       },
       bildeAlt: {
         no: "Event Planner – AI-assistert arbeidsflate for planlegging, deltakere, oppgaver og gjennomføring av arrangementer",
@@ -79,8 +79,8 @@ export const eventPlannerPlatform: StrategicPlatformProject = {
     kortFortalt: {
       heading: { no: "Kort fortalt", en: "In brief" },
       body: {
-        no: "Event Planner er en AI-assistert planleggings- og gjennomføringsløsning for private og profesjonelle arrangementer. Plattformen gir arrangører én samlet arbeidsflate for deltakere, RSVP, oppgaver, ansvar, program, dokumenter og neste aktiviteter.",
-        en: "Event Planner is an AI-assisted planning and execution solution for private and professional events. The platform gives organisers one shared workspace for participants, RSVP, tasks, ownership, programme, documents and next activities.",
+        no: "Event Planner er en AI-assistert full-stack applikasjon for planlegging og gjennomføring av private og profesjonelle arrangementer. Løsningen gir én samlet arbeidsflate for deltakere, RSVP, oppgaver, ansvar, program, filer og neste aktiviteter — med permanent datalagring, sanntidsoppdatering, flerbrukersamarbeid og kontrollert AI der brukeren forhåndsviser og godkjenner endringer før lagring.",
+        en: "Event Planner is an AI-assisted full-stack application for planning and execution of private and professional events. The solution provides one shared workspace for participants, RSVP, tasks, ownership, programme, files and next activities — with persistent storage, real-time updates, multi-user collaboration and controlled AI where the user previews and approves changes before saving.",
       },
     },
     utfordring: {
@@ -93,73 +93,79 @@ export const eventPlannerPlatform: StrategicPlatformProject = {
     logikk: {
       heading: { no: "AI i praksis og produktlogikk", en: "AI in practice and product logic" },
       body: {
-        no: "Event Planner kombinerer deterministisk produktlogikk med generativ AI. Gemini brukes som AI-motor for naturlig språk, strukturering og arrangementsassistanse, mens regelbaserte komponenter sikrer konsistens der dataintegritet er viktig — blant annet for RSVP-normalisering, beregninger, avhengigheter og prioritering.",
-        en: "Event Planner combines deterministic product logic with generative AI. Gemini is used as the AI engine for natural language, structuring and event assistance, while rule-based components ensure consistency where data integrity matters — including RSVP normalisation, calculations, dependencies and prioritisation.",
+        no: "Event Planner kombinerer deterministisk produktlogikk med generativ AI. Gemini brukes som AI-motor for naturlig språk, strukturering og arrangementsassistanse, mens regelbaserte komponenter sikrer konsistens der dataintegritet er viktig.",
+        en: "Event Planner combines deterministic product logic with generative AI. Gemini is used as the AI engine for natural language, structuring and event assistance, while rule-based components ensure consistency where data integrity matters.",
       },
       steps: [
         {
           tittel: { no: "Natural-language actions", en: "Natural-language actions" },
           beskrivelse: {
-            no: "Brukeren kan skrive hva som skal endres fremfor å navigere gjennom mange skjemaer.",
-            en: "The user can write what should change rather than navigating through many forms.",
+            no: "Brukeren kan registrere eller oppdatere deltakere, oppgaver og program med naturlig språk.",
+            en: "The user can register or update participants, tasks and programme with natural language.",
           },
         },
         {
           tittel: { no: "Smart Paste", en: "Smart Paste" },
           beskrivelse: {
-            no: "Ustrukturert tekst fra e-post, dokumenter eller meldinger tolkes og struktureres med forhåndsvisning før lagring.",
-            en: "Unstructured text from email, documents or messages is interpreted and structured with a preview before saving.",
+            no: "Ustrukturert tekst tolkes til strukturerte forslag med forhåndsvisning før lagring.",
+            en: "Unstructured text is interpreted into structured suggestions with a preview before saving.",
           },
         },
         {
-          tittel: { no: "Intelligent regnearkimport", en: "Intelligent spreadsheet import" },
+          tittel: { no: "Intelligent Excel / CSV-import", en: "Intelligent Excel / CSV import" },
           beskrivelse: {
-            no: "AI og regelbasert logikk forstår kolonner, statusverdier, relasjoner og deltaoppdateringer ved ny import.",
-            en: "AI and rule-based logic understand columns, status values, relationships and delta updates on re-import.",
+            no: "Kolonner, statusverdier, relasjoner og deltaendringer analyseres og normaliseres.",
+            en: "Columns, status values, relationships and delta changes are analysed and normalised.",
           },
         },
         {
           tittel: { no: "Prioritering og planleggingsanalyse", en: "Prioritisation and planning analysis" },
           beskrivelse: {
-            no: "Oppgaver og planleggingsgap analyseres med utgangspunkt i risiko, frist, avhengighet og konsekvens — forankret i arrangementets faktiske data.",
-            en: "Tasks and planning gaps are analysed based on risk, deadline, dependency and consequence — grounded in the event's actual data.",
+            no: "Oppgaver, mangler, frister og avhengigheter analyseres mot arrangementets faktiske data.",
+            en: "Tasks, gaps, deadlines and dependencies are analysed against the event's actual data.",
           },
         },
       ],
+      after: {
+        no: "AI foreslår strukturerte handlinger, mens brukeren kontrollerer og godkjenner før lagring.",
+        en: "AI suggests structured actions, while the user controls and approves before saving.",
+      },
     },
     datagrunnlag: {
       heading: { no: "Teknisk grunnlag", en: "Technical foundation" },
       body: {
-        no: "Event Planner er utviklet som en AI-assistert full-stack applikasjon med React/TypeScript, Firebase Authentication og Firestore for tilgangsstyring, datalagring og sanntidssamarbeid. Hele løsningen er ikke presentert som ren generativ AI — arkitekturen kombinerer deterministisk produktlogikk med generativ AI der det gir verdi.",
-        en: "Event Planner is developed as an AI-assisted full-stack application with React/TypeScript, Firebase Authentication and Firestore for access control, data storage and real-time collaboration. The solution is not presented as pure generative AI — the architecture combines deterministic product logic with generative AI where it adds value.",
+        no: "Event Planner er utviklet som en AI-assistert full-stack applikasjon med React/TypeScript og serverbasert applikasjonslogikk, deployet på Google Cloud Run. Firebase Authentication og Firestore håndterer tilgangsstyring, permanent datalagring og sanntidsoppdatering. Private filer og arrangementsmedia lagres i Cloud Storage. Gemini fungerer som AI-motor, og secrets håndteres separat fra klienten. Produksjonsflyten går via GitHub og Cloud Build.\n\nArkitekturen kombinerer generativ AI med deterministisk produktlogikk og human-in-the-loop. AI foreslår strukturerte handlinger, mens brukeren forhåndsviser og godkjenner endringer før de lagres.",
+        en: "Event Planner is developed as an AI-assisted full-stack application with React/TypeScript and server-based application logic, deployed on Google Cloud Run. Firebase Authentication and Firestore handle access control, persistent data storage and real-time updates. Private files and event media are stored in Cloud Storage. Gemini serves as the AI engine, and secrets are handled separately from the client. The production pipeline runs via GitHub and Cloud Build.\n\nThe architecture combines generative AI with deterministic product logic and human-in-the-loop. AI suggests structured actions, while the user previews and approves changes before they are saved.",
       },
     },
     bygget: {
       heading: { no: "Hva som er bygget eller utviklet", en: "What has been built or developed" },
       items: [
-        { no: "Arrangementsoversikt med nøkkeltall, planleggingsmangler og anbefalte neste aktiviteter", en: "Event overview with key metrics, planning gaps and recommended next activities" },
+        { no: "Arrangementsoversikt med nøkkeltall, planleggingsmangler, nedtelling og anbefalte neste aktiviteter", en: "Event overview with key metrics, planning gaps, countdown and recommended next activities" },
+        { no: "Deltakere og RSVP med grupper, par/husholdninger, ledsagere, roller, allergier, sitteplass og deltakelsesform", en: "Participants and RSVP with groups, couples/households, companions, roles, allergies, seating and participation mode" },
         { no: "Oppgaver og ansvar med frist, prioritet, status, kategori og avhengigheter", en: "Tasks and ownership with deadline, priority, status, category and dependencies" },
-        { no: "Deltakere og RSVP med grupper, roller, allergier, sitteplass og praktiske behov", en: "Participants and RSVP with groups, roles, allergies, seating and practical needs" },
-        { no: "Smart Paste, naturlig språk og intelligent Excel/CSV-import", en: "Smart Paste, natural language and intelligent Excel/CSV import" },
-        { no: "Program, kjøreplan og arrangementsmodus for operativ bruk", en: "Programme, run sheet and event mode for operational use" },
-        { no: "AI-assistert prioritering og samarbeid med roller for eier, redaktør og leser", en: "AI-assisted prioritisation and collaboration with owner, editor and reader roles" },
+        { no: "Program og kjøreplan for planlegging og operativ bruk", en: "Programme and run sheet for planning and operational use" },
+        { no: "Quick Entry og Smart Paste med naturlig språk, forhåndsvisning og eksplisitt godkjenning", en: "Quick Entry and Smart Paste with natural language, preview and explicit approval" },
+        { no: "Intelligent Excel/CSV-import", en: "Intelligent Excel/CSV import" },
+        { no: "Private filer, invitasjoner og arrangementsbilder", en: "Private files, invitations and event images" },
+        { no: "Samarbeid med tilgangsstyring og roller for eier, redigerer og leser — med sanntidslagring og flerbrukerarbeid", en: "Collaboration with access control and roles for owner, editor and reader — with real-time storage and multi-user work" },
       ],
     },
     moduler: {
       heading: { no: "Sentrale moduler og funksjonsområder", en: "Core modules and functional areas" },
       intro: {
-        no: "Event Planner v1 er bygget rundt en generell arrangementsmodell som kan konfigureres per arrangementstype og organisasjon.",
-        en: "Event Planner v1 is built around a general event model that can be configured per event type and organisation.",
+        no: "Event Planner er bygget rundt en generell arrangementsmodell som kan konfigureres per arrangementstype.",
+        en: "Event Planner is built around a general event model that can be configured per event type.",
       },
       modules: [
-        { tittel: { no: "Arrangement og oversikt", en: "Event and overview" }, beskrivelse: { no: "Dashboard med arrangementsinformasjon, nedtelling, nøkkeltall og anbefalte neste aktiviteter.", en: "Dashboard with event information, countdown, key metrics and recommended next activities." }, bygget: true },
-        { tittel: { no: "Deltakere og RSVP", en: "Participants and RSVP" }, beskrivelse: { no: "Strukturert deltakerregister med RSVP, grupper, roller, allergier og praktiske behov.", en: "Structured participant register with RSVP, groups, roles, allergies and practical needs." }, bygget: true },
+        { tittel: { no: "Arrangement og oversikt", en: "Event and overview" }, beskrivelse: { no: "Dashboard med nøkkeltall, planleggingsmangler, nedtelling og anbefalte neste aktiviteter.", en: "Dashboard with key metrics, planning gaps, countdown and recommended next activities." }, bygget: true },
+        { tittel: { no: "Deltakere og RSVP", en: "Participants and RSVP" }, beskrivelse: { no: "Deltakerregister med grupper, par/husholdninger, ledsagere, roller, allergier, sitteplass og deltakelsesform — inkludert reise og opphold der det er relevant.", en: "Participant register with groups, couples/households, companions, roles, allergies, seating and participation mode — including travel and accommodation where relevant." }, bygget: true },
         { tittel: { no: "Oppgaver og ansvar", en: "Tasks and ownership" }, beskrivelse: { no: "Oppgaver med ansvarlig, frist, prioritet, status, kategori og avhengigheter.", en: "Tasks with owner, deadline, priority, status, category and dependencies." }, bygget: true },
-        { tittel: { no: "Program og kjøreplan", en: "Programme and run sheet" }, beskrivelse: { no: "Kronologisk program med tidspunkt, aktivitet, ansvarlig og lokasjon — inkludert arrangementsmodus.", en: "Chronological programme with time, activity, owner and location — including event mode." }, bygget: true },
-        { tittel: { no: "Smart Paste og naturlig språk", en: "Smart Paste and natural language" }, beskrivelse: { no: "Ustrukturert tekst tolkes og vises i forhåndsvisning før lagring.", en: "Unstructured text is interpreted and shown in preview before saving." }, bygget: true },
-        { tittel: { no: "Intelligent Excel / CSV-import", en: "Intelligent Excel / CSV import" }, beskrivelse: { no: "Automatisk analyse av ark, kolonner og RSVP-statuser med deltaoppdatering.", en: "Automatic analysis of sheets, columns and RSVP statuses with delta updates." }, bygget: true },
-        { tittel: { no: "AI-assistert prioritering", en: "AI-assisted prioritisation" }, beskrivelse: { no: "Analyse av oppgaver, frister, avhengigheter og planleggingsmangler.", en: "Analysis of tasks, deadlines, dependencies and planning gaps." }, bygget: true },
-        { tittel: { no: "Samarbeid og sanntidsoppdatering", en: "Collaboration and real-time updates" }, beskrivelse: { no: "Flerbrukerarbeid med roller og sentral lagring i Firestore.", en: "Multi-user work with roles and central storage in Firestore." }, bygget: true },
+        { tittel: { no: "Program og kjøreplan", en: "Programme and run sheet" }, beskrivelse: { no: "Kronologisk program for planlegging og operativ bruk på arrangementsdagen.", en: "Chronological programme for planning and operational use on event day." }, bygget: true },
+        { tittel: { no: "Quick Entry, Smart Paste og naturlig språk", en: "Quick Entry, Smart Paste and natural language" }, beskrivelse: { no: "Ustrukturert tekst og naturlig språk tolkes til forslag med forhåndsvisning og eksplisitt godkjenning.", en: "Unstructured text and natural language are interpreted into suggestions with preview and explicit approval." }, bygget: true },
+        { tittel: { no: "Intelligent Excel / CSV-import", en: "Intelligent Excel / CSV import" }, beskrivelse: { no: "Analyse av kolonner, statusverdier, relasjoner og deltaendringer ved import.", en: "Analysis of columns, status values, relationships and delta changes on import." }, bygget: true },
+        { tittel: { no: "Filer, invitasjoner og media", en: "Files, invitations and media" }, beskrivelse: { no: "Private filer, arrangementsinvitasjoner og arrangementsbilder med tilgangsstyring.", en: "Private files, event invitations and event images with access control." }, bygget: true },
+        { tittel: { no: "Samarbeid og tilgang", en: "Collaboration and access" }, beskrivelse: { no: "Flerbrukerarbeid med separat applikasjonstilgang og arrangementstilgang. Nye private-beta-brukere aktiveres én gang, mens konkrete arrangementer deles gjennom sikre invitasjonslenker med roller for eier, redigerer og leser.", en: "Multi-user work with separate application access and event access. New private-beta users are activated once, while specific events are shared through secure invitation links with roles for owner, editor and reader." }, bygget: true },
       ],
     },
     hvordan: {
@@ -209,8 +215,8 @@ export const eventPlannerPlatform: StrategicPlatformProject = {
     status: {
       heading: { no: "Status, modenhet og avgrensninger", en: "Status, maturity and limitations" },
       body: {
-        no: "Event Planner er bygget som en fungerende full-stack prototype med reelle arbeidsflyter for arrangementsopprettelse, deltakerhåndtering, oppgaver, ansvar, program, AI-assistert registrering, prioritering og samarbeid. Løsningen er utviklet og testet med realistiske arrangementsdata og flerbrukerarkitektur.\n\nEvent Planner er ikke utviklet som billettsystem, markedsføringsplattform eller erstatning for profesjonelle arrangører. AI-assistenten støtter planlegging og beslutninger, men større endringer skal fortsatt kunne kontrolleres og godkjennes av brukeren. Løsningen er ikke presentert som kommersielt SaaS-produkt med betalende kunder.",
-        en: "Event Planner is built as a working full-stack prototype with real workflows for event creation, participant management, tasks, ownership, programme, AI-assisted registration, prioritisation and collaboration. The solution is developed and tested with realistic event data and multi-user architecture.\n\nEvent Planner is not developed as a ticketing system, marketing platform or replacement for professional event organisers. The AI assistant supports planning and decisions, but larger changes should still be controllable and approved by the user. The solution is not presented as a commercial SaaS product with paying customers.",
+        no: "Event Planner er bygget som en fungerende full-stack prototype og lukket private beta med permanent datalagring, autentisering, privat filhåndtering og rollebasert flerbrukersamarbeid. Løsningen brukes og testes med realistiske arrangementsdata og reelle arbeidsflyter for arrangementsopprettelse, deltakerhåndtering, oppgaver, program, dokumenter, AI-assistert registrering, prioritering og samarbeid.\n\nLøsningen er fortsatt et portefølje- og utviklingsprosjekt, ikke et ferdig kommersielt SaaS-produkt med betalende kunder. Den er heller ikke utviklet som billett-, betalings- eller markedsføringsplattform.",
+        en: "Event Planner is built as a working full-stack prototype and closed private beta with persistent storage, authentication, private file handling and role-based multi-user collaboration. The solution is used and tested with realistic event data and real workflows for event creation, participant management, tasks, programme, documents, AI-assisted registration, prioritisation and collaboration.\n\nThe solution remains a portfolio and development project, not a finished commercial SaaS product with paying customers. It is also not developed as a ticketing, payment or marketing platform.",
       },
     },
     skalerbarhet: {
@@ -219,10 +225,11 @@ export const eventPlannerPlatform: StrategicPlatformProject = {
         heading: { no: "Mulig videreutvikling", en: "Possible further development" },
         punkter: [
           { no: "Ferdige maler for ulike arrangementstyper", en: "Ready-made templates for different event types" },
-          { no: "Utvidet budsjett- og kostnadsstyring", en: "Extended budget and cost management" },
+          { no: "Budsjett- og kostnadsstyring", en: "Budget and cost management" },
           { no: "Leverandør- og tilbudsoppfølging", en: "Supplier and quote follow-up" },
           { no: "Automatiske varsler og påminnelser", en: "Automatic alerts and reminders" },
           { no: "Kalender- og e-postintegrasjoner", en: "Calendar and email integrations" },
+          { no: "Selvbetjent RSVP for inviterte deltakere", en: "Self-service RSVP for invited participants" },
           { no: "Rapportering og erfaringsoppsummering etter gjennomføring", en: "Reporting and experience summary after execution" },
         ],
       },
@@ -243,8 +250,8 @@ export const eventPlannerPlatform: StrategicPlatformProject = {
     avslutning: {
       heading: { no: "Utforsk prosjektet videre", en: "Explore the project further" },
       body: {
-        no: "Ta kontakt for faglig dialog om hvordan Event Planner kan videreutvikles, testes eller tilpasses relevante arrangementsbehov.",
-        en: "Get in touch for professional dialogue on how Event Planner can be developed further, tested or adapted to relevant event needs.",
+        no: "Åpne Event Planner for å se løsningen i praksis, eller ta kontakt for faglig dialog om tilgang, videreutvikling og relevante arrangementsbehov.",
+        en: "Open Event Planner to see the solution in practice, or get in touch for professional dialogue on access, further development and relevant event needs.",
       },
     },
     utvikler,

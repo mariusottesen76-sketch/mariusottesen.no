@@ -77,6 +77,15 @@ const accessCodeNote: LocalizedString = {
   en: "The solution is access-controlled and developed as a portfolio project / closed test environment — not presented as a finished commercial product.",
 };
 
+const eventPlannerAccessNote: LocalizedString = {
+  no: "Event Planner er foreløpig tilgjengelig som private beta. Eksisterende brukere logger inn direkte. Nye brukere aktiverer kontoen én gang med tilgangskode. Tilgang til et konkret arrangement gis separat gjennom en arrangementsinvitasjon.",
+  en: "Event Planner is currently available as a private beta. Existing users log in directly. New users activate their account once with an access code. Access to a specific event is granted separately through an event invitation.",
+};
+
+function isEventPlannerPrivateBeta(project: ProjectV2Record): boolean {
+  return project.slug === "event-planner" && Boolean(project.liveSolutionUrl);
+}
+
 const openDemoNote: LocalizedString = {
   no: "Åpen konseptprototype med fiktive, sesjonsbaserte demodata. Endringer lagres ikke.",
   en: "Open concept prototype with fictional, session-based demo data. Changes are not saved.",
@@ -204,6 +213,15 @@ function secondaryOverviewAction(project: ProjectV2Record): ProjectCtaAction {
 }
 
 function primaryDetailAction(project: ProjectV2Record): ProjectCtaAction {
+  if (isEventPlannerPrivateBeta(project)) {
+    return {
+      href: project.liveSolutionUrl!,
+      label: project.ctaLabels?.detailPrimary ?? { no: "Åpne Event Planner", en: "Open Event Planner" },
+      external: true,
+      ariaLabel: externalPlatformAriaLabel(project),
+    };
+  }
+
   if (isOpenDemoPlatform(project)) {
     return isPlatformLive(project)
       ? {
@@ -248,6 +266,13 @@ function primaryDetailAction(project: ProjectV2Record): ProjectCtaAction {
 }
 
 function secondaryDetailAction(project: ProjectV2Record): ProjectCtaAction | undefined {
+  if (isEventPlannerPrivateBeta(project)) {
+    return {
+      href: contactHref(CONTACT_QUERY_TEMA.anvendelse, project.slug),
+      label: project.ctaLabels?.detailSecondary ?? { no: "Be om tilgang", en: "Request access" },
+    };
+  }
+
   if (isOpenDemoPlatform(project)) {
     return {
       href: contactHref(CONTACT_QUERY_TEMA.anvendelse, project.slug),
@@ -286,6 +311,7 @@ function tertiaryDetailAction(project: ProjectV2Record): ProjectCtaAction | unde
 }
 
 function overviewNote(project: ProjectV2Record): LocalizedString | undefined {
+  if (isEventPlannerPrivateBeta(project)) return eventPlannerAccessNote;
   if (isOpenDemoPlatform(project)) return openDemoNote;
   if (project.accessMode === "access_code") return accessCodeNote;
   if (project.category === "professional_initiative" || project.category === "video_communication") {

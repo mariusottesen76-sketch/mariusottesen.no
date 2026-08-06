@@ -143,9 +143,9 @@ export const projectDateAudit: ProjectDateAuditEntry[] = [
   {
     projectId: "event-planner-2026-08",
     publishedAt: "2026-08-04",
-    updatedAt: "2026-08-04",
+    updatedAt: "2026-08-06",
     source: "user_brief",
     confidence: "user_confirmed",
-    reason: "Event Planner v1 registrert på porteføljen 04.08.26.",
+    reason: "Event Planner oppdatert til private beta og full-stack prototype per 06.08.26.",
   },
 ];

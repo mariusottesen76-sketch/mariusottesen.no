@@ -1,5 +1,9 @@
+/** Produksjons-URL for Event Planner (private beta). */
+export const EVENT_PLANNER_APP_URL =
+  "https://event-planner-985835222462.europe-north2.run.app/";
+
 /**
- * Event Planner — porteføljesti; live-URL legges til når offentlig tilgang er avklart.
+ * Event Planner — porteføljesti og merkevare.
  *
  * To separate prosjektbilder (samme standard som øvrige project_v2-prosjekter):
  * - Oversikt (/prosjekter): `public/images/event-planner-hjemmeside.png` — 341×1024 px (1:3, samme som øvrige prosjekter)
