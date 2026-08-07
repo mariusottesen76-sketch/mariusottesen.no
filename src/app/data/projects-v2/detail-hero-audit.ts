@@ -147,7 +147,7 @@ export const detailHeroAudit: DetailHeroAuditEntry[] = [
   {
     route: "/event-planner",
     projectId: "event-planner-2026-08",
-    heroImage: "/images/event-planner-hero.png?v=20260808b",
+    heroImage: "/images/event-planner-hero.png?v=20260808c",
     aspectNote: "Horisontalt banner — 3:1 landscape for detaljside",
     objectPosition: "center",
     fit: "contain",

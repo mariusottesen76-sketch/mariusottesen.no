@@ -1,70 +1,51 @@
 /**
- * Capture Event Planner portfolio screenshots.
+ * Illustrative Event Planner portfolio images from the public demo.
  *
- * Portrait (/prosjekter): live public demo — 341×1024
- *   Venstremeny (Samtaler + Budsjett), arrangementshero, start på innhold.
+ * Not literal desktop printscreens — tight crops that highlight what the app does:
  *
- * Landscape (/event-planner): crop from scripts/assets/event-planner-demo-reference.png — 1800×600
- *   Oversikt med venstremeny, KPI-rad og Arrangementsklarhet inkl. Budsjett & økonomi.
+ * Portrait (341×1024): mobile demo view — hero, hovedhandlinger, planleggingshint.
+ * Landscape (1800×600): sidebar + arrangementshero (Oversikt), uten full dashboard-rutenett.
  *
- * Oppdater reference-bildet når demo-UI endres vesentlig, deretter kjør dette scriptet.
+ * Output: public/images/event-planner-hjemmeside.png, event-planner-hero.png
  */
-import { spawnSync } from "node:child_process";
 import { chromium } from "playwright";
 import { mkdir } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const ROOT = path.resolve(__dirname, "..");
-const OUT_DIR = path.join(ROOT, "public/images");
+const OUT_DIR = path.resolve(__dirname, "../public/images");
 const DEMO_URL = "https://event-planner-985835222462.europe-north2.run.app/?demo=1";
-
-async function hideDemoExplorePanel(page) {
-  await page.evaluate(() => {
-    for (const el of document.querySelectorAll("*")) {
-      const text = el.textContent ?? "";
-      if (text.includes("UTFORSK DEMOEN") && text.includes("Demo-modus") && text.length < 2500) {
-        el.style.display = "none";
-        break;
-      }
-    }
-  });
-  await page.waitForTimeout(400);
-}
-
-async function capturePortrait() {
-  const browser = await chromium.launch();
-  const page = await browser.newPage({ viewport: { width: 1280, height: 1100 } });
-  await page.goto(DEMO_URL, { waitUntil: "networkidle", timeout: 120_000 });
-  await page.waitForTimeout(3000);
-  await hideDemoExplorePanel(page);
-  await page.evaluate(() => window.scrollTo(0, 0));
-  await page.waitForTimeout(300);
-  await page.screenshot({
-    path: path.join(OUT_DIR, "event-planner-hjemmeside.png"),
-    clip: { x: 0, y: 0, width: 341, height: 1024 },
-  });
-  await browser.close();
-  console.log("Saved event-planner-hjemmeside.png (341×1024 portrait crop)");
-}
-
-function captureLandscapeFromReference() {
-  const py = spawnSync("python", [path.join(__dirname, "crop-event-planner-hero-from-reference.py")], {
-    cwd: ROOT,
-    encoding: "utf8",
-  });
-  if (py.stdout) process.stdout.write(py.stdout);
-  if (py.stderr) process.stderr.write(py.stderr);
-  if (py.status !== 0) {
-    throw new Error(py.stderr || "Failed to crop hero from reference image");
-  }
-}
 
 async function capture() {
   await mkdir(OUT_DIR, { recursive: true });
-  await capturePortrait();
-  captureLandscapeFromReference();
+  const browser = await chromium.launch();
+
+  // Prosjektside — mobil demo (illustrativt, ikke desktop-crop)
+  {
+    const page = await browser.newPage({ viewport: { width: 341, height: 1024 } });
+    await page.goto(DEMO_URL, { waitUntil: "networkidle", timeout: 120_000 });
+    await page.waitForTimeout(2500);
+    await page.screenshot({
+      path: path.join(OUT_DIR, "event-planner-hjemmeside.png"),
+      fullPage: false,
+    });
+    console.log("Saved event-planner-hjemmeside.png (341×1024 mobile demo)");
+  }
+
+  // Detaljside — venstremeny + hero (Samtaler/Budsjett i menyen), ikke hele dashboardet
+  {
+    const page = await browser.newPage({ viewport: { width: 1800, height: 900 } });
+    await page.goto(DEMO_URL, { waitUntil: "networkidle", timeout: 120_000 });
+    await page.waitForTimeout(2500);
+    await page.screenshot({
+      path: path.join(OUT_DIR, "event-planner-hero.png"),
+      clip: { x: 0, y: 0, width: 1800, height: 600 },
+    });
+    console.log("Saved event-planner-hero.png (1800×600 hero crop)");
+  }
+
+  await browser.close();
 }
 
 capture().catch((err) => {
