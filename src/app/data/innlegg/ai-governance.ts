@@ -60,6 +60,55 @@ const fireApperKarusellBilder = Array.from({ length: 10 }, (_, i) => ({
 
 const aiGovernanceRaw = [
     {
+      id: "event-planner-fest-planlegging-2026-08",
+      tittel: "Jeg skulle bare planlegge en fest — det endte med en AI-plattform for gjennomføring.",
+      teaser:
+        "Fra festplanlegging til AI-plattform for gjennomføring — når koordinering, ansvar, beslutninger og økonomi henger sammen i én arbeidsflate.",
+      bildeUrl: "/images/event-planner-linkedin.png",
+      bildeVersjon: "2026-08-10",
+      dato: "2026-08-10",
+      visningsDato: "10.08.26",
+      kategori: "AI / KI",
+      link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
+      innhold: `Utgangspunktet var konkret: rundt 60 deltakere, mat og drikke, program, værberedskap, leverandører, oppgaver, ansvar og stadig nye endringer.
+
+Jeg dro raskt kjensel på en utfordring jeg har møtt mange ganger i arbeidslivet. Når mange mennesker, aktiviteter og avhengigheter skal koordineres, finnes informasjonen ofte allerede. Men den er spredt mellom Excel, e-post, meldinger, dokumenter, ulike personer og sjekklister.
+
+Spørsmålet mitt ble derfor:
+
+Kan AI gjøre mer enn å svare på spørsmål? Kan den forstå ustrukturert informasjon, foreslå hva som bør gjøres og koble det til ansvar, beslutninger og økonomi?
+
+Det ble starten på <strong>Event Planner</strong>.
+
+I dag samler løsningen deltakere og RSVP, oppgaver, eiere, frister og avhengigheter, program, dokumenter, leverandører, reise og opphold, økonomi og anbefalte neste aktiviteter i én felles arbeidsflate.
+
+AI-en jobber direkte med informasjonen. Jeg kan for eksempel skrive:
+
+«Leverandøren har sendt tilbud på AV-utstyr til 85 000. Anne skal avklare innen fredag. Legg kostnaden i prognosen og opprett oppgaven.»
+
+Event Planner tolker meldingen og foreslår leverandør, kostnad, oppgave, eier, frist og eventuelt beslutningsbehov før jeg godkjenner.
+
+AI foreslår. Brukeren bestemmer.
+
+Flere arrangører kan arbeide i løsningen samtidig, kommunisere i sanntid og bruke @mentions. Samtaler kan kobles direkte til oppgaver og kostnader, slik at informasjon, ansvar og oppfølging henger sammen.
+
+Økonomien følger samme logikk. Godkjent budsjett, prognose, forpliktet kostnad, faktisk kostnad og avvik kan sees i sammenheng med oppgaver, leverandører og beslutninger.
+
+Event Planner vurderer også hvor klart arrangementet er for gjennomføring: Hva mangler? Hva haster? Hva blokkerer andre aktiviteter? Hvem bør eie neste steg? Hvor ligger økonomisk risiko?
+
+Løsningen tilpasses privat- eller virksomhetskontekst. Den kan derfor brukes til alt fra bryllup og konfirmasjoner til kick-offs, sommerfester, messer, konferanser og kundearrangementer.
+
+Det mest interessante for meg er ikke bare Event Planner, men hva prosjektet illustrerer om AI.
+
+Verdien oppstår ikke nødvendigvis når vi gir medarbeiderne enda en chatbot. Den oppstår når AI blir en kontrollert del av gjennomføringen, der informasjon, samtale, beslutninger, ansvar, økonomi og oppfølging henger sammen.
+
+For meg er det nettopp der AI blir interessant som lederverktøy: når den ikke bare gir svar, men bidrar til tydeligere prioriteringer, ansvar og fremdrift.
+
+👉 Se <a href="/event-planner" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">Event Planner og prosjektbeskrivelsen</a>, og prøv <a href="https://event-planner-985835222462.europe-north2.run.app/?demo=1" target="_blank" rel="noopener noreferrer" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">demoen med fiktive data</a>.
+
+#AI #Teknologiledelse #AIimplementering #DigitalTransformasjon #AIiPraksis`,
+    },
+    {
       id: "ai-transformation-value-realization-strand-2026-07",
       tittel: "Fra strandidé til AI-plattform",
       teaser:
@@ -2148,6 +2197,48 @@ AI-dømmekraft er ikke en teknisk nisjeferdighet. Det er en lederkompetanse.`
 ];
 
 const aiGovernanceEn: Record<string, LocalizedTextMap> = {
+  "event-planner-fest-planlegging-2026-08": {
+    tittel: "I was only going to plan a party — it ended up as an AI platform for execution.",
+    teaser:
+      "From party planning to an AI platform for execution — when coordination, ownership, decisions and finances belong together in one workspace.",
+    innhold: `The starting point was concrete: around 60 participants, food and drink, programme, weather preparedness, suppliers, tasks, ownership and constant changes.
+
+I quickly recognised a challenge I have met many times in working life. When many people, activities and dependencies must be coordinated, the information often already exists. But it is scattered across Excel, email, messages, documents, different people and checklists.
+
+So my question became:
+
+Can AI do more than answer questions? Can it understand unstructured information, suggest what should be done and connect it to ownership, decisions and finances?
+
+That was the start of <strong>Event Planner</strong>.
+
+Today the solution brings participants and RSVP, tasks, owners, deadlines and dependencies, programme, documents, suppliers, travel and accommodation, finances and recommended next activities together in one shared workspace.
+
+The AI works directly with the information. I can for example write:
+
+"The supplier has sent a quote for AV equipment at 85,000. Anne is to clarify by Friday. Add the cost to the forecast and create the task."
+
+Event Planner interprets the message and suggests supplier, cost, task, owner, deadline and any decision need before I approve.
+
+AI suggests. The user decides.
+
+Several organisers can work in the solution at the same time, communicate in real time and use @mentions. Conversations can be linked directly to tasks and costs, so information, ownership and follow-up stay connected.
+
+Finances follow the same logic. Approved budget, forecast, committed cost, actual cost and variance can be viewed in context with tasks, suppliers and decisions.
+
+Event Planner also assesses how ready the event is for delivery: What is missing? What is urgent? What is blocking other activities? Who should own the next step? Where is the financial risk?
+
+The solution adapts to private or business context. It can therefore be used for everything from weddings and confirmations to kick-offs, summer parties, trade fairs, conferences and customer events.
+
+What interests me most is not just Event Planner, but what the project illustrates about AI.
+
+The value does not necessarily arise when we give employees yet another chatbot. It arises when AI becomes a controlled part of execution, where information, conversation, decisions, ownership, finances and follow-up stay connected.
+
+For me, that is precisely where AI becomes interesting as a leadership tool: when it does not just give answers, but contributes to clearer priorities, ownership and progress.
+
+👉 See <a href="/event-planner" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">Event Planner and the project description</a>, and try the <a href="https://event-planner-985835222462.europe-north2.run.app/?demo=1" target="_blank" rel="noopener noreferrer" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">demo with fictional data</a>.
+
+#AI #TechnologyLeadership #AIImplementation #DigitalTransformation #AIInPractice`,
+  },
   "ai-transformation-value-realization-strand-2026-07": {
     tittel: "From beach idea to AI platform",
     teaser:
