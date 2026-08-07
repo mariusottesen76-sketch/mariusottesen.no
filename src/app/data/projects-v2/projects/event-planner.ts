@@ -9,7 +9,7 @@ export const eventPlannerV2: ProjectV2Record = {
   accessMode: "access_code",
   detailLevel: "full",
   publishedAt: "2026-08-04",
-  updatedAt: "2026-08-06",
+  updatedAt: "2026-08-07",
   date: "2026-08-04",
   displayDate: { no: "04.08.26", en: "04.08.26" },
   title: {
@@ -17,8 +17,8 @@ export const eventPlannerV2: ProjectV2Record = {
     en: "Event Planner",
   },
   subtitle: {
-    no: "AI-assistert planlegging, koordinering og gjennomføring av arrangementer i én felles arbeidsflate",
-    en: "AI-assisted planning, coordination and execution of events in one shared workspace",
+    no: "AI-assistert planlegging, samarbeid og gjennomføring av arrangementer",
+    en: "AI-assisted planning, collaboration and execution of events",
   },
   statusLabel: {
     no: "Fungerende full-stack prototype · Private beta",
@@ -29,41 +29,41 @@ export const eventPlannerV2: ProjectV2Record = {
     en: "Private beta",
   },
   overviewIntroduction: {
-    no: "AI-assistert planlegging, koordinering og gjennomføring av arrangementer i én felles arbeidsflate – med deltakere, oppgaver, program, filer, naturlig språk og flerbrukersamarbeid.",
-    en: "AI-assisted planning, coordination and execution of events in one shared workspace — with participants, tasks, programme, files, natural language and multi-user collaboration.",
+    no: "AI-assistert planlegging, samarbeid og gjennomføring av arrangementer i én felles arbeidsflate. Event Planner kombinerer generativ AI med strukturert prosjektlogikk for deltakere, oppgaver, program, samtaler, økonomi, dokumenter og arrangementsklarhet. Plattformen gjør ustrukturert informasjon handlingsbar, foreslår neste aktiviteter og lar flere arrangører samarbeide i sanntid – med AI-forslag som forhåndsvises og må godkjennes før endringer lagres.",
+    en: "AI-assisted planning, collaboration and execution of events in one shared workspace. Event Planner combines generative AI with structured project logic for participants, tasks, programme, conversations, finance, documents and event readiness. The platform makes unstructured information actionable, suggests next activities and lets multiple organisers collaborate in real time — with AI suggestions that are previewed and must be approved before changes are saved.",
   },
   overview: {
     what: {
-      no: "En AI-assistert full-stack applikasjon for planlegging og gjennomføring av arrangementer — med én samlet arbeidsflate for deltakere, RSVP, oppgaver, ansvar, program, filer og planleggingsbehov.",
-      en: "An AI-assisted full-stack application for planning and execution of events — with one shared workspace for participants, RSVP, tasks, ownership, programme, files and planning needs.",
+      no: "Fungerende full-stack prototype for planlegging og gjennomføring – med deltakere, oppgaver, program, samtaler, budsjett, arrangementsklarhet (Event Readiness) og offentlig skrivebeskyttet demo med fiktive data.",
+      en: "Working full-stack prototype for planning and execution — with participants, tasks, programme, conversations, budget, event readiness (Event Readiness) and a public write-protected demo with fictional data.",
     },
     challenge: {
-      no: "Arrangementsplanlegging blir raskt fragmentert mellom Excel, e-post, meldinger, dokumenter og ulike sjekklister. Informasjonen finnes ofte, men det er vanskeligere å vite hva som mangler, hvem som har ansvar, hvilke frister som nærmer seg og hvilke aktiviteter som blokkerer andre.",
-      en: "Event planning quickly becomes fragmented across spreadsheets, email, messages, documents and separate checklists. The information often exists, but it is harder to know what is missing, who owns what, which deadlines are approaching and which activities block others.",
+      no: "Arrangementer fragmenteres mellom regneark, e-post, SMS, meldinger og parallelle sjekklister – uten tydelig sammenheng mellom avtaler, ansvar, kostnad, mangler og neste steg.",
+      en: "Events fragment across spreadsheets, email, SMS, messages and parallel checklists — without clear connection between agreements, ownership, cost, gaps and next steps.",
     },
     built: {
-      no: "Fungerende full-stack prototype med arrangementsoversikt, deltakere og RSVP, oppgaver og ansvar, program, Smart Paste og naturlig språk, intelligent Excel/CSV-import, private filer, AI-assistert prioritering og flerbrukersamarbeid med permanent datalagring og sanntidsoppdatering.",
-      en: "Working full-stack prototype with event overview, participants and RSVP, tasks and ownership, programme, Smart Paste and natural language, intelligent Excel/CSV import, private files, AI-assisted prioritisation and multi-user collaboration with persistent storage and real-time updates.",
+      no: "Sanntidssamarbeid med trådede samtaler koblet til oppgaver og kostnader, Event Readiness, budsjettmodul, Quick Entry og Smart Paste med human-in-the-loop – samt rollebasert tilgang for Owner, Editor og Viewer.",
+      en: "Real-time collaboration with threaded conversations linked to tasks and costs, Event Readiness, budget module, Quick Entry and Smart Paste with human-in-the-loop — plus role-based access for Owner, Editor and Viewer.",
     },
     how: {
-      no: "Arrangøren oppretter arrangementet, bygger grunnlaget med deltakere, oppgaver og program, fordeler ansvar, følger opp via dashboard og AI-assistent, og bruker løsningen operativt frem mot og under gjennomføring.",
-      en: "The organiser creates the event, builds the foundation with participants, tasks and programme, assigns ownership, follows up via dashboard and AI assistant, and uses the solution operationally before and during execution.",
+      no: "Arrangøren bygger gradvis et datagrunnlag, samarbeider i sanntid og følger opp via dashboard, readiness-motor og AI-assistent. Offentlig demo kan utforskes uten innlogging; full bruk krever tilgang til private beta.",
+      en: "The organiser gradually builds a data foundation, collaborates in real time and follows up via dashboard, readiness engine and AI assistant. Public demo can be explored without logging in; full use requires access to the private beta.",
     },
     relevance: {
-      no: "Prosjektet viser hvordan generativ AI kan integreres direkte i en operativ arbeidsprosess — ikke som en separat chatbot — med kontrollert AI, forhåndsvisning og brukerbekreftelse før endringer lagres.",
-      en: "The project shows how generative AI can be integrated directly into an operational workflow — not as a separate chatbot — with controlled AI, preview and user confirmation before changes are saved.",
+      no: "Viser hvordan generativ AI kan integreres i operativ arbeidsflyt – fra samtale og ustrukturert tekst til strukturerte forslag om oppgaver, beslutninger og kostnader, ikke som en chatbot ved siden av.",
+      en: "Shows how generative AI can be integrated into operational workflow — from conversation and unstructured text to structured suggestions for tasks, decisions and costs, not as a chatbot on the side.",
     },
     status: {
-      no: "Fungerende full-stack prototype og lukket private beta — med read-only demo og portefølje-/utviklingsprosjekt, ikke kommersielt SaaS.",
-      en: "Working full-stack prototype and closed private beta — with read-only demo and portfolio/development project, not commercial SaaS.",
+      no: "Fungerende full-stack prototype · Private beta – brukes i reell planlegging og har offentlig skrivebeskyttet demo. Portefølje- og utviklingsprosjekt, ikke ferdig kommersielt SaaS.",
+      en: "Working full-stack prototype · Private beta — used in real planning and has a public write-protected demo. Portfolio and development project, not finished commercial SaaS.",
     },
     development: {
-      no: "Videre utvikling kan omfatte maler for ulike arrangementstyper, budsjett- og kostnadsstyring, leverandør- og tilbudsoppfølging, varsler, kalender- og e-postintegrasjoner, selvbetjent RSVP og rapportering etter gjennomføring.",
-      en: "Further development may include templates for different event types, budget and cost management, supplier and quote follow-up, alerts, calendar and email integrations, self-service RSVP and post-event reporting.",
+      no: "Videre utvikling kan omfatte ferdige maler, leverandør- og tilbudsoppfølging, varsler, kalender- og e-postintegrasjoner, selvbetjent RSVP, Reise & opphold og rapportering etter gjennomføring.",
+      en: "Further development may include ready-made templates, supplier and quote follow-up, alerts, calendar and email integrations, self-service RSVP, Travel & accommodation and post-event reporting.",
     },
     adaptation: {
-      no: "Grunnmodellen er generell og kan tilpasses firmafester, kundearrangementer, møter, konferanser, bryllup, bursdager, konfirmasjoner og andre private og profesjonelle arrangementer gjennom konfigurerbare grupper, roller og planleggingsprinsipper.",
-      en: "The core model is general and can be adapted for company parties, customer events, meetings, conferences, weddings, birthdays, confirmations and other private and professional events through configurable groups, roles and planning principles.",
+      no: "Tilpasser planleggingsfokus etter om arrangementet er privat eller virksomhetsrettet – fra bursdag og bryllup til konferanse, messe, kick-off og kundearrangement. Relevante funksjoner kan aktiveres etter behov, eksempelvis Reise & opphold.",
+      en: "Adapts planning focus based on whether the event is private or business-oriented — from birthday and wedding to conference, trade fair, kick-off and customer event. Relevant features can be activated as needed, for example Travel & accommodation.",
     },
   },
   overviewImage: EVENT_PLANNER_OVERVIEW_IMAGE,
@@ -72,8 +72,8 @@ export const eventPlannerV2: ProjectV2Record = {
   needsNewOverviewImage: false,
   needsNewDetailHero: false,
   altText: {
-    no: "Event Planner – AI-assistert arbeidsflate for planlegging, deltakere, oppgaver og gjennomføring av arrangementer",
-    en: "Event Planner – AI-assisted workspace for planning, participants, tasks and execution of events",
+    no: "Event Planner – AI-assistert arbeidsflate for planlegging, samarbeid og gjennomføring av arrangementer",
+    en: "Event Planner – AI-assisted workspace for planning, collaboration and execution of events",
   },
   overviewImageFormat: "standard_1x3",
   detailHeroMissing: true,
@@ -90,8 +90,8 @@ export const eventPlannerV2: ProjectV2Record = {
       en: "Event Planner | AI-assisted event planning | Marius Ottesen",
     },
     description: {
-      no: "Event Planner samler deltakere, oppgaver, ansvar, program, filer og AI-assistert oppfølging i én arbeidsflate — med read-only demo og private beta.",
-      en: "Event Planner brings participants, tasks, ownership, programme, files and AI-assisted follow-up together in one workspace — with read-only demo and private beta.",
+      no: "Event Planner kombinerer AI-assistert planlegging, samarbeid, Event Readiness, samtaler og økonomistyring i én arbeidsflate — med read-only demo og private beta.",
+      en: "Event Planner combines AI-assisted planning, collaboration, Event Readiness, conversations and financial control in one workspace — with read-only demo and private beta.",
     },
     ogImage: EVENT_PLANNER_HERO_IMAGE,
     canonicalPath: "/event-planner",

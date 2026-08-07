@@ -47,6 +47,14 @@ export type StrategicPlatformStep = {
   beskrivelse: LocalizedString;
 };
 
+/** Valgfritt innholdsblokk på detaljside — brukes bl.a. Event Planner. */
+export type StrategicPlatformContentSection = {
+  heading: LocalizedString;
+  body: LocalizedString;
+  steps?: StrategicPlatformStep[];
+  flowLine?: LocalizedString;
+};
+
 export type StrategicPlatformScalability = {
   platform: {
     heading: LocalizedString;
@@ -133,6 +141,8 @@ export type StrategicPlatformDetail = {
   };
   /** Datagrunnlag og integrasjoner — avgrenser mot CRM/live-data. */
   datagrunnlag?: { heading: LocalizedString; body: LocalizedString };
+  /** Ekstra seksjoner mellom logikk og datagrunnlag — kun der definert. */
+  contentSections?: StrategicPlatformContentSection[];
   bygget: { heading: LocalizedString; body?: LocalizedString; items: LocalizedString[] };
   moduler: { heading: LocalizedString; intro?: LocalizedString; modules: StrategicPlatformModule[] };
   hvordan: {

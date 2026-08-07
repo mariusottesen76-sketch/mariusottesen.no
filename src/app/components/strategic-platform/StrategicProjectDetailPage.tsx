@@ -212,6 +212,23 @@ function StrategicProjectDetailInner({ slug }: { slug: StrategicPlatformSlug }) 
         <MultilineBody text={t(detail.utfordring.body, lang)} className={bodyTextClass} />
       </section>
 
+      {slug === "event-planner" && (
+        <section aria-labelledby="plattform-bygget" className="mb-10">
+          <SectionHeading id="plattform-bygget">{t(detail.bygget.heading, lang)}</SectionHeading>
+          {detail.bygget.body && <p className={`${bodyTextClass} mb-4`}>{t(detail.bygget.body, lang)}</p>}
+          {detail.bygget.items.length > 0 && (
+            <ul className="space-y-2">
+              {detail.bygget.items.map((item) => (
+                <li key={item.no} className="flex items-start gap-2 text-sm text-slate-400 font-light leading-relaxed">
+                  <ChevronRight size={14} className="text-indigo-400 shrink-0 mt-0.5" aria-hidden="true" />
+                  <span>{t(item, lang)}</span>
+                </li>
+              ))}
+            </ul>
+          )}
+        </section>
+      )}
+
       <section aria-labelledby="plattform-logikk" className="mb-10">
         <SectionHeading id="plattform-logikk">{t(detail.logikk.heading, lang)}</SectionHeading>
         <p className={`${bodyTextClass} mb-4`}>{t(detail.logikk.body, lang)}</p>
@@ -226,10 +243,36 @@ function StrategicProjectDetailInner({ slug }: { slug: StrategicPlatformSlug }) 
         {detail.logikk.steps && detail.logikk.steps.length > 0 && (
           <NumberedStepGrid steps={detail.logikk.steps} lang={lang} className="mb-4" />
         )}
-        {detail.logikk.after && <p className={bodyTextClass}>{t(detail.logikk.after, lang)}</p>}
+        {detail.logikk.after && <MultilineBody text={t(detail.logikk.after, lang)} className={bodyTextClass} />}
       </section>
 
-      {detail.datagrunnlag && (
+      {detail.contentSections?.map((section) => (
+        <section
+          key={section.heading.no}
+          aria-labelledby={`plattform-content-${section.heading.no}`}
+          className="mb-10"
+        >
+          <SectionHeading id={`plattform-content-${section.heading.no}`}>
+            {t(section.heading, lang)}
+          </SectionHeading>
+          <MultilineBody text={t(section.body, lang)} className={bodyTextClass} />
+          {section.flowLine && (
+            <p className={`${bodyTextClass} mt-4 text-indigo-300/90 font-medium`}>
+              {t(section.flowLine, lang).split("\n").map((line, index) => (
+                <React.Fragment key={`${index}-${line.slice(0, 20)}`}>
+                  {index > 0 && <br />}
+                  {line}
+                </React.Fragment>
+              ))}
+            </p>
+          )}
+          {section.steps && section.steps.length > 0 && (
+            <NumberedStepGrid steps={section.steps} lang={lang} className="mt-4" />
+          )}
+        </section>
+      ))}
+
+      {detail.datagrunnlag && slug !== "event-planner" && (
         <section aria-labelledby="plattform-datagrunnlag" className="mb-10">
           <SectionHeading id="plattform-datagrunnlag">{t(detail.datagrunnlag.heading, lang)}</SectionHeading>
           <p className={bodyTextClass}>{t(detail.datagrunnlag.body, lang)}</p>
@@ -240,18 +283,22 @@ function StrategicProjectDetailInner({ slug }: { slug: StrategicPlatformSlug }) 
         <GovernanceScenariosSection data={detail.governanceScenarios} lang={lang} />
       )}
 
-      <section aria-labelledby="plattform-bygget" className="mb-10">
-        <SectionHeading id="plattform-bygget">{t(detail.bygget.heading, lang)}</SectionHeading>
-        {detail.bygget.body && <p className={`${bodyTextClass} mb-4`}>{t(detail.bygget.body, lang)}</p>}
-        <ul className="space-y-2">
-          {detail.bygget.items.map((item) => (
-            <li key={item.no} className="flex items-start gap-2 text-sm text-slate-400 font-light leading-relaxed">
-              <ChevronRight size={14} className="text-indigo-400 shrink-0 mt-0.5" aria-hidden="true" />
-              <span>{t(item, lang)}</span>
-            </li>
-          ))}
-        </ul>
-      </section>
+      {slug !== "event-planner" && (
+        <section aria-labelledby="plattform-bygget" className="mb-10">
+          <SectionHeading id="plattform-bygget">{t(detail.bygget.heading, lang)}</SectionHeading>
+          {detail.bygget.body && <p className={`${bodyTextClass} mb-4`}>{t(detail.bygget.body, lang)}</p>}
+          {detail.bygget.items.length > 0 && (
+            <ul className="space-y-2">
+              {detail.bygget.items.map((item) => (
+                <li key={item.no} className="flex items-start gap-2 text-sm text-slate-400 font-light leading-relaxed">
+                  <ChevronRight size={14} className="text-indigo-400 shrink-0 mt-0.5" aria-hidden="true" />
+                  <span>{t(item, lang)}</span>
+                </li>
+              ))}
+            </ul>
+          )}
+        </section>
+      )}
 
       <section id="plattform-moduler" aria-labelledby="plattform-moduler-heading" className="mb-10 scroll-mt-24">
         <SectionHeading id="plattform-moduler-heading">{t(detail.moduler.heading, lang)}</SectionHeading>
@@ -281,6 +328,13 @@ function StrategicProjectDetailInner({ slug }: { slug: StrategicPlatformSlug }) 
         ) : null}
       </section>
 
+      {detail.datagrunnlag && slug === "event-planner" && (
+        <section aria-labelledby="plattform-datagrunnlag" className="mb-10">
+          <SectionHeading id="plattform-datagrunnlag">{t(detail.datagrunnlag.heading, lang)}</SectionHeading>
+          <p className={bodyTextClass}>{t(detail.datagrunnlag.body, lang)}</p>
+        </section>
+      )}
+
       {detail.demoPortfolio && <DemoPortfolioSection data={detail.demoPortfolio} lang={lang} />}
 
       <section aria-labelledby="plattform-relevans" className="mb-10">
@@ -295,7 +349,7 @@ function StrategicProjectDetailInner({ slug }: { slug: StrategicPlatformSlug }) 
             ))}
           </div>
         ) : detail.relevans.body ? (
-          <p className={bodyTextClass}>{t(detail.relevans.body, lang)}</p>
+          <MultilineBody text={t(detail.relevans.body, lang)} className={bodyTextClass} />
         ) : null}
       </section>
 

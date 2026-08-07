@@ -9,8 +9,8 @@ export const eventPlanner: ProsjektType = {
     en: "Event Planner",
   },
   teaser: {
-    no: "AI-assistert planlegging, koordinering og gjennomføring av arrangementer i én felles arbeidsflate – med deltakere, oppgaver, program, filer, naturlig språk og flerbrukersamarbeid.",
-    en: "AI-assisted planning, coordination and execution of events in one shared workspace — with participants, tasks, programme, files, natural language and multi-user collaboration.",
+    no: "AI-assistert planlegging, samarbeid og gjennomføring i én arbeidsflate — med Event Readiness, samtaler koblet til oppgaver og kostnader, budsjett og read-only demo.",
+    en: "AI-assisted planning, collaboration and execution in one workspace — with Event Readiness, conversations linked to tasks and costs, budget and read-only demo.",
   },
   bildeUrl: EVENT_PLANNER_OVERVIEW_IMAGE,
   bildeRamme: "natural",
