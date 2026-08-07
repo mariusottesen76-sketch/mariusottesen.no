@@ -166,7 +166,7 @@ export const overviewImageAudit: OverviewImageAuditEntry[] = [
   },
   {
     projectId: "event-planner-2026-08",
-    overviewImage: "/images/event-planner-hjemmeside.png?v=20260808a",
+    overviewImage: "/images/event-planner-hjemmeside.png?v=20260808b",
     aspectNote: "Vertikalt 1:3 oversiktsbilde — Nordic Growth Summit 2026 public demo (fiktive data)",
     fit: "contain",
     needsNewOverviewImage: false,

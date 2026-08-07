@@ -12,7 +12,7 @@ export const EVENT_PLANNER_DEMO_URL = `${EVENT_PLANNER_APP_URL}?demo=1`;
  * Cache-buster for prosjektbilder. Oppdater når nye skjermbilder fra demo er klare
  * (erstatt filene i public/images/ — samme filnavn og dimensjoner).
  */
-export const EVENT_PLANNER_IMAGE_VERSION = "20260808a";
+export const EVENT_PLANNER_IMAGE_VERSION = "20260808b";
 
 /**
  * Event Planner — porteføljesti og merkevare.
