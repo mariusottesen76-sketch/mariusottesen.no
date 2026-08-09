@@ -169,10 +169,10 @@ export const overviewImageAudit: OverviewImageAuditEntry[] = [
     overviewImage: "/images/event-planner-hjemmeside.png?v=20260808c",
     aspectNote: "Vertikalt 1:3 oversiktsbilde — Nordic Growth Summit 2026 public demo (fiktive data)",
     fit: "contain",
-    needsNewOverviewImage: false,
+    needsNewOverviewImage: true,
     recommendedFilename: "event-planner-hjemmeside.png",
     recommendedDimensions: "341×1024 px (1:3, samme leveransestørrelse som øvrige prosjekter)",
     notes:
-      "Skjermbilde fra read-only demo. Nordic Growth Summit 2026 — ingen private navn eller sensitive data.",
+      "Midlertidig bilde fra read-only demo. Skal erstattes med nytt Nordic Growth Summit-screenshot som tydelig viser Samtaler, Budsjett og Reise & opphold i navigasjonen.",
   },
 ];

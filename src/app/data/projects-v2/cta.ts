@@ -78,8 +78,8 @@ const accessCodeNote: LocalizedString = {
 };
 
 const eventPlannerDemoNote: LocalizedString = {
-  no: "Demoen bruker fiktive data og kan utforskes uten innlogging. Oppretting, redigering og samarbeid krever tilgang til private beta.",
-  en: "The demo uses fictional data and can be explored without logging in. Creating, editing and collaboration require access to the private beta.",
+  no: "Demoen bruker et fiktivt virksomhetsarrangement og kan utforskes uten innlogging. Den viser blant annet Event Readiness, oppgaver, samarbeid, budsjett og Reise & opphold. Oppretting, redigering og samarbeid krever tilgang til private beta.",
+  en: "The demo uses a fictional business event and can be explored without logging in. It shows among other things Event Readiness, tasks, collaboration, budget and Travel & accommodation. Creating, editing and collaboration require access to the private beta.",
 };
 
 function isEventPlannerWithDemo(project: ProjectV2Record): boolean {

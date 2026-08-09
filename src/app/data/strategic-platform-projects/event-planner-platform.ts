@@ -69,8 +69,8 @@ export const eventPlannerPlatform: StrategicPlatformProject = {
         en: "AI-assisted planning, collaboration and execution of events",
       },
       executiveSummary: {
-        no: "En full-stack arbeidsflate som kobler deltakere, oppgaver, program, samtaler, økonomi, dokumenter og proaktiv oppfølging – med AI integrert direkte i arbeidsflyten.",
-        en: "A full-stack workspace that connects participants, tasks, programme, conversations, finance, documents and proactive follow-up — with AI integrated directly into the workflow.",
+        no: "En full-stack arbeidsflate som kobler deltakere, oppgaver, program, samtaler, økonomi og dokumenter — med AI-forslag som må godkjennes før lagring.",
+        en: "A full-stack workspace that connects participants, tasks, programme, conversations, finance and documents — with AI suggestions that must be approved before saving.",
       },
       bildeAlt: {
         no: "Event Planner – AI-assistert arbeidsflate for planlegging, samarbeid og gjennomføring av arrangementer",
@@ -94,20 +94,20 @@ export const eventPlannerPlatform: StrategicPlatformProject = {
     logikk: {
       heading: { no: "AI i arbeidsflyten", en: "AI in the workflow" },
       body: {
-        no: "Quick Entry og Smart Paste gjør det mulig å registrere og oppdatere arrangementet med naturlig språk. AI kan tolke ustrukturerte meldinger og notater, identifisere eksisterende oppgaver, kostnader, leverandørvilkår, oppfølgingsbehov og beslutninger og foreslå strukturerte endringer.",
-        en: "Quick Entry and Smart Paste make it possible to register and update the event with natural language. AI can interpret unstructured messages and notes, identify existing tasks, costs, supplier terms, follow-up needs and decisions, and suggest structured changes.",
+        no: "Quick Entry, Smart Paste og samtaleanalyse lar arrangøren registrere informasjon med naturlig språk. AI tolker ustrukturert innhold og foreslår strukturerte handlinger — for eksempel kan en bestilling foreslås som kostnadspost med riktig økonomisk status.\n\nFlyten er: ustrukturert informasjon → AI-forslag → oppgave, beslutning eller kostnad → forhåndsvisning → eksplisitt godkjenning → lagring.",
+        en: "Quick Entry, Smart Paste and conversation analysis let the organiser register information in natural language. AI interprets unstructured content and suggests structured actions — for example, an order can be suggested as a cost item with the correct financial status.\n\nThe flow is: unstructured information → AI suggestion → task, decision or cost → preview → explicit approval → saved.",
       },
       after: {
-        no: "AI foreslår – brukeren bestemmer.\n\nForslag forhåndsvises og må godkjennes før de påvirker arrangementets data – med menneskelig kontroll (human-in-the-loop).",
-        en: "AI suggests — the user decides.\n\nSuggestions are previewed and must be approved before they affect the event's data — with human control (human-in-the-loop).",
+        no: "AI foreslår — brukeren bestemmer.",
+        en: "AI suggests — the user decides.",
       },
     },
     contentSections: [
       {
         heading: { no: "Samtale → handling", en: "Conversation → action" },
         body: {
-          no: "Samarbeidsfunksjonen reduserer informasjonstap mellom SMS, e-post og andre eksterne kanaler. Meldinger kan knyttes til konkrete oppgaver og kostnader, besvares i tråder og analyseres av AI.\n\nInformasjon kan dermed omformes til forslag om oppdatert oppgave, kostnad, leverandørinformasjon, beslutningsbehov eller oppfølging – uten at AI gjør endringene på egen hånd.",
-          en: "The collaboration feature reduces information loss between SMS, email and other external channels. Messages can be linked to specific tasks and cost items, answered in threads and analysed by AI.\n\nInformation can thus be transformed into suggestions for updated tasks, costs, supplier information, decision needs or follow-up — without AI making the changes on its own.",
+          no: "Samarbeidsfunksjonen samler dialog som ellers forsvinner i SMS og e-post. Meldinger kan knyttes til oppgaver og kostnader, besvares i tråder og analyseres av AI — uten at endringer skjer uten godkjenning.",
+          en: "The collaboration feature gathers dialogue that would otherwise be lost in SMS and email. Messages can be linked to tasks and costs, answered in threads and analysed by AI — without changes happening without approval.",
         },
         flowLine: {
           no: "Samtale\n→ strukturert informasjon\n→ oppgave / beslutning / kostnad\n→ ansvar\n→ oppfølging",
@@ -115,10 +115,10 @@ export const eventPlannerPlatform: StrategicPlatformProject = {
         },
       },
       {
-        heading: { no: "Arrangementsklarhet og proaktiv oppfølging", en: "Event readiness and proactive follow-up" },
+        heading: { no: "Arrangementsklarhet", en: "Event readiness" },
         body: {
-          no: "Event Readiness vurderer arrangementets faktiske status på tvers av deltakere, oppgaver og ansvar, program, mat og praktiske behov, infrastruktur og logistikk, beslutninger og risiko samt budsjett og økonomi.\n\nMotoren skiller mellom datakvalitet og faktisk planleggingsdekning, tar hensyn til frister, blokkeringer og manglende ansvar og prioriterer et begrenset antall anbefalte neste aktiviteter.\n\nMålet er å flytte løsningen fra digital sjekkliste til proaktiv prosjektadministrasjon og beslutningsstøtte.",
-          en: "Event Readiness assesses the event's actual status across participants, tasks and ownership, programme, food and practical needs, infrastructure and logistics, decisions and risk, and budget and finance.\n\nThe engine distinguishes between data quality and actual planning coverage, considers deadlines, blockers and missing ownership, and prioritises a limited set of recommended next activities.\n\nThe goal is to move the solution from digital checklist to proactive project administration and decision support.",
+          no: "Event Readiness vurderer status på tvers av deltakere, oppgaver, program, logistikk, beslutninger, risiko og økonomi. Motoren skiller datakvalitet fra planleggingsdekning, veier inn frister og blokkeringer, og prioriterer anbefalte neste aktiviteter.",
+          en: "Event Readiness assesses status across participants, tasks, programme, logistics, decisions, risk and finance. The engine distinguishes data quality from planning coverage, weighs in deadlines and blockers, and prioritises recommended next activities.",
         },
         flowLine: {
           no: "Signal\n→ Konsekvens\n→ Prioritet\n→ Tiltak\n→ Ansvar\n→ Frist",
@@ -128,15 +128,15 @@ export const eventPlannerPlatform: StrategicPlatformProject = {
       {
         heading: { no: "Budsjett og økonomistyring", en: "Budget and financial control" },
         body: {
-          no: "Budsjettmodulen følger økonomien gjennom fire nivåer: Godkjent budsjett → Prognose → Forpliktet → Faktisk.\n\nKostnadsposter kan knyttes til leverandører, oppgaver, samtaler og dokumentasjon. Event Planner beregner avvik mot budsjett og identifiserer signaler som mulig budsjettoverskridelse, manglende estimater og økonomiske usikkerheter.\n\nInformasjon fra en samtale kan foreslås som en strukturert kostnadspost, men lagres først etter brukerens godkjenning.",
-          en: "The budget module tracks finance through four levels: Approved budget → Forecast → Committed → Actual.\n\nCost items can be linked to suppliers, tasks, conversations and documentation. Event Planner calculates variance against budget and identifies signals such as potential budget overrun, missing estimates and financial uncertainties.\n\nInformation from a conversation can be suggested as a structured cost item, but is only saved after user approval.",
+          no: "Budsjettmodulen følger økonomien gjennom fire nivåer: Godkjent budsjett → Prognose → Forpliktet → Faktisk.\n\nKostnadsposter knyttes til leverandører, oppgaver og samtaler. Quick Entry og samtaleanalyse kan foreslå nye poster, som først lagres etter godkjenning. Avvik og økonomiske signaler beregnes mot budsjett.",
+          en: "The budget module tracks finance through four levels: Approved budget → Forecast → Committed → Actual.\n\nCost items are linked to suppliers, tasks and conversations. Quick Entry and conversation analysis can suggest new items, which are only saved after approval. Variance and financial signals are calculated against budget.",
         },
       },
       {
         heading: { no: "Tilpasset arrangementskontekst", en: "Adapted event context" },
         body: {
-          no: "Event Planner skiller mellom private og virksomhetsrettede arrangementer og bruker arrangementstype som kontekst for planlegging, anbefalinger og relevante funksjoner.\n\nSamme plattform og datamodell brukes på tvers av blant annet bursdag, bryllup og konfirmasjon, samt konferanse, messe, kundearrangement, kick-off og ledersamling. Planleggingsfokus og funksjoner tilpasses konteksten, og funksjoner som Reise & opphold kan aktiveres når arrangementet krever det.",
-          en: "Event Planner distinguishes between private and business-oriented events and uses event type as context for planning, recommendations and relevant features.\n\nThe same platform and data model are used across birthday, wedding and confirmation, as well as conference, trade fair, customer event, kick-off and leadership gathering. Planning focus and features are adapted to the context, and features such as Travel & accommodation can be activated when the event requires it.",
+          no: "Event Planner bruker arrangementstype som kontekst — samme plattform støtter private feiringer og profesjonelle virksomhetsarrangementer som konferanse, messe, kundearrangement og kick-off. Reise & opphold aktiveres valgfritt når arrangementet krever det.",
+          en: "Event Planner uses event type as context — the same platform supports private celebrations and professional business events such as conference, trade fair, customer event and kick-off. Travel & accommodation is activated optionally when the event requires it.",
         },
       },
     ],
@@ -150,8 +150,8 @@ export const eventPlannerPlatform: StrategicPlatformProject = {
     bygget: {
       heading: { no: "Hva som er bygget", en: "What has been built" },
       body: {
-        no: "Event Planner samler deltakere og RSVP, oppgaver og ansvar, program, dokumenter, samtaler og økonomi i én arrangementsbasert arbeidsflate. Flere brukere samarbeider i sanntid med rollebasert tilgang, mens AI-assistert registrering, analyse og proaktiv oppfølging arbeider på det samme strukturerte datagrunnlaget.",
-        en: "Event Planner brings participants and RSVP, tasks and ownership, programme, documents, conversations and finance together in one event-based workspace. Multiple users collaborate in real time with role-based access, while AI-assisted registration, analysis and proactive follow-up work on the same structured data foundation.",
+        no: "Event Planner samler deltakere og RSVP, oppgaver, program, dokumenter, samtaler og økonomi i én arbeidsflate. Flere brukere samarbeider i sanntid med rollebasert tilgang.",
+        en: "Event Planner brings participants and RSVP, tasks, programme, documents, conversations and finance together in one workspace. Multiple users collaborate in real time with role-based access.",
       },
       items: [],
     },
@@ -161,8 +161,8 @@ export const eventPlannerPlatform: StrategicPlatformProject = {
         {
           tittel: { no: "Planlegging og Event Readiness", en: "Planning and Event Readiness" },
           beskrivelse: {
-            no: "Oversikt, planleggingsmangler, anbefalte neste aktiviteter og proaktiv oppfølging på tvers av deltakere, oppgaver, program og økonomi.",
-            en: "Overview, planning gaps, recommended next activities and proactive follow-up across participants, tasks, programme and finance.",
+            no: "Oversikt, planleggingsmangler og anbefalte neste aktiviteter på tvers av deltakere, oppgaver, program og økonomi.",
+            en: "Overview, planning gaps and recommended next activities across participants, tasks, programme and finance.",
           },
           bygget: true,
         },
@@ -177,16 +177,24 @@ export const eventPlannerPlatform: StrategicPlatformProject = {
         {
           tittel: { no: "AI og menneskelig kontroll", en: "AI and human control" },
           beskrivelse: {
-            no: "Quick Entry, Smart Paste og AI-forslag med forhåndsvisning og eksplisitt godkjenning før lagring.",
-            en: "Quick Entry, Smart Paste and AI suggestions with preview and explicit approval before saving.",
+            no: "Quick Entry, Smart Paste og samtaleanalyse med forhåndsvisning før lagring.",
+            en: "Quick Entry, Smart Paste and conversation analysis with preview before saving.",
           },
           bygget: true,
         },
         {
           tittel: { no: "Budsjett og økonomistyring", en: "Budget and financial control" },
           beskrivelse: {
-            no: "Godkjent budsjett, prognose, forpliktet og faktisk – med avvik, signaler og kobling til leverandører og samtaler.",
+            no: "Godkjent budsjett, prognose, forpliktet og faktisk — med avvik, signaler og kobling til leverandører og samtaler.",
             en: "Approved budget, forecast, committed and actual — with variance, signals and links to suppliers and conversations.",
+          },
+          bygget: true,
+        },
+        {
+          tittel: { no: "Reise & opphold", en: "Travel & accommodation" },
+          beskrivelse: {
+            no: "Valgfri arbeidsflate for reisebehov, ankomst og avreise, hotell, transfer og ansvar for relevante deltakere.",
+            en: "Optional workspace for travel needs, arrival and departure, hotel, transfer and ownership for relevant participants.",
           },
           bygget: true,
         },
@@ -203,8 +211,8 @@ export const eventPlannerPlatform: StrategicPlatformProject = {
     hvordan: {
       heading: { no: "Hvordan løsningen fungerer", en: "How the solution works" },
       intro: {
-        no: "Arrangøren bygger gradvis et strukturert datagrunnlag med deltakere, aktiviteter, økonomi og samarbeid. Dashbord og readiness-motor analyserer status og løfter frem mangler og anbefalte neste aktiviteter.\n\nAI-assistenten arbeider på toppen av det samme datagrunnlaget og kan blant annet hjelpe med spørsmål som:",
-        en: "The organiser gradually builds a structured data foundation with participants, activities, finance and collaboration. Dashboard and readiness engine analyse status and surface gaps and recommended next activities.\n\nThe AI assistant works on top of the same data foundation and can help with questions such as:",
+        no: "Arrangøren bygger gradvis et datagrunnlag med deltakere, aktiviteter, økonomi og samarbeid. Readiness-motoren løfter frem mangler og anbefalte neste steg. AI-assistenten kan blant annet svare på:",
+        en: "The organiser gradually builds a data foundation with participants, activities, finance and collaboration. The readiness engine surfaces gaps and recommended next steps. The AI assistant can among other things answer:",
       },
       detaljpunkter: [
         { no: "Hva bør vi prioritere nå?", en: "What should we prioritise now?" },
@@ -217,15 +225,15 @@ export const eventPlannerPlatform: StrategicPlatformProject = {
     relevans: {
       heading: { no: "Relevans", en: "Relevance" },
       body: {
-        no: "Prosjektet utforsker hvordan generativ AI kan flyttes fra en separat chatbot til en integrert del av en operativ arbeidsprosess. Event Planner kombinerer generativ AI med deterministisk produktlogikk, strukturerte data, tilgangsstyring og menneskelig kontroll.\n\nCaset handler derfor ikke bare om å bygge en AI-applikasjon, men om hvordan arbeidsflyt, samarbeid, beslutninger og gjennomføring kan redesignes når AI blir en integrert del av systemet.",
-        en: "The project explores how generative AI can move from a separate chatbot to an integrated part of an operational workflow. Event Planner combines generative AI with deterministic product logic, structured data, access control and human control.\n\nThe case is therefore not just about building an AI application, but about how workflow, collaboration, decisions and execution can be redesigned when AI becomes an integrated part of the system.",
+        no: "Prosjektet utforsker hvordan generativ AI kan integreres i operativ arbeidsflyt — ikke som chatbot ved siden av, men som del av planlegging, samarbeid, beslutninger og gjennomføring.",
+        en: "The project explores how generative AI can be integrated into operational workflow — not as a chatbot on the side, but as part of planning, collaboration, decisions and execution.",
       },
     },
     status: {
       heading: { no: "Status og modenhet", en: "Status and maturity" },
       body: {
-        no: "Fungerende full-stack prototype · Private beta\n\nEvent Planner brukes i reell arrangementsplanlegging og har samtidig en offentlig skrivebeskyttet demo med fiktive data. Løsningen er et produkt- og porteføljeprosjekt under aktiv testing og videreutvikling – ikke et ferdig kommersielt SaaS-produkt.",
-        en: "Working full-stack prototype · Private beta\n\nEvent Planner is used in real event planning and also has a public write-protected demo with fictional data. The solution is a product and portfolio project under active testing and further development — not a finished commercial SaaS product.",
+        no: "Fungerende full-stack prototype · Private beta\n\nEvent Planner brukes i reell arrangementsplanlegging og har en offentlig skrivebeskyttet demo basert på fiktivt virksomhetscase. Løsningen er under aktiv testing og videreutvikling — ikke et ferdig kommersielt SaaS-produkt.",
+        en: "Working full-stack prototype · Private beta\n\nEvent Planner is used in real event planning and has a public write-protected demo based on a fictional business event case. The solution is under active testing and further development — not a finished commercial SaaS product.",
       },
     },
     skalerbarhet: {
@@ -238,7 +246,6 @@ export const eventPlannerPlatform: StrategicPlatformProject = {
           { no: "Automatiske varsler og påminnelser", en: "Automatic alerts and reminders" },
           { no: "Kalender- og e-postintegrasjoner", en: "Calendar and email integrations" },
           { no: "Selvbetjent RSVP for inviterte deltakere", en: "Self-service RSVP for invited participants" },
-          { no: "Reise & opphold som utvidet arbeidsflate", en: "Travel & accommodation as extended workspace" },
           { no: "Rapportering og erfaringsoppsummering etter gjennomføring", en: "Reporting and experience summary after execution" },
         ],
       },

@@ -9,7 +9,7 @@ export const eventPlannerV2: ProjectV2Record = {
   accessMode: "access_code",
   detailLevel: "full",
   publishedAt: "2026-08-04",
-  updatedAt: "2026-08-07",
+  updatedAt: "2026-08-10",
   date: "2026-08-04",
   displayDate: { no: "04.08.26", en: "04.08.26" },
   title: {
@@ -42,8 +42,8 @@ export const eventPlannerV2: ProjectV2Record = {
       en: "Events fragment across spreadsheets, email, SMS, messages and parallel checklists — without clear connection between agreements, ownership, cost, gaps and next steps.",
     },
     built: {
-      no: "Sanntidssamarbeid med trådede samtaler koblet til oppgaver og kostnader, Event Readiness, budsjettmodul, Quick Entry og Smart Paste med human-in-the-loop – samt rollebasert tilgang for Owner, Editor og Viewer.",
-      en: "Real-time collaboration with threaded conversations linked to tasks and costs, Event Readiness, budget module, Quick Entry and Smart Paste with human-in-the-loop — plus role-based access for Owner, Editor and Viewer.",
+      no: "Sanntidssamarbeid med trådede samtaler koblet til oppgaver og kostnader, Event Readiness, budsjett og økonomistyring, Quick Entry og Smart Paste med human-in-the-loop – samt valgfri Reise & opphold og rollebasert tilgang for Owner, Editor og Viewer.",
+      en: "Real-time collaboration with threaded conversations linked to tasks and costs, Event Readiness, budget and financial control, Quick Entry and Smart Paste with human-in-the-loop — plus optional Travel & accommodation and role-based access for Owner, Editor and Viewer.",
     },
     how: {
       no: "Arrangøren bygger gradvis et datagrunnlag, samarbeider i sanntid og følger opp via dashboard, readiness-motor og AI-assistent. Offentlig demo kan utforskes uten innlogging; full bruk krever tilgang til private beta.",
@@ -58,8 +58,8 @@ export const eventPlannerV2: ProjectV2Record = {
       en: "Working full-stack prototype · Private beta — used in real planning and has a public write-protected demo. Portfolio and development project, not finished commercial SaaS.",
     },
     development: {
-      no: "Videre utvikling kan omfatte ferdige maler, leverandør- og tilbudsoppfølging, varsler, kalender- og e-postintegrasjoner, selvbetjent RSVP, Reise & opphold og rapportering etter gjennomføring.",
-      en: "Further development may include ready-made templates, supplier and quote follow-up, alerts, calendar and email integrations, self-service RSVP, Travel & accommodation and post-event reporting.",
+      no: "Videre utvikling kan omfatte ferdige maler, leverandør- og tilbudsoppfølging, varsler, kalender- og e-postintegrasjoner, selvbetjent RSVP og rapportering etter gjennomføring.",
+      en: "Further development may include ready-made templates, supplier and quote follow-up, alerts, calendar and email integrations, self-service RSVP and post-event reporting.",
     },
     adaptation: {
       no: "Tilpasser planleggingsfokus etter om arrangementet er privat eller virksomhetsrettet – fra bursdag og bryllup til konferanse, messe, kick-off og kundearrangement. Relevante funksjoner kan aktiveres etter behov, eksempelvis Reise & opphold.",
@@ -69,7 +69,7 @@ export const eventPlannerV2: ProjectV2Record = {
   overviewImage: EVENT_PLANNER_OVERVIEW_IMAGE,
   detailHeroImage: EVENT_PLANNER_HERO_IMAGE,
   detailHeroObjectPosition: "center",
-  needsNewOverviewImage: false,
+  needsNewOverviewImage: true,
   needsNewDetailHero: false,
   altText: {
     no: "Event Planner – AI-assistert arbeidsflate for planlegging, samarbeid og gjennomføring av arrangementer",
