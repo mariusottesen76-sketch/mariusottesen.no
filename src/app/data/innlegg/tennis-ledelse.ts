@@ -16,10 +16,65 @@ const localize = (no: string, en: string = no): LocalizedText => ({ no, en });
 
 const tennisLedelseRaw = [
     {
+      id: "hr-responsible-adoption-bjørvika-2026-08",
+      tittel: "Når AI møter HR — ansvarlighet er ikke det motsatte av innovasjon",
+      teaser:
+        "Del 2 — jeg er invitert paneldeltaker i HR-nettverk Bjørvika om HR som innovasjonsmotor, og løfter noen synspunkter i forkant om responsible adoption, governance og balansen mellom innovasjonshastighet og menneskelig skjønn.",
+      bildeUrl: "/images/hr-som-innovasjonsmotor2.png",
+      bildeKortFokus: "82% 36%",
+      dato: "2026-08-17",
+      visningsDato: "17.08.26",
+      kategori: "Endring og gjennomføring",
+      link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
+      innhold: `<em>(Del 2: Responsible adoption)</em>
+
+19. august er jeg invitert inn som paneldeltaker i HR-nettverk Bjørvika for å diskutere «HR som innovasjonsmotor – eller som bremsekloss?»
+
+Sist onsdag skrev jeg om execution og gapet mellom gode initiativer, endret praksis og realisert verdi.
+
+Denne gangen vil jeg løfte noen andre perspektiver jeg tar med meg inn i diskusjonen.
+
+For gjennomføring alene er ikke nok.
+
+Når AI i økende grad brukes i rekruttering, kompetanseutvikling, medarbeideroppfølging, arbeidsprosesser og beslutningsstøtte, blir et annet spørsmål stadig viktigere:
+
+Hvordan øker vi innovasjonshastigheten uten å gi slipp på ansvar, tillit og menneskelig skjønn?
+
+Jeg tror dette blir en av HRs viktigste balanseganger fremover.
+
+💥 God governance trenger ikke å bremse innovasjon. Den kan gjøre det tryggere å skalere.
+
+Hvis ledere og medarbeidere vet hvilke rammer som gjelder, hvilke data som kan brukes, hvem som har ansvaret og når menneskelig vurdering er nødvendig, blir det også enklere å eksperimentere og ta nye løsninger i bruk.
+
+💥 Human-in-the-loop må være mer enn et prinsipp på et PowerPoint-ark.
+
+AI kan analysere, strukturere, foreslå og utfordre. Men når beslutninger påvirker mennesker, må virksomheten være tydelig på hvor teknologien slutter og det menneskelige ansvaret begynner.
+
+💥 HR bør ikke bare etablere retningslinjer for AI. HR kan bidra til å bygge organisasjonens evne til å bruke teknologien godt.
+
+Det handler om kompetanse, trening, trygg eksperimentering, nye arbeidsformer og lederoppfølging.
+
+For hvis governance bare handler om hva vi ikke kan gjøre, risikerer den å bli en bremsekloss.
+
+Men dersom governance skaper tydelige rammer for hva vi kan gjøre, hvordan vi lærer og hvordan ansvar ivaretas, kan den i stedet understøtte innovasjon.
+
+💥 Den virkelige utfordringen er derfor kanskje ikke å velge mellom fart og kontroll, men å bygge organisasjoner som mestrer begge deler.
+
+Det er dette jeg legger i Responsible adoption.
+
+Del 1 handlet om å komme fra innovasjon til execution. Del 2 handler om hvordan vi kan gjennomføre og skalere på en måte som også bygger tillit og ansvarlighet.
+
+Begge perspektivene tar jeg med meg inn i paneldiskusjonen i HR-nettverk Bjørvika.
+
+👉 Hva mener du? Hvor går balansen mellom nødvendig governance og behovet for å eksperimentere, lære og bevege seg raskt med AI?
+
+#StrategiskLedelse #HR #AI #Innovasjon #Transformasjon`,
+    },
+    {
       id: "hr-som-innovasjonsmotor-bjørvika-2026-08",
       tittel: "HR skal ikke eie innovasjonen — men HR kan være avgjørende for om den faktisk blir gjennomført",
       teaser:
-        "Jeg er invitert paneldeltaker i HR-nettverk Bjørvika om HR som innovasjonsmotor — og løfter noen synspunkter i forkant om gapet mellom gode initiativer og endret praksis, læringshastighet og gjennomføringsevne.",
+        "Del 1 — jeg er invitert paneldeltaker i HR-nettverk Bjørvika om HR som innovasjonsmotor, og løfter noen synspunkter i forkant om gapet mellom gode initiativer og endret praksis, læringshastighet og gjennomføringsevne.",
       bildeUrl: "/images/hr-som-innovasjonsmotor.jfif",
       bildeKortFokus: "86% 44%",
       dato: "2026-08-12",
@@ -60,15 +115,15 @@ I dette innlegget har jeg først og fremst satt søkelyset på execution: gapet 
 
 I en oppfølger vil jeg se på en annen side av den samme problemstillingen, nemlig Responsible adoption.
 
-<strong>Når KI møter HR: Ansvarlighet er ikke det motsatte av innovasjon.</strong>
+<strong>Når AI møter HR: Ansvarlighet er ikke det motsatte av innovasjon.</strong>
 
-For når KI i økende grad påvirker mennesker, arbeidsprosesser og beslutninger, må vi klare å kombinere innovasjonshastighet med ansvar, menneskelig skjønn og gode rammer.
+For når AI i økende grad påvirker mennesker, arbeidsprosesser og beslutninger, må vi klare å kombinere innovasjonshastighet med ansvar, menneskelig skjønn og gode rammer.
 
 👉 Hva mener du? Hvor kan HR gjøre størst forskjell for innovasjon og gjennomføringsevne, og når risikerer HR å bli en bremsekloss?
 
 For øvrig: Er du HR-leder og kvalifiserer for medlemskap, mener jeg dette nettverket absolutt er verdt å vurdere.
 
-#StrategiskLedelse #Innovasjon #HR #KunstigIntelligens #Transformasjon`,
+#StrategiskLedelse #Innovasjon #HR #AI #Transformasjon`,
     },
     {
       id: "control-tower-verdikjede-ledelse-2026-08",
@@ -1188,10 +1243,58 @@ Virksomheter feiler ofte av samme grunn.`,
 ];
 
 const tennisLedelseEn: Record<string, LocalizedTextMap> = {
+  "hr-responsible-adoption-bjørvika-2026-08": {
+    tittel: "When AI meets HR — responsibility is not the opposite of innovation",
+    teaser:
+      "Part 2 — I am an invited panel participant at HR-nettverk Bjørvika on HR as an innovation engine, and share some perspectives in advance on responsible adoption, governance and the balance between innovation speed and human judgement.",
+    innhold: `<em>(Part 2: Responsible adoption)</em>
+
+On 19 August I am invited as a panel participant in HR-nettverk Bjørvika to discuss «HR as an innovation engine — or as a brake?»
+
+Last Wednesday I wrote about execution and the gap between good initiatives, changed practice and realised value.
+
+This time I want to raise some other perspectives I am bringing into the discussion.
+
+Execution alone is not enough.
+
+As AI is increasingly used in recruitment, competence development, employee follow-up, work processes and decision support, another question becomes steadily more important:
+
+How do we increase innovation speed without letting go of responsibility, trust and human judgement?
+
+I believe this will be one of HR's most important balancing acts going forward.
+
+💥 Good governance does not have to slow innovation. It can make scaling safer.
+
+If leaders and employees know which frameworks apply, which data can be used, who owns the responsibility and when human assessment is necessary, it also becomes easier to experiment and adopt new solutions.
+
+💥 Human-in-the-loop must be more than a principle on a PowerPoint slide.
+
+AI can analyse, structure, suggest and challenge. But when decisions affect people, the organisation must be clear on where technology ends and human responsibility begins.
+
+💥 HR should not only establish guidelines for AI. HR can help build the organisation's ability to use the technology well.
+
+It is about competence, training, safe experimentation, new ways of working and leadership follow-up.
+
+Because if governance is only about what we cannot do, it risks becoming a brake.
+
+But if governance creates clear frameworks for what we can do, how we learn and how responsibility is safeguarded, it can instead support innovation.
+
+💥 The real challenge may therefore not be choosing between speed and control, but building organisations that master both.
+
+That is what I mean by responsible adoption.
+
+Part 1 was about moving from innovation to execution. Part 2 is about how we can implement and scale in a way that also builds trust and responsibility.
+
+I am bringing both perspectives into the panel discussion at HR-nettverk Bjørvika.
+
+👉 What do you think? Where is the balance between necessary governance and the need to experiment, learn and move quickly with AI?
+
+#StrategicLeadership #HR #AI #Innovation #Transformation`,
+  },
   "hr-som-innovasjonsmotor-bjørvika-2026-08": {
     tittel: "HR should not own innovation — but HR can be decisive for whether it is actually implemented",
     teaser:
-      "I am an invited panel participant at HR-nettverk Bjørvika on HR as an innovation engine — and share some perspectives in advance on the gap between good initiatives and changed practice, learning speed and execution capability.",
+      "Part 1 — I am an invited panel participant at HR-nettverk Bjørvika on HR as an innovation engine, and share some perspectives in advance on the gap between good initiatives and changed practice, learning speed and execution capability.",
     innhold: `<em>(Part 1: From innovation to execution)</em>
 
 On 19 August I am invited as a panel participant in HR-nettverk Bjørvika to discuss «HR as an innovation engine — or as a brake?».
@@ -1234,7 +1337,7 @@ Because as AI increasingly affects people, work processes and decisions, we must
 
 By the way: if you are an HR leader and qualify for membership, I think this network is absolutely worth considering.
 
-#StrategicLeadership #Innovation #HR #ArtificialIntelligence #Transformation`,
+#StrategicLeadership #Innovation #HR #AI #Transformation`,
   },
   "control-tower-verdikjede-ledelse-2026-08": {
     tittel: "When you as a leader do not own the entire value chain",
