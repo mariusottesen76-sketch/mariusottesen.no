@@ -19,7 +19,7 @@ const tennisLedelseRaw = [
       id: "hr-som-innovasjonsmotor-bjørvika-2026-08",
       tittel: "HR skal ikke eie innovasjonen — men HR kan være avgjørende for om den faktisk blir gjennomført",
       teaser:
-        "Jeg er paneldeltaker i HR-nettverk Bjørvika om HR som innovasjonsmotor — gapet mellom gode initiativer og endret praksis, læringshastighet og gjennomføringsevne.",
+        "Jeg er invitert paneldeltaker i HR-nettverk Bjørvika om HR som innovasjonsmotor — og løfter noen synspunkter i forkant om gapet mellom gode initiativer og endret praksis, læringshastighet og gjennomføringsevne.",
       bildeUrl: "/images/hr-som-innovasjonsmotor.jfif",
       bildeKortFokus: "86% 44%",
       dato: "2026-08-12",
@@ -1181,7 +1181,7 @@ const tennisLedelseEn: Record<string, LocalizedTextMap> = {
   "hr-som-innovasjonsmotor-bjørvika-2026-08": {
     tittel: "HR should not own innovation — but HR can be decisive for whether it is actually implemented",
     teaser:
-      "I am a panel participant at HR-nettverk Bjørvika on HR as an innovation engine — the gap between good initiatives and changed practice, learning speed and execution capability.",
+      "I am an invited panel participant at HR-nettverk Bjørvika on HR as an innovation engine — and share some perspectives in advance on the gap between good initiatives and changed practice, learning speed and execution capability.",
     innhold: `On 19 August I am invited as a panel participant in HR-nettverk Bjørvika to discuss «HR as an innovation engine — or as a brake?».
 
 Thanks to Tim Rosenkilde for the invitation. The topic touches on something I have become increasingly focused on in my work on leadership, transformation and AI:
