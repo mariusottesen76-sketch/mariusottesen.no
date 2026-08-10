@@ -26,7 +26,9 @@ const tennisLedelseRaw = [
       visningsDato: "12.08.26",
       kategori: "Endring og gjennomføring",
       link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
-      innhold: `19. august er jeg invitert inn som paneldeltaker i HR-nettverk Bjørvika for å diskutere «HR som innovasjonsmotor – eller som bremsekloss?».
+      innhold: `<em>(Del 1: Fra innovasjon til execution)</em>
+
+19. august er jeg invitert inn som paneldeltaker i HR-nettverk Bjørvika for å diskutere «HR som innovasjonsmotor – eller som bremsekloss?».
 
 Takk til Tim Rosenkilde for invitasjonen. Temaet treffer noe jeg har blitt stadig mer opptatt av i arbeidet med ledelse, transformasjon og AI:
 
@@ -36,7 +38,7 @@ Jeg går inn i diskusjonen med noen tydelige oppfatninger.
 
 💥 Vi må slutte å måle innovasjon på antall piloter og begynne å måle endret praksis og realisert verdi.
 
-En god idé, et nytt system eller en AI-løsning har begrenset verdi dersom den ikke tas i bruk, skaleres og påvirker hvordan virksomheten faktisk arbeider.
+En god idé, et nytt system eller en AI-løsning har begrenset verdi dersom den ikke tas i bruk, skaleres og endrer måten virksomheten arbeider på.
 
 💥 Den største AI-risikoen for mange virksomheter er kanskje ikke teknologien, men organisasjonens læringshastighet.
 
@@ -52,9 +54,17 @@ Og kanskje det viktigste HR-spørsmålet:
 
 Jeg mener derfor ikke nødvendigvis at HR skal være selve innovasjonsmotoren. Men HR kan spille en avgjørende rolle i å bygge organisasjonens evne til å lære, endre seg og gjennomføre.
 
-Det er noen av perspektivene jeg tar med meg inn i panelet til HR-nettverk møtet.
+Dette er noen av perspektivene jeg tar med meg inn i paneldiskusjonen i HR-nettverk Bjørvika.
 
-Hva mener du? Hvor kan HR gjøre størst forskjell for innovasjon og gjennomføringsevne, og når risikerer HR å bli en bremsekloss?
+I dette innlegget har jeg først og fremst satt søkelyset på execution: gapet mellom gode initiativer og faktisk endret praksis og realisert verdi.
+
+I en oppfølger vil jeg se på en annen side av den samme problemstillingen, nemlig Responsible adoption.
+
+<strong>Når KI møter HR: Ansvarlighet er ikke det motsatte av innovasjon.</strong>
+
+For når KI i økende grad påvirker mennesker, arbeidsprosesser og beslutninger, må vi klare å kombinere innovasjonshastighet med ansvar, menneskelig skjønn og gode rammer.
+
+👉 Hva mener du? Hvor kan HR gjøre størst forskjell for innovasjon og gjennomføringsevne, og når risikerer HR å bli en bremsekloss?
 
 For øvrig: Er du HR-leder og kvalifiserer for medlemskap, mener jeg dette nettverket absolutt er verdt å vurdere.
 
@@ -1182,7 +1192,9 @@ const tennisLedelseEn: Record<string, LocalizedTextMap> = {
     tittel: "HR should not own innovation — but HR can be decisive for whether it is actually implemented",
     teaser:
       "I am an invited panel participant at HR-nettverk Bjørvika on HR as an innovation engine — and share some perspectives in advance on the gap between good initiatives and changed practice, learning speed and execution capability.",
-    innhold: `On 19 August I am invited as a panel participant in HR-nettverk Bjørvika to discuss «HR as an innovation engine — or as a brake?».
+    innhold: `<em>(Part 1: From innovation to execution)</em>
+
+On 19 August I am invited as a panel participant in HR-nettverk Bjørvika to discuss «HR as an innovation engine — or as a brake?».
 
 Thanks to Tim Rosenkilde for the invitation. The topic touches on something I have become increasingly focused on in my work on leadership, transformation and AI:
 
@@ -1192,7 +1204,7 @@ I am going into the discussion with some clear views.
 
 💥 We must stop measuring innovation by the number of pilots and start measuring changed practice and realised value.
 
-A good idea, a new system or an AI solution has limited value if it is not adopted, scaled and changes how the organisation actually works.
+A good idea, a new system or an AI solution has limited value if it is not adopted, scaled and changes the way the organisation works.
 
 💥 For many organisations, the greatest AI risk may not be the technology, but the organisation's learning speed.
 
@@ -1208,9 +1220,17 @@ And perhaps the most important HR question:
 
 I therefore do not necessarily believe that HR should be the innovation engine itself. But HR can play a decisive role in building the organisation's ability to learn, change and execute.
 
-These are some of the perspectives I am bringing into the HR-nettverk panel.
+These are some of the perspectives I am bringing into the panel discussion at HR-nettverk Bjørvika.
 
-What do you think? Where can HR make the biggest difference for innovation and execution capability, and when does HR risk becoming a brake?
+In this post I have first and foremost focused on execution: the gap between good initiatives and actual changed practice and realised value.
+
+In a follow-up I will look at another side of the same issue, namely responsible adoption.
+
+<strong>When AI meets HR: Responsibility is not the opposite of innovation.</strong>
+
+Because as AI increasingly affects people, work processes and decisions, we must combine innovation speed with responsibility, human judgement and good frameworks.
+
+👉 What do you think? Where can HR make the biggest difference for innovation and execution capability, and when does HR risk becoming a brake?
 
 By the way: if you are an HR leader and qualify for membership, I think this network is absolutely worth considering.
 
