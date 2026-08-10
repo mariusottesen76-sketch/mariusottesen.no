@@ -98,6 +98,10 @@ const subtemaOverskriftKlasse =
 const sporKolonneOverskriftKlasse =
   "font-black text-white italic tracking-tight leading-tight hyphens-none [overflow-wrap:normal]";
 
+/** Kolonneoverskrift over innleggskort — mindre enn innholdsfortegnelsen over. */
+const fagKortKolonneOverskriftKlasse =
+  "font-black text-white italic tracking-tight leading-tight hyphens-none [overflow-wrap:normal] text-base md:text-lg border-b border-indigo-500/30 pb-1.5 mb-4";
+
 const Faginnlegg = ({ onNavigate }: { onNavigate?: (tab: string) => void }) => {
   const { lang } = useLanguage();
   const tr = (key: string) => getTranslation(key, lang);
@@ -335,8 +339,10 @@ const Faginnlegg = ({ onNavigate }: { onNavigate?: (tab: string) => void }) => {
           <span className="whitespace-nowrap">{tr("fag.kort.seksjon.intro.linkedin")}</span>
         </p>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
-        <section className="flex flex-col w-full min-w-0">
-          <div className="border-b-2 border-indigo-500/30 mb-4" aria-hidden="true" />
+        <section aria-labelledby="fag-kort-ledelse-heading" className="flex flex-col w-full min-w-0">
+          <h3 id="fag-kort-ledelse-heading" className={fagKortKolonneOverskriftKlasse}>
+            {tr("fag.kat.ledelse")}
+          </h3>
           <div className="flex flex-col gap-4">
             {ledelseInnlegg.length > 0 ? (
               ledelseInnlegg.map((innlegg) => (
@@ -348,8 +354,10 @@ const Faginnlegg = ({ onNavigate }: { onNavigate?: (tab: string) => void }) => {
           </div>
         </section>
 
-        <section className="flex flex-col w-full min-w-0">
-          <div className="border-b-2 border-indigo-500/30 mb-4" aria-hidden="true" />
+        <section aria-labelledby="fag-kort-ai-heading" className="flex flex-col w-full min-w-0">
+          <h3 id="fag-kort-ai-heading" className={fagKortKolonneOverskriftKlasse}>
+            {tr("fag.kat.ai")}
+          </h3>
           <div className="flex flex-col gap-4">
             {aiInnlegg.length > 0 ? (
               aiInnlegg.map((innlegg) => (

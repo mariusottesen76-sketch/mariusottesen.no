@@ -16,6 +16,51 @@ const localize = (no: string, en: string = no): LocalizedText => ({ no, en });
 
 const tennisLedelseRaw = [
     {
+      id: "hr-som-innovasjonsmotor-bjørvika-2026-08",
+      tittel: "HR skal ikke eie innovasjonen — men HR kan være avgjørende for om den faktisk blir gjennomført",
+      teaser:
+        "Jeg er paneldeltaker i HR-nettverk Bjørvika om HR som innovasjonsmotor — gapet mellom gode initiativer og endret praksis, læringshastighet og gjennomføringsevne.",
+      bildeUrl: "/images/hr-som-innovasjonsmotor.jfif",
+      bildeKortFokus: "86% 44%",
+      dato: "2026-08-12",
+      visningsDato: "12.08.26",
+      kategori: "Endring og gjennomføring",
+      link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
+      innhold: `19. august er jeg invitert inn som paneldeltaker i HR-nettverk Bjørvika for å diskutere «HR som innovasjonsmotor – eller som bremsekloss?».
+
+Takk til Tim Rosenkilde for invitasjonen. Temaet treffer noe jeg har blitt stadig mer opptatt av i arbeidet med ledelse, transformasjon og AI:
+
+Gapet mellom gode initiativer og faktisk endret praksis.
+
+Jeg går inn i diskusjonen med noen tydelige oppfatninger.
+
+💥 Vi må slutte å måle innovasjon på antall piloter og begynne å måle endret praksis og realisert verdi.
+
+En god idé, et nytt system eller en AI-løsning har begrenset verdi dersom den ikke tas i bruk, skaleres og påvirker hvordan virksomheten faktisk arbeider.
+
+💥 Den største AI-risikoen for mange virksomheter er kanskje ikke teknologien, men organisasjonens læringshastighet.
+
+Tilgangen til teknologi blir stadig mer lik. Forskjellen kan derfor i større grad ligge i ledelse, kompetanse, kultur, beslutningskraft og hvor raskt organisasjonen klarer å endre arbeidsformer.
+
+💥 Hvis innovasjon bare er et prosjekt ved siden av jobben, taper det ofte mot den operative hverdagen.
+
+Skal innovasjon gi effekt, må den inn i prioriteringer, ansvar, arbeidsprosesser, kompetanseutvikling og lederoppfølging. Den må bli en del av måten virksomheten drives på.
+
+Og kanskje det viktigste HR-spørsmålet:
+
+💥 HR bør være like opptatt av hvordan arbeid faktisk utføres som av hvordan organisasjonskartet ser ut.
+
+Jeg mener derfor ikke nødvendigvis at HR skal være selve innovasjonsmotoren. Men HR kan spille en avgjørende rolle i å bygge organisasjonens evne til å lære, endre seg og gjennomføre.
+
+Det er noen av perspektivene jeg tar med meg inn i panelet til HR-nettverk møtet.
+
+Hva mener du? Hvor kan HR gjøre størst forskjell for innovasjon og gjennomføringsevne, og når risikerer HR å bli en bremsekloss?
+
+For øvrig: Er du HR-leder og kvalifiserer for medlemskap, mener jeg dette nettverket absolutt er verdt å vurdere.
+
+#StrategiskLedelse #Innovasjon #HR #KunstigIntelligens #Transformasjon`,
+    },
+    {
       id: "control-tower-verdikjede-ledelse-2026-08",
       tittel: "Når du som leder ikke eier hele verdikjeden",
       teaser:
@@ -1133,6 +1178,44 @@ Virksomheter feiler ofte av samme grunn.`,
 ];
 
 const tennisLedelseEn: Record<string, LocalizedTextMap> = {
+  "hr-som-innovasjonsmotor-bjørvika-2026-08": {
+    tittel: "HR should not own innovation — but HR can be decisive for whether it is actually implemented",
+    teaser:
+      "I am a panel participant at HR-nettverk Bjørvika on HR as an innovation engine — the gap between good initiatives and changed practice, learning speed and execution capability.",
+    innhold: `On 19 August I am invited as a panel participant in HR-nettverk Bjørvika to discuss «HR as an innovation engine — or as a brake?».
+
+Thanks to Tim Rosenkilde for the invitation. The topic touches on something I have become increasingly focused on in my work on leadership, transformation and AI:
+
+The gap between good initiatives and actual changed practice.
+
+I am going into the discussion with some clear views.
+
+💥 We must stop measuring innovation by the number of pilots and start measuring changed practice and realised value.
+
+A good idea, a new system or an AI solution has limited value if it is not adopted, scaled and changes how the organisation actually works.
+
+💥 For many organisations, the greatest AI risk may not be the technology, but the organisation's learning speed.
+
+Access to technology is becoming increasingly similar. The difference may therefore lie to a greater extent in leadership, competence, culture, decision power and how quickly the organisation manages to change ways of working.
+
+💥 If innovation is only a project on the side of the day job, it often loses to operational everyday life.
+
+For innovation to have effect, it must enter priorities, ownership, work processes, competence development and leadership follow-up. It must become part of how the business is run.
+
+And perhaps the most important HR question:
+
+💥 HR should be as concerned with how work is actually performed as with how the org chart looks.
+
+I therefore do not necessarily believe that HR should be the innovation engine itself. But HR can play a decisive role in building the organisation's ability to learn, change and execute.
+
+These are some of the perspectives I am bringing into the HR-nettverk panel.
+
+What do you think? Where can HR make the biggest difference for innovation and execution capability, and when does HR risk becoming a brake?
+
+By the way: if you are an HR leader and qualify for membership, I think this network is absolutely worth considering.
+
+#StrategicLeadership #Innovation #HR #ArtificialIntelligence #Transformation`,
+  },
   "control-tower-verdikjede-ledelse-2026-08": {
     tittel: "When you as a leader do not own the entire value chain",
     teaser:
