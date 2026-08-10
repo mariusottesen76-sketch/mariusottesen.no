@@ -60,6 +60,57 @@ const fireApperKarusellBilder = Array.from({ length: 10 }, (_, i) => ({
 
 const aiGovernanceRaw = [
     {
+      id: "tangen-konkurransekraft-arendalsuka-2026-08",
+      tittel: "Fra AI-bruk til konkurransekraft",
+      teaser:
+        "Fra TEK Norge og Arendalsuka — Tangen om AI-verktøy og opplæring, gevinstrealisering, tillit og skiftet fra å teste AI til å industrialisere den.",
+      bildeUrl: "/images/tangen-konkurransekraft.jpg",
+      bildeVersjon: "2026-08-11",
+      dato: "2026-08-11",
+      visningsDato: "11.08.26",
+      kategori: "AI / KI",
+      link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
+      innhold: `I går deltok jeg på TEK Norges «Rikets tilstand på kunstig intelligens» under Arendalsuka.
+
+Nicolai Tangen satte tonen innledningsvis. Å ikke gi medarbeiderne AI-verktøyene de trenger, sammenlignet han med å gå femmila uten staver.
+
+Han argumenterte også for obligatorisk opplæring, fordi de som vil minst ofte er de som trenger den mest. Og kanskje viktigst: Faller virksomheter noen år bak, kan konsekvensen være tapt konkurransekraft.
+
+Tallene fra IT i praksis viser at opplevd gevinstrealisering fra KI i offentlig sektor økte fra 39 % i 2025 til 54 % i 2026.
+
+Men her ligger også utfordringen ❗
+
+Gevinstene tas fortsatt i stor grad ut hos enkeltmedarbeideren. Først når bedre kvalitet, frigjort tid og produktivitet bygges inn i arbeidsprosesser og systematiseres på virksomhetsnivå, begynner vi virkelig å skalere verdien.
+
+Samtidig ble en annen barriere tydelig: tilliten til KI er lav. Morten Goodwin pekte på at mer erfaring også kan gi økt skepsis. Skalering krever derfor transparens, kvalitetssikring og menneskelig involvering.
+
+Norge er gode på å ta teknologi i bruk, men svakere enn Sverige og Danmark på kommersialisering. Det ble blant annet vist til færre patenter og oppstartsbedrifter, lavere investeringer og færre som velger KI-relaterte utdanningsløp.
+
+Norges utfordring er derfor i økende grad ikke tilgang til teknologi. Det er gjennomføringsevne og kommersialisering.
+
+For meg peker dette mot et tydelig skifte:
+
+💥 Fra å teste AI til å industrialisere AI.
+
+Da handler det ikke bare om teknologi. Prosesser, organisering, ansvar, kompetanse, tillit og måling må utvikles samtidig. AI skaper først verdi når teknologien endrer hvordan virksomheten arbeider, prioriterer og leverer.
+
+Og her mener jeg inhouse-kompetanse blir avgjørende.
+
+Eksterne konsulenter og teknologipartnere vil fortsatt være viktige. Men virksomheten må selv eie prioriteringene, beslutningene og læringen. Hvis kritisk AI-kompetanse bare ligger eksternt, kan man kjøpe fart uten å bygge varig gjennomføringsevne.
+
+Det handler ikke om konsulenter eller inhouse. Det handler om hvilken kompetanse virksomheten må eie selv, hvor ekstern spisskompetanse gir størst effekt, og om å ha bestillerkompetanse nok til å kreve dokumentert verdi.
+
+Det er også mye av tankegangen bak mitt arbeid med <a href="/ai-transformation-value-realization" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors"><strong>AI Transformation & Value Realization</strong></a>, som hjelper virksomheter med å prioritere de riktige initiativene, få dem inn i driften, skalere det som virker og følge effekten frem til dokumentert verdi.
+
+AI-strategien er ikke ferdig når teknologien er valgt.
+
+Det er da lederjobben virkelig begynner.
+
+👉 Hvor mange norske virksomheter mener du er rigget for den delen?
+
+#KunstigIntelligens #DigitalTransformasjon #Teknologiledelse #Kommersialisering #Strategi`,
+    },
+    {
       id: "event-planner-fest-planlegging-2026-08",
       tittel: "Jeg skulle bare planlegge en fest — det endte med en AI-plattform for gjennomføring.",
       teaser:
@@ -2197,6 +2248,50 @@ AI-dømmekraft er ikke en teknisk nisjeferdighet. Det er en lederkompetanse.`
 ];
 
 const aiGovernanceEn: Record<string, LocalizedTextMap> = {
+  "tangen-konkurransekraft-arendalsuka-2026-08": {
+    tittel: "From AI use to competitiveness",
+    teaser:
+      "From TEK Norway and Arendalsuka — Tangen on AI tools and training, value realisation, trust and the shift from testing AI to industrialising it.",
+    innhold: `Yesterday I took part in TEK Norway's «The state of artificial intelligence» during Arendalsuka.
+
+Nicolai Tangen set the tone in his opening remarks. Not giving employees the AI tools they need, he compared to running a five-kilometre race without poles.
+
+He also argued for mandatory training, because those who want it least are often those who need it most. And perhaps most importantly: if organisations fall a few years behind, the consequence can be lost competitiveness.
+
+Figures from IT i praksis show that perceived value realisation from AI in the public sector increased from 39% in 2025 to 54% in 2026.
+
+But that is also where the challenge lies ❗
+
+The gains are still largely captured at individual employee level. Only when better quality, freed time and productivity are built into work processes and systematised at enterprise level do we really begin to scale the value.
+
+At the same time, another barrier became clear: trust in AI is low. Morten Goodwin pointed out that more experience can also increase scepticism. Scaling therefore requires transparency, quality assurance and human involvement.
+
+Norway is good at adopting technology, but weaker than Sweden and Denmark on commercialisation. Reference was made among other things to fewer patents and start-ups, lower investment and fewer choosing AI-related education paths.
+
+Norway's challenge is therefore increasingly not access to technology. It is execution capability and commercialisation.
+
+For me this points to a clear shift:
+
+💥 From testing AI to industrialising AI.
+
+Then it is not just about technology. Processes, organisation, ownership, competence, trust and measurement must develop at the same time. AI only creates value when the technology changes how the organisation works, prioritises and delivers.
+
+And here I believe in-house competence becomes decisive.
+
+External consultants and technology partners will remain important. But the organisation must own the priorities, decisions and learning itself. If critical AI competence sits only externally, you can buy speed without building lasting execution capability.
+
+It is not about consultants or in-house. It is about which competence the organisation must own itself, where external specialist expertise gives the greatest effect, and having enough buyer competence to demand documented value.
+
+That is also much of the thinking behind my work on <a href="/ai-transformation-value-realization" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors"><strong>AI Transformation & Value Realization</strong></a>, which helps organisations prioritise the right initiatives, bring them into operations, scale what works and follow impact through to documented value.
+
+The AI strategy is not finished when the technology is chosen.
+
+That is when the leadership job really begins.
+
+👉 How many Norwegian organisations do you think are set up for that part?
+
+#ArtificialIntelligence #DigitalTransformation #TechnologyLeadership #Commercialisation #Strategy`,
+  },
   "event-planner-fest-planlegging-2026-08": {
     tittel: "I was only going to plan a party — it ended up as an AI platform for execution.",
     teaser:

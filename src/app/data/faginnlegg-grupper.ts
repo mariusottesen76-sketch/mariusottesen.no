@@ -85,6 +85,7 @@ export const AI_SUBTEMA: FaginnleggSubtema[] = [
     id: "ai-grunnlag",
     label: { no: "Grunnlag og perspektiv", en: "Foundation and perspective" },
     innleggIds: [
+      "tangen-konkurransekraft-arendalsuka-2026-08",
       "alle-snakker-ai-01",
       "ai-foles-nytt-01",
       "ai-ikke-intelligent-01",
