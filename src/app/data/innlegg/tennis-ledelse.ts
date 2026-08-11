@@ -77,8 +77,8 @@ Begge perspektivene tar jeg med meg inn i paneldiskusjonen i HR-nettverk Bjørvi
         "Del 1 — jeg er invitert paneldeltaker i HR-nettverk Bjørvika om HR som innovasjonsmotor, og løfter noen synspunkter i forkant om gapet mellom gode initiativer og endret praksis, læringshastighet og gjennomføringsevne.",
       bildeUrl: "/images/hr-som-innovasjonsmotor.jfif",
       bildeKortFokus: "86% 44%",
-      dato: "2026-08-12",
-      visningsDato: "12.08.26",
+      dato: "2026-08-13",
+      visningsDato: "13.08.26",
       kategori: "Endring og gjennomføring",
       link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
       innhold: `<em>(Del 1: Fra innovasjon til execution)</em>

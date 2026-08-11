@@ -60,6 +60,63 @@ const fireApperKarusellBilder = Array.from({ length: 10 }, (_, i) => ({
 
 const aiGovernanceRaw = [
     {
+      id: "digital-norway-ai-maniac-arendalsuka-2026-08",
+      tittel: "Den største AI-risikoen? Å gå for sakte.",
+      teaser:
+        "Fra en topptung Digital Norway-paneldebatt under Arendalsuka — Tangen med flere om tempo og produktivitet, balansen mellom kritisk dømmekraft og offensivitet, og hvorfor ledere må teste, leke og bygge selv.",
+      bildeUrl: "/images/digital-norway-arendal1.png",
+      bildeKortFokus: "28% center",
+      dato: "2026-08-12",
+      visningsDato: "12.08.26",
+      kategori: "AI / KI",
+      link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
+      innhold: `Digital Norways paneldebatt under Arendalsuka i dag samlet et svært topptungt panel rundt spørsmålet: Må topplederen være en «AI-maniac»?
+
+Nicolai Tangen satte tempoet fra start og utfordret både panelet og norske ledere, mens Liv Dingsør ledet debatten godt og holdt den både skarp og relevant.
+
+Tangen var tydelig på hvor raskt dette nå går. Han viste til at virksomheter kan øke produktiviteten med rundt 20 % på ett år, og at de som lykkes over 2–3 år kan ligge rundt 50 % foran konkurrentene.
+
+Det perspektivet bør flere ledergrupper ta inn over seg.
+
+Vi trenger heller ikke se langt. Danmark og Sverige ligger foran Norge på AI-bruk i virksomhetene, og Tangen trakk selv frem Sverige som et land vi risikerer å bli akterutseilt av dersom vi ikke øker tempoet.
+
+Jeg opplevde samtidig et interessant spenn i panelet mellom offensivitet og kritisk distanse.
+
+Kritisk dømmekraft er nødvendig. Men en kritisk grunnholdning kan bli en strategisk svakhet, og ansvarlighet må ikke bli et annet ord for handlingslammelse.
+
+Vi skal selvfølgelig ha governance, human in the loop, datasikkerhet og tydelige rammer for sensitive data.
+
+Men dersom utgangspunktet først og fremst blir å lete etter hva som kan gå galt, risikerer vi også å begrense det Hans Christian Holte kalte vår «digitale forestillingsevne»: evnen til å se hva som nå faktisk er mulig.
+
+AI er kommet for å bli. Da mener jeg vi må jobbe med teknologien, utfordre den og angripe mulighetene offensivt.
+
+Det krever også at ledere går inn i verktøyene selv.
+
+Teste. Leke. Bygge.
+
+Tangen var opptatt av nettopp dette, og Benedicte Schilbred Fasmer fortalte hvordan Telenors toppledere selv hadde bygget applikasjoner i en sandkasse.
+
+Det kjenner jeg meg godt igjen i.
+
+Etter å ha jobbet praktisk med dette over tid har jeg nå bygget nærmere 20 AI-løsninger og prototyper. Fra <a href="/control-tower" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors"><strong>Control Tower</strong></a> for operativ og kommersiell styring, til salgsutvikling og kundedialog, teamdynamikk og lederstøtte, beslutningsstøtte og agentiske arbeidsflyter.
+
+Ikke alt skal nødvendigvis bli et salgbart produkt.
+
+Poenget er også læringen. Når man bygger selv, ser man tydeligere både mulighetene, begrensningene og hvor teknologien faktisk kan skape verdi.
+
+Det er artig, lærerikt og givende.
+
+Og det bygger dømmekraft.
+
+For meg blir derfor ikke hovedspørsmålet om toppledere må være «AI-maniacs».
+
+👉 Spørsmålet er om ledere har råd til å holde avstand til en teknologi som allerede endrer produktivitet, arbeidsformer og konkurransekraft.
+
+Det tror jeg ikke de har ❗
+
+#AI #Ledelse #DigitalTransformasjon #Strategi #Gjennomføring`,
+    },
+    {
       id: "tangen-konkurransekraft-arendalsuka-2026-08",
       tittel: "Fra AI-bruk til konkurransekraft",
       teaser:
@@ -2248,6 +2305,56 @@ AI-dømmekraft er ikke en teknisk nisjeferdighet. Det er en lederkompetanse.`
 ];
 
 const aiGovernanceEn: Record<string, LocalizedTextMap> = {
+  "digital-norway-ai-maniac-arendalsuka-2026-08": {
+    tittel: "The greatest AI risk? Moving too slowly.",
+    teaser:
+      "From a high-profile Digital Norway panel debate at Arendalsuka — Tangen and others on pace and productivity, the balance between critical judgement and offensiveness, and why leaders must test, play and build themselves.",
+    innhold: `Digital Norway's panel debate during Arendalsuka today brought together a very high-profile panel around the question: Must the top leader be an «AI-maniac»?
+
+Nicolai Tangen set the pace from the start and challenged both the panel and Norwegian leaders, while Liv Dingsør moderated the debate well and kept it both sharp and relevant.
+
+Tangen was clear on how fast this is now moving. He pointed to businesses being able to increase productivity by around 20% in one year, and that those who succeed over 2–3 years can be around 50% ahead of competitors.
+
+More leadership teams should take that perspective on board.
+
+We do not need to look far either. Denmark and Sweden are ahead of Norway on AI use in businesses, and Tangen himself highlighted Sweden as a country we risk being left behind by if we do not increase the pace.
+
+At the same time I experienced an interesting tension in the panel between offensiveness and critical distance.
+
+Critical judgement is necessary. But a critical default stance can become a strategic weakness, and responsibility must not become another word for paralysis.
+
+We should of course have governance, human in the loop, data security and clear frameworks for sensitive data.
+
+But if the starting point is first and foremost to look for what can go wrong, we also risk limiting what Hans Christian Holte called our «digital imagination»: the ability to see what is actually possible now.
+
+AI is here to stay. I believe we must work with the technology, challenge it and pursue the opportunities offensively.
+
+That also requires leaders to get into the tools themselves.
+
+Test. Play. Build.
+
+Tangen was focused on exactly this, and Benedicte Schilbred Fasmer described how Telenor's top leaders had built applications themselves in a sandbox.
+
+I recognise that well.
+
+After working practically with this over time, I have now built close to 20 AI solutions and prototypes. From <a href="/control-tower" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors"><strong>Control Tower</strong></a> for operational and commercial governance, to sales development and customer dialogue, team dynamics and leadership support, decision support and agentic workflows.
+
+Not everything necessarily needs to become a commercial product.
+
+The point is also the learning. When you build yourself, you see more clearly both the opportunities, the limitations and where the technology can actually create value.
+
+It is fun, educational and rewarding.
+
+And it builds judgement.
+
+For me, therefore, the main question is not whether top leaders must be «AI-maniacs».
+
+👉 The question is whether leaders can afford to keep their distance from a technology that is already changing productivity, ways of working and competitiveness.
+
+I do not think they can ❗
+
+#AI #Leadership #DigitalTransformation #Strategy #Execution`,
+  },
   "tangen-konkurransekraft-arendalsuka-2026-08": {
     tittel: "From AI use to competitiveness",
     teaser:
