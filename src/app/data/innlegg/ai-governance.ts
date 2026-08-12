@@ -60,6 +60,50 @@ const fireApperKarusellBilder = Array.from({ length: 10 }, (_, i) => ({
 
 const aiGovernanceRaw = [
     {
+      id: "fdsa-grunnmur-digital-norway-arendalsuka-2026-08",
+      tittel: "Du kan godt leie huset, men vi må eie tomten.",
+      teaser:
+        "Fra Digital Norway under Arendalsuka — Forsvarets datasentriske arkitektur, eie data versus utskiftbar teknologi, og hvorfor AI-transformasjon er et lederansvar langt utenfor Forsvaret.",
+      bildeUrl: "/images/digital-norway-arendalsuka2.png",
+      dato: "2026-08-13",
+      visningsDato: "13.08.26",
+      kategori: "AI / KI",
+      link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
+      innhold: `Det var kanskje den mest presise formuleringen jeg tok med meg fra Forsvarets lansering av sin datasentriske arkitektur, FDSA.
+
+Tomta er dataene, begrepene, semantikken og retten til å bestemme over dem. Huset er applikasjonene, skytjenestene og AI-modellene som må kunne byttes når noe bedre kommer.
+
+I går fulgte jeg Digital Norways arrangement under Arendalsuka: «Forsvaret lanserer grunnmuren for et digitalt totalforsvar».
+
+Bjørn Tore Markussen satte retningen tydelig:
+
+«Teknologien skal være utskiftbar, dataene skal ikke være det.»
+
+For meg er dette langt mer enn et forsvarsspørsmål. Det er et strategisk ledertema for alle virksomheter som investerer tungt i AI, data og digitale plattformer.
+
+Karianne Tung pekte på en av de viktigste årsakene til at AI-prosjekter feiler: Virksomheter undervurderer både tiden og kostnaden ved å systematisere og få kontroll på dataene.
+
+Uten god datakvalitet blir AI-transformasjon vanskelig. Og uten felles standarder blir deling, skalering og samarbeid dyrere og tregere.
+
+Riksrevisor Karl Eirik Schjøtt-Pedersen løftet samtidig et viktig korrektiv da han poengterte at organisatoriske og styringsmessige forhold kan være minst like viktige som teknologien.
+
+Avinor illustrerte kompleksiteten godt. Bare informasjonen vi møter på Gardermoen kan være resultatet av integrasjon mellom rundt 60 datakilder. Teknisk integrasjon alene løser derfor ikke spørsmålet om tilgang, identitet, ansvar og kontroll.
+
+Noe av det mest interessante var at Markussen ikke beskrev dette som ett stort digitaliseringsprosjekt, men som «10 000 inkrementer over fem år».
+
+Det er også slik jeg tror mye av AI-transformasjonen i virksomheter vil skje. Ikke gjennom ett stort prosjekt, men gjennom mange små forbedringer som gradvis endrer beslutninger, prosesser og arbeidsmåter.
+
+Mot slutten kom formuleringen jeg stadig hører i diskusjoner om AI og digital transformasjon, og som oppsummerte hele diskusjonen godt:
+
+«Dette er et lederansvar.»
+
+For ledergrupper blir derfor spørsmålet ikke bare hvilke AI-verktøy vi skal kjøpe. Det handler om hva vi må eie, standardisere og kontrollere for å kunne utnytte teknologien uten å miste handlefriheten.
+
+Takk til Digital Norway for nok en gang å løfte frem et viktig og faglig relevant tema.
+
+#Arendalsuka #AI #Teknologiledelse #DigitalSuverenitet #DataStrategi`,
+    },
+    {
       id: "digital-norway-ai-maniac-arendalsuka-2026-08",
       tittel: "Den største AI-risikoen? Å gå for sakte.",
       teaser:
@@ -2305,6 +2349,44 @@ AI-dømmekraft er ikke en teknisk nisjeferdighet. Det er en lederkompetanse.`
 ];
 
 const aiGovernanceEn: Record<string, LocalizedTextMap> = {
+  "fdsa-grunnmur-digital-norway-arendalsuka-2026-08": {
+    tittel: "You can rent the house, but we must own the plot.",
+    teaser:
+      "From Digital Norway at Arendalsuka — the Armed Forces' data-centric architecture, owning data versus replaceable technology, and why AI transformation is a leadership responsibility far beyond defence.",
+    innhold: `It was perhaps the most precise formulation I took away from the launch of the Norwegian Armed Forces' data-centric architecture, FDSA.
+
+The plot is the data, the concepts, the semantics and the right to decide over them. The house is the applications, cloud services and AI models that must be replaceable when something better comes along.
+
+Yesterday I followed Digital Norway's event during Arendalsuka: «The Armed Forces launch the foundation for a digital total defence».
+
+Bjørn Tore Markussen set the direction clearly:
+
+«Technology must be replaceable; data must not be.»
+
+For me this is far more than a defence issue. It is a strategic leadership theme for every organisation investing heavily in AI, data and digital platforms.
+
+Karianne Tung pointed to one of the most important reasons AI projects fail: organisations underestimate both the time and cost of systematising and gaining control of their data.
+
+Without good data quality, AI transformation becomes difficult. And without common standards, sharing, scaling and collaboration become more expensive and slower.
+
+Auditor General Karl Eirik Schjøtt-Pedersen raised an important corrective when he emphasised that organisational and governance factors can be at least as important as the technology.
+
+Avinor illustrated the complexity well. The information we encounter at Gardermoen alone can be the result of integration between around 60 data sources. Technical integration alone therefore does not solve the question of access, identity, responsibility and control.
+
+One of the most interesting points was that Markussen did not describe this as one large digitalisation project, but as «10,000 increments over five years».
+
+That is also how I believe much of AI transformation in organisations will happen. Not through one large project, but through many small improvements that gradually change decisions, processes and ways of working.
+
+Towards the end came the formulation I keep hearing in discussions about AI and digital transformation, and which summed up the whole discussion well:
+
+«This is a leadership responsibility.»
+
+For leadership teams, the question is therefore not just which AI tools to buy. It is about what we must own, standardise and control in order to use the technology without losing freedom of action.
+
+Thanks to Digital Norway for once again raising an important and professionally relevant theme.
+
+#Arendalsuka #AI #TechnologyLeadership #DigitalSovereignty #DataStrategy`,
+  },
   "digital-norway-ai-maniac-arendalsuka-2026-08": {
     tittel: "The greatest AI risk? Moving too slowly.",
     teaser:
