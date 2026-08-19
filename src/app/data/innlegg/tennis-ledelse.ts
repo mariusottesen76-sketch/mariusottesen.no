@@ -16,6 +16,65 @@ const localize = (no: string, en: string = no): LocalizedText => ({ no, en });
 
 const tennisLedelseRaw = [
     {
+      id: "hr-panel-innovasjonsmotor-bjørvika-2026-08",
+      tittel: "HR trenger ikke eie innovasjonen — men HR kan være avgjørende for om den blir til endret praksis og verdi",
+      teaser:
+        "Etter panel i HR-nettverk Bjørvika — hva jeg tok med meg ut om tidlig involvering, prioritering, AI som virkemiddel, ansvarlighet og egen innovasjonskompetanse.",
+      bildeUrl: "/images/HR-nettverk-paneldebatt.jpg",
+      bildeKortFokus: "22% center",
+      dato: "2026-08-20",
+      visningsDato: "20.08.26",
+      kategori: "Endring og gjennomføring",
+      link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
+      innhold: `I går satt jeg i panelet i HR-nettverk Bjørvika sammen med Morten Kvellestad og Hans Jacob Christensen, i en faglig diskusjon ledet av Tim Rosenkilde om «HR som innovasjonsmotor – eller som bremsekloss?»
+
+Før møtet skrev jeg om execution og responsible adoption. Flere av perspektivene jeg tok med meg inn i panelet, ble også sentrale i diskusjonen. Samtidig kom det frem noen viktige nyanser fra HR-hverdagen.
+
+Så hva tok jeg med meg ut?
+
+💥 HR trenger ikke eie innovasjonen, men bør være med langt tidligere i prosessen
+
+Når strategi, nye arbeidsformer eller teknologi først er besluttet og HR kobles inn for å «få med menneskene», kan mye allerede være låst.
+
+Kompetanse, organisering, kultur og gjennomføring bør inn mens endringen designes. HR må også bidra til robuste medarbeidere som forstår nytten, opplever mestring og blir med på endringen ❗
+
+💥 Innovasjon krever prioritering – og nedprioritering
+
+Et tydelig perspektiv fra deltakerne var hvor krevende dette er i praksis. Mange HR-funksjoner står i et høyt operativt press, samtidig som muligheten til å påvirke de større strategiske beslutningene kan være begrenset.
+
+Skal HR bidra sterkere til innovasjon, må det derfor også skapes kapasitet til det. Innovasjon kan ikke bare legges oppå alt det andre ❗
+
+💥 AI er et virkemiddel, ikke selve innovasjonen
+
+Diskusjonen beveget seg naturlig mye inn på AI. Men spørsmålet bør ikke starte med hvilken AI-løsning virksomheten skal kjøpe.
+
+Det bør starte med hvilket problem vi skal løse, hvilken arbeidsprosess vi ønsker å forbedre og hvilken verdi vi skal skape ❗
+
+AI kan være en del av løsningen. Noen ganger er den ikke det.
+
+💥 Ansvarlighet og innovasjon er ikke motsetninger
+
+Data, sikkerhet, human-in-the-loop, kritisk tenkning og governance blir stadig viktigere når AI tas inn i arbeidsprosessene.
+
+Gode rammer skal ikke bare fortelle oss hva vi ikke kan gjøre. De bør gjøre det tryggere å eksperimentere, lære og skalere ❗
+
+Og ett perspektiv sitter jeg kanskje enda sterkere igjen med:
+
+💥 Virksomheter må bygge og eie mer av innovasjons- og AI-kompetansen selv
+
+Ekstern spisskompetanse kan tilføre fart, erfaring og nye perspektiver. Men virksomheten kan ikke outsource sin egen evne til å forstå mulighetene, prioritere riktig og utvikle organisasjonen over tid.
+
+Det er forskjell på å ha tilgang til kompetanse og å eie den ❗
+
+Min viktigste konklusjon etter diskusjonen er derfor at HR kanskje ikke skal være selve innovasjonsmotoren.
+
+Men HR kan være avgjørende for å bygge virksomhetens evne til å lære, endre seg og gjennomføre, samtidig som menneskene blir med på reisen ❗
+
+👉 Hva mener du er HRs viktigste bidrag til innovasjon?
+
+#StrategiskLedelse #Innovasjon #HR #AI #Transformasjon`,
+    },
+    {
       id: "hr-responsible-adoption-bjørvika-2026-08",
       tittel: "Når AI møter HR — ansvarlighet er ikke det motsatte av innovasjon",
       teaser:
@@ -1243,6 +1302,58 @@ Virksomheter feiler ofte av samme grunn.`,
 ];
 
 const tennisLedelseEn: Record<string, LocalizedTextMap> = {
+  "hr-panel-innovasjonsmotor-bjørvika-2026-08": {
+    tittel: "HR does not need to own innovation — but HR can be decisive for whether it becomes changed practice and value",
+    teaser:
+      "After the panel at HR-nettverk Bjørvika — what I took away on early involvement, prioritisation, AI as a means, responsibility and in-house innovation competence.",
+    innhold: `Yesterday I sat on the panel at HR-nettverk Bjørvika together with Morten Kvellestad and Hans Jacob Christensen, in a professional discussion led by Tim Rosenkilde on «HR as an innovation engine — or as a brake?»
+
+Before the meeting I wrote about execution and responsible adoption. Several of the perspectives I brought into the panel also became central in the discussion. At the same time, some important nuances from HR everyday life emerged.
+
+So what did I take away?
+
+💥 HR does not need to own innovation, but should be involved much earlier in the process
+
+When strategy, new ways of working or technology has already been decided and HR is brought in to «get people on board», much may already be locked in.
+
+Competence, organisation, culture and execution should be part of the design of the change. HR must also help build robust employees who understand the benefit, experience mastery and come along on the change ❗
+
+💥 Innovation requires prioritisation — and deprioritisation
+
+A clear perspective from participants was how demanding this is in practice. Many HR functions are under high operational pressure, while the ability to influence the larger strategic decisions may be limited.
+
+If HR is to contribute more strongly to innovation, capacity must also be created for it. Innovation cannot simply be added on top of everything else ❗
+
+💥 AI is a means, not innovation itself
+
+The discussion naturally moved a lot into AI. But the question should not start with which AI solution the organisation should buy.
+
+It should start with which problem we are solving, which work process we want to improve and which value we want to create ❗
+
+AI can be part of the solution. Sometimes it is not.
+
+💥 Responsibility and innovation are not opposites
+
+Data, security, human-in-the-loop, critical thinking and governance are becoming steadily more important when AI is brought into work processes.
+
+Good frameworks should not only tell us what we cannot do. They should make it safer to experiment, learn and scale ❗
+
+And one perspective I may sit even more strongly with:
+
+💥 Organisations must build and own more of their innovation and AI competence themselves
+
+External specialist expertise can add speed, experience and new perspectives. But the organisation cannot outsource its own ability to understand the opportunities, prioritise correctly and develop the organisation over time.
+
+There is a difference between having access to competence and owning it ❗
+
+My most important conclusion after the discussion is therefore that HR may not need to be the innovation engine itself.
+
+But HR can be decisive in building the organisation's ability to learn, change and execute, while bringing people along on the journey ❗
+
+👉 What do you think is HR's most important contribution to innovation?
+
+#StrategicLeadership #Innovation #HR #AI #Transformation`,
+  },
   "hr-responsible-adoption-bjørvika-2026-08": {
     tittel: "When AI meets HR — responsibility is not the opposite of innovation",
     teaser:
