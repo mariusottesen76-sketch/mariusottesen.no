@@ -20,8 +20,9 @@ const tennisLedelseRaw = [
       tittel: "HR trenger ikke eie innovasjonen — men HR kan være avgjørende for om den blir til endret praksis og verdi",
       teaser:
         "Etter panel i HR-nettverk Bjørvika — hva jeg tok med meg ut om tidlig involvering, prioritering, AI som virkemiddel, ansvarlighet og egen innovasjonskompetanse.",
-      bildeUrl: "/images/HR-nettverk-paneldebatt.jpg",
-      bildeKortFokus: "22% center",
+      bildeUrl: "/images/HR-nettverk-paneldebatt.png",
+      bildeVersjon: "2026-08-20",
+      bildeKortFokus: "38% center",
       dato: "2026-08-20",
       visningsDato: "20.08.26",
       kategori: "Endring og gjennomføring",
