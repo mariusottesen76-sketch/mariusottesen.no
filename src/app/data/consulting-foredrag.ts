@@ -34,6 +34,10 @@ const data = {
         text: "Hvordan ledergrupper kan prioritere riktig, koble strategi til gjennomføring og skape målbar effekt på tvers av salg, drift og kommersiell utvikling — med erfaring fra executive plattformer, arrangementsplanlegging og praktisk AI-portefølje.",
       },
     ] satisfies ForedragKort[],
+    bidrag: {
+      title: "Faglige bidrag og sparring",
+      text: "Jeg bidrar også i relevante faglige sammenhenger, blant annet paneldebatter, innlegg og sparring innen kommersiell ledelse, salgsutvikling, teamutvikling, transformasjon og praktisk AI. Salgscoaching og individuell utvikling kan også være aktuelt når det passer problemstillingen.",
+    },
     cta: "Ta kontakt for faglig dialog",
   },
   en: {
@@ -67,6 +71,10 @@ const data = {
         text: "How leadership groups can prioritise well, connect strategy to execution and create measurable impact across sales, operations and commercial development — drawing on experience from executive platforms, event planning and a practical AI portfolio.",
       },
     ] satisfies ForedragKort[],
+    bidrag: {
+      title: "Professional contributions and sparring",
+      text: "I also contribute in relevant professional settings, including panel discussions, talks and sparring on commercial leadership, sales development, team development, transformation and practical AI. Sales coaching and individual development may also be relevant when suited to the specific challenge.",
+    },
     cta: "Get in touch for a professional conversation",
   },
 };

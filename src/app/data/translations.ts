@@ -382,8 +382,8 @@ const translations: Translations = {
   "cons.prosjekter.link": { no: "Se AI-prosjekter", en: "See AI projects" },
   "cons.dialog": { no: "Kontakt og videre dialog", en: "Contact and further dialogue" },
   "cons.dialog.intro": {
-    no: "Bruk gjerne skjemaet dersom du ønsker å komme i dialog. Henvendelser vurderes ut fra relevans for aktuelle lederroller, rekrutteringsprosesser, faglige problemstillinger eller mulige fremtidige sammenhenger.",
-    en: "Please use the form if you would like to start a conversation. Inquiries are assessed based on relevance for current leadership roles, recruitment processes, professional topics or possible future contexts.",
+    no: "Bruk gjerne skjemaet dersom du ønsker å komme i dialog. Henvendelser vurderes ut fra relevans for aktuelle lederroller, rekrutteringsprosesser, faglige problemstillinger, paneldebatter, innlegg, sparring eller mulige fremtidige sammenhenger.",
+    en: "Please use the form if you would like to start a conversation. Inquiries are assessed based on relevance for leadership opportunities, recruitment processes, professional topics, panel discussions, talks, sparring or potential future opportunities.",
   },
   "cons.send": { no: "Send melding", en: "Send message" },
   "cons.sender": { no: "Sender...", en: "Sending..." },
@@ -406,8 +406,8 @@ const translations: Translations = {
   },
   "kontakt.dialog": { no: "Komme i dialog", en: "Start a conversation" },
   "kontakt.dialog.desc": {
-    no: "Bruk gjerne skjemaet dersom du ønsker å komme i dialog. Henvendelser vurderes ut fra relevans for aktuelle lederroller, rekrutteringsprosesser, faglige problemstillinger eller mulige fremtidige sammenhenger.",
-    en: "Please use the form if you would like to start a conversation. Inquiries are assessed based on relevance for current leadership roles, recruitment processes, professional topics or possible future contexts.",
+    no: "Bruk gjerne skjemaet dersom du ønsker å komme i dialog. Henvendelser vurderes ut fra relevans for aktuelle lederroller, rekrutteringsprosesser, faglige problemstillinger, paneldebatter, innlegg, sparring eller mulige fremtidige sammenhenger.",
+    en: "Please use the form if you would like to start a conversation. Inquiries are assessed based on relevance for leadership opportunities, recruitment processes, professional topics, panel discussions, talks, sparring or potential future opportunities.",
   },
   "kontakt.cta": {
     no: "Du er også velkommen til å ta kontakt direkte på e-post eller LinkedIn.",

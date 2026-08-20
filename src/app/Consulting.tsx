@@ -449,6 +449,10 @@ export default function Consulting() {
             </div>
           ))}
         </div>
+        <div className="p-4 bg-slate-900/40 rounded-xl border border-slate-800 space-y-2 mb-6">
+          <h3 className={cardTitleClass}>{foredrag.bidrag.title}</h3>
+          <p className="text-slate-400 text-sm leading-relaxed font-light">{foredrag.bidrag.text}</p>
+        </div>
         <Link href="/kontakt" className={ctaBtnClass}>
           {foredrag.cta}
         </Link>
