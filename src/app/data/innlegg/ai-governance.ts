@@ -60,6 +60,65 @@ const fireApperKarusellBilder = Array.from({ length: 10 }, (_, i) => ({
 
 const aiGovernanceRaw = [
     {
+      id: "bedre-data-beslutninger-tech-frokost-2026-08",
+      tittel: "Bedre data. Bedre beslutninger.",
+      teaser:
+        "Fra Digital Norways Tech-frokost: Orkla om svinghjulet for å bli datadrevet, og Statens vegvesens Risikokurve — maskinlæring som gjør det mulig å prioritere tiltak der de betyr mest.",
+      bildeUrl: "/images/tech-frokost-mc.png",
+      bildeKortFokus: "center 18%",
+      dato: "2026-08-25",
+      visningsDato: "25.08.26",
+      kategori: "AI / KI",
+      link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
+      innhold: `<strong>Noen ganger kan det redde liv.</strong>
+
+På Digital Norways Tech-frokost i dag viste Orkla Home & Personal Care og Statens vegvesen to ulike, men svært konkrete veier mot å bli mer datadrevne.
+
+Teknologien er grunnmuren. Verdien oppstår når data påvirker beslutninger, arbeidsprosesser og prioriteringer.
+
+<strong>Orkla og svinghjulet</strong>
+
+Hans-Martin Thorsby Gjermstad beskrev implementering, integrering og innovasjon som tre gjensidig avhengige deler i samme svinghjul.
+
+<strong>Implementering ↔ Integrering ↔ Innovasjon ↔ Implementering</strong>
+
+Poenget er ikke rekkefølgen, men samspillet. Hver del påvirker de to andre.
+
+Kultur og kompetanse. Tverrfaglighet. Målbar verdi. Prioritering. Skalering. Og evnen til å utfordre selve arbeidsprosessen, ikke bare lage en raskere versjon av det man allerede gjør.
+
+Jeg likte også poenget om å balansere raske gevinster som skaper energi, med større initiativer som krever mer endringskapasitet og kan gi betydelig effekt på bunnlinjen.
+
+<strong>Statens vegvesen og et tydelig hvorfor</strong>
+
+Johan Fu og Anders Eggum startet et helt annet sted.
+
+«Alle skal hjem.»
+
+Nullvisjonen handler om null drepte og hardt skadde på norske veier.
+
+Gjennom Risikokurve, som vant Digitaliseringsprisen 2026, bruker Statens vegvesen maskinlæring til å analysere over 100 000 kurver. Rundt 9 000 er flagget i ulike risikokategorier, slik at fagpersoner kan prioritere befaringer og tiltak bedre.
+
+Data erstatter ikke fagkompetansen. De gjør det mulig å bruke den mer målrettet.
+
+Dette traff meg også personlig.
+
+I vår krasjet jeg på MC på E18 i Oslo og traff autovernet som fungerer som veiskiller. Jeg kom hjem den dagen, etter en tur innom legevakten. Jeg var heldig. Motorsykkelen lot seg ikke redde.
+
+Derfor var Statens vegvesens innlegg spesielt interessant. Risikokurve viser hvordan data, maskinlæring og fagkompetanse kan brukes til å finne utsatte steder og prioritere tiltak med størst effekt.
+
+På stedet der jeg krasjet er det fortsatt ingen ekstra beskyttelse foran den eksponerte stålkonstruksjonen.
+
+Når Statens vegvesen selv løfter frem risikoen for MC-førere ved autovern og sideterreng, håper jeg arbeidet også gir flere konkrete forbedringer. Gummibasert eller annen energiabsorberende beskyttelse bør være verdt å vurdere der det er trafikksikkerhetsfaglig egnet.
+
+For meg viser dette hva datadrevet utvikling kan bety i praksis. Bedre beslutningsgrunnlag, riktigere prioriteringer og i ytterste konsekvens flere som kommer trygt hjem.
+
+Det er også styrken ved denne typen møter. Konkrete erfaringer fra virksomheter som omsetter data og teknologi til bedre beslutninger og resultater.
+
+Hyggelig også å dele frokosten med Thomas Holm, medstudent fra BI-kurset Generative AI for Business. Enda en anledning til å diskutere hvordan data og AI går fra teknologi til verdiskaping i virksomheter.
+
+#Datadrevet #AI #DigitalTransformasjon #Ledelse #Verdiskaping`,
+    },
+    {
       id: "fdsa-grunnmur-digital-norway-arendalsuka-2026-08",
       tittel: "Du kan godt leie huset, men vi må eie tomten.",
       teaser:
@@ -2349,6 +2408,58 @@ AI-dømmekraft er ikke en teknisk nisjeferdighet. Det er en lederkompetanse.`
 ];
 
 const aiGovernanceEn: Record<string, LocalizedTextMap> = {
+  "bedre-data-beslutninger-tech-frokost-2026-08": {
+    tittel: "Better data. Better decisions.",
+    teaser:
+      "From Digital Norway's Tech breakfast: Orkla on the flywheel for becoming data-driven, and the Norwegian Public Roads Administration's Risikokurve — machine learning that makes it possible to prioritise measures where they matter most.",
+    innhold: `<strong>Sometimes it can save lives.</strong>
+
+At Digital Norway's Tech breakfast today, Orkla Home & Personal Care and the Norwegian Public Roads Administration showed two different, but very concrete, paths towards becoming more data-driven.
+
+Technology is the foundation. Value arises when data influences decisions, work processes and priorities.
+
+<strong>Orkla and the flywheel</strong>
+
+Hans-Martin Thorsby Gjermstad described implementation, integration and innovation as three mutually dependent parts of the same flywheel.
+
+<strong>Implementation ↔ Integration ↔ Innovation ↔ Implementation</strong>
+
+The point is not the sequence, but the interaction. Each part affects the other two.
+
+Culture and competence. Cross-disciplinarity. Measurable value. Prioritisation. Scaling. And the ability to challenge the work process itself, not just create a faster version of what you already do.
+
+I also liked the point about balancing quick wins that create energy with larger initiatives that require more change capacity and can have a significant effect on the bottom line.
+
+<strong>The Norwegian Public Roads Administration and a clear why</strong>
+
+Johan Fu and Anders Eggum started from a completely different place.
+
+«Everyone should get home.»
+
+Vision Zero is about zero killed and seriously injured on Norwegian roads.
+
+Through Risikokurve, which won the Digitalisation Award 2026, the Norwegian Public Roads Administration uses machine learning to analyse more than 100,000 curves. Around 9,000 are flagged in different risk categories, so that specialists can prioritise inspections and measures more effectively.
+
+Data does not replace professional expertise. It makes it possible to use that expertise more precisely.
+
+This also struck me personally.
+
+This spring I crashed on a motorcycle on the E18 in Oslo and hit the crash barrier that functions as a median divider. I got home that day, after a visit to the emergency clinic. I was lucky. The motorcycle could not be saved.
+
+That is why the Norwegian Public Roads Administration's talk was particularly interesting. Risikokurve shows how data, machine learning and professional expertise can be used to find exposed locations and prioritise measures with the greatest effect.
+
+At the place where I crashed, there is still no extra protection in front of the exposed steel structure.
+
+When the Norwegian Public Roads Administration itself highlights the risk for motorcyclists at crash barriers and roadside terrain, I hope the work also leads to more concrete improvements. Rubber-based or other energy-absorbing protection should be worth considering where it is appropriate from a road safety perspective.
+
+For me, this shows what data-driven development can mean in practice. A better basis for decisions, more accurate priorities, and in the extreme, more people who get home safely.
+
+That is also the strength of this kind of meeting. Concrete experience from organisations that turn data and technology into better decisions and results.
+
+It was also good to share breakfast with Thomas Holm, a fellow student from the BI course Generative AI for Business. Yet another opportunity to discuss how data and AI move from technology to value creation in organisations.
+
+#Datadrevet #AI #DigitalTransformasjon #Ledelse #Verdiskaping`,
+  },
   "fdsa-grunnmur-digital-norway-arendalsuka-2026-08": {
     tittel: "You can rent the house, but we must own the plot.",
     teaser:
