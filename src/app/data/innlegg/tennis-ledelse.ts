@@ -16,6 +16,56 @@ const localize = (no: string, en: string = no): LocalizedText => ({ no, en });
 
 const tennisLedelseRaw = [
     {
+      id: "ai-mottaker-endringsledelse-2026-08",
+      tittel: "Det mest interessante med AI denne uken har egentlig ikke vært AI",
+      teaser:
+        "Fra ukes refleksjon — forskjellen på å sende et budskap og å skape en mottaker, og hvorfor digital transformasjon avgjøres i oversettelsen fra strategi til arbeidshverdag.",
+      bildeUrl: "/images/marius-med-folk.png",
+      bildeKortFokus: "68% 38%",
+      dato: "2026-08-27",
+      visningsDato: "27.08.26",
+      kategori: "Endring og gjennomføring",
+      link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
+      innhold: `Jeg har vært på flere faglige arrangementer og hatt gode samtaler med mennesker som jobber tett på digitalisering og transformasjon.
+
+På tvers av virksomheter, bransjer og modenhetsnivåer går én utfordring igjen:
+
+Det er stor forskjell på å sende et budskap og å skape en mottaker.
+
+Ledelsen kan ha forstått hvorfor virksomheten må endre seg. Strategien kan være god. Verktøyene kan være tilgjengelige. Dataene kan ligge klare.
+
+Men hvis menneskene som skal bruke dem ikke forstår hvorfor, ser relevansen i egen hverdag eller får anledning til å trene på nye arbeidsmåter, skjer det lite.
+
+Det er kanskje her mye digital transformasjon avgjøres. Ikke i teknologien, men i oversettelsen.
+
+🔸 Fra strategi til arbeidshverdag.
+🔸 Fra data til beslutning.
+🔸 Fra kurs til ferdighet.
+🔸 Fra AI-verktøy til en arbeidsprosess som er bedre enn den gamle.
+
+Jeg kjenner dette godt fra kommersiell ledelse. Det hjelper lite at CRM viser hvor mulighetene ligger dersom kundeprioriteringen ikke endres. Og det hjelper lite at salg ser ett bilde og drift et annet dersom ingen bygger bro mellom dem.
+
+AI gjør dette enda tydeligere.
+
+Vi kan få bedre beslutningsstøtte, raskere innsikt og helt nye måter å trene, simulere og løse oppgaver på. Men verdien kommer først når vi samtidig våger å redesigne hvordan arbeidet utføres.
+
+McKinsey & Company peker på at endringsledelse og siloer er større barrierer for skalering av AI enn teknologisk infrastruktur.
+
+Boston Consulting Group (BCG) viser samtidig at bare 28 prosent av frontlinjemedarbeidere opplever en sterk sammenheng mellom det ledelsen sier om AI og det organisasjonen gjør.
+
+Det er et lederproblem før det er et teknologiproblem.
+
+<strong>Kilder</strong>
+
+McKinsey & Company, <em>How to close the agentic adoption gap</em>, 7. august 2026. McKinsey viser blant annet at endringsledelse og siloer vurderes som større hindringer for skalering av AI enn teknologisk infrastruktur.
+
+Boston Consulting Group, <em>AI at Work: Why Strategy Matters More Than Tools</em>, 3. juni 2026. BCGs globale undersøkelse blant nær 12 000 ledere, mellomledere og medarbeidere viser blant annet at bare 28 % av frontlinjemedarbeiderne ser en sterk sammenheng mellom det ledelsen kommuniserer om AI og det organisasjonen gjør i praksis.
+
+👉 Hva mener du vi må endre i måten vi leder, samarbeider og arbeider på for at teknologien skal skape verdi?
+
+#DigitalTransformasjon #Ledelse #AI #Endringsledelse #Gjennomføring`,
+    },
+    {
       id: "hr-panel-innovasjonsmotor-bjørvika-2026-08",
       tittel: "HR trenger ikke eie innovasjonen — men HR kan være avgjørende for om den blir til endret praksis og verdi",
       teaser:
@@ -1303,6 +1353,49 @@ Virksomheter feiler ofte av samme grunn.`,
 ];
 
 const tennisLedelseEn: Record<string, LocalizedTextMap> = {
+  "ai-mottaker-endringsledelse-2026-08": {
+    tittel: "The most interesting thing about AI this week has not really been AI",
+    teaser:
+      "From this week's reflections — the difference between sending a message and creating a recipient, and why digital transformation is decided in the translation from strategy to everyday work.",
+    innhold: `I have been at several professional events and had good conversations with people working closely on digitalisation and transformation.
+
+Across organisations, industries and maturity levels, one challenge keeps coming up:
+
+There is a big difference between sending a message and creating a recipient.
+
+Leadership may have understood why the organisation must change. The strategy may be sound. The tools may be available. The data may be ready.
+
+But if the people who are supposed to use them do not understand why, see the relevance in their own everyday work or get the opportunity to practise new ways of working, little happens.
+
+Perhaps that is where much digital transformation is decided. Not in the technology, but in the translation.
+
+🔸 From strategy to everyday work.
+🔸 From data to decision.
+🔸 From training to skill.
+🔸 From AI tools to a work process that is better than the old one.
+
+I know this well from commercial leadership. It helps little that the CRM shows where the opportunities lie if customer prioritisation does not change. And it helps little that sales see one picture and operations another if no one builds the bridge between them.
+
+AI makes this even clearer.
+
+We can get better decision support, faster insight and entirely new ways to train, simulate and solve tasks. But the value only comes when we also dare to redesign how the work is performed.
+
+McKinsey & Company points out that change leadership and silos are greater barriers to scaling AI than technological infrastructure.
+
+Boston Consulting Group (BCG) shows at the same time that only 28 per cent of frontline employees experience a strong connection between what leadership says about AI and what the organisation actually does.
+
+It is a leadership problem before it is a technology problem.
+
+<strong>Sources</strong>
+
+McKinsey & Company, <em>How to close the agentic adoption gap</em>, 7 August 2026. McKinsey shows among other things that change leadership and silos are seen as greater obstacles to scaling AI than technological infrastructure.
+
+Boston Consulting Group, <em>AI at Work: Why Strategy Matters More Than Tools</em>, 3 June 2026. BCG's global survey among nearly 12,000 leaders, middle managers and employees shows among other things that only 28% of frontline employees see a strong connection between what leadership communicates about AI and what the organisation does in practice.
+
+👉 What do you think we need to change in the way we lead, collaborate and work for technology to create value?
+
+#DigitalTransformation #Leadership #AI #ChangeLeadership #Execution`,
+  },
   "hr-panel-innovasjonsmotor-bjørvika-2026-08": {
     tittel: "HR does not need to own innovation — but HR can be decisive for whether it becomes changed practice and value",
     teaser:
