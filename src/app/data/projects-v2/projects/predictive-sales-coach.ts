@@ -1,4 +1,4 @@
-import { PSC_APP_URL, PSC_SEO_DESCRIPTION, PSC_SEO_TITLE, PSC_SHORT_DESCRIPTION } from "../../../lib/psc-brand";
+import { PSC_APP_URL, PSC_MATURITY_LABEL, PSC_SEO_DESCRIPTION, PSC_SEO_TITLE, PSC_SHORT_DESCRIPTION } from "../../../lib/psc-brand";
 import type { ProjectV2Record } from "../types";
 
 export const predictiveSalesCoachV2: ProjectV2Record = {
@@ -21,21 +21,12 @@ export const predictiveSalesCoachV2: ProjectV2Record = {
     en: "The Predictive Sales Coach v2.0: AI-based sales training and meeting preparation",
   },
   subtitle: {
-    no: "Lukket pilot og tilgangsstyrt trenings-, evaluerings- og lederinnsiktsplattform for B2B-salg",
-    en: "Closed pilot and access-controlled training, evaluation and leadership insight platform for B2B sales",
+    no: "AI-basert salgstrening og møteforberedelse for B2B-salg",
+    en: "AI-based sales training and meeting preparation for B2B sales",
   },
-  statusLabel: {
-    no: "Lukket pilot og tilgangsstyrt trenings-, evaluerings- og lederinnsiktsplattform",
-    en: "Closed pilot and access-controlled training, evaluation and leadership insight platform",
-  },
-  maturityLevel: {
-    no: "Lukket pilot",
-    en: "Closed pilot",
-  },
-  overviewIntroduction: {
-    no: `${PSC_SHORT_DESCRIPTION.no} — tilgangsstyrt lukket pilot.`,
-    en: `${PSC_SHORT_DESCRIPTION.en} — access-controlled closed pilot.`,
-  },
+  statusLabel: PSC_MATURITY_LABEL,
+  maturityLevel: PSC_MATURITY_LABEL,
+  overviewIntroduction: PSC_SHORT_DESCRIPTION,
   overview: {
     what: {
       no: "En tilgangsstyrt trenings-, simulerings- og evalueringsplattform for B2B-kundedialog — med scenario-oppsett, kundesimulering, scorecard, DISC-inspirert kommunikasjon og lederinnsikt.",
@@ -58,8 +49,8 @@ export const predictiveSalesCoachV2: ProjectV2Record = {
       en: "The project shows how AI can support sales training, meeting preparation, onboarding and more precise coaching before important customer meetings — without replacing sales leadership.",
     },
     status: {
-      no: "Lukket pilot og tilgangsstyrt trenings-, evaluerings- og lederinnsiktsplattform. Løsningen er tekstbasert i dagens versjon og utviklet for avgrenset testbruk.",
-      en: "Closed pilot and access-controlled training, evaluation and leadership insight platform. The solution is text-based in the current version and developed for limited test use.",
+      no: "Tilgangsstyrt salgsutviklingsverktøy · klar for avgrenset kundebruk. Løsningen er tekstbasert i dagens versjon og utviklet for trenings-, simulerings-, evaluerings- og lederinnsiktsbruk.",
+      en: "Access-controlled sales development tool · ready for limited customer use. The solution is text-based in the current version and built for training, simulation, evaluation and leadership insight use.",
     },
     development: {
       no: "Videre potensial inkluderer talegrensesnitt, flere scenarioer, teamrapporter, CRM-kobling, lederdashboard og mer avansert scorecard og historikk.",

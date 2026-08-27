@@ -3,6 +3,12 @@ export const AI_READINESS_SCAN_APP_URL =
 
 export const AI_READINESS_SCAN_PROSJEKT_PATH = "/ai-readiness-scan";
 
+/** Konsekvent modenhetslabel — verktøytype · kundebruk. */
+export const AI_READINESS_SCAN_MATURITY_LABEL = {
+  no: "Tilgangsstyrt kartleggingsverktøy · Klar for avgrenset kundebruk",
+  en: "Access-controlled mapping tool · Ready for limited customer use",
+} as const;
+
 export const AI_READINESS_SCAN_PROSJEKT_IDS = new Set(["ai-readiness-scan-2026-06"]);
 
 export function isAiReadinessScanProsjekt(id: string): boolean {

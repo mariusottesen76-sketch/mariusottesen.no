@@ -1,4 +1,5 @@
 import type { StrategicPlatformProject } from "./types";
+import { AI_READINESS_SCAN_MATURITY_LABEL } from "../../lib/ai-readiness-scan-brand";
 
 const utvikler = {
   navn: { no: "Marius Ottesen", en: "Marius Ottesen" },
@@ -45,8 +46,8 @@ export const aiReadinessScanPlatform: StrategicPlatformProject = {
         en: "The project shows how structured mapping can improve prioritisation and preparation before the organisation invests broadly in AI.",
       },
       status: {
-        no: "Bygget som tilgangsstyrt kartleggingsverktøy med modenhet for avgrenset testing og videre utvikling.",
-        en: "Built as an access-controlled mapping tool with maturity for limited testing and further development.",
+        no: "Tilgangsstyrt kartleggingsverktøy · klar for avgrenset kundebruk.",
+        en: "Access-controlled mapping tool · ready for limited customer use.",
       },
     },
     videreutvikling: {
@@ -55,10 +56,7 @@ export const aiReadinessScanPlatform: StrategicPlatformProject = {
     },
   },
   detail: {
-    statusBadge: {
-      no: "Tilgangsstyrt kartleggingsverktøy for AI-beredskap og gjennomføringsevne",
-      en: "Access-controlled mapping tool for AI readiness and execution capability",
-    },
+    statusBadge: AI_READINESS_SCAN_MATURITY_LABEL,
     hero: {
       verdiforslag: {
         no: "Strukturert kartlegging av AI-modenhet, prioriteringer og neste steg.",
@@ -139,8 +137,8 @@ export const aiReadinessScanPlatform: StrategicPlatformProject = {
     status: {
       heading: { no: "Status, modenhet og avgrensninger", en: "Status, maturity and limitations" },
       body: {
-        no: "AI Readiness Scan er bygget som et tilgangsstyrt kartleggingsverktøy med modenhet for avgrenset testing og videre utvikling. Løsningen er ikke en formell sertifisering, men et strukturert grunnlag for dialog, prioritering og oppfølging.",
-        en: "AI Readiness Scan is built as an access-controlled mapping tool with maturity for limited testing and further development. The solution is not a formal certification, but a structured basis for dialogue, prioritisation and follow-up.",
+        no: "AI Readiness Scan er et tilgangsstyrt kartleggingsverktøy · klar for avgrenset kundebruk. Løsningen er ikke en formell sertifisering, men et strukturert grunnlag for dialog, prioritering og oppfølging.",
+        en: "AI Readiness Scan is an access-controlled mapping tool · ready for limited customer use. The solution is not a formal certification, but a structured basis for dialogue, prioritisation and follow-up.",
       },
     },
     skalerbarhet: {

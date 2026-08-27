@@ -1,5 +1,5 @@
 import type { StrategicPlatformProject } from "./types";
-import { PSC_SEO_DESCRIPTION, PSC_SEO_TITLE, PSC_SHORT_DESCRIPTION } from "../../lib/psc-brand";
+import { PSC_MATURITY_LABEL, PSC_SEO_DESCRIPTION, PSC_SEO_TITLE, PSC_SHORT_DESCRIPTION } from "../../lib/psc-brand";
 
 const utvikler = {
   navn: { no: "Marius Ottesen", en: "Marius Ottesen" },
@@ -22,8 +22,8 @@ export const predictiveSalesCoachPlatform: StrategicPlatformProject = {
   },
   teaser: {
     undertittel: {
-      no: "Lukket pilot og tilgangsstyrt trenings-, evaluerings- og lederinnsiktsplattform for B2B-salg",
-      en: "Closed pilot and access-controlled training, evaluation and leadership insight platform for B2B sales",
+      no: "AI-basert salgstrening og møteforberedelse for B2B-salg",
+      en: "AI-based sales training and meeting preparation for B2B sales",
     },
     intro: PSC_SHORT_DESCRIPTION,
     blokker: {
@@ -40,8 +40,8 @@ export const predictiveSalesCoachPlatform: StrategicPlatformProject = {
         en: "The project shows how AI can support sales training, meeting preparation, onboarding and more precise coaching before important customer meetings.",
       },
       status: {
-        no: "Lukket pilot og tilgangsstyrt trenings-, evaluerings- og lederinnsiktsplattform. Løsningen er tekstbasert i dagens versjon.",
-        en: "Closed pilot and access-controlled training, evaluation and leadership insight platform. The solution is text-based in the current version.",
+        no: "Tilgangsstyrt salgsutviklingsverktøy · klar for avgrenset kundebruk. Løsningen er tekstbasert i dagens versjon.",
+        en: "Access-controlled sales development tool · ready for limited customer use. The solution is text-based in the current version.",
       },
     },
     videreutvikling: {
@@ -50,15 +50,12 @@ export const predictiveSalesCoachPlatform: StrategicPlatformProject = {
     },
   },
   detail: {
-    statusBadge: {
-      no: "Lukket pilot og tilgangsstyrt trenings-, evaluerings- og lederinnsiktsplattform",
-      en: "Closed pilot and access-controlled training, evaluation and leadership insight platform",
-    },
+    statusBadge: PSC_MATURITY_LABEL,
     hero: {
       verdiforslag: PSC_SHORT_DESCRIPTION,
       executiveSummary: {
-        no: "Utviklet for selgere, salgsledere og kommersielle team — som tilgangsstyrt lukket pilot for trenings-, simulerings- og evalueringsbruk, ikke som CRM-system, salgsprognoseverktøy eller ferdig kommersielt produkt.",
-        en: "Built for sales reps, sales leaders and commercial teams — as an access-controlled closed pilot for training, simulation and evaluation use, not as a CRM system, sales forecasting tool or finished commercial product.",
+        no: "Utviklet for selgere, salgsledere og kommersielle team — som tilgangsstyrt salgsutviklingsverktøy klar for avgrenset kundebruk, ikke som CRM-system, salgsprognoseverktøy eller ferdig kommersielt produkt.",
+        en: "Built for sales reps, sales leaders and commercial teams — as an access-controlled sales development tool ready for limited customer use, not as a CRM system, sales forecasting tool or finished commercial product.",
       },
       bildeAlt: {
         no: "The Predictive Sales Coach v2.0 – AI-basert salgstrening og møteforberedelse",
@@ -277,8 +274,8 @@ export const predictiveSalesCoachPlatform: StrategicPlatformProject = {
     status: {
       heading: { no: "Status, modenhet og avgrensninger", en: "Status, maturity and limitations" },
       body: {
-        no: "PSCv2.0 er en lukket pilot og tilgangsstyrt trenings-, simulerings-, evaluerings- og lederinnsiktsplattform — ikke et CRM-system, salgsprognoseverktøy, lead scoring-verktøy eller ferdig kommersielt produkt.\n\nLøsningen er tekstbasert for å trene presisjon i formuleringer, spørsmål, aktiv lytting og kundetilpasning. Speech-to-text og tale kan være aktuelle videreutviklingsspor, men tekstformatet er bevisst valgt i dagens versjon.\n\nTilgang vurderes kun i relevante faglige eller profesjonelle sammenhenger.",
-        en: "PSCv2.0 is a closed pilot and access-controlled training, simulation, evaluation and leadership insight platform — not a CRM system, sales forecasting tool, lead scoring tool or finished commercial product.\n\nThe solution is text-based to train precision in wording, questions, active listening and customer adaptation. Speech-to-text and voice may be relevant further development tracks, but the text format is deliberately chosen in the current version.\n\nAccess is considered only in relevant professional contexts.",
+        no: "PSCv2.0 er et tilgangsstyrt salgsutviklingsverktøy · klar for avgrenset kundebruk — ikke et CRM-system, salgsprognoseverktøy, lead scoring-verktøy eller ferdig kommersielt produkt.\n\nLøsningen er tekstbasert for å trene presisjon i formuleringer, spørsmål, aktiv lytting og kundetilpasning. Speech-to-text og tale kan være aktuelle videreutviklingsspor, men tekstformatet er bevisst valgt i dagens versjon.\n\nTilgang vurderes kun i relevante faglige eller profesjonelle sammenhenger.",
+        en: "PSCv2.0 is an access-controlled sales development tool · ready for limited customer use — not a CRM system, sales forecasting tool, lead scoring tool or finished commercial product.\n\nThe solution is text-based to train precision in wording, questions, active listening and customer adaptation. Speech-to-text and voice may be relevant further development tracks, but the text format is deliberately chosen in the current version.\n\nAccess is considered only in relevant professional contexts.",
       },
     },
     skalerbarhet: {

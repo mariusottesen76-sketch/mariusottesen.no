@@ -1,4 +1,4 @@
-import { AI_READINESS_SCAN_APP_URL } from "../../../lib/ai-readiness-scan-brand";
+import { AI_READINESS_SCAN_APP_URL, AI_READINESS_SCAN_MATURITY_LABEL } from "../../../lib/ai-readiness-scan-brand";
 import type { ProjectV2Record } from "../types";
 
 export const aiReadinessScanV2: ProjectV2Record = {
@@ -16,17 +16,11 @@ export const aiReadinessScanV2: ProjectV2Record = {
     en: "AI Readiness Scan: Mapping AI readiness and execution capability",
   },
   subtitle: {
-    no: "Tilgangsstyrt kartleggingsverktøy med modenhet for avgrenset testing og videre utvikling",
-    en: "Access-controlled mapping tool with maturity for limited testing and further development",
+    no: "Strukturert kartlegging av AI-modenhet, prioriteringer og neste steg",
+    en: "Structured mapping of AI maturity, priorities and next steps",
   },
-  statusLabel: {
-    no: "Tilgangsstyrt kartleggingsverktøy med modenhet for avgrenset testing og videre utvikling",
-    en: "Access-controlled mapping tool with maturity for limited testing and further development",
-  },
-  maturityLevel: {
-    no: "Tilgangsstyrt prototype",
-    en: "Access-controlled prototype",
-  },
+  statusLabel: AI_READINESS_SCAN_MATURITY_LABEL,
+  maturityLevel: AI_READINESS_SCAN_MATURITY_LABEL,
   overviewIntroduction: {
     no: "AI Readiness Scan er et tilgangsstyrt kartleggingsverktøy for ledere og virksomheter som vil avklare AI-modenhet, prioriteringer og neste steg — fra strategi og kompetanse til data, prosesser og ansvarlig bruk.",
     en: "AI Readiness Scan is an access-controlled mapping tool for leaders and organisations that want to clarify AI maturity, priorities and next steps — from strategy and competence to data, processes and responsible use.",
@@ -53,8 +47,8 @@ export const aiReadinessScanV2: ProjectV2Record = {
       en: "The project shows how structured mapping can provide better prioritisation and preparation before the organisation invests broadly in AI — without being presented as audit or guarantee.",
     },
     status: {
-      no: "Tilgangsstyrt kartleggingsverktøy med modenhet for avgrenset testing og videre utvikling. Resultatet er et grunnlag for dialog og prioritering, ikke en autoritativ vurdering av AI-modenhet.",
-      en: "Access-controlled mapping tool with maturity for limited testing and further development. The result is a basis for dialogue and prioritisation, not an authoritative assessment of AI maturity.",
+      no: "Tilgangsstyrt kartleggingsverktøy · klar for avgrenset kundebruk. Resultatet er et grunnlag for dialog og prioritering, ikke en autoritativ vurdering av AI-modenhet.",
+      en: "Access-controlled mapping tool · ready for limited customer use. The result is a basis for dialogue and prioritisation, not an authoritative assessment of AI maturity.",
     },
     development: {
       no: "Videre potensial inkluderer bransjespesifikke spørsmålssett, AI-generert oppsummering, modenhetsprofiler, prioriteringsmatriser og kobling mot implementeringsløp.",

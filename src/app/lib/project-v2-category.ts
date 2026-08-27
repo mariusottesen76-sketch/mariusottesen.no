@@ -6,8 +6,8 @@ export const PROJECT_CATEGORY_LABELS: Record<ProjectCategory, { no: string; en: 
     en: "Strategic platforms",
   },
   app_prototype: {
-    no: "Apper og prototyper",
-    en: "Apps and prototypes",
+    no: "Apper og verktøy",
+    en: "Apps and tools",
   },
   case_implementation: {
     no: "Case og implementering",

@@ -1,8 +1,8 @@
 import Link from "next/link";
-import { PSC_APP_URL } from "../lib/psc-brand";
+import { PSC_APP_URL, PSC_MATURITY_LABEL } from "../lib/psc-brand";
 import { FLOW_SIGNAL_APP_URL } from "../lib/flowsignal-brand";
-import { SMB_SALGSFLYT_APP_URL } from "../lib/smb-salgsflyt-brand";
-import { AI_READINESS_SCAN_APP_URL } from "../lib/ai-readiness-scan-brand";
+import { SMB_SALGSFLYT_APP_URL, SMB_SALGSFLYT_MATURITY_LABEL } from "../lib/smb-salgsflyt-brand";
+import { AI_READINESS_SCAN_APP_URL, AI_READINESS_SCAN_MATURITY_LABEL } from "../lib/ai-readiness-scan-brand";
 import type { Lang } from "../LanguageContext";
 
 const linkBase =
@@ -22,8 +22,8 @@ const tilgangIntro = {
 
 const pscBlokk = {
   tekst: {
-    no: "Status, modenhet og videre anvendelse: The Predictive Sales Coach er utviklet for salgstrening, møteforberedelse, simulering og evaluering av B2B-kundedialog.",
-    en: "Status, maturity and further application: The Predictive Sales Coach is built for sales training, meeting preparation, simulation and evaluation of B2B customer dialogue.",
+    no: `Status og modenhet: ${PSC_MATURITY_LABEL.no}.`,
+    en: `Status and maturity: ${PSC_MATURITY_LABEL.en}.`,
   },
   pilotHref: "/psc",
   pilotCta: { no: "Utforsk The Predictive Sales Coach", en: "Explore The Predictive Sales Coach" },
@@ -54,8 +54,8 @@ const flowSignalBlokk = {
 
 const smbSalgsflytBlokk = {
   tekst: {
-    no: "Status, modenhet og videre anvendelse: SMB Salgsflyt-sjekken er bygget som interaktiv diagnose med scoring, AI-analyse, rapport og adminkonsoll for kommersielle miljøer.",
-    en: "Status, maturity and further application: SMB Sales Flow Check is built as an interactive diagnosis with scoring, AI analysis, reporting and admin console for commercial environments.",
+    no: `Status og modenhet: ${SMB_SALGSFLYT_MATURITY_LABEL.no}.`,
+    en: `Status and maturity: ${SMB_SALGSFLYT_MATURITY_LABEL.en}.`,
   },
   pilotHref: "/salgsflyt-sjekken",
   pilotCta: { no: "Se hvordan løsningen fungerer", en: "See how the solution works" },
@@ -70,8 +70,8 @@ const smbSalgsflytBlokk = {
 
 const aiReadinessScanBlokk = {
   tekst: {
-    no: "Status, modenhet og videre anvendelse: AI Readiness Scan viser hvordan AI-modenhet, prioriteringer og konkrete forbedringstiltak kan struktureres som grunnlag for videre arbeid.",
-    en: "Status, maturity and further application: AI Readiness Scan shows how AI maturity, priorities and concrete improvement measures can be structured as a basis for further work.",
+    no: `Status og modenhet: ${AI_READINESS_SCAN_MATURITY_LABEL.no}.`,
+    en: `Status and maturity: ${AI_READINESS_SCAN_MATURITY_LABEL.en}.`,
   },
   appCta: { no: "Åpne tilgangsstyrt løsning", en: "Open access-controlled solution" },
   tilgangNote: {

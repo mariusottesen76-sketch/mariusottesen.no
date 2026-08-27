@@ -8,8 +8,8 @@ export const smbSalgsflytSjekken: ProsjektType = {
     en: "SMB Sales Flow Check: Interactive diagnosis and AI reporting",
   },
   teaser: {
-    no: "Tilgangsstyrt diagnoseverktøy med scoring, AI-analyse, rapportering og administrativ oppfølging — dokumentert på egen prosjektside.",
-    en: "Access-controlled diagnostic tool with scoring, AI analysis, reporting and administrative follow-up — documented on a dedicated project page.",
+    no: "Interaktiv diagnose med scoring, AI-analyse, rapportering og administrativ oppfølging — dokumentert på egen prosjektside.",
+    en: "Interactive diagnosis with scoring, AI analysis, reporting and administrative follow-up — documented on a dedicated project page.",
   },
   bildeUrl: "/images/smb-salgsflyt-sjekken-hjemmeside.png?v=20260717",
   bildeRamme: "natural",

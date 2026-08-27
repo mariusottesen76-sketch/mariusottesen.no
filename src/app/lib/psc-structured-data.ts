@@ -3,6 +3,7 @@ import { getProjectV2ById } from "../data/projects-v2/registry";
 import {
   PSC_CANONICAL_URL,
   PSC_FULL_TITLE,
+  PSC_MATURITY_LABEL,
   PSC_OG_IMAGE,
   PSC_SEO_DESCRIPTION,
   PSC_VERSION,
@@ -14,7 +15,7 @@ const SITE = "https://www.mariusottesen.no";
 /** JSON-LD for /psc — WebApplication + FAQPage, basert på synlig innhold. */
 export function buildPscStructuredData(lang: "no" | "en" = "no") {
   const faq = predictiveSalesCoachPlatform.detail.faq;
-  const description = `${PSC_SEO_DESCRIPTION[lang]} Tilgangsstyrt lukket pilot for trenings-, simulerings- og evalueringsbruk.`;
+  const description = `${PSC_SEO_DESCRIPTION[lang]} ${PSC_MATURITY_LABEL[lang]}.`;
   const pscProject = getProjectV2ById("predictive-sales-coach-2026");
   const { datePublished, dateModified } = pscProject
     ? projectSchemaDates(pscProject)

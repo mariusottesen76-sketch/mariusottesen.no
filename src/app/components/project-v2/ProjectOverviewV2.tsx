@@ -35,6 +35,13 @@ export default function ProjectOverviewV2({
   const cta = buildProjectCta(project);
   const title = t(project.title, lang);
   const TitleTag = titleHeadingLevel === 3 ? "h3" : "h2";
+  const metadataStatus = project.maturityLevel
+    ? t(project.maturityLevel, lang)
+    : t(project.statusLabel, lang);
+  const subtitle = t(project.subtitle, lang).trim();
+  const intro = t(project.overviewIntroduction, lang).trim();
+  const showSubtitle =
+    subtitle.length > 0 && subtitle !== metadataStatus && subtitle !== intro;
 
   const handleImageClick = () => {
     if (project.playbackVideo && onOpenVideo) {
@@ -77,7 +84,9 @@ export default function ProjectOverviewV2({
               __html: formatProsjektPlain(t(project.title, lang), project.id),
             }}
           />
-          <p className="text-sm text-indigo-300/90 font-medium italic">{t(project.subtitle, lang)}</p>
+          {showSubtitle ? (
+            <p className="text-sm text-indigo-300/90 font-medium italic">{subtitle}</p>
+          ) : null}
         </div>
 
         <p className={`${prosjektTeaserClass} text-base w-full min-w-0 max-w-none`}>{t(project.overviewIntroduction, lang)}</p>

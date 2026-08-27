@@ -61,7 +61,7 @@ export const PROSJEKT_PORTFOLIO_KATEGORIER: ProsjektPortfolioKategori[] = [
   },
   {
     anchorId: "apper-og-prototyper",
-    title: { no: "Apper og prototyper", en: "Apps and prototypes" },
+    title: { no: "Apper og verktøy", en: "Apps and tools" },
     overviewDescription: {
       no: "Funksjonelle AI-løsninger for salgstrening, teamutvikling, AI-beredskap, arrangementsplanlegging, operasjonell forbedring og kommersiell utvikling.",
       en: "Functional AI solutions for sales training, team development, AI readiness, event planning, operational improvement and commercial development.",
@@ -70,7 +70,7 @@ export const PROSJEKT_PORTFOLIO_KATEGORIER: ProsjektPortfolioKategori[] = [
       no: "Funksjonelle og testbare løsninger som viser produktutvikling, brukerflyt og praktisk bruk av AI innen salg, teamutvikling, AI-beredskap, arrangementsplanlegging, drift og kommersiell forbedring.",
       en: "Functional, testable solutions showing product development, user flow and practical use of AI in sales, team development, AI readiness, event planning, operations and commercial improvement.",
     },
-    metadataLabel: { no: "App og prototype", en: "App and prototype" },
+    metadataLabel: { no: "App og verktøy", en: "App and tool" },
     projects: [
       { id: "predictive-sales-coach-2026", introSlug: "psc" },
       { id: "flowsignal-2026-05", introSlug: "flowsignal" },

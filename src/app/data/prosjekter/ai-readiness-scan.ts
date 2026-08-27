@@ -8,8 +8,8 @@ export const aiReadinessScan: ProsjektType = {
     en: "AI Readiness Scan: Mapping AI readiness and execution capability",
   },
   teaser: {
-    no: "Tilgangsstyrt kartleggingsverktøy med modenhet for avgrenset testing og videre utvikling — dokumentert på egen prosjektside.",
-    en: "Access-controlled mapping tool with maturity for limited testing and further development — documented on a dedicated project page.",
+    no: "Strukturert kartlegging av AI-modenhet, prioriteringer og neste steg — dokumentert på egen prosjektside.",
+    en: "Structured mapping of AI maturity, priorities and next steps — documented on a dedicated project page.",
   },
   bildeUrl: "/images/ai-readiness-scan-hjemmeside.png?v=20260717",
   bildeRamme: "natural",

@@ -15,6 +15,12 @@ export const PSC_FULL_TITLE = {
   en: "The Predictive Sales Coach v2.0",
 } as const;
 
+/** Konsekvent modenhetslabel — verktøytype · kundebruk. */
+export const PSC_MATURITY_LABEL = {
+  no: "Tilgangsstyrt salgsutviklingsverktøy · Klar for avgrenset kundebruk",
+  en: "Access-controlled sales development tool · Ready for limited customer use",
+} as const;
+
 /** Primær kortbeskrivelse — brukes konsekvent på kort, metadata og internlenker. */
 export const PSC_SHORT_DESCRIPTION = {
   no: "AI-basert salgstrening og møteforberedelse for B2B-salg, med realistiske kundesimuleringer, strukturert feedback og salgslederinnsikt.",

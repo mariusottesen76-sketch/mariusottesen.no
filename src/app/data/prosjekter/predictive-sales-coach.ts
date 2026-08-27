@@ -1,3 +1,5 @@
+import { PSC_SHORT_DESCRIPTION } from "../../lib/psc-brand";
+
 export interface ProsjektType {
   id: string;
   tittel: { no: string; en: string };
@@ -42,8 +44,8 @@ export const predictiveSalesCoach: ProsjektType = {
     en: "The Predictive Sales Coach v2.0: AI-based sales training and meeting preparation",
   },
   teaser: {
-    no: "Lukket pilot og tilgangsstyrt trenings-, evaluerings- og lederinnsiktsplattform — dokumentert på egen prosjektside.",
-    en: "Closed pilot and access-controlled training, evaluation and leadership insight platform — documented on a dedicated project page.",
+    no: `${PSC_SHORT_DESCRIPTION.no} — dokumentert på egen prosjektside.`,
+    en: `${PSC_SHORT_DESCRIPTION.en} — documented on a dedicated project page.`,
   },
   bildeUrl: "/images/psc2.png",
   bildeRamme: "natural",

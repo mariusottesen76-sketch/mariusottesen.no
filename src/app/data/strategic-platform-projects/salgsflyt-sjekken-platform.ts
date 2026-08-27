@@ -1,4 +1,5 @@
 import type { StrategicPlatformProject } from "./types";
+import { SMB_SALGSFLYT_MATURITY_LABEL } from "../../lib/smb-salgsflyt-brand";
 
 const utvikler = {
   navn: { no: "Marius Ottesen", en: "Marius Ottesen" },
@@ -45,8 +46,8 @@ export const salgsflytSjekkenPlatform: StrategicPlatformProject = {
         en: "The project shows how AI can structure diagnosis and prepare prioritisation while delivering immediate value to the respondent.",
       },
       status: {
-        no: "Tilgangsstyrt diagnoseverktøy med scoring, AI-analyse og adminkonsoll — hele prosessen tar under ti minutter.",
-        en: "Access-controlled diagnostic tool with scoring, AI analysis and admin console — the full process takes under ten minutes.",
+        no: "Tilgangsstyrt diagnoseverktøy · klar for avgrenset kundebruk. Scoring, AI-analyse og adminkonsoll — hele prosessen tar under ti minutter.",
+        en: "Access-controlled diagnostic tool · ready for limited customer use. Scoring, AI analysis and admin console — the full process takes under ten minutes.",
       },
     },
     videreutvikling: {
@@ -55,10 +56,7 @@ export const salgsflytSjekkenPlatform: StrategicPlatformProject = {
     },
   },
   detail: {
-    statusBadge: {
-      no: "Tilgangsstyrt diagnoseverktøy med AI-analyse, PDF-rapport og adminkonsoll",
-      en: "Access-controlled diagnostic tool with AI analysis, PDF report and admin console",
-    },
+    statusBadge: SMB_SALGSFLYT_MATURITY_LABEL,
     hero: {
       verdiforslag: {
         no: "Interaktiv diagnose og AI-rapportering for å avdekke salgsfriksjon og prioritere neste steg.",
@@ -179,8 +177,8 @@ export const salgsflytSjekkenPlatform: StrategicPlatformProject = {
     status: {
       heading: { no: "Status, modenhet og avgrensninger", en: "Status, maturity and limitations" },
       body: {
-        no: "SMB Salgsflyt-sjekken er et tilgangsstyrt diagnoseverktøy med scoring, AI-analyse og adminkonsoll — moden for avgrenset testing, videreutvikling og relevant kommersiell anvendelse. Hele prosessen tar under ti minutter.\n\nLøsningen er et diagnose- og kvalifiseringsverktøy, ikke en CRM-implementering eller ferdig salgsstrategi. Den avdekker friksjon og modenhet, men erstatter ikke oppfølgende rådgivning, prosessdesign eller systemarbeid der det trengs.",
-        en: "SMB Sales Flow Check is an access-controlled diagnostic tool with scoring, AI analysis and an admin console — mature for limited testing, further development and relevant commercial application. The full process takes under ten minutes.\n\nThe solution is a diagnostic and qualification tool, not a CRM implementation or finished sales strategy. It uncovers friction and maturity, but does not replace follow-up advisory work, process design or systems work where needed.",
+        no: "SMB Salgsflyt-sjekken er et tilgangsstyrt diagnoseverktøy · klar for avgrenset kundebruk. Løsningen har scoring, AI-analyse og adminkonsoll, og hele prosessen tar under ti minutter.\n\nLøsningen er et diagnose- og kvalifiseringsverktøy, ikke en CRM-implementering eller ferdig salgsstrategi. Den avdekker friksjon og modenhet, men erstatter ikke oppfølgende rådgivning, prosessdesign eller systemarbeid der det trengs.",
+        en: "SMB Sales Flow Check is an access-controlled diagnostic tool · ready for limited customer use. The solution has scoring, AI analysis and an admin console, and the full process takes under ten minutes.\n\nThe solution is a diagnostic and qualification tool, not a CRM implementation or finished sales strategy. It uncovers friction and maturity, but does not replace follow-up advisory work, process design or systems work where needed.",
       },
     },
     skalerbarhet: {
