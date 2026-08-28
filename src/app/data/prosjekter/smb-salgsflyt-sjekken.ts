@@ -1,4 +1,5 @@
 import { type ProsjektType } from "./predictive-sales-coach";
+import { SMB_SALGSFLYT_OVERVIEW_IMAGE } from "../../lib/smb-salgsflyt-brand";
 
 /** Kort metadata for /prosjekter — full dokumentasjon på /salgsflyt-sjekken */
 export const smbSalgsflytSjekken: ProsjektType = {
@@ -11,7 +12,7 @@ export const smbSalgsflytSjekken: ProsjektType = {
     no: "Interaktiv diagnose med scoring, AI-analyse, rapportering og administrativ oppfølging — dokumentert på egen prosjektside.",
     en: "Interactive diagnosis with scoring, AI analysis, reporting and administrative follow-up — documented on a dedicated project page.",
   },
-  bildeUrl: "/images/smb-salgsflyt-sjekken-hjemmeside.png?v=20260717",
+  bildeUrl: SMB_SALGSFLYT_OVERVIEW_IMAGE,
   bildeRamme: "natural",
   dato: "2026-05-08",
   visningsDato: "16.06.26",

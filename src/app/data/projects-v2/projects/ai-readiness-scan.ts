@@ -1,4 +1,4 @@
-import { AI_READINESS_SCAN_APP_URL, AI_READINESS_SCAN_MATURITY_LABEL } from "../../../lib/ai-readiness-scan-brand";
+import { AI_READINESS_SCAN_APP_URL, AI_READINESS_SCAN_MATURITY_LABEL, AI_READINESS_SCAN_OVERVIEW_IMAGE } from "../../../lib/ai-readiness-scan-brand";
 import type { ProjectV2Record } from "../types";
 
 export const aiReadinessScanV2: ProjectV2Record = {
@@ -59,7 +59,7 @@ export const aiReadinessScanV2: ProjectV2Record = {
       en: "The core model can be adapted for other organisations, industries and maturity levels — as preparation before larger AI initiatives or transformation tracks.",
     },
   },
-  overviewImage: "/images/ai-readiness-scan-hjemmeside.png?v=20260717",
+  overviewImage: AI_READINESS_SCAN_OVERVIEW_IMAGE,
   detailHeroImage: "/images/ai-readiness-scan-hero.png?v=20260719",
   detailHeroObjectPosition: "center",
   needsNewDetailHero: false,

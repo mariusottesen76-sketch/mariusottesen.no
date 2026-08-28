@@ -15,6 +15,9 @@ export const PSC_FULL_TITLE = {
   en: "The Predictive Sales Coach v2.0",
 } as const;
 
+/** 1:3 oversiktsbilde på /prosjekter. */
+export const PSC_OVERVIEW_IMAGE = "/images/Row_Project_PredictiveSalesCoach_Detail_MASTER_v1.png";
+
 /** Konsekvent modenhetslabel — verktøytype · kundebruk. */
 export const PSC_MATURITY_LABEL = {
   no: "Tilgangsstyrt salgsutviklingsverktøy · Klar for avgrenset kundebruk",

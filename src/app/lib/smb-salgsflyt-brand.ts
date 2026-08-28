@@ -3,6 +3,9 @@ export const SMB_SALGSFLYT_APP_URL =
 
 export const SMB_SALGSFLYT_PILOT_PATH = "/salgsflyt-sjekken";
 
+/** 1:3 oversiktsbilde på /prosjekter. */
+export const SMB_SALGSFLYT_OVERVIEW_IMAGE = "/images/Row_Project_SMBSalgsflytSjekken_Detail_MASTER_v1.png";
+
 /** Konsekvent modenhetslabel — verktøytype · kundebruk. */
 export const SMB_SALGSFLYT_MATURITY_LABEL = {
   no: "Tilgangsstyrt diagnoseverktøy · Klar for avgrenset kundebruk",

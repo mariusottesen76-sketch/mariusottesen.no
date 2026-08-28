@@ -1,4 +1,4 @@
-import { PSC_SHORT_DESCRIPTION } from "../../lib/psc-brand";
+import { PSC_SHORT_DESCRIPTION, PSC_OVERVIEW_IMAGE } from "../../lib/psc-brand";
 
 export interface ProsjektType {
   id: string;
@@ -47,7 +47,7 @@ export const predictiveSalesCoach: ProsjektType = {
     no: `${PSC_SHORT_DESCRIPTION.no} — dokumentert på egen prosjektside.`,
     en: `${PSC_SHORT_DESCRIPTION.en} — documented on a dedicated project page.`,
   },
-  bildeUrl: "/images/psc2.png",
+  bildeUrl: PSC_OVERVIEW_IMAGE,
   bildeRamme: "natural",
   dato: "2026-06-19",
   visningsDato: "25.05.26",

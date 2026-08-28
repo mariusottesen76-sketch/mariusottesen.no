@@ -1,4 +1,4 @@
-import { PSC_APP_URL, PSC_MATURITY_LABEL, PSC_SEO_DESCRIPTION, PSC_SEO_TITLE, PSC_SHORT_DESCRIPTION } from "../../../lib/psc-brand";
+import { PSC_APP_URL, PSC_MATURITY_LABEL, PSC_OVERVIEW_IMAGE, PSC_SEO_DESCRIPTION, PSC_SEO_TITLE, PSC_SHORT_DESCRIPTION } from "../../../lib/psc-brand";
 import type { ProjectV2Record } from "../types";
 
 export const predictiveSalesCoachV2: ProjectV2Record = {
@@ -61,16 +61,16 @@ export const predictiveSalesCoachV2: ProjectV2Record = {
       en: "The core model can be adapted for other organisations, industries and professional conversation situations — for example negotiation, advisory work and demanding customer dialogues.",
     },
   },
-  overviewImage: "/images/psc2.png",
+  overviewImage: PSC_OVERVIEW_IMAGE,
   detailHeroImage: "/images/predictive-sales-coach-hero.png?v=20260719b",
   detailHeroObjectPosition: "center",
-  needsNewOverviewImage: true,
+  needsNewOverviewImage: false,
   needsNewDetailHero: false,
   altText: {
     no: "The Predictive Sales Coach v2.0 – AI-basert salgstrening og møteforberedelse",
     en: "The Predictive Sales Coach v2.0 – AI-based sales training and meeting preparation",
   },
-  overviewImageFormat: "legacy_other",
+  overviewImageFormat: "standard_1x3",
   detailHeroMissing: false,
   detailDestination: "/psc",
   liveSolutionUrl: PSC_APP_URL,

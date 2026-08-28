@@ -3,6 +3,9 @@ export const AI_READINESS_SCAN_APP_URL =
 
 export const AI_READINESS_SCAN_PROSJEKT_PATH = "/ai-readiness-scan";
 
+/** 1:3 oversiktsbilde på /prosjekter. */
+export const AI_READINESS_SCAN_OVERVIEW_IMAGE = "/images/Row_Project_AIReadinessScan_Detail_MASTER_v1.png";
+
 /** Konsekvent modenhetslabel — verktøytype · kundebruk. */
 export const AI_READINESS_SCAN_MATURITY_LABEL = {
   no: "Tilgangsstyrt kartleggingsverktøy · Klar for avgrenset kundebruk",

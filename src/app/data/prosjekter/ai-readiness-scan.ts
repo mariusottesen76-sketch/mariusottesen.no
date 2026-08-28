@@ -1,4 +1,5 @@
 import { type ProsjektType } from "./predictive-sales-coach";
+import { AI_READINESS_SCAN_OVERVIEW_IMAGE } from "../../lib/ai-readiness-scan-brand";
 
 /** Kort metadata for /prosjekter — full dokumentasjon på /ai-readiness-scan */
 export const aiReadinessScan: ProsjektType = {
@@ -11,7 +12,7 @@ export const aiReadinessScan: ProsjektType = {
     no: "Strukturert kartlegging av AI-modenhet, prioriteringer og neste steg — dokumentert på egen prosjektside.",
     en: "Structured mapping of AI maturity, priorities and next steps — documented on a dedicated project page.",
   },
-  bildeUrl: "/images/ai-readiness-scan-hjemmeside.png?v=20260717",
+  bildeUrl: AI_READINESS_SCAN_OVERVIEW_IMAGE,
   bildeRamme: "natural",
   dato: "2026-05-22",
   visningsDato: "25.06.26",

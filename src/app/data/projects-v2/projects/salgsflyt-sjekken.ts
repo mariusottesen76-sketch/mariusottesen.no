@@ -1,4 +1,4 @@
-import { SMB_SALGSFLYT_APP_URL, SMB_SALGSFLYT_MATURITY_LABEL } from "../../../lib/smb-salgsflyt-brand";
+import { SMB_SALGSFLYT_APP_URL, SMB_SALGSFLYT_MATURITY_LABEL, SMB_SALGSFLYT_OVERVIEW_IMAGE } from "../../../lib/smb-salgsflyt-brand";
 import type { ProjectV2Record } from "../types";
 
 export const salgsflytSjekkenV2: ProjectV2Record = {
@@ -59,7 +59,7 @@ export const salgsflytSjekkenV2: ProjectV2Record = {
       en: "The core model can be adapted for other organisations, industries and sales models — without presenting this as already implemented in customer organisations.",
     },
   },
-  overviewImage: "/images/smb-salgsflyt-sjekken-hjemmeside.png?v=20260717",
+  overviewImage: SMB_SALGSFLYT_OVERVIEW_IMAGE,
   detailHeroImage: "/images/salgsflyt-sjekken-hero.png?v=20260720",
   detailHeroObjectPosition: "center",
   needsNewDetailHero: false,
