@@ -13,6 +13,7 @@ export type StrategicPlatformSlug =
   | "strategisk-ai-implementering"
   | "skoyenasen-tannklinikk"
   | "mariusottesen-nettside"
+  | "row-solutions"
   | "agentisk-arbeidsflyt"
   | "ai-innsikts-og-innholdsmotor"
   | "ai-arkitektur-beslutningsstotte"

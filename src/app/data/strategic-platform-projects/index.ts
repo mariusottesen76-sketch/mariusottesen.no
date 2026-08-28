@@ -8,6 +8,7 @@ import { salgsflytSjekkenPlatform } from "./salgsflyt-sjekken-platform";
 import { strategiskAiImplementeringPlatform } from "./strategisk-ai-implementering-platform";
 import { skoyenasenTannklinikkPlatform } from "./skoyenasen-tannklinikk-platform";
 import { mariusottesenNettsidePlatform } from "./mariusottesen-nettside-platform";
+import { rowSolutionsPlatform } from "./row-solutions-platform";
 import { agentiskArbeidsflytPlatform } from "./agentisk-arbeidsflyt-platform";
 import { aiInnsiktsOgInnholdsmotorPlatform } from "./ai-innsikts-og-innholdsmotor-platform";
 import { aiArkitekturBeslutningsstottePlatform } from "./ai-arkitektur-beslutningsstotte-platform";
@@ -27,6 +28,7 @@ const strategicPlatforms: StrategicPlatformProject[] = [
   strategiskAiImplementeringPlatform,
   skoyenasenTannklinikkPlatform,
   mariusottesenNettsidePlatform,
+  rowSolutionsPlatform,
   agentiskArbeidsflytPlatform,
   aiInnsiktsOgInnholdsmotorPlatform,
   aiArkitekturBeslutningsstottePlatform,

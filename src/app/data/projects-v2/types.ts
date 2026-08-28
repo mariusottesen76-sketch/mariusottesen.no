@@ -102,9 +102,13 @@ export type ProjectV2BaseRecord = {
   /** Ingen ramme/bakgrunn rundt hero — for bilder som skal fløte rett på siden. */
   detailHeroFrameless?: boolean;
   needsNewOverviewImage?: boolean;
+  /** Reservér 1:3-ramme på /prosjekter (tom) inntil endelig asset er klart. */
+  overviewImageMissing?: boolean;
   needsNewDetailHero?: boolean;
   detailHeroMissing?: boolean;
   altText: LocalizedString;
+  /** Valgfri egen alt-tekst for detaljside-hero når den skal skille seg fra oversiktsbildet. */
+  detailHeroAlt?: LocalizedString;
   overviewImageFormat: OverviewImageFormat;
   detailDestination: string;
   liveSolutionUrl?: string;

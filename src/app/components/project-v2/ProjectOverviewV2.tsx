@@ -64,6 +64,7 @@ export default function ProjectOverviewV2({
         onImageClick={handleImageClick}
         imageFormat={project.overviewImageFormat}
         backgroundSrc={project.overviewImageBackground}
+        empty={project.overviewImageMissing}
       />
 
       <div className="flex-1 min-w-0 flex flex-col justify-start overflow-hidden space-y-3">

@@ -175,4 +175,14 @@ export const overviewImageAudit: OverviewImageAuditEntry[] = [
     notes:
       "Midlertidig bilde fra read-only demo. Skal erstattes med nytt Nordic Growth Summit-screenshot som tydelig viser Samtaler, Budsjett og Reise & opphold i navigasjonen.",
   },
+  {
+    projectId: "row-solutions-2026",
+    overviewImage: "/images/row-solutions-prosjekt.png?v=20260828",
+    aspectNote: "Vertikalt 1:3 — logo og merkevaregrafikk",
+    fit: "contain",
+    needsNewOverviewImage: false,
+    recommendedFilename: "row-solutions-prosjekt.png",
+    recommendedDimensions: "724×2172 px (1:3)",
+    notes: "Logo/merkevare i venstre seksjon på /prosjekter. Detail hero (3:1) gjenstår.",
+  },
 ];

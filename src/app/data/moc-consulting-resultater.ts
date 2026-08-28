@@ -17,6 +17,7 @@ const prosjektLenker = {
   valueLab: "/ai-value-lab-oslo",
   bi: "/strategisk-ai-implementering",
   nettside: "/mariusottesen-nettside",
+  rowSolutions: "/row-solutions",
   controlTower: "/prosjekter#control-tower",
   aiTransformation: "/ai-transformation-value-realization",
 } as const;
@@ -53,6 +54,7 @@ export function getMocResultaterPunkter(lang: Lang): MocResultatPunkt[] {
       `Built ${lenke(prosjektLenker.psc, "The Predictive Sales Coach")}: AI-based training and evaluation platform for B2B customer dialogue and meeting preparation`,
       `Developed models and workflows for ${lenke(prosjektLenker.agent, "AI-assisted insight")}, ${lenke(prosjektLenker.innhold, "content")}, prioritisation and ${lenke(prosjektLenker.beslutning, "decision support")}`,
       `Built and published ${lenke(prosjektLenker.nettside, "mariusottesen.no")}: leadership profile, portfolio, articles and access-controlled AI demonstrators`,
+      `Developed ${lenke(prosjektLenker.rowSolutions, "Row Solutions")}: commercial SMB initiative with a completed website for rowsolutions.no — positioning, service structure and digital platform, not yet publicly published`,
       `${totalt} published ${lenke(prosjektLenker.faginnlegg, "articles")} on AI, leadership and commercial value creation (updated automatically)`,
       "Contributed as an invited panelist in a professional HR network discussing innovation, AI, leadership responsibility and execution.",
       `Initiator of ${lenke(prosjektLenker.valueLab, "AI Value Lab Oslo")}: cross-disciplinary arena for AI learning, experience sharing and exploration of practical problem areas`,
@@ -76,6 +78,7 @@ export function getMocResultaterPunkter(lang: Lang): MocResultatPunkt[] {
     `Bygget ${lenke(prosjektLenker.psc, "The Predictive Sales Coach")}: AI-basert salgstrening og møteforberedelse med kundesimulering, strukturert feedback, evaluering og salgslederinnsikt`,
     `Utviklet modeller og arbeidsflyter for ${lenke(prosjektLenker.agent, "AI-assistert innsikt")}, ${lenke(prosjektLenker.innhold, "innhold")}, prioritering og ${lenke(prosjektLenker.beslutning, "beslutningsstøtte")}`,
     `Bygget og publisert ${lenke(prosjektLenker.nettside, "mariusottesen.no")}: lederprofil, portefølje, faginnlegg og tilgangsstyrte AI-demonstratorer`,
+    `Utviklet ${lenke(prosjektLenker.rowSolutions, "Row Solutions")}: kommersielt SMB-initiativ med ferdigstilt nettside for rowsolutions.no — posisjonering, tjenestestruktur og digital plattform, ennå ikke offentlig publisert`,
     `${totalt} ${lenke(prosjektLenker.faginnlegg, "faginnlegg")} om AI, ledelse og kommersiell verdiskaping (oppdateres løpende)`,
     "Bidratt som invitert paneldeltaker i faglig HR-nettverk om innovasjon, AI, lederansvar og gjennomføring.",
     `Initiativtaker til ${lenke(prosjektLenker.valueLab, "AI Value Lab Oslo")}: tverrfaglig arena for AI-læring, erfaringsutveksling og utforsking av praktiske problemstillinger`,

@@ -15,6 +15,7 @@ import { aiArkitekturBeslutningsstotte } from "./prosjekter/ai-arkitektur-beslut
 import { aiValueLabOslo } from "./prosjekter/ai-value-lab-oslo";
 import { aiFaginnleggHub } from "./prosjekter/ai-faginnlegg-hub";
 import { mariusottesenNettside } from "./prosjekter/mariusottesen-nettside";
+import { rowSolutions } from "./prosjekter/row-solutions";
 
 export type ProsjektPortfolioEntry = {
   id: string;
@@ -91,6 +92,7 @@ export const PROSJEKT_PORTFOLIO_KATEGORIER: ProsjektPortfolioKategori[] = [
       { id: "prosjektoppgave-strategisk-implementering-2026", introSlug: "strategisk" },
       { id: "skoyenasen-tannklinikk-2026", introSlug: "tannklinikk" },
       { id: "mariusottesen-no-2025", introSlug: "nettside" },
+      { id: "row-solutions-2026", introSlug: "row-solutions" },
     ],
   },
   {
@@ -144,6 +146,7 @@ const legacyProsjekter: ProsjektType[] = [
   eventPlanner,
   pscPromoVideo,
   mariusottesenNettside,
+  rowSolutions,
   prosjektoppgaveStrategiskImplementering,
   skoyenasenTannklinikk,
   aiAssistertInnsiktsagent,

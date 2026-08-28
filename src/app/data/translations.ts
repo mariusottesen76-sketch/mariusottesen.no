@@ -234,6 +234,11 @@ const translations: Translations = {
     no: "Nettside for lederprofil, portefølje, faginnlegg og tilgangsstyrte AI-demonstratorer",
     en: "Website for leadership profile, portfolio, articles and access-controlled AI demonstrators",
   },
+  "prosjekter.intro.punkt.row-solutions.label": { no: "Row Solutions", en: "Row Solutions" },
+  "prosjekter.intro.punkt.row-solutions.desc": {
+    no: "Ferdigstilt nettside for rowsolutions.no — posisjonering, tjenestestruktur og AI-assistert utvikling, ennå ikke publisert",
+    en: "Completed website for rowsolutions.no — positioning, service structure and AI-assisted development, not yet published",
+  },
   "prosjekter.intro.punkt.strategisk.desc": {
     no: "Fra case til gjennomførbar plan (BI) — modell for ansvarlig implementering",
     en: "From case to executable plan (BI) — a model for responsible implementation",

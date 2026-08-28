@@ -17,6 +17,7 @@ import { smbSalgsflytSjekken } from "../../data/prosjekter/smb-salgsflyt-sjekken
 import { prosjektoppgaveStrategiskImplementering } from "../../data/prosjekter/prosjektoppgave-strategisk-implementering";
 import { skoyenasenTannklinikk } from "../../data/prosjekter/skoyenasen-tannklinikk";
 import { mariusottesenNettside } from "../../data/prosjekter/mariusottesen-nettside";
+import { rowSolutions } from "../../data/prosjekter/row-solutions";
 import { aiAssistertInnsiktsagent } from "../../data/prosjekter/ai-assistert-innsiktsagent";
 import { aiAssistertInnsiktsOgInnholdsagent } from "../../data/prosjekter/ai-assistert-innsikts-og-innholdsagent";
 import { aiArkitekturBeslutningsstotte } from "../../data/prosjekter/ai-arkitektur-beslutningsstotte";
@@ -81,6 +82,7 @@ const prosjektBySlug: Record<StrategicPlatformSlug, ProsjektType> = {
   "strategisk-ai-implementering": prosjektoppgaveStrategiskImplementering,
   "skoyenasen-tannklinikk": skoyenasenTannklinikk,
   "mariusottesen-nettside": mariusottesenNettside,
+  "row-solutions": rowSolutions,
   "agentisk-arbeidsflyt": aiAssistertInnsiktsagent,
   "ai-innsikts-og-innholdsmotor": aiAssistertInnsiktsOgInnholdsagent,
   "ai-arkitektur-beslutningsstotte": aiArkitekturBeslutningsstotte,
@@ -129,7 +131,7 @@ function StrategicProjectDetailInner({ slug }: { slug: StrategicPlatformSlug }) 
   const detailCta = projectV2 ? buildProjectDetailCta(projectV2) : null;
   const { detail } = platform;
   const heroSrc = projectV2?.detailHeroImage ?? prosjekt.bildeUrl;
-  const heroAlt = projectV2?.altText ?? detail.hero.bildeAlt;
+  const heroAlt = projectV2?.detailHeroAlt ?? projectV2?.altText ?? detail.hero.bildeAlt;
   const [activeImage, setActiveImage] = useState<{ src: string; alt: string } | null>(null);
 
   return (
@@ -181,13 +183,18 @@ function StrategicProjectDetailInner({ slug }: { slug: StrategicPlatformSlug }) 
           src={heroSrc}
           alt={t(heroAlt, lang)}
           lang={lang}
-          onImageClick={(src, alt) => setActiveImage({ src, alt })}
+          onImageClick={
+            projectV2?.overviewImageMissing
+              ? undefined
+              : (src, alt) => setActiveImage({ src, alt })
+          }
           objectPosition={projectV2?.detailHeroObjectPosition}
           fit={resolveDetailHeroFit(projectV2?.needsNewDetailHero ?? projectV2?.detailHeroMissing)}
           aspectRatio={projectV2?.detailHeroAspectRatio}
           maxWidthPx={projectV2?.detailHeroMaxWidthPx}
           maxHeightPx={projectV2?.detailHeroMaxHeightPx}
           frameless={projectV2?.detailHeroFrameless}
+          empty={projectV2?.detailHeroMissing}
         />
 
         {projectV2 && detailCta ? (

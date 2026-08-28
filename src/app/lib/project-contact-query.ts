@@ -76,6 +76,10 @@ export const PROJECT_SLUG_DISPLAY: Record<string, { no: string; en: string }> = 
     no: "Event Planner",
     en: "Event Planner",
   },
+  "row-solutions": {
+    no: "Row Solutions",
+    en: "Row Solutions",
+  },
 };
 
 export function getProjectSlugDisplayName(slug: string, lang: "no" | "en"): string {

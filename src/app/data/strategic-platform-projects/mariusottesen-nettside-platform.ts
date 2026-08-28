@@ -128,6 +128,7 @@ export const mariusottesenNettsidePlatform: StrategicPlatformProject = {
         { no: "Faginnlegg med anbefalte lesestier, innholdsfortegnelse, kortoversikt og modal for hele innlegg", en: "Articles with recommended reading paths, table of contents, card overview and modal for full posts" },
         { no: "AI-prosjektside med portefølje, hurtigoversikt og detaljerte prosjektbeskrivelser", en: "AI projects page with portfolio, quick overview and detailed project descriptions" },
         { no: "Tilgangsstyrte AI-demonstratorer og landingssider for utvalgte løsninger", en: "Access-controlled AI demonstrators and landing pages for selected solutions" },
+        { no: "Case-side for Row Solutions (rowsolutions.no) i porteføljen — ferdigstilt, ikke publisert", en: "Case page for Row Solutions (rowsolutions.no) in the portfolio — completed, not published" },
         { no: "Kontaktskjema med e-postintegrasjon", en: "Contact form with email integration" },
         { no: "Responsivt design, SEO, metadata og forberedt deling på LinkedIn og X", en: "Responsive design, SEO, metadata and prepared sharing on LinkedIn and X" },
       ],

@@ -20,6 +20,8 @@ type ProjectHeroProps = {
   maxWidthPx?: number;
   maxHeightPx?: number;
   frameless?: boolean;
+  /** Behold hero-ramme uten bilde — samme plassering som øvrige detaljsider. */
+  empty?: boolean;
 };
 
 const framedClass =
@@ -40,12 +42,30 @@ export default function ProjectHero({
   maxWidthPx: maxWidthPxProp,
   maxHeightPx: maxHeightPxProp,
   frameless = false,
+  empty = false,
 }: ProjectHeroProps) {
   const aspectRatio = aspectRatioProp ?? PROJECT_DETAIL_HERO.aspectRatio;
   const maxWidthPx = maxWidthPxProp ?? PROJECT_DETAIL_HERO.maxWidthPx;
   const maxHeightPx = maxHeightPxProp ?? PROJECT_DETAIL_HERO.maxHeightPx;
   const objectFitClass = fit === "contain" ? "object-contain" : "object-cover";
   const frameClass = frameless ? framelessClass : framedClass;
+
+  const frameStyle = {
+    aspectRatio,
+    maxWidth: `${maxWidthPx}px`,
+    maxHeight: `${maxHeightPx}px`,
+    width: "100%",
+  };
+
+  if (empty) {
+    return (
+      <div
+        className={`${frameClass} mx-auto bg-slate-900/60`}
+        style={frameStyle}
+        aria-hidden="true"
+      />
+    );
+  }
 
   const image = (
     <Image
@@ -59,13 +79,6 @@ export default function ProjectHero({
       sizes={`(max-width: 768px) 100vw, ${maxWidthPx}px`}
     />
   );
-
-  const frameStyle = {
-    aspectRatio,
-    maxWidth: `${maxWidthPx}px`,
-    maxHeight: `${maxHeightPx}px`,
-    width: "100%",
-  };
 
   const frame = onImageClick ? (
     <button

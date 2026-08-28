@@ -9,6 +9,7 @@ import { eventPlannerV2 } from "./projects/event-planner";
 import { strategiskAiImplementeringV2 } from "./projects/strategisk-ai-implementering";
 import { skoyenasenTannklinikkV2 } from "./projects/skoyenasen-tannklinikk";
 import { mariusottesenNettsideV2 } from "./projects/mariusottesen-nettside";
+import { rowSolutionsV2 } from "./projects/row-solutions";
 import { agentiskArbeidsflytV2 } from "./projects/agentisk-arbeidsflyt";
 import { aiInnsiktsOgInnholdsmotorV2 } from "./projects/ai-innsikts-og-innholdsmotor";
 import { aiArkitekturBeslutningsstotteV2 } from "./projects/ai-arkitektur-beslutningsstotte";
@@ -31,6 +32,7 @@ const baseProjectV2Records: ProjectV2BaseRecord[] = [
   strategiskAiImplementeringV2,
   skoyenasenTannklinikkV2,
   mariusottesenNettsideV2,
+  rowSolutionsV2,
   agentiskArbeidsflytV2,
   aiInnsiktsOgInnholdsmotorV2,
   aiArkitekturBeslutningsstotteV2,
