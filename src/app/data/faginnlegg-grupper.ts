@@ -43,6 +43,7 @@ export const LEDELSE_SUBTEMA: FaginnleggSubtema[] = [
     id: "ledelse-kultur",
     label: { no: "Team, kultur og prestasjon", en: "Teams, culture and performance" },
     innleggIds: [
+      "kong-harald-startnummer-en-2026-08",
       "verdensklasse-bygges-sammen-cnn-2026-07",
       "vi-rodde-sammen-fotball-vm-2026-07",
       "psykologisk-trygghet-krav-2026-01",

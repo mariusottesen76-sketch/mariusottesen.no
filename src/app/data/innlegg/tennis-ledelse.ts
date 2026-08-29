@@ -16,6 +16,42 @@ const localize = (no: string, en: string = no): LocalizedText => ({ no, en });
 
 const tennisLedelseRaw = [
     {
+      id: "kong-harald-startnummer-en-2026-08",
+      tittel: "Harald V. Startnummer 1.",
+      teaser:
+        "På bildet bærer Kong Harald startnummer 1 på brystet. Han var Harald den femte — men for så mange av oss var han også en ener. En refleksjon om ledelse, tillit, fellesskap og «Alt for Norge».",
+      bildeUrl: "/images/kong-harald.png",
+      dato: "2026-08-29",
+      visningsDato: "29.08.26",
+      kategori: "Lederstil, kultur og team",
+      link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
+      innhold: `På bildet bærer Kong Harald startnummer 1 på brystet. Han var Harald den femte. Men for så mange av oss var han også en ener. Som konge. Som menneske.
+
+I dag kjenner jeg først og fremst på takknemlighet. ❤️
+
+Takk for måten du bar rollen på. Med ro, varme, humor og verdighet. Takk for at du sto stødig når Norge trengte samling, og nær når mennesker trengte omtanke.
+
+Du minnet oss på at ekte ledelse ikke bare handler om å gå foran. Det handler også om å stille opp, stå bak folk og gi dem trygghet, tillit og retning.
+
+Og kanskje like viktig er det å skape plass til forskjeller. Kong Harald sto opp for et Norge med rom for ulike mennesker, ulike liv og ulike valg. Det er også ledelse. Å samle uten å gjøre alle like.
+
+Det er kanskje derfor du betydde så mye for så mange.
+
+Du hadde en sjelden evne til å være både konge og medmenneske. Både samlende og jordnær. Både høyt respektert og oppriktig likt.
+
+Jeg synes også bildet sier noe fint om forholdet ditt til idretten. Du sto ikke bare på tribunen og klappet. Du kjente selv verdien av innsats, disiplin, fellesskap og gleden ved å delta.
+
+Og bare kort tid før du gikk bort, fikk vi enda et slikt øyeblikk. Landslaget kom hjem fra VM, og ble feiret hos deg. «Alt for Norge» var ikke bare ditt valgspråk. Det var også sangen som igjen samlet landet rundt fotballen.
+
+For meg vil «Alt for Norge» alltid stå igjen som mer enn ord. Det var en måte å møte landet og menneskene i det på.
+
+Takk for alt, kjære Kong Harald.
+
+Hvil i fred. 🖤
+
+#KongHarald #ledelse #tillit #fellesskap #AltForNorge`,
+    },
+    {
       id: "ai-mottaker-endringsledelse-2026-08",
       tittel: "Det mest interessante med AI denne uken har egentlig ikke vært AI",
       teaser:
@@ -1353,6 +1389,36 @@ Virksomheter feiler ofte av samme grunn.`,
 ];
 
 const tennisLedelseEn: Record<string, LocalizedTextMap> = {
+  "kong-harald-startnummer-en-2026-08": {
+    tittel: "Harald V. Bib number 1.",
+    teaser:
+      "In the photo, King Harald wears bib number 1 on his chest. He was Harald the Fifth — yet for so many of us he was also one of a kind. A reflection on leadership, trust, community and «All for Norway».",
+    innhold: `In the photo, King Harald wears bib number 1 on his chest. He was Harald the Fifth. Yet for so many of us he was also one of a kind. As king. As a human being.
+
+Today I feel above all gratitude. ❤️
+
+Thank you for the way you carried the role. With calm, warmth, humour and dignity. Thank you for standing firm when Norway needed to come together, and staying close when people needed care.
+
+You reminded us that real leadership is not only about going first. It is also about showing up, standing behind people and giving them safety, trust and direction.
+
+And perhaps equally important: creating room for difference. King Harald stood up for a Norway with space for different people, different lives and different choices. That is leadership too. To bring people together without making everyone the same.
+
+Perhaps that is why you meant so much to so many.
+
+You had a rare ability to be both king and fellow human. Both unifying and down to earth. Both deeply respected and genuinely liked.
+
+I also think the photo says something fine about your relationship with sport. You did not only sit in the stands and applaud. You knew the value of effort, discipline, community and the joy of taking part yourself.
+
+And only a short time before you passed away, we had another such moment. The national team came home from the World Cup and was celebrated at your home. «All for Norway» was not only your motto. It was also the song that once again brought the country together around football.
+
+For me, «All for Norway» will always be more than words. It was a way of meeting the country and the people in it.
+
+Thank you for everything, dear King Harald.
+
+Rest in peace. 🖤
+
+#KongHarald #ledelse #tillit #fellesskap #AltForNorge`,
+  },
   "ai-mottaker-endringsledelse-2026-08": {
     tittel: "The most interesting thing about AI this week has not really been AI",
     teaser:
