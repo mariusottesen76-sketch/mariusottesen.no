@@ -64,15 +64,20 @@ const sporKolonneOverskriftKlasse =
 const fagKortKolonneOverskriftKlasse =
   "font-black text-white italic tracking-tight leading-tight hyphens-none [overflow-wrap:normal] text-base md:text-lg border-b border-indigo-500/30 pb-1.5 mb-4";
 
+/** Kun innholdsfortegnelse — én artikkel med sammenslått tittel/subtitle. */
+function faginnleggTocLabel(innlegg: FaginnleggInnlegg, lang: "no" | "en"): string {
+  if (innlegg.id === "salgsledelse-i-praksis-2026-08" && innlegg.undertittel?.[lang]) {
+    const undertittel = innlegg.undertittel[lang];
+    const undertittelLower = undertittel.charAt(0).toLowerCase() + undertittel.slice(1);
+    return `${innlegg.tittel[lang]} – ${undertittelLower}`;
+  }
+  return innlegg.tittel[lang];
+}
+
 function FaginnleggTocLink({ innlegg, lang }: { innlegg: FaginnleggInnlegg; lang: "no" | "en" }) {
   return (
     <Link href={faginnleggDetailPath(innlegg.id)} className="block hover:text-indigo-300">
-      <span className="block">{innlegg.tittel[lang]}</span>
-      {innlegg.undertittel?.[lang] && (
-        <span className="block mt-0.5 text-xs text-slate-500 font-light italic leading-snug">
-          {innlegg.undertittel[lang]}
-        </span>
-      )}
+      {faginnleggTocLabel(innlegg, lang)}
     </Link>
   );
 }
