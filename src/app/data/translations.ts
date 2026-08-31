@@ -186,8 +186,8 @@ const translations: Translations = {
     en: "Here you will find each article with a short description. Read the full text directly on this page, or ",
   },
   "fag.kort.seksjon.intro.linkedin": {
-    no: "gå videre til LinkedIn for diskusjon og flere perspektiver.",
-    en: "go to LinkedIn for discussion and more perspectives.",
+    no: "se mine nyeste innlegg og diskusjoner på LinkedIn.",
+    en: "see my latest posts and discussions on LinkedIn.",
   },
   "fag.kat.ledelse": { no: "Strategisk ledelse & transformasjon", en: "Strategic leadership & transformation" },
   "fag.kat.ai": { no: "AI & fremtidens teknologiledelse", en: "AI & next-generation technology leadership" },
@@ -200,9 +200,13 @@ const translations: Translations = {
   "fag.artikkel.tilbake": { no: "Tilbake til Faginnlegg", en: "Back to Articles" },
   "fag.artikkel.relevant": { no: "Relevant videre", en: "Relevant next steps" },
   "fag.nye": { no: "Nye innlegg under utarbeidelse...", en: "New articles in progress..." },
-  "fag.linkedin": {
+  "fag.linkedin.discussion": {
     no: "Følg diskusjonen og se flere perspektiver på LinkedIn →",
-    en: "Follow the discussion and see more perspectives on LinkedIn →",
+    en: "Follow the discussion and explore more perspectives on LinkedIn →",
+  },
+  "fag.linkedin.feed": {
+    no: "Se mine nyeste innlegg og diskusjoner på LinkedIn →",
+    en: "See my latest posts and discussions on LinkedIn →",
   },
   "fag.cta": {
     no: "Vil du diskutere et relatert tema, er du velkommen til å ta kontakt.",

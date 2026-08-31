@@ -6,6 +6,10 @@ export const salgsledelseIPraksis: FaginnleggInnlegg = {
     no: "Salgsledelse i praksis",
     en: "Sales leadership in practice",
   },
+  undertittel: {
+    no: "Fra aktivitetskontroll til læring, prioritering og resultater",
+    en: "From activity control to learning, prioritisation and results",
+  },
   teaser: {
     no: "God salgsledelse handler ikke bare om aktivitet, pipeline og forecast. KPI-er viser hvor du bør se; coaching og prioritering avgjør hva du gjør videre.",
     en: "Good sales leadership is not just about activity, pipeline and forecast. KPIs show where to look; coaching and prioritisation determine what you do next.",
@@ -13,15 +17,12 @@ export const salgsledelseIPraksis: FaginnleggInnlegg = {
   dato: "2026-08-31",
   visningsDato: "31.08.26",
   kategori: "Kommersiell ledelse og salg",
+  bildeUrl: "/images/salgsledelse -i-praksis.png",
+  bildeKortFokus: "42% center",
+  bildeModalBred: true,
   link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
-  linkedinCtaText: {
-    no: "Se mine nyeste innlegg og diskusjoner på LinkedIn →",
-    en: "See my latest posts and discussions on LinkedIn →",
-  },
   innhold: {
-    no: `<em>Fra aktivitetskontroll til læring, prioritering og resultater</em>
-
-En salgsleder kan ha full kontroll på aktivitetene og samtidig vite overraskende lite om hvorfor salget faktisk går bra eller dårlig.
+    no: `En salgsleder kan ha full kontroll på aktivitetene og samtidig vite overraskende lite om hvorfor salget faktisk går bra eller dårlig.
 
 Antall kundemøter. Nye leads. Pipeline. Tilbud. Hit-rate. Forecast. Omsetning.
 
@@ -271,9 +272,7 @@ Cespedes, Frank V. (2021). <em>Avoid a One-Size-Fits-All Approach to Sales Coach
 Nguyen, Carlin A., Andrew B. Artis, Richard E. Plank & Paul J. Solomon (2019). <em>Dimensions of effective sales coaching: scale development and validation</em>. Journal of Personal Selling & Sales Management, 39(3), 299–315.
 
 <a href="https://doi.org/10.1080/08853134.2019.1621758" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">https://doi.org/10.1080/08853134.2019.1621758</a>`,
-    en: `<em>From activity control to learning, prioritisation and results</em>
-
-A sales leader can have full visibility into activity and still know surprisingly little about why sales are actually going well or poorly.
+    en: `A sales leader can have full visibility into activity and still know surprisingly little about why sales are actually going well or poorly.
 
 Number of customer meetings. New leads. Pipeline. Proposals. Hit rate. Forecast. Revenue.
 

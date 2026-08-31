@@ -1,6 +1,35 @@
 import { normalizeDisplayText } from "./normalize-display-text";
 import { formatInnleggHtml } from "./product-brand";
 
+const STANDALONE_STRONG_RE = /^<strong>([\s\S]+)<\/strong>$/i;
+const H2_CLASS =
+  "text-lg md:text-xl font-semibold text-white tracking-tight mt-8 md:mt-10 mb-3 leading-snug";
+const H3_CLASS =
+  "text-base md:text-lg font-semibold text-slate-100 tracking-tight mt-6 mb-2 leading-snug";
+
+/** Standalone <strong>-avsnitt som seksjonsoverskrifter vs. utheving i brødtekst. */
+function classifyStandaloneStrong(innerHtml: string): "h2" | "h3" | "p" {
+  const text = innerHtml.replace(/<[^>]+>/g, "").trim();
+  if (!text) return "p";
+  if (text.endsWith(".")) return "p";
+  if (text.includes("→")) return "p";
+  if (/^[«""]/.test(text)) return "p";
+  if (text.endsWith(":")) return "p";
+  if (/^\d+[.)️⃣]?\s/.test(text)) return "h3";
+  return "h2";
+}
+
+function formatStandaloneStrongParagraph(trimmed: string): string {
+  const match = trimmed.match(STANDALONE_STRONG_RE);
+  if (!match) return "";
+  const inner = match[1].trim();
+  const kind = classifyStandaloneStrong(inner);
+  const html = formatInnleggHtml(inner);
+  if (kind === "h3") return `<h3 class="${H3_CLASS}">${html}</h3>`;
+  if (kind === "h2") return `<h2 class="${H2_CLASS}">${html}</h2>`;
+  return `<p class="mb-4"><strong>${html}</strong></p>`;
+}
+
 /** Fjerner ledende avsnitt/linje i innhold som gjentar tittelen ord for ord. */
 export function stripDuplicateTitle(innhold: string, tittel: string): string {
   const normalize = (s: string) =>
@@ -37,6 +66,17 @@ export function stripDuplicateTitle(innhold: string, tittel: string): string {
 }
 
 function formatParagraphHtml(trimmed: string): string {
+  if (/^<h2[\s>]/i.test(trimmed)) {
+    const inner = trimmed.replace(/^<h2[^>]*>/i, "").replace(/<\/h2>$/i, "").trim();
+    return `<h2 class="${H2_CLASS}">${formatInnleggHtml(inner)}</h2>`;
+  }
+  if (/^<h3[\s>]/i.test(trimmed)) {
+    const inner = trimmed.replace(/^<h3[^>]*>/i, "").replace(/<\/h3>$/i, "").trim();
+    return `<h3 class="${H3_CLASS}">${formatInnleggHtml(inner)}</h3>`;
+  }
+  if (STANDALONE_STRONG_RE.test(trimmed)) {
+    return formatStandaloneStrongParagraph(trimmed);
+  }
   const lines = trimmed.split("\n").map((l) => l.trim()).filter(Boolean);
   const bulletLines = lines.filter((l) => l.startsWith("•") || l.startsWith("- "));
   if (bulletLines.length > 0 && bulletLines.length === lines.length) {

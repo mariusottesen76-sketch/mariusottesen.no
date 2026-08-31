@@ -31,6 +31,7 @@ import {
   type FaginnleggInnlegg,
 } from './lib/faginnlegg-data';
 import { bildeCacheVersion, faginnleggDetailPath } from './lib/faginnlegg-types';
+import { getFaginnleggLinkedInCta } from './lib/faginnlegg-linkedin-cta';
 
 const bildeFitClass = (innlegg: FaginnleggInnlegg) =>
   innlegg.bildeFit === "contain" ? "object-contain object-center" : "object-cover object-center";
@@ -62,6 +63,19 @@ const sporKolonneOverskriftKlasse =
 /** Kolonneoverskrift over innleggskort — mindre enn innholdsfortegnelsen over. */
 const fagKortKolonneOverskriftKlasse =
   "font-black text-white italic tracking-tight leading-tight hyphens-none [overflow-wrap:normal] text-base md:text-lg border-b border-indigo-500/30 pb-1.5 mb-4";
+
+function FaginnleggTocLink({ innlegg, lang }: { innlegg: FaginnleggInnlegg; lang: "no" | "en" }) {
+  return (
+    <Link href={faginnleggDetailPath(innlegg.id)} className="block hover:text-indigo-300">
+      <span className="block">{innlegg.tittel[lang]}</span>
+      {innlegg.undertittel?.[lang] && (
+        <span className="block mt-0.5 text-xs text-slate-500 font-light italic leading-snug">
+          {innlegg.undertittel[lang]}
+        </span>
+      )}
+    </Link>
+  );
+}
 
 const Faginnlegg = ({ onNavigate: _onNavigate }: { onNavigate?: (tab: string) => void } = {}) => {
   const { lang } = useLanguage();
@@ -229,9 +243,7 @@ const Faginnlegg = ({ onNavigate: _onNavigate }: { onNavigate?: (tab: string) =>
                           className="border-b border-slate-800/40 hover:bg-slate-900/40 transition-colors"
                         >
                           <td className="py-1.5 px-2 text-sm font-sans font-normal text-slate-300 hover:text-indigo-300">
-                            <Link href={faginnleggDetailPath(innlegg.id)} className="block hover:text-indigo-300">
-                              {innlegg.tittel[lang]}
-                            </Link>
+                            <FaginnleggTocLink innlegg={innlegg} lang={lang} />
                           </td>
                         </tr>
                       ))}
@@ -260,9 +272,7 @@ const Faginnlegg = ({ onNavigate: _onNavigate }: { onNavigate?: (tab: string) =>
                           className="border-b border-slate-800/40 hover:bg-slate-900/40 transition-colors"
                         >
                           <td className="py-1.5 px-2 text-sm text-slate-300 hover:text-indigo-300">
-                            <Link href={faginnleggDetailPath(innlegg.id)} className="block hover:text-indigo-300">
-                              {innlegg.tittel[lang]}
-                            </Link>
+                            <FaginnleggTocLink innlegg={innlegg} lang={lang} />
                           </td>
                         </tr>
                       ))}
@@ -297,7 +307,6 @@ const Faginnlegg = ({ onNavigate: _onNavigate }: { onNavigate?: (tab: string) =>
                   innlegg={innlegg}
                   lang={lang}
                   lesLabel={tr("fag.les")}
-                  linkedinLabel={tr("fag.linkedin")}
                 />
               ))
             ) : (
@@ -318,7 +327,6 @@ const Faginnlegg = ({ onNavigate: _onNavigate }: { onNavigate?: (tab: string) =>
                   innlegg={innlegg}
                   lang={lang}
                   lesLabel={tr("fag.les")}
-                  linkedinLabel={tr("fag.linkedin")}
                 />
               ))
             ) : (
@@ -337,12 +345,10 @@ const InnleggsKort = ({
   innlegg,
   lang,
   lesLabel,
-  linkedinLabel,
 }: {
   innlegg: FaginnleggInnlegg;
   lang: "no" | "en";
   lesLabel: string;
-  linkedinLabel: string;
 }) => {
   const cacheVersion = bildeCacheVersion(innlegg);
   const kortSrc = kortBildeSrc(innlegg);
@@ -436,7 +442,7 @@ const InnleggsKort = ({
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1 text-xs text-slate-500 hover:text-slate-300 transition-colors leading-snug focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
           >
-            {innlegg.linkedinCtaText?.[lang] ?? linkedinLabel}
+            {getFaginnleggLinkedInCta(innlegg.link, lang)}
           </a>
         </div>
       </div>

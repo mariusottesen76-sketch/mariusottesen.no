@@ -12,6 +12,7 @@ import { bildeCacheVersion } from "../../lib/faginnlegg-types";
 import { formatFaginnleggBodyHtml, resolveFaginnleggBody } from "../../lib/faginnlegg-innhold";
 import { applyProductNameItalicsPlain, formatInnleggTittelHtml } from "../../lib/product-brand";
 import { getRelevantVidereLinks, labelForLang } from "../../lib/faginnlegg-relevant-videre";
+import { getFaginnleggLinkedInCta } from "../../lib/faginnlegg-linkedin-cta";
 import { blockTitleClass } from "../../lib/typography";
 
 const linkClass =
@@ -240,8 +241,8 @@ function FaginnleggArticleInner({ innlegg }: { innlegg: FaginnleggInnlegg }) {
         {tr("fag.artikkel.tilbake")}
       </Link>
 
-      <header className="border-b border-white/10 pb-6 mb-8 space-y-4">
-        <div className="flex items-center gap-4 flex-wrap">
+      <header className="border-b border-white/10 pb-6 mb-8">
+        <div className="flex items-center gap-4 flex-wrap mb-4">
           <time dateTime={innlegg.dato} className="text-[10px] font-mono text-indigo-400 uppercase tracking-widest font-bold">
             {innlegg.visningsDato}
           </time>
@@ -256,8 +257,15 @@ function FaginnleggArticleInner({ innlegg }: { innlegg: FaginnleggInnlegg }) {
           dangerouslySetInnerHTML={{ __html: formatInnleggTittelHtml(innlegg.tittel[lang]) }}
         />
 
+        {innlegg.undertittel?.[lang] && (
+          <p
+            className="mt-2 text-lg md:text-xl text-slate-300 font-light italic leading-snug [&_em]:italic"
+            dangerouslySetInnerHTML={{ __html: applyProductNameItalicsPlain(innlegg.undertittel[lang]) }}
+          />
+        )}
+
         <p
-          className="text-lg text-slate-300 leading-relaxed font-light [&_em]:italic"
+          className={`text-lg text-slate-300 leading-relaxed font-light [&_em]:italic ${innlegg.undertittel?.[lang] ? "mt-5" : "mt-4"}`}
           dangerouslySetInnerHTML={{ __html: applyProductNameItalicsPlain(innlegg.teaser[lang]) }}
         />
       </header>
@@ -265,7 +273,7 @@ function FaginnleggArticleInner({ innlegg }: { innlegg: FaginnleggInnlegg }) {
       <FaginnleggArticleMedia innlegg={innlegg} lang={lang} cacheVersion={cacheVersion} />
 
       <div
-        className="text-slate-300 text-base leading-relaxed space-y-0 [&_strong]:font-semibold [&_em]:italic [&_a]:text-indigo-300 [&_a]:underline [&_a]:underline-offset-2"
+        className="text-slate-300 text-base leading-relaxed [&_p]:mb-4 [&_p_strong]:font-semibold [&_em]:italic [&_a]:text-indigo-300 [&_a]:underline [&_a]:underline-offset-2 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:space-y-2 [&_ul]:my-4 [&_ul]:marker:text-indigo-400"
         dangerouslySetInnerHTML={{ __html: bodyHtml }}
       />
 
@@ -276,7 +284,7 @@ function FaginnleggArticleInner({ innlegg }: { innlegg: FaginnleggInnlegg }) {
           rel="noopener noreferrer"
           className="inline-flex items-center text-sm text-slate-400 hover:text-slate-200 transition-colors leading-relaxed focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
         >
-          {innlegg.linkedinCtaText?.[lang] ?? tr("fag.linkedin")}
+          {getFaginnleggLinkedInCta(innlegg.link, lang)}
         </a>
       </div>
 
