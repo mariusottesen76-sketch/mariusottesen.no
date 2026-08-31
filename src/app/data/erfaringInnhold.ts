@@ -2,7 +2,7 @@ import { Lang } from "../LanguageContext";
 
 const data = {
   no: {
-    intro: "Solid erfaring på tvers av kunnskapsintensive B2B-markeder — fra industri, life science og sirkulær økonomi til teknologi og grossistvirksomhet. Gjennomgående ansvar for å profesjonalisere salgsorganisasjoner, drive vekst og lede endringsprosesser i virksomheter med høye krav til kvalitet og leveranseevne. Under følger utvalgte karrierehøydepunkter, ikke en fullstendig kronologisk CV.",
+    intro: "Solid erfaring på tvers av kunnskapsintensive B2B-markeder — fra industri, life science og sirkulær økonomi til teknologi og grossistvirksomhet. Gjennomgående ansvar for å profesjonalisere salgsorganisasjoner, drive vekst og lede strategiimplementering og endringsprosesser i virksomheter med høye krav til kvalitet og leveranseevne. Under følger utvalgte karrierehøydepunkter, ikke en fullstendig kronologisk CV.",
     jobs: [
       {
         title: "Kommersiell utvikling, AI-prosjekter og metodeutvikling",
@@ -65,7 +65,7 @@ const data = {
     ],
   },
   en: {
-    intro: "Solid experience across knowledge-intensive B2B markets — from industry, life science and circular economy to technology and wholesale. A consistent track record of professionalising sales organisations, accelerating growth, and leading transformation programmes in businesses with exacting standards for quality and delivery. Below are selected career highlights, not a complete chronological CV.",
+    intro: "Solid experience across knowledge-intensive B2B markets — from industry, life science and circular economy to technology and wholesale. A consistent track record of professionalising sales organisations, accelerating growth, and leading strategy implementation and change programmes in businesses with exacting standards for quality and delivery. Below are selected career highlights, not a complete chronological CV.",
     jobs: [
       {
         title: "Commercial development, AI projects and methodology work",

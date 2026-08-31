@@ -136,7 +136,7 @@ const hovedpakker: Record<Lang, TjenestePakke[]> = {
       leveranseKort:
         "Erfaring med å analysere kundereise, salgstrakt, CRM, oppfølging og arbeidsflyt for å identifisere friksjon, forbedringsmuligheter og tydelige prioriteringer.",
       forDetalj:
-        "Særlig når salg, marketing og kundeservice vokser i ulikt tempo, ved CRM-innfasing, lederbytte eller når vekst avdekker hull i kundereisen.",
+        "Særlig når salg, marketing og kundeservice vokser i ulikt tempo, ved CRM-innføring, utfordringer med CRM-adopsjon, lederbytte eller når vekst avdekker hull i kundereisen.",
       leveranseDetalj:
         "Kundereise, salgstrakt, CRM, oppfølging, arbeidsflyt, prioritering av forbedringsområder og struktur for videre gjennomføring.",
       pilotStotte: salgsflytDemonstratorStotte.no,
@@ -150,7 +150,7 @@ const hovedpakker: Record<Lang, TjenestePakke[]> = {
       forDetalj:
         "Særlig ved vekst i salgsteam, pipeline-prioritering, lav CRM-bruk, manglende salgslederinnsikt eller når rapportering ikke gir grunnlag for beslutninger.",
       leveranseDetalj:
-        "CRM-struktur, salgsfaser, pipeline, møte- og oppfølgingsmaler, rapportering, datakvalitet og lederinnsikt.",
+        "CRM-struktur, salgsfaser, pipeline, møte- og oppfølgingsmaler, rapportering, datakvalitet, lederinnsikt og datadrevet salgsledelse.",
     },
     {
       id: "kundedialog",
@@ -184,7 +184,7 @@ const hovedpakker: Record<Lang, TjenestePakke[]> = {
       leveranseKort:
         "Experience analysing customer journey, sales funnel, CRM, follow-up and workflow to identify friction, improvement opportunities and clear priorities.",
       forDetalj:
-        "Especially when sales, marketing and customer service grow at different speeds, during CRM rollout, leadership change or when growth exposes gaps in the customer journey.",
+        "Especially when sales, marketing and customer service grow at different speeds, during CRM rollout, CRM adoption challenges, leadership change or when growth exposes gaps in the customer journey.",
       leveranseDetalj:
         "Customer journey, sales funnel, CRM, follow-up, workflow, prioritisation of improvement areas and structure for further execution.",
       pilotStotte: salgsflytDemonstratorStotte.en,
@@ -198,7 +198,7 @@ const hovedpakker: Record<Lang, TjenestePakke[]> = {
       forDetalj:
         "Especially when scaling the sales team, prioritising pipeline, CRM adoption is low, sales leadership lacks insight or reporting does not support decisions.",
       leveranseDetalj:
-        "CRM structure, sales stages, pipeline, meeting and follow-up templates, reporting, data quality and leadership insight.",
+        "CRM structure, sales stages, pipeline, meeting and follow-up templates, reporting, data quality, leadership insight and data-driven sales leadership.",
     },
     {
       id: "kundedialog",

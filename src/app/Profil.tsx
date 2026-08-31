@@ -195,7 +195,7 @@ export default function Profil({ onNavigate }: { onNavigate?: (tab: string) => v
                 </h2>
                 <ul className="flex flex-wrap gap-2">
                   {d.kompetanse.map((item) => (
-                    <li key={item} className={chipClass}>
+                    <li key={item} className={`${chipClass} max-w-full text-xs sm:text-sm leading-snug`}>
                       {item}
                     </li>
                   ))}
@@ -205,9 +205,9 @@ export default function Profil({ onNavigate }: { onNavigate?: (tab: string) => v
               <div className="space-y-3">
                 <h2 className={sectionTitleClass}>{tr("profil.styrker.title")}</h2>
                 <p className="text-[10px] text-slate-500 italic">{tr("profil.styrker.sub")}</p>
-                <ul className="flex flex-wrap gap-2">
+                <ul className="flex flex-col items-start gap-2">
                   {d.styrker.map((item) => (
-                    <li key={item} className={chipClass}>
+                    <li key={item} className={`${chipClass} w-fit max-w-full text-xs sm:text-sm leading-snug`}>
                       {item}
                     </li>
                   ))}
