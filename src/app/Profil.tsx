@@ -69,11 +69,35 @@ export default function Profil({ onNavigate }: { onNavigate?: (tab: string) => v
   const tr = (key: string) => getTranslation(key, lang);
   const d = getProfilData(lang);
 
-  const primaryLinks = [
-    { href: "/resultater", label: tr("profil.videre.resultater"), aria: "Gå til resultater" },
-    { href: "/erfaring", label: tr("profil.videre.erfaring"), aria: "Gå til erfaring" },
-    { href: "/prosjekter", label: tr("profil.videre.prosjekter"), aria: "Gå til AI-prosjekter" },
-    { href: "/kontakt", label: tr("profil.videre.kontakt"), aria: "Gå til kontakt" },
+  const videreGroups = [
+    {
+      title: tr("profil.videre.groupA.title"),
+      intro: tr("profil.videre.groupA.intro"),
+      links: [
+        { href: "/cv", label: tr("profil.videre.groupA.cv"), aria: "Gå til CV og lederprofil" },
+        { href: "/erfaring", label: tr("profil.videre.groupA.erfaring"), aria: "Gå til erfaring" },
+        { href: "/resultater", label: tr("profil.videre.groupA.resultater"), aria: "Gå til dokumenterte resultater" },
+        { href: "/referanser", label: tr("profil.videre.groupA.referanser"), aria: "Gå til referanser" },
+      ],
+    },
+    {
+      title: tr("profil.videre.groupB.title"),
+      intro: tr("profil.videre.groupB.intro"),
+      links: [
+        { href: "/consulting", label: tr("profil.videre.groupB.consulting"), aria: "Gå til consulting" },
+        { href: "/prosjekter", label: tr("profil.videre.groupB.prosjekter"), aria: "Gå til AI-prosjekter" },
+        { href: "/kontakt", label: tr("profil.videre.groupB.kontakt"), aria: "Gå til kontakt" },
+      ],
+    },
+    {
+      title: tr("profil.videre.groupC.title"),
+      intro: tr("profil.videre.groupC.intro"),
+      links: [
+        { href: "/faginnlegg", label: tr("profil.videre.groupC.faginnlegg"), aria: "Gå til faginnlegg" },
+        { href: "/prosjekter", label: tr("profil.videre.groupC.prosjekter"), aria: "Gå til AI-prosjekter" },
+        { href: "/kontakt", label: tr("profil.videre.groupC.kontakt"), aria: "Gå til kontakt" },
+      ],
+    },
   ];
 
   return (
@@ -302,49 +326,34 @@ export default function Profil({ onNavigate }: { onNavigate?: (tab: string) => v
             </div>
           </section>
 
-          <section aria-labelledby="profil-videre-heading" className="space-y-3">
+          <section aria-labelledby="profil-videre-heading" className="space-y-4">
             <h2 id="profil-videre-heading" className={sectionTitleClass}>
               {tr("profil.videre.title")}
             </h2>
-            <div className={`${cardClass} space-y-4 !bg-slate-900/40`}>
             <p className="text-slate-400 text-sm leading-relaxed">{tr("profil.videre.intro")}</p>
-            <div className="flex flex-wrap gap-x-5 gap-y-2">
-              {primaryLinks.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={`${linkClass} text-sm font-medium no-underline hover:underline`}
-                  aria-label={item.aria}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {videreGroups.map((group) => (
+                <div
+                  key={group.title}
+                  className="p-4 md:p-5 rounded-xl border border-slate-800/80 bg-slate-900/30 space-y-3"
                 >
-                  {item.label}
-                </Link>
+                  <h3 className={cardSubtitleClass}>{group.title}</h3>
+                  <p className="text-slate-400 text-sm leading-relaxed">{group.intro}</p>
+                  <ul className="space-y-2">
+                    {group.links.map((item) => (
+                      <li key={`${group.title}-${item.href}`}>
+                        <Link
+                          href={item.href}
+                          className={`${linkClass} text-sm font-medium no-underline hover:underline`}
+                          aria-label={item.aria}
+                        >
+                          {item.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               ))}
-            </div>
-            <p className="text-xs text-slate-500 flex flex-wrap items-center gap-x-1 gap-y-1">
-              <Link href="/cv" className={secondaryLinkClass} aria-label="Gå til CV og åpen søknad">
-                {tr("profil.videre.cv")}
-              </Link>
-              <span aria-hidden="true">·</span>
-              <NavLink
-                href="/consulting"
-                tab="Consulting"
-                onNavigate={onNavigate}
-                ariaLabel="Gå til consulting"
-                className={secondaryLinkClass}
-              >
-                {tr("profil.videre.consulting")}
-              </NavLink>
-              <span aria-hidden="true">·</span>
-              <NavLink
-                href="/faginnlegg"
-                tab="Faginnlegg"
-                onNavigate={onNavigate}
-                ariaLabel="Gå til faginnlegg"
-                className={secondaryLinkClass}
-              >
-                {tr("profil.ai.link.faginnlegg")}
-              </NavLink>
-            </p>
             </div>
           </section>
 

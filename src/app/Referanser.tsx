@@ -1,11 +1,15 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Quote, Calendar, UserCheck, Linkedin } from "lucide-react";
 import { referanserData } from "./data/referanser";
 import { useLanguage } from "./LanguageContext";
 import { getTranslation } from "./data/translations";
-import { blockTitleClass, pageEyebrowClass, pageTitleClass } from "./lib/typography";
+import { blockTitleClass, cardSubtitleClass, pageEyebrowClass, pageTitleClass } from "./lib/typography";
+
+const linkClass =
+  "text-indigo-400 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400";
 
 export default function Referanser() {
   const { lang } = useLanguage();
@@ -14,6 +18,13 @@ export default function Referanser() {
   const sortert = [...referanserData].sort(
     (a, b) => new Date(b.sorteringsDato).getTime() - new Date(a.sorteringsDato).getTime()
   );
+
+  const videreLinks = [
+    { href: "/erfaring", label: tr("ref.videre.erfaring"), aria: "Gå til erfaring" },
+    { href: "/resultater", label: tr("ref.videre.resultater"), aria: "Gå til dokumenterte resultater" },
+    { href: "/cv", label: tr("ref.videre.cv"), aria: "Gå til CV og lederprofil" },
+    { href: "/kontakt", label: tr("ref.videre.kontakt"), aria: "Gå til kontakt" },
+  ];
 
   return (
     <div className="py-4 text-left w-full overflow-x-hidden">
@@ -92,6 +103,26 @@ export default function Referanser() {
             </div>
             <Quote className="text-slate-600 group-hover:text-indigo-500 transition-colors" size={18} />
           </a>
+
+          <section aria-labelledby="ref-videre-heading" className="pt-4 space-y-3 border-t border-slate-800/60">
+            <h2 id="ref-videre-heading" className={cardSubtitleClass}>
+              {tr("ref.videre.title")}
+            </h2>
+            <p className="text-slate-500 text-sm leading-relaxed">{tr("ref.videre.intro")}</p>
+            <ul className="flex flex-col sm:flex-row sm:flex-wrap gap-x-5 gap-y-2">
+              {videreLinks.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className={`${linkClass} text-sm font-medium no-underline hover:underline`}
+                    aria-label={item.aria}
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
         </div>
       </div>
     </div>
