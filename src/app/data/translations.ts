@@ -144,12 +144,12 @@ const translations: Translations = {
   },
   "fag.kort.seksjon.title": { no: "Alle innlegg i detalj", en: "All articles in detail" },
   "fag.kort.seksjon.intro.lead": {
-    no: "Her finner du hvert innlegg med kort beskrivelse. Klikk for å lese hele teksten her på siden, eller ",
-    en: "Here you will find each article with a short description. Click to read the full text on this page, or ",
+    no: "Her finner du hvert innlegg med kort beskrivelse. Les hele teksten direkte på siden, eller ",
+    en: "Here you will find each article with a short description. Read the full text directly on this page, or ",
   },
   "fag.kort.seksjon.intro.linkedin": {
-    no: "gå videre til LinkedIn.",
-    en: "continue to LinkedIn.",
+    no: "gå videre til LinkedIn for diskusjon og flere perspektiver.",
+    en: "go to LinkedIn for discussion and more perspectives.",
   },
   "fag.kat.ledelse": { no: "Strategisk ledelse & transformasjon", en: "Strategic leadership & transformation" },
   "fag.kat.ai": { no: "AI & fremtidens teknologiledelse", en: "AI & next-generation technology leadership" },
@@ -157,9 +157,13 @@ const translations: Translations = {
   "fag.toc.title.1": { no: "Innholds", en: "Table of" },
   "fag.toc.title.2": { no: "fortegnelse", en: "Contents" },
   "fag.toc.sort.label": { no: "Sorter innlegg", en: "Sort posts" },
-  "fag.les": { no: "Les hele innlegget", en: "Read full article" },
+  "fag.les": { no: "Les hele innlegget ↓", en: "Read full article ↓" },
+  "fag.lukk": { no: "Lukk innlegget ↑", en: "Close article ↑" },
   "fag.nye": { no: "Nye innlegg under utarbeidelse...", en: "New articles in progress..." },
-  "fag.linkedin": { no: "Les på LinkedIn", en: "Read on LinkedIn" },
+  "fag.linkedin": {
+    no: "Følg diskusjonen og se flere perspektiver på LinkedIn →",
+    en: "Follow the discussion and see more perspectives on LinkedIn →",
+  },
   "fag.cta": {
     no: "Vil du diskutere et relatert tema, er du velkommen til å ta kontakt.",
     en: "If you would like to discuss a related topic, feel free to get in touch.",

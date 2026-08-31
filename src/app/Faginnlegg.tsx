@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { X, ExternalLink, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
+import { X, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useLanguage } from './LanguageContext';
 import { getTranslation } from './data/translations';
 import {
@@ -346,7 +346,14 @@ const Faginnlegg = ({ onNavigate }: { onNavigate?: (tab: string) => void }) => {
           <div className="flex flex-col gap-4">
             {ledelseInnlegg.length > 0 ? (
               ledelseInnlegg.map((innlegg) => (
-                <InnleggsKort key={innlegg.id} innlegg={innlegg} lang={lang} onClick={() => setAktivtInnlegg(innlegg)} lesLabel={tr("fag.les")} />
+                <InnleggsKort
+                  key={innlegg.id}
+                  innlegg={innlegg}
+                  lang={lang}
+                  onOpen={() => setAktivtInnlegg(innlegg)}
+                  lesLabel={tr("fag.les")}
+                  linkedinLabel={tr("fag.linkedin")}
+                />
               ))
             ) : (
               <div className="p-12 rounded-2xl border border-slate-800 bg-slate-900/40 italic text-slate-500 text-center font-light">{tr("fag.nye")}</div>
@@ -361,7 +368,14 @@ const Faginnlegg = ({ onNavigate }: { onNavigate?: (tab: string) => void }) => {
           <div className="flex flex-col gap-4">
             {aiInnlegg.length > 0 ? (
               aiInnlegg.map((innlegg) => (
-                <InnleggsKort key={innlegg.id} innlegg={innlegg} lang={lang} onClick={() => setAktivtInnlegg(innlegg)} lesLabel={tr("fag.les")} />
+                <InnleggsKort
+                  key={innlegg.id}
+                  innlegg={innlegg}
+                  lang={lang}
+                  onOpen={() => setAktivtInnlegg(innlegg)}
+                  lesLabel={tr("fag.les")}
+                  linkedinLabel={tr("fag.linkedin")}
+                />
               ))
             ) : (
               <div className="p-12 rounded-2xl border border-slate-800 bg-slate-900/40 italic text-slate-500 text-center font-light">{tr("fag.nye")}</div>
@@ -372,14 +386,35 @@ const Faginnlegg = ({ onNavigate }: { onNavigate?: (tab: string) => void }) => {
       </section>
 
       {aktivtInnlegg && (
-        <InnleggModal innlegg={aktivtInnlegg} lang={lang} onClose={lukkModal} onNavigate={onNavigate} linkedinLabel={tr("fag.linkedin")} ctaText={tr("fag.cta")} ctaLink={tr("fag.cta.link")} />
+        <InnleggModal
+          innlegg={aktivtInnlegg}
+          lang={lang}
+          onClose={lukkModal}
+          onNavigate={onNavigate}
+          lukkLabel={tr("fag.lukk")}
+          linkedinLabel={tr("fag.linkedin")}
+          ctaText={tr("fag.cta")}
+          ctaLink={tr("fag.cta.link")}
+        />
       )}
     </div>
   );
 };
 
 /* ——— KORT ——— */
-const InnleggsKort = ({ innlegg, lang, onClick, lesLabel }: { innlegg: InnleggType; lang: "no" | "en"; onClick: () => void; lesLabel: string }) => {
+const InnleggsKort = ({
+  innlegg,
+  lang,
+  onOpen,
+  lesLabel,
+  linkedinLabel,
+}: {
+  innlegg: InnleggType;
+  lang: "no" | "en";
+  onOpen: () => void;
+  lesLabel: string;
+  linkedinLabel: string;
+}) => {
   const cacheVersion = bildeCacheVersion(innlegg);
   const kortSrc = kortBildeSrc(innlegg);
   const isVideo =
@@ -387,10 +422,7 @@ const InnleggsKort = ({ innlegg, lang, onClick, lesLabel }: { innlegg: InnleggTy
     kortSrc.toLowerCase().endsWith(".webm") ||
     kortSrc.toLowerCase().endsWith(".mov");
   return (
-    <div
-      onClick={onClick}
-      className="group bg-slate-900/40 rounded-2xl border border-indigo-500/20 px-4 pt-3 pb-2.5 hover:bg-slate-900/60 transition-all duration-300 shadow-xl flex flex-row items-start gap-4 w-full text-left cursor-pointer"
-    >
+    <article className="group bg-slate-900/40 rounded-2xl border border-indigo-500/20 px-4 pt-3 pb-2.5 hover:bg-slate-900/60 transition-all duration-300 shadow-xl flex flex-row items-start gap-4 w-full text-left">
       <div
         className="relative shrink-0 rounded-lg overflow-hidden bg-slate-900 border border-slate-800"
         style={{ width: KORT_BILDE_BREDDE, height: KORT_BILDE_HOYDE }}
@@ -453,16 +485,25 @@ const InnleggsKort = ({ innlegg, lang, onClick, lesLabel }: { innlegg: InnleggTy
           className="text-slate-400 text-sm leading-snug font-light mb-2 [&_em]:italic"
           dangerouslySetInnerHTML={{ __html: applyProductNameItalicsPlain(innlegg.teaser[lang]) }}
         />
-        <div className="shrink-0 flex items-center gap-4 leading-none mt-auto pt-1">
-          <span className="inline-flex items-center gap-1 text-[9px] font-black uppercase tracking-widest text-indigo-400">
-            {lesLabel} <span>→</span>
-          </span>
-          <a href={innlegg.link} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} className="inline-flex items-center gap-1 text-[9px] font-black uppercase tracking-widest text-slate-500 hover:text-white transition-all">
-            LinkedIn <ExternalLink size={10} />
+        <div className="shrink-0 flex flex-col items-start gap-2 mt-auto pt-2">
+          <button
+            type="button"
+            onClick={onOpen}
+            className="inline-flex items-center text-[10px] font-black uppercase tracking-widest text-indigo-400 hover:text-indigo-200 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
+          >
+            {lesLabel}
+          </button>
+          <a
+            href={innlegg.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 text-xs text-slate-500 hover:text-slate-300 transition-colors leading-snug focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
+          >
+            {linkedinLabel}
           </a>
         </div>
       </div>
-    </div>
+    </article>
   );
 };
 
@@ -658,7 +699,25 @@ const ModalInnleggsMedia = ({
 };
 
 /* ——— MODAL ——— */
-const InnleggModal = ({ innlegg, lang, onClose, onNavigate, linkedinLabel, ctaText, ctaLink }: { innlegg: InnleggType; lang: "no" | "en"; onClose: () => void; onNavigate?: (tab: string) => void; linkedinLabel: string; ctaText: string; ctaLink: string }) => {
+const InnleggModal = ({
+  innlegg,
+  lang,
+  onClose,
+  onNavigate,
+  lukkLabel,
+  linkedinLabel,
+  ctaText,
+  ctaLink,
+}: {
+  innlegg: InnleggType;
+  lang: "no" | "en";
+  onClose: () => void;
+  onNavigate?: (tab: string) => void;
+  lukkLabel: string;
+  linkedinLabel: string;
+  ctaText: string;
+  ctaLink: string;
+}) => {
   const cacheVersion = bildeCacheVersion(innlegg);
   const bodyRaw = innlegg.innhold?.[lang] || innlegg.teaser[lang];
   const bodyWithoutTitle = innlegg.innhold
@@ -668,7 +727,12 @@ const InnleggModal = ({ innlegg, lang, onClose, onNavigate, linkedinLabel, ctaTe
   return (
     <div className="fixed inset-0 z-50 flex items-start justify-center bg-black/80 backdrop-blur-sm overflow-y-auto py-8 px-2 sm:px-4 modal-enter" onClick={onClose}>
       <div className="relative w-full max-w-3xl bg-slate-950 border border-slate-800 rounded-2xl shadow-2xl overflow-hidden modal-enter" onClick={(e) => e.stopPropagation()} role="dialog" aria-modal="true" aria-labelledby="modal-title">
-        <button onClick={onClose} className="absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-slate-900/80 border border-slate-700 text-slate-400 hover:text-white hover:border-indigo-500 transition-all focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:outline-none" aria-label="Lukk modal">
+        <button
+          type="button"
+          onClick={onClose}
+          className="absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-slate-900/80 border border-slate-700 text-slate-400 hover:text-white hover:border-indigo-500 transition-all focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:outline-none"
+          aria-label={lukkLabel}
+        >
           <X size={20} />
         </button>
 
@@ -729,8 +793,20 @@ const InnleggModal = ({ innlegg, lang, onClose, onNavigate, linkedinLabel, ctaTe
           />
 
           <div className="pt-6 border-t border-slate-800 space-y-4">
-            <a href={innlegg.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 px-8 py-4 bg-indigo-500 text-white rounded-xl font-black uppercase tracking-widest text-sm hover:bg-indigo-400 transition-all shadow-lg">
-              <ExternalLink size={16} />
+            <button
+              type="button"
+              onClick={onClose}
+              className="inline-flex items-center text-sm font-black uppercase tracking-widest text-indigo-400 hover:text-indigo-200 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
+            >
+              {lukkLabel}
+            </button>
+
+            <a
+              href={innlegg.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block text-sm text-slate-400 hover:text-slate-200 transition-colors leading-relaxed focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
+            >
               {linkedinLabel}
             </a>
 
