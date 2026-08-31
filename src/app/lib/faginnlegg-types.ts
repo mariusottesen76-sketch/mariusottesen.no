@@ -3,11 +3,12 @@ export interface FaginnleggInnlegg {
   id: string;
   tittel: { no: string; en: string };
   teaser: { no: string; en: string };
-  bildeUrl: string;
+  bildeUrl?: string;
   dato: string;
   visningsDato: string;
   kategori: string;
   link: string;
+  linkedinCtaText?: { no: string; en: string };
   innhold?: { no: string; en: string };
   karusellBilder?: { src: string; alt?: { no: string; en: string } }[];
   karusellPdfUrl?: string;

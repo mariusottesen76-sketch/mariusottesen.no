@@ -10,7 +10,8 @@ export function faginnleggCanonicalUrl(slug: string): string {
 
 export function faginnleggOgImageUrl(innlegg: FaginnleggInnlegg): string {
   const src = innlegg.bildeUrlKort ?? innlegg.karusellBilder?.[0]?.src ?? innlegg.bildeUrl;
-  if (!src || src.startsWith("http")) return src || `${SITE}/images/blogg.jpg`;
+  if (!src || !src.trim()) return `${SITE}/images/profil.jpg`;
+  if (src.startsWith("http")) return src;
   return `${SITE}${src.startsWith("/") ? src : `/${src}`}`;
 }
 

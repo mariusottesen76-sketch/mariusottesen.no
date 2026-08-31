@@ -27,6 +27,7 @@ export const LEDELSE_SUBTEMA: FaginnleggSubtema[] = [
     id: "ledelse-kommersiell",
     label: { no: "Kommersiell og operasjonell ledelse", en: "Commercial and operational leadership" },
     innleggIds: [
+      "salgsledelse-i-praksis-2026-08",
       "control-tower-verdikjede-ledelse-2026-08",
       "du-arver-laget-landslag-2026-07",
       "trykk-prestasjon-kommersiell-ledelse-2026-05",

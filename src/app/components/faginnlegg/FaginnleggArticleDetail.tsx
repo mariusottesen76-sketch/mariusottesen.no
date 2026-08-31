@@ -124,14 +124,16 @@ function FaginnleggArticleMedia({
 }) {
   const [erLandscape, setErLandscape] = useState(Boolean(innlegg.bildeModalBred));
   const hasKarusell = Boolean(innlegg.karusellBilder && innlegg.karusellBilder.length > 0);
-  const hasBilde = Boolean(innlegg.bildeUrl);
+  const hasBilde = Boolean(innlegg.bildeUrl?.trim());
 
   if (!hasKarusell && !hasBilde) return null;
 
-  const isVideo =
-    innlegg.bildeUrl.toLowerCase().endsWith(".mp4") ||
-    innlegg.bildeUrl.toLowerCase().endsWith(".webm") ||
-    innlegg.bildeUrl.toLowerCase().endsWith(".mov");
+  const isVideo = Boolean(
+    innlegg.bildeUrl &&
+      (innlegg.bildeUrl.toLowerCase().endsWith(".mp4") ||
+        innlegg.bildeUrl.toLowerCase().endsWith(".webm") ||
+        innlegg.bildeUrl.toLowerCase().endsWith(".mov"))
+  );
 
   const oppdaterProporsjon = (w: number, h: number) => {
     if (innlegg.bildeModalBred) {
@@ -274,7 +276,7 @@ function FaginnleggArticleInner({ innlegg }: { innlegg: FaginnleggInnlegg }) {
           rel="noopener noreferrer"
           className="inline-flex items-center text-sm text-slate-400 hover:text-slate-200 transition-colors leading-relaxed focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
         >
-          {tr("fag.linkedin")}
+          {innlegg.linkedinCtaText?.[lang] ?? tr("fag.linkedin")}
         </a>
       </div>
 

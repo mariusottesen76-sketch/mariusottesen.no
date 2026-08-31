@@ -35,8 +35,10 @@ import { bildeCacheVersion, faginnleggDetailPath } from './lib/faginnlegg-types'
 const bildeFitClass = (innlegg: FaginnleggInnlegg) =>
   innlegg.bildeFit === "contain" ? "object-contain object-center" : "object-cover object-center";
 
-const kortBildeSrc = (innlegg: FaginnleggInnlegg) =>
-  innlegg.bildeUrlKort ?? innlegg.karusellBilder?.[0]?.src ?? innlegg.bildeUrl;
+const kortBildeSrc = (innlegg: FaginnleggInnlegg) => {
+  const src = innlegg.bildeUrlKort ?? innlegg.karusellBilder?.[0]?.src ?? innlegg.bildeUrl;
+  return src?.trim() ? src : null;
+};
 
 const kortBildeStil = (innlegg: FaginnleggInnlegg): React.CSSProperties => ({
   objectPosition: innlegg.bildeKortFokus ?? "center",
@@ -344,10 +346,12 @@ const InnleggsKort = ({
 }) => {
   const cacheVersion = bildeCacheVersion(innlegg);
   const kortSrc = kortBildeSrc(innlegg);
-  const isVideo =
-    kortSrc.toLowerCase().endsWith(".mp4") ||
-    kortSrc.toLowerCase().endsWith(".webm") ||
-    kortSrc.toLowerCase().endsWith(".mov");
+  const isVideo = Boolean(
+    kortSrc &&
+      (kortSrc.toLowerCase().endsWith(".mp4") ||
+        kortSrc.toLowerCase().endsWith(".webm") ||
+        kortSrc.toLowerCase().endsWith(".mov"))
+  );
   return (
     <article className="group bg-slate-900/40 rounded-2xl border border-indigo-500/20 px-4 pt-3 pb-2.5 hover:bg-slate-900/60 transition-all duration-300 shadow-xl flex flex-row items-start gap-4 w-full text-left">
       <div
@@ -376,7 +380,8 @@ const InnleggsKort = ({
               : "absolute inset-0"
           }
         >
-          {isVideo ? (
+          {kortSrc ? (
+            isVideo ? (
             <video
               key={`${kortSrc}-${cacheVersion}`}
               src={`${kortSrc}?v=${cacheVersion}`}
@@ -397,6 +402,12 @@ const InnleggsKort = ({
               className={`transition-all duration-500 ${bildeFitClass(innlegg)}`}
               style={kortBildeStil(innlegg)}
               unoptimized
+            />
+          )
+          ) : (
+            <div
+              className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-950 to-indigo-950/40"
+              aria-hidden="true"
             />
           )}
         </div>
@@ -425,7 +436,7 @@ const InnleggsKort = ({
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1 text-xs text-slate-500 hover:text-slate-300 transition-colors leading-snug focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
           >
-            {linkedinLabel}
+            {innlegg.linkedinCtaText?.[lang] ?? linkedinLabel}
           </a>
         </div>
       </div>

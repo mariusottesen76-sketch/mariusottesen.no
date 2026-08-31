@@ -1,4 +1,5 @@
 import { aiGovernance } from "../data/innlegg/ai-governance";
+import { salgsledelseIPraksis } from "../data/innlegg/salgsledelse-i-praksis";
 import { tennisLedelse } from "../data/innlegg/tennis-ledelse";
 import type { FaginnleggInnlegg } from "./faginnlegg-types";
 
@@ -28,7 +29,7 @@ function sortByDateDesc(a: FaginnleggInnlegg, b: FaginnleggInnlegg): number {
 }
 
 export function getAlleFaginnlegg(): FaginnleggInnlegg[] {
-  return ([...tennisLedelse, ...aiGovernance] as FaginnleggInnlegg[]).sort(sortByDateDesc);
+  return ([...tennisLedelse, ...aiGovernance, salgsledelseIPraksis] as FaginnleggInnlegg[]).sort(sortByDateDesc);
 }
 
 export function getAllFaginnleggSlugs(): string[] {
