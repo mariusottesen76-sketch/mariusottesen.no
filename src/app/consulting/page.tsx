@@ -10,6 +10,7 @@ export async function generateMetadata(
   description:
     "Relevant erfaring, arbeidsmetoder og porteføljeprosjekter innen kommersiell ledelse, salgsutvikling, CRM, arbeidsflyt, transformasjon og praktisk AI — med operasjonell erfaring fra salg, drift og gjennomføring.",
   metadataBase: new URL("https://www.mariusottesen.no"),
+  alternates: { canonical: "https://www.mariusottesen.no/consulting" },
   openGraph: {
     title: "Kommersiell utvikling, drift, arbeidsflyt og praktisk AI | Marius Ottesen Consulting",
     description:

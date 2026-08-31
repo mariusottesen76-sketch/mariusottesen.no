@@ -3,7 +3,7 @@ import { getAllProjectV2Records } from "./data/projects-v2/registry";
 import { projectSitemapLastModified } from "./lib/project-overview-metadata";
 import { sitemapLastModifiedFromIso } from "./lib/project-date-format";
 import { resolveFaginnleggHubUpdatedAt } from "./data/projects-v2/project-date-resolvers";
-
+import { getAlleFaginnlegg } from "./lib/faginnlegg-data";
 const SITE = "https://www.mariusottesen.no";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -34,6 +34,53 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const faginnleggLastMod =
     resolveFaginnleggHubUpdatedAt(faginnleggPublishedAt) ?? faginnleggPublishedAt;
 
+  const faginnleggArticleRoutes: MetadataRoute.Sitemap = getAlleFaginnlegg().map((innlegg) => ({
+    url: `${SITE}/faginnlegg/${innlegg.id}`,
+    lastModified: sitemapLastModifiedFromIso(innlegg.dato),
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+  }));
+  const mainSiteLastMod = sitemapLastModifiedFromIso(homeLastMod);
+
+  const mainTabRoutes: MetadataRoute.Sitemap = [
+    {
+      url: `${SITE}/erfaring`,
+      lastModified: mainSiteLastMod,
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
+      url: `${SITE}/resultater`,
+      lastModified: mainSiteLastMod,
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
+      url: `${SITE}/referanser`,
+      lastModified: mainSiteLastMod,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${SITE}/consulting`,
+      lastModified: mainSiteLastMod,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${SITE}/cv`,
+      lastModified: mainSiteLastMod,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${SITE}/kontakt`,
+      lastModified: mainSiteLastMod,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+  ];
+
   return [
     {
       url: SITE,
@@ -53,6 +100,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.8,
     },
+    ...mainTabRoutes,
     ...projectRoutes,
+    ...faginnleggArticleRoutes,
   ];
 }

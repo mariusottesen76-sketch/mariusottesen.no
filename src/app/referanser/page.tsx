@@ -10,6 +10,7 @@ export async function generateMetadata(
   description:
     "Referanser og anbefalinger fra kollegaer og medarbeidere som har jobbet direkte med meg. Publisert på LinkedIn.",
   metadataBase: new URL("https://www.mariusottesen.no"),
+  alternates: { canonical: "https://www.mariusottesen.no/referanser" },
   openGraph: {
     title: "Referanser & Anbefalinger — Marius Ottesen",
     description:

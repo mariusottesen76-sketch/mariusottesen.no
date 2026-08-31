@@ -12,6 +12,7 @@ export async function generateMetadata(
     title: "Faginnlegg | Innsikt & Tankeledelse — Marius Ottesen",
     description: ogDescription,
     metadataBase: new URL("https://www.mariusottesen.no"),
+    alternates: { canonical: "https://www.mariusottesen.no/faginnlegg" },
     openGraph: {
       title: "Faginnlegg | Innsikt & Tankeledelse — Marius Ottesen",
       description: ogDescription,

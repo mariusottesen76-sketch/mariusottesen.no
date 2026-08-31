@@ -10,6 +10,7 @@ export async function generateMetadata(
     description:
       "CV, åpen søknad og executive summary for rekrutterere, headhuntere og arbeidsgivere. Rollefit, utvalgte resultater og kjernekompetanse — kommersiell leder med operasjonell erfaring fra salg, drift og gjennomføring.",
     metadataBase: new URL("https://www.mariusottesen.no"),
+    alternates: { canonical: "https://www.mariusottesen.no/cv" },
     openGraph: {
       title: "CV & åpen søknad — Marius Ottesen",
       description:

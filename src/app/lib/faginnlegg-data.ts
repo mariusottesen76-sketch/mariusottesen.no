@@ -1,5 +1,6 @@
 import { aiGovernance } from "../data/innlegg/ai-governance";
 import { tennisLedelse } from "../data/innlegg/tennis-ledelse";
+import type { FaginnleggInnlegg } from "./faginnlegg-types";
 
 /** Samme kategorilogikk som Faginnlegg-siden. */
 export const LEDELSE_KATEGORIER = new Set([
@@ -14,16 +15,28 @@ export const AI_KATEGORI = "AI / KI";
 export const FAGINNLEGG_LEDELSE_ANKER = "strategisk-ledelse-transformasjon";
 export const FAGINNLEGG_AI_ANKER = "ai-fremtidens-teknologiledelse";
 
+export type { FaginnleggInnlegg } from "./faginnlegg-types";
+
 export interface FaginnleggPost {
   id: string;
   kategori: string;
   dato: string;
 }
 
-export function getAlleFaginnlegg(): FaginnleggPost[] {
-  return [...tennisLedelse, ...aiGovernance].sort(
-    (a, b) => new Date(b.dato).getTime() - new Date(a.dato).getTime()
-  );
+function sortByDateDesc(a: FaginnleggInnlegg, b: FaginnleggInnlegg): number {
+  return new Date(b.dato).getTime() - new Date(a.dato).getTime();
+}
+
+export function getAlleFaginnlegg(): FaginnleggInnlegg[] {
+  return ([...tennisLedelse, ...aiGovernance] as FaginnleggInnlegg[]).sort(sortByDateDesc);
+}
+
+export function getAllFaginnleggSlugs(): string[] {
+  return getAlleFaginnlegg().map((innlegg) => innlegg.id);
+}
+
+export function getFaginnleggBySlug(slug: string): FaginnleggInnlegg | undefined {
+  return getAlleFaginnlegg().find((innlegg) => innlegg.id === slug);
 }
 
 export function erLedelseInnlegg(kategori: string): boolean {

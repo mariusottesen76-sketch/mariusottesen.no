@@ -157,8 +157,10 @@ const translations: Translations = {
   "fag.toc.title.1": { no: "Innholds", en: "Table of" },
   "fag.toc.title.2": { no: "fortegnelse", en: "Contents" },
   "fag.toc.sort.label": { no: "Sorter innlegg", en: "Sort posts" },
-  "fag.les": { no: "Les hele innlegget ↓", en: "Read full article ↓" },
+  "fag.les": { no: "Les hele innlegget →", en: "Read full article →" },
   "fag.lukk": { no: "Lukk innlegget ↑", en: "Close article ↑" },
+  "fag.artikkel.tilbake": { no: "Tilbake til Faginnlegg", en: "Back to Articles" },
+  "fag.artikkel.relevant": { no: "Relevant videre", en: "Relevant next steps" },
   "fag.nye": { no: "Nye innlegg under utarbeidelse...", en: "New articles in progress..." },
   "fag.linkedin": {
     no: "Følg diskusjonen og se flere perspektiver på LinkedIn →",

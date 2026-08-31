@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "AI-prosjekter og faglig utvikling | Marius Ottesen",
   description: ogDescription,
   metadataBase: new URL("https://www.mariusottesen.no"),
+  alternates: { canonical: "https://www.mariusottesen.no/prosjekter" },
   openGraph: {
     title: "AI-prosjekter og faglig utvikling | Marius Ottesen",
     description: ogDescription,

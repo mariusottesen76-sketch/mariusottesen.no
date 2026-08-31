@@ -28,6 +28,7 @@ export const metadata: Metadata = {
   creator: "Marius Ottesen",
   metadataBase: new URL("https://www.mariusottesen.no"),
   alternates: {
+    canonical: "https://www.mariusottesen.no",
     languages: {
       "no": "https://www.mariusottesen.no",
       "en": "https://www.mariusottesen.no",

@@ -1,8 +1,7 @@
 "use client";
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { X, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useLanguage } from './LanguageContext';
 import { getTranslation } from './data/translations';
 import {
@@ -11,8 +10,7 @@ import {
   pageTitleClass,
   sectionTitleClass,
 } from './lib/typography';
-import { normalizeDisplayText } from './lib/normalize-display-text';
-import { applyProductNameItalicsPlain, formatInnleggHtml, formatInnleggTittelHtml } from './lib/product-brand';
+import { applyProductNameItalicsPlain, formatInnleggTittelHtml } from './lib/product-brand';
 import { getFaginnleggLeseStier } from './data/faginnlegg-lesestier';
 import {
   FAGINNLEGG_SORT_OPTIONS,
@@ -30,46 +28,17 @@ import {
   FAGINNLEGG_LEDELSE_ANKER,
   getAlleFaginnlegg,
   getFaginnleggTelling,
+  type FaginnleggInnlegg,
 } from './lib/faginnlegg-data';
+import { bildeCacheVersion, faginnleggDetailPath } from './lib/faginnlegg-types';
 
-interface InnleggType {
-  id: string;
-  tittel: { no: string; en: string };
-  teaser: { no: string; en: string };
-  bildeUrl: string;
-  dato: string;
-  visningsDato: string;
-  kategori: string;
-  link: string;
-  innhold?: { no: string; en: string };
-  /** Valgfri bildekarusell (f.eks. tegneserie-paneler). */
-  karusellBilder?: { src: string; alt?: { no: string; en: string } }[];
-  karusellPdfUrl?: string;
-  /** cover = fyll ruten (foto). contain = hele bildet sentrert (grafikk/tekst). */
-  bildeFit?: "cover" | "contain";
-  /** Valgfritt kortbilde i listen. Modal bruker bildeUrl. */
-  bildeUrlKort?: string;
-  /** Bredt hovedbilde i modal (f.eks. landscape-banner). */
-  bildeModalBred?: boolean;
-  /** Tvinger ny bildeversjon ved oppdatering av samme filnavn. */
-  bildeVersjon?: string;
-  /** object-position for kortminiatyr (f.eks. "center 30%"). Modal uendret. */
-  bildeKortFokus?: string;
-  /** Zoom inn på kortminiatyr for å kutte innbygget kant/letterboxing (f.eks. 1.12). */
-  bildeKortZoom?: number;
-  /** Nettleser-lignende ramme på kortminiatyr (f.eks. hjemside-screenshot). */
-  bildeKortRamme?: "nettsted";
-}
-
-const bildeCacheVersion = (innlegg: InnleggType) => innlegg.bildeVersjon ?? innlegg.dato;
-
-const bildeFitClass = (innlegg: InnleggType) =>
+const bildeFitClass = (innlegg: FaginnleggInnlegg) =>
   innlegg.bildeFit === "contain" ? "object-contain object-center" : "object-cover object-center";
 
-const kortBildeSrc = (innlegg: InnleggType) =>
+const kortBildeSrc = (innlegg: FaginnleggInnlegg) =>
   innlegg.bildeUrlKort ?? innlegg.karusellBilder?.[0]?.src ?? innlegg.bildeUrl;
 
-const kortBildeStil = (innlegg: InnleggType): React.CSSProperties => ({
+const kortBildeStil = (innlegg: FaginnleggInnlegg): React.CSSProperties => ({
   objectPosition: innlegg.bildeKortFokus ?? "center",
   ...(innlegg.bildeKortZoom ? { transform: `scale(${innlegg.bildeKortZoom})` } : {}),
 });
@@ -78,16 +47,6 @@ const kortBildeStil = (innlegg: InnleggType): React.CSSProperties => ({
 const KORT_BILDE_BREDDE = 122;
 const KORT_BILDE_HOYDE = 186;
 const KORT_TITTEL_HOYDE = "2.875rem"; // 2 linjer text-lg leading-tight
-
-/** Modal – minimumsstandard for liggende hovedbilde */
-const MODAL_LANDSCAPE_KLASSE =
-  "w-full max-w-[min(100%,754px)] mx-auto h-auto min-h-[286px] md:min-h-[325px] max-h-[59vh] md:max-h-[65vh] object-contain rounded-lg";
-const MODAL_PORTRAIT_KLASSE =
-  "w-auto max-w-[min(100%,480px)] md:max-w-[560px] max-h-[68vh] md:max-h-[72vh] h-auto object-contain rounded-lg mx-auto";
-const MODAL_LANDSCAPE_ASPECT = 16 / 9;
-const MODAL_PORTRAIT_ASPECT = 5 / 7;
-
-const erLandscapeProporsjon = (w: number, h: number) => w > h * 1.08;
 
 const linkClass =
   "text-indigo-400 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400";
@@ -102,13 +61,12 @@ const sporKolonneOverskriftKlasse =
 const fagKortKolonneOverskriftKlasse =
   "font-black text-white italic tracking-tight leading-tight hyphens-none [overflow-wrap:normal] text-base md:text-lg border-b border-indigo-500/30 pb-1.5 mb-4";
 
-const Faginnlegg = ({ onNavigate }: { onNavigate?: (tab: string) => void }) => {
+const Faginnlegg = ({ onNavigate: _onNavigate }: { onNavigate?: (tab: string) => void } = {}) => {
   const { lang } = useLanguage();
   const tr = (key: string) => getTranslation(key, lang);
-  const [aktivtInnlegg, setAktivtInnlegg] = useState<InnleggType | null>(null);
   const [tocSort, setTocSort] = useState<FaginnleggSortMode>("nyeste");
 
-  const alleInnlegg: InnleggType[] = getAlleFaginnlegg() as InnleggType[];
+  const alleInnlegg: FaginnleggInnlegg[] = getAlleFaginnlegg();
   const lesestier = getFaginnleggLeseStier(lang);
   const telling = getFaginnleggTelling();
   const ledelseInnlegg = sorterFaginnlegg(
@@ -129,8 +87,6 @@ const Faginnlegg = ({ onNavigate }: { onNavigate?: (tab: string) => void }) => {
   const lesestiChipLinkKlasse =
     "inline-flex items-center rounded-full border border-indigo-500/25 bg-indigo-500/10 px-3 py-1.5 text-xs md:text-sm font-medium text-indigo-300 leading-none hover:border-indigo-400/50 hover:text-indigo-100 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400";
 
-  const lukkModal = useCallback(() => setAktivtInnlegg(null), []);
-
   useEffect(() => {
     const scrollTilAnker = () => {
       const hash = window.location.hash.slice(1);
@@ -143,20 +99,6 @@ const Faginnlegg = ({ onNavigate }: { onNavigate?: (tab: string) => void }) => {
     window.addEventListener("hashchange", scrollTilAnker);
     return () => window.removeEventListener("hashchange", scrollTilAnker);
   }, []);
-
-  useEffect(() => {
-    const handleEsc = (e: KeyboardEvent) => {
-      if (e.key === "Escape") lukkModal();
-    };
-    if (aktivtInnlegg) {
-      document.addEventListener("keydown", handleEsc);
-      document.body.style.overflow = "hidden";
-    }
-    return () => {
-      document.removeEventListener("keydown", handleEsc);
-      document.body.style.overflow = "";
-    };
-  }, [aktivtInnlegg, lukkModal]);
 
   return (
     <div className="py-4 text-left w-full overflow-x-hidden">
@@ -282,11 +224,12 @@ const Faginnlegg = ({ onNavigate }: { onNavigate?: (tab: string) => void }) => {
                       {innlegg.map((innlegg) => (
                         <tr
                           key={innlegg.id}
-                          onClick={() => setAktivtInnlegg(innlegg)}
-                          className="border-b border-slate-800/40 hover:bg-slate-900/40 cursor-pointer transition-colors"
+                          className="border-b border-slate-800/40 hover:bg-slate-900/40 transition-colors"
                         >
                           <td className="py-1.5 px-2 text-sm font-sans font-normal text-slate-300 hover:text-indigo-300">
-                            {innlegg.tittel[lang]}
+                            <Link href={faginnleggDetailPath(innlegg.id)} className="block hover:text-indigo-300">
+                              {innlegg.tittel[lang]}
+                            </Link>
                           </td>
                         </tr>
                       ))}
@@ -312,11 +255,12 @@ const Faginnlegg = ({ onNavigate }: { onNavigate?: (tab: string) => void }) => {
                       {innlegg.map((innlegg) => (
                         <tr
                           key={innlegg.id}
-                          onClick={() => setAktivtInnlegg(innlegg)}
-                          className="border-b border-slate-800/40 hover:bg-slate-900/40 cursor-pointer transition-colors"
+                          className="border-b border-slate-800/40 hover:bg-slate-900/40 transition-colors"
                         >
                           <td className="py-1.5 px-2 text-sm text-slate-300 hover:text-indigo-300">
-                            {innlegg.tittel[lang]}
+                            <Link href={faginnleggDetailPath(innlegg.id)} className="block hover:text-indigo-300">
+                              {innlegg.tittel[lang]}
+                            </Link>
                           </td>
                         </tr>
                       ))}
@@ -350,7 +294,6 @@ const Faginnlegg = ({ onNavigate }: { onNavigate?: (tab: string) => void }) => {
                   key={innlegg.id}
                   innlegg={innlegg}
                   lang={lang}
-                  onOpen={() => setAktivtInnlegg(innlegg)}
                   lesLabel={tr("fag.les")}
                   linkedinLabel={tr("fag.linkedin")}
                 />
@@ -372,7 +315,6 @@ const Faginnlegg = ({ onNavigate }: { onNavigate?: (tab: string) => void }) => {
                   key={innlegg.id}
                   innlegg={innlegg}
                   lang={lang}
-                  onOpen={() => setAktivtInnlegg(innlegg)}
                   lesLabel={tr("fag.les")}
                   linkedinLabel={tr("fag.linkedin")}
                 />
@@ -384,19 +326,6 @@ const Faginnlegg = ({ onNavigate }: { onNavigate?: (tab: string) => void }) => {
         </section>
       </div>
       </section>
-
-      {aktivtInnlegg && (
-        <InnleggModal
-          innlegg={aktivtInnlegg}
-          lang={lang}
-          onClose={lukkModal}
-          onNavigate={onNavigate}
-          lukkLabel={tr("fag.lukk")}
-          linkedinLabel={tr("fag.linkedin")}
-          ctaText={tr("fag.cta")}
-          ctaLink={tr("fag.cta.link")}
-        />
-      )}
     </div>
   );
 };
@@ -405,13 +334,11 @@ const Faginnlegg = ({ onNavigate }: { onNavigate?: (tab: string) => void }) => {
 const InnleggsKort = ({
   innlegg,
   lang,
-  onOpen,
   lesLabel,
   linkedinLabel,
 }: {
-  innlegg: InnleggType;
+  innlegg: FaginnleggInnlegg;
   lang: "no" | "en";
-  onOpen: () => void;
   lesLabel: string;
   linkedinLabel: string;
 }) => {
@@ -486,13 +413,12 @@ const InnleggsKort = ({
           dangerouslySetInnerHTML={{ __html: applyProductNameItalicsPlain(innlegg.teaser[lang]) }}
         />
         <div className="shrink-0 flex flex-col items-start gap-2 mt-auto pt-2">
-          <button
-            type="button"
-            onClick={onOpen}
+          <Link
+            href={faginnleggDetailPath(innlegg.id)}
             className="inline-flex items-center text-[10px] font-black uppercase tracking-widest text-indigo-400 hover:text-indigo-200 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
           >
             {lesLabel}
-          </button>
+          </Link>
           <a
             href={innlegg.link}
             target="_blank"
@@ -504,328 +430,6 @@ const InnleggsKort = ({
         </div>
       </div>
     </article>
-  );
-};
-
-/* ——— KARUSELL ——— */
-const InnleggKarusell = ({
-  slides,
-  lang,
-  cacheVersion,
-  pdfUrl,
-}: {
-  slides: { src: string; alt?: { no: string; en: string } }[];
-  lang: "no" | "en";
-  cacheVersion: string;
-  pdfUrl?: string;
-}) => {
-  const [index, setIndex] = useState(0);
-  const total = slides.length;
-  const goPrev = () => setIndex((i) => (i - 1 + total) % total);
-  const goNext = () => setIndex((i) => (i + 1) % total);
-
-  useEffect(() => {
-    setIndex(0);
-  }, [slides]);
-
-  if (total === 0) return null;
-
-  const slide = slides[index];
-  const alt = slide.alt?.[lang] ?? (lang === "no" ? `Panel ${index + 1}` : `Panel ${index + 1}`);
-
-  return (
-    <div className="w-full max-w-[520px] mx-auto">
-      <div className="relative rounded-lg overflow-hidden bg-slate-900 border border-slate-700/80">
-        <Image
-          key={`${slide.src}-${index}`}
-          src={`${slide.src}?v=${cacheVersion}`}
-          alt={alt}
-          width={520}
-          height={720}
-          className="w-full h-auto max-h-[68vh] md:max-h-[75vh] object-contain"
-          unoptimized
-        />
-        {total > 1 && (
-          <>
-            <button
-              type="button"
-              onClick={goPrev}
-              className="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 flex items-center justify-center rounded-full bg-slate-950/80 border border-slate-600 text-slate-300 hover:text-white hover:border-indigo-400 transition-all focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:outline-none"
-              aria-label={lang === "no" ? "Forrige panel" : "Previous panel"}
-            >
-              <ChevronLeft size={20} />
-            </button>
-            <button
-              type="button"
-              onClick={goNext}
-              className="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 flex items-center justify-center rounded-full bg-slate-950/80 border border-slate-600 text-slate-300 hover:text-white hover:border-indigo-400 transition-all focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:outline-none"
-              aria-label={lang === "no" ? "Neste panel" : "Next panel"}
-            >
-              <ChevronRight size={20} />
-            </button>
-            <span className="absolute bottom-2 right-2 px-2 py-0.5 rounded-md bg-slate-950/80 text-[10px] font-mono text-slate-400 border border-slate-700">
-              {index + 1} / {total}
-            </span>
-          </>
-        )}
-      </div>
-      {total > 1 && (
-        <div className="flex justify-center gap-1.5 mt-3 flex-wrap">
-          {slides.map((_, i) => (
-            <button
-              key={i}
-              type="button"
-              onClick={() => setIndex(i)}
-              className={`w-2 h-2 rounded-full transition-all focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:outline-none ${
-                i === index ? "bg-indigo-400 w-5" : "bg-slate-600 hover:bg-slate-500"
-              }`}
-              aria-label={lang === "no" ? `Gå til panel ${i + 1}` : `Go to panel ${i + 1}`}
-              aria-current={i === index ? "true" : undefined}
-            />
-          ))}
-        </div>
-      )}
-      {pdfUrl && (
-        <p className="mt-3 text-center">
-          <a
-            href={pdfUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[11px] font-bold uppercase tracking-widest text-indigo-400 hover:text-indigo-200 transition-colors"
-          >
-            {lang === "no" ? "Åpne hele tegneserien (PDF)" : "Open full comic (PDF)"}
-          </a>
-        </p>
-      )}
-    </div>
-  );
-};
-
-/* Fjerner ledende avsnitt/linje i innhold som gjentar tittelen ord for ord */
-function stripDuplicateTitle(innhold: string, tittel: string): string {
-  const normalize = (s: string) =>
-    normalizeDisplayText(s)
-      .toLowerCase()
-      .replace(/<[^>]+>/g, " ")
-      .replace(/[\u2013\u2014\u2212\-–—]/g, " ")
-      .replace(/[^\p{L}\p{N}\s]/gu, " ")
-      .replace(/\s+/g, " ")
-      .trim();
-
-  const raw = (innhold || "").trim();
-  if (!raw) return raw;
-
-  const normalizedTitle = normalize(tittel);
-  if (!normalizedTitle) return raw;
-
-  const paragraphs = raw.split("\n\n").map((p) => p.trim()).filter(Boolean);
-  if (!paragraphs.length) return raw;
-
-  const firstParagraph = paragraphs[0];
-  const firstParagraphNorm = normalize(firstParagraph.replace(/<[^>]+>/g, " "));
-  if (firstParagraphNorm === normalizedTitle) {
-    return paragraphs.slice(1).join("\n\n");
-  }
-
-  const lines = firstParagraph.split("\n").map((l) => l.trim()).filter(Boolean);
-  if (lines.length > 1 && normalize(lines[0].replace(/<[^>]+>/g, " ")) === normalizedTitle) {
-    const restOfFirst = lines.slice(1).join("\n").trim();
-    return [restOfFirst, ...paragraphs.slice(1)].filter(Boolean).join("\n\n");
-  }
-
-  return raw;
-}
-
-const ModalInnleggsMedia = ({
-  innlegg,
-  lang,
-  cacheVersion,
-}: {
-  innlegg: InnleggType;
-  lang: "no" | "en";
-  cacheVersion: string;
-}) => {
-  const [erLandscape, setErLandscape] = useState(Boolean(innlegg.bildeModalBred));
-  const isVideo =
-    innlegg.bildeUrl.toLowerCase().endsWith(".mp4") ||
-    innlegg.bildeUrl.toLowerCase().endsWith(".webm") ||
-    innlegg.bildeUrl.toLowerCase().endsWith(".mov");
-
-  const oppdaterProporsjon = (w: number, h: number) => {
-    if (innlegg.bildeModalBred) {
-      setErLandscape(true);
-      return;
-    }
-    setErLandscape(erLandscapeProporsjon(w, h));
-  };
-
-  const mediaKlasse = erLandscape ? MODAL_LANDSCAPE_KLASSE : MODAL_PORTRAIT_KLASSE;
-
-  return (
-    <div className={`w-full flex justify-center bg-slate-900/50 ${erLandscape ? "px-2 sm:px-3 pt-2 pb-4" : "p-4 sm:p-6"}`}>
-      {innlegg.karusellBilder && innlegg.karusellBilder.length > 0 ? (
-        <InnleggKarusell
-          slides={innlegg.karusellBilder}
-          lang={lang}
-          cacheVersion={cacheVersion}
-          pdfUrl={innlegg.karusellPdfUrl}
-        />
-      ) : isVideo ? (
-        <video
-          key={`${innlegg.bildeUrl}-${cacheVersion}`}
-          src={`${innlegg.bildeUrl}?v=${cacheVersion}`}
-          className={mediaKlasse}
-          controls
-          autoPlay
-          muted
-          loop
-          playsInline
-          onLoadedMetadata={(e) => oppdaterProporsjon(e.currentTarget.videoWidth, e.currentTarget.videoHeight)}
-        />
-      ) : (
-        <Image
-          key={`${innlegg.bildeUrl}-${cacheVersion}`}
-          src={`${innlegg.bildeUrl}?v=${cacheVersion}`}
-          alt={innlegg.tittel[lang]}
-          width={erLandscape ? 960 : MODAL_PORTRAIT_ASPECT * 720}
-          height={erLandscape ? 960 / MODAL_LANDSCAPE_ASPECT : 720}
-          className={mediaKlasse}
-          onLoadingComplete={(img) => oppdaterProporsjon(img.naturalWidth, img.naturalHeight)}
-          unoptimized
-        />
-      )}
-    </div>
-  );
-};
-
-/* ——— MODAL ——— */
-const InnleggModal = ({
-  innlegg,
-  lang,
-  onClose,
-  onNavigate,
-  lukkLabel,
-  linkedinLabel,
-  ctaText,
-  ctaLink,
-}: {
-  innlegg: InnleggType;
-  lang: "no" | "en";
-  onClose: () => void;
-  onNavigate?: (tab: string) => void;
-  lukkLabel: string;
-  linkedinLabel: string;
-  ctaText: string;
-  ctaLink: string;
-}) => {
-  const cacheVersion = bildeCacheVersion(innlegg);
-  const bodyRaw = innlegg.innhold?.[lang] || innlegg.teaser[lang];
-  const bodyWithoutTitle = innlegg.innhold
-    ? stripDuplicateTitle(innlegg.innhold[lang], innlegg.tittel[lang])
-    : bodyRaw;
-
-  return (
-    <div className="fixed inset-0 z-50 flex items-start justify-center bg-black/80 backdrop-blur-sm overflow-y-auto py-8 px-2 sm:px-4 modal-enter" onClick={onClose}>
-      <div className="relative w-full max-w-3xl bg-slate-950 border border-slate-800 rounded-2xl shadow-2xl overflow-hidden modal-enter" onClick={(e) => e.stopPropagation()} role="dialog" aria-modal="true" aria-labelledby="modal-title">
-        <button
-          type="button"
-          onClick={onClose}
-          className="absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-slate-900/80 border border-slate-700 text-slate-400 hover:text-white hover:border-indigo-500 transition-all focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:outline-none"
-          aria-label={lukkLabel}
-        >
-          <X size={20} />
-        </button>
-
-        <ModalInnleggsMedia innlegg={innlegg} lang={lang} cacheVersion={cacheVersion} />
-
-        <div className="p-8 md:p-12 space-y-6">
-          <div className="flex items-center gap-4 flex-wrap">
-            <span className="text-[10px] font-mono text-indigo-400 uppercase tracking-widest font-bold">{innlegg.visningsDato}</span>
-            <span className="text-slate-700">|</span>
-            <span className="text-[10px] font-bold text-indigo-400 uppercase tracking-widest">{innlegg.kategori}</span>
-          </div>
-
-          <h2
-            id="modal-title"
-            className="text-3xl md:text-4xl font-sans font-black text-white tracking-tight leading-tight [&_em]:italic"
-            dangerouslySetInnerHTML={{ __html: formatInnleggTittelHtml(innlegg.tittel[lang]) }}
-          />
-          <div className="w-16 h-0.5 bg-indigo-500/40" />
-
-          <div
-            className="text-slate-300 text-base leading-relaxed space-y-0 [&_strong]:font-semibold [&_em]:italic"
-            dangerouslySetInnerHTML={{
-              __html: (innlegg.innhold ? bodyWithoutTitle : bodyRaw)
-                .split("\n\n")
-                .map((avsnitt) => {
-                  const trimmed = avsnitt.trim();
-                  if (!trimmed) return "";
-                  const lines = trimmed.split("\n").map((l) => l.trim()).filter(Boolean);
-                  const bulletLines = lines.filter((l) => l.startsWith("•") || l.startsWith("- "));
-                  if (bulletLines.length > 0 && bulletLines.length === lines.length) {
-                    const punkter = bulletLines
-                      .map((l) => {
-                        const text = l.startsWith("•") ? l.substring(1).trim() : l.substring(2).trim();
-                        return `<li>${formatInnleggHtml(text)}</li>`;
-                      })
-                      .join("");
-                    return `<ul class="list-disc pl-6 space-y-2 my-4 text-slate-300 marker:text-indigo-400">${punkter}</ul>`;
-                  }
-                  if (trimmed.startsWith("•") || trimmed.startsWith("- ")) {
-                    const punkter = trimmed
-                      .split("\n")
-                      .filter((l) => l.trim().startsWith("•") || l.trim().startsWith("- "))
-                      .map((l) => {
-                        const t = l.trim();
-                        const text = t.startsWith("•") ? t.substring(1).trim() : t.substring(2).trim();
-                        return `<li>${formatInnleggHtml(text)}</li>`;
-                      })
-                      .join("");
-                    return `<ul class="list-disc pl-6 space-y-2 my-4 text-slate-300 marker:text-indigo-400">${punkter}</ul>`;
-                  }
-                  if (trimmed.startsWith("Annual net value =")) {
-                    return `<p class="mb-4 rounded-xl border border-indigo-500/25 bg-indigo-500/10 px-4 py-3 text-indigo-300 font-semibold leading-snug">${formatInnleggHtml(trimmed)}</p>`;
-                  }
-                  return `<p class="mb-4">${formatInnleggHtml(trimmed.replace(/\n/g, "<br/>"))}</p>`;
-                })
-                .join(""),
-            }}
-          />
-
-          <div className="pt-6 border-t border-slate-800 space-y-4">
-            <button
-              type="button"
-              onClick={onClose}
-              className="inline-flex items-center text-sm font-black uppercase tracking-widest text-indigo-400 hover:text-indigo-200 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
-            >
-              {lukkLabel}
-            </button>
-
-            <a
-              href={innlegg.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block text-sm text-slate-400 hover:text-slate-200 transition-colors leading-relaxed focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
-            >
-              {linkedinLabel}
-            </a>
-
-            {onNavigate && (
-              <div className="p-5 bg-slate-900/60 border border-indigo-500/15 rounded-xl">
-                <p className="text-slate-400 text-sm italic mb-3">{ctaText}</p>
-                <button
-                  onClick={() => { onClose(); onNavigate("Kontakt"); }}
-                  className="inline-flex items-center gap-2 text-indigo-400 font-black text-sm uppercase tracking-widest hover:text-white transition-all group/cta"
-                >
-                  {ctaLink}
-                  <ArrowRight size={16} className="group-hover/cta:translate-x-1 transition-transform" />
-                </button>
-              </div>
-            )}
-          </div>
-        </div>
-      </div>
-    </div>
   );
 };
 

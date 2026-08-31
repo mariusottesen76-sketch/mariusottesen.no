@@ -12,6 +12,7 @@ export async function generateMetadata(
     title: "Kontakt | Kommersiell leder og AI-profil – Marius Ottesen",
     description,
     metadataBase: new URL("https://www.mariusottesen.no"),
+    alternates: { canonical: "https://www.mariusottesen.no/kontakt" },
     openGraph: {
       title: "Kontakt | Kommersiell leder og AI-profil – Marius Ottesen",
       description,

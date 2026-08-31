@@ -12,6 +12,7 @@ export async function generateMetadata(
     title: "Dokumenterte resultater og praktisk AI-kompetanse | Marius Ottesen",
     description,
     metadataBase: new URL("https://www.mariusottesen.no"),
+    alternates: { canonical: "https://www.mariusottesen.no/resultater" },
     openGraph: {
       title: "Dokumenterte resultater og praktisk AI-kompetanse | Marius Ottesen",
       description,
