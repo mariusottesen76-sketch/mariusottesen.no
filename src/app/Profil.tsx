@@ -193,6 +193,7 @@ export default function Profil({ onNavigate }: { onNavigate?: (tab: string) => v
                 <h2 id="profil-kompetanse-heading" className={sectionTitleClass}>
                   {tr("profil.kompetanse.title")}
                 </h2>
+                <p className="text-[10px] text-slate-500 italic">{tr("profil.kompetanse.sub")}</p>
                 <ul className="flex flex-wrap gap-2">
                   {d.kompetanse.map((item) => (
                     <li key={item} className={`${chipClass} max-w-full text-xs sm:text-sm leading-snug`}>

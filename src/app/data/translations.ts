@@ -51,6 +51,10 @@ const translations: Translations = {
   "profil.kompetanse.title": { no: "Kjernekompetanse", en: "Core competencies" },
   "profil.kompetanse.title.1": { no: "Kjerne", en: "Core" },
   "profil.kompetanse.title.2": { no: "kompetanse", en: "Competencies" },
+  "profil.kompetanse.sub": {
+    no: "Dette er kompetanseområdene jeg særlig bygger lederprofilen min på:",
+    en: "These are the core capabilities that underpin my leadership profile:",
+  },
   "profil.styrker.title": { no: "Personlige superstyrker", en: "Signature strengths" },
   "profil.styrker.sub": { no: "Slik beskrives min lederkraft av andre:", en: "How peers and colleagues characterise my leadership:" },
   "profil.logoer.erfaring": { no: "Erfaring og faglige plattformer", en: "Experience and professional platforms" },
