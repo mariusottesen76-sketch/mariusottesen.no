@@ -419,7 +419,7 @@ Målet er å gjøre det lettere å identifisere hva som faktisk krever oppmerkso
 
 For ledere handler dette i stor grad om å prioritere handlinger og ressurser optimalt, før utfordringer blir større, dyrere eller vanskeligere å løse.
 
-Jeg tror dette er relevant for langt flere enn typiske COO- og CCO-roller. De fleste virksomheter har data, rapporter og statusmøter. Det som ofte mangler, er en tydelig kobling mellom signaler, prioriteringer, ansvar og faktisk gjennomføring.
+Jeg tror dette er relevant for langt flere enn typiske COO- og CCO-roller. De fleste virksomheter har data, rapporter og statusmøter. <a href="/faginnlegg/control-tower-verdikjede-ledelse-2026-08" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">Det som ofte mangler, er en tydelig kobling mellom signaler, prioriteringer, ansvar og faktisk gjennomføring</a>.
 
 Jeg gleder meg til å utforske både stillingen og prosjektet videre.
 
@@ -696,7 +696,7 @@ Den nye arbeidsmåten handler ikke om å erstatte menneskelig vurdering. Den han
 
 For meg har CRM alltid vært et av de mest interessante områdene innenfor kommersiell utvikling, nettopp fordi det ligger så tett på kundeverdi, salgsledelse og operativ gjennomføring.
 
-Men CRM bør ikke bare være et system for enkle kundedata, registrering, kontroll og pipelineoppfølging.
+Men <a href="/faginnlegg/crm-mer-enn-et-systemprosjekt-2026-09" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">CRM bør ikke bare være et system for enkle kundedata, registrering, kontroll og pipelineoppfølging</a>.
 
 Det bør være et sted for aktivt kommersielt beslutningslag. Et system som hjelper oss å forstå kunder bedre.
 
@@ -1012,7 +1012,7 @@ Målet har ikke bare vært å lage en ny nettside, chatbot eller digitale løsni
 
 🚫 Ikke diagnose. Ikke behandlingsråd. Ikke automatisering av faglige vurderinger.
 
-Det handler om å forstå problemet, bygge konkret, ta risiko på alvor og vite hvor mennesker fortsatt må eie beslutningen.
+Det handler om å <a href="/faginnlegg/ai-needs-first-tannklinikk-case-01" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">forstå problemet</a>, bygge konkret, ta risiko på alvor og vite hvor mennesker fortsatt må eie beslutningen.
 
 For min egen del har læringen vært stor. Ikke bare i bruk av AI-verktøy, promptarbeid og strategisk tech-forståelse, men også i det å drive et AI-prosjekt fremover fra problemforståelse til konkrete leveranser.
 
@@ -1945,7 +1945,7 @@ Basert på både forskning og praksis ser jeg noen gjentakende årsaker til at p
 • <strong>Umoden governance</strong> – ansvar, risiko og kvalitetskontroll er ikke avklart før løsninger skaleres (Shubin Yu)
 • <strong>Datagrunnlag uten kontekst</strong> – mye data, men for lite kobling til faktiske beslutninger og forretningsmål (Gartner, The Economist)
 
-<strong>Et godt startpunkt er å velge en konkret prosess, en tydelig beslutning og en ansvarlig eier – og bygge derfra.</strong>
+<strong><a href="/faginnlegg/praktisk-oppskrift-skalering-01" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">Et godt startpunkt er å velge en konkret prosess, en tydelig beslutning og en ansvarlig eier – og bygge derfra.</a></strong>
 
 Resultatet av manglende skalering ser vi ofte nå - AI hjelper enkeltpersoner, men endrer ikke hvordan virksomheten faktisk jobber.
 
@@ -2720,7 +2720,7 @@ The goal is to make it easier to identify what actually needs attention, underst
 
 For leaders, this is largely about prioritising actions and resources optimally before challenges become larger, more expensive or harder to solve.
 
-I believe this is relevant for far more than typical COO and CCO roles. Most organisations have data, reports and status meetings. What is often missing is a clear link between signals, priorities, ownership and actual execution.
+I believe this is relevant for far more than typical COO and CCO roles. Most organisations have data, reports and status meetings. <a href="/faginnlegg/control-tower-verdikjede-ledelse-2026-08" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">What is often missing is a clear link between signals, priorities, ownership and actual execution</a>.
 
 I look forward to exploring both the role and the project further.
 
@@ -2947,7 +2947,7 @@ The new way of working is not about replacing human judgement. It is about givin
 
 For me, CRM has always been one of the most interesting areas within commercial development, precisely because it sits so close to customer value, sales leadership and operational execution.
 
-But CRM should not only be a system for simple customer data, registration, control and pipeline follow-up.
+But <a href="/faginnlegg/crm-mer-enn-et-systemprosjekt-2026-09" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">CRM should not only be a system for simple customer data, registration, control and pipeline follow-up</a>.
 
 It should be a place for an active commercial decision layer. A system that helps us understand customers better.
 
@@ -3212,7 +3212,7 @@ The goal has not only been to build a new website, chatbot or digital solutions.
 
 🚫 Not diagnosis. Not treatment advice. Not automation of professional judgements.
 
-It is about understanding the problem, building concretely, taking risk seriously and knowing where people must still own the decision.
+It is about <a href="/faginnlegg/ai-needs-first-tannklinikk-case-01" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">understanding the problem</a>, building concretely, taking risk seriously and knowing where people must still own the decision.
 
 For me personally, the learning has been significant. Not only in using AI tools, prompt work and strategic tech understanding, but also in driving an AI project from problem understanding to concrete deliverables.
 
@@ -3979,7 +3979,7 @@ Based on both research and practice, I see some recurring reasons why pilots sto
 • <strong>Immature governance</strong> – responsibility, risk and quality control are not clarified before solutions are scaled (Shubin Yu)
 • <strong>Data base without context</strong> – lots of data, but too little connection to actual decisions and business goals (Gartner, The Economist)
 
-<strong>A good starting point is to choose a concrete process, a clear decision and a responsible owner - and build from there.</strong>
+<strong><a href="/faginnlegg/praktisk-oppskrift-skalering-01" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">A good starting point is to choose a concrete process, a clear decision and a responsible owner - and build from there.</a></strong>
 
 We often see the result of a lack of scaling now - AI helps individuals, but does not change how the business actually works.
 

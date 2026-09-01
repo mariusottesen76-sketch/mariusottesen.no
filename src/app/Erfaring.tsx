@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Briefcase, Calendar, TrendingUp, Target, Lightbulb, FileText, ChevronRight } from "lucide-react";
 import { getErfaringData } from "./data/erfaringInnhold";
 import { cvPdfUrl } from "./data/dokumentasjon";
@@ -114,6 +115,13 @@ export default function Erfaring() {
                       dangerouslySetInnerHTML={{ __html: j.results }}
                     />
                   </div>
+                  {j.fagPerspektivLink ? (
+                    <p className="pt-3">
+                      <Link href={j.fagPerspektivLink.href} className="text-indigo-300 text-sm underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400">
+                        {j.fagPerspektivLink.label}
+                      </Link>
+                    </p>
+                  ) : null}
                 </div>
               </div>
             ))}

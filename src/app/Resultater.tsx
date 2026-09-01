@@ -52,6 +52,7 @@ type Selskapsresultat = {
   resultater: ReturnType<typeof getMocResultaterPunkter> | string[];
   relevans: string;
   farge: string;
+  fagPerspektivLink?: { href: string; label: string };
 };
 
 export default function Resultater() {
@@ -124,6 +125,10 @@ export default function Resultater() {
             ],
             relevans: "Nasjonal salgsledelse, P/L-ansvar, digital transformasjon, KPI-styring, salg/drift-samhandling og margin i desentralisert B2B.",
             farge: "indigo",
+            fagPerspektivLink: {
+              href: "/faginnlegg/crm-mer-enn-et-systemprosjekt-2026-09",
+              label: "Faglig perspektiv: CRM som leder- og arbeidsflytoppgave →",
+            },
           },
           {
             selskap: "Norengros Johs. Olsen",
@@ -177,6 +182,10 @@ export default function Resultater() {
             ],
             relevans: "National sales leadership, P/L accountability, digital transformation, KPI management, sales/operations alignment and margin in decentralised B2B.",
             farge: "indigo",
+            fagPerspektivLink: {
+              href: "/faginnlegg/crm-mer-enn-et-systemprosjekt-2026-09",
+              label: "Professional perspective: CRM as a leadership and workflow task →",
+            },
           },
           {
             selskap: "Norengros Johs. Olsen",
@@ -411,6 +420,13 @@ export default function Resultater() {
                     </span>
                     {s.relevans}
                   </p>
+                  {s.fagPerspektivLink ? (
+                    <p>
+                      <Link href={s.fagPerspektivLink.href} className={`${linkClass} text-xs not-italic`}>
+                        {s.fagPerspektivLink.label}
+                      </Link>
+                    </p>
+                  ) : null}
                 </article>
               );
             })}

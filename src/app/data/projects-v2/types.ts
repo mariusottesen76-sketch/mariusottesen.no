@@ -129,6 +129,11 @@ export type ProjectV2BaseRecord = {
   strategicPlatformSlug?: StrategicPlatformSlug;
   editorialReviewRequired?: (keyof ProjectOverviewContent | "overviewIntroduction")[];
   applicationGroups?: ProjectApplicationGroup[];
+  /** Valgfri kontekstuell fagartikkel-lenke etter relevans/informasjonsgrid på /prosjekter. */
+  fagPerspektivLink?: {
+    href: string;
+    label: LocalizedString;
+  };
 };
 
 /** Resolved record etter dynamisk datoberegning — brukes i UI og metadata. */

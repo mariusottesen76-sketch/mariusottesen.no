@@ -1,6 +1,10 @@
 import { Lang } from "../LanguageContext";
 
-export type ForedragKort = { title: string; text: string };
+export type ForedragKort = {
+  title: string;
+  text: string;
+  fagLink?: { href: string; label: string };
+};
 
 const data = {
   no: {
@@ -32,6 +36,10 @@ const data = {
       {
         title: "Prioritering, transformasjon og operativ effekt",
         text: "Hvordan ledergrupper kan prioritere riktig, koble strategi til gjennomføring og skape målbar effekt på tvers av salg, drift og kommersiell utvikling — med erfaring fra executive plattformer, arrangementsplanlegging og praktisk AI-portefølje.",
+        fagLink: {
+          href: "/faginnlegg/fra-strategi-til-gjennomforing-2026-09",
+          label: "Les Fra strategi til gjennomføring →",
+        },
       },
     ] satisfies ForedragKort[],
     bidrag: {
@@ -69,6 +77,10 @@ const data = {
       {
         title: "Prioritisation, transformation and operational impact",
         text: "How leadership groups can prioritise well, connect strategy to execution and create measurable impact across sales, operations and commercial development — drawing on experience from executive platforms, event planning and a practical AI portfolio.",
+        fagLink: {
+          href: "/faginnlegg/fra-strategi-til-gjennomforing-2026-09",
+          label: "Read From strategy to execution →",
+        },
       },
     ] satisfies ForedragKort[],
     bidrag: {

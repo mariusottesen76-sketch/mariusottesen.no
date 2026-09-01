@@ -95,4 +95,11 @@ export const controlTowerV2: ProjectV2Record = {
     canonicalPath: "/control-tower",
   },
   strategicPlatformSlug: "control-tower",
+  fagPerspektivLink: {
+    href: "/faginnlegg/control-tower-verdikjede-ledelse-2026-08",
+    label: {
+      no: "Faglig perspektiv: Når du som leder ikke eier hele verdikjeden →",
+      en: "Professional perspective: When you as a leader do not own the entire value chain →",
+    },
+  },
 };

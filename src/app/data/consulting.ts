@@ -111,6 +111,11 @@ const prosjektLenke = (href: string): Record<Lang, PakkePilotStotte> => ({
   en: { tekst: portefoljeProsjektTekst.en, lenkeHref: href, lenkeLabel: "See the project" },
 });
 
+export type FagArtikkelLink = {
+  href: string;
+  label: string;
+};
+
 export type TjenestePakke = {
   id: string;
   tittel: string;
@@ -119,6 +124,7 @@ export type TjenestePakke = {
   forDetalj: string;
   leveranseDetalj: string;
   pilotStotte?: PakkePilotStotte;
+  fagArtikkelLink?: FagArtikkelLink;
 };
 
 export type MetodeKomponent = {
@@ -151,6 +157,10 @@ const hovedpakker: Record<Lang, TjenestePakke[]> = {
         "Særlig ved vekst i salgsteam, pipeline-prioritering, lav CRM-bruk, manglende salgslederinnsikt eller når rapportering ikke gir grunnlag for beslutninger.",
       leveranseDetalj:
         "CRM-struktur, salgsfaser, pipeline, møte- og oppfølgingsmaler, rapportering, datakvalitet, lederinnsikt og datadrevet salgsledelse.",
+      fagArtikkelLink: {
+        href: "/faginnlegg/crm-mer-enn-et-systemprosjekt-2026-09",
+        label: "Les CRM er mer enn et systemprosjekt →",
+      },
     },
     {
       id: "kundedialog",
@@ -199,6 +209,10 @@ const hovedpakker: Record<Lang, TjenestePakke[]> = {
         "Especially when scaling the sales team, prioritising pipeline, CRM adoption is low, sales leadership lacks insight or reporting does not support decisions.",
       leveranseDetalj:
         "CRM structure, sales stages, pipeline, meeting and follow-up templates, reporting, data quality, leadership insight and data-driven sales leadership.",
+      fagArtikkelLink: {
+        href: "/faginnlegg/crm-mer-enn-et-systemprosjekt-2026-09",
+        label: "Read CRM is more than a system project →",
+      },
     },
     {
       id: "kundedialog",
@@ -260,6 +274,10 @@ const spesialisertePakker: Record<Lang, TjenestePakke[]> = {
       leveranseDetalj:
         "1:1-struktur, coachingmodell, møteobservasjon, casegjennomgang, KPI-er og lederoppfølging i salgsteam.",
       pilotStotte: pscDemonstratorStotte.no,
+      fagArtikkelLink: {
+        href: "/faginnlegg/salgsledelse-i-praksis-2026-08",
+        label: "Les Salgsledelse i praksis →",
+      },
     },
     {
       id: "gtm-story",
@@ -330,6 +348,10 @@ const spesialisertePakker: Record<Lang, TjenestePakke[]> = {
       leveranseDetalj:
         "1:1 structure, coaching model, meeting observation, case review, KPIs and leadership follow-up in sales teams.",
       pilotStotte: pscDemonstratorStotte.en,
+      fagArtikkelLink: {
+        href: "/faginnlegg/salgsledelse-i-praksis-2026-08",
+        label: "Read Sales leadership in practice →",
+      },
     },
     {
       id: "gtm-story",

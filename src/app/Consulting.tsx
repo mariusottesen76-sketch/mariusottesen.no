@@ -184,6 +184,16 @@ function PakkePilotStotteBlokk({ stotte }: { stotte: PakkePilotStotte }) {
   );
 }
 
+function FagArtikkelLinkBlokk({ href, label }: { href: string; label: string }) {
+  return (
+    <p className="pt-2">
+      <Link href={href} className={`${linkClass} text-sm`}>
+        {label}
+      </Link>
+    </p>
+  );
+}
+
 function PakkeDetaljer({
   pakke,
   tr,
@@ -226,6 +236,9 @@ function HovedpakkeKort({
         </summary>
         <PakkeDetaljer pakke={pakke} tr={tr} />
       </details>
+      {pakke.fagArtikkelLink ? (
+        <FagArtikkelLinkBlokk href={pakke.fagArtikkelLink.href} label={pakke.fagArtikkelLink.label} />
+      ) : null}
     </article>
   );
 }
@@ -252,6 +265,9 @@ function SpesialisertPakkeAccordion({
           <PakkeFelt label={tr("cons.pakke.for")} text={pakke.forDetalj} />
           <PakkeFelt label={tr("cons.pakke.leveranseDetalj")} text={pakke.leveranseDetalj} />
           {pakke.pilotStotte && <PakkePilotStotteBlokk stotte={pakke.pilotStotte} />}
+          {pakke.fagArtikkelLink ? (
+            <FagArtikkelLinkBlokk href={pakke.fagArtikkelLink.href} label={pakke.fagArtikkelLink.label} />
+          ) : null}
         </div>
       </div>
     </details>
@@ -446,6 +462,7 @@ export default function Consulting() {
             <div key={kort.title} className="p-4 bg-slate-900/40 rounded-xl border border-slate-800 space-y-2">
               <h3 className={cardTitleClass}>{kort.title}</h3>
               <p className="text-slate-400 text-sm leading-relaxed font-light">{kort.text}</p>
+              {kort.fagLink ? <FagArtikkelLinkBlokk href={kort.fagLink.href} label={kort.fagLink.label} /> : null}
             </div>
           ))}
         </div>

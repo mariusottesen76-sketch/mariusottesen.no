@@ -22,6 +22,10 @@ const data = {
         mandate: "Hentet inn til kommersiell ledergruppe for å profesjonalisere salgsorganisasjonen, gjøre selskapet mer synlig og salgsteamet mer proaktive mot kunder, samt akselerere den digitale reisen i en tradisjonell bransje.",
         strategy: "Restrukturerte salgsavdelingen (20 årsverk) for økt slagkraft. Implementerte slagkraftige salgsprosesser og moderne CRM-metodikk, digitale dashboards og AI-støttede kundereiser og kundeportal for å flytte fokus fra reaktivt til proaktivt salg. Introduserte også flere nye tjenester for kunder.",
         results: "Styrket markedsposisjon gjennom mer målrettet innsats mot nøkkelkunder. Etablerte en ny standard for datadrevet salgsledelse og logistikksamhandling på tvers av 18 driftssteder. Bedret samhandlingen mellom salgsteamet og drift. Forbedret kapasitetsutnyttelse, tydeligere styringsmodell, resultatdrevne KPI-er & økte marginer.",
+        fagPerspektivLink: {
+          href: "/faginnlegg/salgsledelse-i-praksis-2026-08",
+          label: "Faglig perspektiv: Salgsledelse i praksis →",
+        },
       },
       {
         title: "Salgssjef Forbruksvarer",
@@ -85,6 +89,10 @@ const data = {
         mandate: "Appointed to the commercial leadership team to professionalise the sales organisation, elevate market visibility, shift the sales force from reactive to proactive engagement, and accelerate digital adoption in a traditionally analogue industry.",
         strategy: "Restructured the 20-person sales department for greater commercial impact. Deployed rigorous sales processes, modern CRM methodology, real-time digital dashboards, and AI-augmented customer journeys to drive a fundamental shift toward proactive, data-informed selling. Introduced multiple new value-added services.",
         results: "Strengthened market positioning through targeted key-account strategies. Established a new benchmark for data-driven sales management and logistics coordination across 18 operational sites. Improved cross-functional collaboration between sales and operations. Enhanced capacity utilisation, clearer governance, performance-driven KPIs, and margin expansion.",
+        fagPerspektivLink: {
+          href: "/faginnlegg/salgsledelse-i-praksis-2026-08",
+          label: "Professional perspective: Sales leadership in practice →",
+        },
       },
       {
         title: "Sales Manager, Consumer Goods",

@@ -189,6 +189,16 @@ export default function Profil({ onNavigate }: { onNavigate?: (tab: string) => v
                 >
                   <h3 className={cardSubtitleClass}>{kort.title}</h3>
                   <p className="text-slate-400 text-sm leading-relaxed">{kort.text}</p>
+                  {kort.fagLink ? (
+                    <p>
+                      <Link
+                        href={kort.fagLink.href}
+                        className="text-indigo-300 text-sm underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
+                      >
+                        {kort.fagLink.label}
+                      </Link>
+                    </p>
+                  ) : null}
                 </div>
               ))}
             </div>

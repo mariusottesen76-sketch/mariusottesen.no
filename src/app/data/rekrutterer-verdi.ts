@@ -1,7 +1,11 @@
 import { Lang } from "../LanguageContext";
 import { AKTUELL_FOR_ROLLER } from "./aktuell-for-roller";
 
-export type VerdiKort = { title: string; text: string };
+export type VerdiKort = {
+  title: string;
+  text: string;
+  fagLink?: { href: string; label: string };
+};
 
 const data = {
   no: {
@@ -17,6 +21,10 @@ const data = {
         {
           title: "Når strategi må bli operativ handling",
           text: "Når planer, KPI-er, CRM, team og lederrytme må kobles tettere sammen for å skape faktisk fremdrift.",
+          fagLink: {
+            href: "/faginnlegg/fra-strategi-til-gjennomforing-2026-09",
+            label: "Fra strategi til gjennomføring →",
+          },
         },
         {
           title: "Når salg, drift og teknologi må spille bedre sammen",
@@ -25,6 +33,10 @@ const data = {
         {
           title: "Når AI skal brukes praktisk og forretningsnært",
           text: "Når AI skal kobles til reelle behov, bedre beslutningsstøtte, mer effektiv arbeidsflyt og målbar kommersiell verdi.",
+          fagLink: {
+            href: "/faginnlegg/ai-needs-first-tannklinikk-case-01",
+            label: "De fleste starter feil med AI →",
+          },
         },
       ] satisfies VerdiKort[],
     },
@@ -60,6 +72,10 @@ const data = {
         {
           title: "When strategy must become operational action",
           text: "When plans, KPIs, CRM, teams and leadership rhythm must connect more closely to create real momentum.",
+          fagLink: {
+            href: "/faginnlegg/fra-strategi-til-gjennomforing-2026-09",
+            label: "From strategy to execution →",
+          },
         },
         {
           title: "When sales, operations and technology must work better together",
@@ -68,6 +84,10 @@ const data = {
         {
           title: "When AI must be used practically and close to the business",
           text: "When AI must connect to real needs, better decision support, more efficient workflow and measurable commercial value.",
+          fagLink: {
+            href: "/faginnlegg/ai-needs-first-tannklinikk-case-01",
+            label: "Most start wrong with AI →",
+          },
         },
       ] satisfies VerdiKort[],
     },

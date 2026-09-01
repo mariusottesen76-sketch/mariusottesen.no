@@ -4,12 +4,16 @@ import type { Lang } from "../../LanguageContext";
 import type { ProjectV2Record } from "../../data/projects-v2/types";
 import { buildProjectCta } from "../../data/projects-v2/cta";
 import { t } from "../../data/projects-v2/registry";
+import Link from "next/link";
 import { ProjectOverviewMetadataRow } from "./ProjectDateMetadata";
 import { blockTitleClass, prosjektTeaserClass } from "../../lib/typography";
 import { formatProsjektPlain } from "../../lib/product-brand";
 import ProjectOverviewImage from "./ProjectOverviewImage";
 import ProjectInformationGrid from "./ProjectInformationGrid";
 import ProjectCTAGroup from "./ProjectCTAGroup";
+
+const fagPerspektivLinkClass =
+  "text-indigo-300 text-sm underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400";
 
 type ProjectOverviewV2Props = {
   project: ProjectV2Record;
@@ -97,6 +101,14 @@ export default function ProjectOverviewV2({
           lang={lang}
           editorialReviewRequired={project.editorialReviewRequired}
         />
+
+        {project.fagPerspektivLink ? (
+          <p>
+            <Link href={project.fagPerspektivLink.href} className={fagPerspektivLinkClass}>
+              {t(project.fagPerspektivLink.label, lang)}
+            </Link>
+          </p>
+        ) : null}
 
         <ProjectCTAGroup lang={lang} config={cta} onOpenVideo={onOpenVideo} videoModalTitle={title} />
       </div>

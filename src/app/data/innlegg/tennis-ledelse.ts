@@ -66,7 +66,7 @@ Hvil i fred. 🖤
 
 På tvers av virksomheter, bransjer og modenhetsnivåer går én utfordring igjen:
 
-Det er stor forskjell på å sende et budskap og å skape en mottaker.
+Det er stor forskjell på å sende et budskap og å <a href="/faginnlegg/tillit-endring-gjennomforing-2025-01" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">skape en mottaker</a>.
 
 Ledelsen kan ha forstått hvorfor virksomheten må endre seg. Strategien kan være god. Verktøyene kan være tilgjengelige. Dataene kan ligge klare.
 
@@ -555,7 +555,7 @@ Noen ganger er det nødvendig.
 
 Problemet oppstår når trykket blir selve modellen.
 
-Kommersiell ledelse handler om resultater. Det skal den gjøre. Salg, margin, kundeverdi og vekst er mandatet. Men varige resultater skapes sjelden gjennom press alene.
+<a href="/faginnlegg/salgsledelse-i-praksis-2026-08" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">Kommersiell ledelse handler om resultater</a>. Det skal den gjøre. Salg, margin, kundeverdi og vekst er mandatet. Men varige resultater skapes sjelden gjennom press alene.
 
 Bård Kuvaas har over tid løftet frem betydningen av autonomistøttende ledelse. Ledere som forklarer retning, stiller gode spørsmål og støtter medarbeidere uten å bli kontrollerende, bygger ofte sterkere motivasjon, bedre prestasjoner og lavere turnover.
 
@@ -611,7 +611,7 @@ Kundene merker at flyten ikke er like god. Ansatte mister eierskap til prosesser
 
 Dette betyr ikke at transformasjon er feil. Tvert imot. Endring er nødvendig.
 
-Men gode transformasjoner starter ikke med et pent regneark alene. De starter med et ærligere bilde av virkeligheten – hele virkeligheten!
+Men <a href="/faginnlegg/fra-strategi-til-gjennomforing-2026-09" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">gode transformasjoner starter ikke med et pent regneark alene</a>. De starter med et ærligere bilde av virkeligheten – hele virkeligheten!
 
 Mitt konkrete råd er enkelt.
 💥 Ikke godkjenn prosjektet før noen har laget undersiden av regnearket.
@@ -843,7 +843,7 @@ Selv sterk motivasjon er ikke nok hvis mennesker ikke har tillit til retningen, 
 
 Det er ikke sabotasje eller latskap. Det er et gap som forskning har dokumentert grundig, og som ledere systematisk undervurderer: Avstanden mellom intensjon og faktisk adferd. I min masteroppgave om nettopp dette gapet — forankret i Theory of Planned Behavior — er ett av de tydeligste funnene at høy grad av enighet og positiv innstilling ikke er tilstrekkelig for å predikere handling. Folk kan mene det de sier. De kan ønske å endre seg. Og likevel ikke gjøre det.
 
-I kommersiell ledelse og salgsledelse er konsekvensene direkte målbare. Prioriteringene er klare, KPI-ene er satt, og alle nikker i kickoff-møtet. Tre måneder senere er adferden i kundedialogen den samme som før. Ikke fordi strategien var feil, men fordi ingen oversatte den til konkrete handlingsmønstre: hvem gjør hva, i hvilken situasjon, og hva er det første steget? Det er her transformasjoner strander. Ikke i planfasen, men i overgangen fra intensjon til rutine.
+I kommersiell ledelse og salgsledelse er konsekvensene direkte målbare. Prioriteringene er klare, KPI-ene er satt, og alle nikker i kickoff-møtet. Tre måneder senere er adferden i kundedialogen den samme som før. Ikke fordi strategien var feil, men fordi ingen oversatte den til konkrete handlingsmønstre: hvem gjør hva, i hvilken situasjon, og hva er det første steget? <a href="/faginnlegg/fra-strategi-til-gjennomforing-2026-09" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">Det er her transformasjoner strander</a>. Ikke i planfasen, men i overgangen fra intensjon til rutine.
 
 McKinseys forskning på organisatorisk transformasjon viser at 70 % av endringsinitiativ ikke når sine mål. Den hyppigst rapporterte årsaken er ikke feil strategi eller manglende ressurser, men manglende evne til å endre faktisk adferd på tvers av organisasjonen. Det som skiller de 30 % som lykkes, er ikke bedre planer, men at ledere på alle nivåer aktivt modellerer den nye adferden selv, fremfor å delegere gjennomføringen nedover.
 
@@ -1076,7 +1076,7 @@ En stor takk til Christoffer Omberg og hele det dyktige og hyggelige(!) OBF-team
       visningsDato: "04.12.2025",
       kategori: "Lederstil, kultur og team",
       link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
-      innhold: `På mandag deltok jeg på et innsiktsfullt foredrag i regi av Econa med professor <strong>Henning Bang</strong>. Temaet var <strong>psykologisk trygghet</strong>, og hva som faktisk bygger den – eller undergraver den.
+      innhold: `På mandag deltok jeg på et innsiktsfullt foredrag i regi av Econa med professor <strong>Henning Bang</strong>. Temaet var <a href="/faginnlegg/psykologisk-trygghet-krav-2026-01" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors"><strong>psykologisk trygghet</strong></a>, og hva som faktisk bygger den – eller undergraver den.
 Foredraget traff, spesielt fordi det utfordrer både ledere og medarbeidere.
 
 <strong>Det punktet som virkelig skapte reaksjoner og diskusjon i salen, var Bangs påstand om at:</strong>
@@ -1427,7 +1427,7 @@ Rest in peace. 🖤
 
 Across organisations, industries and maturity levels, one challenge keeps coming up:
 
-There is a big difference between sending a message and creating a recipient.
+There is a big difference between sending a message and <a href="/faginnlegg/tillit-endring-gjennomforing-2025-01" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">creating a recipient</a>.
 
 Leadership may have understood why the organisation must change. The strategy may be sound. The tools may be available. The data may be ready.
 
@@ -1857,7 +1857,7 @@ Sometimes that is necessary.
 
 The problem arises when pressure becomes the model itself.
 
-Commercial leadership is about results. It should be. Sales, margin, customer value and growth are the mandate. But lasting results are rarely created through pressure alone.
+<a href="/faginnlegg/salgsledelse-i-praksis-2026-08" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">Commercial leadership is about results</a>. It should be. Sales, margin, customer value and growth are the mandate. But lasting results are rarely created through pressure alone.
 
 Over time, Bård Kuvaas has highlighted the importance of autonomy-supportive leadership. Leaders who explain direction, ask good questions and support employees without becoming controlling often build stronger motivation, better performance and lower turnover.
 
@@ -1906,7 +1906,7 @@ Customers notice that the flow is not as good. Employees lose ownership of proce
 
 That does not mean transformation is wrong. On the contrary. Change is necessary.
 
-But good transformations do not start with a neat spreadsheet alone. They start with a more honest picture of reality — the whole reality!
+But <a href="/faginnlegg/fra-strategi-til-gjennomforing-2026-09" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">good transformations do not start with a neat spreadsheet alone</a>. They start with a more honest picture of reality — the whole reality!
 
 My concrete advice is simple.
 💥 Do not approve the project until someone has built the underside of the spreadsheet.
@@ -2103,7 +2103,7 @@ Selv sterk motivasjon er ikke nok hvis mennesker ikke har tillit til retningen, 
 
 It is not sabotage or laziness. There is a gap that research has thoroughly documented, and which managers systematically underestimate: the distance between intention and actual behaviour. In my master's thesis on precisely this gap — rooted in the Theory of Planned Behavior — one of the clearest findings is that a high degree of agreement and a positive attitude are not sufficient to predict action. People can mean what they say. They may want to change. And yet don't do it.
 
-In commercial management and sales management, the consequences are directly measurable. The priorities are clear, the KPIs are set, and everyone nods in the kickoff meeting. Three months later, the behavior in the customer dialogue is the same as before. Not because the strategy was wrong, but because no one translated it into concrete patterns of action: who does what, in what situation, and what is the first step? This is where transformations run aground. Not in the planning phase, but in the transition from intention to routine.
+In commercial management and sales management, the consequences are directly measurable. The priorities are clear, the KPIs are set, and everyone nods in the kickoff meeting. Three months later, the behavior in the customer dialogue is the same as before. Not because the strategy was wrong, but because no one translated it into concrete patterns of action: who does what, in what situation, and what is the first step? <a href="/faginnlegg/fra-strategi-til-gjennomforing-2026-09" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">This is where transformations run aground</a>. Not in the planning phase, but in the transition from intention to routine.
 
 McKinsey's research on organizational transformation shows that 70% of change initiatives do not achieve their goals. The most frequently reported reason is not the wrong strategy or lack of resources, but the inability to change actual behavior across the organization. What separates the 30% who succeed is not better plans, but that managers at all levels actively model the new behavior themselves, rather than delegating the implementation downwards.
 
@@ -2272,7 +2272,7 @@ A big thank you to Christoffer Omberg and the entire skilled and pleasant(!) OBF
   "kjeft-psykologisk-trygghet-01": {
     tittel: "Is it okay to 'shut up' as a leader - and what does that mean for psychological security?",
     teaser: "Psychological security, clarity and anonymous criticism. Reflections from a lecture with Henning Bang (Econa).",
-    innhold: `On Monday, I attended an insightful lecture organized by Econa with professor <strong>Henning Bang</strong>. The topic was <strong>psychological security</strong>, and what actually builds it - or undermines it.
+    innhold: `On Monday, I attended an insightful lecture organized by Econa with professor <strong>Henning Bang</strong>. The topic was <a href="/faginnlegg/psykologisk-trygghet-krav-2026-01" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors"><strong>psychological security</strong></a>, and what actually builds it - or undermines it.
 The lecture hit home, especially because it challenges both managers and employees.
 
 <strong>The point that really created reactions and discussion in the room was Bang's claim that:</strong>
