@@ -18,7 +18,7 @@ export function faginnleggOgImageUrl(innlegg: FaginnleggInnlegg): string {
 export function buildFaginnleggArticleMetadata(innlegg: FaginnleggInnlegg): Metadata {
   const slug = innlegg.id;
   const titleNo = stripHtmlForMeta(innlegg.tittel.no);
-  const description = stripHtmlForMeta(innlegg.teaser.no).slice(0, 160);
+  const description = stripHtmlForMeta(innlegg.metaDescription?.no ?? innlegg.teaser.no).slice(0, 160);
   const canonical = faginnleggCanonicalUrl(slug);
   const ogImage = faginnleggOgImageUrl(innlegg);
 
@@ -56,7 +56,7 @@ export function buildFaginnleggArticleJsonLd(innlegg: FaginnleggInnlegg) {
   const slug = innlegg.id;
   const url = faginnleggCanonicalUrl(slug);
   const headline = stripHtmlForMeta(innlegg.tittel.no);
-  const description = stripHtmlForMeta(innlegg.teaser.no);
+  const description = stripHtmlForMeta(innlegg.metaDescription?.no ?? innlegg.teaser.no);
   const image = faginnleggOgImageUrl(innlegg);
 
   const article: Record<string, unknown> = {

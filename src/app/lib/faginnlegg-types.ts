@@ -5,6 +5,8 @@ export interface FaginnleggInnlegg {
   /** Valgfri undertittel rett under H1 på detaljsiden — ikke dupliser i brødtekst. */
   undertittel?: { no: string; en: string };
   teaser: { no: string; en: string };
+  /** Valgfri meta description — faller tilbake til teaser. */
+  metaDescription?: { no: string; en: string };
   bildeUrl?: string;
   dato: string;
   visningsDato: string;

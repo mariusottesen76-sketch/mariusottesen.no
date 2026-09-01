@@ -12,6 +12,7 @@ function classifyStandaloneStrong(innerHtml: string): "h2" | "h3" | "p" {
   const text = innerHtml.replace(/<[^>]+>/g, "").trim();
   if (!text) return "p";
   if (text.endsWith(".")) return "p";
+  if (text.endsWith("?")) return "p";
   if (text.includes("→")) return "p";
   if (/^[«""]/.test(text)) return "p";
   if (text.endsWith(":")) return "p";
