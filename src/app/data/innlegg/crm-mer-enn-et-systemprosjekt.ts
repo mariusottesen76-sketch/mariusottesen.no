@@ -23,7 +23,7 @@ export const crmMerEnnEtSystemprosjekt: FaginnleggInnlegg = {
   kategori: "Kommersiell ledelse og salg",
   bildeUrl: "/images/CRM-innlegg-marius.png",
   bildeModalBred: true,
-  bildeKortFokus: "74% center",
+  bildeKortFokus: "88% 32%",
   bildeAlt: {
     no: "Marius Ottesen ved et CRM-system – illustrasjon til faginnlegg om CRM, arbeidsflyt og ledelse.",
     en: "Marius Ottesen at a CRM system – illustration for article on CRM, workflow and leadership.",

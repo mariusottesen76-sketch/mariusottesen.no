@@ -33,8 +33,11 @@ import {
 import { bildeCacheVersion, faginnleggDetailPath } from './lib/faginnlegg-types';
 import { getFaginnleggLinkedInCta } from './lib/faginnlegg-linkedin-cta';
 
-const bildeFitClass = (innlegg: FaginnleggInnlegg) =>
-  innlegg.bildeFit === "contain" ? "object-contain object-center" : "object-cover object-center";
+const bildeFitClass = (innlegg: FaginnleggInnlegg) => {
+  const fit = innlegg.bildeFit === "contain" ? "object-contain" : "object-cover";
+  const pos = innlegg.bildeKortFokus ? "" : " object-center";
+  return `${fit}${pos}`;
+};
 
 const kortBildeSrc = (innlegg: FaginnleggInnlegg) => {
   const src = innlegg.bildeUrlKort ?? innlegg.karusellBilder?.[0]?.src ?? innlegg.bildeUrl;
