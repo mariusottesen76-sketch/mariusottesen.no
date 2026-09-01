@@ -45,8 +45,9 @@ const kortBildeSrc = (innlegg: FaginnleggInnlegg) => {
 };
 
 const kortBildeStil = (innlegg: FaginnleggInnlegg): React.CSSProperties => ({
+  objectFit: innlegg.bildeFit === "contain" ? "contain" : "cover",
   objectPosition: innlegg.bildeKortFokus ?? "center",
-  ...(innlegg.bildeKortZoom ? { transform: `scale(${innlegg.bildeKortZoom})` } : {}),
+  ...(innlegg.bildeKortZoom ? { transform: `scale(${innlegg.bildeKortZoom})`, transformOrigin: "center center" } : {}),
 });
 
 /** Felles kortdimensjoner – én regel for alle innlegg */
