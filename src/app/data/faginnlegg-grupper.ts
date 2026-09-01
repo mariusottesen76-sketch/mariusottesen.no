@@ -27,10 +27,9 @@ export const LEDELSE_SUBTEMA: FaginnleggSubtema[] = [
     id: "ledelse-kommersiell",
     label: { no: "Kommersiell og operasjonell ledelse", en: "Commercial and operational leadership" },
     innleggIds: [
-      "crm-mer-enn-et-systemprosjekt-2026-09",
       "salgsledelse-i-praksis-2026-08",
+      "crm-mer-enn-et-systemprosjekt-2026-09",
       "control-tower-verdikjede-ledelse-2026-08",
-      "du-arver-laget-landslag-2026-07",
       "trykk-prestasjon-kommersiell-ledelse-2026-05",
       "verdier-kultur-kommersiell-ledelse-2026-06",
       "frastotende-salg-2026-01",
@@ -45,10 +44,11 @@ export const LEDELSE_SUBTEMA: FaginnleggSubtema[] = [
     id: "ledelse-kultur",
     label: { no: "Team, kultur og prestasjon", en: "Teams, culture and performance" },
     innleggIds: [
+      "psykologisk-trygghet-krav-2026-01",
+      "du-arver-laget-landslag-2026-07",
       "kong-harald-startnummer-en-2026-08",
       "verdensklasse-bygges-sammen-cnn-2026-07",
       "vi-rodde-sammen-fotball-vm-2026-07",
-      "psykologisk-trygghet-krav-2026-01",
       "kjeft-psykologisk-trygghet-01",
       "pappa-forst-trener-etterpa-2026-01",
       "attitude-2016-01",
@@ -58,7 +58,7 @@ export const LEDELSE_SUBTEMA: FaginnleggSubtema[] = [
   {
     id: "ledelse-endring",
     label: { no: "Transformasjon, endring og gjennomføring", en: "Transformation, change and execution" },
-    innleggIds: ["fra-strategi-til-gjennomforing-2026-09", "ai-mottaker-endringsledelse-2026-08", "hr-panel-innovasjonsmotor-bjørvika-2026-08", "hr-responsible-adoption-bjørvika-2026-08", "hr-som-innovasjonsmotor-bjørvika-2026-08", "tillit-endring-gjennomforing-2025-01", "gronne-exceltall-transformasjon-2026-05"],
+    innleggIds: ["fra-strategi-til-gjennomforing-2026-09", "tillit-endring-gjennomforing-2025-01", "ai-mottaker-endringsledelse-2026-08", "hr-panel-innovasjonsmotor-bjørvika-2026-08", "hr-responsible-adoption-bjørvika-2026-08", "hr-som-innovasjonsmotor-bjørvika-2026-08", "gronne-exceltall-transformasjon-2026-05"],
   },
   {
     id: "ledelse-strategi",
@@ -103,12 +103,12 @@ export const AI_SUBTEMA: FaginnleggSubtema[] = [
     id: "ai-arbeidsflyt",
     label: { no: "Arbeidsflyt, skalering og implementering", en: "Workflow, scaling and implementation" },
     innleggIds: [
-      "fra-verktoy-til-system-01",
-      "fra-pilot-til-skalering-01",
+      "ai-needs-first-tannklinikk-case-01",
       "praktisk-oppskrift-skalering-01",
+      "fra-pilot-til-skalering-01",
+      "fra-verktoy-til-system-01",
       "ai-ready-virksomhet-01",
       "ai-prosjekt-forretningsproblem-tegneserie-2026-05",
-      "ai-needs-first-tannklinikk-case-01",
       "econa-ai-kundereise-arbeidsflyt-01",
     ],
   },
@@ -196,42 +196,30 @@ export function sorterFaginnlegg<T extends InnleggMedTittel>(innlegg: T[], mode:
 }
 
 export function grupperLedelseInnlegg<T extends InnleggMedTittel>(
-  innlegg: T[],
-  sortMode: FaginnleggSortMode,
-  lang: Lang
+  innlegg: T[]
 ): { subtema: FaginnleggSubtema; innlegg: T[] }[] {
   const ledelseInnlegg = innlegg.filter((item) => erLedelseInnlegg(item.kategori));
   const idTilInnlegg = new Map(ledelseInnlegg.map((item) => [item.id, item]));
 
   return LEDELSE_SUBTEMA.map((subtema) => ({
     subtema,
-    innlegg: sorterFaginnlegg(
-      (subtema.innleggIds ?? [])
-        .map((id) => idTilInnlegg.get(id))
-        .filter((item): item is T => Boolean(item)),
-      sortMode,
-      lang
-    ),
+    innlegg: (subtema.innleggIds ?? [])
+      .map((id) => idTilInnlegg.get(id))
+      .filter((item): item is T => Boolean(item)),
   })).filter((gruppe) => gruppe.innlegg.length > 0);
 }
 
 export function grupperAiInnlegg<T extends InnleggMedTittel>(
-  innlegg: T[],
-  sortMode: FaginnleggSortMode,
-  lang: Lang
+  innlegg: T[]
 ): { subtema: FaginnleggSubtema; innlegg: T[] }[] {
   const aiInnlegg = innlegg.filter((item) => erAiInnlegg(item.kategori));
   const idTilInnlegg = new Map(aiInnlegg.map((item) => [item.id, item]));
 
   return AI_SUBTEMA.map((subtema) => ({
     subtema,
-    innlegg: sorterFaginnlegg(
-      (subtema.innleggIds ?? [])
-        .map((id) => idTilInnlegg.get(id))
-        .filter((item): item is T => Boolean(item)),
-      sortMode,
-      lang
-    ),
+    innlegg: (subtema.innleggIds ?? [])
+      .map((id) => idTilInnlegg.get(id))
+      .filter((item): item is T => Boolean(item)),
   })).filter((gruppe) => gruppe.innlegg.length > 0);
 }
 

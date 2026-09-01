@@ -1,15 +1,11 @@
 import { Lang } from "../LanguageContext";
-
-export type LeseStiTopic = {
-  label: { no: string; en: string };
-  /** Lenker til subtema i innholdsfortegnelsen når satt. */
-  subtemaId?: string;
-};
+import { LESESTI_ARTICLE_IDS } from "./faginnlegg-authority";
 
 export type LeseSti = {
   title: { no: string; en: string };
   intro: { no: string; en: string };
-  topics: LeseStiTopic[];
+  /** Direkte anbefalte artikler — slug-id i prioritert rekkefølge. */
+  articleIds: readonly string[];
 };
 
 const lesestier: LeseSti[] = [
@@ -22,13 +18,7 @@ const lesestier: LeseSti[] = [
       no: "Få raskt innblikk i lederprofil, kommersiell erfaring, gjennomføringsevne og hvordan jeg tenker om AI som del av moderne ledelse.",
       en: "Get a quick view of leadership profile, commercial experience, execution capability and how I think about AI as part of modern leadership.",
     },
-    topics: [
-      { label: { no: "Kommersiell og operasjonell ledelse", en: "Commercial and operational leadership" }, subtemaId: "ledelse-kommersiell" },
-      { label: { no: "Team og kultur", en: "Teams and culture" }, subtemaId: "ledelse-kultur" },
-      { label: { no: "Transformasjon", en: "Transformation" }, subtemaId: "ledelse-endring" },
-      { label: { no: "Karriere", en: "Career" }, subtemaId: "ledelse-karriere" },
-      { label: { no: "AI-perspektiv", en: "AI perspective" }, subtemaId: "ai-grunnlag" },
-    ],
+    articleIds: LESESTI_ARTICLE_IDS.rekrutterere,
   },
   {
     title: {
@@ -39,12 +29,7 @@ const lesestier: LeseSti[] = [
       no: "Les innlegg om strategi, endring, prestasjon, salgsledelse og hvordan team kan skape bedre gjennomføring over tid.",
       en: "Read articles on strategy, change, performance, sales leadership and how teams can create better execution over time.",
     },
-    topics: [
-      { label: { no: "Kommersiell og operativ praksis", en: "Commercial and operational practice" }, subtemaId: "ledelse-kommersiell" },
-      { label: { no: "Team og prestasjon", en: "Teams and performance" }, subtemaId: "ledelse-kultur" },
-      { label: { no: "Endring og gjennomføring", en: "Change and execution" }, subtemaId: "ledelse-endring" },
-      { label: { no: "Strategi", en: "Strategy" }, subtemaId: "ledelse-strategi" },
-    ],
+    articleIds: LESESTI_ARTICLE_IDS.ledereKommersielle,
   },
   {
     title: {
@@ -55,12 +40,7 @@ const lesestier: LeseSti[] = [
       no: "Utforsk hvordan AI kan kobles til arbeidsflyt, CRM, beslutningsstøtte, governance og praktiske prosjekter.",
       en: "Explore how AI can connect to workflow, CRM, decision support, governance and practical projects.",
     },
-    topics: [
-      { label: { no: "AI-verdi", en: "AI value" }, subtemaId: "ai-grunnlag" },
-      { label: { no: "Arbeidsflyt", en: "Workflow" }, subtemaId: "ai-arbeidsflyt" },
-      { label: { no: "Data og CRM", en: "Data and CRM" }, subtemaId: "ai-data-crm" },
-      { label: { no: "Implementering", en: "Implementation" }, subtemaId: "ai-praksis" },
-    ],
+    articleIds: LESESTI_ARTICLE_IDS.aiInteresserte,
   },
 ];
 

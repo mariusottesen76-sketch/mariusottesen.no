@@ -190,7 +190,7 @@ function FaginnleggArticleInner({ innlegg }: { innlegg: FaginnleggInnlegg }) {
   const cacheVersion = bildeCacheVersion(innlegg);
   const body = resolveFaginnleggBody(innlegg, lang);
   const bodyHtml = formatFaginnleggBodyHtml(body);
-  const relevantLinks = getRelevantVidereLinks(innlegg.kategori);
+  const relevantLinks = getRelevantVidereLinks(innlegg.id, innlegg.kategori);
 
   return (
     <article className="py-4 text-left w-full overflow-x-hidden min-w-0">

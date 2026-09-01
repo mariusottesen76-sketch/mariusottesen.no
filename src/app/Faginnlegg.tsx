@@ -104,11 +104,10 @@ const Faginnlegg = ({ onNavigate: _onNavigate }: { onNavigate?: (tab: string) =>
     tocSort,
     lang
   );
-  const ledelseGrupper = grupperLedelseInnlegg(alleInnlegg, tocSort, lang);
-  const aiGrupper = grupperAiInnlegg(alleInnlegg, tocSort, lang);
+  const ledelseGrupper = grupperLedelseInnlegg(alleInnlegg);
+  const aiGrupper = grupperAiInnlegg(alleInnlegg);
+  const innleggById = new Map(alleInnlegg.map((innlegg) => [innlegg.id, innlegg]));
 
-  const lesestiChipKlasse =
-    "inline-flex items-center rounded-full border border-slate-700/80 bg-slate-950/60 px-3 py-1.5 text-xs md:text-sm font-medium text-slate-300 leading-none";
   const lesestiChipLinkKlasse =
     "inline-flex items-center rounded-full border border-indigo-500/25 bg-indigo-500/10 px-3 py-1.5 text-xs md:text-sm font-medium text-indigo-300 leading-none hover:border-indigo-400/50 hover:text-indigo-100 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400";
 
@@ -196,17 +195,17 @@ const Faginnlegg = ({ onNavigate: _onNavigate }: { onNavigate?: (tab: string) =>
               <h3 className={blockTitleClass}>{sti.title[lang]}</h3>
               <p className="text-sm md:text-base text-slate-400 leading-relaxed flex-1">{sti.intro[lang]}</p>
               <ul className="flex flex-wrap gap-2 pt-1 list-none p-0 m-0" role="list">
-                {sti.topics.map((topic) => (
-                  <li key={topic.label.no} role="listitem">
-                    {topic.subtemaId ? (
-                      <a href={`#${topic.subtemaId}`} className={lesestiChipLinkKlasse}>
-                        {topic.label[lang]}
-                      </a>
-                    ) : (
-                      <span className={lesestiChipKlasse}>{topic.label[lang]}</span>
-                    )}
-                  </li>
-                ))}
+                {sti.articleIds.map((articleId) => {
+                  const innlegg = innleggById.get(articleId);
+                  if (!innlegg) return null;
+                  return (
+                    <li key={articleId} role="listitem">
+                      <Link href={faginnleggDetailPath(articleId)} className={lesestiChipLinkKlasse}>
+                        {faginnleggTocLabel(innlegg, lang)}
+                      </Link>
+                    </li>
+                  );
+                })}
               </ul>
             </article>
           ))}

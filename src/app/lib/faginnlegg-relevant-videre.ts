@@ -1,3 +1,4 @@
+import { getFaginnleggRelevantVidereOverride } from "../data/faginnlegg-authority";
 import type { Lang } from "../LanguageContext";
 import { erAiInnlegg, erLedelseInnlegg } from "./faginnlegg-data";
 
@@ -6,13 +7,7 @@ export interface RelevantVidereLink {
   label: { no: string; en: string };
 }
 
-/**
- * Enkel kategori-basert routing — maks 3 lenker, minst én til profil/forside.
- * Ledelse: erfaring, resultater, profil.
- * AI: prosjekter, consulting, profil.
- * Ukjente kategorier: consulting, erfaring, profil.
- */
-export function getRelevantVidereLinks(kategori: string): RelevantVidereLink[] {
+function getGenericRelevantVidereLinks(kategori: string): RelevantVidereLink[] {
   if (erAiInnlegg(kategori)) {
     return [
       { href: "/prosjekter", label: { no: "AI-prosjekter", en: "AI projects" } },
@@ -34,6 +29,15 @@ export function getRelevantVidereLinks(kategori: string): RelevantVidereLink[] {
     { href: "/erfaring", label: { no: "Erfaring", en: "Experience" } },
     { href: "/", label: { no: "Om Marius Ottesen", en: "About Marius Ottesen" } },
   ];
+}
+
+/**
+ * Håndkuratert override for Core Authority Set v1.0; ellers kategori-basert fallback.
+ */
+export function getRelevantVidereLinks(slug: string, kategori: string): RelevantVidereLink[] {
+  const override = getFaginnleggRelevantVidereOverride(slug);
+  if (override?.length) return override;
+  return getGenericRelevantVidereLinks(kategori);
 }
 
 export function labelForLang(link: RelevantVidereLink, lang: Lang): string {
