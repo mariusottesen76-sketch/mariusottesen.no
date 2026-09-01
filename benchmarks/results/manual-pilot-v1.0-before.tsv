@@ -1,0 +1,21 @@
+PROMPT_ID	ENGINE	ENGINE_MODE	TEST_DATE	TEST_TIME	LANGUAGE	MARKET	FRESH_SESSION	WEB_SEARCH_ENABLED	DOMAIN_FOUND	MARIUS_MENTIONED	CITED_URL	EXPECTED_PRIMARY	EXPECTED_PRIMARY_MATCH	DOMAIN_VISIBILITY	ANSWER_RELEVANCE	SOURCE_QUALITY	ROLE_FIT_RECOGNIZED	PROOF_USED	AI_DIFFERENTIATION_RECOGNIZED	RAW_ANSWER_NOTES	NOTES_EXTERNAL
+Q01	GOOGLE	organic		no	Norway	yes	n/a			/								
+Q01	CHATGPT	chat_with_browsing		no	Norway	yes	yes			/								
+Q01	GEMINI	chat_with_browsing		no	Norway	yes	yes			/								
+Q01	PERPLEXITY	answer_with_citations		no	Norway	yes	yes			/								
+Q31	GOOGLE	organic		no	Norway	yes	n/a			Salgsledelse i praksis (CAS)								
+Q31	CHATGPT	chat_with_browsing		no	Norway	yes	yes			Salgsledelse i praksis (CAS)								
+Q31	GEMINI	chat_with_browsing		no	Norway	yes	yes			Salgsledelse i praksis (CAS)								
+Q31	PERPLEXITY	answer_with_citations		no	Norway	yes	yes			Salgsledelse i praksis (CAS)								
+Q53	GOOGLE	organic		no	Norway	yes	n/a			Fra strategi til gjennomføring (CAS)								
+Q53	CHATGPT	chat_with_browsing		no	Norway	yes	yes			Fra strategi til gjennomføring (CAS)								
+Q53	GEMINI	chat_with_browsing		no	Norway	yes	yes			Fra strategi til gjennomføring (CAS)								
+Q53	PERPLEXITY	answer_with_citations		no	Norway	yes	yes			Fra strategi til gjennomføring (CAS)								
+Q69	GOOGLE	organic		no	Norway	yes	n/a			— (GAP)								
+Q69	CHATGPT	chat_with_browsing		no	Norway	yes	yes			— (GAP)								
+Q69	GEMINI	chat_with_browsing		no	Norway	yes	yes			— (GAP)								
+Q69	PERPLEXITY	answer_with_citations		no	Norway	yes	yes			— (GAP)								
+Q77	GOOGLE	organic		no	Norway	yes	n/a			De fleste starter feil med AI (CAS)								
+Q77	CHATGPT	chat_with_browsing		no	Norway	yes	yes			De fleste starter feil med AI (CAS)								
+Q77	GEMINI	chat_with_browsing		no	Norway	yes	yes			De fleste starter feil med AI (CAS)								
+Q77	PERPLEXITY	answer_with_citations		no	Norway	yes	yes			De fleste starter feil med AI (CAS)								
