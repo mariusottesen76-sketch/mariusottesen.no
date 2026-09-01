@@ -172,7 +172,7 @@ function FaginnleggArticleMedia({
         <Image
           key={`${innlegg.bildeUrl}-${cacheVersion}`}
           src={`${innlegg.bildeUrl}?v=${cacheVersion}`}
-          alt={innlegg.tittel[lang]}
+          alt={innlegg.bildeAlt?.[lang] ?? innlegg.tittel[lang]}
           width={erLandscape ? 960 : 720}
           height={erLandscape ? 540 : 720}
           className={mediaKlasse}

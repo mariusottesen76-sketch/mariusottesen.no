@@ -21,6 +21,13 @@ export const crmMerEnnEtSystemprosjekt: FaginnleggInnlegg = {
   dato: "2026-09-01",
   visningsDato: "01.09.26",
   kategori: "Kommersiell ledelse og salg",
+  bildeUrl: "/images/CRM-innlegg-marius.png",
+  bildeModalBred: true,
+  bildeKortFokus: "58% center",
+  bildeAlt: {
+    no: "Marius Ottesen ved et CRM-system – illustrasjon til faginnlegg om CRM, arbeidsflyt og ledelse.",
+    en: "Marius Ottesen at a CRM system – illustration for article on CRM, workflow and leadership.",
+  },
   link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
   innhold: {
     no: `En virksomhet kan ha et godt CRM-system og samtidig ha et dårlig kundebilde.

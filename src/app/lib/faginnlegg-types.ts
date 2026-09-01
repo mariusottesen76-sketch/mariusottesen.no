@@ -8,6 +8,8 @@ export interface FaginnleggInnlegg {
   /** Valgfri meta description — faller tilbake til teaser. */
   metaDescription?: { no: string; en: string };
   bildeUrl?: string;
+  /** Valgfri alt-tekst for bilde — faller tilbake til tittel. */
+  bildeAlt?: { no: string; en: string };
   dato: string;
   visningsDato: string;
   kategori: string;

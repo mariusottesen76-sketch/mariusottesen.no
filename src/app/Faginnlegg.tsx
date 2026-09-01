@@ -407,7 +407,7 @@ const InnleggsKort = ({
             <Image
               key={`${kortSrc}-${cacheVersion}`}
               src={`${kortSrc}?v=${cacheVersion}`}
-              alt={innlegg.tittel[lang]}
+              alt={innlegg.bildeAlt?.[lang] ?? innlegg.tittel[lang]}
               fill
               sizes={`${KORT_BILDE_BREDDE}px`}
               className={`transition-all duration-500 ${bildeFitClass(innlegg)}`}

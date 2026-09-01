@@ -17,7 +17,7 @@ export const salgsledelseIPraksis: FaginnleggInnlegg = {
   dato: "2026-08-31",
   visningsDato: "31.08.26",
   kategori: "Kommersiell ledelse og salg",
-  bildeUrl: "/images/salgsledelse -i-praksis.png",
+  bildeUrl: "/images/salgsledelse-i-praksis.png",
   bildeKortFokus: "42% center",
   bildeModalBred: true,
   link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
