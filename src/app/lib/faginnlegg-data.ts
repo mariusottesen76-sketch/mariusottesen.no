@@ -1,5 +1,6 @@
 import { aiGovernance } from "../data/innlegg/ai-governance";
 import { crmMerEnnEtSystemprosjekt } from "../data/innlegg/crm-mer-enn-et-systemprosjekt";
+import { fraStrategiTilGjennomforing } from "../data/innlegg/fra-strategi-til-gjennomforing";
 import { salgsledelseIPraksis } from "../data/innlegg/salgsledelse-i-praksis";
 import { tennisLedelse } from "../data/innlegg/tennis-ledelse";
 import type { FaginnleggInnlegg } from "./faginnlegg-types";
@@ -30,7 +31,7 @@ function sortByDateDesc(a: FaginnleggInnlegg, b: FaginnleggInnlegg): number {
 }
 
 export function getAlleFaginnlegg(): FaginnleggInnlegg[] {
-  return ([...tennisLedelse, ...aiGovernance, salgsledelseIPraksis, crmMerEnnEtSystemprosjekt] as FaginnleggInnlegg[]).sort(sortByDateDesc);
+  return ([...tennisLedelse, ...aiGovernance, salgsledelseIPraksis, crmMerEnnEtSystemprosjekt, fraStrategiTilGjennomforing] as FaginnleggInnlegg[]).sort(sortByDateDesc);
 }
 
 export function getAllFaginnleggSlugs(): string[] {

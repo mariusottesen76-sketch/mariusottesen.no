@@ -58,7 +58,7 @@ export const LEDELSE_SUBTEMA: FaginnleggSubtema[] = [
   {
     id: "ledelse-endring",
     label: { no: "Transformasjon, endring og gjennomføring", en: "Transformation, change and execution" },
-    innleggIds: ["ai-mottaker-endringsledelse-2026-08", "hr-panel-innovasjonsmotor-bjørvika-2026-08", "hr-responsible-adoption-bjørvika-2026-08", "hr-som-innovasjonsmotor-bjørvika-2026-08", "tillit-endring-gjennomforing-2025-01", "gronne-exceltall-transformasjon-2026-05"],
+    innleggIds: ["fra-strategi-til-gjennomforing-2026-09", "ai-mottaker-endringsledelse-2026-08", "hr-panel-innovasjonsmotor-bjørvika-2026-08", "hr-responsible-adoption-bjørvika-2026-08", "hr-som-innovasjonsmotor-bjørvika-2026-08", "tillit-endring-gjennomforing-2025-01", "gronne-exceltall-transformasjon-2026-05"],
   },
   {
     id: "ledelse-strategi",

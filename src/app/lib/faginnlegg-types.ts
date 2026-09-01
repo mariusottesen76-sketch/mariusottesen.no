@@ -14,7 +14,7 @@ export interface FaginnleggInnlegg {
   visningsDato: string;
   kategori: string;
   link: string;
-  innhold?: { no: string; en: string };
+  innhold?: { no: string; en?: string };
   karusellBilder?: { src: string; alt?: { no: string; en: string } }[];
   karusellPdfUrl?: string;
   bildeFit?: "cover" | "contain";

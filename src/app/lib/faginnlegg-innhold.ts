@@ -120,13 +120,15 @@ export function formatFaginnleggBodyHtml(body: string): string {
 }
 
 export function resolveFaginnleggBody(innlegg: {
-  innhold?: { no: string; en: string };
+  innhold?: { no: string; en?: string };
   teaser: { no: string; en: string };
   tittel: { no: string; en: string };
 }, lang: "no" | "en"): string {
   const bodyRaw = innlegg.innhold?.[lang] || innlegg.teaser[lang];
   if (innlegg.innhold) {
-    return stripDuplicateTitle(innlegg.innhold[lang], innlegg.tittel[lang]);
+    const raw = innlegg.innhold[lang];
+    if (!raw?.trim()) return innlegg.teaser[lang];
+    return stripDuplicateTitle(raw, innlegg.tittel[lang]);
   }
   return bodyRaw;
 }
