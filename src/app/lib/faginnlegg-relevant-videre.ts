@@ -1,5 +1,6 @@
 import { getFaginnleggRelevantVidereOverride } from "../data/faginnlegg-authority";
 import type { Lang } from "../LanguageContext";
+import { localizeArticleHref } from "./faginnlegg-internal-links";
 import { erAiInnlegg, erLedelseInnlegg } from "./faginnlegg-data";
 
 export interface RelevantVidereLink {
@@ -42,4 +43,8 @@ export function getRelevantVidereLinks(slug: string, kategori: string): Relevant
 
 export function labelForLang(link: RelevantVidereLink, lang: Lang): string {
   return link.label[lang];
+}
+
+export function resolveRelevantVidereHref(href: string, lang: Lang): string {
+  return localizeArticleHref(href, lang);
 }

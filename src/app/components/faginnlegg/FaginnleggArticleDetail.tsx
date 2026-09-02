@@ -10,10 +10,17 @@ import { getTranslation } from "../../data/translations";
 import type { FaginnleggInnlegg } from "../../lib/faginnlegg-types";
 import { bildeCacheVersion } from "../../lib/faginnlegg-types";
 import { formatFaginnleggBodyHtml, resolveFaginnleggBody } from "../../lib/faginnlegg-innhold";
+import { localizeFaginnleggBodyLinks } from "../../lib/faginnlegg-internal-links";
+import { hasFullEnFaginnleggBody } from "../../lib/faginnlegg-en-audit";
 import { applyProductNameItalicsPlain, formatInnleggTittelHtml } from "../../lib/product-brand";
-import { getRelevantVidereLinks, labelForLang } from "../../lib/faginnlegg-relevant-videre";
+import {
+  getRelevantVidereLinks,
+  labelForLang,
+  resolveRelevantVidereHref,
+} from "../../lib/faginnlegg-relevant-videre";
 import { getFaginnleggLinkedInCta } from "../../lib/faginnlegg-linkedin-cta";
 import { blockTitleClass } from "../../lib/typography";
+import LocaleLink from "../LocaleLink";
 
 const linkClass =
   "text-indigo-400 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400";
@@ -189,30 +196,33 @@ function FaginnleggArticleInner({ innlegg }: { innlegg: FaginnleggInnlegg }) {
   const tr = (key: string) => getTranslation(key, lang);
   const cacheVersion = bildeCacheVersion(innlegg);
   const body = resolveFaginnleggBody(innlegg, lang);
-  const bodyHtml = formatFaginnleggBodyHtml(body);
+  const bodyHtml = localizeFaginnleggBodyLinks(formatFaginnleggBodyHtml(body), lang);
   const relevantLinks = getRelevantVidereLinks(innlegg.id, innlegg.kategori);
+  const hubPath = lang === "en" ? "/en/articles" : "/faginnlegg";
+  const enNotAvailable =
+    lang === "en" && !hasFullEnFaginnleggBody(innlegg.id, innlegg) && tr("fag.artikkel.enNotAvailable");
 
   return (
     <article className="py-4 text-left w-full overflow-x-hidden min-w-0">
       <nav className="mb-8 flex flex-wrap items-center justify-between gap-3 border-b border-slate-800/40 pb-4">
-        <Link href="/" className="flex items-center gap-2 group shrink-0" aria-label={lang === "no" ? "Til forsiden" : "Go to home"}>
+        <LocaleLink href="/" className="flex items-center gap-2 group shrink-0" aria-label={lang === "no" ? "Til forsiden" : "Go to home"}>
           <div className="w-9 h-9 rounded-full overflow-hidden bg-slate-800 shrink-0">
             <Image src="/images/ikon.png" alt="Marius Ottesen" width={36} height={36} className="w-full h-full object-cover" />
           </div>
           <span className="text-[10px] font-black uppercase tracking-widest text-indigo-400 group-hover:text-indigo-300">
             Marius Ottesen Consulting
           </span>
-        </Link>
+        </LocaleLink>
         <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs">
-          <Link href="/faginnlegg" className={linkClass}>
+          <LocaleLink href="/faginnlegg" className={linkClass}>
             {tr("tab.faginnlegg")}
-          </Link>
-          <Link href="/consulting" className={linkClass}>
+          </LocaleLink>
+          <LocaleLink href="/consulting" className={linkClass}>
             Consulting
-          </Link>
-          <Link href="/kontakt" className={linkClass}>
+          </LocaleLink>
+          <LocaleLink href="/kontakt" className={linkClass}>
             {lang === "no" ? "Kontakt" : "Contact"}
-          </Link>
+          </LocaleLink>
           <LanguageToggle />
         </div>
       </nav>
@@ -220,7 +230,15 @@ function FaginnleggArticleInner({ innlegg }: { innlegg: FaginnleggInnlegg }) {
       <nav aria-label="Breadcrumb" className="mb-6 text-xs text-slate-500">
         <ol className="flex flex-wrap items-center gap-1.5 list-none p-0 m-0">
           <li>
-            <Link href="/faginnlegg" className="hover:text-indigo-300 transition-colors">
+            <LocaleLink href="/" className="hover:text-indigo-300 transition-colors">
+              {lang === "en" ? "Home" : "Hjem"}
+            </LocaleLink>
+          </li>
+          <li aria-hidden="true" className="text-slate-600">
+            →
+          </li>
+          <li>
+            <Link href={hubPath} className="hover:text-indigo-300 transition-colors">
               {tr("tab.faginnlegg")}
             </Link>
           </li>
@@ -234,7 +252,7 @@ function FaginnleggArticleInner({ innlegg }: { innlegg: FaginnleggInnlegg }) {
       </nav>
 
       <Link
-        href="/faginnlegg"
+        href={hubPath}
         className="inline-flex items-center gap-1.5 text-xs text-slate-500 hover:text-indigo-300 transition-colors mb-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400 rounded-sm"
       >
         <ChevronLeft size={14} aria-hidden="true" />
@@ -270,6 +288,12 @@ function FaginnleggArticleInner({ innlegg }: { innlegg: FaginnleggInnlegg }) {
         />
       </header>
 
+      {enNotAvailable ? (
+        <p className="mb-6 text-sm text-slate-500 border border-slate-800/80 rounded-lg px-4 py-3 bg-slate-900/30">
+          {enNotAvailable}
+        </p>
+      ) : null}
+
       <FaginnleggArticleMedia innlegg={innlegg} lang={lang} cacheVersion={cacheVersion} />
 
       <div
@@ -295,7 +319,7 @@ function FaginnleggArticleInner({ innlegg }: { innlegg: FaginnleggInnlegg }) {
         <ul className="space-y-2 list-none p-0 m-0">
           {relevantLinks.map((item) => (
             <li key={item.href}>
-              <Link href={item.href} className={`${linkClass} text-sm font-medium`}>
+              <Link href={resolveRelevantVidereHref(item.href, lang)} className={`${linkClass} text-sm font-medium`}>
                 {labelForLang(item, lang)} →
               </Link>
             </li>
@@ -305,12 +329,12 @@ function FaginnleggArticleInner({ innlegg }: { innlegg: FaginnleggInnlegg }) {
 
       <section className="mt-10 p-6 bg-slate-900/40 rounded-2xl border border-indigo-500/15 space-y-3">
         <p className="text-slate-400 text-sm italic">{tr("fag.cta")}</p>
-        <Link
+        <LocaleLink
           href="/kontakt"
           className="inline-flex items-center gap-2 text-indigo-400 font-black text-sm uppercase tracking-widest hover:text-white transition-all"
         >
           {tr("fag.cta.link")} →
-        </Link>
+        </LocaleLink>
       </section>
 
       <footer className="mt-10 pt-6 border-t border-slate-800/40 text-center">
@@ -322,9 +346,15 @@ function FaginnleggArticleInner({ innlegg }: { innlegg: FaginnleggInnlegg }) {
   );
 }
 
-export default function FaginnleggArticleDetail({ innlegg }: { innlegg: FaginnleggInnlegg }) {
+export default function FaginnleggArticleDetail({
+  innlegg,
+  initialLang = "no",
+}: {
+  innlegg: FaginnleggInnlegg;
+  initialLang?: Lang;
+}) {
   return (
-    <LanguageProvider>
+    <LanguageProvider initialLang={initialLang}>
       <main className="min-h-screen bg-slate-950 text-slate-200 px-16 sm:px-24 md:px-32 lg:px-40 xl:px-48 2xl:px-56 py-4 md:py-8 relative overflow-x-hidden w-full">
         <div className="max-w-3xl mx-auto relative z-10 w-full">
           <FaginnleggArticleInner innlegg={innlegg} />

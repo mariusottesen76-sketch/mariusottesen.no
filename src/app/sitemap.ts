@@ -5,6 +5,10 @@ import { sitemapLastModifiedFromIso } from "./lib/project-date-format";
 import { resolveFaginnleggHubUpdatedAt } from "./data/projects-v2/project-date-resolvers";
 import { getAlleFaginnlegg } from "./lib/faginnlegg-data";
 import {
+  getIndexableEnArticleSlugs,
+  ARTICLES_HUB_PAIR,
+} from "./lib/faginnlegg-locale-routes";
+import {
   getIndexableProjectRecords,
   projectEnPath,
   PROJECTS_HUB_PAIR,
@@ -99,6 +103,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.9,
     },
+    {
+      url: `${SITE}${ARTICLES_HUB_PAIR.en}`,
+      lastModified: sitemapLastModifiedFromIso(faginnleggLastMod),
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
   ];
 
   const enProjectRoutes: MetadataRoute.Sitemap = getIndexableProjectRecords().map((project) => ({
@@ -107,6 +117,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: "monthly" as const,
     priority: project.detailLevel === "full" ? 0.7 : 0.5,
   }));
+
+  const enArticleRoutes: MetadataRoute.Sitemap = getIndexableEnArticleSlugs().map((slug) => {
+    const innlegg = getAlleFaginnlegg().find((a) => a.id === slug);
+    return {
+      url: `${SITE}/en/articles/${slug}`,
+      lastModified: sitemapLastModifiedFromIso(innlegg?.dato ?? faginnleggPublishedAt),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    };
+  });
 
   return [
     {
@@ -130,6 +150,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...mainTabRoutes,
     ...enRoutes,
     ...enProjectRoutes,
+    ...enArticleRoutes,
     ...projectRoutes,
     ...faginnleggArticleRoutes,
   ];

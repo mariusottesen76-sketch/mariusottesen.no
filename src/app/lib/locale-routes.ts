@@ -4,6 +4,7 @@ export const SITE = "https://www.mariusottesen.no" as const;
 
 /** Tabs with indexable EN-1A URL pairs. */
 import { localePathFromNoProjectPath, resolveProjectLocalePair } from "./project-locale-routes";
+import { localePathFromNoArticlePath, resolveArticleLocalePair } from "./faginnlegg-locale-routes";
 
 export type SiteTabKey =
   | "Profil"
@@ -12,7 +13,8 @@ export type SiteTabKey =
   | "Consulting"
   | "CV & Åpen søknad"
   | "Kontakt"
-  | "Prosjekter";
+  | "Prosjekter"
+  | "Faginnlegg";
 
 export const LOCALE_ROUTE_MAP: Record<SiteTabKey, { no: string; en: string }> = {
   Profil: { no: "/", en: "/en" },
@@ -22,12 +24,12 @@ export const LOCALE_ROUTE_MAP: Record<SiteTabKey, { no: string; en: string }> = 
   "CV & Åpen søknad": { no: "/cv", en: "/en/cv" },
   Kontakt: { no: "/kontakt", en: "/en/contact" },
   Prosjekter: { no: "/prosjekter", en: "/en/projects" },
+  Faginnlegg: { no: "/faginnlegg", en: "/en/articles" },
 };
 
 /** Tabs without dedicated EN route — always Norwegian URL. */
 const UNMAPPED_TAB_SLUGS: Record<string, string> = {
   Referanser: "referanser",
-  Faginnlegg: "faginnlegg",
 };
 
 export type SitePageKey = "home" | "experience" | "results" | "consulting" | "cv" | "contact";
@@ -55,6 +57,8 @@ export function resolveLocalePair(pathname: string): { no: string; en: string } 
   for (const pair of Object.values(LOCALE_ROUTE_MAP)) {
     if (pair.no === normalized || pair.en === normalized) return pair;
   }
+  const articlePair = resolveArticleLocalePair(normalized);
+  if (articlePair) return articlePair;
   return resolveProjectLocalePair(normalized);
 }
 
@@ -87,6 +91,11 @@ export function localePathFromNoPath(noHref: string, lang: Lang): string {
   const projectPath = localePathFromNoProjectPath(normalized, lang);
   if (projectPath) {
     const withQuery = `${projectPath}${query}`;
+    return hash ? `${withQuery}#${hash}` : withQuery;
+  }
+  const articlePath = localePathFromNoArticlePath(normalized, lang);
+  if (articlePath) {
+    const withQuery = `${articlePath}${query}`;
     return hash ? `${withQuery}#${hash}` : withQuery;
   }
   return noHref;

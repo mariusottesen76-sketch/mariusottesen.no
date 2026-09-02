@@ -198,6 +198,11 @@ const translations: Translations = {
   "fag.les": { no: "Les hele innlegget →", en: "Read full article →" },
   "fag.lukk": { no: "Lukk innlegget ↑", en: "Close article ↑" },
   "fag.artikkel.tilbake": { no: "Tilbake til Faginnlegg", en: "Back to Articles" },
+  "fag.artikkel.norwegianOnly": { no: "", en: "Norwegian only" },
+  "fag.artikkel.enNotAvailable": {
+    no: "",
+    en: "English version is not available. This article is shown in Norwegian.",
+  },
   "fag.artikkel.relevant": { no: "Relevant videre", en: "Relevant next steps" },
   "fag.nye": { no: "Nye innlegg under utarbeidelse...", en: "New articles in progress..." },
   "fag.linkedin.discussion": {

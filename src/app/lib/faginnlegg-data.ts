@@ -39,7 +39,18 @@ export function getAllFaginnleggSlugs(): string[] {
 }
 
 export function getFaginnleggBySlug(slug: string): FaginnleggInnlegg | undefined {
-  return getAlleFaginnlegg().find((innlegg) => innlegg.id === slug);
+  const alle = getAlleFaginnlegg();
+  const direct = alle.find((innlegg) => innlegg.id === slug);
+  if (direct) return direct;
+  try {
+    const decoded = decodeURIComponent(slug);
+    if (decoded !== slug) {
+      return alle.find((innlegg) => innlegg.id === decoded);
+    }
+  } catch {
+    /* invalid escape sequence — fall through */
+  }
+  return undefined;
 }
 
 export function erLedelseInnlegg(kategori: string): boolean {

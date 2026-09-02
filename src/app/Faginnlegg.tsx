@@ -30,8 +30,11 @@ import {
   getFaginnleggTelling,
   type FaginnleggInnlegg,
 } from './lib/faginnlegg-data';
-import { bildeCacheVersion, faginnleggDetailPath } from './lib/faginnlegg-types';
+import { bildeCacheVersion } from './lib/faginnlegg-types';
 import { getFaginnleggLinkedInCta } from './lib/faginnlegg-linkedin-cta';
+import { hasFullEnFaginnleggBody } from './lib/faginnlegg-en-audit';
+import { faginnleggArticlePath } from './lib/faginnlegg-locale-routes';
+import LocaleLink from './components/LocaleLink';
 
 const bildeFitClass = (innlegg: FaginnleggInnlegg) => {
   const fit = innlegg.bildeFit === "contain" ? "object-contain" : "object-cover";
@@ -78,10 +81,15 @@ function faginnleggTocLabel(innlegg: FaginnleggInnlegg, lang: "no" | "en"): stri
   return innlegg.tittel[lang];
 }
 
-function FaginnleggTocLink({ innlegg, lang }: { innlegg: FaginnleggInnlegg; lang: "no" | "en" }) {
+function FaginnleggTocLink({ innlegg, lang, tr }: { innlegg: FaginnleggInnlegg; lang: "no" | "en"; tr: (key: string) => string }) {
+  const href = faginnleggArticlePath(innlegg.id, lang);
+  const noOnly = lang === "en" && !hasFullEnFaginnleggBody(innlegg.id, innlegg);
   return (
-    <Link href={faginnleggDetailPath(innlegg.id)} className="block hover:text-indigo-300">
+    <Link href={href} className="block hover:text-indigo-300">
       {faginnleggTocLabel(innlegg, lang)}
+      {noOnly && tr("fag.artikkel.norwegianOnly") ? (
+        <span className="text-slate-500 font-normal"> ({tr("fag.artikkel.norwegianOnly")})</span>
+      ) : null}
     </Link>
   );
 }
@@ -160,21 +168,21 @@ const Faginnlegg = ({ onNavigate: _onNavigate }: { onNavigate?: (tab: string) =>
         </p>
         <p className="text-base md:text-lg text-slate-400 leading-relaxed font-light break-words mb-6">
           {tr("fag.formidling.kilde.lead")}{" "}
-          <Link href="/prosjekter#ai-value-lab-oslo-2026" className={linkClass}>
+          <LocaleLink href="/prosjekter#ai-value-lab-oslo-2026" className={linkClass}>
             {tr("fag.formidling.kilde.valueLab")}
-          </Link>{" "}
+          </LocaleLink>{" "}
           {tr("fag.formidling.kilde.mid1")}
         </p>
         <div className="flex flex-wrap gap-x-5 gap-y-2">
-          <Link href="/prosjekter" className={`${linkClass} text-sm font-medium`}>
+          <LocaleLink href="/prosjekter" className={`${linkClass} text-sm font-medium`}>
             {tr("fag.formidling.link.prosjekter")}
-          </Link>
-          <Link href="/erfaring" className={`${linkClass} text-sm font-medium`}>
+          </LocaleLink>
+          <LocaleLink href="/erfaring" className={`${linkClass} text-sm font-medium`}>
             {tr("fag.formidling.link.erfaring")}
-          </Link>
-          <Link href="/resultater" className={`${linkClass} text-sm font-medium`}>
+          </LocaleLink>
+          <LocaleLink href="/resultater" className={`${linkClass} text-sm font-medium`}>
             {tr("fag.formidling.link.resultater")}
-          </Link>
+          </LocaleLink>
         </div>
       </section>
 
@@ -198,10 +206,15 @@ const Faginnlegg = ({ onNavigate: _onNavigate }: { onNavigate?: (tab: string) =>
                 {sti.articleIds.map((articleId) => {
                   const innlegg = innleggById.get(articleId);
                   if (!innlegg) return null;
+                  const href = faginnleggArticlePath(articleId, lang);
+                  const noOnly = lang === "en" && !hasFullEnFaginnleggBody(articleId, innlegg);
                   return (
                     <li key={articleId} role="listitem">
-                      <Link href={faginnleggDetailPath(articleId)} className={lesestiChipLinkKlasse}>
+                      <Link href={href} className={lesestiChipLinkKlasse}>
                         {faginnleggTocLabel(innlegg, lang)}
+                        {noOnly && tr("fag.artikkel.norwegianOnly") ? (
+                          <span className="text-slate-500 font-normal"> ({tr("fag.artikkel.norwegianOnly")})</span>
+                        ) : null}
                       </Link>
                     </li>
                   );
@@ -251,7 +264,7 @@ const Faginnlegg = ({ onNavigate: _onNavigate }: { onNavigate?: (tab: string) =>
                           className="border-b border-slate-800/40 hover:bg-slate-900/40 transition-colors"
                         >
                           <td className="py-1.5 px-2 text-sm font-sans font-normal text-slate-300 hover:text-indigo-300">
-                            <FaginnleggTocLink innlegg={innlegg} lang={lang} />
+                            <FaginnleggTocLink innlegg={innlegg} lang={lang} tr={tr} />
                           </td>
                         </tr>
                       ))}
@@ -280,7 +293,7 @@ const Faginnlegg = ({ onNavigate: _onNavigate }: { onNavigate?: (tab: string) =>
                           className="border-b border-slate-800/40 hover:bg-slate-900/40 transition-colors"
                         >
                           <td className="py-1.5 px-2 text-sm text-slate-300 hover:text-indigo-300">
-                            <FaginnleggTocLink innlegg={innlegg} lang={lang} />
+                            <FaginnleggTocLink innlegg={innlegg} lang={lang} tr={tr} />
                           </td>
                         </tr>
                       ))}
@@ -315,6 +328,7 @@ const Faginnlegg = ({ onNavigate: _onNavigate }: { onNavigate?: (tab: string) =>
                   innlegg={innlegg}
                   lang={lang}
                   lesLabel={tr("fag.les")}
+                  noOnlyLabel={tr("fag.artikkel.norwegianOnly")}
                 />
               ))
             ) : (
@@ -335,6 +349,7 @@ const Faginnlegg = ({ onNavigate: _onNavigate }: { onNavigate?: (tab: string) =>
                   innlegg={innlegg}
                   lang={lang}
                   lesLabel={tr("fag.les")}
+                  noOnlyLabel={tr("fag.artikkel.norwegianOnly")}
                 />
               ))
             ) : (
@@ -353,13 +368,17 @@ const InnleggsKort = ({
   innlegg,
   lang,
   lesLabel,
+  noOnlyLabel,
 }: {
   innlegg: FaginnleggInnlegg;
   lang: "no" | "en";
   lesLabel: string;
+  noOnlyLabel: string;
 }) => {
   const cacheVersion = bildeCacheVersion(innlegg);
   const kortSrc = kortBildeSrc(innlegg);
+  const articleHref = faginnleggArticlePath(innlegg.id, lang);
+  const noOnly = lang === "en" && !hasFullEnFaginnleggBody(innlegg.id, innlegg);
   const isVideo = Boolean(
     kortSrc &&
       (kortSrc.toLowerCase().endsWith(".mp4") ||
@@ -439,10 +458,13 @@ const InnleggsKort = ({
         />
         <div className="shrink-0 flex flex-col items-start gap-2 mt-auto pt-2">
           <Link
-            href={faginnleggDetailPath(innlegg.id)}
+            href={articleHref}
             className="inline-flex items-center text-[10px] font-black uppercase tracking-widest text-indigo-400 hover:text-indigo-200 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
           >
             {lesLabel}
+            {noOnly && noOnlyLabel ? (
+              <span className="normal-case font-medium text-slate-500 ml-1">({noOnlyLabel})</span>
+            ) : null}
           </Link>
           <a
             href={innlegg.link}
