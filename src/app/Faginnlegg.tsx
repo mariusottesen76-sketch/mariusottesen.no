@@ -12,6 +12,7 @@ import {
 } from './lib/typography';
 import { applyProductNameItalicsPlain, formatInnleggTittelHtml } from './lib/product-brand';
 import { getFaginnleggLeseStier } from './data/faginnlegg-lesestier';
+import { getLeseStiDisplayTitle } from './data/faginnlegg-lesesti-display-titles';
 import {
   FAGINNLEGG_SORT_OPTIONS,
   FaginnleggSortMode,
@@ -35,6 +36,7 @@ import { getFaginnleggLinkedInCta } from './lib/faginnlegg-linkedin-cta';
 import { hasFullEnFaginnleggBody } from './lib/faginnlegg-en-audit';
 import { faginnleggArticlePath } from './lib/faginnlegg-locale-routes';
 import LocaleLink from './components/LocaleLink';
+import { ChevronRight } from 'lucide-react';
 
 const bildeFitClass = (innlegg: FaginnleggInnlegg) => {
   const fit = innlegg.bildeFit === "contain" ? "object-contain" : "object-cover";
@@ -116,9 +118,6 @@ const Faginnlegg = ({ onNavigate: _onNavigate }: { onNavigate?: (tab: string) =>
   const aiGrupper = grupperAiInnlegg(alleInnlegg);
   const innleggById = new Map(alleInnlegg.map((innlegg) => [innlegg.id, innlegg]));
 
-  const lesestiChipLinkKlasse =
-    "inline-flex items-center rounded-full border border-indigo-500/25 bg-indigo-500/10 px-3 py-1.5 text-xs md:text-sm font-medium text-indigo-300 leading-none hover:border-indigo-400/50 hover:text-indigo-100 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400";
-
   useEffect(() => {
     const scrollTilAnker = () => {
       const hash = window.location.hash.slice(1);
@@ -194,32 +193,66 @@ const Faginnlegg = ({ onNavigate: _onNavigate }: { onNavigate?: (tab: string) =>
           {tr("fag.lesestier.title")}
         </h2>
         <p className="text-base md:text-lg text-slate-400 leading-relaxed mb-5 w-full min-w-0 max-w-none">{tr("fag.lesestier.intro")}</p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+        <div className="grid grid-cols-1 md:grid-cols-3 md:grid-rows-[auto_auto_auto] gap-3">
           {lesestier.map((sti) => (
             <article
-              key={sti.title.no}
-              className="p-5 bg-slate-900/40 rounded-xl border border-indigo-500/15 shadow-lg space-y-3 min-w-0 flex flex-col"
+              key={sti.id}
+              className="p-5 bg-slate-900/40 rounded-xl border border-indigo-500/15 shadow-lg min-w-0 grid gap-3 md:row-span-3 md:grid-rows-subgrid"
             >
               <h3 className={blockTitleClass}>{sti.title[lang]}</h3>
-              <p className="text-sm md:text-base text-slate-400 leading-relaxed flex-1">{sti.intro[lang]}</p>
-              <ul className="flex flex-wrap gap-2 pt-1 list-none p-0 m-0" role="list">
-                {sti.articleIds.map((articleId) => {
+              <p className="text-sm md:text-base text-slate-400 leading-relaxed">{sti.intro[lang]}</p>
+              <ol
+                className="divide-y divide-slate-800/50 border-t border-slate-800/40 list-none p-0 m-0 self-start w-full"
+                role="list"
+              >
+                {sti.articleIds.map((articleId, index) => {
                   const innlegg = innleggById.get(articleId);
                   if (!innlegg) return null;
                   const href = faginnleggArticlePath(articleId, lang);
                   const noOnly = lang === "en" && !hasFullEnFaginnleggBody(articleId, innlegg);
+                  const isFirst = index === 0;
+                  const label =
+                    getLeseStiDisplayTitle(sti.id, articleId, lang) ??
+                    faginnleggTocLabel(innlegg, lang);
                   return (
-                    <li key={articleId} role="listitem">
-                      <Link href={href} className={lesestiChipLinkKlasse}>
-                        {faginnleggTocLabel(innlegg, lang)}
-                        {noOnly && tr("fag.artikkel.norwegianOnly") ? (
-                          <span className="text-slate-500 font-normal"> ({tr("fag.artikkel.norwegianOnly")})</span>
-                        ) : null}
+                    <li key={articleId} role="listitem" className="min-w-0">
+                      <Link
+                        href={href}
+                        className="group flex items-start gap-2.5 sm:gap-3 py-3 -mx-1.5 px-2 rounded-lg transition-colors hover:bg-indigo-500/[0.07] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400 min-h-[44px]"
+                      >
+                        <span
+                          aria-hidden="true"
+                          className={`tabular-nums text-[11px] font-semibold shrink-0 w-7 pt-0.5 text-right ${
+                            isFirst ? "text-indigo-300" : "text-indigo-400/55"
+                          }`}
+                        >
+                          {index + 1}.
+                        </span>
+                        <span
+                          className={`flex-1 min-w-0 text-sm leading-snug break-words ${
+                            isFirst
+                              ? "text-slate-100 font-medium"
+                              : "text-slate-300 font-normal group-hover:text-slate-100"
+                          }`}
+                        >
+                          {label}
+                          {noOnly && tr("fag.artikkel.norwegianOnly") ? (
+                            <span className="text-slate-500 font-normal">
+                              {" "}
+                              ({tr("fag.artikkel.norwegianOnly")})
+                            </span>
+                          ) : null}
+                        </span>
+                        <ChevronRight
+                          size={14}
+                          className="shrink-0 mt-0.5 text-slate-600/80 group-hover:text-indigo-400/90 transition-colors"
+                          aria-hidden="true"
+                        />
                       </Link>
                     </li>
                   );
                 })}
-              </ul>
+              </ol>
             </article>
           ))}
         </div>

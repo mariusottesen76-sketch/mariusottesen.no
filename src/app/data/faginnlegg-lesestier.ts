@@ -1,7 +1,9 @@
 import { Lang } from "../LanguageContext";
 import { LESESTI_ARTICLE_IDS } from "./faginnlegg-authority";
+import type { LeseStiKey } from "./faginnlegg-lesesti-display-titles";
 
 export type LeseSti = {
+  id: LeseStiKey;
   title: { no: string; en: string };
   intro: { no: string; en: string };
   /** Direkte anbefalte artikler — slug-id i prioritert rekkefølge. */
@@ -10,6 +12,7 @@ export type LeseSti = {
 
 const lesestier: LeseSti[] = [
   {
+    id: "rekrutterere",
     title: {
       no: "For rekrutterere og arbeidsgivere",
       en: "For recruiters and employers",
@@ -21,6 +24,7 @@ const lesestier: LeseSti[] = [
     articleIds: LESESTI_ARTICLE_IDS.rekrutterere,
   },
   {
+    id: "ledereKommersielle",
     title: {
       no: "For ledere og kommersielle team",
       en: "For leaders and commercial teams",
@@ -32,6 +36,7 @@ const lesestier: LeseSti[] = [
     articleIds: LESESTI_ARTICLE_IDS.ledereKommersielle,
   },
   {
+    id: "aiInteresserte",
     title: {
       no: "For AI-interesserte arbeidsgivere og kunder",
       en: "For AI-interested employers and clients",
