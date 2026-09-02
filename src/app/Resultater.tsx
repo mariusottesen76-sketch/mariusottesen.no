@@ -2,6 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import LocaleLink from "./components/LocaleLink";
 import { BarChart3, Globe, Target, TrendingUp, Award, Zap, ArrowUpRight, ChevronRight } from "lucide-react";
 import { useLanguage } from "./LanguageContext";
 import { getTranslation } from "./data/translations";
@@ -300,9 +301,9 @@ export default function Resultater() {
             <p>{tr("resultater.intro")}</p>
             <p className="mt-2 text-base">
               {tr("resultater.intro.cv")}{" "}
-              <Link href="/cv" className={linkClass} aria-label="Gå til CV og åpen søknad">
+              <LocaleLink href="/cv" className={linkClass} aria-label="Gå til CV og åpen søknad">
                 {lang === "no" ? "CV & åpen søknad" : "CV & open application"}
-              </Link>
+              </LocaleLink>
               .
             </p>
           </div>
@@ -447,23 +448,23 @@ export default function Resultater() {
                 {lang === "no" ? "AI-prosjekter og apper" : "AI projects and apps"}
               </Link>
               {", "}
-              <Link href="/erfaring" className={linkClass} aria-label="Gå til Erfaring">
-                Erfaring
-              </Link>
+              <LocaleLink href="/erfaring" className={linkClass} aria-label="Gå til Erfaring">
+                {lang === "no" ? "Erfaring" : "Experience"}
+              </LocaleLink>
               {", "}
               <Link href="/referanser" className={linkClass} aria-label="Gå til Referanser">
-                Referanser
+                {lang === "no" ? "Referanser" : "References"}
               </Link>
               {lang === "no" ? " eller " : " or "}
-              <Link href="/cv" className={linkClass} aria-label="Gå til CV og åpen søknad">
+              <LocaleLink href="/cv" className={linkClass} aria-label="Gå til CV og åpen søknad">
                 {lang === "no" ? "CV & åpen søknad" : "CV & open application"}
-              </Link>
+              </LocaleLink>
               {lang === "no"
                 ? " for mer kontekst om lederroller, ansvar og dokumentasjon."
                 : " for more context on leadership roles, responsibilities and documentation."}
             </p>
             <div>
-              <Link
+              <LocaleLink
                 href="/kontakt"
                 aria-label={
                   lang === "no"
@@ -476,7 +477,7 @@ export default function Resultater() {
                   ? "Ta kontakt om aktuell lederrolle"
                   : "Get in touch about a leadership role"}
                 <ChevronRight size={18} aria-hidden="true" />
-              </Link>
+              </LocaleLink>
             </div>
           </section>
         </div>

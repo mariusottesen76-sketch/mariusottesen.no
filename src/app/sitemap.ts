@@ -81,6 +81,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
+  const enRoutes: MetadataRoute.Sitemap = [
+    { url: `${SITE}/en`, lastModified: mainSiteLastMod, changeFrequency: "weekly", priority: 0.95 },
+    { url: `${SITE}/en/experience`, lastModified: mainSiteLastMod, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${SITE}/en/results`, lastModified: mainSiteLastMod, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${SITE}/en/consulting`, lastModified: mainSiteLastMod, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${SITE}/en/cv`, lastModified: mainSiteLastMod, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${SITE}/en/contact`, lastModified: mainSiteLastMod, changeFrequency: "monthly", priority: 0.7 },
+  ];
+
   return [
     {
       url: SITE,
@@ -101,6 +110,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     ...mainTabRoutes,
+    ...enRoutes,
     ...projectRoutes,
     ...faginnleggArticleRoutes,
   ];

@@ -2,6 +2,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import LocaleLink from "./components/LocaleLink";
 import { FileText, Linkedin, ChevronRight, ArrowDown } from "lucide-react";
 import { getDokumentasjonData, linkedinUrl, cvPdfUrl, soknadPdfUrl } from "./data/dokumentasjon";
 import { getRekruttererVerdiData } from "./data/rekrutterer-verdi";
@@ -170,15 +171,15 @@ export default function Dokumentasjon() {
               <p className="text-slate-300 text-sm leading-relaxed">{r.nesteStegText}</p>
             </div>
             <div className="flex flex-wrap gap-2 pt-1">
-              <Link href="/resultater" className={ctaBtnClass} aria-label="Gå til resultater">
+              <LocaleLink href="/resultater" className={ctaBtnClass} aria-label="Gå til resultater">
                 {r.ctaResultater}
-              </Link>
+              </LocaleLink>
               <Link href="/referanser" className={ctaBtnClass} aria-label="Gå til referanser">
                 {r.ctaReferanser}
               </Link>
-              <Link href="/kontakt" className={ctaBtnClass} aria-label="Gå til kontakt">
+              <LocaleLink href="/kontakt" className={ctaBtnClass} aria-label="Gå til kontakt">
                 {r.ctaKontakt}
-              </Link>
+              </LocaleLink>
             </div>
           </section>
 
@@ -215,9 +216,9 @@ export default function Dokumentasjon() {
               ))}
             </ul>
             <p>
-              <Link href="/resultater" className={linkClass} aria-label="Gå til resultater">
+              <LocaleLink href="/resultater" className={linkClass} aria-label="Gå til resultater">
                 {d.resultaterLink}
-              </Link>
+              </LocaleLink>
             </p>
           </section>
 
@@ -320,15 +321,15 @@ export default function Dokumentasjon() {
             </h2>
             <p className="text-sm text-slate-300 leading-relaxed">{d.ctaText}</p>
             <div className="flex flex-wrap gap-x-4 gap-y-2 text-sm">
-              <Link href="/erfaring" className={linkClass} aria-label="Gå til erfaring">
+              <LocaleLink href="/erfaring" className={linkClass} aria-label="Gå til erfaring">
                 {d.ctaErfaring}
-              </Link>
-              <Link href="/resultater" className={linkClass} aria-label="Gå til resultater">
+              </LocaleLink>
+              <LocaleLink href="/resultater" className={linkClass} aria-label="Gå til resultater">
                 {d.ctaResultater}
-              </Link>
-              <Link href="/kontakt" className={linkClass} aria-label="Gå til kontaktsiden">
+              </LocaleLink>
+              <LocaleLink href="/kontakt" className={linkClass} aria-label="Gå til kontaktsiden">
                 {d.ctaKontakt}
-              </Link>
+              </LocaleLink>
             </div>
           </section>
         </div>

@@ -2,6 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import LocaleLink from "./components/LocaleLink";
 import { ArrowRight } from "lucide-react";
 import { getProfilData } from "./data/profil";
 import { useLanguage } from "./LanguageContext";
@@ -58,9 +59,9 @@ function NavLink({
     );
   }
   return (
-    <Link href={href} className={className} aria-label={ariaLabel}>
+    <LocaleLink href={href} className={className} aria-label={ariaLabel}>
       {children}
-    </Link>
+    </LocaleLink>
   );
 }
 
@@ -119,7 +120,7 @@ export default function Profil({ onNavigate }: { onNavigate?: (tab: string) => v
           <div className="rounded-2xl overflow-hidden border border-slate-800 shadow-xl bg-slate-900">
             <Image
               src="/images/profil.jpg"
-              alt="Marius Ottesen — Kommersiell leder"
+              alt={lang === "no" ? "Marius Ottesen — Kommersiell leder" : "Marius Ottesen — Commercial leader"}
               width={240}
               height={320}
               className="w-full h-auto"
@@ -352,13 +353,13 @@ export default function Profil({ onNavigate }: { onNavigate?: (tab: string) => v
                   <ul className="space-y-2">
                     {group.links.map((item) => (
                       <li key={`${group.title}-${item.href}`}>
-                        <Link
+                        <LocaleLink
                           href={item.href}
                           className={`${linkClass} text-sm font-medium no-underline hover:underline`}
                           aria-label={item.aria}
                         >
                           {item.label}
-                        </Link>
+                        </LocaleLink>
                       </li>
                     ))}
                   </ul>

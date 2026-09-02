@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import LocaleLink from "./components/LocaleLink";
 import { useRouter } from "next/navigation";
 import { Mail, Smartphone, Linkedin, ChevronRight, Target, MessageSquare, Globe } from "lucide-react";
 import { useLanguage } from "./LanguageContext";
@@ -89,17 +90,17 @@ export default function Kontakt() {
                 </h2>
                 <p className="italic font-medium text-base leading-relaxed">
                   {tr("kontakt.profil.desc")}{" "}
-                  <Link href="/cv" className={linkClass} aria-label="Gå til CV og lederprofil">
+                  <LocaleLink href="/cv" className={linkClass} aria-label="Gå til CV og lederprofil">
                     {tr("kontakt.link.cv")}
-                  </Link>
+                  </LocaleLink>
                   {", "}
-                  <Link href="/erfaring" className={linkClass} aria-label="Gå til erfaring">
+                  <LocaleLink href="/erfaring" className={linkClass} aria-label="Gå til erfaring">
                     {tr("kontakt.link.erfaring")}
-                  </Link>
+                  </LocaleLink>
                   {lang === "no" ? ", " : ", "}
-                  <Link href="/resultater" className={linkClass} aria-label="Gå til resultater">
+                  <LocaleLink href="/resultater" className={linkClass} aria-label="Gå til resultater">
                     {tr("kontakt.link.resultater")}
-                  </Link>
+                  </LocaleLink>
                   {lang === "no" ? " og " : " and "}
                   <Link href="/prosjekter" className={linkClass} aria-label="Gå til AI-prosjekter">
                     {tr("kontakt.link.prosjekter")}
@@ -113,9 +114,9 @@ export default function Kontakt() {
                 </h2>
                 <p className="italic font-medium text-base leading-relaxed">
                   {tr("kontakt.dialog.desc")}{" "}
-                  <Link href="/consulting#cons-dialog-heading" className={linkClass} aria-label="Gå til kontaktskjema">
+                  <LocaleLink href="/consulting#cons-dialog-heading" className={linkClass} aria-label="Gå til kontaktskjema">
                     {tr("kontakt.link.skjema")}
-                  </Link>
+                  </LocaleLink>
                   .
                 </p>
               </div>

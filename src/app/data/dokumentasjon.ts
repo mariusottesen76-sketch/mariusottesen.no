@@ -76,7 +76,7 @@ const data = {
     aiLink: "See AI projects",
     pdfTitle: "CV and open application",
     pdfIntro:
-      "Read the CV and open application (updated June 2026) directly in the viewers below. You can also open each document in a new tab to download.",
+      "Read the CV and open application directly in the viewers below. The PDF documents are in Norwegian. You can also open each document in a new tab to download.",
     linkedinTekst:
       "Would you like to visit my LinkedIn profile for more information? Click the link below:",
     ctaTitle: "Would you like to evaluate the profile further?",

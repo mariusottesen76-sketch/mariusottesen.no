@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import LocaleLink from "./components/LocaleLink";
 import {
   Send,
   ChevronDown,
@@ -470,9 +471,9 @@ export default function Consulting() {
           <h3 className={cardTitleClass}>{foredrag.bidrag.title}</h3>
           <p className="text-slate-400 text-sm leading-relaxed font-light">{foredrag.bidrag.text}</p>
         </div>
-        <Link href="/kontakt" className={ctaBtnClass}>
+        <LocaleLink href="/kontakt" className={ctaBtnClass}>
           {foredrag.cta}
-        </Link>
+        </LocaleLink>
       </section>
 
       <section aria-labelledby="cons-metoder-heading" className="mb-12">
