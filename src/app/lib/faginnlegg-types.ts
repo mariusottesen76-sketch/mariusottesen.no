@@ -6,7 +6,13 @@ export interface FaginnleggInnlegg {
   undertittel?: { no: string; en: string };
   teaser: { no: string; en: string };
   /** Valgfri meta description — faller tilbake til teaser. */
-  metaDescription?: { no: string; en: string };
+  metaDescription?: { no: string; en?: string };
+  /** Valgfri document title — faller tilbake til tittel | Faginnlegg — Marius Ottesen. */
+  metaTitle?: { no: string; en?: string };
+  /** Valgfri Open Graph title — faller tilbake til metaTitle eller standard tittel. */
+  ogTitle?: { no: string; en?: string };
+  /** Valgfri Open Graph description — faller tilbake til metaDescription eller teaser. */
+  ogDescription?: { no: string; en?: string };
   bildeUrl?: string;
   /** Valgfri alt-tekst for bilde — faller tilbake til tittel. */
   bildeAlt?: { no: string; en: string };

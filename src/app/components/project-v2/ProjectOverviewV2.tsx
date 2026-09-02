@@ -109,6 +109,13 @@ export default function ProjectOverviewV2({
             </Link>
           </p>
         ) : null}
+        {project.fagPerspektivLinks?.map((link) => (
+          <p key={link.href}>
+            <Link href={link.href} className={fagPerspektivLinkClass}>
+              {t(link.label, lang)}
+            </Link>
+          </p>
+        ))}
 
         <ProjectCTAGroup lang={lang} config={cta} onOpenVideo={onOpenVideo} videoModalTitle={title} />
       </div>

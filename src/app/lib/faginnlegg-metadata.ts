@@ -32,15 +32,27 @@ export function buildFaginnleggArticleMetadata(
   const description = stripHtmlForMeta(
     innlegg.metaDescription?.[lang] ?? innlegg.teaser[lang]
   ).slice(0, 160);
+  const documentTitle =
+    innlegg.metaTitle?.[lang] ??
+    innlegg.metaTitle?.no ??
+    `${titleText} | ${lang === "en" ? "Articles" : "Faginnlegg"} — Marius Ottesen`;
+  const ogTitle =
+    innlegg.ogTitle?.[lang] ?? innlegg.ogTitle?.no ?? documentTitle;
+  const ogDescription =
+    stripHtmlForMeta(
+      innlegg.ogDescription?.[lang] ??
+        innlegg.ogDescription?.no ??
+        innlegg.metaDescription?.[lang] ??
+        innlegg.teaser[lang]
+    ).slice(0, 200);
   const noUrl = `${SITE}${faginnleggNoArticlePath(slug)}`;
   const hasEn = hasFullEnFaginnleggBody(slug, innlegg);
   const enUrl = hasEn ? `${SITE}${faginnleggEnArticlePath(slug)}` : null;
   const canonical = lang === "en" && enUrl ? enUrl : noUrl;
   const ogImage = faginnleggOgImageUrl(innlegg);
-  const titleSuffix = lang === "en" ? "Articles" : "Faginnlegg";
 
   return {
-    title: `${titleText} | ${titleSuffix} — Marius Ottesen`,
+    title: documentTitle,
     description,
     metadataBase: new URL(SITE),
     alternates: {
@@ -56,8 +68,8 @@ export function buildFaginnleggArticleMetadata(
         : {}),
     },
     openGraph: {
-      title: `${titleText} | ${titleSuffix} — Marius Ottesen`,
-      description,
+      title: ogTitle,
+      description: ogDescription,
       url: canonical,
       type: "article",
       locale: lang === "en" ? "en_GB" : "nb_NO",
@@ -74,8 +86,8 @@ export function buildFaginnleggArticleMetadata(
     },
     twitter: {
       card: "summary_large_image",
-      title: `${titleText} | ${titleSuffix} — Marius Ottesen`,
-      description,
+      title: ogTitle,
+      description: ogDescription,
       images: [ogImage],
     },
   };

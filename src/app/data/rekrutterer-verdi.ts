@@ -29,6 +29,10 @@ const data = {
         {
           title: "Når salg, drift og teknologi må spille bedre sammen",
           text: "Når virksomheten trenger bedre samspill mellom kommersiell og operasjonell ledelse, kundeinnsikt, arbeidsflyt, data og digitale verktøy.",
+          fagLink: {
+            href: "/faginnlegg/fra-data-til-beslutning-2026-09",
+            label: "Fra data til beslutning →",
+          },
         },
         {
           title: "Når AI skal brukes praktisk og forretningsnært",
@@ -84,6 +88,10 @@ const data = {
         {
           title: "When sales, operations and technology must work better together",
           text: "When the organisation needs better alignment between commercial and operational leadership, customer insight, workflow, data and digital tools.",
+          fagLink: {
+            href: "/faginnlegg/fra-data-til-beslutning-2026-09",
+            label: "From data to decision →",
+          },
         },
         {
           title: "When AI must be used practically and close to the business",

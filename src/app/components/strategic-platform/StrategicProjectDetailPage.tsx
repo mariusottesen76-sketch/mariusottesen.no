@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { LanguageProvider, LanguageToggle, useLanguage, type Lang } from "../../LanguageContext";
@@ -402,6 +403,28 @@ function StrategicProjectDetailInner({ slug }: { slug: StrategicPlatformSlug }) 
       {detail.faq && (
         <ProjectFaqSection heading={detail.faq.heading} items={detail.faq.items} lang={lang} />
       )}
+
+      {projectV2 && (projectV2.fagPerspektivLink || projectV2.fagPerspektivLinks?.length) ? (
+        <section aria-labelledby="plattform-fag-perspektiv" className="mb-10 space-y-2">
+          <h2 id="plattform-fag-perspektiv" className={`${blockTitleClass} mb-3`}>
+            {lang === "no" ? "Faglig perspektiv" : "Professional perspective"}
+          </h2>
+          {projectV2.fagPerspektivLink ? (
+            <p>
+              <Link href={projectV2.fagPerspektivLink.href} className={linkClass}>
+                {t(projectV2.fagPerspektivLink.label, lang)}
+              </Link>
+            </p>
+          ) : null}
+          {projectV2.fagPerspektivLinks?.map((fagLink) => (
+            <p key={fagLink.href}>
+              <Link href={fagLink.href} className={linkClass}>
+                {t(fagLink.label, lang)}
+              </Link>
+            </p>
+          ))}
+        </section>
+      ) : null}
 
       {detail.utvikler && (
         <section aria-labelledby="plattform-utvikler" className="mb-10 p-6 bg-slate-900/40 rounded-2xl border border-slate-800 space-y-2">

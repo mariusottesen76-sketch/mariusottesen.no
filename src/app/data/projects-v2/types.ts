@@ -134,6 +134,11 @@ export type ProjectV2BaseRecord = {
     href: string;
     label: LocalizedString;
   };
+  /** Flere faglige videre-lenker (f.eks. Control Tower-prosjektside). */
+  fagPerspektivLinks?: {
+    href: string;
+    label: LocalizedString;
+  }[];
 };
 
 /** Resolved record etter dynamisk datoberegning — brukes i UI og metadata. */

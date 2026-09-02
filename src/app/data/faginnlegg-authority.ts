@@ -50,6 +50,10 @@ export const FAGINNLEGG_AUTHORITY: Record<string, FaginnleggAuthorityEntry> = {
     ],
     secondarySupportSlugs: ["control-tower-verdikjede-ledelse-2026-08", "frastotende-salg-2026-01"],
     relevantVidere: [
+      articleLink("fra-data-til-beslutning-2026-09", {
+        no: "Les også: Fra data til beslutning",
+        en: "Read also: From data to decision",
+      }),
       articleLink("crm-mer-enn-et-systemprosjekt-2026-09", {
         no: "Les også: CRM er mer enn et systemprosjekt",
         en: "Read also: CRM is more than a system project",
@@ -76,6 +80,10 @@ export const FAGINNLEGG_AUTHORITY: Record<string, FaginnleggAuthorityEntry> = {
     ],
     secondarySupportSlugs: ["fra-strategi-til-gjennomforing-2026-09"],
     relevantVidere: [
+      articleLink("fra-data-til-beslutning-2026-09", {
+        no: "Les også: Fra data til beslutning",
+        en: "Read also: From data to decision",
+      }),
       articleLink("fra-strategi-til-gjennomforing-2026-09", {
         no: "Les også: Fra strategi til gjennomføring",
         en: "Read also: From strategy to execution",
@@ -150,15 +158,54 @@ export const FAGINNLEGG_AUTHORITY: Record<string, FaginnleggAuthorityEntry> = {
       "alle-enige-ingen-gjor-noe-01",
       "gronne-exceltall-transformasjon-2026-05",
       "tillit-endring-gjennomforing-2025-01",
+      "fra-data-til-beslutning-2026-09",
     ],
     secondarySupportSlugs: ["ai-mottaker-endringsledelse-2026-08"],
     relevantVidere: [
+      articleLink("fra-data-til-beslutning-2026-09", {
+        no: "Les også: Fra data til beslutning",
+        en: "Read also: From data to decision",
+      }),
       articleLink("alle-enige-ingen-gjor-noe-01", {
         no: "Les også: Alle er enige. Ingen gjør noe.",
         en: "Read also: Everyone agrees. No one acts.",
       }),
       { href: "/erfaring", label: { no: "Se erfaring", en: "See experience" } },
-      { href: "/consulting", label: { no: "Se Consulting", en: "See consulting" } },
+    ],
+  },
+  "fra-data-til-beslutning-2026-09": {
+    slug: "fra-data-til-beslutning-2026-09",
+    cluster: "strategi-endring",
+    role: "cornerstone",
+    ownedIntents: [
+      "datadrevet ledelse",
+      "fra data til beslutning",
+      "beslutningsstøtte",
+      "signal til handling",
+      "KPI og prioritering",
+      "beslutningsrytme ledergruppe",
+    ],
+    coreSupportSlugs: [
+      "fra-strategi-til-gjennomforing-2026-09",
+      "crm-mer-enn-et-systemprosjekt-2026-09",
+      "salgsledelse-i-praksis-2026-08",
+      "bedre-data-beslutninger-tech-frokost-2026-08",
+    ],
+    secondarySupportSlugs: ["control-tower-verdikjede-ledelse-2026-08"],
+    relevantVidere: [
+      articleLink("fra-strategi-til-gjennomforing-2026-09", {
+        no: "Fra strategi til gjennomføring",
+        en: "From strategy to execution",
+      }),
+      articleLink("crm-mer-enn-et-systemprosjekt-2026-09", {
+        no: "CRM er mer enn et systemprosjekt",
+        en: "CRM is more than a system project",
+      }),
+      articleLink("salgsledelse-i-praksis-2026-08", {
+        no: "Salgsledelse i praksis",
+        en: "Sales leadership in practice",
+      }),
+      { href: "/control-tower", label: { no: "Control Tower – Decision & Execution Intelligence", en: "Control Tower – Decision & Execution Intelligence" } },
     ],
   },
   "tillit-endring-gjennomforing-2025-01": {
@@ -201,6 +248,10 @@ export const FAGINNLEGG_AUTHORITY: Record<string, FaginnleggAuthorityEntry> = {
     ],
     secondarySupportSlugs: ["data-kontekst-rag-01"],
     relevantVidere: [
+      articleLink("fra-data-til-beslutning-2026-09", {
+        no: "Les også: Fra data til beslutning",
+        en: "Read also: From data to decision",
+      }),
       articleLink("salgsledelse-i-praksis-2026-08", {
         no: "Les også: Salgsledelse i praksis",
         en: "Read also: Sales leadership in practice",
@@ -272,6 +323,21 @@ export const FAGINNLEGG_AUTHORITY: Record<string, FaginnleggAuthorityEntry> = {
     ownedIntents: ["AI governance praksis", "human in the loop", "beslutningsrom AI"],
     coreSupportSlugs: [],
   },
+  "bedre-data-beslutninger-tech-frokost-2026-08": {
+    slug: "bedre-data-beslutninger-tech-frokost-2026-08",
+    cluster: "crm-data",
+    role: "secondary-support",
+    ownedIntents: ["bedre data bedre beslutninger", "data drevet virksomhet"],
+    coreSupportSlugs: [],
+    relevantVidere: [
+      articleLink("fra-data-til-beslutning-2026-09", {
+        no: "Fra data til beslutning",
+        en: "From data to decision",
+      }),
+      { href: "/prosjekter", label: { no: "AI-prosjekter", en: "AI projects" } },
+      { href: "/consulting", label: { no: "Consulting", en: "Consulting" } },
+    ],
+  },
 };
 
 export const CORNERSTONE_SLUGS: readonly string[] = Object.values(FAGINNLEGG_AUTHORITY)
@@ -306,6 +372,7 @@ export const LESESTI_ARTICLE_IDS = {
     "ai-needs-first-tannklinikk-case-01",
   ],
   ledereKommersielle: [
+    "fra-data-til-beslutning-2026-09",
     "salgsledelse-i-praksis-2026-08",
     "crm-mer-enn-et-systemprosjekt-2026-09",
     "fra-strategi-til-gjennomforing-2026-09",

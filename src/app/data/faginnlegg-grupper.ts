@@ -64,6 +64,7 @@ export const LEDELSE_SUBTEMA: FaginnleggSubtema[] = [
     id: "ledelse-strategi",
     label: { no: "Strategi og virksomhetsutvikling", en: "Strategy and business development" },
     innleggIds: [
+      "fra-data-til-beslutning-2026-09",
       "to-parallelle-spor-ledelse-ai-01",
       "tennis-01",
       "landet-rikt-01",

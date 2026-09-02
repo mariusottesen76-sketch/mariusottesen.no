@@ -102,4 +102,13 @@ export const controlTowerV2: ProjectV2Record = {
       en: "Professional perspective: When you as a leader do not own the entire value chain →",
     },
   },
+  fagPerspektivLinks: [
+    {
+      href: "/faginnlegg/fra-data-til-beslutning-2026-09",
+      label: {
+        no: "Fra data til beslutning →",
+        en: "From data to decision →",
+      },
+    },
+  ],
 };

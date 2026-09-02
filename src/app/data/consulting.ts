@@ -184,6 +184,10 @@ const hovedpakker: Record<Lang, TjenestePakke[]> = {
         "Særlig ved ny kommersiell retning, lederrolle eller ledergruppe som trenger tydeligere rytme, ansvar og oppfølging av prioriteringer over tid.",
       leveranseDetalj:
         "Kommersiell retning, KPI-er, møtestruktur, ansvar, prioritering, lederrytme og 90-dagers gjennomføringslogikk.",
+      fagArtikkelLink: {
+        href: "/faginnlegg/fra-data-til-beslutning-2026-09",
+        label: "Les Fra data til beslutning →",
+      },
     },
   ],
   en: [
@@ -236,6 +240,10 @@ const hovedpakker: Record<Lang, TjenestePakke[]> = {
         "Especially with a new commercial direction, leadership role or leadership team that needs clearer rhythm, accountability and follow-through on priorities over time.",
       leveranseDetalj:
         "Commercial direction, KPIs, meeting structure, accountability, prioritisation, leadership rhythm and 90-day execution logic.",
+      fagArtikkelLink: {
+        href: "/faginnlegg/fra-data-til-beslutning-2026-09",
+        label: "Read From data to decision →",
+      },
     },
   ],
 };
