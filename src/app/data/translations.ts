@@ -223,8 +223,8 @@ const translations: Translations = {
   "prosjekter.title.1": { no: "AI-prosjekter &", en: "AI Projects &" },
   "prosjekter.title.2": { no: "Utvikling", en: "Development" },
   "prosjekter.intro.1": {
-    no: "Her finner du AI-prosjekter, apper, nettsider, casearbeid og arbeidsflyter i skjæringspunktet mellom AI, digital transformasjon og konkrete kommersielle, operative og arrangementsrelaterte behov.",
-    en: "Here you will find AI projects, apps, websites, case work and workflows at the intersection of AI, digital transformation and concrete commercial, operational and event-related needs.",
+    no: "Her finner du AI-prosjekter (kunstig intelligens, ofte forkortet KI på norsk), apper, nettsider, casearbeid og arbeidsflyter i skjæringspunktet mellom digital transformasjon og konkrete kommersielle, operative og arrangementsrelaterte behov.",
+    en: "Here you will find AI projects — artificial intelligence applied in practice — alongside apps, websites, case work and workflows at the intersection of digital transformation and concrete commercial, operational and event-related needs.",
   },
   "prosjekter.intro.scroll": {
     no: "Bla ned for å utforske prosjektene.",
