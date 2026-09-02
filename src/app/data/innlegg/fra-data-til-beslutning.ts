@@ -195,7 +195,7 @@ Det må være tydelig hvem som eier neste steg, hva som skal skje, når det skal
 
 Det høres elementært ut.
 
-Likevel er det ofte nettopp mellom beslutningen og gjennomføringen at fremdriften forsvinner.
+Likevel er det ofte nettopp mellom beslutningen og <a href="/faginnlegg/fra-strategi-til-gjennomforing-2026-09" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">gjennomføringen</a> at fremdriften forsvinner.
 
 Alle forstod beslutningen.
 
@@ -377,7 +377,7 @@ Poenget er ikke at data automatisk gir en bestemt prosentvis gevinst.
 
 Mange ledergrupper har allerede en tydelig rapporteringsrytme.
 
-Ukesrapport. KPI-gjennomgang. Forecast. Pipeline review. Økonomirapportering.
+Ukesrapport. KPI-gjennomgang. Forecast. <a href="/faginnlegg/crm-mer-enn-et-systemprosjekt-2026-09" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">Pipeline review</a>. Økonomirapportering.
 
 Det er nødvendig.
 
@@ -393,7 +393,7 @@ Jeg mener fem spørsmål kan endre kvaliteten på samtalen:
 <li><strong>Når skal vi evaluere effekten og lære av resultatet?</strong></li>
 </ul>
 
-Spørsmålene kan brukes i en ledergruppe, et salgsmøte eller et driftsmøte.
+Spørsmålene kan brukes i en ledergruppe, <a href="/faginnlegg/salgsledelse-i-praksis-2026-08" class="text-indigo-300 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">et salgsmøte</a> eller et driftsmøte.
 
 De krever ikke et nytt system.
 

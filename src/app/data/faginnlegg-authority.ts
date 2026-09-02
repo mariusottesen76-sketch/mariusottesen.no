@@ -206,6 +206,10 @@ export const FAGINNLEGG_AUTHORITY: Record<string, FaginnleggAuthorityEntry> = {
         en: "Sales leadership in practice",
       }),
       { href: "/control-tower", label: { no: "Control Tower – Decision & Execution Intelligence", en: "Control Tower – Decision & Execution Intelligence" } },
+      articleLink("bedre-data-beslutninger-tech-frokost-2026-08", {
+        no: "Bedre data. Bedre beslutninger.",
+        en: "Better data. Better decisions.",
+      }),
     ],
   },
   "tillit-endring-gjennomforing-2025-01": {
