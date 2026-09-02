@@ -47,6 +47,10 @@ const data = {
       kortVurderingLabel: "Kort vurdering",
       kortVurdering:
         "Jeg passer best i roller der kommersiell retning, salgsstruktur, teamutvikling, endringskraft og gjennomføring må henge sammen. Min styrke ligger i å kombinere ledererfaring, P/L-forståelse, salgsledelse, KPI/CRM, organisasjonsutvikling og praktisk AI- og digital kompetanse. Jeg er kjent for å skape fremdrift i organisasjoner som trenger klar retning, høy gjennomføringsevne og bedre samspill mellom strategi, salg, drift og teknologi.",
+      discoverySignals: [
+        "Internasjonal erfaring fra globale konsern, strategigrupper og salg på tvers av Europa, USA og Asia.",
+        "Erfaringen er særlig overførbar til B2B-virksomheter der kommersiell ledelse, teamutvikling og gjennomføring veier tyngre enn spesifikk bransjebakgrunn.",
+      ],
       rollerLabel: "Mest relevant for roller innen",
       matchLabel: "Sterkest match når virksomheten trenger",
       matchText:
@@ -98,6 +102,10 @@ const data = {
       kortVurderingLabel: "Quick assessment",
       kortVurdering:
         "I fit best in roles where commercial direction, sales structure, team development, change capability and execution must work together. My strength lies in combining leadership experience, P/L understanding, sales leadership, KPI/CRM, organisational development and practical AI and digital competence. I am known for creating momentum in organisations that need clear direction, strong execution capability and better alignment between strategy, sales, operations and technology.",
+      discoverySignals: [
+        "International experience from global organisations, strategy groups and sales across Europe, the US and Asia.",
+        "The experience is particularly transferable to B2B organisations where commercial leadership, team development and execution matter more than exact industry background.",
+      ],
       rollerLabel: "Most relevant for roles in",
       matchLabel: "Strongest match when the organisation needs",
       matchText:

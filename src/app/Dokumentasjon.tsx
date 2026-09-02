@@ -127,17 +127,6 @@ export default function Dokumentasjon() {
             {d.intro}
           </p>
 
-          <div
-            className="space-y-2 text-sm text-slate-400 leading-relaxed"
-            aria-label={lang === "no" ? "Rekrutteringsrelevante signaler" : "Recruiter-relevant signals"}
-          >
-            {d.recruiterSignals.map((signal) => (
-              <p key={signal.label}>
-                <span className="text-slate-300 font-medium">{signal.label}:</span> {signal.text}
-              </p>
-            ))}
-          </div>
-
           <a
             href="#cv-dokumenter"
             onClick={() => setDocsVisible(true)}
@@ -159,6 +148,13 @@ export default function Dokumentasjon() {
             <div className="space-y-2">
               <p className={subLabelClass}>{r.kortVurderingLabel}</p>
               <p className="text-slate-300 text-sm leading-relaxed italic">{r.kortVurdering}</p>
+              <div className="space-y-1 pt-1">
+                {r.discoverySignals.map((line) => (
+                  <p key={line.slice(0, 48)} className="text-slate-400 text-sm leading-relaxed">
+                    {line}
+                  </p>
+                ))}
+              </div>
             </div>
             <div className="space-y-2">
               <p className={subLabelClass}>{r.rollerLabel}</p>
@@ -272,6 +268,10 @@ export default function Dokumentasjon() {
             aria-labelledby="cv-pdf-heading"
             className="space-y-8 scroll-mt-24"
           >
+            <p className="text-xs text-slate-500 leading-relaxed">
+              <span className="text-slate-400 font-medium">{d.mobilityLabel}:</span> {d.mobilityPractical}
+            </p>
+
             <div className="space-y-2">
               <h2 id="cv-pdf-heading" className={sectionTitleClass}>
                 {d.pdfTitle}
