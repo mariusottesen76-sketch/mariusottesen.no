@@ -3,13 +3,16 @@ import type { Lang } from "../LanguageContext";
 export const SITE = "https://www.mariusottesen.no" as const;
 
 /** Tabs with indexable EN-1A URL pairs. */
+import { localePathFromNoProjectPath, resolveProjectLocalePair } from "./project-locale-routes";
+
 export type SiteTabKey =
   | "Profil"
   | "Erfaring"
   | "Resultater"
   | "Consulting"
   | "CV & Åpen søknad"
-  | "Kontakt";
+  | "Kontakt"
+  | "Prosjekter";
 
 export const LOCALE_ROUTE_MAP: Record<SiteTabKey, { no: string; en: string }> = {
   Profil: { no: "/", en: "/en" },
@@ -18,13 +21,13 @@ export const LOCALE_ROUTE_MAP: Record<SiteTabKey, { no: string; en: string }> = 
   Consulting: { no: "/consulting", en: "/en/consulting" },
   "CV & Åpen søknad": { no: "/cv", en: "/en/cv" },
   Kontakt: { no: "/kontakt", en: "/en/contact" },
+  Prosjekter: { no: "/prosjekter", en: "/en/projects" },
 };
 
-/** Tabs without dedicated EN route in EN-1A — always Norwegian URL. */
+/** Tabs without dedicated EN route — always Norwegian URL. */
 const UNMAPPED_TAB_SLUGS: Record<string, string> = {
   Referanser: "referanser",
   Faginnlegg: "faginnlegg",
-  Prosjekter: "prosjekter",
 };
 
 export type SitePageKey = "home" | "experience" | "results" | "consulting" | "cv" | "contact";
@@ -52,7 +55,7 @@ export function resolveLocalePair(pathname: string): { no: string; en: string } 
   for (const pair of Object.values(LOCALE_ROUTE_MAP)) {
     if (pair.no === normalized || pair.en === normalized) return pair;
   }
-  return null;
+  return resolveProjectLocalePair(normalized);
 }
 
 export function pathForTab(tab: string, lang: Lang): string {
@@ -63,15 +66,28 @@ export function pathForTab(tab: string, lang: Lang): string {
   return lang === "en" ? "/en" : "/";
 }
 
-/** Map a Norwegian internal href to locale-aware path (hash preserved). */
+/** Map a Norwegian internal href to locale-aware path (query + hash preserved). */
 export function localePathFromNoPath(noHref: string, lang: Lang): string {
-  const [pathPart, hash] = noHref.split("#");
+  const hashIdx = noHref.indexOf("#");
+  const beforeHash = hashIdx >= 0 ? noHref.slice(0, hashIdx) : noHref;
+  const hash = hashIdx >= 0 ? noHref.slice(hashIdx + 1) : "";
+
+  const queryIdx = beforeHash.indexOf("?");
+  const pathPart = queryIdx >= 0 ? beforeHash.slice(0, queryIdx) : beforeHash;
+  const query = queryIdx >= 0 ? beforeHash.slice(queryIdx) : "";
+
   const normalized = normalizePath(pathPart);
   for (const pair of Object.values(LOCALE_ROUTE_MAP)) {
     if (pair.no === normalized) {
       const base = pair[lang];
-      return hash ? `${base}#${hash}` : base;
+      const withQuery = `${base}${query}`;
+      return hash ? `${withQuery}#${hash}` : withQuery;
     }
+  }
+  const projectPath = localePathFromNoProjectPath(normalized, lang);
+  if (projectPath) {
+    const withQuery = `${projectPath}${query}`;
+    return hash ? `${withQuery}#${hash}` : withQuery;
   }
   return noHref;
 }

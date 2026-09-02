@@ -10,9 +10,11 @@ import {
 } from "./psc-brand";
 import { projectSchemaDates } from "./project-overview-metadata";
 
+import { projectEnPath } from "./project-locale-routes";
+
 const SITE = "https://www.mariusottesen.no";
 
-/** JSON-LD for /psc — WebApplication + FAQPage, basert på synlig innhold. */
+/** JSON-LD for /psc and /en/psc — WebApplication + FAQPage, basert på synlig innhold. */
 export function buildPscStructuredData(lang: "no" | "en" = "no") {
   const faq = predictiveSalesCoachPlatform.detail.faq;
   const description = `${PSC_SEO_DESCRIPTION[lang]} ${PSC_MATURITY_LABEL[lang]}.`;
@@ -20,6 +22,7 @@ export function buildPscStructuredData(lang: "no" | "en" = "no") {
   const { datePublished, dateModified } = pscProject
     ? projectSchemaDates(pscProject)
     : { datePublished: "2026-02-26", dateModified: "2026-06-17" };
+  const url = lang === "en" && pscProject ? `${SITE}${projectEnPath(pscProject)}` : PSC_CANONICAL_URL;
 
   const graph: Record<string, unknown>[] = [
     {
@@ -27,7 +30,7 @@ export function buildPscStructuredData(lang: "no" | "en" = "no") {
       name: PSC_FULL_TITLE[lang],
       alternateName: "PSC",
       description,
-      url: PSC_CANONICAL_URL,
+      url,
       applicationCategory: "BusinessApplication",
       operatingSystem: "Web",
       softwareVersion: PSC_VERSION,

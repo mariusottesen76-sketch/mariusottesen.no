@@ -6,6 +6,7 @@ import type { Lang } from "../../LanguageContext";
 import type { LocalizedString } from "../../data/projects-v2/types";
 import { t } from "../../data/projects-v2/registry";
 import type { ProjectCtaAction, ProjectCtaConfig } from "../../data/projects-v2/cta";
+import { localePathFromNoPath } from "../../lib/locale-routes";
 import {
   PROJECT_CTA_DISABLED_CLASS,
   PROJECT_CTA_PRIMARY_CLASS,
@@ -45,6 +46,9 @@ function CtaButton({
         : PROJECT_CTA_TERTIARY_CLASS;
   const label = t(action.label, lang);
   const ariaLabel = action.ariaLabel ? t(action.ariaLabel, lang) : undefined;
+  const href = action.href && !action.external && !action.opensVideoModal
+    ? localePathFromNoPath(action.href, lang)
+    : action.href;
 
   if (action.disabled) {
     return (
@@ -88,18 +92,18 @@ function CtaButton({
     );
   }
 
-  if (variant === "tertiary" && action.href) {
+  if (variant === "tertiary" && href) {
     return (
-      <Link href={action.href} className={className} aria-label={ariaLabel}>
+      <Link href={href} className={className} aria-label={ariaLabel}>
         <ChevronLeft size={14} aria-hidden="true" />
         {label}
       </Link>
     );
   }
 
-  if (action.href) {
+  if (href) {
     return (
-      <Link href={action.href} className={className} aria-label={ariaLabel}>
+      <Link href={href} className={className} aria-label={ariaLabel}>
         {label}
         <ChevronRight size={16} aria-hidden="true" />
       </Link>

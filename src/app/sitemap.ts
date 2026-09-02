@@ -4,6 +4,11 @@ import { projectSitemapLastModified } from "./lib/project-overview-metadata";
 import { sitemapLastModifiedFromIso } from "./lib/project-date-format";
 import { resolveFaginnleggHubUpdatedAt } from "./data/projects-v2/project-date-resolvers";
 import { getAlleFaginnlegg } from "./lib/faginnlegg-data";
+import {
+  getIndexableProjectRecords,
+  projectEnPath,
+  PROJECTS_HUB_PAIR,
+} from "./lib/project-locale-routes";
 const SITE = "https://www.mariusottesen.no";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -88,7 +93,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE}/en/consulting`, lastModified: mainSiteLastMod, changeFrequency: "monthly", priority: 0.8 },
     { url: `${SITE}/en/cv`, lastModified: mainSiteLastMod, changeFrequency: "monthly", priority: 0.8 },
     { url: `${SITE}/en/contact`, lastModified: mainSiteLastMod, changeFrequency: "monthly", priority: 0.7 },
+    {
+      url: `${SITE}${PROJECTS_HUB_PAIR.en}`,
+      lastModified: sitemapLastModifiedFromIso(prosjekterLastMod),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
   ];
+
+  const enProjectRoutes: MetadataRoute.Sitemap = getIndexableProjectRecords().map((project) => ({
+    url: `${SITE}${projectEnPath(project)}`,
+    lastModified: projectSitemapLastModified(project),
+    changeFrequency: "monthly" as const,
+    priority: project.detailLevel === "full" ? 0.7 : 0.5,
+  }));
 
   return [
     {
@@ -111,6 +129,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     ...mainTabRoutes,
     ...enRoutes,
+    ...enProjectRoutes,
     ...projectRoutes,
     ...faginnleggArticleRoutes,
   ];

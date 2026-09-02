@@ -18,6 +18,8 @@ import { aiValueLabOsloV2 } from "./projects/ai-value-lab-oslo";
 import { aiFaginnleggHubV2 } from "./projects/ai-faginnlegg-hub";
 import { resolveProjectDates } from "./project-date-resolvers";
 import { projectSchemaDates } from "../../lib/project-overview-metadata";
+import { SITE } from "../../lib/locale-routes";
+import { isIndexableEnProject, projectEnPath, projectNoPath } from "../../lib/project-locale-routes";
 
 export { t } from "../strategic-platform-projects/i18n";
 
@@ -64,23 +66,39 @@ export function getBaseProjectV2Records(): ProjectV2BaseRecord[] {
 }
 
 export function buildProjectV2Metadata(project: ProjectV2Record, lang: "no" | "en" = "no") {
-  const SITE = "https://www.mariusottesen.no";
   const title = project.seo.title[lang];
   const description = project.seo.description[lang];
-  const url = `${SITE}${project.seo.canonicalPath}`;
+  const noUrl = `${SITE}${projectNoPath(project)}`;
+  const hasEnRoute = isIndexableEnProject(project);
+  const enUrl = hasEnRoute ? `${SITE}${projectEnPath(project)}` : null;
+  const canonical = lang === "en" && enUrl ? enUrl : noUrl;
   const ogImage = project.seo.ogImage.startsWith("http") ? project.seo.ogImage : `${SITE}${project.seo.ogImage}`;
   const { datePublished, dateModified } = projectSchemaDates(project);
 
   return {
     title,
     description,
-    alternates: { canonical: url },
+    metadataBase: new URL(SITE),
+    alternates: {
+      canonical,
+      ...(hasEnRoute && enUrl
+        ? {
+            languages: {
+              no: noUrl,
+              en: enUrl,
+              "x-default": noUrl,
+            },
+          }
+        : {}),
+    },
     openGraph: {
       title,
       description,
-      url,
+      url: canonical,
       type: "website" as const,
       siteName: "Marius Ottesen",
+      locale: lang === "en" ? "en_GB" : "nb_NO",
+      alternateLocale: lang === "en" ? ["nb_NO"] : ["en_GB"],
       images: [{ url: ogImage, width: 1200, height: 400, alt: title }],
       ...(dateModified
         ? { publishedTime: datePublished, modifiedTime: dateModified }

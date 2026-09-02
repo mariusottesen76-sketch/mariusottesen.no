@@ -2,10 +2,9 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { LanguageProvider, LanguageToggle, useLanguage } from "../../LanguageContext";
+import { LanguageProvider, LanguageToggle, useLanguage, type Lang } from "../../LanguageContext";
 import type { StrategicPlatformSlug } from "../../data/strategic-platform-projects/types";
 import { getStrategicPlatformBySlug, t } from "../../data/strategic-platform-projects";
 import { controlTower } from "../../data/prosjekter/control-tower";
@@ -48,6 +47,8 @@ import { buildProjectDetailCta } from "../../data/projects-v2/cta";
 import { PROJECT_CATEGORY_LABELS } from "../../lib/project-v2-category";
 import ProjectDateMetadata from "../project-v2/ProjectDateMetadata";
 import { resolveDetailHeroFit } from "../../lib/project-v2-image";
+import LocaleLink from "../LocaleLink";
+import { localePathFromNoPath } from "../../lib/locale-routes";
 
 const linkClass =
   "text-indigo-400 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400";
@@ -103,6 +104,7 @@ function SectionHeading({ id, children }: { id: string; children: React.ReactNod
 function TilbakeKnapp() {
   const { lang } = useLanguage();
   const router = useRouter();
+  const projectsHub = localePathFromNoPath("/prosjekter", lang);
 
   return (
     <button
@@ -111,7 +113,7 @@ function TilbakeKnapp() {
         if (typeof window !== "undefined" && window.history.length > 1) {
           router.back();
         } else {
-          router.push("/prosjekter");
+          router.push(projectsHub);
         }
       }}
       className="inline-flex items-center gap-1.5 text-xs text-slate-500 hover:text-indigo-300 transition-colors mb-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400 rounded-sm"
@@ -137,24 +139,24 @@ function StrategicProjectDetailInner({ slug }: { slug: StrategicPlatformSlug }) 
   return (
     <div className="py-4 text-left w-full overflow-x-hidden min-w-0">
       <nav className="mb-8 flex flex-wrap items-center justify-between gap-3 border-b border-slate-800/40 pb-4">
-        <Link href="/" className="flex items-center gap-2 group shrink-0" aria-label={lang === "no" ? "Til forsiden" : "Go to home"}>
+        <LocaleLink href="/" className="flex items-center gap-2 group shrink-0" aria-label={lang === "no" ? "Til forsiden" : "Go to home"}>
           <div className="w-9 h-9 rounded-full overflow-hidden bg-slate-800 shrink-0">
             <Image src="/images/ikon.png" alt="Marius Ottesen" width={36} height={36} className="w-full h-full object-cover" />
           </div>
           <span className="text-[10px] font-black uppercase tracking-widest text-indigo-400 group-hover:text-indigo-300">
             Marius Ottesen Consulting
           </span>
-        </Link>
+        </LocaleLink>
         <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs">
-          <Link href="/consulting" className={linkClass}>
+          <LocaleLink href="/consulting" className={linkClass}>
             Consulting
-          </Link>
-          <Link href="/prosjekter" className={linkClass}>
+          </LocaleLink>
+          <LocaleLink href="/prosjekter" className={linkClass}>
             {lang === "no" ? "Prosjekter" : "Projects"}
-          </Link>
-          <Link href="/kontakt" className={linkClass}>
+          </LocaleLink>
+          <LocaleLink href="/kontakt" className={linkClass}>
             {lang === "no" ? "Kontakt" : "Contact"}
-          </Link>
+          </LocaleLink>
           <LanguageToggle />
         </div>
       </nav>
@@ -424,7 +426,7 @@ function StrategicProjectDetailInner({ slug }: { slug: StrategicPlatformSlug }) 
             lang={lang}
             config={{
               primary: {
-                href: "/prosjekter",
+                href: localePathFromNoPath("/prosjekter", lang),
                 label: detail.avslutning.secondaryLabel ?? {
                   no: "Tilbake til AI-prosjekter",
                   en: "Back to AI projects",
@@ -453,9 +455,15 @@ function StrategicProjectDetailInner({ slug }: { slug: StrategicPlatformSlug }) 
   );
 }
 
-export default function StrategicProjectDetailPage({ slug }: { slug: StrategicPlatformSlug }) {
+export default function StrategicProjectDetailPage({
+  slug,
+  initialLang = "no",
+}: {
+  slug: StrategicPlatformSlug;
+  initialLang?: Lang;
+}) {
   return (
-    <LanguageProvider>
+    <LanguageProvider initialLang={initialLang}>
       <main className="min-h-screen bg-slate-950 text-slate-200 px-16 sm:px-24 md:px-32 lg:px-40 xl:px-48 2xl:px-56 py-4 md:py-8 relative overflow-x-hidden w-full">
         <div className="max-w-7xl mx-auto relative z-10 w-full">
           <StrategicProjectDetailInner slug={slug} />
