@@ -177,8 +177,8 @@ const translations: Translations = {
   },
   "fag.lesestier.title": { no: "Anbefalte lesestier", en: "Recommended reading paths" },
   "fag.lesestier.intro": {
-    no: "Start her hvis du vil lese innleggene ut fra rolle, behov eller interessefelt.",
-    en: "Start here if you want to read the articles based on role, need or area of interest.",
+    no: "Velg lesesti ut fra rolle, behov eller interesse. Artiklene er satt i anbefalt leserekkefølge.",
+    en: "Choose a reading path based on role, need or interest. The articles are listed in recommended reading order.",
   },
   "fag.kort.seksjon.title": { no: "Alle innlegg i detalj", en: "All articles in detail" },
   "fag.kort.seksjon.intro.lead": {

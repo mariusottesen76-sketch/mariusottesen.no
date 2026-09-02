@@ -17,8 +17,8 @@ const LESESTI_DISPLAY_TITLES: Record<LeseStiKey, Record<string, LocalizedDisplay
       en: "From strategy to execution – from decision to everyday work",
     },
     "psykologisk-trygghet-krav-2026-01": {
-      no: "Psykologisk trygghet er ikke fravær av krav – trygghet med tydelige forventninger",
-      en: "Psychological safety is not the absence of demands – safety with clear expectations",
+      no: "Psykologisk trygghet er ikke fravær av krav – tydelighet, ansvar og rom for å bidra",
+      en: "Psychological safety is not the absence of demands – clarity, accountability and room to contribute",
     },
     "ai-needs-first-tannklinikk-case-01": {
       no: "De fleste starter feil med AI – start med behovet, ikke teknologien",

@@ -18,8 +18,8 @@ const lesestier: LeseSti[] = [
       en: "For recruiters and employers",
     },
     intro: {
-      no: "Få raskt innblikk i lederprofil, kommersiell erfaring, gjennomføringsevne og hvordan jeg tenker om AI som del av moderne ledelse.",
-      en: "Get a quick view of leadership profile, commercial experience, execution capability and how I think about AI as part of modern leadership.",
+      no: "Få et raskt innblikk i lederprofil, kommersiell erfaring, teamutvikling, gjennomføringsevne og hvordan jeg kombinerer ledelse, transformasjon og praktisk AI.",
+      en: "Get a quick view of leadership profile, commercial experience, team development, execution capability and how I combine leadership, transformation and practical AI.",
     },
     articleIds: LESESTI_ARTICLE_IDS.rekrutterere,
   },
@@ -30,20 +30,20 @@ const lesestier: LeseSti[] = [
       en: "For leaders and commercial teams",
     },
     intro: {
-      no: "Les innlegg om strategi, endring, prestasjon, salgsledelse og hvordan team kan skape bedre gjennomføring over tid.",
-      en: "Read articles on strategy, change, performance, sales leadership and how teams can create better execution over time.",
+      no: "Les om hvordan data, salgsledelse, CRM, strategi og samspill mellom salg og drift kan omsettes til bedre prioriteringer og gjennomføring.",
+      en: "Read about how data, sales leadership, CRM, strategy and the interplay between sales and operations can translate into better prioritisation and execution.",
     },
     articleIds: LESESTI_ARTICLE_IDS.ledereKommersielle,
   },
   {
     id: "aiInteresserte",
     title: {
-      no: "For AI-interesserte arbeidsgivere og kunder",
-      en: "For AI-interested employers and clients",
+      no: "For arbeidsgivere og kunder som vil bruke AI i praksis",
+      en: "For employers and clients who want to use AI in practice",
     },
     intro: {
-      no: "Utforsk hvordan AI kan kobles til arbeidsflyt, CRM, beslutningsstøtte, governance og praktiske prosjekter.",
-      en: "Explore how AI can connect to workflow, CRM, decision support, governance and practical projects.",
+      no: "Se hvordan AI kan kobles til reelle forretningsbehov, skalering, governance og CRM – med fokus på verdi, ansvar og praktisk gjennomføring.",
+      en: "See how AI can connect to real business needs, scaling, governance and CRM — with a focus on value, accountability and practical execution.",
     },
     articleIds: LESESTI_ARTICLE_IDS.aiInteresserte,
   },
