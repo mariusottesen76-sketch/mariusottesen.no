@@ -38,12 +38,12 @@ const lesestier: LeseSti[] = [
   {
     id: "aiInteresserte",
     title: {
-      no: "For arbeidsgivere og kunder som vil bruke AI i praksis",
-      en: "For employers and clients who want to use AI in practice",
+      no: "For arbeidsgivere og kunder som vil bruke AI",
+      en: "For employers and clients looking to use AI",
     },
     intro: {
-      no: "Se hvordan AI kan kobles til reelle forretningsbehov, skalering, governance og CRM – med fokus på verdi, ansvar og praktisk gjennomføring.",
-      en: "See how AI can connect to real business needs, scaling, governance and CRM — with a focus on value, accountability and practical execution.",
+      no: "Se hvordan AI kan brukes i praksis på reelle forretningsbehov, skalering, governance og CRM – med fokus på verdi, ansvar og gjennomføring.",
+      en: "Explore how AI can be applied to real business needs, scaling, governance and CRM – with a focus on value, accountability and execution.",
     },
     articleIds: LESESTI_ARTICLE_IDS.aiInteresserte,
   },

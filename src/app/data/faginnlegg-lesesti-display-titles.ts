@@ -21,8 +21,8 @@ const LESESTI_DISPLAY_TITLES: Record<LeseStiKey, Record<string, LocalizedDisplay
       en: "Psychological safety is not the absence of demands – clarity, accountability and room to contribute",
     },
     "ai-needs-first-tannklinikk-case-01": {
-      no: "De fleste starter feil med AI – start med behovet, ikke teknologien",
-      en: "Most people start wrong with AI – start with the need, not the technology",
+      no: "De fleste starter feil med AI – behov før teknologi",
+      en: "Most people start wrong with AI – needs before technology",
     },
   },
   ledereKommersielle: {
@@ -49,8 +49,8 @@ const LESESTI_DISPLAY_TITLES: Record<LeseStiKey, Record<string, LocalizedDisplay
   },
   aiInteresserte: {
     "ai-needs-first-tannklinikk-case-01": {
-      no: "De fleste starter feil med AI – start med behovet, ikke teknologien",
-      en: "Most people start wrong with AI – start with the need, not the technology",
+      no: "De fleste starter feil med AI – behov før teknologi",
+      en: "Most people start wrong with AI – needs before technology",
     },
     "praktisk-oppskrift-skalering-01": {
       no: "Fra pilot til skalering – fra utprøving til varig verdi",
