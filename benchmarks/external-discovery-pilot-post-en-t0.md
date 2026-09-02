@@ -27,7 +27,7 @@
 
 | Step | Requirement |
 |---|---|
-| 1 | Core Authority #10 «Fra data til beslutning» **published live** (target **03.09.2026**) |
+| 1 | Core Authority #10 «Fra data til beslutning» **published live** — **EARLY_LIVE 02.09.2026** with `datePublished` 03.09.2026 |
 | 2 | Production QA **green** for article + EN routes |
 | 3 | `production_commit_sha` recorded in test-state metadata (§0.1) |
 | 4 | Website-state **frozen** — no site changes during 13 × 2 manual runs |
@@ -36,30 +36,36 @@
 
 ---
 
-## 0.1 Test-state metadata (fill at test start — 03.09 or later)
+## 0.1 Test-state metadata (frozen website-state — 2026-09-02)
 
 Record once before the first prompt. Required for T0 ↔ T1 comparison.
 
+**Status:** Website-state **FROZEN** after final semantic + lesesti deploy QA green (2026-09-02). No site changes until T0 complete (13 × ChatGPT + 13 × Gemini).
+
 ```
 test_label:                 POST_EN_T0
-test_date:                  YYYY-MM-DD
-test_start_time:            HH:MM (timezone)
-production_commit_sha:      <git SHA deployed to production at test start>
-core_authority_10_live:     yes | no
-en_core_routes_live:        yes | no
-en_projects_live:           yes | no
-en_articles_live:           yes | no
+test_date:                  (record when first discovery prompt is run)
+test_start_time:            (record when first discovery prompt is run)
+production_commit_sha:      b166582acc1098f95f759b1aec3a01623c733016
+core_authority_10_live:     yes
+en_core_routes_live:        yes
+en_projects_live:           yes
+en_articles_live:           yes
+ai_ki_semantic_coverage_live: yes
+reading_path_refinement_live: yes
 ```
 
-| Field | How to verify |
+| Field | Verified |
 |---|---|
-| `production_commit_sha` | Vercel deploy SHA or `git rev-parse` of deployed `main` after push |
-| `core_authority_10_live` | `/faginnlegg/fra-data-til-beslutning-2026-09` returns 200 + full SSR body |
-| `en_core_routes_live` | `/en`, `/en/experience`, `/en/results`, `/en/cv` return 200 |
-| `en_projects_live` | `/en/projects` + project detail pages indexable |
-| `en_articles_live` | `/en/articles` + 87 full-English article routes indexable |
+| `production_commit_sha` | `b166582` — deployed to production 2026-09-02 (final pre-T0 package) |
+| `core_authority_10_live` | `/faginnlegg/fra-data-til-beslutning-2026-09` → 200, full SSR |
+| `en_core_routes_live` | `/en`, `/en/experience`, `/en/results`, `/en/cv` → 200 |
+| `en_projects_live` | `/en/projects` → 200 |
+| `en_articles_live` | `/en/articles` → 200 (87 EN articles; #10 Norwegian-only) |
+| `ai_ki_semantic_coverage_live` | Strategic NO hubs: `/`, `/cv`, `/prosjekter`, `/faginnlegg`, `/consulting` — AI + kunstig intelligens + KI in visible SSR |
+| `reading_path_refinement_live` | `/faginnlegg`, `/en/articles` — 3-column subgrid lesestier, display titles, aligned list start |
 
-**Pre-test (2026-09-02):** All `*_live` fields remain **unfilled** — Core Authority #10 not yet deployed.
+**Publication note:** `EARLY_LIVE_WITH_FUTURE_PUBLICATION_DATE` — live 02.09, `datePublished` 03.09.2026 (intentional).
 
 ---
 
@@ -102,8 +108,7 @@ Record which surfaces engines cite in `en_page_used` / `source_type`.
 
 | Layer | Value |
 |---|---|
-| **At protocol prep (2026-09-02)** | **Not live** — scheduled publish **03.09.2026** |
-| **At T0 test start** | Set `core_authority_10_live: yes \| no` in §0.1 after production QA |
+| **At T0 test start (2026-09-02)** | **LIVE** — `core_authority_10_live: yes` |
 | **URL (when live)** | `/faginnlegg/fra-data-til-beslutning-2026-09` |
 
 Do **not** assume Core Authority #10 is indexed or discoverable before deploy + QA on 03.09.
