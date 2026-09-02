@@ -135,8 +135,8 @@ const translations: Translations = {
   "fag.title.1": { no: "Innsikt &", en: "Insight &" },
   "fag.title.2": { no: "Tankeledelse", en: "Thought Leadership" },
   "fag.intro.1": {
-    no: "Faginnlegg om kommersiell ledelse, transformasjon og praktisk AI — strukturert som tankeledelse, ikke som salgsmateriell.",
-    en: "Articles on commercial leadership, transformation and practical AI — structured as thought leadership, not sales material.",
+    no: "Faginnlegg om kommersiell ledelse, transformasjon og praktisk AI (kunstig intelligens/KI) — strukturert som tankeledelse, ikke som salgsmateriell.",
+    en: "Articles on commercial leadership, transformation and practical AI (artificial intelligence) — structured as thought leadership, not sales material.",
   },
   "fag.intro.2": {
     no: "Under finner du anbefalte lesestier og innholdsfortegnelse etter tema. Alle innlegg er nærmere beskrevet lenger ned på siden — med ingress, bilde og mulighet til å lese hele teksten.",
@@ -370,8 +370,8 @@ const translations: Translations = {
     en: "Relevant experience, working methods and possible areas of contribution",
   },
   "cons.intro.1": {
-    no: "Denne siden samler erfaring, metoder og egenutviklede prosjekter innen kommersiell ledelse, salgsutvikling, CRM, arbeidsflyt, transformasjon og praktisk bruk av AI — med operasjonell erfaring fra salg, drift og gjennomføring.",
-    en: "This page brings together experience, methods and custom projects in commercial leadership, sales development, CRM, workflow, transformation and practical use of AI — with operational experience from sales, operations and execution.",
+    no: "Denne siden samler erfaring, metoder og egenutviklede prosjekter innen kommersiell ledelse, salgsutvikling, CRM, arbeidsflyt, transformasjon og praktisk bruk av AI (kunstig intelligens/KI) — med operasjonell erfaring fra salg, drift og gjennomføring.",
+    en: "This page brings together experience, methods and custom projects in commercial leadership, sales development, CRM, workflow, transformation and practical use of AI (artificial intelligence) — with operational experience from sales, operations and execution.",
   },
   "cons.intro.2": {
     no: "Innholdet viser problemstillinger jeg har erfaring med og områder jeg kan bidra innenfor i en relevant lederrolle, rekrutteringsdialog eller et mulig fremtidig samarbeid.",
