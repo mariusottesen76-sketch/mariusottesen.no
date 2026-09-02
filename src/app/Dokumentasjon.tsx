@@ -127,6 +127,17 @@ export default function Dokumentasjon() {
             {d.intro}
           </p>
 
+          <div
+            className="space-y-2 text-sm text-slate-400 leading-relaxed"
+            aria-label={lang === "no" ? "Rekrutteringsrelevante signaler" : "Recruiter-relevant signals"}
+          >
+            {d.recruiterSignals.map((signal) => (
+              <p key={signal.label}>
+                <span className="text-slate-300 font-medium">{signal.label}:</span> {signal.text}
+              </p>
+            ))}
+          </div>
+
           <a
             href="#cv-dokumenter"
             onClick={() => setDocsVisible(true)}

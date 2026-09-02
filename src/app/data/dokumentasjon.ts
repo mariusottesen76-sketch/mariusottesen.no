@@ -12,6 +12,20 @@ const data = {
     heroSub: "Profil, dokumenter og executive summary",
     intro:
       "Her finner du min CV, åpne søknad og en kort oppsummering av lederprofil, resultater og kjernekompetanse. Siden er laget for rekrutterere, headhuntere, researchere og arbeidsgivere som raskt ønsker å forstå hvor jeg skaper mest verdi.",
+    recruiterSignals: [
+      {
+        label: "Mobilitet",
+        text: "Komfortabel med jobbrelatert reise ca. 1–2 dager per uke, nasjonalt og/eller internasjonalt når rollen tilsier det.",
+      },
+      {
+        label: "Internasjonal erfaring",
+        text: "Internasjonal erfaring fra globale konsern, strategigrupper og salg på tvers av Europa, USA og Asia.",
+      },
+      {
+        label: "Overførbarhet",
+        text: "Erfaringen er særlig overførbar til B2B-virksomheter der kommersiell ledelse, teamutvikling og gjennomføring veier tyngre enn spesifikk bransjebakgrunn.",
+      },
+    ],
     resultaterTitle: "Utvalgte resultater",
     resultater: [
       "Franzefoss: Forbedret kapasitetsutnyttelse, tydeligere styringsmodell, KPI-er og økte marginer.",
@@ -51,6 +65,20 @@ const data = {
     heroSub: "Profile, documents and executive summary",
     intro:
       "Here you will find my CV, open application and a concise summary of my leadership profile, results and core competencies. This page is designed for recruiters, headhunters, researchers and employers who want to quickly understand where I create the most value.",
+    recruiterSignals: [
+      {
+        label: "Mobility",
+        text: "Comfortable with business travel approximately 1–2 days per week, nationally and/or internationally when the role requires it.",
+      },
+      {
+        label: "International experience",
+        text: "International experience from global organisations, strategy groups and sales across Europe, the US and Asia.",
+      },
+      {
+        label: "Transferability",
+        text: "The experience is particularly transferable to B2B organisations where commercial leadership, team development and execution matter more than exact industry background.",
+      },
+    ],
     resultaterTitle: "Selected results",
     resultater: [
       "Franzefoss: Improved capacity utilisation, clearer governance model, KPIs and increased margins.",

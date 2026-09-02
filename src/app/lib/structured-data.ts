@@ -24,6 +24,7 @@ export function getStructuredDataGraph(lang: "no" | "en") {
             "Commercial Leadership",
             "Sales Management",
             "Sales Director",
+            "International B2B sales",
             "Digital Transformation",
             "Artificial Intelligence",
             "Business Development",
@@ -71,6 +72,7 @@ export function getStructuredDataGraph(lang: "no" | "en") {
         knowsAbout: [
           "Commercial Leadership",
           "Sales Management",
+          "International B2B sales",
           "Digital Transformation",
           "Artificial Intelligence",
           "Business Development",
