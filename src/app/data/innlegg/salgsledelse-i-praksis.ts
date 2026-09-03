@@ -49,9 +49,7 @@ Jeg har flere ganger møtt situasjoner hvor resultater eller aktivitet har vært
 
 Den naturlige første reaksjonen kan være enkel: Vi trenger flere kundemøter, flere tilbud, flere telefoner og høyere aktivitet.
 
-Noen ganger er det riktig.
-
-Men før aktivitetskravet økes, bør lederen forstå hva som faktisk ligger bak resultatet.
+Noen ganger er det riktig. Men før aktivitetskravet økes, bør lederen forstå hva som faktisk ligger bak resultatet.
 
 Det kan være at:
 
@@ -91,11 +89,7 @@ Og høy aktivitet er ikke det samme som høy kvalitet.
 
 I egen lederpraksis har jeg derfor blitt stadig mer opptatt av å bruke styringsinformasjonen diagnostisk.
 
-Først identifisere <strong>hvor</strong> noe ser ut til å stoppe.
-
-Deretter forstå <strong>hvorfor</strong>.
-
-Til slutt beslutte <strong>hva vi skal gjøre med det</strong>.
+Først identifisere <strong>hvor</strong> noe ser ut til å stoppe. Deretter forstå <strong>hvorfor</strong>. Til slutt beslutte <strong>hva vi skal gjøre med det</strong>.
 
 Det endrer også lederdialogen.
 
@@ -114,15 +108,11 @@ kan lederen også spørre:
 - Hva lærte du av forrige møte?
 - Hva ville du gjort annerledes dersom du tok møtet på nytt?
 
-Slike spørsmål gir kanskje ikke like raske svar.
-
-Men de kan utvikle noe langt viktigere: selgerens egen dømmekraft.
+Slike spørsmål gir kanskje ikke like raske svar. Men de kan utvikle noe langt viktigere: selgerens egen dømmekraft.
 
 <strong>Coaching handler om mer enn pipeline</strong>
 
-Det er lett å kalle et møte coaching fordi en leder og en medarbeider sitter sammen og går gjennom salgslisten.
-
-Men pipelinegjennomgang og coaching er ikke nødvendigvis det samme.
+Det er lett å kalle et møte coaching fordi en leder og en medarbeider sitter sammen og går gjennom salgslisten. Men pipelinegjennomgang og coaching er ikke nødvendigvis det samme.
 
 Pipelinegjennomgangen skal gi virksomheten nødvendig oversikt:
 
@@ -144,19 +134,13 @@ Frank V. Cespedes ved Harvard Business School har pekt på utfordringen med en s
 
 Forskning på effektiv salgscoaching peker samtidig på <strong>tilpasning, involvering og relasjonskvalitet</strong> som tre sentrale dimensjoner, og viser sammenheng mellom disse og salgsresultater.
 
-Dette samsvarer godt med min egen erfaring.
+Dette samsvarer godt med min egen erfaring. Noen medarbeidere trenger tydeligere struktur. Andre trenger større handlingsrom. Noen må utfordres mer, mens andre først trenger trygghet til å prøve, feile og lære.
 
-Noen medarbeidere trenger tydeligere struktur. Andre trenger større handlingsrom. Noen må utfordres mer, mens andre først trenger trygghet til å prøve, feile og lære.
-
-Lederens oppgave er ikke å gjøre alle like.
-
-Den er å hjelpe den enkelte til å bli bedre.
+Lederens oppgave er ikke å gjøre alle like. Den er å hjelpe den enkelte til å bli bedre.
 
 <strong>God coaching skal redusere avhengigheten av lederen</strong>
 
-Det finnes også en annen fallgruve.
-
-En erfaren salgsleder vil ofte se en mulig løsning raskt. Det kan derfor være fristende å fortelle medarbeideren nøyaktig hva som bør gjøres:
+Det finnes også en annen fallgruve. En erfaren salgsleder vil ofte se en mulig løsning raskt. Det kan derfor være fristende å fortelle medarbeideren nøyaktig hva som bør gjøres:
 
 - Ring denne personen.
 - Still dette spørsmålet.
@@ -170,9 +154,7 @@ Men dersom lederen alltid leverer svaret, kan man samtidig skape en organisasjon
 
 Jeg mener derfor at god coaching bør utvikle medarbeiderens evne til selv å analysere situasjonen, se alternativer og velge neste handling.
 
-Det betyr ikke at lederen skal sitte passivt og stille åpne spørsmål når det faktisk trengs en beslutning.
-
-Ledelse innebærer også å sette retning, stille krav, korrigere og noen ganger bestemme.
+Det betyr ikke at lederen skal sitte passivt og stille åpne spørsmål når det faktisk trengs en beslutning. Ledelse innebærer også å sette retning, stille krav, korrigere og noen ganger bestemme.
 
 Men over tid bør ambisjonen være tydelig:
 
@@ -184,9 +166,7 @@ Det skaper sterkere selgere, større eierskap og en mer skalerbar salgsorganisas
 
 CRM, dashboards og styringsinformasjon gjør det mulig å se langt mer av salgsarbeidet enn tidligere.
 
-Det er positivt.
-
-Men synlighet må ikke forveksles med ledelse.
+Det er positivt. Men synlighet må ikke forveksles med ledelse.
 
 Jeg ser på KPI-er og CRM som salgsledelsens sensorer. De kan fortelle oss hvor vi bør rette oppmerksomheten, hvor det oppstår friksjon og hvilke mønstre vi bør undersøke nærmere.
 
@@ -196,25 +176,13 @@ CRM bør derfor heller ikke først og fremst være stedet hvor medarbeideren rap
 
 Når systemet fungerer godt, hjelper det selgeren med å huske, prioritere og følge opp. Samtidig gir det lederen et bedre grunnlag for coaching, ressursprioritering og beslutninger.
 
-Da oppstår også en viktig forskjell i hvordan data brukes.
+Da oppstår også en viktig forskjell i hvordan data brukes. Fra: <strong>«Har du oppdatert CRM?»</strong> til: <strong>«Hva forteller denne informasjonen oss, og hva bør vi gjøre nå?»</strong>
 
-Fra:
-
-<strong>«Har du oppdatert CRM?»</strong>
-
-til:
-
-<strong>«Hva forteller denne informasjonen oss, og hva bør vi gjøre nå?»</strong>
-
-Det første handler primært om registrering.
-
-Det andre handler om verdiskaping.
+Det første handler primært om registrering. Det andre handler om verdiskaping.
 
 <strong>Fra kontroll til læring</strong>
 
-Når jeg ser tilbake på situasjoner hvor salgsarbeidet virkelig har utviklet seg, er det sjelden ett enkelt tiltak som har vært avgjørende.
-
-Det er sammenhengen som betyr mest.
+Når jeg ser tilbake på situasjoner hvor salgsarbeidet virkelig har utviklet seg, er det sjelden ett enkelt tiltak som har vært avgjørende. Det er sammenhengen som betyr mest.
 
 <strong>RETNING → PRIORITERING → KUNDEARBEID → COACHING → LÆRING → ANSVAR → RESULTATER</strong>
 
@@ -249,19 +217,11 @@ Den viktigste tiden bør brukes der lederen faktisk kan påvirke fremtidige resu
 - fjerne hindringer mellom salg og resten av virksomheten
 - skape en kultur hvor medarbeidere både får støtte og holdes ansvarlige
 
-For meg er dette kjernen i praktisk salgsledelse.
+For meg er dette kjernen i praktisk salgsledelse. Det handler ikke om mindre resultatfokus. Det handler om en dypere forståelse av <strong>hva som faktisk skaper resultatene</strong>.
 
-Det handler ikke om mindre resultatfokus.
+God salgsledelse er derfor heller ikke et valg mellom kontroll og utvikling. Det handler om å bruke styringen til å forstå hvor innsatsen bør rettes, coachingen til å utvikle mennesker og prioriteringene til å omsette retning til handling.
 
-Det handler om en dypere forståelse av <strong>hva som faktisk skaper resultatene</strong>.
-
-God salgsledelse er derfor heller ikke et valg mellom kontroll og utvikling.
-
-Det handler om å bruke styringen til å forstå hvor innsatsen bør rettes, coachingen til å utvikle mennesker og prioriteringene til å omsette retning til handling.
-
-Da blir oppfølging noe mer enn kontroll.
-
-Den blir en motor for læring, bedre beslutninger og varige resultater.
+Da blir oppfølging noe mer enn kontroll. Den blir en motor for læring, bedre beslutninger og varige resultater.
 
 <strong>Kilder</strong>
 
@@ -341,11 +301,7 @@ And high activity is not the same as high quality.
 
 In my own leadership practice I have therefore become increasingly focused on using management information diagnostically.
 
-First identify <strong>where</strong> something appears to stop.
-
-Then understand <strong>why</strong>.
-
-Finally decide <strong>what we should do about it</strong>.
+First identify <strong>where</strong> something appears to stop. Then understand <strong>why</strong>. Finally decide <strong>what we should do about it</strong>.
 
 That also changes the leadership dialogue.
 
@@ -364,15 +320,11 @@ the leader can also ask:
 - What did you learn from the last meeting?
 - What would you do differently if you took the meeting again?
 
-Such questions may not produce equally quick answers.
-
-But they can develop something far more important: the salesperson's own judgement.
+Such questions may not produce equally quick answers. But they can develop something far more important: the salesperson's own judgement.
 
 <strong>Coaching is about more than pipeline</strong>
 
-It is easy to call a meeting coaching because a leader and an employee sit together and go through the sales list.
-
-But pipeline review and coaching are not necessarily the same thing.
+It is easy to call a meeting coaching because a leader and an employee sit together and go through the sales list. But pipeline review and coaching are not necessarily the same thing.
 
 Pipeline review should give the business the necessary overview:
 
@@ -394,19 +346,13 @@ Frank V. Cespedes at Harvard Business School has pointed to the challenge of a s
 
 Research on effective sales coaching also points to <strong>adaptation, involvement and relationship quality</strong> as three central dimensions, and shows a link between these and sales results.
 
-This aligns well with my own experience.
+This aligns well with my own experience. Some employees need clearer structure. Others need more room to act. Some must be challenged more, while others first need the confidence to try, fail and learn.
 
-Some employees need clearer structure. Others need more room to act. Some must be challenged more, while others first need the confidence to try, fail and learn.
-
-The leader's task is not to make everyone the same.
-
-It is to help each individual become better.
+The leader's task is not to make everyone the same. It is to help each individual become better.
 
 <strong>Good coaching should reduce dependence on the leader</strong>
 
-There is also another pitfall.
-
-An experienced sales leader will often see a possible solution quickly. It can therefore be tempting to tell the employee exactly what should be done:
+There is also another pitfall. An experienced sales leader will often see a possible solution quickly. It can therefore be tempting to tell the employee exactly what should be done:
 
 - Call this person.
 - Ask this question.
@@ -420,9 +366,7 @@ But if the leader always delivers the answer, you can at the same time create an
 
 I therefore believe that good coaching should develop the employee's ability to analyse the situation themselves, see alternatives and choose the next action.
 
-That does not mean the leader should sit passively and ask open questions when a decision is actually needed.
-
-Leadership also involves setting direction, making demands, correcting and sometimes deciding.
+That does not mean the leader should sit passively and ask open questions when a decision is actually needed. Leadership also involves setting direction, making demands, correcting and sometimes deciding.
 
 But over time the ambition should be clear:
 
@@ -434,9 +378,7 @@ That creates stronger salespeople, greater ownership and a more scalable sales o
 
 CRM, dashboards and management information make it possible to see far more of the sales work than before.
 
-That is positive.
-
-But visibility must not be confused with leadership.
+That is positive. But visibility must not be confused with leadership.
 
 I see KPIs and CRM as the sensors of sales leadership. They can tell us where we should direct attention, where friction arises and which patterns we should investigate more closely.
 
@@ -446,25 +388,13 @@ CRM should therefore not primarily be the place where the employee reports what 
 
 When the system works well, it helps the salesperson remember, prioritise and follow up. At the same time it gives the leader a better basis for coaching, resource prioritisation and decisions.
 
-An important difference then also emerges in how data is used.
+An important difference then also emerges in how data is used. From: <strong>"Have you updated CRM?"</strong> to: <strong>"What does this information tell us, and what should we do now?"</strong>
 
-From:
-
-<strong>"Have you updated CRM?"</strong>
-
-to:
-
-<strong>"What does this information tell us, and what should we do now?"</strong>
-
-The first is primarily about registration.
-
-The second is about value creation.
+The first is primarily about registration. The second is about value creation.
 
 <strong>From control to learning</strong>
 
-When I look back at situations where sales work has truly developed, it is rarely a single initiative that has been decisive.
-
-It is the connection that matters most.
+When I look back at situations where sales work has truly developed, it is rarely a single initiative that has been decisive. It is the connection that matters most.
 
 <strong>DIRECTION → PRIORITISATION → CUSTOMER WORK → COACHING → LEARNING → ACCOUNTABILITY → RESULTS</strong>
 
@@ -499,19 +429,11 @@ The most important time should be spent where the leader can actually influence 
 - removing obstacles between sales and the rest of the business
 - creating a culture where employees both receive support and are held accountable
 
-For me, this is the core of practical sales leadership.
+For me, this is the core of practical sales leadership. It is not about less focus on results. It is about a deeper understanding of <strong>what actually creates the results</strong>.
 
-It is not about less focus on results.
+Good sales leadership is therefore not a choice between control and development. It is about using management to understand where effort should be directed, coaching to develop people and prioritisation to turn direction into action.
 
-It is about a deeper understanding of <strong>what actually creates the results</strong>.
-
-Good sales leadership is therefore not a choice between control and development.
-
-It is about using management to understand where effort should be directed, coaching to develop people and prioritisation to turn direction into action.
-
-Follow-up then becomes more than control.
-
-It becomes an engine for learning, better decisions and lasting results.
+Follow-up then becomes more than control. It becomes an engine for learning, better decisions and lasting results.
 
 <strong>Sources</strong>
 

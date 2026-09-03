@@ -70,19 +70,13 @@ Men jeg opplever at den samme grunnleggende problemstillingen er svært relevant
 
 En ledergruppe kan for eksempel beslutte at virksomheten skal:
 
-bli mer kundeorientert
-
-arbeide mer datadrevet
-
-øke det kommersielle samarbeidet
-
-redusere kostnader
-
-digitalisere sentrale prosesser
-
-øke innovasjonstakten
-
-eller ta i bruk ny teknologi.
+- bli mer kundeorientert
+- arbeide mer datadrevet
+- øke det kommersielle samarbeidet
+- redusere kostnader
+- digitalisere sentrale prosesser
+- øke innovasjonstakten
+- eller ta i bruk ny teknologi.
 
 Intensjonen kan være både tydelig og godt forankret.
 
@@ -90,23 +84,15 @@ Men virksomheten endrer ikke arbeidsmåte bare fordi beslutningen er tatt.
 
 Strategien må oversettes.
 
-Hvilke kunder skal prioriteres annerledes?
-
-Hvilke aktiviteter skal få mer ressurser?
-
-Hva skal vi slutte å gjøre?
-
-Hvilke beslutninger skal tas på et annet nivå?
-
-Hvem får et nytt ansvar?
-
-Hvilke arbeidsprosesser må endres?
-
-Hvilken kompetanse mangler?
-
-Hva skal lederne etterspørre annerledes?
-
-Og hvordan skal vi vite om endringen gir den verdien vi forventet?
+- Hvilke kunder skal prioriteres annerledes?
+- Hvilke aktiviteter skal få mer ressurser?
+- Hva skal vi slutte å gjøre?
+- Hvilke beslutninger skal tas på et annet nivå?
+- Hvem får et nytt ansvar?
+- Hvilke arbeidsprosesser må endres?
+- Hvilken kompetanse mangler?
+- Hva skal lederne etterspørre annerledes?
+- Og hvordan skal vi vite om endringen gir den verdien vi forventet?
 
 Hvis disse spørsmålene ikke får tydelige svar, oppstår et gap mellom strategisk intensjon og organisatorisk handling.
 
@@ -118,15 +104,7 @@ Jeg mener derfor at gjennomføring må forstås som en sammenhengende kjede:
 
 Hvert ledd betyr noe.
 
-Strategien må først oversettes til prioriteringer. Hvis alt fortsatt er like viktig, har organisasjonen i praksis ikke prioritert.
-
-Prioriteringene må kobles til ansvar. Noen må eie beslutningen og resultatet.
-
-Ansvar må igjen gjenspeiles i arbeidsflyten. Prosesser, informasjonsflyt og beslutningspunkter må støtte den nye retningen.
-
-Medarbeiderne må ha kompetansen som kreves for å utføre arbeidet på en annen måte.
-
-Og lederne må etablere en rytme hvor endringen blir fulgt opp gjennom møter, KPI-er, beslutninger, prioriteringer og korrigeringer.
+Strategien må først oversettes til prioriteringer. Hvis alt fortsatt er like viktig, har organisasjonen i praksis ikke prioritert. Prioriteringene må kobles til ansvar. Noen må eie beslutningen og resultatet. Ansvar må igjen gjenspeiles i arbeidsflyten. Prosesser, informasjonsflyt og beslutningspunkter må støtte den nye retningen. Medarbeiderne må ha kompetansen som kreves for å utføre arbeidet på en annen måte. Og lederne må etablere en rytme hvor endringen blir fulgt opp gjennom møter, KPI-er, beslutninger, prioriteringer og korrigeringer.
 
 Først da øker sannsynligheten for at ny atferd etableres og at virksomheten kan hente ut ønskede resultater.
 
@@ -150,13 +128,10 @@ Det gir et viktig lederperspektiv:
 
 <strong>Hvis systemet rundt medarbeideren fortsetter som før, er det optimistisk å forvente at atferden plutselig blir ny.</strong>
 
-Hvis strategien sier «mer kundeorientering», men KPI-ene fortsatt belønner intern aktivitet, vil det påvirke atferden.
-
-Hvis strategien sier «mer samarbeid», men målene optimaliseres innenfor hver enkelt avdeling, oppstår friksjon.
-
-Hvis organisasjonen skal arbeide raskere, men alle beslutninger fortsatt må gjennom samme hierarki, hjelper det lite å kommunisere behovet for høyere tempo.
-
-Og hvis ny teknologi innføres uten at arbeidsprosessene endres, har virksomheten ofte digitalisert den gamle arbeidsmåten.
+- Hvis strategien sier «mer kundeorientering», men KPI-ene fortsatt belønner intern aktivitet, vil det påvirke atferden.
+- Hvis strategien sier «mer samarbeid», men målene optimaliseres innenfor hver enkelt avdeling, oppstår friksjon.
+- Hvis organisasjonen skal arbeide raskere, men alle beslutninger fortsatt må gjennom samme hierarki, hjelper det lite å kommunisere behovet for høyere tempo.
+- Og hvis ny teknologi innføres uten at arbeidsprosessene endres, har virksomheten ofte digitalisert den gamle arbeidsmåten.
 
 <h2>Fra mål til konkrete beslutningsregler</h2>
 
@@ -168,17 +143,9 @@ Men prinsippet er nyttig:
 
 Jo tydeligere vi oversetter en generell intensjon til <strong>konkrete situasjoner og handlinger</strong>, desto mindre overlates til tilfeldigheter når arbeidshverdagen tar over.
 
-«Vi skal følge kundene bedre opp» er en intensjon.
-
-<strong>«Når en ny kundehenvendelse kommer inn, skal den få en tydelig ansvarlig innen avtalt responstid.»</strong> er en arbeidsregel.
-
-«Vi skal forbedre pipelinen» er en intensjon.
-
-«Når en mulighet har stått uten aktivitet i en avtalt periode, skal den vurderes og enten få et konkret neste steg eller tas ut» er en arbeidsregel.
-
-«Vi skal bruke mer data i beslutningene» er en intensjon.
-
-«Når ledergruppen prioriterer ressurser mellom disse initiativene, skal disse tre datapunktene inngå i beslutningsgrunnlaget» er en arbeidsregel.
+- «Vi skal følge kundene bedre opp» er en intensjon. «Når en ny kundehenvendelse kommer inn, skal den få en tydelig ansvarlig innen avtalt responstid.» er en arbeidsregel.
+- «Vi skal forbedre pipelinen» er en intensjon. «Når en mulighet har stått uten aktivitet i en avtalt periode, skal den vurderes og enten få et konkret neste steg eller tas ut» er en arbeidsregel.
+- «Vi skal bruke mer data i beslutningene» er en intensjon. «Når ledergruppen prioriterer ressurser mellom disse initiativene, skal disse tre datapunktene inngå i beslutningsgrunnlaget» er en arbeidsregel.
 
 Forskjellen ligger i konkretiseringen.
 
@@ -200,15 +167,11 @@ Da hjelper det begrenset å kommunisere strategien én gang til.
 
 Arbeidet må ned et nivå.
 
-Hva må prioriteres annerledes?
-
-Hvem tar beslutningen?
-
-Hva må endres i arbeidsprosessen?
-
-Hva skal følges opp i ledermøtene?
-
-Og hvilke eksisterende aktiviteter må få mindre plass dersom det nye skal få mer?
+- Hva må prioriteres annerledes?
+- Hvem tar beslutningen?
+- Hva må endres i arbeidsprosessen?
+- Hva skal følges opp i ledermøtene?
+- Og hvilke eksisterende aktiviteter må få mindre plass dersom det nye skal få mer?
 
 Når disse sammenhengene blir tydeligere, øker også gjennomføringsevnen.
 
@@ -222,15 +185,15 @@ Ledergruppen må eie oversettelsen fra retning til arbeidshverdag.
 
 Jeg mener særlig disse spørsmålene bør være tydelige:
 
-- <strong>Hva skal virksomheten gjøre mer av, og hva skal vi gjøre mindre av eller slutte med?</strong>
-- <strong>Hvilke prioriteringer må endres dersom strategien skal få reell betydning?</strong>
-- <strong>Hvem eier resultatene og de viktigste beslutningene?</strong>
-- <strong>Hvilke arbeidsprosesser, systemer eller beslutningspunkter må endres?</strong>
-- <strong>Hvilken kompetanse og hvilke ferdigheter trenger organisasjonen for å lykkes?</strong>
-- <strong>Hva skal lederne begynne å følge opp annerledes?</strong>
-- <strong>Hvilke KPI-er eller andre signaler viser at ny praksis er i ferd med å etablere seg?</strong>
-- <strong>Hvilke hindringer må ledelsen fjerne?</strong>
-- <strong>Hva skal medarbeideren merke annerledes mandag morgen?</strong>
+- Hva skal virksomheten gjøre mer av, og hva skal vi gjøre mindre av eller slutte med?
+- Hvilke prioriteringer må endres dersom strategien skal få reell betydning?
+- Hvem eier resultatene og de viktigste beslutningene?
+- Hvilke arbeidsprosesser, systemer eller beslutningspunkter må endres?
+- Hvilken kompetanse og hvilke ferdigheter trenger organisasjonen for å lykkes?
+- Hva skal lederne begynne å følge opp annerledes?
+- Hvilke KPI-er eller andre signaler viser at ny praksis er i ferd med å etablere seg?
+- Hvilke hindringer må ledelsen fjerne?
+- Hva skal medarbeideren merke annerledes mandag morgen?
 
 Det siste spørsmålet er kanskje det viktigste.
 
@@ -242,21 +205,14 @@ Strategiimplementering skjer ikke bare i de store beslutningene.
 
 Den skjer også gjennom det lederne gjentar.
 
-Hva står på agendaen i ledermøtet?
-
-Hvilke avvik diskuteres?
-
-Hva får ressurser?
-
-Hvilke spørsmål stilles?
-
-Hva blir utsatt?
-
-Hva blir fulgt opp igjen neste uke?
-
-Hvilken atferd blir anerkjent?
-
-Og hvilke problemer får lov til å bli liggende?
+- Hva står på agendaen i ledermøtet?
+- Hvilke avvik diskuteres?
+- Hva får ressurser?
+- Hvilke spørsmål stilles?
+- Hva blir utsatt?
+- Hva blir fulgt opp igjen neste uke?
+- Hvilken atferd blir anerkjent?
+- Og hvilke problemer får lov til å bli liggende?
 
 Dette er det jeg legger i <strong>lederrytme</strong>.
 
@@ -276,15 +232,11 @@ Den må bli en del av <strong>måten arbeidet ledes på</strong>.
 
 Et annet problem oppstår når transformasjonen hovedsakelig måles gjennom prosjektaktivitet.
 
-Systemet er implementert.
-
-Kurset er gjennomført.
-
-Prosessen er dokumentert.
-
-Organisasjonen er omstrukturert.
-
-Prosjektet er levert.
+- Systemet er implementert.
+- Kurset er gjennomført.
+- Prosessen er dokumentert.
+- Organisasjonen er omstrukturert.
+- Prosjektet er levert.
 
 Alt dette kan være nødvendige milepæler.
 
@@ -292,11 +244,9 @@ Men ingen av dem dokumenterer alene at virksomheten arbeider bedre.
 
 Derfor mener jeg ledelsen bør skille mellom minst tre nivåer:
 
-Hva har vi <strong>gjennomført</strong>?
-
-Hva har organisasjonen begynt å <strong>gjøre annerledes</strong>?
-
-Hvilken <strong>forretningsmessig effekt</strong> skaper dette?
+- Hva har vi <strong>gjennomført</strong>?
+- Hva har organisasjonen begynt å <strong>gjøre annerledes</strong>?
+- Hvilken <strong>forretningsmessig effekt</strong> skaper dette?
 
 Det er forskjell på implementering, atferdsendring og gevinst.
 
@@ -316,21 +266,14 @@ Men ny atferd er ikke målet i seg selv.
 
 Virksomheten ønsker normalt å oppnå noe.
 
-Bedre kundeopplevelse.
-
-Høyere lønnsomhet.
-
-Mer salg.
-
-Kortere ledetid.
-
-Bedre kvalitet.
-
-Lavere kostnader.
-
-Raskere innovasjon.
-
-Bedre risikostyring.
+- Bedre kundeopplevelse.
+- Høyere lønnsomhet.
+- Mer salg.
+- Kortere ledetid.
+- Bedre kvalitet.
+- Lavere kostnader.
+- Raskere innovasjon.
+- Bedre risikostyring.
 
 Hvis organisasjonen endrer arbeidsmåte uten at det over tid bidrar til ønsket effekt, må strategien eller implementeringen vurderes på nytt.
 
@@ -340,13 +283,7 @@ Ikke bare endring.
 
 <h2>Når mandag morgen ser annerledes ut</h2>
 
-Strategien kan være riktig.
-
-Ledergruppen kan være enig.
-
-Kommunikasjonen kan være god.
-
-Medarbeiderne kan forstå hvorfor endringen er nødvendig.
+Strategien kan være riktig. Ledergruppen kan være enig. Kommunikasjonen kan være god. Medarbeiderne kan forstå hvorfor endringen er nødvendig.
 
 Men hvis kalenderen ser lik ut, møtene fungerer som før, beslutningene tas på samme måte, de gamle KPI-ene styrer oppmerksomheten og arbeidsprosessene er uendret, har svært lite blitt transformert.
 
@@ -354,21 +291,14 @@ Det er også derfor jeg mener sammenhengen må ses som et system:
 
 <strong>STRATEGI → PRIORITERINGER → ANSVAR → ARBEIDSFLYT → KOMPETANSE → LEDERRYTME → ATFERD → RESULTATER</strong>
 
-Strategien gir retning.
-
-Prioriteringene gjør valgene tydelige.
-
-Ansvar skaper eierskap.
-
-Arbeidsflyten oversetter retningen til praksis.
-
-Kompetansen gjør medarbeiderne i stand til å gjennomføre.
-
-Lederrytmen holder endringen levende.
-
-Ny atferd viser at arbeidshverdagen er i ferd med å endres.
-
-Og resultatene forteller om transformasjonen skaper verdi.
+- Strategien gir retning.
+- Prioriteringene gjør valgene tydelige.
+- Ansvar skaper eierskap.
+- Arbeidsflyten oversetter retningen til praksis.
+- Kompetansen gjør medarbeiderne i stand til å gjennomføre.
+- Lederrytmen holder endringen levende.
+- Ny atferd viser at arbeidshverdagen er i ferd med å endres.
+- Og resultatene forteller om transformasjonen skaper verdi.
 
 For meg er dette kjernen i strategiimplementering.
 
