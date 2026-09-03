@@ -3,7 +3,7 @@ import { Lang } from "../LanguageContext";
 export const linkedinUrl = "https://www.linkedin.com/in/mariusottesen/";
 
 /** Cache-bust når CV/søknad-PDF oppdateres (filnavn på disk: cv.pdf / soknad.pdf). */
-export const CV_PDF_VERSJON = "20260903";
+export const CV_PDF_VERSJON = "202609032";
 export const cvPdfUrl = `/pdf/cv.pdf?v=${CV_PDF_VERSJON}`;
 export const soknadPdfUrl = `/pdf/soknad.pdf?v=${CV_PDF_VERSJON}`;
 
@@ -40,7 +40,7 @@ const data = {
     aiLink: "Se AI-prosjekter",
     pdfTitle: "CV og åpen søknad",
     pdfIntro:
-      "Les CV og åpen søknad (CV oppdatert september 2026) direkte i viserne under. Du kan også åpne hvert dokument i egen fane for nedlasting.",
+      "Les CV og åpen søknad (oppdatert september 2026) direkte i viserne under. Du kan også åpne hvert dokument i egen fane for nedlasting.",
     linkedinTekst:
       "Ønsker du å besøke min LinkedIn-profil for mer informasjon, trykk på linken under:",
     ctaTitle: "Ønsker du å vurdere profilen videre?",
@@ -82,7 +82,7 @@ const data = {
     aiLink: "See AI projects",
     pdfTitle: "CV and open application",
     pdfIntro:
-      "Read the CV and open application directly in the viewers below. The CV was updated in September 2026; the PDF documents are in Norwegian. You can also open each document in a new tab to download.",
+      "Read the CV and open application directly in the viewers below. Both documents were updated in September 2026; the PDF documents are in Norwegian. You can also open each document in a new tab to download.",
     linkedinTekst:
       "Would you like to visit my LinkedIn profile for more information? Click the link below:",
     ctaTitle: "Would you like to evaluate the profile further?",
