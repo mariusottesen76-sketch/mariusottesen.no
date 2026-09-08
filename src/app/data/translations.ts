@@ -394,6 +394,7 @@ const translations: Translations = {
   "cons.pakke.lesMer": { no: "Les mer", en: "Read more" },
   "cons.pakke.for": { no: "Når dette ofte er relevant", en: "When this is often relevant" },
   "cons.pakke.leveranseDetalj": { no: "Hva erfaringen dekker", en: "What the experience covers" },
+  "cons.pakke.praktiskAnvendelse": { no: "Praktisk anvendelse", en: "Practical application" },
   "cons.metodikk.title": { no: "Rammeverk for ansvarlig AI-prioritering", en: "Framework for responsible AI prioritisation" },
   "cons.metodikk.intro": {
     no: "Når AI vurderes i en kommersiell eller operativ kontekst, starter arbeidet med problemforståelse og arbeidsflyt, ikke med teknologi alene. Rammeverket under viser hvordan jeg vurderer relevans, ansvarlighet og mulig verdi.",

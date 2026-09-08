@@ -123,6 +123,7 @@ export type TjenestePakke = {
   leveranseKort: string;
   forDetalj: string;
   leveranseDetalj: string;
+  praktiskAnvendelse?: string;
   pilotStotte?: PakkePilotStotte;
   fagArtikkelLink?: FagArtikkelLink;
 };
@@ -281,6 +282,8 @@ const spesialisertePakker: Record<Lang, TjenestePakke[]> = {
       forDetalj: "Salgsledere som ønsker å gå fra aktivitetskontroll til prestasjonsutvikling.",
       leveranseDetalj:
         "1:1-struktur, coachingmodell, møteobservasjon, casegjennomgang, KPI-er og lederoppfølging i salgsteam.",
+      praktiskAnvendelse:
+        "Metodikken er tatt i bruk i praktisk kundearbeid med strukturert salgsutvikling, individuell coaching, reelle kundesituasjoner, lederforankring og AI-basert salgstrening som støtte.",
       pilotStotte: pscDemonstratorStotte.no,
       fagArtikkelLink: {
         href: "/faginnlegg/salgsledelse-i-praksis-2026-08",
@@ -355,6 +358,8 @@ const spesialisertePakker: Record<Lang, TjenestePakke[]> = {
       forDetalj: "Sales leaders who want to move from activity control to performance development.",
       leveranseDetalj:
         "1:1 structure, coaching model, meeting observation, case review, KPIs and leadership follow-up in sales teams.",
+      praktiskAnvendelse:
+        "The methodology is being applied in client work involving structured sales development, individual coaching, real customer situations, leadership alignment and AI-based sales training as support.",
       pilotStotte: pscDemonstratorStotte.en,
       fagArtikkelLink: {
         href: "/faginnlegg/salgsledelse-i-praksis-2026-08",

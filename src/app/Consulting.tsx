@@ -206,6 +206,9 @@ function PakkeDetaljer({
     <div className="mt-4 pt-4 border-t border-white/10 space-y-3">
       <PakkeFelt label={tr("cons.pakke.for")} text={pakke.forDetalj} />
       <PakkeFelt label={tr("cons.pakke.leveranseDetalj")} text={pakke.leveranseDetalj} />
+      {pakke.praktiskAnvendelse ? (
+        <PakkeFelt label={tr("cons.pakke.praktiskAnvendelse")} text={pakke.praktiskAnvendelse} />
+      ) : null}
       {pakke.pilotStotte && <PakkePilotStotteBlokk stotte={pakke.pilotStotte} />}
     </div>
   );
@@ -265,6 +268,9 @@ function SpesialisertPakkeAccordion({
           <PakkeFelt label={tr("cons.pakke.leveranse")} text={pakke.leveranseKort} />
           <PakkeFelt label={tr("cons.pakke.for")} text={pakke.forDetalj} />
           <PakkeFelt label={tr("cons.pakke.leveranseDetalj")} text={pakke.leveranseDetalj} />
+          {pakke.praktiskAnvendelse ? (
+            <PakkeFelt label={tr("cons.pakke.praktiskAnvendelse")} text={pakke.praktiskAnvendelse} />
+          ) : null}
           {pakke.pilotStotte && <PakkePilotStotteBlokk stotte={pakke.pilotStotte} />}
           {pakke.fagArtikkelLink ? (
             <FagArtikkelLinkBlokk href={pakke.fagArtikkelLink.href} label={pakke.fagArtikkelLink.label} />
