@@ -342,6 +342,28 @@ export const FAGINNLEGG_AUTHORITY: Record<string, FaginnleggAuthorityEntry> = {
       { href: "/consulting", label: { no: "Consulting", en: "Consulting" } },
     ],
   },
+  "de-beste-kommersielle-grepene-2026-09": {
+    slug: "de-beste-kommersielle-grepene-2026-09",
+    cluster: "kommersiell-salg",
+    role: "secondary-support",
+    ownedIntents: [
+      "salgsutvikling coaching",
+      "proaktiv kundeutvikling",
+      "feltcoaching salg",
+      "AI salgstrening",
+      "kommersiell transformasjon",
+    ],
+    coreSupportSlugs: ["salgsledelse-i-praksis-2026-08"],
+    secondarySupportSlugs: ["predictive-sales-coach-01"],
+    relevantVidere: [
+      articleLink("salgsledelse-i-praksis-2026-08", {
+        no: "Les også: Salgsledelse i praksis",
+        en: "Read also: Sales leadership in practice",
+      }),
+      { href: "https://pscv6-744893320985.europe-west2.run.app/", label: { no: "The Predictive Sales Coach (PSC)", en: "The Predictive Sales Coach (PSC)" } },
+      { href: "/consulting", label: { no: "Se consulting-tilbud", en: "See consulting offerings" } },
+    ],
+  },
 };
 
 export const CORNERSTONE_SLUGS: readonly string[] = Object.values(FAGINNLEGG_AUTHORITY)
@@ -376,6 +398,7 @@ export const LESESTI_ARTICLE_IDS = {
     "ai-needs-first-tannklinikk-case-01",
   ],
   ledereKommersielle: [
+    "de-beste-kommersielle-grepene-2026-09",
     "fra-data-til-beslutning-2026-09",
     "salgsledelse-i-praksis-2026-08",
     "crm-mer-enn-et-systemprosjekt-2026-09",

@@ -26,6 +26,10 @@ const LESESTI_DISPLAY_TITLES: Record<LeseStiKey, Record<string, LocalizedDisplay
     },
   },
   ledereKommersielle: {
+    "de-beste-kommersielle-grepene-2026-09": {
+      no: "De beste kommersielle grepene tas før du må ta dem – salgsutvikling, coaching og AI-trening",
+      en: "The best commercial moves are made before you have to – sales development, coaching and AI training",
+    },
     "fra-data-til-beslutning-2026-09": {
       no: "Fra data til beslutning – fra signaler til handling",
       en: "From data to decision – from signals to action",
