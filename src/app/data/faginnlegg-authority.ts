@@ -342,6 +342,29 @@ export const FAGINNLEGG_AUTHORITY: Record<string, FaginnleggAuthorityEntry> = {
       { href: "/consulting", label: { no: "Consulting", en: "Consulting" } },
     ],
   },
+  "obf-2026-human-edge-2026-09": {
+    slug: "obf-2026-human-edge-2026-09",
+    cluster: "strategi-endring",
+    role: "secondary-support",
+    ownedIntents: [
+      "Oslo Business Forum 2026",
+      "THE HUMAN EDGE",
+      "AI hype til forretningsverdi",
+      "lederrolle og AI",
+    ],
+    coreSupportSlugs: ["fra-strategi-til-gjennomforing-2026-09", "obf-2025-big-shift-01"],
+    relevantVidere: [
+      articleLink("obf-2025-big-shift-01", {
+        no: "Les også: OBF 2025 – The Big Shift",
+        en: "Read also: OBF 2025 – The Big Shift",
+      }),
+      articleLink("fra-strategi-til-gjennomforing-2026-09", {
+        no: "Les også: Fra strategi til gjennomføring",
+        en: "Read also: From strategy to execution",
+      }),
+      { href: "/consulting", label: { no: "Se consulting-tilbud", en: "See consulting offerings" } },
+    ],
+  },
   "de-beste-kommersielle-grepene-2026-09": {
     slug: "de-beste-kommersielle-grepene-2026-09",
     cluster: "kommersiell-salg",
