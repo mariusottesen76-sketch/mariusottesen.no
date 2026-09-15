@@ -348,7 +348,7 @@ export const FAGINNLEGG_AUTHORITY: Record<string, FaginnleggAuthorityEntry> = {
     role: "secondary-support",
     ownedIntents: [
       "Oslo Business Forum 2026",
-      "THE HUMAN EDGE",
+      "The Human Edge",
       "AI hype til forretningsverdi",
       "lederrolle og AI",
     ],

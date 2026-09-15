@@ -6,20 +6,20 @@ const linkClass =
 export const obf2026HumanEdge: FaginnleggInnlegg = {
   id: "obf-2026-human-edge-2026-09",
   tittel: {
-    no: "Oslo Business Forum 2026 – THE HUMAN EDGE",
-    en: "Oslo Business Forum 2026 – THE HUMAN EDGE",
+    no: "Oslo Business Forum 2026 – The Human Edge",
+    en: "Oslo Business Forum 2026 – The Human Edge",
   },
   undertittel: {
     no: "Kommersiell ledelse, transformasjon og praktisk AI – forventninger før OBF",
     en: "Commercial leadership, transformation and practical AI – expectations ahead of OBF",
   },
   teaser: {
-    no: "Oslo Business Forum 2026 starter med temaet THE HUMAN EDGE. Jeg gleder meg til diskusjoner om AI, verdiskaping, prestasjonskultur og hvordan lederrollen endres.",
-    en: "Oslo Business Forum 2026 opens with the theme THE HUMAN EDGE. I look forward to discussions on AI, value creation, performance culture and how the leadership role is changing.",
+    no: "Oslo Business Forum 2026 starter med temaet The Human Edge. Jeg gleder meg til diskusjoner om AI, verdiskaping, prestasjonskultur og hvordan lederrollen endres.",
+    en: "Oslo Business Forum 2026 opens with the theme The Human Edge. I look forward to discussions on AI, value creation, performance culture and how the leadership role is changing.",
   },
   metaDescription: {
-    no: "Forventninger til Oslo Business Forum 2026 og temaet THE HUMAN EDGE – kommersiell ledelse, transformasjon, praktisk AI og menneskelig konkurransefortrinn.",
-    en: "Expectations for Oslo Business Forum 2026 and the theme THE HUMAN EDGE – commercial leadership, transformation, practical AI and human competitive advantage.",
+    no: "Forventninger til Oslo Business Forum 2026 og temaet The Human Edge – kommersiell ledelse, transformasjon, praktisk AI og menneskelig konkurransefortrinn.",
+    en: "Expectations for Oslo Business Forum 2026 and the theme The Human Edge – commercial leadership, transformation, practical AI and human competitive advantage.",
   },
   dato: "2026-09-15",
   visningsDato: "15.09.26",
@@ -27,14 +27,14 @@ export const obf2026HumanEdge: FaginnleggInnlegg = {
   bildeUrl: "/images/obforum-marius.jfif",
   bildeModalBred: true,
   bildeAlt: {
-    no: "Marius Ottesen – Oslo Business Forum 2026, THE HUMAN EDGE.",
-    en: "Marius Ottesen – Oslo Business Forum 2026, THE HUMAN EDGE.",
+    no: "Marius Ottesen – Oslo Business Forum 2026, The Human Edge.",
+    en: "Marius Ottesen – Oslo Business Forum 2026, The Human Edge.",
   },
   link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
   innhold: {
     no: `Oslo Business Forum 2026 starter i morgen, og jeg gleder meg til to dager med faglig påfyll, nye perspektiver og gode samtaler.
 
-Årets tema, <strong>THE HUMAN EDGE</strong>, treffer svært godt det jeg selv jobber med akkurat nå.
+Årets tema, <strong>The Human Edge</strong>, treffer svært godt det jeg selv jobber med akkurat nå.
 
 Gjennom eget selskap, <a href="/consulting" class="${linkClass}">Marius Ottesen Consulting</a>, jobber jeg i skjæringspunktet mellom kommersiell ledelse, transformasjon og praktisk AI. En viktig del av dette handler nettopp om verdiskaping, og derfor ser jeg særlig frem til diskusjonene om hvordan virksomheter kan gå fra AI-hype til reell forretningsverdi.
 
@@ -51,7 +51,7 @@ Er du også på OBF, send meg gjerne en melding. Det hadde vært hyggelig å ta 
 <a href="https://www.obforum.com/" target="_blank" rel="noopener noreferrer" class="${linkClass}">oslobusinessforum.com</a>`,
     en: `Oslo Business Forum 2026 starts tomorrow, and I look forward to two days of professional input, new perspectives and good conversations.
 
-This year's theme, <strong>THE HUMAN EDGE</strong>, aligns very well with what I am working on right now.
+This year's theme, <strong>The Human Edge</strong>, aligns very well with what I am working on right now.
 
 Through my own company, <a href="/en/consulting" class="${linkClass}">Marius Ottesen Consulting</a>, I work at the intersection of commercial leadership, transformation and practical AI. An important part of this is precisely about value creation, which is why I especially look forward to the discussions on how companies can move from AI hype to real business value.
 
