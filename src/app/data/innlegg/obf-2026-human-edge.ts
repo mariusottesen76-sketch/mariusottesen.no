@@ -24,7 +24,7 @@ export const obf2026HumanEdge: FaginnleggInnlegg = {
   dato: "2026-09-15",
   visningsDato: "15.09.26",
   kategori: "Strategi og virksomhetsutvikling",
-  bildeUrl: "/images/obforum-marius.png",
+  bildeUrl: "/images/obforum-marius.jfif",
   bildeModalBred: true,
   bildeAlt: {
     no: "Marius Ottesen – Oslo Business Forum 2026, THE HUMAN EDGE.",
