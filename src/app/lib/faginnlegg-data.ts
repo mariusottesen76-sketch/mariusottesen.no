@@ -3,6 +3,7 @@ import { crmMerEnnEtSystemprosjekt } from "../data/innlegg/crm-mer-enn-et-system
 import { fraStrategiTilGjennomforing } from "../data/innlegg/fra-strategi-til-gjennomforing";
 import { fraDataTilBeslutning } from "../data/innlegg/fra-data-til-beslutning";
 import { deBesteKommersielleGrepene } from "../data/innlegg/de-beste-kommersielle-grepene";
+import { obf2026Dag1 } from "../data/innlegg/obf-2026-dag-1";
 import { obf2026HumanEdge } from "../data/innlegg/obf-2026-human-edge";
 import { salgsledelseIPraksis } from "../data/innlegg/salgsledelse-i-praksis";
 import { tennisLedelse } from "../data/innlegg/tennis-ledelse";
@@ -34,7 +35,7 @@ function sortByDateDesc(a: FaginnleggInnlegg, b: FaginnleggInnlegg): number {
 }
 
 export function getAlleFaginnlegg(): FaginnleggInnlegg[] {
-  return ([...tennisLedelse, ...aiGovernance, obf2026HumanEdge, deBesteKommersielleGrepene, fraDataTilBeslutning, salgsledelseIPraksis, crmMerEnnEtSystemprosjekt, fraStrategiTilGjennomforing] as FaginnleggInnlegg[]).sort(sortByDateDesc);
+  return ([...tennisLedelse, ...aiGovernance, obf2026Dag1, obf2026HumanEdge, deBesteKommersielleGrepene, fraDataTilBeslutning, salgsledelseIPraksis, crmMerEnnEtSystemprosjekt, fraStrategiTilGjennomforing] as FaginnleggInnlegg[]).sort(sortByDateDesc);
 }
 
 export function getAllFaginnleggSlugs(): string[] {
