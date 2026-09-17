@@ -35,7 +35,7 @@ export const obf2026Dag1: FaginnleggInnlegg = {
   innhold: {
     no: `Jo mer teknologi vi får, desto mer betyr ledelse.
 
-Det er min sterkeste refleksjon etter dag 1 på <a href="/faginnlegg/obf-2026-human-edge-2026-09" class="${linkClass}">Oslo Business Forum 2026</a>.
+Det er min sterkeste refleksjon etter dag 1 på <a href="https://www.obforum.com/" target="_blank" rel="noopener noreferrer" class="${linkClass}">Oslo Business Forum 2026</a>.
 
 Årets tema, <strong>The Human Edge</strong>, var treffende.
 
@@ -57,7 +57,7 @@ Strategi og teknologi skaper først verdi når de oversettes til nye beslutninge
 
 Og konferanser handler heldigvis om mer enn det som skjer på scenen.
 
-Ekstra hyggelig var det å møte igjen Heidi Omberg, som jeg satt i kollokviegruppe med under Strategisk ledelse på Master of Management på BI for rundt tolv år siden. Også hyggelig å treffe «OBF-generalen» Christoffer Omberg igjen, sammen med flere av kollegaene hans i Oslo Business Forum. Det er en dyktig gjeng!
+Ekstra hyggelig var det å møte igjen Heidi Omberg, som jeg satt i kollokviegruppe med under Strategisk ledelse på Master of Management på BI for rundt tolv år siden. Også hyggelig å treffe «OBF-generalen» Christoffer Omberg igjen, sammen med flere av kollegaene hans i <a href="https://www.obforum.com/" target="_blank" rel="noopener noreferrer" class="${linkClass}">Oslo Business Forum</a>. Det er en dyktig gjeng!
 
 Etter dag 1 sitter jeg igjen med mye energi og én tydelig tanke:
 
@@ -65,10 +65,12 @@ Etter dag 1 sitter jeg igjen med mye energi og én tydelig tanke:
 
 Det øker kravene til hvordan vi leder, organiserer og gjennomfører endring.
 
-Og jeg ser allerede frem til dag 2, som om mulig blir enda mer spennende med mer AI, transformasjon og verdiskaping på agendaen.`,
+Og jeg ser allerede frem til dag 2, som om mulig blir enda mer spennende med mer AI, transformasjon og verdiskaping på agendaen.
+
+<a href="https://www.obforum.com/" target="_blank" rel="noopener noreferrer" class="${linkClass}">oslobusinessforum.com</a>`,
     en: `The more technology we get, the more leadership matters.
 
-That is my strongest reflection after day 1 at the <a href="/en/articles/obf-2026-human-edge-2026-09" class="${linkClass}">Oslo Business Forum 2026</a>.
+That is my strongest reflection after day 1 at the <a href="https://www.obforum.com/" target="_blank" rel="noopener noreferrer" class="${linkClass}">Oslo Business Forum 2026</a>.
 
 This year's theme, <strong>The Human Edge</strong>, was spot on.
 
@@ -90,7 +92,7 @@ Strategy and technology only create value when they are translated into new deci
 
 And fortunately, conferences are about more than what happens on stage.
 
-It was especially nice to meet Heidi Omberg again, who I was in a colloquium group with during Strategic Leadership on the Master of Management at BI around twelve years ago. Also great to see «OBF general» Christoffer Omberg again, together with several of his colleagues at Oslo Business Forum. A skilled team!
+It was especially nice to meet Heidi Omberg again, who I was in a colloquium group with during Strategic Leadership on the Master of Management at BI around twelve years ago. Also great to see «OBF general» Christoffer Omberg again, together with several of his colleagues at <a href="https://www.obforum.com/" target="_blank" rel="noopener noreferrer" class="${linkClass}">Oslo Business Forum</a>. A skilled team!
 
 After day 1 I am left with a lot of energy and one clear thought:
 
@@ -98,6 +100,8 @@ After day 1 I am left with a lot of energy and one clear thought:
 
 It raises the bar for how we lead, organise and execute change.
 
-And I am already looking forward to day 2, which if possible will be even more exciting with more AI, transformation and value creation on the agenda.`,
+And I am already looking forward to day 2, which if possible will be even more exciting with more AI, transformation and value creation on the agenda.
+
+<a href="https://www.obforum.com/" target="_blank" rel="noopener noreferrer" class="${linkClass}">oslobusinessforum.com</a>`,
   },
 };

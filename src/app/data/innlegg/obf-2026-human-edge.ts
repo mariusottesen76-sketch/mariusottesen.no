@@ -33,7 +33,7 @@ export const obf2026HumanEdge: FaginnleggInnlegg = {
   },
   link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
   innhold: {
-    no: `Oslo Business Forum 2026 starter i morgen, og jeg gleder meg til to dager med faglig påfyll, nye perspektiver og gode samtaler.
+    no: `<a href="https://www.obforum.com/" target="_blank" rel="noopener noreferrer" class="${linkClass}">Oslo Business Forum 2026</a> starter i morgen, og jeg gleder meg til to dager med faglig påfyll, nye perspektiver og gode samtaler.
 
 Årets tema, <strong>The Human Edge</strong>, treffer svært godt det jeg selv jobber med akkurat nå.
 
@@ -50,7 +50,7 @@ Så får vi se hva OBF 2026 setter i gang denne gangen 😊
 Er du også på OBF, send meg gjerne en melding. Det hadde vært hyggelig å ta en kaffe og utveksle noen perspektiver. ☕
 
 <a href="https://www.obforum.com/" target="_blank" rel="noopener noreferrer" class="${linkClass}">oslobusinessforum.com</a>`,
-    en: `Oslo Business Forum 2026 starts tomorrow, and I look forward to two days of professional input, new perspectives and good conversations.
+    en: `<a href="https://www.obforum.com/" target="_blank" rel="noopener noreferrer" class="${linkClass}">Oslo Business Forum 2026</a> starts tomorrow, and I look forward to two days of professional input, new perspectives and good conversations.
 
 This year's theme, <strong>The Human Edge</strong>, aligns very well with what I am working on right now.
 

@@ -35,7 +35,7 @@ export const obf2026Dag2: FaginnleggInnlegg = {
   innhold: {
     no: `Når kapasiteten øker, blir dømmekraften enda viktigere.
 
-Det er kanskje min tydeligste refleksjon etter dag 2 på <a href="/faginnlegg/obf-2026-dag-1-2026-09" class="${linkClass}">Oslo Business Forum 2026</a>.
+Det er kanskje min tydeligste refleksjon etter dag 2 på <a href="https://www.obforum.com/" target="_blank" rel="noopener noreferrer" class="${linkClass}">Oslo Business Forum 2026</a>.
 
 Ståle Solbakken ga et enkelt, men sterkt bilde på lagprestasjon. De beste spillerne har også et ansvar for å gjøre de rundt seg bedre. Hvis stjernen gjør den nye spilleren utrygg, får han heller ikke den gode pasningen han selv er avhengig av.
 
@@ -51,7 +51,7 @@ Teknologien øker kapasiteten vår til å analysere, produsere og handle. Men me
 
 Steven Van Belleghem flyttet samtidig oppmerksomheten mot kunden. Noe av det som skaper sterkest lojalitet er nettopp det som er vanskeligst å måle: den lille handlingen som viser at noen faktisk har sett deg.
 
-Oslo Business Forum er selv et godt eksempel på dette gjennom detaljene i deltakeropplevelsen.
+<a href="https://www.obforum.com/" target="_blank" rel="noopener noreferrer" class="${linkClass}">Oslo Business Forum</a> er selv et godt eksempel på dette gjennom detaljene i deltakeropplevelsen.
 
 Shawn Kanungo utfordret oss samtidig til ikke bare å bruke ny teknologi til å effektivisere det vi allerede gjør, men også spørre om vi burde bygge noe annerledes.
 
@@ -73,10 +73,12 @@ Derfor oppleves også overgangen fra <strong>The Human Edge</strong> til <strong
 
 Når mulighetene, informasjonen og støyen øker, blir evnen til å se klart og velge riktig enda viktigere.
 
-Jeg ser allerede frem til neste år. Med Oprah Winfrey annonsert på scenen ligger listen heller ikke akkurat lavt. 🤩`,
+Jeg ser allerede frem til neste år. Med Oprah Winfrey annonsert på scenen ligger listen heller ikke akkurat lavt. 🤩
+
+<a href="https://www.obforum.com/" target="_blank" rel="noopener noreferrer" class="${linkClass}">oslobusinessforum.com</a>`,
     en: `When capacity increases, judgement becomes even more important.
 
-That is perhaps my clearest reflection after day 2 at the <a href="/en/articles/obf-2026-dag-1-2026-09" class="${linkClass}">Oslo Business Forum 2026</a>.
+That is perhaps my clearest reflection after day 2 at the <a href="https://www.obforum.com/" target="_blank" rel="noopener noreferrer" class="${linkClass}">Oslo Business Forum 2026</a>.
 
 Ståle Solbakken gave a simple but powerful picture of team performance. The best players also have a responsibility to make those around them better. If the star makes the new player insecure, he will not get the good pass he himself depends on either.
 
@@ -92,7 +94,7 @@ Technology increases our capacity to analyse, produce and act. But more capacity
 
 Steven Van Belleghem at the same time shifted attention towards the customer. Some of what creates the strongest loyalty is precisely what is hardest to measure: the small action that shows someone has actually seen you.
 
-Oslo Business Forum is itself a good example of this through the details in the participant experience.
+<a href="https://www.obforum.com/" target="_blank" rel="noopener noreferrer" class="${linkClass}">Oslo Business Forum</a> is itself a good example of this through the details in the participant experience.
 
 Shawn Kanungo at the same time challenged us not only to use new technology to make what we already do more efficient, but also to ask whether we should build something different.
 
@@ -114,6 +116,8 @@ That is why the transition from <strong>The Human Edge</strong> to <strong>Clari
 
 When opportunities, information and noise increase, the ability to see clearly and choose correctly becomes even more important.
 
-I am already looking forward to next year. With Oprah Winfrey announced on stage, the bar is certainly not set low. 🤩`,
+I am already looking forward to next year. With Oprah Winfrey announced on stage, the bar is certainly not set low. 🤩
+
+<a href="https://www.obforum.com/" target="_blank" rel="noopener noreferrer" class="${linkClass}">oslobusinessforum.com</a>`,
   },
 };
