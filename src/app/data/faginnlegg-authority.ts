@@ -342,6 +342,30 @@ export const FAGINNLEGG_AUTHORITY: Record<string, FaginnleggAuthorityEntry> = {
       { href: "/consulting", label: { no: "Consulting", en: "Consulting" } },
     ],
   },
+  "obf-2026-dag-2-2026-09": {
+    slug: "obf-2026-dag-2-2026-09",
+    cluster: "strategi-endring",
+    role: "secondary-support",
+    ownedIntents: [
+      "OBF 2026 dag 2",
+      "dømmekraft og kapasitet",
+      "Ståle Solbakken lagprestasjon",
+      "AI og beslutninger",
+      "OBF 2027 Clarity",
+    ],
+    coreSupportSlugs: ["obf-2026-dag-1-2026-09", "obf-2026-human-edge-2026-09"],
+    relevantVidere: [
+      articleLink("obf-2026-dag-1-2026-09", {
+        no: "Les også: Refleksjoner fra dag 1 på OBF 2026",
+        en: "Read also: Reflections from day 1 at OBF 2026",
+      }),
+      articleLink("fra-strategi-til-gjennomforing-2026-09", {
+        no: "Les også: Fra strategi til gjennomføring",
+        en: "Read also: From strategy to execution",
+      }),
+      { href: "/consulting", label: { no: "Se consulting-tilbud", en: "See consulting offerings" } },
+    ],
+  },
   "obf-2026-dag-1-2026-09": {
     slug: "obf-2026-dag-1-2026-09",
     cluster: "strategi-endring",
@@ -353,8 +377,12 @@ export const FAGINNLEGG_AUTHORITY: Record<string, FaginnleggAuthorityEntry> = {
       "teknologi og ledelse",
       "transformasjon og AI",
     ],
-    coreSupportSlugs: ["obf-2026-human-edge-2026-09", "fra-strategi-til-gjennomforing-2026-09"],
+    coreSupportSlugs: ["obf-2026-dag-2-2026-09", "obf-2026-human-edge-2026-09", "fra-strategi-til-gjennomforing-2026-09"],
     relevantVidere: [
+      articleLink("obf-2026-dag-2-2026-09", {
+        no: "Les også: Refleksjoner fra dag 2 på OBF 2026",
+        en: "Read also: Reflections from day 2 at OBF 2026",
+      }),
       articleLink("obf-2026-human-edge-2026-09", {
         no: "Les også: OBF 2026 – The Human Edge (forventninger)",
         en: "Read also: OBF 2026 – The Human Edge (expectations)",
@@ -376,8 +404,12 @@ export const FAGINNLEGG_AUTHORITY: Record<string, FaginnleggAuthorityEntry> = {
       "AI hype til forretningsverdi",
       "lederrolle og AI",
     ],
-    coreSupportSlugs: ["obf-2026-dag-1-2026-09", "fra-strategi-til-gjennomforing-2026-09", "obf-2025-big-shift-01"],
+    coreSupportSlugs: ["obf-2026-dag-2-2026-09", "obf-2026-dag-1-2026-09", "fra-strategi-til-gjennomforing-2026-09", "obf-2025-big-shift-01"],
     relevantVidere: [
+      articleLink("obf-2026-dag-2-2026-09", {
+        no: "Les også: Refleksjoner fra dag 2 på OBF 2026",
+        en: "Read also: Reflections from day 2 at OBF 2026",
+      }),
       articleLink("obf-2026-dag-1-2026-09", {
         no: "Les også: Refleksjoner fra dag 1 på OBF 2026",
         en: "Read also: Reflections from day 1 at OBF 2026",
