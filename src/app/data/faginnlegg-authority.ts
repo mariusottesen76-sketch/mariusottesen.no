@@ -342,6 +342,29 @@ export const FAGINNLEGG_AUTHORITY: Record<string, FaginnleggAuthorityEntry> = {
       { href: "/consulting", label: { no: "Consulting", en: "Consulting" } },
     ],
   },
+  "obf-2026-oppsummering-2026-09": {
+    slug: "obf-2026-oppsummering-2026-09",
+    cluster: "strategi-endring",
+    role: "secondary-support",
+    ownedIntents: [
+      "OBF 2026 oppsummering",
+      "The Human Edge oppsummering",
+      "dømmekraft prioritering AI",
+      "OBF 2027 Clarity",
+    ],
+    coreSupportSlugs: ["obf-2026-dag-2-2026-09", "obf-2026-dag-1-2026-09", "obf-2026-human-edge-2026-09"],
+    relevantVidere: [
+      articleLink("obf-2026-dag-2-2026-09", {
+        no: "Les også: Refleksjoner fra dag 2 på OBF 2026",
+        en: "Read also: Reflections from day 2 at OBF 2026",
+      }),
+      articleLink("obf-2026-dag-1-2026-09", {
+        no: "Les også: Refleksjoner fra dag 1 på OBF 2026",
+        en: "Read also: Reflections from day 1 at OBF 2026",
+      }),
+      { href: "https://www.obforum.com/", label: { no: "Oslo Business Forum", en: "Oslo Business Forum" } },
+    ],
+  },
   "obf-2026-dag-2-2026-09": {
     slug: "obf-2026-dag-2-2026-09",
     cluster: "strategi-endring",
@@ -353,8 +376,12 @@ export const FAGINNLEGG_AUTHORITY: Record<string, FaginnleggAuthorityEntry> = {
       "AI og beslutninger",
       "OBF 2027 Clarity",
     ],
-    coreSupportSlugs: ["obf-2026-dag-1-2026-09", "obf-2026-human-edge-2026-09"],
+    coreSupportSlugs: ["obf-2026-oppsummering-2026-09", "obf-2026-dag-1-2026-09", "obf-2026-human-edge-2026-09"],
     relevantVidere: [
+      articleLink("obf-2026-oppsummering-2026-09", {
+        no: "Les også: Når scenelyset slukkes – oppsummering OBF 2026",
+        en: "Read also: When the stage lights go out – OBF 2026 summary",
+      }),
       articleLink("obf-2026-dag-1-2026-09", {
         no: "Les også: Refleksjoner fra dag 1 på OBF 2026",
         en: "Read also: Reflections from day 1 at OBF 2026",
@@ -377,8 +404,12 @@ export const FAGINNLEGG_AUTHORITY: Record<string, FaginnleggAuthorityEntry> = {
       "teknologi og ledelse",
       "transformasjon og AI",
     ],
-    coreSupportSlugs: ["obf-2026-dag-2-2026-09", "obf-2026-human-edge-2026-09", "fra-strategi-til-gjennomforing-2026-09"],
+    coreSupportSlugs: ["obf-2026-oppsummering-2026-09", "obf-2026-dag-2-2026-09", "obf-2026-human-edge-2026-09", "fra-strategi-til-gjennomforing-2026-09"],
     relevantVidere: [
+      articleLink("obf-2026-oppsummering-2026-09", {
+        no: "Les også: Når scenelyset slukkes – oppsummering OBF 2026",
+        en: "Read also: When the stage lights go out – OBF 2026 summary",
+      }),
       articleLink("obf-2026-dag-2-2026-09", {
         no: "Les også: Refleksjoner fra dag 2 på OBF 2026",
         en: "Read also: Reflections from day 2 at OBF 2026",
@@ -404,8 +435,12 @@ export const FAGINNLEGG_AUTHORITY: Record<string, FaginnleggAuthorityEntry> = {
       "AI hype til forretningsverdi",
       "lederrolle og AI",
     ],
-    coreSupportSlugs: ["obf-2026-dag-2-2026-09", "obf-2026-dag-1-2026-09", "fra-strategi-til-gjennomforing-2026-09", "obf-2025-big-shift-01"],
+    coreSupportSlugs: ["obf-2026-oppsummering-2026-09", "obf-2026-dag-2-2026-09", "obf-2026-dag-1-2026-09", "fra-strategi-til-gjennomforing-2026-09", "obf-2025-big-shift-01"],
     relevantVidere: [
+      articleLink("obf-2026-oppsummering-2026-09", {
+        no: "Les også: Når scenelyset slukkes – oppsummering OBF 2026",
+        en: "Read also: When the stage lights go out – OBF 2026 summary",
+      }),
       articleLink("obf-2026-dag-2-2026-09", {
         no: "Les også: Refleksjoner fra dag 2 på OBF 2026",
         en: "Read also: Reflections from day 2 at OBF 2026",
