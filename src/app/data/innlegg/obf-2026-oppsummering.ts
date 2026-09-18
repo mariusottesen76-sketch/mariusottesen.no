@@ -45,13 +45,13 @@ Ståle Solbakken ga kanskje bildet som traff meg sterkest. Han beskrev hvordan e
 
 De beste er avhengige av at de andre lykkes. Derfor har de beste også et større ansvar for å gjøre de andre gode.
 
-Patty McCords «Context, not control» og Gary Hamels skifte fra «human beings are resources» til «human beings are resourceful» traff noe av det samme.
+Patty McCords <em>«Context, not control»</em> og Gary Hamels skifte fra <em>«human beings are resources»</em> til <em>«human beings are resourceful»</em> traff noe av det samme.
 
 Mennesker trenger retning og tydelige forventninger, men også tillit, handlingsrom og ansvar.
 
 Når presset øker, trenger vi kanskje mindre kompleksitet, ikke mer. Solbakkens budskap ble redusert til:
 
-«Spill til mannen i den røde drakten»
+<em>«Spill til mannen i den røde drakten»</em>
 
 Hva er det ene vi må lykkes med akkurat nå?
 
@@ -59,7 +59,7 @@ Det spørsmålet blir ikke mindre viktig med AI. 57 % svarte at AI gjør at de b
 
 Snorre Kjesbu oppsummerte noe av motgiften i tre ord:
 
-«Judgment. Curiosity. Focus.»
+<em>«Judgment. Curiosity. Focus.»</em>
 
 Mer kapasitet gjør prioritering viktigere.
 
@@ -69,11 +69,11 @@ Jeg prøver selv å bli bedre til å teste tidligere, lære raskere og utfordre 
 
 Steven Van Belleghem minnet samtidig om at sterk kundeverdi ikke alltid skapes av det som er lettest å måle. I en verden der AI gjør convenience og personalisering enklere, blir relasjon, omtanke og opplevd verdi enda viktigere.
 
-«Is what we can measure most easily also what creates the most value?»
+<em>«Is what we can measure most easily also what creates the most value?»</em>
 
 Det gjelder ikke bare kunder. Også medarbeidere og samarbeidspartnere husker hvordan vi fikk dem til å føle seg.
 
-Seth Godins «We're not sitting in traffic. We are traffic.» ble derfor også sittende igjen.
+Seth Godins <em>«We're not sitting in traffic. We are traffic.»</em> ble derfor også sittende igjen.
 
 Det er lett å peke på markedet, teknologien, organisasjonen eller andre. Men jeg er også en del av systemet jeg ønsker å påvirke.
 
@@ -96,13 +96,13 @@ Ståle Solbakken perhaps gave the image that hit me hardest. He described how a 
 
 The best depend on others succeeding. That is why the best also have a greater responsibility to make others good.
 
-Patty McCord's «Context, not control» and Gary Hamel's shift from «human beings are resources» to «human beings are resourceful» touched on something similar.
+Patty McCord's <em>«Context, not control»</em> and Gary Hamel's shift from <em>«human beings are resources»</em> to <em>«human beings are resourceful»</em> touched on something similar.
 
 People need direction and clear expectations, but also trust, room to act and accountability.
 
 When pressure increases, we may need less complexity, not more. Solbakken's message was reduced to:
 
-«Play to the man in the red shirt»
+<em>«Play to the man in the red shirt»</em>
 
 What is the one thing we must succeed with right now?
 
@@ -110,7 +110,7 @@ That question does not become less important with AI. 57% answered that AI makes
 
 Snorre Kjesbu summarised part of the antidote in three words:
 
-«Judgment. Curiosity. Focus.»
+<em>«Judgment. Curiosity. Focus.»</em>
 
 More capacity makes prioritisation more important.
 
@@ -120,11 +120,11 @@ I am trying to get better at testing earlier, learning faster and challenging my
 
 Steven Van Belleghem at the same time reminded us that strong customer value is not always created by what is easiest to measure. In a world where AI makes convenience and personalisation easier, relationship, care and perceived value become even more important.
 
-«Is what we can measure most easily also what creates the most value?»
+<em>«Is what we can measure most easily also what creates the most value?»</em>
 
 That applies not only to customers. Employees and partners also remember how we made them feel.
 
-Seth Godin's «We're not sitting in traffic. We are traffic.» therefore also stayed with me.
+Seth Godin's <em>«We're not sitting in traffic. We are traffic.»</em> therefore also stayed with me.
 
 It is easy to point to the market, technology, the organisation or others. But I am also part of the system I want to influence.
 
