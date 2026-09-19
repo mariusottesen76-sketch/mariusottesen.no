@@ -39,8 +39,8 @@ export const mariusottesenNettsideV2: ProjectV2Record = {
       en: "A leadership profile with extensive experience, documented results, articles and own AI projects easily becomes fragmented across LinkedIn, CV, presentations and one-off demos — giving an incomplete picture of both commercial and operational leadership and practical AI understanding.",
     },
     built: {
-      no: "Publisert nettside med norsk og engelsk innhold: lederprofil, erfaring, resultater, referanser, faginnlegg, AI-prosjekter, consulting, CV og kontakt — inkludert tilgangsstyrte demonstratorer, landingssider for utvalgte løsninger og case-side for Row Solutions (rowsolutions.no) i porteføljen.",
-      en: "Published website with Norwegian and English content: leadership profile, experience, results, references, articles, AI projects, consulting, CV and contact — including access-controlled demonstrators, landing pages for selected solutions and a case page for Row Solutions (rowsolutions.no) in the portfolio.",
+      no: "Publisert nettside med norsk og engelsk innhold: lederprofil, erfaring, resultater, referanser, faginnlegg, AI-prosjekter, consulting, CV og kontakt — inkludert tilgangsstyrte demonstratorer, landingssider for utvalgte løsninger (blant annet Bilagsassistent), og case-side for Row Solutions (rowsolutions.no) i porteføljen.",
+      en: "Published website with Norwegian and English content: leadership profile, experience, results, references, articles, AI projects, consulting, CV and contact — including access-controlled demonstrators, landing pages for selected solutions (including Receipt Assistant), and a case page for Row Solutions (rowsolutions.no) in the portfolio.",
     },
     how: {
       no: "Nettsiden fungerer som en samlet profesjonell flate: først profil og dokumentert leveranseevne, deretter faglig dybde gjennom innlegg, og til slutt konkrete AI-prosjekter og demonstratorer. Utviklet med Next.js, Vercel og AI-assistert arbeidsflyt i Cursor.",

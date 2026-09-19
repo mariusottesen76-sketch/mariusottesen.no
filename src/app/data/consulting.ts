@@ -1,4 +1,5 @@
 import { Lang } from "../LanguageContext";
+import { BILAGSASSISTENT_PROSJEKT_PATH } from "../lib/bilagsassistent-brand";
 import { AI_READINESS_SCAN_PROSJEKT_PATH } from "../lib/ai-readiness-scan-brand";
 import { EVENT_PLANNER_PILOT_PATH } from "../lib/event-planner-brand";
 import { PSC_SHORT_DESCRIPTION } from "../lib/psc-brand";
@@ -90,6 +91,19 @@ const eventPlannerDemonstratorStotte: Record<Lang, PakkePilotStotte> = {
     tekst: "The project shows how planning, participants, tasks, programme and follow-up can be brought together in one workspace.",
     lenkeHref: EVENT_PLANNER_PILOT_PATH,
     lenkeLabel: "See Event Planner",
+  },
+};
+
+const bilagsassistentPortefoljeStotte: Record<Lang, PakkePilotStotte> = {
+  no: {
+    tekst: "Porteføljeprosjekt som viser hvordan innhenting, kontroll og registrering av kvitteringer og bilag kan struktureres med automatisering og menneskelig kontroll — funksjonell MVP uten offentlig demo.",
+    lenkeHref: BILAGSASSISTENT_PROSJEKT_PATH,
+    lenkeLabel: "Utforsk Bilagsassistent",
+  },
+  en: {
+    tekst: "Portfolio project showing how collection, review and registration of receipts and vouchers can be structured with automation and human review — functional MVP without a public demo.",
+    lenkeHref: BILAGSASSISTENT_PROSJEKT_PATH,
+    lenkeLabel: "Explore Receipt Assistant",
   },
 };
 
@@ -442,6 +456,11 @@ const metoder: Record<Lang, MetodeKomponent[]> = {
       pilotStotte: prosjektLenke(AI_READINESS_SCAN_PROSJEKT_PATH).no,
     },
     {
+      tittel: "Bilagsassistent",
+      beskrivelse: "Innhenting, kontroll og strukturering av kvitteringer og bilag for små virksomheter",
+      pilotStotte: bilagsassistentPortefoljeStotte.no,
+    },
+    {
       tittel: "AI Value Lab Oslo",
       beskrivelse: "Use case-prioritering, læring og praktisk AI-verdi",
     },
@@ -485,6 +504,11 @@ const metoder: Record<Lang, MetodeKomponent[]> = {
       tittel: "AI Readiness Scan",
       beskrivelse: "Maturity, prioritisation and a basis for AI work",
       pilotStotte: prosjektLenke(AI_READINESS_SCAN_PROSJEKT_PATH).en,
+    },
+    {
+      tittel: "Receipt Assistant",
+      beskrivelse: "Collection, review and structuring of receipts and vouchers for small businesses",
+      pilotStotte: bilagsassistentPortefoljeStotte.en,
     },
     {
       tittel: "AI Value Lab Oslo",

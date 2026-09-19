@@ -65,12 +65,12 @@ export const PROSJEKT_PORTFOLIO_KATEGORIER: ProsjektPortfolioKategori[] = [
     anchorId: "apper-og-prototyper",
     title: { no: "Apper og verktøy", en: "Apps and tools" },
     overviewDescription: {
-      no: "Funksjonelle AI-løsninger for salgstrening, teamutvikling, AI-beredskap, arrangementsplanlegging, operasjonell forbedring og kommersiell utvikling.",
-      en: "Functional AI solutions for sales training, team development, AI readiness, event planning, operational improvement and commercial development.",
+      no: "Funksjonelle AI-løsninger for salgstrening, teamutvikling, AI-beredskap, arrangementsplanlegging, bilagsflyt, operasjonell forbedring og kommersiell utvikling.",
+      en: "Functional AI solutions for sales training, team development, AI readiness, event planning, voucher workflows, operational improvement and commercial development.",
     },
     listDescription: {
-      no: "Funksjonelle og testbare løsninger som viser produktutvikling, brukerflyt og praktisk bruk av AI innen salg, teamutvikling, AI-beredskap, arrangementsplanlegging, drift og kommersiell forbedring.",
-      en: "Functional, testable solutions showing product development, user flow and practical use of AI in sales, team development, AI readiness, event planning, operations and commercial improvement.",
+      no: "Funksjonelle og testbare løsninger som viser produktutvikling, brukerflyt og praktisk bruk av AI innen salg, teamutvikling, AI-beredskap, arrangementsplanlegging, bilagsflyt, drift og kommersiell forbedring.",
+      en: "Functional, testable solutions showing product development, user flow and practical use of AI in sales, team development, AI readiness, event planning, voucher workflows, operations and commercial improvement.",
     },
     metadataLabel: { no: "App og verktøy", en: "App and tool" },
     projects: [

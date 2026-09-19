@@ -121,6 +121,7 @@ const produktLenker = [
   { label: "Event Planner", href: "/event-planner" },
   { label: "SMB Salgsflyt-sjekken", href: "/salgsflyt-sjekken" },
   { label: "AI Readiness Scan", href: "/ai-readiness-scan" },
+  { label: "Bilagsassistent", href: "/bilagsassistent" },
 ] as const;
 
 function PakkeTekst({ text }: { text: string }) {
