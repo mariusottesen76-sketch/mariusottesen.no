@@ -23,6 +23,7 @@ import { aiAssistertInnsiktsOgInnholdsagent } from "../../data/prosjekter/ai-ass
 import { aiArkitekturBeslutningsstotte } from "../../data/prosjekter/ai-arkitektur-beslutningsstotte";
 import { aiValueLabOslo } from "../../data/prosjekter/ai-value-lab-oslo";
 import { eventPlanner } from "../../data/prosjekter/event-planner";
+import { bilagsassistent } from "../../data/prosjekter/bilagsassistent";
 import type { ProsjektType } from "../../data/prosjekter/predictive-sales-coach";
 import {
   blockTitleClass,
@@ -90,6 +91,7 @@ const prosjektBySlug: Record<StrategicPlatformSlug, ProsjektType> = {
   "ai-arkitektur-beslutningsstotte": aiArkitekturBeslutningsstotte,
   "ai-value-lab-oslo": aiValueLabOslo,
   "event-planner": eventPlanner,
+  bilagsassistent,
 };
 
 function SectionHeading({ id, children }: { id: string; children: React.ReactNode }) {

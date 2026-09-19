@@ -31,6 +31,10 @@ const tekster: Record<string, Record<Lang, string>> = {
     no: "Event Planner er bygget rundt én arrangementsmodell med tilpasset kontekst for private og virksomhetsrettede arrangementer. Videre potensial inkluderer maler, leverandør- og tilbudsoppfølging, varsler, integrasjoner, selvbetjent RSVP og rapportering etter gjennomføring.",
     en: "Event Planner is built around one event model with adapted context for private and business events. Further potential includes templates, supplier and quote follow-up, alerts, integrations, self-service RSVP and post-event reporting.",
   },
+  "bilagsassistent-2026-09": {
+    no: "Bilagsassistent er bygget som funksjonell MVP for små virksomheter med flere dokumentkilder og virksomheter. Videre potensial inkluderer Outlook, mobilinnboks, regnskapssystemintegrasjoner og eksport — som mulig utvikling, ikke eksisterende funksjonalitet.",
+    en: "Receipt Assistant is built as a functional MVP for small businesses with multiple document sources and entities. Further potential includes Outlook, mobile inbox, accounting integrations and export — as possible development, not existing functionality.",
+  },
   "mariusottesen-no-2025": {
     no: "Nettsiden er bygget som min egen leder- og porteføljeplattform, men viser også at jeg kan bygge og publisere profesjonelle nettsider fra idé til live løsning. Modellen kan tilpasses andre profiler, selskaper, bransjer og formål — for eksempel employer branding, consulting-porteføljer, case-sider, produktlandingssider og integrerte demonstratorer.",
     en: "The website is built as my own leadership and portfolio platform, but also demonstrates that I can build and publish professional websites from idea to live solution. The model can be adapted for other profiles, organisations, industries and purposes — for example employer branding, consulting portfolios, case pages, product landing pages and integrated demonstrators.",

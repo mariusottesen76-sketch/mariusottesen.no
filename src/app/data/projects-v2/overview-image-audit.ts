@@ -1,5 +1,5 @@
 /**
- * Status for overview-bilder (1:3) på /prosjekter — alle 15 project_v2-prosjekter.
+ * Status for overview-bilder (1:3) på /prosjekter — alle project_v2-prosjekter.
  * Oppdateres ved QA — ingen automatisk generering av nye bilder.
  */
 export type OverviewImageAuditEntry = {
@@ -174,6 +174,16 @@ export const overviewImageAudit: OverviewImageAuditEntry[] = [
     recommendedDimensions: "341×1024 px (1:3, samme leveransestørrelse som øvrige prosjekter)",
     notes:
       "Midlertidig bilde fra read-only demo. Skal erstattes med nytt Nordic Growth Summit-screenshot som tydelig viser Samtaler, Budsjett og Reise & opphold i navigasjonen.",
+  },
+  {
+    projectId: "bilagsassistent-2026-09",
+    overviewImage: "/images/bilagsassistent-vertikal.png?v=20260919",
+    aspectNote: "Vertikalt 1:3 — prosjektkort på /prosjekter",
+    fit: "contain",
+    needsNewOverviewImage: false,
+    recommendedFilename: "bilagsassistent-vertikal.png",
+    recommendedDimensions: "1200×3600 px",
+    notes: "Oversiktsbilde for Bilagsassistent MVP.",
   },
   {
     projectId: "row-solutions-2026",

@@ -14,6 +14,7 @@ import { aiInnsiktsOgInnholdsmotorPlatform } from "./ai-innsikts-og-innholdsmoto
 import { aiArkitekturBeslutningsstottePlatform } from "./ai-arkitektur-beslutningsstotte-platform";
 import { aiValueLabOsloPlatform } from "./ai-value-lab-oslo-platform";
 import { eventPlannerPlatform } from "./event-planner-platform";
+import { bilagsassistentPlatform } from "./bilagsassistent-platform";
 
 export type { StrategicPlatformProject, StrategicPlatformSlug } from "./types";
 export { t } from "./i18n";
@@ -34,6 +35,7 @@ const strategicPlatforms: StrategicPlatformProject[] = [
   aiArkitekturBeslutningsstottePlatform,
   aiValueLabOsloPlatform,
   eventPlannerPlatform,
+  bilagsassistentPlatform,
 ];
 
 const bySlug = Object.fromEntries(

@@ -243,4 +243,18 @@ export const projectMigrationOverview: ProjectMigrationEntry[] = [
     editorialReviewRequired: false,
     recommendedMigrationOrder: 16,
   },
+  {
+    id: "bilagsassistent-2026-09",
+    name: { no: "Bilagsassistent", en: "Receipt Assistant" },
+    category: "app_prototype",
+    layoutVersion: "project_v2",
+    existingDetailPage: "/bilagsassistent",
+    recommendedDetailLevel: "full",
+    accessMode: "no_live_solution",
+    overviewImageFormat: "standard_1x3",
+    detailHeroMissing: false,
+    missingOverviewFields: [],
+    editorialReviewRequired: false,
+    recommendedMigrationOrder: 17,
+  },
 ];

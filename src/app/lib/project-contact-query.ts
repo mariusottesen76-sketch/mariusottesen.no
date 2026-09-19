@@ -76,6 +76,10 @@ export const PROJECT_SLUG_DISPLAY: Record<string, { no: string; en: string }> = 
     no: "Event Planner",
     en: "Event Planner",
   },
+  bilagsassistent: {
+    no: "Bilagsassistent",
+    en: "Receipt Assistant",
+  },
   "row-solutions": {
     no: "Row Solutions",
     en: "Row Solutions",

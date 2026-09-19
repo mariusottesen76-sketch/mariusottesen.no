@@ -156,6 +156,16 @@ export const detailHeroAudit: DetailHeroAuditEntry[] = [
       "1800×600 px (3:1). Skjermbilde fra Nordic Growth Summit 2026 read-only demo — fiktive data.",
   },
   {
+    route: "/bilagsassistent",
+    projectId: "bilagsassistent-2026-09",
+    heroImage: "/images/bilagsassistent-horisontal.png?v=20260919",
+    aspectNote: "Horisontalt banner — 3:1 landscape for detaljside",
+    objectPosition: "center",
+    fit: "contain",
+    needsNewDetailHero: false,
+    notes: "Hero for Bilagsassistent MVP. Valgfritt senere: bilagsassistent-workflow.",
+  },
+  {
     route: "/row-solutions",
     projectId: "row-solutions-2026",
     heroImage: "/images/RowSolutions_ProjectHero_3x1_v2.png?v=20260828",

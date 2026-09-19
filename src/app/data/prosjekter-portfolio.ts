@@ -6,6 +6,7 @@ import { flowSignal } from "./prosjekter/flowsignal";
 import { predictiveSalesCoach, type ProsjektType } from "./prosjekter/predictive-sales-coach";
 import { smbSalgsflytSjekken } from "./prosjekter/smb-salgsflyt-sjekken";
 import { eventPlanner } from "./prosjekter/event-planner";
+import { bilagsassistent } from "./prosjekter/bilagsassistent";
 import { pscPromoVideo } from "./prosjekter/psc-promo-video";
 import { prosjektoppgaveStrategiskImplementering } from "./prosjekter/prosjektoppgave-strategisk-implementering";
 import { skoyenasenTannklinikk } from "./prosjekter/skoyenasen-tannklinikk";
@@ -78,6 +79,7 @@ export const PROSJEKT_PORTFOLIO_KATEGORIER: ProsjektPortfolioKategori[] = [
       { id: "ai-readiness-scan-2026-06", introSlug: "readiness-scan" },
       { id: "smb-salgsflyt-sjekken-2026", introSlug: "salgsflyt" },
       { id: "event-planner-2026-08", introSlug: "event-planner" },
+      { id: "bilagsassistent-2026-09", introSlug: "bilagsassistent" },
     ],
   },
   {
@@ -144,6 +146,7 @@ const legacyProsjekter: ProsjektType[] = [
   aiReadinessScan,
   smbSalgsflytSjekken,
   eventPlanner,
+  bilagsassistent,
   pscPromoVideo,
   mariusottesenNettside,
   rowSolutions,

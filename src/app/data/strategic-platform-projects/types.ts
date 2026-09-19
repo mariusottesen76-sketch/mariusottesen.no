@@ -18,7 +18,8 @@ export type StrategicPlatformSlug =
   | "ai-innsikts-og-innholdsmotor"
   | "ai-arkitektur-beslutningsstotte"
   | "ai-value-lab-oslo"
-  | "event-planner";
+  | "event-planner"
+  | "bilagsassistent";
 
 export type StrategicPlatformTeaserBlock = {
   utfordring: LocalizedString;

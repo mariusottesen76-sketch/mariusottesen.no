@@ -276,6 +276,11 @@ const translations: Translations = {
     no: "AI-assistert planlegging, samarbeid og gjennomføring — med Event Readiness, samtaler, budsjett, human-in-the-loop og read-only demo",
     en: "AI-assisted planning, collaboration and execution — with Event Readiness, conversations, budget, human-in-the-loop and read-only demo",
   },
+  "prosjekter.intro.punkt.bilagsassistent.label": { no: "Bilagsassistent", en: "Receipt Assistant" },
+  "prosjekter.intro.punkt.bilagsassistent.desc": {
+    no: "Automatisert innhenting, kontroll og strukturering av kvitteringer og bilag for små virksomheter",
+    en: "Automated collection, review and structuring of receipts and vouchers for small businesses",
+  },
   "prosjekter.intro.punkt.psc-video.label": { no: "Promovideo PSC", en: "PSC promo video" },
   "prosjekter.intro.punkt.psc-video.desc": {
     no: "GenAI til konseptformidling og kommersiell posisjonering — kan brukes i egen profilering",

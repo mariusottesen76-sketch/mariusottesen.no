@@ -6,6 +6,7 @@ import { flowsignalV2 } from "./projects/flowsignal";
 import { aiReadinessScanV2 } from "./projects/ai-readiness-scan";
 import { salgsflytSjekkenV2 } from "./projects/salgsflyt-sjekken";
 import { eventPlannerV2 } from "./projects/event-planner";
+import { bilagsassistentV2 } from "./projects/bilagsassistent";
 import { strategiskAiImplementeringV2 } from "./projects/strategisk-ai-implementering";
 import { skoyenasenTannklinikkV2 } from "./projects/skoyenasen-tannklinikk";
 import { mariusottesenNettsideV2 } from "./projects/mariusottesen-nettside";
@@ -31,6 +32,7 @@ const baseProjectV2Records: ProjectV2BaseRecord[] = [
   aiReadinessScanV2,
   salgsflytSjekkenV2,
   eventPlannerV2,
+  bilagsassistentV2,
   strategiskAiImplementeringV2,
   skoyenasenTannklinikkV2,
   mariusottesenNettsideV2,
