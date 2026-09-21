@@ -26,6 +26,10 @@ const LESESTI_DISPLAY_TITLES: Record<LeseStiKey, Record<string, LocalizedDisplay
     },
   },
   ledereKommersielle: {
+    "fornoyd-kunde-lojal-kunde-2026-09": {
+      no: "En fornøyd kunde er ikke nødvendigvis en lojal kunde – kundeopplevelse, tillit og AI",
+      en: "A satisfied customer is not necessarily a loyal customer – experience, trust and AI",
+    },
     "de-beste-kommersielle-grepene-2026-09": {
       no: "De beste kommersielle grepene tas før du må ta dem – salgsutvikling, coaching og AI-trening",
       en: "The best commercial moves are made before you have to – sales development, coaching and AI training",

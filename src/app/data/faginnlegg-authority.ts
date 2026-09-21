@@ -354,6 +354,10 @@ export const FAGINNLEGG_AUTHORITY: Record<string, FaginnleggAuthorityEntry> = {
     ],
     coreSupportSlugs: ["obf-2026-dag-2-2026-09", "obf-2026-dag-1-2026-09", "obf-2026-human-edge-2026-09"],
     relevantVidere: [
+      articleLink("fornoyd-kunde-lojal-kunde-2026-09", {
+        no: "Les også: En fornøyd kunde er ikke nødvendigvis en lojal kunde",
+        en: "Read also: A satisfied customer is not necessarily a loyal customer",
+      }),
       articleLink("obf-2026-dag-2-2026-09", {
         no: "Les også: Refleksjoner fra dag 2 på OBF 2026",
         en: "Read also: Reflections from day 2 at OBF 2026",
@@ -460,6 +464,30 @@ export const FAGINNLEGG_AUTHORITY: Record<string, FaginnleggAuthorityEntry> = {
       { href: "/consulting", label: { no: "Se consulting-tilbud", en: "See consulting offerings" } },
     ],
   },
+  "fornoyd-kunde-lojal-kunde-2026-09": {
+    slug: "fornoyd-kunde-lojal-kunde-2026-09",
+    cluster: "kommersiell-salg",
+    role: "secondary-support",
+    ownedIntents: [
+      "kundelojalitet",
+      "kundeopplevelse",
+      "tilfredshet vs lojalitet",
+      "B2B kunderelasjon",
+      "CRM og kundeopplevelse",
+    ],
+    coreSupportSlugs: ["crm-mer-enn-et-systemprosjekt-2026-09", "obf-2026-oppsummering-2026-09"],
+    relevantVidere: [
+      articleLink("crm-mer-enn-et-systemprosjekt-2026-09", {
+        no: "Les også: CRM er mer enn et systemprosjekt",
+        en: "Read also: CRM is more than a system project",
+      }),
+      articleLink("obf-2026-oppsummering-2026-09", {
+        no: "Les også: Når scenelyset slukkes – oppsummering OBF 2026",
+        en: "Read also: When the stage lights go out – OBF 2026 summary",
+      }),
+      { href: "/consulting", label: { no: "Se consulting-tilbud", en: "See consulting offerings" } },
+    ],
+  },
   "de-beste-kommersielle-grepene-2026-09": {
     slug: "de-beste-kommersielle-grepene-2026-09",
     cluster: "kommersiell-salg",
@@ -516,6 +544,7 @@ export const LESESTI_ARTICLE_IDS = {
     "ai-needs-first-tannklinikk-case-01",
   ],
   ledereKommersielle: [
+    "fornoyd-kunde-lojal-kunde-2026-09",
     "de-beste-kommersielle-grepene-2026-09",
     "fra-data-til-beslutning-2026-09",
     "salgsledelse-i-praksis-2026-08",
