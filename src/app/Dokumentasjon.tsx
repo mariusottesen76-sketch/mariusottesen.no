@@ -260,6 +260,17 @@ export default function Dokumentasjon() {
                 {d.aiLink}
               </Link>
             </p>
+            <p className="text-sm text-slate-400 leading-relaxed">
+              {tr("dok.fagFordypning.intro")}{" "}
+              <LocaleLink href="/faginnlegg" className={linkClass} aria-label="Gå til faginnlegg">
+                {tr("dok.fagFordypning.faginnlegg")}
+              </LocaleLink>{" "}
+              {tr("dok.fagFordypning.and")}{" "}
+              <LocaleLink href="/bok" className={linkClass} aria-label="Gå til bokprosjekt">
+                {tr("dok.fagFordypning.bok")}
+              </LocaleLink>{" "}
+              {tr("dok.fagFordypning.outro")}
+            </p>
           </section>
 
           <section

@@ -48,8 +48,16 @@ export const FAGINNLEGG_AUTHORITY: Record<string, FaginnleggAuthorityEntry> = {
       "verdier-kultur-kommersiell-ledelse-2026-06",
       "crm-mer-enn-et-systemprosjekt-2026-09",
     ],
-    secondarySupportSlugs: ["control-tower-verdikjede-ledelse-2026-08", "frastotende-salg-2026-01"],
+    secondarySupportSlugs: [
+      "control-tower-verdikjede-ledelse-2026-08",
+      "frastotende-salg-2026-01",
+      "fornoyd-kunde-lojal-kunde-2026-09",
+    ],
     relevantVidere: [
+      articleLink("fornoyd-kunde-lojal-kunde-2026-09", {
+        no: "Les også: En fornøyd kunde er ikke nødvendigvis en lojal kunde",
+        en: "Read also: A satisfied customer is not necessarily a loyal customer",
+      }),
       articleLink("fra-data-til-beslutning-2026-09", {
         no: "Les også: Fra data til beslutning",
         en: "Read also: From data to decision",
@@ -191,7 +199,7 @@ export const FAGINNLEGG_AUTHORITY: Record<string, FaginnleggAuthorityEntry> = {
       "salgsledelse-i-praksis-2026-08",
       "bedre-data-beslutninger-tech-frokost-2026-08",
     ],
-    secondarySupportSlugs: ["control-tower-verdikjede-ledelse-2026-08"],
+    secondarySupportSlugs: ["control-tower-verdikjede-ledelse-2026-08", "fornoyd-kunde-lojal-kunde-2026-09"],
     relevantVidere: [
       articleLink("fra-strategi-til-gjennomforing-2026-09", {
         no: "Fra strategi til gjennomføring",
@@ -200,6 +208,10 @@ export const FAGINNLEGG_AUTHORITY: Record<string, FaginnleggAuthorityEntry> = {
       articleLink("crm-mer-enn-et-systemprosjekt-2026-09", {
         no: "CRM er mer enn et systemprosjekt",
         en: "CRM is more than a system project",
+      }),
+      articleLink("fornoyd-kunde-lojal-kunde-2026-09", {
+        no: "En fornøyd kunde er ikke nødvendigvis en lojal kunde",
+        en: "A satisfied customer is not necessarily a loyal customer",
       }),
       articleLink("salgsledelse-i-praksis-2026-08", {
         no: "Salgsledelse i praksis",
@@ -252,6 +264,10 @@ export const FAGINNLEGG_AUTHORITY: Record<string, FaginnleggAuthorityEntry> = {
     ],
     secondarySupportSlugs: ["data-kontekst-rag-01"],
     relevantVidere: [
+      articleLink("fornoyd-kunde-lojal-kunde-2026-09", {
+        no: "Les også: En fornøyd kunde er ikke nødvendigvis en lojal kunde",
+        en: "Read also: A satisfied customer is not necessarily a loyal customer",
+      }),
       articleLink("fra-data-til-beslutning-2026-09", {
         no: "Les også: Fra data til beslutning",
         en: "Read also: From data to decision",
@@ -475,17 +491,36 @@ export const FAGINNLEGG_AUTHORITY: Record<string, FaginnleggAuthorityEntry> = {
       "B2B kunderelasjon",
       "CRM og kundeopplevelse",
     ],
-    coreSupportSlugs: ["crm-mer-enn-et-systemprosjekt-2026-09", "obf-2026-oppsummering-2026-09"],
+    coreSupportSlugs: [
+      "crm-mer-enn-et-systemprosjekt-2026-09",
+      "salgsledelse-i-praksis-2026-08",
+      "obf-2026-oppsummering-2026-09",
+    ],
+    secondarySupportSlugs: ["de-beste-kommersielle-grepene-2026-09", "fra-data-til-beslutning-2026-09"],
     relevantVidere: [
       articleLink("crm-mer-enn-et-systemprosjekt-2026-09", {
         no: "Les også: CRM er mer enn et systemprosjekt",
         en: "Read also: CRM is more than a system project",
       }),
+      articleLink("salgsledelse-i-praksis-2026-08", {
+        no: "Les også: Salgsledelse i praksis",
+        en: "Read also: Sales leadership in practice",
+      }),
+      articleLink("de-beste-kommersielle-grepene-2026-09", {
+        no: "Les også: De beste kommersielle grepene",
+        en: "Read also: The best commercial moves",
+      }),
       articleLink("obf-2026-oppsummering-2026-09", {
         no: "Les også: Når scenelyset slukkes – oppsummering OBF 2026",
         en: "Read also: When the stage lights go out – OBF 2026 summary",
       }),
+      articleLink("fra-data-til-beslutning-2026-09", {
+        no: "Les også: Fra data til beslutning",
+        en: "Read also: From data to decision",
+      }),
       { href: "/consulting", label: { no: "Se consulting-tilbud", en: "See consulting offerings" } },
+      { href: "/resultater", label: { no: "Se resultater", en: "See results" } },
+      { href: "/erfaring", label: { no: "Se erfaring", en: "See experience" } },
     ],
   },
   "de-beste-kommersielle-grepene-2026-09": {
@@ -500,11 +535,15 @@ export const FAGINNLEGG_AUTHORITY: Record<string, FaginnleggAuthorityEntry> = {
       "kommersiell transformasjon",
     ],
     coreSupportSlugs: ["salgsledelse-i-praksis-2026-08"],
-    secondarySupportSlugs: ["predictive-sales-coach-01"],
+    secondarySupportSlugs: ["predictive-sales-coach-01", "fornoyd-kunde-lojal-kunde-2026-09"],
     relevantVidere: [
       articleLink("salgsledelse-i-praksis-2026-08", {
         no: "Les også: Salgsledelse i praksis",
         en: "Read also: Sales leadership in practice",
+      }),
+      articleLink("fornoyd-kunde-lojal-kunde-2026-09", {
+        no: "Les også: En fornøyd kunde er ikke nødvendigvis en lojal kunde",
+        en: "Read also: A satisfied customer is not necessarily a loyal customer",
       }),
       { href: "https://pscv6-744893320985.europe-west2.run.app/", label: { no: "The Predictive Sales Coach (PSC)", en: "The Predictive Sales Coach (PSC)" } },
       { href: "/consulting", label: { no: "Se consulting-tilbud", en: "See consulting offerings" } },

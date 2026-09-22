@@ -4,16 +4,16 @@ import { ARTICLES_HUB_PAIR } from "./faginnlegg-locale-routes";
 
 const HUB_META = {
   no: {
-    title: "Faginnlegg | Innsikt & Tankeledelse — Marius Ottesen",
+    title: "Faginnlegg | Innsikt & faglig fordypning — Marius Ottesen",
     description:
-      "I krysningen mellom teknologi, kommersiell strategi og menneskelig ledelse ligger nøkkelen til moderne vekst. Faginnlegg innen strategisk ledelse, transformasjon og AI.",
-    ogImageAlt: "Innsikt og tankeledelse — Marius Ottesen",
+      "Faginnlegg om kommersiell ledelse, transformasjon og praktisk AI — og et bokprosjekt under utvikling. Strategisk ledelse, gjennomføring og faglig formidling.",
+    ogImageAlt: "Innsikt og faglig fordypning — Marius Ottesen",
   },
   en: {
-    title: "Articles | Insight & Thought Leadership — Marius Ottesen",
+    title: "Articles | Insight & professional depth — Marius Ottesen",
     description:
-      "At the intersection of technology, commercial strategy and human leadership lies the key to modern growth. Articles on strategic leadership, transformation and AI.",
-    ogImageAlt: "Insight and thought leadership — Marius Ottesen",
+      "Articles on commercial leadership, transformation and practical AI — plus an evolving book project. Strategic leadership, execution and professional communication.",
+    ogImageAlt: "Insight and professional depth — Marius Ottesen",
   },
 } as const;
 

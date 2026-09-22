@@ -32,6 +32,10 @@ export const obf2026HumanEdge: FaginnleggInnlegg = {
     en: "Marius Ottesen – Oslo Business Forum 2026, The Human Edge.",
   },
   link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
+  hasTags: {
+    no: "#OBF2026 #OsloBusinessForum #KommersiellLedelse #AI #HumanEdge",
+    en: "#OBF2026 #OsloBusinessForum #CommercialLeadership #AI #HumanEdge",
+  },
   innhold: {
     no: `<a href="https://www.obforum.com/" target="_blank" rel="noopener noreferrer" class="${linkClass}">Oslo Business Forum 2026</a> starter i morgen, og jeg gleder meg til to dager med faglig påfyll, nye perspektiver og gode samtaler.
 

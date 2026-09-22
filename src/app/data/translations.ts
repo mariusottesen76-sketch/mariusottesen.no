@@ -60,6 +60,7 @@ const translations: Translations = {
     en: "Explore perspectives, projects and potential areas for collaboration.",
   },
   "profil.videre.groupC.faginnlegg": { no: "Faginnlegg", en: "Articles" },
+  "profil.videre.groupC.bok": { no: "Bokprosjekt", en: "Book project" },
   "profil.videre.groupC.prosjekter": { no: "AI-prosjekter og demonstratorer", en: "AI projects and demonstrators" },
   "profil.videre.groupC.kontakt": { no: "Ta kontakt", en: "Get in touch" },
   "profil.videre.resultater": { no: "Se dokumenterte resultater", en: "See documented results" },
@@ -130,14 +131,40 @@ const translations: Translations = {
   "ref.videre.resultater": { no: "Se dokumenterte resultater", en: "See documented results" },
   "ref.videre.cv": { no: "Se CV og lederprofil", en: "See CV and leadership profile" },
   "ref.videre.kontakt": { no: "Ta kontakt", en: "Get in touch" },
+  "ref.videre.faginnlegg": { no: "Faglig fordypning", en: "Professional depth" },
+  "ref.videre.bok": { no: "Bokprosjekt", en: "Book project" },
 
   // Faginnlegg
   "fag.title.1": { no: "Innsikt &", en: "Insight &" },
-  "fag.title.2": { no: "Tankeledelse", en: "Thought Leadership" },
+  "fag.title.2": { no: "faglig fordypning", en: "professional depth" },
   "fag.intro.1": {
-    no: "Faginnlegg om kommersiell ledelse, transformasjon og praktisk AI (kunstig intelligens/KI) — strukturert som tankeledelse, ikke som salgsmateriell.",
-    en: "Articles on commercial leadership, transformation and practical AI (artificial intelligence) — structured as thought leadership, not sales material.",
+    no: "Faginnlegg om kommersiell ledelse, transformasjon og praktisk AI (kunstig intelligens/KI) — strukturert som faglig formidling, ikke som salgsmateriell. Innholdet inngår også i et større bokprosjekt som utvikles parallelt.",
+    en: "Articles on commercial leadership, transformation and practical AI — structured as professional communication, not sales material. The body of work also feeds an evolving book project developed in parallel.",
   },
+  "fag.bok.eyebrow": { no: "Bokprosjekt · under utvikling", en: "Book project · work in progress" },
+  "fag.bok.title": {
+    no: "Fra praksis, forskning og 100+ faginnlegg til bok",
+    en: "From practice, research and 100+ articles to book",
+  },
+  "fag.bok.subtitle": {
+    no: "Bygget på 25+ års kommersiell ledererfaring, rundt 20 egne AI-prosjekter og fire egne masteroppgaver.",
+    en: "Built on 25+ years of commercial leadership experience, around 20 self-developed AI projects and four master’s theses of my own.",
+  },
+  "fag.bok.body": {
+    no: "Dette er ikke en kronologisk samling av tidligere innlegg. Jeg utvikler én sammenhengende fagbok der faginnlegg, case, egne masteroppgaver, praktisk ledererfaring og AI-arbeid får plass i samme fortelling — om ledelse, kommersiell utvikling, gjennomføring, transformasjon, læring og praktisk AI.\n\nMålet er at teori, erfaring og nyere teknologi henger sammen, og gir et tydeligere perspektiv på hvordan ledere og virksomheter skaper retning, læring, endring og gjennomføring.",
+    en: "This is not a chronological collection of past posts. I am developing one coherent book where articles, cases, my own master’s theses, practical leadership experience and AI work belong in the same narrative — on leadership, commercial development, execution, transformation, learning and practical AI.\n\nThe aim is for theory, experience and newer technology to connect, and to offer a clearer view of how leaders and organisations create direction, learning, change and execution.",
+  },
+  "fag.bok.proof.1.label": { no: "100+ faginnlegg", en: "100+ articles" },
+  "fag.bok.proof.2.label": { no: "4 egne masteroppgaver", en: "4 own master’s theses" },
+  "fag.bok.proof.3.label": {
+    no: "25+ års kommersiell ledererfaring",
+    en: "25+ years of commercial leadership experience",
+  },
+  "fag.bok.proof.4.label": {
+    no: "Rundt 20 egne AI-prosjekter",
+    en: "Around 20 self-developed AI projects",
+  },
+  "fag.bok.cta": { no: "Se bokprosjektet", en: "View the book project" },
   "fag.intro.2": {
     no: "Under finner du anbefalte lesestier og innholdsfortegnelse etter tema. Alle innlegg er nærmere beskrevet lenger ned på siden — med ingress, bilde og mulighet til å lese hele teksten.",
     en: "Below you will find recommended reading paths and a table of contents by topic. Every article is described in more detail further down the page — with a teaser, image and option to read the full text.",
@@ -331,6 +358,14 @@ const translations: Translations = {
     no: "Løpende fagspor om AI, ledelse og verdiskaping — teori møter praksis",
     en: "Ongoing track on AI, leadership and value creation — where theory meets practice",
   },
+  "prosjekter.intro.punkt.faginnlegg.bookPrefix": {
+    no: "Det bredere faglige arbeidet videreutvikles også gjennom et",
+    en: "The broader professional work is also developed through an",
+  },
+  "prosjekter.intro.punkt.faginnlegg.bookLink": {
+    no: "pågående bokprosjekt",
+    en: "ongoing book project",
+  },
   "prosjekter.intro.2": {
     no: "Siden fungerer som en portefølje for arbeidsgivere, rekrutterere og beslutningstakere som ønsker å se praktisk AI-forståelse, digital transformasjon, produktutvikling og kommersiell og operasjonell gjennomføringsevne i praksis.",
     en: "This page serves as a portfolio for employers, recruiters and decision-makers who want to see practical AI understanding, digital transformation, product development and commercial and operational execution capability in practice.",
@@ -444,6 +479,14 @@ const translations: Translations = {
     en: "The point is to understand where AI can contribute in a workflow, what prerequisites must be in place and how the solution can be used responsibly with human control.",
   },
   "cons.prosjekter.link": { no: "Se AI-prosjekter", en: "See AI projects" },
+  "cons.fagligFordypning.prefix": { no: "Se også", en: "See also" },
+  "cons.fagligFordypning.faginnlegg": { no: "faginnlegg", en: "articles" },
+  "cons.fagligFordypning.and": { no: "og", en: "and" },
+  "cons.fagligFordypning.bok": { no: "bokprosjektet", en: "the book project" },
+  "cons.fagligFordypning.suffix": {
+    no: "for mer om perspektivene bak arbeidet med ledelse, kommersiell utvikling, transformasjon og praktisk AI.",
+    en: "for more on the perspectives behind work on leadership, commercial development, transformation and practical AI.",
+  },
   "cons.dialog": { no: "Kontakt og videre dialog", en: "Contact and further dialogue" },
   "cons.dialog.intro": {
     no: "Bruk gjerne skjemaet dersom du ønsker å komme i dialog. Henvendelser vurderes ut fra relevans for aktuelle lederroller, rekrutteringsprosesser, faglige problemstillinger, paneldebatter, innlegg, sparring eller mulige fremtidige sammenhenger.",
@@ -465,9 +508,11 @@ const translations: Translations = {
   },
   "kontakt.profil": { no: "Erfaring og profil", en: "Experience and profile" },
   "kontakt.profil.desc": {
-    no: "Jeg har erfaring fra kommersiell ledelse, nasjonal salgsledelse, P/L-ansvar, teamutvikling, endring, CRM, arbeidsflyt og praktisk AI — inkludert operasjonell ledererfaring fra salg og drift. Nettsiden samler dokumenterte resultater, erfaring, AI-prosjekter og faglig porteføljearbeid.",
-    en: "I have experience in commercial leadership, national sales leadership, P&L accountability, team development, change, CRM, workflow and practical AI — including operational leadership experience from sales and operations. The website brings together documented results, experience, AI projects and professional portfolio work.",
+    no: "Jeg har erfaring fra kommersiell ledelse, nasjonal salgsledelse, P/L-ansvar, teamutvikling, endring, CRM, arbeidsflyt og praktisk AI — inkludert operasjonell ledererfaring fra salg og drift. Nettsiden samler dokumenterte resultater, erfaring, AI-prosjekter,",
+    en: "I have experience in commercial leadership, national sales leadership, P&L accountability, team development, change, CRM, workflow and practical AI — including operational leadership experience from sales and operations. The website brings together documented results, experience, AI projects,",
   },
+  "kontakt.link.faginnlegg": { no: "100+ faginnlegg", en: "100+ articles" },
+  "kontakt.link.bok": { no: "bokprosjekt under utvikling", en: "book project in development" },
   "kontakt.dialog": { no: "Komme i dialog", en: "Start a conversation" },
   "kontakt.dialog.desc": {
     no: "Bruk gjerne skjemaet dersom du ønsker å komme i dialog. Henvendelser vurderes ut fra relevans for aktuelle lederroller, rekrutteringsprosesser, faglige problemstillinger, paneldebatter, innlegg, sparring eller mulige fremtidige sammenhenger.",
@@ -513,6 +558,17 @@ const translations: Translations = {
   },
   "dok.soknad.openNewTab": { no: "Åpne søknad i ny fane", en: "Open application in new tab (Norwegian PDF)" },
   "dok.linkedin": { no: "Besøk min LinkedIn-profil", en: "Visit my LinkedIn Profile" },
+  "dok.fagFordypning.intro": {
+    no: "For ytterligere faglig fordypning kan du også se mine",
+    en: "For further professional depth, you can also see my",
+  },
+  "dok.fagFordypning.faginnlegg": { no: "100+ faginnlegg", en: "100+ articles" },
+  "dok.fagFordypning.and": { no: "og", en: "and" },
+  "dok.fagFordypning.bok": { no: "bokprosjektet", en: "book project" },
+  "dok.fagFordypning.outro": {
+    no: "som nå samler erfaring, akademisk arbeid og praktiske case i et større faglig arbeid.",
+    en: "which is now bringing together experience, academic work and practical cases into a larger professional work.",
+  },
 
   // Footer
   "footer.linkedin": {

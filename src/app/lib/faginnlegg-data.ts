@@ -10,6 +10,7 @@ import { obf2026HumanEdge } from "../data/innlegg/obf-2026-human-edge";
 import { salgsledelseIPraksis } from "../data/innlegg/salgsledelse-i-praksis";
 import { tennisLedelse } from "../data/innlegg/tennis-ledelse";
 import { fornoydKundeLojalKunde } from "../data/innlegg/fornoyd-kunde-lojal-kunde";
+import { enrichFaginnleggHasTags } from "./faginnlegg-innhold";
 import type { FaginnleggInnlegg } from "./faginnlegg-types";
 
 /** Samme kategorilogikk som Faginnlegg-siden. */
@@ -37,8 +38,29 @@ function sortByDateDesc(a: FaginnleggInnlegg, b: FaginnleggInnlegg): number {
   return new Date(b.dato).getTime() - new Date(a.dato).getTime();
 }
 
+function normalizeFaginnlegg(innlegg: FaginnleggInnlegg): FaginnleggInnlegg {
+  return enrichFaginnleggHasTags(innlegg);
+}
+
 export function getAlleFaginnlegg(): FaginnleggInnlegg[] {
-  return ([...tennisLedelse, ...aiGovernance, fornoydKundeLojalKunde, obf2026Oppsummering, obf2026Dag2, obf2026Dag1, obf2026HumanEdge, deBesteKommersielleGrepene, fraDataTilBeslutning, salgsledelseIPraksis, crmMerEnnEtSystemprosjekt, fraStrategiTilGjennomforing] as FaginnleggInnlegg[]).sort(sortByDateDesc);
+  return (
+    [
+      ...tennisLedelse,
+      ...aiGovernance,
+      fornoydKundeLojalKunde,
+      obf2026Oppsummering,
+      obf2026Dag2,
+      obf2026Dag1,
+      obf2026HumanEdge,
+      deBesteKommersielleGrepene,
+      fraDataTilBeslutning,
+      salgsledelseIPraksis,
+      crmMerEnnEtSystemprosjekt,
+      fraStrategiTilGjennomforing,
+    ] as FaginnleggInnlegg[]
+  )
+    .map(normalizeFaginnlegg)
+    .sort(sortByDateDesc);
 }
 
 export function getAllFaginnleggSlugs(): string[] {

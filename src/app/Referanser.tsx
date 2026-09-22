@@ -2,6 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import LocaleLink from "./components/LocaleLink";
 import { Quote, Calendar, UserCheck, Linkedin } from "lucide-react";
 import { referanserData } from "./data/referanser";
 import { useLanguage } from "./LanguageContext";
@@ -23,6 +24,8 @@ export default function Referanser() {
     { href: "/erfaring", label: tr("ref.videre.erfaring"), aria: "Gå til erfaring" },
     { href: "/resultater", label: tr("ref.videre.resultater"), aria: "Gå til dokumenterte resultater" },
     { href: "/cv", label: tr("ref.videre.cv"), aria: "Gå til CV og lederprofil" },
+    { href: "/faginnlegg", label: tr("ref.videre.faginnlegg"), aria: "Gå til faginnlegg" },
+    { href: "/bok", label: tr("ref.videre.bok"), aria: "Gå til bokprosjekt" },
     { href: "/kontakt", label: tr("ref.videre.kontakt"), aria: "Gå til kontakt" },
   ];
 
@@ -112,13 +115,13 @@ export default function Referanser() {
             <ul className="flex flex-col sm:flex-row sm:flex-wrap gap-x-5 gap-y-2">
               {videreLinks.map((item) => (
                 <li key={item.href}>
-                  <Link
+                  <LocaleLink
                     href={item.href}
                     className={`${linkClass} text-sm font-medium no-underline hover:underline`}
                     aria-label={item.aria}
                   >
                     {item.label}
-                  </Link>
+                  </LocaleLink>
                 </li>
               ))}
             </ul>

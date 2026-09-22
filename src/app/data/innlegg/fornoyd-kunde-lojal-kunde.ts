@@ -32,6 +32,10 @@ export const fornoydKundeLojalKunde: FaginnleggInnlegg = {
     en: "Illustration for article on customer loyalty, customer experience and commercial leadership.",
   },
   link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
+  hasTags: {
+    no: "#kundeopplevelse #kundelojalitet #ledelse #AI #B2B",
+    en: "#kundeopplevelse #kundelojalitet #ledelse #AI #B2B",
+  },
   innhold: {
     no: `Det har aldri vært enklere å gjøre kundeopplevelsen raskere.
 
@@ -190,7 +194,10 @@ Men i å være konsekvent god når det forventes, relevant når det gjelder og m
 <strong>Lenker</strong>
 
 - <a href="/faginnlegg/crm-mer-enn-et-systemprosjekt-2026-09" class="${linkClass}">CRM er mer enn et systemprosjekt</a>
+- <a href="/faginnlegg/salgsledelse-i-praksis-2026-08" class="${linkClass}">Salgsledelse i praksis</a>
+- <a href="/faginnlegg/de-beste-kommersielle-grepene-2026-09" class="${linkClass}">De beste kommersielle grepene tas før du må ta dem</a>
 - <a href="/faginnlegg/obf-2026-oppsummering-2026-09" class="${linkClass}">Når scenelyset slukkes – oppsummering OBF 2026</a>
+- <a href="/faginnlegg/fra-data-til-beslutning-2026-09" class="${linkClass}">Fra data til beslutning</a>
 - <a href="/consulting" class="${linkClass}">Marius Ottesen Consulting</a>
 - <a href="/kontakt" class="${linkClass}">Ta kontakt</a>`,
     en: `It has never been easier to make the customer experience faster.
@@ -350,7 +357,10 @@ But in being consistently good when expected, relevant when it matters and human
 <strong>Links</strong>
 
 - <a href="/en/articles/crm-mer-enn-et-systemprosjekt-2026-09" class="${linkClass}">CRM is more than a system project</a>
+- <a href="/en/articles/salgsledelse-i-praksis-2026-08" class="${linkClass}">Sales leadership in practice</a>
+- <a href="/en/articles/de-beste-kommersielle-grepene-2026-09" class="${linkClass}">The best commercial moves are made before you have to make them</a>
 - <a href="/en/articles/obf-2026-oppsummering-2026-09" class="${linkClass}">When the stage lights go out – OBF 2026 summary</a>
+- <a href="/en/articles/fra-data-til-beslutning-2026-09" class="${linkClass}">From data to decision</a>
 - <a href="/en/consulting" class="${linkClass}">Marius Ottesen Consulting</a>
 - <a href="/en/contact" class="${linkClass}">Get in touch</a>`,
   },

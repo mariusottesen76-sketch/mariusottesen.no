@@ -32,6 +32,10 @@ export const obf2026Oppsummering: FaginnleggInnlegg = {
     en: "Oslo Business Forum 2026 – The Human Edge, auditorium and stage.",
   },
   link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
+  hasTags: {
+    no: "#OBF2026 #OsloBusinessForum #Ledelse #AI #HumanEdge",
+    en: "#OBF2026 #OsloBusinessForum #Leadership #AI #HumanEdge",
+  },
   innhold: {
     no: `Når scenelyset slukkes, hva sitter egentlig igjen?
 

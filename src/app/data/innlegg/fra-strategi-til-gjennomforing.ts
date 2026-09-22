@@ -29,6 +29,10 @@ export const fraStrategiTilGjennomforing: FaginnleggInnlegg = {
     en: "Marius Ottesen in a leadership team discussion on strategy, priorities and execution.",
   },
   link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
+  hasTags: {
+    no: "#Strategi #Gjennomføring #Endringsledelse #Ledelse #Transformasjon",
+    en: "#Strategy #Execution #ChangeLeadership #Leadership #Transformation",
+  },
   innhold: {
     no: `Ledergruppen kan være helt enig om retningen, mens organisasjonen fortsetter omtrent som før.
 

@@ -301,6 +301,23 @@ function FaginnleggArticleInner({ innlegg }: { innlegg: FaginnleggInnlegg }) {
         dangerouslySetInnerHTML={{ __html: bodyHtml }}
       />
 
+      {innlegg.hasTags?.[lang]?.trim() ? (
+        <p
+          className="mt-8 pt-6 border-t border-slate-800/80 text-sm leading-relaxed flex flex-wrap gap-x-3 gap-y-1.5"
+          aria-label={lang === "no" ? "Emneknagger" : "Hashtags"}
+        >
+          {innlegg.hasTags[lang]
+            .trim()
+            .split(/\s+/)
+            .filter(Boolean)
+            .map((tag) => (
+              <span key={tag} className="text-indigo-300/95 font-medium tracking-wide">
+                {tag.startsWith("#") ? tag : `#${tag}`}
+              </span>
+            ))}
+        </p>
+      ) : null}
+
       <div className="pt-8 mt-8 border-t border-slate-800 space-y-4">
         <a
           href={innlegg.link}

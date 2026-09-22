@@ -32,6 +32,10 @@ export const obf2026Dag2: FaginnleggInnlegg = {
     en: "Marius Ottesen at Oslo Business Forum 2026.",
   },
   link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
+  hasTags: {
+    no: "#OBF2026 #Dømmekraft #Ledelse #AI #HumanEdge",
+    en: "#OBF2026 #Judgement #Leadership #AI #HumanEdge",
+  },
   innhold: {
     no: `Når kapasiteten øker, blir dømmekraften enda viktigere.
 

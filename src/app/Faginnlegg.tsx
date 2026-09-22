@@ -35,6 +35,7 @@ import { bildeCacheVersion } from './lib/faginnlegg-types';
 import { getFaginnleggLinkedInCta } from './lib/faginnlegg-linkedin-cta';
 import { hasFullEnFaginnleggBody } from './lib/faginnlegg-en-audit';
 import { faginnleggArticlePath } from './lib/faginnlegg-locale-routes';
+import BokOmslagImage from "./components/bok/BokOmslagImage";
 import LocaleLink from './components/LocaleLink';
 import { ChevronRight } from 'lucide-react';
 
@@ -136,7 +137,7 @@ const Faginnlegg = ({ onNavigate: _onNavigate }: { onNavigate?: (tab: string) =>
       {/* HERO SEKSJON */}
       <div className="flex flex-col md:flex-row gap-6 items-start border-b border-slate-800/40 pb-6">
         <div className="w-full md:w-[400px] shrink-0">
-          <Image src="/images/blogg.jpg" alt="Innsikt og tankeledelse — Marius Ottesen" width={400} height={500} className="w-full h-auto rounded-2xl shadow-xl border border-slate-800" />
+          <Image src="/images/blogg.jpg" alt="Innsikt og faglig fordypning — Marius Ottesen" width={400} height={500} className="w-full h-auto rounded-2xl shadow-xl border border-slate-800" />
         </div>
         <div className="flex-1 min-w-0 pt-2">
           <h1 className={`${pageTitleClass} mb-6`}>
@@ -182,6 +183,49 @@ const Faginnlegg = ({ onNavigate: _onNavigate }: { onNavigate?: (tab: string) =>
           <LocaleLink href="/resultater" className={`${linkClass} text-sm font-medium`}>
             {tr("fag.formidling.link.resultater")}
           </LocaleLink>
+        </div>
+      </section>
+
+      <section
+        aria-labelledby="fag-bok-heading"
+        className="mb-10 p-6 md:p-8 bg-slate-900/40 rounded-2xl border border-indigo-500/15 shadow-lg min-w-0"
+      >
+        <p className="text-[10px] font-bold uppercase tracking-widest text-indigo-400 mb-3">
+          {tr("fag.bok.eyebrow")}
+        </p>
+        <h2 id="fag-bok-heading" className={`${sectionTitleClass} mb-3 max-w-prose [overflow-wrap:anywhere] hyphens-none`}>
+          {tr("fag.bok.title")}
+        </h2>
+        <p className="text-base md:text-lg text-slate-300 leading-relaxed font-light mb-5 w-full min-w-0 whitespace-nowrap overflow-x-auto [scrollbar-width:thin]">
+          {tr("fag.bok.subtitle")}
+        </p>
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 mb-6 min-w-0">
+          <BokOmslagImage variant="forside" lang={lang} className="shrink-0 mx-auto lg:mx-0 lg:sticky lg:top-28 lg:self-start" />
+          <div className="flex-1 min-w-0">
+        <div className="text-base md:text-lg text-slate-400 leading-relaxed font-light space-y-4 mb-6 whitespace-pre-line">
+          {tr("fag.bok.body")}
+        </div>
+        <dl className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-4 mb-6">
+          <div className="rounded-xl border border-slate-800/80 bg-slate-950/40 px-4 py-3 min-h-[3.25rem] flex items-center">
+            <dt className="text-white font-semibold text-sm tracking-tight leading-snug">{tr("fag.bok.proof.1.label")}</dt>
+          </div>
+          <div className="rounded-xl border border-slate-800/80 bg-slate-950/40 px-4 py-3 min-h-[3.25rem] flex items-center">
+            <dt className="text-white font-semibold text-sm tracking-tight leading-snug">{tr("fag.bok.proof.4.label")}</dt>
+          </div>
+          <div className="rounded-xl border border-slate-800/80 bg-slate-950/40 px-4 py-3 min-h-[3.25rem] flex items-center">
+            <dt className="text-white font-semibold text-sm tracking-tight leading-snug">{tr("fag.bok.proof.2.label")}</dt>
+          </div>
+          <div className="rounded-xl border border-slate-800/80 bg-slate-950/40 px-4 py-3 min-h-[3.25rem] flex items-center">
+            <dt className="text-white font-semibold text-sm tracking-tight leading-snug">{tr("fag.bok.proof.3.label")}</dt>
+          </div>
+        </dl>
+        <LocaleLink
+          href="/bok"
+          className="inline-flex items-center gap-2 text-indigo-400 font-black text-sm uppercase tracking-widest hover:text-white transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
+        >
+          {tr("fag.bok.cta")} →
+        </LocaleLink>
+          </div>
         </div>
       </section>
 

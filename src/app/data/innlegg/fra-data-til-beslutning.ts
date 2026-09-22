@@ -36,6 +36,10 @@ export const fraDataTilBeslutning: FaginnleggInnlegg = {
     en: "Marius Ottesen i arbeid med informasjon og beslutningsgrunnlag i et profesjonelt kontormiljø",
   },
   link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
+  hasTags: {
+    no: "#Datadrevet #Ledelse #Beslutningsstøtte #KommersiellLedelse #DigitalTransformasjon",
+    en: "#DataDriven #Leadership #DecisionSupport #CommercialLeadership #DigitalTransformation",
+  },
   innhold: {
     no: `Virksomheter kan ha mer data enn noen gang og samtidig være uklare på hva de bør gjøre annerledes.
 

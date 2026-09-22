@@ -21,6 +21,10 @@ export const salgsledelseIPraksis: FaginnleggInnlegg = {
   bildeKortFokus: "42% center",
   bildeModalBred: true,
   link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
+  hasTags: {
+    no: "#Salgsledelse #KommersiellLedelse #Coaching #Ledelse #B2B",
+    en: "#SalesLeadership #CommercialLeadership #Coaching #Leadership #B2B",
+  },
   innhold: {
     no: `En salgsleder kan ha full kontroll på aktivitetene og samtidig vite overraskende lite om hvorfor salget faktisk går bra eller dårlig.
 

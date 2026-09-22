@@ -29,6 +29,10 @@ export const crmMerEnnEtSystemprosjekt: FaginnleggInnlegg = {
     en: "Marius Ottesen at a CRM system – illustration for article on CRM, workflow and leadership.",
   },
   link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
+  hasTags: {
+    no: "#CRM #KommersiellLedelse #Salgsutvikling #DigitalTransformasjon #B2B",
+    en: "#CRM #CommercialLeadership #SalesDevelopment #DigitalTransformation #B2B",
+  },
   innhold: {
     no: `En virksomhet kan ha et godt CRM-system og samtidig ha et dårlig kundebilde. Dashboards kan være på plass. Feltene kan være definert. Ledelsen kan ha tydelige forventninger til registrering.
 

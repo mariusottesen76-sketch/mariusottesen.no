@@ -95,6 +95,7 @@ export default function Profil({ onNavigate }: { onNavigate?: (tab: string) => v
       intro: tr("profil.videre.groupC.intro"),
       links: [
         { href: "/faginnlegg", label: tr("profil.videre.groupC.faginnlegg"), aria: "Gå til faginnlegg" },
+        { href: "/bok", label: tr("profil.videre.groupC.bok"), aria: "Gå til bokprosjekt" },
         { href: "/prosjekter", label: tr("profil.videre.groupC.prosjekter"), aria: "Gå til AI-prosjekter" },
         { href: "/kontakt", label: tr("profil.videre.groupC.kontakt"), aria: "Gå til kontakt" },
       ],

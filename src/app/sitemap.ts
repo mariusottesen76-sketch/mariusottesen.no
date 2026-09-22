@@ -13,6 +13,8 @@ import {
   projectEnPath,
   PROJECTS_HUB_PAIR,
 } from "./lib/project-locale-routes";
+import { BOK_ROUTE } from "./data/bok-prosjekt-innhold";
+
 const SITE = "https://www.mariusottesen.no";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -109,6 +111,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.8,
     },
+    {
+      url: `${SITE}${BOK_ROUTE.en}`,
+      lastModified: sitemapLastModifiedFromIso(faginnleggLastMod),
+      changeFrequency: "monthly",
+      priority: 0.65,
+    },
   ];
 
   const enProjectRoutes: MetadataRoute.Sitemap = getIndexableProjectRecords().map((project) => ({
@@ -146,6 +154,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: sitemapLastModifiedFromIso(faginnleggLastMod),
       changeFrequency: "weekly",
       priority: 0.8,
+    },
+    {
+      url: `${SITE}${BOK_ROUTE.no}`,
+      lastModified: sitemapLastModifiedFromIso(faginnleggLastMod),
+      changeFrequency: "monthly",
+      priority: 0.65,
     },
     ...mainTabRoutes,
     ...enRoutes,

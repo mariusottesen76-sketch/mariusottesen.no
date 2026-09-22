@@ -515,6 +515,17 @@ export default function Consulting() {
             {tr("cons.prosjekter.link")}
           </Link>
         </p>
+        <p className="mt-4 text-slate-400 text-sm leading-relaxed font-light">
+          {tr("cons.fagligFordypning.prefix")}{" "}
+          <LocaleLink href="/faginnlegg" className={linkClass}>
+            {tr("cons.fagligFordypning.faginnlegg")}
+          </LocaleLink>{" "}
+          {tr("cons.fagligFordypning.and")}{" "}
+          <LocaleLink href="/bok" className={linkClass}>
+            {tr("cons.fagligFordypning.bok")}
+          </LocaleLink>{" "}
+          {tr("cons.fagligFordypning.suffix")}
+        </p>
       </section>
 
       <section aria-labelledby="cons-metodikk-heading" className="mb-12">

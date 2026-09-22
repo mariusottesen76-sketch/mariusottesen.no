@@ -4,6 +4,7 @@ export const SITE = "https://www.mariusottesen.no" as const;
 
 /** Tabs with indexable EN-1A URL pairs. */
 import { localePathFromNoProjectPath, resolveProjectLocalePair } from "./project-locale-routes";
+import { localePathFromNoBokPath, resolveBokLocalePair } from "./bok-locale-routes";
 import { localePathFromNoArticlePath, resolveArticleLocalePair } from "./faginnlegg-locale-routes";
 
 export type SiteTabKey =
@@ -59,6 +60,8 @@ export function resolveLocalePair(pathname: string): { no: string; en: string } 
   }
   const articlePair = resolveArticleLocalePair(normalized);
   if (articlePair) return articlePair;
+  const bokPair = resolveBokLocalePair(normalized);
+  if (bokPair) return bokPair;
   return resolveProjectLocalePair(normalized);
 }
 
@@ -96,6 +99,11 @@ export function localePathFromNoPath(noHref: string, lang: Lang): string {
   const articlePath = localePathFromNoArticlePath(normalized, lang);
   if (articlePath) {
     const withQuery = `${articlePath}${query}`;
+    return hash ? `${withQuery}#${hash}` : withQuery;
+  }
+  const bokPath = localePathFromNoBokPath(normalized, lang);
+  if (bokPath) {
+    const withQuery = `${bokPath}${query}`;
     return hash ? `${withQuery}#${hash}` : withQuery;
   }
   return noHref;

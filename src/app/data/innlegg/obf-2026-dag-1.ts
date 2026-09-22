@@ -32,6 +32,10 @@ export const obf2026Dag1: FaginnleggInnlegg = {
     en: "Marius Ottesen with Heidi Omberg and Christoffer Omberg at Oslo Business Forum 2026.",
   },
   link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
+  hasTags: {
+    no: "#OBF2026 #Ledelse #Transformasjon #AI #HumanEdge",
+    en: "#OBF2026 #Leadership #Transformation #AI #HumanEdge",
+  },
   innhold: {
     no: `Jo mer teknologi vi får, desto mer betyr ledelse.
 

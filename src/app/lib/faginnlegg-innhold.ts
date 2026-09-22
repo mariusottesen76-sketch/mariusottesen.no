@@ -1,5 +1,10 @@
+import { getFallbackHasTags } from "./faginnlegg-hashtag-fallback";
+import type { FaginnleggInnlegg } from "./faginnlegg-types";
 import { normalizeDisplayText } from "./normalize-display-text";
 import { formatInnleggHtml } from "./product-brand";
+
+/** Avsnitt som kun består av emneknagger (typisk limt inn fra LinkedIn). */
+const HASHTAG_ONLY_PARAGRAPH_RE = /^(#\S+\s*)+$/;
 
 const STANDALONE_STRONG_RE = /^<strong>([\s\S]+)<\/strong>$/i;
 const H2_CLASS =
@@ -104,6 +109,9 @@ function formatParagraphHtml(trimmed: string): string {
   if (trimmed.startsWith("Annual net value =")) {
     return `<p class="mb-4 rounded-xl border border-indigo-500/25 bg-indigo-500/10 px-4 py-3 text-indigo-300 font-semibold leading-snug">${formatInnleggHtml(trimmed)}</p>`;
   }
+  if (/^(#\S+\s*)+$/.test(trimmed)) {
+    return `<p class="mb-4 mt-8 pt-6 border-t border-slate-800/80 text-sm text-slate-400 leading-relaxed">${formatInnleggHtml(trimmed)}</p>`;
+  }
   return `<p class="mb-4">${formatInnleggHtml(trimmed.replace(/\n/g, "<br/>"))}</p>`;
 }
 
@@ -138,4 +146,80 @@ export function stripHtmlForMeta(html: string): string {
     .replace(/<[^>]+>/g, " ")
     .replace(/\s+/g, " ")
     .trim();
+}
+
+/** Trekker ut siste avsnitt med kun hashtags, slik at de kan vises i dedikert UI. */
+export function splitTrailingHasTags(body: string): { body: string; hasTagsLine?: string } {
+  const raw = (body || "").trimEnd();
+  if (!raw) return { body: body || "" };
+
+  const paragraphs = raw.split("\n\n");
+  const last = paragraphs[paragraphs.length - 1]?.trim() ?? "";
+  if (!last || !HASHTAG_ONLY_PARAGRAPH_RE.test(last)) {
+    return { body: raw };
+  }
+
+  paragraphs.pop();
+  return {
+    body: paragraphs.join("\n\n").trimEnd(),
+    hasTagsLine: last.replace(/\s+/g, " ").trim(),
+  };
+}
+
+/** Bevarer eksplisitt hasTags; ellers hentes hashtags fra slutten av brødtekst (NO/EN). */
+export function enrichFaginnleggHasTags(innlegg: FaginnleggInnlegg): FaginnleggInnlegg {
+  const explicitNo = innlegg.hasTags?.no?.trim();
+  const explicitEn = innlegg.hasTags?.en?.trim();
+  if (explicitNo && explicitEn) return innlegg;
+
+  if (!innlegg.innhold?.no?.trim()) {
+    if (explicitNo || explicitEn) return innlegg;
+    return innlegg;
+  }
+
+  const splitNo = splitTrailingHasTags(innlegg.innhold.no);
+  const enRaw = innlegg.innhold.en?.trim() ? innlegg.innhold.en : undefined;
+  const splitEn = enRaw ? splitTrailingHasTags(enRaw) : undefined;
+
+  let hasTagsNo = explicitNo || splitNo.hasTagsLine;
+  let hasTagsEn =
+    explicitEn || splitEn?.hasTagsLine || (explicitNo ? undefined : splitNo.hasTagsLine);
+
+  if (!hasTagsNo && !hasTagsEn) {
+    const fallback = getFallbackHasTags(innlegg);
+    if (fallback) {
+      hasTagsNo = fallback.no;
+      hasTagsEn = fallback.en;
+    }
+  }
+
+  const nextHasTags =
+    hasTagsNo || hasTagsEn
+      ? {
+          no: hasTagsNo ?? hasTagsEn ?? "",
+          en: hasTagsEn ?? hasTagsNo ?? "",
+        }
+      : undefined;
+
+  const innholdChanged =
+    splitNo.body !== innlegg.innhold.no || (enRaw && splitEn && splitEn.body !== enRaw);
+
+  if (!nextHasTags && !innholdChanged) return innlegg;
+
+  return {
+    ...innlegg,
+    ...(nextHasTags ? { hasTags: nextHasTags } : {}),
+    ...(innholdChanged
+      ? {
+          innhold: {
+            no: splitNo.body,
+            ...(enRaw !== undefined
+              ? { en: splitEn ? splitEn.body : innlegg.innhold.en }
+              : innlegg.innhold.en !== undefined
+                ? { en: innlegg.innhold.en }
+                : {}),
+          },
+        }
+      : {}),
+  };
 }

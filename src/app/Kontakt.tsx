@@ -90,6 +90,14 @@ export default function Kontakt() {
                 </h2>
                 <p className="italic font-medium text-base leading-relaxed">
                   {tr("kontakt.profil.desc")}{" "}
+                  <LocaleLink href="/faginnlegg" className={linkClass} aria-label="Gå til faginnlegg">
+                    {tr("kontakt.link.faginnlegg")}
+                  </LocaleLink>
+                  {lang === "no" ? " og et " : " and a "}
+                  <LocaleLink href="/bok" className={linkClass} aria-label="Gå til bokprosjekt">
+                    {tr("kontakt.link.bok")}
+                  </LocaleLink>
+                  {". "}
                   <LocaleLink href="/cv" className={linkClass} aria-label="Gå til CV og lederprofil">
                     {tr("kontakt.link.cv")}
                   </LocaleLink>

@@ -67,7 +67,13 @@ function fitDesktopTabFontPx(
   return Math.round(nudged * 10) / 10;
 }
 
-function AppContent({ initialTab = "Profil" }: { initialTab?: string }) {
+function AppContent({
+  initialTab = "Profil",
+  customContent,
+}: {
+  initialTab?: string;
+  customContent?: React.ReactNode;
+}) {
   const router = useRouter();
   const [activeTab, setActiveTabState] = useState(initialTab);
   const { lang } = useLanguage();
@@ -210,15 +216,19 @@ function AppContent({ initialTab = "Profil" }: { initialTab?: string }) {
         </nav>
 
         <div className="transition-all duration-500">
-          {activeTab === "Profil" && <Profil onNavigate={(tab) => setActiveTab(tab)} />}
-          {activeTab === "Erfaring" && <Erfaring />}
-          {activeTab === "Resultater" && <Resultater />}
-          {activeTab === "Referanser" && <Referanser />}
-          {activeTab === "Faginnlegg" && <Faginnlegg onNavigate={(tab) => setActiveTab(tab)} />}
-          {activeTab === "Prosjekter" && <Prosjekter onNavigate={(tab) => setActiveTab(tab)} />}
-          {activeTab === "CV & Åpen søknad" && <Dokumentasjon />}
-          {activeTab === "Consulting" && <Consulting />}
-          {activeTab === "Kontakt" && <Kontakt />}
+          {customContent ?? (
+            <>
+              {activeTab === "Profil" && <Profil onNavigate={(tab) => setActiveTab(tab)} />}
+              {activeTab === "Erfaring" && <Erfaring />}
+              {activeTab === "Resultater" && <Resultater />}
+              {activeTab === "Referanser" && <Referanser />}
+              {activeTab === "Faginnlegg" && <Faginnlegg onNavigate={(tab) => setActiveTab(tab)} />}
+              {activeTab === "Prosjekter" && <Prosjekter onNavigate={(tab) => setActiveTab(tab)} />}
+              {activeTab === "CV & Åpen søknad" && <Dokumentasjon />}
+              {activeTab === "Consulting" && <Consulting />}
+              {activeTab === "Kontakt" && <Kontakt />}
+            </>
+          )}
         </div>
 
         <footer className="mt-12 pt-6 border-t border-slate-800/40 flex flex-col sm:flex-row items-center justify-between gap-4 pb-4">
@@ -245,13 +255,15 @@ function AppContent({ initialTab = "Profil" }: { initialTab?: string }) {
 export default function AppShell({
   initialTab = "Profil",
   initialLang = "no",
+  customContent,
 }: {
   initialTab?: string;
   initialLang?: Lang;
+  customContent?: React.ReactNode;
 }) {
   return (
     <LanguageProvider initialLang={initialLang}>
-      <AppContent initialTab={initialTab} />
+      <AppContent initialTab={initialTab} customContent={customContent} />
     </LanguageProvider>
   );
 }

@@ -9,10 +9,17 @@ type ProjectImageModalProps = {
   alt: string;
   lang: Lang;
   onClose: () => void;
+  dialogAriaLabel?: string;
 };
 
 /** Viser originalbilde uten 3:1-beskjæring — brukes fra hero-banner og /prosjekter. */
-export default function ProjectImageModal({ src, alt, lang, onClose }: ProjectImageModalProps) {
+export default function ProjectImageModal({
+  src,
+  alt,
+  lang,
+  onClose,
+  dialogAriaLabel,
+}: ProjectImageModalProps) {
   const closeButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
@@ -35,7 +42,9 @@ export default function ProjectImageModal({ src, alt, lang, onClose }: ProjectIm
         onClick={(e) => e.stopPropagation()}
         role="dialog"
         aria-modal="true"
-        aria-label={lang === "no" ? "Forstørret prosjektbilde" : "Enlarged project image"}
+        aria-label={
+          dialogAriaLabel ?? (lang === "no" ? "Forstørret prosjektbilde" : "Enlarged project image")
+        }
       >
         <button
           ref={closeButtonRef}

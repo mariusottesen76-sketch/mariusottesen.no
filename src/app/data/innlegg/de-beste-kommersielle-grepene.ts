@@ -31,6 +31,10 @@ export const deBesteKommersielleGrepene: FaginnleggInnlegg = {
     en: "Marius Ottesen – article on proactive customer development, sales development and commercial coaching.",
   },
   link: "https://www.linkedin.com/in/mariusottesen/recent-activity/all/",
+  hasTags: {
+    no: "#KommersiellLedelse #Salgsutvikling #Coaching #AI #B2B",
+    en: "#CommercialLeadership #SalesDevelopment #Coaching #AI #B2B",
+  },
   innhold: {
     no: `I dag hadde jeg kickoff på et nytt coachingoppdrag gjennom eget selskap, Marius Ottesen Consulting (MOC).
 

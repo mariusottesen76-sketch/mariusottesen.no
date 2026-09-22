@@ -30,6 +30,8 @@ export interface FaginnleggInnlegg {
   bildeKortFokus?: string;
   bildeKortZoom?: number;
   bildeKortRamme?: "nettsted";
+  /** Valgfri hashtag-linje — vises etter brødtekst, over LinkedIn-lenke. */
+  hasTags?: { no: string; en: string };
 }
 
 export function faginnleggSlug(innlegg: Pick<FaginnleggInnlegg, "id">): string {
