@@ -195,12 +195,17 @@ export const FAGINNLEGG_AUTHORITY: Record<string, FaginnleggAuthorityEntry> = {
     ],
     coreSupportSlugs: [
       "fra-strategi-til-gjennomforing-2026-09",
+      "det-virksomheten-enna-ikke-ser-2026-09",
       "crm-mer-enn-et-systemprosjekt-2026-09",
       "salgsledelse-i-praksis-2026-08",
       "bedre-data-beslutninger-tech-frokost-2026-08",
     ],
     secondarySupportSlugs: ["control-tower-verdikjede-ledelse-2026-08", "fornoyd-kunde-lojal-kunde-2026-09"],
     relevantVidere: [
+      articleLink("det-virksomheten-enna-ikke-ser-2026-09", {
+        no: "Det virksomheten ennå ikke ser",
+        en: "What the organisation has not yet seen",
+      }),
       articleLink("fra-strategi-til-gjennomforing-2026-09", {
         no: "Fra strategi til gjennomføring",
         en: "From strategy to execution",
@@ -549,6 +554,39 @@ export const FAGINNLEGG_AUTHORITY: Record<string, FaginnleggAuthorityEntry> = {
       { href: "/consulting", label: { no: "Se consulting-tilbud", en: "See consulting offerings" } },
     ],
   },
+  "det-virksomheten-enna-ikke-ser-2026-09": {
+    slug: "det-virksomheten-enna-ikke-ser-2026-09",
+    cluster: "strategi-endring",
+    role: "core-support",
+    ownedIntents: [
+      "svake signaler",
+      "weak signals",
+      "strategisk fremsyn",
+      "organisatorisk oppmerksomhet",
+      "tidlig læring",
+      "KPI og blindsoner",
+    ],
+    coreSupportSlugs: [
+      "fra-data-til-beslutning-2026-09",
+      "fra-strategi-til-gjennomforing-2026-09",
+    ],
+    secondarySupportSlugs: ["salgsledelse-i-praksis-2026-08", "crm-mer-enn-et-systemprosjekt-2026-09"],
+    relevantVidere: [
+      articleLink("fra-data-til-beslutning-2026-09", {
+        no: "Fra data til beslutning",
+        en: "From data to decision",
+      }),
+      articleLink("fra-strategi-til-gjennomforing-2026-09", {
+        no: "Fra strategi til gjennomføring",
+        en: "From strategy to execution",
+      }),
+      articleLink("salgsledelse-i-praksis-2026-08", {
+        no: "Salgsledelse i praksis",
+        en: "Sales leadership in practice",
+      }),
+      { href: "/control-tower", label: { no: "Control Tower – Decision & Execution Intelligence", en: "Control Tower – Decision & Execution Intelligence" } },
+    ],
+  },
 };
 
 export const CORNERSTONE_SLUGS: readonly string[] = Object.values(FAGINNLEGG_AUTHORITY)
@@ -583,6 +621,7 @@ export const LESESTI_ARTICLE_IDS = {
     "ai-needs-first-tannklinikk-case-01",
   ],
   ledereKommersielle: [
+    "det-virksomheten-enna-ikke-ser-2026-09",
     "fornoyd-kunde-lojal-kunde-2026-09",
     "de-beste-kommersielle-grepene-2026-09",
     "fra-data-til-beslutning-2026-09",
