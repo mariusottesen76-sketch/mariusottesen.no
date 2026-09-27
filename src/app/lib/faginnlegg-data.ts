@@ -11,6 +11,8 @@ import { salgsledelseIPraksis } from "../data/innlegg/salgsledelse-i-praksis";
 import { tennisLedelse } from "../data/innlegg/tennis-ledelse";
 import { fornoydKundeLojalKunde } from "../data/innlegg/fornoyd-kunde-lojal-kunde";
 import { detVirksomhetenEnnaIkkeSer } from "../data/innlegg/det-virksomheten-enna-ikke-ser";
+import { narOrganisasjonenEgentligLaert } from "../data/innlegg/nar-organisasjonen-egentlig-laert";
+import { forbedreArbeidsmatenTenkePaNytt } from "../data/innlegg/forbedre-arbeidsmaten-tenke-pa-nytt";
 import { enrichFaginnleggHasTags } from "./faginnlegg-innhold";
 import type { FaginnleggInnlegg } from "./faginnlegg-types";
 
@@ -49,7 +51,9 @@ export function getAlleFaginnlegg(): FaginnleggInnlegg[] {
       ...tennisLedelse,
       ...aiGovernance,
       fornoydKundeLojalKunde,
+      forbedreArbeidsmatenTenkePaNytt,
       detVirksomhetenEnnaIkkeSer,
+      narOrganisasjonenEgentligLaert,
       obf2026Oppsummering,
       obf2026Dag2,
       obf2026Dag1,

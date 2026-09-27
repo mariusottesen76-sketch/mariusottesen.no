@@ -164,12 +164,17 @@ export const FAGINNLEGG_AUTHORITY: Record<string, FaginnleggAuthorityEntry> = {
     ],
     coreSupportSlugs: [
       "alle-enige-ingen-gjor-noe-01",
+      "forbedre-arbeidsmaten-tenke-pa-nytt-2026-10",
       "gronne-exceltall-transformasjon-2026-05",
       "tillit-endring-gjennomforing-2025-01",
       "fra-data-til-beslutning-2026-09",
     ],
     secondarySupportSlugs: ["ai-mottaker-endringsledelse-2026-08"],
     relevantVidere: [
+      articleLink("forbedre-arbeidsmaten-tenke-pa-nytt-2026-10", {
+        no: "Les også: Forbedre arbeidsmåten – eller tenke den på nytt?",
+        en: "Read also: Improve the way we work – or rethink it?",
+      }),
       articleLink("fra-data-til-beslutning-2026-09", {
         no: "Les også: Fra data til beslutning",
         en: "Read also: From data to decision",
@@ -567,11 +572,16 @@ export const FAGINNLEGG_AUTHORITY: Record<string, FaginnleggAuthorityEntry> = {
       "KPI og blindsoner",
     ],
     coreSupportSlugs: [
+      "nar-organisasjonen-egentlig-laert-2026-09",
       "fra-data-til-beslutning-2026-09",
       "fra-strategi-til-gjennomforing-2026-09",
     ],
     secondarySupportSlugs: ["salgsledelse-i-praksis-2026-08", "crm-mer-enn-et-systemprosjekt-2026-09"],
     relevantVidere: [
+      articleLink("nar-organisasjonen-egentlig-laert-2026-09", {
+        no: "Når har organisasjonen egentlig lært?",
+        en: "When has the organisation actually learned?",
+      }),
       articleLink("fra-data-til-beslutning-2026-09", {
         no: "Fra data til beslutning",
         en: "From data to decision",
@@ -585,6 +595,83 @@ export const FAGINNLEGG_AUTHORITY: Record<string, FaginnleggAuthorityEntry> = {
         en: "Sales leadership in practice",
       }),
       { href: "/control-tower", label: { no: "Control Tower – Decision & Execution Intelligence", en: "Control Tower – Decision & Execution Intelligence" } },
+    ],
+  },
+  "nar-organisasjonen-egentlig-laert-2026-09": {
+    slug: "nar-organisasjonen-egentlig-laert-2026-09",
+    cluster: "strategi-endring",
+    role: "core-support",
+    ownedIntents: [
+      "organisatorisk læring",
+      "organizational learning",
+      "lessons learned",
+      "erfaring til praksis",
+      "organisatorisk hukommelse",
+      "exploration and exploitation",
+    ],
+    coreSupportSlugs: [
+      "det-virksomheten-enna-ikke-ser-2026-09",
+      "fra-strategi-til-gjennomforing-2026-09",
+      "fra-data-til-beslutning-2026-09",
+    ],
+    secondarySupportSlugs: ["salgsledelse-i-praksis-2026-08", "psykologisk-trygghet-krav-2026-01"],
+    relevantVidere: [
+      articleLink("det-virksomheten-enna-ikke-ser-2026-09", {
+        no: "Det virksomheten ennå ikke ser",
+        en: "What the organisation has not yet seen",
+      }),
+      articleLink("fra-strategi-til-gjennomforing-2026-09", {
+        no: "Fra strategi til gjennomføring",
+        en: "From strategy to execution",
+      }),
+      articleLink("salgsledelse-i-praksis-2026-08", {
+        no: "Salgsledelse i praksis",
+        en: "Sales leadership in practice",
+      }),
+      articleLink("psykologisk-trygghet-krav-2026-01", {
+        no: "Psykologisk trygghet er ikke fravær av krav",
+        en: "Psychological safety is not the absence of demands",
+      }),
+      articleLink("forbedre-arbeidsmaten-tenke-pa-nytt-2026-10", {
+        no: "Forbedre arbeidsmåten – eller tenke den på nytt?",
+        en: "Improve the way we work – or rethink it?",
+      }),
+    ],
+  },
+  "forbedre-arbeidsmaten-tenke-pa-nytt-2026-10": {
+    slug: "forbedre-arbeidsmaten-tenke-pa-nytt-2026-10",
+    cluster: "strategi-endring",
+    role: "core-support",
+    ownedIntents: [
+      "prosessforbedring",
+      "prosessredesign",
+      "automatisering vs redesign",
+      "kontinuerlig forbedring",
+      "augmentering",
+      "arbeidsflyt",
+      "riktig endringsgrad",
+    ],
+    coreSupportSlugs: [
+      "fra-strategi-til-gjennomforing-2026-09",
+      "nar-organisasjonen-egentlig-laert-2026-09",
+      "ai-mottaker-endringsledelse-2026-08",
+    ],
+    secondarySupportSlugs: ["crm-mer-enn-et-systemprosjekt-2026-09", "gronne-exceltall-transformasjon-2026-05"],
+    relevantVidere: [
+      articleLink("fra-strategi-til-gjennomforing-2026-09", {
+        no: "Fra strategi til gjennomføring",
+        en: "From strategy to execution",
+      }),
+      articleLink("nar-organisasjonen-egentlig-laert-2026-09", {
+        no: "Når har organisasjonen egentlig lært?",
+        en: "When has the organisation actually learned?",
+      }),
+      articleLink("ai-mottaker-endringsledelse-2026-08", {
+        no: "Det mest interessante med AI denne uken har egentlig ikke vært AI",
+        en: "The most interesting thing about AI this week has not really been AI",
+      }),
+      { href: "/bilagsassistent", label: { no: "Se prosjektet: Bilagsassistent", en: "See project: Bilagsassistent" } },
+      { href: "/consulting", label: { no: "Se consulting-tilbud", en: "See consulting offerings" } },
     ],
   },
 };
@@ -621,6 +708,8 @@ export const LESESTI_ARTICLE_IDS = {
     "ai-needs-first-tannklinikk-case-01",
   ],
   ledereKommersielle: [
+    "forbedre-arbeidsmaten-tenke-pa-nytt-2026-10",
+    "nar-organisasjonen-egentlig-laert-2026-09",
     "det-virksomheten-enna-ikke-ser-2026-09",
     "fornoyd-kunde-lojal-kunde-2026-09",
     "de-beste-kommersielle-grepene-2026-09",

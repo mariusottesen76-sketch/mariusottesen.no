@@ -60,12 +60,23 @@ export const LEDELSE_SUBTEMA: FaginnleggSubtema[] = [
   {
     id: "ledelse-endring",
     label: { no: "Transformasjon, endring og gjennomføring", en: "Transformation, change and execution" },
-    innleggIds: ["fra-strategi-til-gjennomforing-2026-09", "tillit-endring-gjennomforing-2025-01", "ai-mottaker-endringsledelse-2026-08", "hr-panel-innovasjonsmotor-bjørvika-2026-08", "hr-responsible-adoption-bjørvika-2026-08", "hr-som-innovasjonsmotor-bjørvika-2026-08", "gronne-exceltall-transformasjon-2026-05"],
+    innleggIds: [
+      "forbedre-arbeidsmaten-tenke-pa-nytt-2026-10",
+      "nar-organisasjonen-egentlig-laert-2026-09",
+      "fra-strategi-til-gjennomforing-2026-09",
+      "tillit-endring-gjennomforing-2025-01",
+      "ai-mottaker-endringsledelse-2026-08",
+      "hr-panel-innovasjonsmotor-bjørvika-2026-08",
+      "hr-responsible-adoption-bjørvika-2026-08",
+      "hr-som-innovasjonsmotor-bjørvika-2026-08",
+      "gronne-exceltall-transformasjon-2026-05",
+    ],
   },
   {
     id: "ledelse-strategi",
     label: { no: "Strategi og virksomhetsutvikling", en: "Strategy and business development" },
     innleggIds: [
+      "det-virksomheten-enna-ikke-ser-2026-09",
       "obf-2026-oppsummering-2026-09",
       "obf-2026-dag-2-2026-09",
       "obf-2026-dag-1-2026-09",
