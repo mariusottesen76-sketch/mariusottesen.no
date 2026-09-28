@@ -29,8 +29,8 @@ export const narOrganisasjonenEgentligLaert: FaginnleggInnlegg = {
   ogDescription: {
     no: "Hvordan individuell læring kan bli til organisatorisk kapasitet — og hva ledere kan designe for at læringen blir værende.",
   },
-  dato: "2026-09-28",
-  visningsDato: "28.09.26",
+  dato: "2026-09-29",
+  visningsDato: "29.09.26",
   kategori: "Endring og gjennomføring",
   bildeUrl: "/images/læring.png",
   bildeKortFokus: "58% 38%",

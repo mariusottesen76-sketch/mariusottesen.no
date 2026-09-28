@@ -111,12 +111,17 @@ export const FAGINNLEGG_AUTHORITY: Record<string, FaginnleggAuthorityEntry> = {
       "høye forventninger og respekt",
     ],
     coreSupportSlugs: [
+      "nar-en-feil-blir-hele-historien-2026-09",
       "kjeft-psykologisk-trygghet-01",
       "du-arver-laget-landslag-2026-07",
       "verdier-kultur-kommersiell-ledelse-2026-06",
     ],
     secondarySupportSlugs: ["trykk-prestasjon-kommersiell-ledelse-2026-05"],
     relevantVidere: [
+      articleLink("nar-en-feil-blir-hele-historien-2026-09", {
+        no: "Les også: Når én feil blir hele historien",
+        en: "Read also: When one mistake becomes the whole story",
+      }),
       articleLink("du-arver-laget-landslag-2026-07", {
         no: "Les også: Du arver laget. Du eier utviklingen.",
         en: "Read also: You inherit the team. You own the development.",
@@ -674,6 +679,36 @@ export const FAGINNLEGG_AUTHORITY: Record<string, FaginnleggAuthorityEntry> = {
       { href: "/consulting", label: { no: "Se consulting-tilbud", en: "See consulting offerings" } },
     ],
   },
+  "nar-en-feil-blir-hele-historien-2026-09": {
+    slug: "nar-en-feil-blir-hele-historien-2026-09",
+    cluster: "ledelse-mennesker",
+    role: "core-support",
+    ownedIntents: [
+      "syndebukk",
+      "ansvar vs skyld",
+      "prestasjonskultur",
+      "lagbygging",
+      "tilbakemeldinger",
+      "teamutvikling",
+    ],
+    coreSupportSlugs: [
+      "psykologisk-trygghet-krav-2026-01",
+      "du-arver-laget-landslag-2026-07",
+      "kjeft-psykologisk-trygghet-01",
+    ],
+    secondarySupportSlugs: ["trykk-prestasjon-kommersiell-ledelse-2026-05", "verdier-kultur-kommersiell-ledelse-2026-06"],
+    relevantVidere: [
+      articleLink("psykologisk-trygghet-krav-2026-01", {
+        no: "Psykologisk trygghet er ikke fravær av krav",
+        en: "Psychological safety is not the absence of demands",
+      }),
+      articleLink("du-arver-laget-landslag-2026-07", {
+        no: "Du arver laget. Du eier utviklingen.",
+        en: "You inherit the team. You own the development.",
+      }),
+      { href: "/consulting", label: { no: "Se consulting-tilbud", en: "See consulting offerings" } },
+    ],
+  },
 };
 
 export const CORNERSTONE_SLUGS: readonly string[] = Object.values(FAGINNLEGG_AUTHORITY)
@@ -710,6 +745,7 @@ export const LESESTI_ARTICLE_IDS = {
   ledereKommersielle: [
     "forbedre-arbeidsmaten-tenke-pa-nytt-2026-10",
     "nar-organisasjonen-egentlig-laert-2026-09",
+    "nar-en-feil-blir-hele-historien-2026-09",
     "det-virksomheten-enna-ikke-ser-2026-09",
     "fornoyd-kunde-lojal-kunde-2026-09",
     "de-beste-kommersielle-grepene-2026-09",

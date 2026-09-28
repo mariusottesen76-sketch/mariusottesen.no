@@ -13,6 +13,7 @@ import { fornoydKundeLojalKunde } from "../data/innlegg/fornoyd-kunde-lojal-kund
 import { detVirksomhetenEnnaIkkeSer } from "../data/innlegg/det-virksomheten-enna-ikke-ser";
 import { narOrganisasjonenEgentligLaert } from "../data/innlegg/nar-organisasjonen-egentlig-laert";
 import { forbedreArbeidsmatenTenkePaNytt } from "../data/innlegg/forbedre-arbeidsmaten-tenke-pa-nytt";
+import { narEnFeilBlirHeleHistorien } from "../data/innlegg/nar-en-feil-blir-hele-historien";
 import { enrichFaginnleggHasTags } from "./faginnlegg-innhold";
 import type { FaginnleggInnlegg } from "./faginnlegg-types";
 
@@ -52,8 +53,9 @@ export function getAlleFaginnlegg(): FaginnleggInnlegg[] {
       ...aiGovernance,
       fornoydKundeLojalKunde,
       forbedreArbeidsmatenTenkePaNytt,
-      detVirksomhetenEnnaIkkeSer,
       narOrganisasjonenEgentligLaert,
+      narEnFeilBlirHeleHistorien,
+      detVirksomhetenEnnaIkkeSer,
       obf2026Oppsummering,
       obf2026Dag2,
       obf2026Dag1,
