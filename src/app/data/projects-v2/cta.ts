@@ -295,6 +295,9 @@ function secondaryDetailAction(project: ProjectV2Record): ProjectCtaAction | und
         ? { href: liveUrl, label: labels.openAccessControlled, external: true }
         : undefined;
     case "public":
+      if (project.slug === "row-solutions") {
+        return { href: "/prosjekter", label: project.ctaLabels?.detailSecondary ?? labels.backToProjects };
+      }
       return {
         href: contactHref(CONTACT_QUERY_TEMA.anvendelse, project.slug),
         label: project.ctaLabels?.detailSecondary ?? labels.contactApplication,

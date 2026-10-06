@@ -6,6 +6,7 @@ import { useLanguage } from './LanguageContext';
 import { getTranslation } from './data/translations';
 import {
   blockTitleClass,
+  bookFlowTextClass,
   pageIntroClass,
   pageTitleClass,
   sectionTitleClass,
@@ -193,42 +194,57 @@ const Faginnlegg = ({ onNavigate: _onNavigate }: { onNavigate?: (tab: string) =>
         <p className="text-[10px] font-bold uppercase tracking-widest text-indigo-400 mb-3">
           {tr("fag.bok.eyebrow")}
         </p>
-        <h2 id="fag-bok-heading" className={`${sectionTitleClass} mb-3 max-w-prose [overflow-wrap:anywhere] hyphens-none`}>
+        <h2 id="fag-bok-heading" className={`${sectionTitleClass} mb-3 ${bookFlowTextClass}`}>
           {tr("fag.bok.title")}
         </h2>
-        <p className="text-base md:text-lg text-slate-300 leading-relaxed font-light mb-5 w-full min-w-0 max-w-prose">
+        <p
+          className={`text-base md:text-lg text-slate-300 leading-relaxed font-light mb-6 w-full min-w-0 ${bookFlowTextClass}`}
+        >
           {tr("fag.bok.subtitle")}
         </p>
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 mb-6 min-w-0">
-          <BokOmslagImage variant="forside" lang={lang} className="shrink-0 mx-auto lg:mx-0 lg:sticky lg:top-28 lg:self-start" />
-          <div className="flex-1 min-w-0">
-        <div className="text-base md:text-lg text-slate-400 leading-relaxed font-light space-y-4 mb-6 whitespace-pre-line">
-          {tr("fag.bok.body")}
-        </div>
-        <dl className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-4 mb-6">
-          {(
-            [
-              ["fag.bok.proof.1.line1", "fag.bok.proof.1.line2"],
-              ["fag.bok.proof.2.line1", "fag.bok.proof.2.line2"],
-              ["fag.bok.proof.3.line1", "fag.bok.proof.3.line2"],
-              ["fag.bok.proof.4.line1", "fag.bok.proof.4.line2"],
-            ] as const
-          ).map(([line1, line2]) => (
+        <div className="grid grid-cols-1 lg:grid-cols-[min(100%,280px)_minmax(0,1fr)] gap-8 lg:gap-10 items-start">
+          <BokOmslagImage
+            variant="forside"
+            lang={lang}
+            className="shrink-0 mx-auto lg:mx-0 lg:sticky lg:top-28 lg:self-start"
+          />
+          <div className="min-w-0 flex flex-col">
             <div
-              key={line1}
-              className="rounded-xl border border-slate-800/80 bg-slate-950/40 px-4 py-3 min-h-[3.25rem] flex flex-col justify-center"
+              className={`text-base md:text-lg text-slate-400 leading-relaxed font-light space-y-4 mb-6 whitespace-pre-line ${bookFlowTextClass}`}
             >
-              <dt className="text-white font-semibold text-sm tracking-tight leading-snug">{tr(line1)}</dt>
-              <dd className="text-slate-400 text-sm font-light leading-snug mt-0.5 m-0">{tr(line2)}</dd>
+              {tr("fag.bok.body")}
             </div>
-          ))}
-        </dl>
-        <LocaleLink
-          href="/bok"
-          className="inline-flex items-center gap-2 text-indigo-400 font-black text-sm uppercase tracking-widest hover:text-white transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
-        >
-          {tr("fag.bok.cta")} →
-        </LocaleLink>
+            <dl className="grid grid-cols-2 xl:grid-cols-4 gap-3 mb-6 auto-rows-fr">
+              {(
+                [
+                  ["fag.bok.proof.1.heading", "fag.bok.proof.1.secondary"],
+                  ["fag.bok.proof.2.heading", "fag.bok.proof.2.secondary"],
+                  ["fag.bok.proof.3.heading", "fag.bok.proof.3.secondary"],
+                  ["fag.bok.proof.4.heading", "fag.bok.proof.4.secondary"],
+                ] as const
+              ).map(([headingKey, secondaryKey]) => {
+                const secondary = tr(secondaryKey);
+                return (
+                  <div
+                    key={headingKey}
+                    className="rounded-xl border border-slate-800/80 bg-slate-950/40 px-4 py-3.5 h-full min-h-[4.25rem] flex flex-col justify-center text-left"
+                  >
+                    <dt className="text-white font-semibold text-sm tracking-tight leading-snug [overflow-wrap:normal]">
+                      {tr(headingKey)}
+                    </dt>
+                    {secondary ? (
+                      <dd className="text-slate-400 text-sm font-light leading-snug mt-1 m-0">{secondary}</dd>
+                    ) : null}
+                  </div>
+                );
+              })}
+            </dl>
+            <LocaleLink
+              href="/bok"
+              className="inline-flex items-center gap-2 text-indigo-400 font-black text-sm uppercase tracking-widest hover:text-white transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
+            >
+              {tr("fag.bok.cta")} →
+            </LocaleLink>
           </div>
         </div>
       </section>

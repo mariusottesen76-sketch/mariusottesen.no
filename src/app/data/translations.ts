@@ -138,8 +138,8 @@ const translations: Translations = {
   "fag.title.1": { no: "Innsikt &", en: "Insight &" },
   "fag.title.2": { no: "faglig fordypning", en: "professional depth" },
   "fag.intro.1": {
-    no: "Faginnlegg om kommersiell ledelse, transformasjon og praktisk AI (kunstig intelligens/KI) — strukturert som faglig formidling, ikke som salgsmateriell. Innholdet inngår også i et større bokprosjekt som utvikles parallelt.",
-    en: "Articles on commercial leadership, transformation and practical AI — structured as professional communication, not sales material. The body of work also feeds an evolving book project developed in parallel.",
+    no: "Faginnlegg om kommersiell ledelse, transformasjon og praktisk AI (kunstig intelligens/KI) — strukturert som faglig formidling, ikke som salgsmateriell. Innholdet inngår også i kunnskapsgrunnlaget for utviklingen av én sammenhengende fagbok.",
+    en: "Articles on commercial leadership, transformation and practical AI — structured as professional communication, not sales material. The body of work also informs the development of one coherent professional book.",
   },
   "fag.bok.eyebrow": { no: "Bokprosjekt · under utvikling", en: "Book project · work in progress" },
   "fag.bok.title": {
@@ -147,21 +147,24 @@ const translations: Translations = {
     en: "From experience and research to one coherent book",
   },
   "fag.bok.subtitle": {
-    no: "En fagbok om hvordan virksomheter skaper varig verdi gjennom mennesker, kunder, arbeidsflyt, teknologi og gjennomføring.",
-    en: "A professional book on how organisations create lasting value through people, customers, workflows, technology and execution.",
+    no: "En fagbok om hvordan virksomheter skaper varig verdi — gjennom mennesker, kunder, arbeidsflyt, teknologi og gjennomføring.",
+    en: "A professional book on how organisations create lasting value — through people, customers, workflows, technology and execution.",
   },
   "fag.bok.body": {
-    no: "Dette er ikke en samling av tidligere faginnlegg. Jeg utvikler én sammenhengende fagbok med utgangspunkt i mer enn 25 års leder- og arbeidserfaring, egne faginnlegg, masterarbeid, utviklingsprosjekter og nyere forskning.\n\nBoken undersøker hva som skal til for at virksomheter klarer å forstå hva som skjer, velge hva som betyr mest og omsette valgene til måten mennesker arbeider på. Den handler om koblingen mellom retning, mennesker, kunder, arbeidsflyt og teknologi, og om evnen til å lære og justere når virkeligheten endrer seg.\n\nTeknologi og AI er en viktig del av dette bildet, men ikke utgangspunktet. Ambisjonen er å vise hvordan ledelse, kommersiell forståelse, gjennomføring og læring kan forsterkes av teknologi uten at teknologien får overta problemet.",
-    en: "This is not a collection of past articles. I am developing one coherent professional book drawing on more than 25 years of leadership and work experience, my own articles, master’s work, development projects and recent research.\n\nThe book examines what it takes for organisations to understand what is happening, choose what matters most and turn those choices into how people work. It is about the link between direction, people, customers, workflows and technology, and about the ability to learn and adjust when reality changes.\n\nTechnology and AI are an important part of the picture, but not the starting point. The aim is to show how leadership, commercial understanding, execution and learning can be strengthened by technology without technology taking over the problem.",
+    no: "Dette er ikke en samling av tidligere faginnlegg. Jeg utvikler én sammenhengende fagbok med utgangspunkt i mer enn 25 års leder- og arbeidserfaring, egne faginnlegg og masterarbeider, utviklingsprosjekter og nyere forskning.\n\nBoken undersøker hva som skal til for at virksomheter klarer å forstå hva som skjer, velge hva som betyr mest og omsette valgene til måten mennesker arbeider på. Den handler om koblingen mellom retning, mennesker, kunder, arbeidsflyt og teknologi, og om evnen til å lære og justere når virkeligheten endrer seg.\n\nTeknologi og AI er en viktig del av dette bildet, men ikke utgangspunktet. Ambisjonen er å vise hvordan ledelse, kommersiell forståelse, gjennomføring og læring kan forsterkes av teknologi uten at teknologien får overta problemet.",
+    en: "This is not a collection of past articles. I am developing one coherent professional book drawing on more than 25 years of leadership and work experience, my own articles and master’s theses, development projects and recent research.\n\nThe book examines what it takes for organisations to understand what is happening, choose what matters most and turn those choices into how people work. It is about the link between direction, people, customers, workflows and technology, and about the ability to learn and adjust when reality changes.\n\nTechnology and AI are an important part of the picture, but not the starting point. The aim is to show how leadership, commercial understanding, execution and learning can be strengthened by technology without technology taking over the problem.",
   },
-  "fag.bok.proof.1.line1": { no: "25+ års", en: "25+ years of" },
-  "fag.bok.proof.1.line2": { no: "leder- og arbeidserfaring", en: "leadership and work experience" },
-  "fag.bok.proof.2.line1": { no: "100+ faglige", en: "100+ professional" },
-  "fag.bok.proof.2.line2": { no: "tekster og refleksjoner", en: "texts and reflections" },
-  "fag.bok.proof.3.line1": { no: "Fire master- og", en: "Four master’s and" },
-  "fag.bok.proof.3.line2": { no: "prosjektarbeider", en: "project theses" },
-  "fag.bok.proof.4.line1": { no: "Praktiske utviklings-", en: "Practical development" },
-  "fag.bok.proof.4.line2": { no: "og AI-prosjekter", en: "and AI projects" },
+  "fag.bok.proof.1.heading": { no: "25+ års", en: "25+ years" },
+  "fag.bok.proof.1.secondary": { no: "leder- og arbeidserfaring", en: "of leadership and work experience" },
+  "fag.bok.proof.2.heading": { no: "100+ faglige tekster", en: "100+ professional texts" },
+  "fag.bok.proof.2.secondary": { no: "og refleksjoner", en: "and reflections" },
+  "fag.bok.proof.3.heading": { no: "Fire master- og prosjektarbeider", en: "Four master’s and project theses" },
+  "fag.bok.proof.3.secondary": { no: "", en: "" },
+  "fag.bok.proof.4.heading": {
+    no: "Praktiske utviklings- og AI\u2011prosjekter",
+    en: "Practical development and AI\u00A0projects",
+  },
+  "fag.bok.proof.4.secondary": { no: "", en: "" },
   "fag.bok.cta": { no: "Se bokprosjektet", en: "View the book project" },
   "fag.intro.2": {
     no: "Under finner du anbefalte lesestier og innholdsfortegnelse etter tema. Alle innlegg er nærmere beskrevet lenger ned på siden — med ingress, bilde og mulighet til å lese hele teksten.",
@@ -319,8 +322,8 @@ const translations: Translations = {
   },
   "prosjekter.intro.punkt.row-solutions.label": { no: "Row Solutions", en: "Row Solutions" },
   "prosjekter.intro.punkt.row-solutions.desc": {
-    no: "Ferdigstilt nettside for rowsolutions.no — posisjonering, tjenestestruktur og AI-assistert utvikling, ennå ikke publisert",
-    en: "Completed website for rowsolutions.no — positioning, service structure and AI-assisted development, not yet published",
+    no: "Live digital plattform for rowsolutions.no — kommersiell posisjonering, tjenestestruktur og AI-assistert utvikling",
+    en: "Live digital platform for rowsolutions.no — commercial positioning, service structure and AI-assisted development",
   },
   "prosjekter.intro.punkt.strategisk.desc": {
     no: "Fra case til gjennomførbar plan (BI) — modell for ansvarlig implementering",
@@ -357,12 +360,12 @@ const translations: Translations = {
     en: "Ongoing track on AI, leadership and value creation — where theory meets practice",
   },
   "prosjekter.intro.punkt.faginnlegg.bookPrefix": {
-    no: "Det bredere faglige arbeidet videreutvikles også gjennom et",
-    en: "The broader professional work is also developed through an",
+    no: "Parallelt utvikles en sammenhengende fagbok som et redaksjonelt og faglig prosjekt – se",
+    en: "In parallel, a coherent non-fiction book is being developed as an editorial and professional project – see the",
   },
   "prosjekter.intro.punkt.faginnlegg.bookLink": {
-    no: "pågående bokprosjekt",
-    en: "ongoing book project",
+    no: "bokprosjektet",
+    en: "book project",
   },
   "prosjekter.intro.2": {
     no: "Siden fungerer som en portefølje for arbeidsgivere, rekrutterere og beslutningstakere som ønsker å se praktisk AI-forståelse, digital transformasjon, produktutvikling og kommersiell og operasjonell gjennomføringsevne i praksis.",
@@ -560,12 +563,12 @@ const translations: Translations = {
     no: "For ytterligere faglig fordypning kan du også se mine",
     en: "For further professional depth, you can also see my",
   },
-  "dok.fagFordypning.faginnlegg": { no: "100+ faginnlegg", en: "100+ articles" },
+  "dok.fagFordypning.faginnlegg": { no: "100+ faglige tekster", en: "100+ professional texts" },
   "dok.fagFordypning.and": { no: "og", en: "and" },
   "dok.fagFordypning.bok": { no: "bokprosjektet", en: "book project" },
   "dok.fagFordypning.outro": {
-    no: "som nå samler erfaring, akademisk arbeid og praktiske case i et større faglig arbeid.",
-    en: "which is now bringing together experience, academic work and practical cases into a larger professional work.",
+    no: ": én fagbok under utvikling, bygget på erfaring, masterarbeid, faglige tekster og praktiske utviklingsprosjekter.",
+    en: ": one professional book in development, built on experience, graduate work, professional writing and practical development projects.",
   },
 
   // Footer

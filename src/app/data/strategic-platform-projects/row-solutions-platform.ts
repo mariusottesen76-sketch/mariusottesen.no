@@ -22,8 +22,8 @@ export const rowSolutionsPlatform: StrategicPlatformProject = {
       en: "Row Solutions | Marius Ottesen",
     },
     description: {
-      no: "Case om utvikling av Row Solutions og nettsiden rowsolutions.no: kommersiell posisjonering, tjenestestruktur og digital plattform for SMB — ferdigstilt, men ikke offentlig publisert.",
-      en: "Case on developing Row Solutions and the website rowsolutions.no: commercial positioning, service structure and digital platform for SMB — completed, but not publicly published.",
+      no: "Case om Row Solutions og rowsolutions.no: live digital plattform for kommersiell posisjonering, tjenestestruktur, salg, kundedialog og AI-assistert utvikling for SMB.",
+      en: "Case on Row Solutions and rowsolutions.no: live digital platform for commercial positioning, service structure, sales, customer dialogue and AI-assisted development for SMB.",
     },
     ogImage: "/images/strategisk-ai-implementering-hero.png?v=20260719",
     canonicalPath: "/row-solutions",
@@ -34,8 +34,8 @@ export const rowSolutionsPlatform: StrategicPlatformProject = {
       en: "From commercial idea to digital platform",
     },
     intro: {
-      no: "Utvikling av posisjonering, tjenestestruktur og ferdigstilt nettside for rowsolutions.no — ennå ikke offentlig publisert.",
-      en: "Development of positioning, service structure and a completed website for rowsolutions.no — not yet publicly published.",
+      no: "Live digital plattform for rowsolutions.no — kommersiell posisjonering, tjenestestruktur og AI-assistert utvikling.",
+      en: "Live digital platform for rowsolutions.no — commercial positioning, service structure and AI-assisted development.",
     },
     blokker: {
       utfordring: {
@@ -43,27 +43,27 @@ export const rowSolutionsPlatform: StrategicPlatformProject = {
         en: "A broad commercial offering must be made understandable without appearing as generic advisory work.",
       },
       bygget: {
-        no: "Posisjonering, tjenestestruktur, informasjonsarkitektur og ferdigstilt nettside for rowsolutions.no.",
-        en: "Positioning, service structure, information architecture and completed website for rowsolutions.no.",
+        no: "Posisjonering, tjenestestruktur, informasjonsarkitektur og publisert nettside for rowsolutions.no.",
+        en: "Positioning, service structure, information architecture and published website for rowsolutions.no.",
       },
       relevans: {
         no: "Viser kommersiell utvikling, transformasjon og AI-assistert gjennomføringsevne.",
         en: "Shows commercial development, transformation and AI-assisted execution capability.",
       },
       status: {
-        no: "Ferdigstilt nettside for rowsolutions.no — ikke offentlig publisert.",
-        en: "Completed website for rowsolutions.no — not publicly published.",
+        no: "rowsolutions.no er publisert og live i Production.",
+        en: "rowsolutions.no is published and live in production.",
       },
     },
     videreutvikling: {
-      no: "Faginnhold, case, konverteringsanalyse, SEO/AEO og CRM-integrasjon.",
-      en: "Professional content, cases, conversion analysis, SEO/AEO and CRM integration.",
+      no: "Faginnhold, case, konverteringsanalyse, AI Discovery, SEO/AEO og CRM-integrasjon.",
+      en: "Professional content, cases, conversion analysis, AI Discovery, SEO/AEO and CRM integration.",
     },
   },
   detail: {
     statusBadge: {
-      no: "Ferdigstilt – ikke publisert",
-      en: "Completed – not published",
+      no: "Publisert og live",
+      en: "Published and live",
     },
     hero: {
       verdiforslag: {
@@ -71,8 +71,8 @@ export const rowSolutionsPlatform: StrategicPlatformProject = {
         en: "From commercial idea to digital platform for small and medium-sized organisations.",
       },
       executiveSummary: {
-        no: "Row Solutions er et nytt kommersielt initiativ rettet mot SMB-er som trenger mindre friksjon mellom synlighet, leadgenerering, CRM, salg, kundedialog og oppfølging. Det er utviklet og bygget en nettside for rowsolutions.no som digital grunnflate for posisjonering, tjenester, faglig innsikt, prosjekter og kommersiell dialog — gjennom kundeproblem først, deretter struktur, brukerreise og teknologi. Nettsiden er ferdigstilt, men ennå ikke offentlig publisert. Prosjektet dokumenterer hvordan et kommersielt initiativ kan bygges fra idé til ferdig digital plattform med iterativ og AI-assistert arbeidsform.",
-        en: "Row Solutions is a new commercial initiative aimed at SMBs that need less friction between visibility, lead generation, CRM, sales, customer dialogue and follow-up. A website for rowsolutions.no has been developed and built as the digital foundation for positioning, services, professional insight, projects and commercial dialogue — through customer problems first, then structure, user journey and technology. The website is completed but not yet publicly published. The project documents how a commercial initiative can be built from idea to finished digital platform with an iterative and AI-assisted working method.",
+        no: "Row Solutions er et kommersielt initiativ rettet mot SMB-er som ønsker bedre flyt mellom synlighet, leadgenerering, CRM, salg, kundedialog og oppfølging. rowsolutions.no er nå publisert som den digitale grunnflaten for posisjonering, tjenester, faglig innsikt, prosjekter og kommersiell dialog — utviklet med kundeproblem først, deretter struktur, brukerreise og teknologi. Caset dokumenterer hvordan et kommersielt initiativ kan bygges fra idé til live digital plattform med iterativ og AI-assistert arbeidsform.",
+        en: "Row Solutions is a commercial initiative aimed at SMBs that want better flow between visibility, lead generation, CRM, sales, customer dialogue and follow-up. rowsolutions.no is now published as the digital foundation for positioning, services, professional insight, projects and commercial dialogue — developed with customer problems first, then structure, user journey and technology. The case documents how a commercial initiative can be built from idea to live digital platform with an iterative and AI-assisted working method.",
       },
       bildeAlt: {
         no: "Row Solutions – fra kommersiell idé til digital plattform",
@@ -82,8 +82,8 @@ export const rowSolutionsPlatform: StrategicPlatformProject = {
     kortFortalt: {
       heading: { no: "Hva prosjektet er", en: "What the project is" },
       body: {
-        no: "Row Solutions er et nytt kommersielt initiativ der nettsiden rowsolutions.no samler posisjonering, tjenester, faglig innsikt, prosjekter og kommersiell dialog i én strukturert digital grunnflate — koblet til kundeproblem, tjenestestruktur og praktisk gjennomføring. Nettsiden er bygget, men ennå ikke offentlig publisert.",
-        en: "Row Solutions is a new commercial initiative where the website rowsolutions.no brings together positioning, services, professional insight, projects and commercial dialogue in one structured digital foundation — linked to customer problems, service structure and practical execution. The website is built but not yet publicly published.",
+        no: "Row Solutions er et kommersielt initiativ der rowsolutions.no fungerer som live digital plattform for posisjonering, tjenester, faglig innsikt, prosjekter og kommersiell dialog — koblet til kundeproblem, tjenestestruktur og praktisk gjennomføring.",
+        en: "Row Solutions is a commercial initiative where rowsolutions.no serves as a live digital platform for positioning, services, professional insight, projects and commercial dialogue — linked to customer problems, service structure and practical execution.",
       },
     },
     utfordring: {
@@ -144,14 +144,14 @@ export const rowSolutionsPlatform: StrategicPlatformProject = {
     bygget: {
       heading: { no: "Hva som er bygget eller utviklet", en: "What has been built or developed" },
       items: [
-        { no: "Ferdigstilt nettside for rowsolutions.no på norsk og engelsk", en: "Completed website for rowsolutions.no in Norwegian and English" },
+        { no: "Publisert norsk og engelsk nettsted på rowsolutions.no", en: "Published Norwegian and English website at rowsolutions.no" },
         { no: "Kommersiell posisjonering og målgruppeforståelse for SMB", en: "Commercial positioning and audience understanding for SMB" },
-        { no: "Tjenestestruktur og prioritering av tilbud", en: "Service structure and prioritisation of offerings" },
-        { no: "Informasjonsarkitektur og kundereise med tydelig CTA-logikk", en: "Information architecture and customer journey with clear CTA logic" },
+        { no: "Tjenestestruktur og kommersiell brukerreise med tydelig CTA-logikk", en: "Service structure and commercial user journey with clear CTA logic" },
         { no: "Struktur for tjenester, prosjekter og faglig innsikt", en: "Structure for services, projects and professional insight" },
-        { no: "Norsk og engelsk nettstedstruktur med responsivt design", en: "Norwegian and English website structure with responsive design" },
-        { no: "SEO- og synlighetsgrunnlag for digital tilstedeværelse", en: "SEO and visibility foundation for digital presence" },
-        { no: "AI-assistert utviklingsarbeidsflyt i Cursor med iterativ testing", en: "AI-assisted development workflow in Cursor with iterative testing" },
+        { no: "AI Discovery som live tjenesteområde koblet til posisjonering og synlighet", en: "AI Discovery as a live service area linked to positioning and visibility" },
+        { no: "Kontakt- og CTA-flyt for kommersiell dialog", en: "Contact and CTA flow for commercial dialogue" },
+        { no: "Responsiv Next.js-løsning publisert i Production på Vercel", en: "Responsive Next.js solution published in production on Vercel" },
+        { no: "SEO- og AI-synlighetsgrunnlag, med AI-assistert utviklingsarbeidsflyt i Cursor", en: "SEO and AI visibility foundation, with AI-assisted development workflow in Cursor" },
       ],
     },
     moduler: {
@@ -172,8 +172,8 @@ export const rowSolutionsPlatform: StrategicPlatformProject = {
         {
           tittel: { no: "Tjenester og tilbud", en: "Services and offerings" },
           beskrivelse: {
-            no: "Strukturert fremstilling av tjenester uten at tilbudet fremstår uoversiktlig.",
-            en: "Structured presentation of services without the offering appearing overwhelming.",
+            no: "Strukturert fremstilling av tjenester — inkludert AI Discovery som live område for hvordan virksomheter blir forstått og funnet i AI-søk, koblet til posisjonering og kommersiell synlighet.",
+            en: "Structured presentation of services — including AI Discovery as a live area exploring how organisations are understood and found in AI search, linked to positioning and commercial visibility.",
           },
           bygget: true,
         },
@@ -220,8 +220,8 @@ export const rowSolutionsPlatform: StrategicPlatformProject = {
         {
           tittel: { no: "Finn relevant tjeneste", en: "Find relevant service" },
           beskrivelse: {
-            no: "Navigasjon fra behov til strukturerte tjeneste- og tilbudssider.",
-            en: "Navigation from need to structured service and offering pages.",
+            no: "Navigasjon fra behov til strukturerte tjeneste- og tilbudssider — inkludert AI Discovery der det er relevant.",
+            en: "Navigation from need to structured service and offering pages — including AI Discovery where relevant.",
           },
         },
         {
@@ -275,8 +275,8 @@ export const rowSolutionsPlatform: StrategicPlatformProject = {
     status: {
       heading: { no: "Status, modenhet og avgrensninger", en: "Status, maturity and limitations" },
       body: {
-        no: "Nettsiden for rowsolutions.no er ferdigstilt, men ikke offentlig publisert. Den er ikke lansert og er ikke presentert med dokumentert markedseffekt, kundeaktivitet eller kommersiell traction. Porteføljeoppføringen på mariusottesen.no dokumenterer utviklingsarbeidet — ikke en live, offentlig kundeløsning.",
-        en: "The website for rowsolutions.no is completed, but not publicly published. It is not launched and is not presented with documented market effect, customer activity or commercial traction. The portfolio entry on mariusottesen.no documents the development work — not a live, public customer solution.",
+        no: "Nettsiden for rowsolutions.no er publisert og live i Production. Plattformen samler Rows posisjonering, tjenester, prosjekter, faglig innhold og kundedialog i én kommersiell struktur. Videre utvikling skjer iterativt basert på markedslæring, kundedialog og dokumenterte behov — uten at det er påstått dokumentert markedseffekt, kundetall eller kommersiell traction.",
+        en: "The website for rowsolutions.no is published and live in production. The platform brings together Row's positioning, services, projects, professional content and customer dialogue in one commercial structure. Further development happens iteratively based on market learning, customer dialogue and documented needs — without claimed documented market effect, customer numbers or commercial traction.",
       },
     },
     skalerbarhet: {
@@ -284,12 +284,13 @@ export const rowSolutionsPlatform: StrategicPlatformProject = {
       platform: {
         heading: { no: "Videreutvikling av løsningen", en: "Further development of the solution" },
         punkter: [
-          { no: "Videre faginnhold og thought leadership", en: "Further professional content and thought leadership" },
-          { no: "Dokumenterte prosjekter og case", en: "Documented projects and cases" },
-          { no: "Brukerreise- og konverteringsanalyse", en: "User journey and conversion analysis" },
-          { no: "Sterkere SEO, AEO og AI-synlighet", en: "Stronger SEO, AEO and AI visibility" },
-          { no: "CRM-, lead- og oppfølgingsflyt", en: "CRM, lead and follow-up flows" },
-          { no: "Analytics og AI-støttede funksjoner", en: "Analytics and AI-supported functions" },
+          { no: "Videre faginnhold og dokumenterte case", en: "Further professional content and documented cases" },
+          { no: "Konverterings- og brukerreiseanalyse", en: "Conversion and user journey analysis" },
+          { no: "Videreutvikling av AI Discovery", en: "Further development of AI Discovery" },
+          { no: "Optimalisering av kundereise, CTA-er og leadflyt", en: "Optimisation of customer journey, CTAs and lead flows" },
+          { no: "Videre SEO/AEO/GEO/AIO-arbeid", en: "Further SEO/AEO/GEO/AIO work" },
+          { no: "Analytics og læring fra faktisk bruk", en: "Analytics and learning from actual use" },
+          { no: "CRM-integrasjon og dypere lead-/oppfølgingsflyt der det ikke er bygget", en: "CRM integration and deeper lead/follow-up flows where not yet built" },
         ],
       },
       tilpasning: {
@@ -309,8 +310,8 @@ export const rowSolutionsPlatform: StrategicPlatformProject = {
     avslutning: {
       heading: { no: "Utforsk prosjektet videre", en: "Explore the project further" },
       body: {
-        no: "Ta kontakt dersom du ønsker å diskutere hvordan tilnærmingen kan overføres til andre kommersielle initiativ, rådgivningsmiljøer eller digitale plattformer.",
-        en: "Get in touch if you would like to discuss how the approach can be transferred to other commercial initiatives, advisory environments or digital platforms.",
+        no: "Utforsk rowsolutions.no for å se den live plattformen, eller ta kontakt dersom du ønsker å diskutere hvordan tilnærmingen kan overføres til andre kommersielle initiativ, rådgivningsmiljøer eller digitale plattformer.",
+        en: "Explore rowsolutions.no to see the live platform, or get in touch if you would like to discuss how the approach can be transferred to other commercial initiatives, advisory environments or digital platforms.",
       },
     },
     utvikler,

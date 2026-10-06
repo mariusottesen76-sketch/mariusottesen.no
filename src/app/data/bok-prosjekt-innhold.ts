@@ -26,6 +26,8 @@ export interface BokProsjektCopy {
   heroIntro: string;
   aboutTitle: string;
   aboutParagraphs: string[];
+  /** Kondensert tese nederst i «Hva boken handler om» — tre parallelle setninger. */
+  aboutThesis: readonly [string, string, string];
   journeyTitle: string;
   journeyIntro: string;
   journeySteps: string[];
@@ -75,13 +77,17 @@ export const BOK_PROSJEKT_COPY: Record<BokProsjektLang, BokProsjektCopy> = {
     subtitle: "Hvordan mennesker, teknologi og gjennomføring skaper varig verdi",
     coverNote: "Arbeidstittel og foreløpig omslag",
     heroIntro:
-      "Boken utvikles som én sammenhengende fagbok for ledere og nøkkelpersoner som skal omsette retning til resultater gjennom mennesker, kunder, arbeidsflyt og teknologi.",
+      "Boken utvikles som én sammenhengende fagbok for ledere og nøkkelpersoner som skal omsette retning til resultater — gjennom mennesker, kunder, arbeidsflyt og teknologi.",
     aboutTitle: "Hva boken handler om",
     aboutParagraphs: [
-      "Mange virksomheter er gode til å analysere, planlegge og formulere ambisjoner. Den vanskeligere delen er å gjøre forståelsen om til valg, valgene om til praksis og erfaringene om til læring.",
-      "Dette er bokas kjerne.",
+      "Mange virksomheter er gode til å analysere, planlegge og formulere ambisjoner. Den vanskeligere delen er å omsette dette til varig praksis i hverdagen.",
       "Boken undersøker hvordan virksomheter kan forstå hva som faktisk skjer, prioritere det som betyr mest, mobilisere mennesker, skape kundeverdi, endre arbeidsmåter og bruke teknologi på en måte som forsterker det virksomheten prøver å oppnå.",
       "Teknologi og AI får en tydelig plass, men behandles som virkemidler. Utgangspunktet er virksomhetens behov, arbeidsmåter, mennesker og ønskede effekt.",
+    ],
+    aboutThesis: [
+      "Forståelse må bli valg.",
+      "Valg må bli praksis.",
+      "Erfaring må bli læring.",
     ],
     journeyTitle: "Fra forståelse til varig verdi",
     journeyIntro:
@@ -164,13 +170,17 @@ export const BOK_PROSJEKT_COPY: Record<BokProsjektLang, BokProsjektCopy> = {
     subtitle: "How people, technology and execution create lasting value",
     coverNote: "Working title and provisional cover",
     heroIntro:
-      "The book is being developed as one coherent professional work for leaders and key people who must turn direction into results through people, customers, workflows and technology.",
+      "The book is being developed as one coherent professional work for leaders and key people who must turn direction into results — through people, customers, workflows and technology.",
     aboutTitle: "What the book is about",
     aboutParagraphs: [
-      "Many organisations are good at analysing, planning and stating ambition. The harder part is turning understanding into choices, choices into practice and experience into learning.",
-      "That is the core of the book.",
+      "Many organisations are good at analysing, planning and stating ambition. The harder part is turning that into lasting practice in everyday work.",
       "It examines how organisations can understand what is actually happening, prioritise what matters most, mobilise people, create customer value, change ways of working and use technology in ways that strengthen what the organisation is trying to achieve.",
       "Technology and AI have a clear place, but are treated as means. The starting point is the organisation’s needs, ways of working, people and desired effects.",
+    ],
+    aboutThesis: [
+      "Understanding must become choice.",
+      "Choice must become practice.",
+      "Experience must become learning.",
     ],
     journeyTitle: "From understanding to lasting value",
     journeyIntro:

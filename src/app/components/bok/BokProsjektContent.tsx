@@ -4,12 +4,21 @@ import BokOmslagImage from "./BokOmslagImage";
 import LocaleLink from "../LocaleLink";
 import { BOK_PROSJEKT_COPY } from "../../data/bok-prosjekt-innhold";
 import { useLanguage } from "../../LanguageContext";
-import { blockTitleClass, pageIntroClass, pageTitleClass, sectionTitleClass } from "../../lib/typography";
+import {
+  blockTitleClass,
+  bookFlowTextClass,
+  pageIntroClass,
+  pageTitleClass,
+  sectionTitleClass,
+} from "../../lib/typography";
 
 const linkClass =
   "text-indigo-400 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400";
 
-const bodyClass = "text-base md:text-lg text-slate-400 leading-relaxed font-light";
+/** Bred nok til jevn linjeflyt i hovedkolonnen — unngå max-w-prose inni smalere wrapper. */
+const bookColumnClass = "w-full min-w-0 max-w-4xl";
+const bodyClass = `text-base md:text-lg text-slate-400 leading-relaxed font-light ${bookFlowTextClass}`;
+const bookH1Class = `${pageTitleClass} mb-4 ${bookFlowTextClass} break-normal [overflow-wrap:normal]`;
 
 function BokProsjektInner() {
   const { lang } = useLanguage();
@@ -23,47 +32,53 @@ function BokProsjektInner() {
         </LocaleLink>
       </p>
 
-      <header className="border-b border-slate-800/40 pb-10 mb-12 lg:grid lg:grid-cols-[minmax(0,1fr)_auto] lg:gap-12 lg:items-start">
-        <div className="min-w-0 mb-8 lg:mb-0">
+      <header className="border-b border-slate-800/40 pb-12 mb-12">
+        <div className={bookColumnClass}>
           <p className="text-[10px] font-bold uppercase tracking-widest text-indigo-400 mb-4">
             {copy.eyebrow}
           </p>
-          <h1 className={`${pageTitleClass} mb-4 max-w-prose [overflow-wrap:anywhere]`}>{copy.h1}</h1>
-          <p className={`${pageIntroClass} mb-3 max-w-prose`}>{copy.subtitle}</p>
+          <h1 className={bookH1Class}>{copy.h1}</h1>
+          <p className={`${pageIntroClass} mb-3 ${bookFlowTextClass} text-lg md:text-xl lg:text-2xl`}>
+            {copy.subtitle}
+          </p>
           <p className="text-xs text-slate-500 font-medium tracking-wide mb-5">{copy.coverNote}</p>
-          <p className={`${bodyClass} max-w-prose`}>{copy.heroIntro}</p>
+          <p className={bodyClass}>{copy.heroIntro}</p>
         </div>
-        <BokOmslagImage
-          variant="forside"
-          lang={lang}
-          className="shrink-0 mx-auto lg:mx-0 lg:sticky lg:top-28"
-        />
+        <aside
+          className="mt-10 flex flex-col sm:flex-row flex-wrap gap-8 sm:gap-10 justify-center sm:justify-start items-center sm:items-end"
+          aria-label={lang === "no" ? "Foreløpige omslag" : "Provisional covers"}
+        >
+          <BokOmslagImage variant="forside" lang={lang} className="mx-auto sm:mx-0" />
+          <BokOmslagImage variant="bakside" lang={lang} className="mx-auto sm:mx-0" />
+        </aside>
       </header>
 
-      <div
-        className="flex flex-col sm:flex-row flex-wrap items-center sm:items-start justify-center sm:justify-start gap-8 sm:gap-10 mb-14 pb-14 border-b border-slate-800/40"
-        aria-label={lang === "no" ? "Foreløpig bakomslag" : "Provisional back cover"}
-      >
-        <BokOmslagImage variant="bakside" lang={lang} />
-      </div>
-
-      <div className="space-y-14 md:space-y-16 max-w-3xl">
+      <div className={`space-y-14 md:space-y-16 ${bookColumnClass}`}>
         <section aria-labelledby="bok-om" className="min-w-0">
           <h2 id="bok-om" className={`${sectionTitleClass} mb-5`}>
             {copy.aboutTitle}
           </h2>
           {copy.aboutParagraphs.map((p, i) => (
-            <p key={i} className={`${bodyClass} mb-4 last:mb-0 ${p === copy.aboutParagraphs[1] ? "text-slate-300" : ""}`}>
+            <p key={i} className={`${bodyClass} mb-4 last:mb-0`}>
               {p}
             </p>
           ))}
+          <blockquote
+            className={`mt-8 border-l-2 border-indigo-500/40 pl-5 m-0 text-slate-300 text-lg md:text-xl font-light leading-relaxed ${bookFlowTextClass}`}
+          >
+            {copy.aboutThesis.map((line) => (
+              <p key={line} className="mb-1 last:mb-0">
+                {line}
+              </p>
+            ))}
+          </blockquote>
         </section>
 
         <section aria-labelledby="bok-reise" className="min-w-0">
           <h2 id="bok-reise" className={`${sectionTitleClass} mb-5`}>
             {copy.journeyTitle}
           </h2>
-          <p className={`${bodyClass} mb-8 max-w-prose`}>{copy.journeyIntro}</p>
+          <p className={`${bodyClass} mb-8`}>{copy.journeyIntro}</p>
           <div
             className="overflow-x-auto pb-2 -mx-1 px-1 [scrollbar-width:thin]"
             role="img"
@@ -88,7 +103,7 @@ function BokProsjektInner() {
               ))}
             </ol>
           </div>
-          <p className={`${bodyClass} text-sm md:text-base mt-6 text-slate-500 max-w-prose`}>{copy.journeyFootnote}</p>
+          <p className={`${bodyClass} text-sm md:text-base mt-6 text-slate-500`}>{copy.journeyFootnote}</p>
         </section>
 
         <section aria-labelledby="bok-struktur" className="min-w-0">
@@ -96,7 +111,7 @@ function BokProsjektInner() {
             {copy.structureTitle}
           </h2>
           {copy.structureParagraphs.map((p, i) => (
-            <p key={i} className={`${bodyClass} mb-6 max-w-prose`}>
+            <p key={i} className={`${bodyClass} mb-6`}>
               {p}
             </p>
           ))}
@@ -111,19 +126,19 @@ function BokProsjektInner() {
               </li>
             ))}
           </ol>
-          <p className={`${bodyClass} text-sm md:text-base text-slate-500 max-w-prose`}>{copy.structureNote}</p>
+          <p className={`${bodyClass} text-sm md:text-base text-slate-500`}>{copy.structureNote}</p>
         </section>
 
         <section aria-labelledby="bok-evidens" className="min-w-0">
           <h2 id="bok-evidens" className={`${sectionTitleClass} mb-5`}>
             {copy.evidenceTitle}
           </h2>
-          <p className={`${bodyClass} mb-8 max-w-prose`}>{copy.evidenceIntro}</p>
+          <p className={`${bodyClass} mb-8`}>{copy.evidenceIntro}</p>
           <ul className="space-y-6 list-none p-0 m-0">
             {copy.evidenceCards.map((card) => (
               <li key={card.title} className="min-w-0">
                 <h3 className="text-white font-semibold text-base mb-2 tracking-tight">{card.title}</h3>
-                <p className={`${bodyClass} text-base max-w-prose`}>{card.body}</p>
+                <p className={`${bodyClass} text-base`}>{card.body}</p>
               </li>
             ))}
           </ul>
@@ -133,7 +148,7 @@ function BokProsjektInner() {
           <h2 id="bok-malgruppe" className={`${sectionTitleClass} mb-5`}>
             {copy.audienceTitle}
           </h2>
-          <p className={`${bodyClass} mb-6 max-w-prose`}>{copy.audienceParagraph}</p>
+          <p className={`${bodyClass} mb-6`}>{copy.audienceParagraph}</p>
           <p className="text-sm text-slate-500 font-medium mb-3">
             {lang === "no" ? "Særlig relevant for personer som arbeider med:" : "Especially relevant for people working with:"}
           </p>
@@ -154,7 +169,7 @@ function BokProsjektInner() {
             {copy.statusTitle}
           </h2>
           {copy.statusParagraphs.map((p, i) => (
-            <p key={i} className={`${bodyClass} mb-4 last:mb-6 max-w-prose`}>
+            <p key={i} className={`${bodyClass} mb-4 last:mb-6`}>
               {p}
             </p>
           ))}

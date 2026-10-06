@@ -6,13 +6,13 @@ const HUB_META = {
   no: {
     title: "Faginnlegg | Innsikt & faglig fordypning — Marius Ottesen",
     description:
-      "Faginnlegg om kommersiell ledelse, transformasjon og praktisk AI — og et bokprosjekt under utvikling. Strategisk ledelse, gjennomføring og faglig formidling.",
+      "Faginnlegg om kommersiell ledelse, transformasjon og praktisk AI — og utviklingen av én sammenhengende fagbok. Strategisk ledelse, gjennomføring og faglig formidling.",
     ogImageAlt: "Innsikt og faglig fordypning — Marius Ottesen",
   },
   en: {
     title: "Articles | Insight & professional depth — Marius Ottesen",
     description:
-      "Articles on commercial leadership, transformation and practical AI — plus an evolving book project. Strategic leadership, execution and professional communication.",
+      "Articles on commercial leadership, transformation and practical AI — and the development of a coherent professional book. Strategic leadership, execution and professional communication.",
     ogImageAlt: "Insight and professional depth — Marius Ottesen",
   },
 } as const;

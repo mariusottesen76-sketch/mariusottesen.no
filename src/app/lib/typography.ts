@@ -39,6 +39,10 @@ export const iconSectionTitleClass =
 /** Intro under hero (consulting, prosjekter) */
 export const pageIntroClass = "text-xl md:text-2xl text-slate-300 leading-relaxed font-light w-full min-w-0 max-w-none";
 
+/** Brødtekst der naturlige linjeskift skal unngå orphan-lignende brudd (bokprosjekt m.m.) */
+export const bookFlowTextClass =
+  "text-pretty hyphens-none [overflow-wrap:normal] [word-break:normal]";
+
 /** Teaser under prosjekttittel */
 export const prosjektTeaserClass =
   "text-sm leading-[1.5] md:leading-[1.48] font-light break-words text-slate-400 [&_em]:italic";

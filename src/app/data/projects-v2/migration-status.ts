@@ -110,7 +110,7 @@ export const projectMigrationOverview: ProjectMigrationEntry[] = [
     layoutVersion: "project_v2",
     existingDetailPage: "/row-solutions",
     recommendedDetailLevel: "full",
-    accessMode: "no_live_solution",
+    accessMode: "public",
     overviewImageFormat: "standard_1x3",
     detailHeroMissing: true,
     missingOverviewFields: [],
