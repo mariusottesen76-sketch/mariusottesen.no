@@ -323,7 +323,7 @@ export default function Profil({ onNavigate }: { onNavigate?: (tab: string) => v
                 </p>
               </div>
             </div>
-            <p className="text-slate-400 text-sm leading-relaxed">{tr("profil.selskap.desc")}</p>
+            <p className="text-slate-400 text-sm leading-relaxed whitespace-pre-line">{tr("profil.selskap.desc")}</p>
             <NavLink
               href="/consulting"
               tab="Consulting"

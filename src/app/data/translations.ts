@@ -20,8 +20,8 @@ const translations: Translations = {
     en: "Commercial leader | Growth, transformation and practical AI understanding",
   },
   "profil.selskap.desc": {
-    no: "Marius Ottesen Consulting er en faglig plattform som samler erfaring, metoder og porteføljeprosjekter innen kommersiell utvikling, AI, arbeidsflyt og lederstøtte. Siden viser relevante problemstillinger, arbeidsmetoder og områder jeg kan bidra innenfor i en relevant lederrolle, rekrutteringsdialog eller mulig fremtidig samarbeid.",
-    en: "Marius Ottesen Consulting is a professional platform that brings together experience, methods and portfolio projects in commercial development, AI, workflow and leadership support. The site shows relevant problem areas, working methods and areas where I can contribute within a relevant leadership role, recruitment dialogue or possible future collaboration.",
+    no: "Marius Ottesen Consulting er en faglig plattform som samler erfaring, metoder og porteføljeprosjekter innen kommersiell utvikling, AI, arbeidsflyt og lederstøtte. Siden viser relevante problemstillinger, arbeidsmetoder og områder jeg kan bidra innenfor i en relevant lederrolle, rekrutteringsdialog eller mulig fremtidig samarbeid.\n\nJeg arbeider også med Row Solutions, et kommersielt samarbeidsinitiativ rettet mot SMB. Initiativet fungerer som en felles markeds- og utviklingsplattform for utvalgte prosjekter innen kommersiell utvikling, arbeidsflyt og praktisk bruk av AI.",
+    en: "Marius Ottesen Consulting is a professional platform that brings together experience, methods and portfolio projects in commercial development, AI, workflow and leadership support. The site shows relevant problem areas, working methods and areas where I can contribute within a relevant leadership role, recruitment dialogue or possible future collaboration.\n\nI also work on Row Solutions, a commercial collaboration initiative for SMEs. The initiative serves as a shared market and development platform for selected projects in commercial development, workflow and practical use of AI.",
   },
   "profil.roller.title": { no: "Aktuell for roller innen", en: "Relevant for roles in" },
   "profil.proof.title": {
@@ -322,8 +322,8 @@ const translations: Translations = {
   },
   "prosjekter.intro.punkt.row-solutions.label": { no: "Row Solutions", en: "Row Solutions" },
   "prosjekter.intro.punkt.row-solutions.desc": {
-    no: "Live digital plattform for rowsolutions.no — kommersiell posisjonering, tjenestestruktur og AI-assistert utvikling",
-    en: "Live digital platform for rowsolutions.no — commercial positioning, service structure and AI-assisted development",
+    no: "Kommersielt samarbeidsinitiativ og live digital plattform — posisjonering, tjenestestruktur og AI-assistert utvikling",
+    en: "Commercial collaboration initiative and live digital platform — positioning, service structure and AI-assisted development",
   },
   "prosjekter.intro.punkt.strategisk.desc": {
     no: "Fra case til gjennomførbar plan (BI) — modell for ansvarlig implementering",

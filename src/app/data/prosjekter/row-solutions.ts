@@ -9,8 +9,8 @@ export const rowSolutions: ProsjektType = {
     en: "Row Solutions – from commercial idea to digital platform",
   },
   teaser: {
-    no: "Live digital plattform for rowsolutions.no — kommersiell posisjonering, tjenestestruktur og AI-assistert utvikling.",
-    en: "Live digital platform for rowsolutions.no — commercial positioning, service structure and AI-assisted development.",
+    no: "Kommersielt samarbeidsinitiativ med live digital plattform på rowsolutions.no — posisjonering, tjenestestruktur og AI-assistert utvikling.",
+    en: "Commercial collaboration initiative with a live digital platform at rowsolutions.no — positioning, service structure and AI-assisted development.",
   },
   bildeUrl: ROW_SOLUTIONS_OVERVIEW_IMAGE,
   dato: "2026-08-28",

@@ -40,8 +40,8 @@ const tekster: Record<string, Record<Lang, string>> = {
     en: "The website is built as my own leadership and portfolio platform, but also demonstrates that I can build and publish professional websites from idea to live solution. The model can be adapted for other profiles, organisations, industries and purposes — for example employer branding, consulting portfolios, case pages, product landing pages and integrated demonstrators.",
   },
   "row-solutions-2026": {
-    no: "Row Solutions er et kommersielt initiativ med publisert og live nettside på rowsolutions.no. Arbeidsmetoden kan overføres til andre SMB-er, rådgivningsmiljøer og kunnskapsbedrifter som må koble posisjonering, tjenester, innhold og kommersiell digital tilstedeværelse.",
-    en: "Row Solutions is a commercial initiative with a published, live website at rowsolutions.no. The working method can be transferred to other SMBs, advisory environments and knowledge businesses that must connect positioning, services, content and commercial digital presence.",
+    no: "Row Solutions er et kommersielt samarbeidsinitiativ med publisert og live plattform på rowsolutions.no. Arbeidsmetoden kan overføres til andre SMB-er, rådgivningsmiljøer og kunnskapsbedrifter som må koble posisjonering, tjenester, innhold og kommersiell digital tilstedeværelse.",
+    en: "Row Solutions is a commercial collaboration initiative with a published, live platform at rowsolutions.no. The working method can be transferred to other SMBs, advisory environments and knowledge businesses that must connect positioning, services, content and commercial digital presence.",
   },
   "skoyenasen-tannklinikk-2026": {
     no: "Caset er bygget for pasientreise og booking i tannhelsesektoren, men kan tilpasses andre klinikker, servicebedrifter og kundereiseorienterte virksomheter. Videre potensial inkluderer recall, digital oppfølging, flerspråklig front-end, smart intake og bookingflyt for andre klinikker, helsetjenester og servicevirksomheter med omfattende kundedialog og booking.",

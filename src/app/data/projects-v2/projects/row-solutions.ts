@@ -17,29 +17,29 @@ export const rowSolutionsV2: ProjectV2Record = {
     en: "Row Solutions – from commercial idea to digital platform",
   },
   subtitle: {
-    no: "Kommersiell posisjonering, tjenestestruktur og live digital plattform for SMB-initiativ",
-    en: "Commercial positioning, service structure and live digital platform for an SMB initiative",
+    no: "Kommersielt samarbeidsinitiativ — posisjonering, tjenestestruktur og live digital plattform for SMB",
+    en: "Commercial collaboration initiative — positioning, service structure and live digital platform for SMEs",
   },
   statusLabel: {
     no: "Publisert og live",
     en: "Published and live",
   },
   overviewIntroduction: {
-    no: "Utvikling av posisjonering, tjenestestruktur, informasjonsarkitektur og den publiserte digitale plattformen rowsolutions.no — for et kommersielt SMB-initiativ utviklet gjennom iterativ og AI-assistert arbeidsform der kundeproblem kommer før teknologi.",
-    en: "Development of positioning, service structure, information architecture and the published digital platform rowsolutions.no — for a commercial SMB initiative built through an iterative and AI-assisted working method where customer problems come before technology.",
+    no: "Marius' arbeid med posisjonering, tjenestestruktur, informasjonsarkitektur og den publiserte digitale plattformen rowsolutions.no — i et kommersielt samarbeidsinitiativ gjennom iterativ og AI-assistert arbeidsform der kundeproblem kommer før teknologi.",
+    en: "Marius' work on positioning, service structure, information architecture and the published digital platform rowsolutions.no — in a commercial collaboration initiative through an iterative and AI-assisted working method where customer problems come before technology.",
   },
   overview: {
     what: {
-      no: "Row Solutions er et kommersielt initiativ der rowsolutions.no fungerer som live digital plattform for posisjonering, tjenester, faglig innsikt, prosjekter og kommersiell dialog — koblet til kundeproblem, tjenestestruktur og praktisk gjennomføring.",
-      en: "Row Solutions is a commercial initiative where rowsolutions.no serves as a live digital platform for positioning, services, professional insight, projects and commercial dialogue — linked to customer problems, service structure and practical execution.",
+      no: "Row Solutions er et kommersielt samarbeidsinitiativ rettet mot SMB. rowsolutions.no er initiativets publiserte digitale plattform for posisjonering, tjenester, faglig innsikt, prosjekter og kommersiell dialog — koblet til kundeproblem, tjenestestruktur og praktisk gjennomføring.",
+      en: "Row Solutions is a commercial collaboration initiative for SMEs. rowsolutions.no is the initiative's published digital platform for positioning, services, professional insight, projects and commercial dialogue — linked to customer problems, service structure and practical execution.",
     },
     challenge: {
       no: "Utfordringen er ikke bare å bygge en nettside, men å gjøre et bredt kommersielt tilbud forståelig for SMB-ledere. Virksomheter opplever friksjon mellom synlighet, leadgenerering, CRM, salg, kundedialog og oppfølging — samtidig som et rådgivningsmiljø som kombinerer strategi, salg, transformasjon og AI raskt kan fremstå for bredt uten tydelig struktur.",
       en: "The challenge is not just to build a website, but to make a broad commercial offering understandable for SMB leaders. Organisations experience friction between visibility, lead generation, CRM, sales, customer dialogue and follow-up — while an advisory environment combining strategy, sales, transformation and AI can quickly appear too broad without clear structure.",
     },
     built: {
-      no: "Det er utviklet kommersiell posisjonering, målgruppeforståelse, tjenestestruktur, informasjonsarkitektur, kundereise og CTA-logikk — og publisert rowsolutions.no på norsk og engelsk med Next.js i Production, responsivt design og AI-assistert utviklingsarbeidsflyt i Cursor.",
-      en: "Commercial positioning, audience understanding, service structure, information architecture, customer journey and CTA logic have been developed — and rowsolutions.no has been published in Norwegian and English with Next.js in production, responsive design and an AI-assisted development workflow in Cursor.",
+      no: "Arbeidet har omfattet kommersiell posisjonering, målgruppeforståelse, tjenestestruktur, informasjonsarkitektur, kundereise og CTA-logikk — og publisering av rowsolutions.no på norsk og engelsk med Next.js i Production, responsivt design og AI-assistert utviklingsarbeidsflyt i Cursor.",
+      en: "The work has included commercial positioning, audience understanding, service structure, information architecture, customer journey and CTA logic — and publishing rowsolutions.no in Norwegian and English with Next.js in production, responsive design and an AI-assisted development workflow in Cursor.",
     },
     how: {
       no: "rowsolutions.no leder fra overordnet forståelse av Row Solutions til relevante tjenester — inkludert AI Discovery — faglig innsikt, prosjekter og kontakt. Arbeidsprosessen bak løsningen følger forretningsproblem → posisjonering → informasjonsarkitektur → live løsning → evaluering → forbedring.",
@@ -90,8 +90,8 @@ export const rowSolutionsV2: ProjectV2Record = {
       en: "Row Solutions | Marius Ottesen",
     },
     description: {
-      no: "Case om Row Solutions og rowsolutions.no: live digital plattform for kommersiell posisjonering, SMB, tjenestestruktur, salg, kundedialog, digital transformasjon og AI-assistert utvikling.",
-      en: "Case on Row Solutions and rowsolutions.no: live digital platform for commercial positioning, SMB, service structure, sales, customer dialogue, digital transformation and AI-assisted development.",
+      no: "Case om Row Solutions og rowsolutions.no: kommersielt samarbeidsinitiativ og live digital plattform for posisjonering, SMB, tjenestestruktur, salg, kundedialog og AI-assistert utvikling.",
+      en: "Case on Row Solutions and rowsolutions.no: commercial collaboration initiative and live digital platform for positioning, SMEs, service structure, sales, customer dialogue and AI-assisted development.",
     },
     ogImage: ROW_SOLUTIONS_HERO_IMAGE,
     canonicalPath: "/row-solutions",
