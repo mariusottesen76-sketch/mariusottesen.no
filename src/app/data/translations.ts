@@ -95,7 +95,7 @@ const translations: Translations = {
   "erfaring.title": { no: "Karriere høydepunkter", en: "Career Highlights" },
   "erfaring.mandat": { no: "Mandat", en: "Mandate" },
   "erfaring.strategi": { no: "Strategi", en: "Approach" },
-  "erfaring.resultater": { no: "Resultater", en: "Key Outcomes" },
+  "erfaring.resultater": { no: "Resultater", en: "Results" },
   "erfaring.andre": { no: "Andre erfaringer", en: "Additional Experience" },
   "erfaring.cv": { no: "Se min fullstendige CV", en: "View my full CV" },
 

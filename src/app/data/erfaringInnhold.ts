@@ -11,9 +11,29 @@ const data = {
         mandate:
           "I 2026 har jeg videreutviklet min kompetanse innen praktisk AI, kommersiell arbeidsflyt og metodeutvikling gjennom egne AI-prosjekter, faglig samarbeid og videreutdanning. Marius Ottesen Consulting fungerer som en faglig plattform for metodeutvikling, porteføljeprosjekter og dokumentasjon av erfaring innen kommersiell ledelse, arbeidsflyt og praktisk AI — med operasjonell erfaring fra salg og drift.",
         strategy:
-          'Arbeidet omfatter blant annet utvikling av apper, plattformer, arbeidsflyter og beslutningsstøtte innen AI-modenhet, salgsutvikling, teamutvikling, arrangementsplanlegging, bilagsflyt og administrativ dokumentasjon, kundedialog og lederstøtte. Kombinert kommersiell ledererfaring med videreutvikling innen AI og praktisk implementering gjennom <a href="/prosjekter">egenutviklede AI-prosjekter</a>, <a href="/ai-value-lab-oslo">AI Value Lab Oslo</a> og masterkurset <a href="/strategisk-ai-implementering">Generative AI for Business</a> ved BI. Metodikk og struktur for individuell salgsutvikling er også utviklet og tatt i bruk i praktisk B2B-kundearbeid, med coaching, trening på reelle kundesituasjoner, lederforankring og AI-basert salgstrening som støtte. Arbeidet omfatter også medutvikling av <a href="/row-solutions">Row Solutions</a>, et kommersielt samarbeidsinitiativ rettet mot SMB og markeds- og utviklingsplattform for utvalgte samarbeidsprosjekter.',
-        results:
-          'Utviklet flere egenutviklede apper, plattformer og arbeidsflyter, inkludert <a href="/ai-transformation-value-realization">AI Transformation & Value Realization</a>, <a href="/prosjekter#control-tower">Control Tower</a>, <a href="/psc">The Predictive Sales Coach</a>, <a href="/flowsignal">FlowSignal</a>, <a href="/event-planner">Event Planner</a>, <a href="/bilagsassistent">Bilagsassistent</a>, <a href="/salgsflyt-sjekken">SMB Salgsflyt-sjekken</a>, <a href="/prosjekter#ai-readiness-scan-2026-06">AI Readiness Scan</a>, <a href="/ai-innsikts-og-innholdsmotor">AI-assistert innsikts- og innholdsmotor</a>, <a href="/agentisk-arbeidsflyt">agentisk arbeidsflyt</a> og <a href="/ai-arkitektur-beslutningsstotte">AI-arkitektur for beslutningsstøtte</a>. Prosjektene dokumenterer praktisk forståelse av hvordan teknologi, kommersiell og operasjonell innsikt og brukerbehov kan kobles i konkrete løsninger. Initiativtaker til <a href="/ai-value-lab-oslo">AI Value Lab Oslo</a>: tverrfaglig arena for AI-læring, erfaringsutveksling og utforsking av praktiske problemstillinger. Bidratt som invitert paneldeltaker i faglig HR-nettverk om innovasjon og AI, som del av faglig formidling innen ledelse, transformasjon og praktisk AI. Det faglige arbeidet omfatter også 100+ publiserte <a href="/faginnlegg">faginnlegg</a>. Erfaringene inngår også som en del av grunnlaget for en fagbok under utvikling om ledelse, gjennomføring, teknologi og varig verdiskaping – se det <a href="/bok">pågående bokprosjektet</a> — sammen med <a href="/prosjekter">porteføljeprosjekter</a> og en <a href="/prosjekter#mariusottesen-no-2025">publisert nettside og porteføljeplattform</a>. Medutviklet <a href="/row-solutions">Row Solutions</a> og lansert rowsolutions.no som digital plattform for tjenester, innsikt, prosjekter og kundedialog. Styrket relevans for faste lederroller innen kommersiell ledelse, transformasjon og AI-relatert forretningsutvikling — inkludert operasjonell erfaring fra salg og drift.',
+          'Arbeidet omfatter kommersiell utvikling, salgsutvikling, teamutvikling og praktisk AI-implementering, med særlig vekt på hvordan teknologi, arbeidsflyt og beslutningsstøtte kan skape konkret forretningsverdi. Dette omfatter utvikling av modeller, plattformer og apper innen AI-modenhet, salgsutvikling, kundeinnsikt, ledelsesstøtte og administrativ effektivisering.<br /><br />Metodikk og struktur for individuell salgsutvikling er også utviklet og tatt i bruk i praktisk B2B-kundearbeid, med coaching, trening på reelle kundesituasjoner, lederforankring og AI-basert salgstrening som støtte. Arbeidet kombinerer operasjonell erfaring fra salg og drift med videreutvikling innen AI gjennom <a href="/prosjekter">egne AI-prosjekter</a>, <a href="/ai-value-lab-oslo">AI Value Lab Oslo</a> og masterkurset <a href="/strategisk-ai-implementering">Generative AI for Business</a> ved BI.<br /><br />Arbeidet omfatter også medutvikling av <a href="/row-solutions">Row Solutions</a>, et kommersielt samarbeidsinitiativ rettet mot SMB og en markeds- og utviklingsplattform for utvalgte samarbeidsprosjekter.',
+        resultItems: [
+          {
+            title: "Praktisk AI og metodeutvikling",
+            body:
+              "Utviklet modeller, apper og arbeidsflyter innen AI-modenhet, beslutningsstøtte, salg og kommersiell utvikling.",
+          },
+          {
+            title: "Kommersiell anvendelse og ledelse",
+            body:
+              "Tatt metodikk i bruk i praktisk B2B-kundearbeid, salgsutvikling, coaching og AI-basert trening.",
+          },
+          {
+            title: "Faglig posisjonering og samarbeid",
+            body:
+              'Videreutviklet faglig plattform gjennom <a href="/strategisk-ai-implementering">BI</a>, <a href="/ai-value-lab-oslo">AI Value Lab Oslo</a>, <a href="/row-solutions">Row Solutions</a>, <a href="/faginnlegg">faginnlegg</a> og <a href="/bok">bokprosjekt</a>.',
+          },
+        ],
+        resultsMoreLink: {
+          href: "/resultater",
+          label: "Se flere resultater, prosjekter og dokumentasjon →",
+        },
+        resultsLabel: "Utvalgte resultater",
       },
       {
         title: "Nasjonal Salgssjef",
@@ -78,9 +98,29 @@ const data = {
         mandate:
           "In 2026 I have further developed my competence in practical AI, commercial workflow and methodology work through my own AI projects, professional collaboration and continuing education. Marius Ottesen Consulting serves as a professional platform for methodology development, portfolio projects and documentation of experience in commercial leadership, workflow and practical AI — with operational experience from sales and operations.",
         strategy:
-          'The work includes development of apps, platforms, workflows and decision support in areas such as AI maturity, sales development, team development, event planning, voucher workflows and administrative documentation, customer dialogue and leadership support. Combined commercial leadership experience with further development in AI and practical implementation through <a href="/prosjekter">custom-built AI projects</a>, <a href="/ai-value-lab-oslo">AI Value Lab Oslo</a> and the <a href="/strategisk-ai-implementering">Generative AI for Business</a> master\'s course at BI. Methodology and structure for individual sales development have also been developed and applied in practical B2B client work, combining coaching, training on real customer situations, leadership alignment and AI-based sales training as support. The work also includes co-development of <a href="/row-solutions">Row Solutions</a>, a commercial collaboration initiative for SMEs and a market and development platform for selected collaboration projects.',
-        results:
-          'Developed several custom-built apps, platforms and workflows, including <a href="/ai-transformation-value-realization">AI Transformation & Value Realization</a>, <a href="/prosjekter#control-tower">Control Tower</a>, <a href="/psc">The Predictive Sales Coach</a>, <a href="/flowsignal">FlowSignal</a>, <a href="/event-planner">Event Planner</a>, <a href="/bilagsassistent">Receipt Assistant</a>, <a href="/salgsflyt-sjekken">SMB Sales Flow Check</a>, <a href="/prosjekter#ai-readiness-scan-2026-06">AI Readiness Scan</a>, <a href="/ai-innsikts-og-innholdsmotor">AI-assisted insight and content engine</a>, <a href="/agentisk-arbeidsflyt">agentic workflow</a> and <a href="/ai-arkitektur-beslutningsstotte">AI architecture for decision support</a>. The projects document practical understanding of how technology, commercial and operational insight and user needs can be connected in concrete solutions. Initiator of <a href="/ai-value-lab-oslo">AI Value Lab Oslo</a>: cross-disciplinary arena for AI learning, experience sharing and exploration of practical problem areas. Contributed as an invited panelist in a professional HR network discussing innovation and AI, as part of broader professional engagement in leadership, transformation and practical AI. The professional work also includes 100+ published <a href="/faginnlegg">articles</a>. This experience also forms part of the foundation for a book in development on leadership, execution, technology and lasting value creation – see the <a href="/en/book">ongoing book project</a> — alongside <a href="/prosjekter">portfolio projects</a> and a <a href="/prosjekter#mariusottesen-no-2025">published website and portfolio platform</a>. Co-developed <a href="/row-solutions">Row Solutions</a> and launched rowsolutions.no as a digital platform for services, insights, projects and commercial dialogue. Strengthened relevance for permanent leadership roles in commercial leadership, transformation and AI-related business development — including operational experience from sales and operations.',
+          'The work spans commercial development, sales development, team development and practical AI implementation, with particular emphasis on how technology, workflow and decision support can create tangible business value. This includes development of models, platforms and apps in areas such as AI maturity, sales development, customer insight, leadership support and administrative efficiency.<br /><br />Methodology and structure for individual sales development have also been developed and applied in practical B2B client work, combining coaching, training on real customer situations, leadership alignment and AI-based sales training as support. The work combines operational experience from sales and operations with further development in AI through <a href="/prosjekter">custom-built AI projects</a>, <a href="/ai-value-lab-oslo">AI Value Lab Oslo</a> and the <a href="/strategisk-ai-implementering">Generative AI for Business</a> master\'s course at BI.<br /><br />The work also includes co-development of <a href="/row-solutions">Row Solutions</a>, a commercial collaboration initiative for SMEs and a market and development platform for selected collaboration projects.',
+        resultItems: [
+          {
+            title: "Practical AI and methodology development",
+            body:
+              "Developed models, apps and workflows in AI maturity, decision support, sales and commercial development.",
+          },
+          {
+            title: "Commercial application and leadership",
+            body:
+              "Applied methodology in practical B2B client work, sales development, coaching and AI-based training.",
+          },
+          {
+            title: "Professional positioning and collaboration",
+            body:
+              'Further developed the professional platform through <a href="/strategisk-ai-implementering">BI</a>, <a href="/ai-value-lab-oslo">AI Value Lab Oslo</a>, <a href="/row-solutions">Row Solutions</a>, <a href="/faginnlegg">articles</a> and a <a href="/en/book">book project</a>.',
+          },
+        ],
+        resultsMoreLink: {
+          href: "/en/results",
+          label: "View more results, projects and documentation →",
+        },
+        resultsLabel: "Selected results",
       },
       {
         title: "National Sales Director",

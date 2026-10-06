@@ -93,27 +93,59 @@ export default function Erfaring() {
                     <Calendar size={12} className="mr-1 inline" />{j.period}
                   </div>
                 </div>
-                <div className="space-y-4 text-sm">
+                <div className="space-y-5 text-sm max-w-3xl">
                   <div>
-                    <p className="text-white text-[10px] uppercase tracking-widest flex items-center gap-2 font-black"><Target size={14} className="text-indigo-500"/>{tr("erfaring.mandat")}</p>
+                    <p className="text-white text-[10px] uppercase tracking-widest flex items-center gap-2 font-black mb-2"><Target size={14} className="text-indigo-500"/>{tr("erfaring.mandat")}</p>
                     <p
-                      className={`text-slate-300 italic font-medium ${erfaringTekstLinkClass}`}
+                      className={`text-slate-300 leading-relaxed ${erfaringTekstLinkClass}`}
                       dangerouslySetInnerHTML={{ __html: j.mandate }}
                     />
                   </div>
                   <div>
-                    <p className="text-white text-[10px] uppercase tracking-widest flex items-center gap-2 font-black"><Lightbulb size={14} className="text-indigo-500"/>{tr("erfaring.strategi")}</p>
+                    <p className="text-white text-[10px] uppercase tracking-widest flex items-center gap-2 font-black mb-2"><Lightbulb size={14} className="text-indigo-500"/>{tr("erfaring.strategi")}</p>
                     <p
-                      className={`text-slate-300 italic font-medium ${erfaringTekstLinkClass}`}
+                      className={`text-slate-300 leading-relaxed ${erfaringTekstLinkClass}`}
                       dangerouslySetInnerHTML={{ __html: j.strategy }}
                     />
                   </div>
-                  <div className="pt-4 border-t border-slate-800">
-                    <p className="text-indigo-500 text-[10px] uppercase tracking-widest flex items-center gap-2 font-black"><TrendingUp size={14}/>{tr("erfaring.resultater")}</p>
-                    <p
-                      className={`text-white font-bold leading-relaxed ${erfaringResultatLinkClass}`}
-                      dangerouslySetInnerHTML={{ __html: j.results }}
-                    />
+                  <div className="pt-5 border-t border-slate-800/80">
+                    <p className="text-indigo-500 text-[10px] uppercase tracking-widest flex items-center gap-2 font-black mb-2"><TrendingUp size={14}/>{j.resultsLabel ?? tr("erfaring.resultater")}</p>
+                    {j.resultItems?.length ? (
+                      <div className="space-y-4">
+                        {j.resultsIntro ? (
+                          <p className={`text-slate-300 leading-relaxed ${erfaringResultatLinkClass}`}>{j.resultsIntro}</p>
+                        ) : null}
+                        <ul className="space-y-4 list-none m-0 p-0">
+                          {j.resultItems.map((item: { title: string; body: string }, idx: number) => (
+                            <li key={idx} className="flex gap-3">
+                              <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-indigo-500/70" aria-hidden="true" />
+                              <div className="min-w-0 flex-1">
+                                <p className="text-slate-200 font-semibold leading-snug">{item.title}</p>
+                                <p
+                                  className={`text-slate-400 leading-relaxed mt-1.5 ${erfaringResultatLinkClass}`}
+                                  dangerouslySetInnerHTML={{ __html: item.body }}
+                                />
+                              </div>
+                            </li>
+                          ))}
+                        </ul>
+                        {j.resultsMoreLink ? (
+                          <p className="pt-1">
+                            <Link
+                              href={j.resultsMoreLink.href}
+                              className="text-indigo-300 text-sm underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
+                            >
+                              {j.resultsMoreLink.label}
+                            </Link>
+                          </p>
+                        ) : null}
+                      </div>
+                    ) : (
+                      <p
+                        className={`text-slate-300 leading-relaxed ${erfaringResultatLinkClass}`}
+                        dangerouslySetInnerHTML={{ __html: j.results }}
+                      />
+                    )}
                   </div>
                   {j.fagPerspektivLink ? (
                     <p className="pt-3">
