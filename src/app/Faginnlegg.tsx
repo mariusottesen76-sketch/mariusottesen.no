@@ -196,7 +196,7 @@ const Faginnlegg = ({ onNavigate: _onNavigate }: { onNavigate?: (tab: string) =>
         <h2 id="fag-bok-heading" className={`${sectionTitleClass} mb-3 max-w-prose [overflow-wrap:anywhere] hyphens-none`}>
           {tr("fag.bok.title")}
         </h2>
-        <p className="text-base md:text-lg text-slate-300 leading-relaxed font-light mb-5 w-full min-w-0 whitespace-nowrap overflow-x-auto [scrollbar-width:thin]">
+        <p className="text-base md:text-lg text-slate-300 leading-relaxed font-light mb-5 w-full min-w-0 max-w-prose">
           {tr("fag.bok.subtitle")}
         </p>
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 mb-6 min-w-0">
@@ -206,18 +206,22 @@ const Faginnlegg = ({ onNavigate: _onNavigate }: { onNavigate?: (tab: string) =>
           {tr("fag.bok.body")}
         </div>
         <dl className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-4 mb-6">
-          <div className="rounded-xl border border-slate-800/80 bg-slate-950/40 px-4 py-3 min-h-[3.25rem] flex items-center">
-            <dt className="text-white font-semibold text-sm tracking-tight leading-snug">{tr("fag.bok.proof.1.label")}</dt>
-          </div>
-          <div className="rounded-xl border border-slate-800/80 bg-slate-950/40 px-4 py-3 min-h-[3.25rem] flex items-center">
-            <dt className="text-white font-semibold text-sm tracking-tight leading-snug">{tr("fag.bok.proof.4.label")}</dt>
-          </div>
-          <div className="rounded-xl border border-slate-800/80 bg-slate-950/40 px-4 py-3 min-h-[3.25rem] flex items-center">
-            <dt className="text-white font-semibold text-sm tracking-tight leading-snug">{tr("fag.bok.proof.2.label")}</dt>
-          </div>
-          <div className="rounded-xl border border-slate-800/80 bg-slate-950/40 px-4 py-3 min-h-[3.25rem] flex items-center">
-            <dt className="text-white font-semibold text-sm tracking-tight leading-snug">{tr("fag.bok.proof.3.label")}</dt>
-          </div>
+          {(
+            [
+              ["fag.bok.proof.1.line1", "fag.bok.proof.1.line2"],
+              ["fag.bok.proof.2.line1", "fag.bok.proof.2.line2"],
+              ["fag.bok.proof.3.line1", "fag.bok.proof.3.line2"],
+              ["fag.bok.proof.4.line1", "fag.bok.proof.4.line2"],
+            ] as const
+          ).map(([line1, line2]) => (
+            <div
+              key={line1}
+              className="rounded-xl border border-slate-800/80 bg-slate-950/40 px-4 py-3 min-h-[3.25rem] flex flex-col justify-center"
+            >
+              <dt className="text-white font-semibold text-sm tracking-tight leading-snug">{tr(line1)}</dt>
+              <dd className="text-slate-400 text-sm font-light leading-snug mt-0.5 m-0">{tr(line2)}</dd>
+            </div>
+          ))}
         </dl>
         <LocaleLink
           href="/bok"

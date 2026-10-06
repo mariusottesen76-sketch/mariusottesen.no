@@ -4,15 +4,15 @@ import { SITE } from "./locale-routes";
 
 const META = {
   no: {
-    title: "Bokprosjekt | Ledelse, kommersiell utvikling og AI | Marius Ottesen",
+    title: "Bokprosjekt | Læring, ledelse og gjennomføring | Marius Ottesen",
     description:
-      "Marius Ottesen utvikler 100+ faginnlegg, masterarbeid, ledererfaring og praktiske AI-case til en fagbok om ledelse, gjennomføring, transformasjon og praktisk AI.",
+      "Én sammenhengende fagbok under utvikling — bygget på ledererfaring, faginnlegg, masterarbeid og praktisk utviklingsarbeid. 17 kapitler i syv deler.",
     ogImageAlt: "Bokprosjekt — Marius Ottesen",
   },
   en: {
-    title: "Book project | Leadership, commercial development and AI | Marius Ottesen",
+    title: "Book project | Learning, leadership and execution | Marius Ottesen",
     description:
-      "Marius Ottesen is developing 100+ articles, master’s work, leadership experience and practical AI cases into a professional book on leadership, execution, transformation and practical AI.",
+      "One coherent professional book in development — built on leadership experience, articles, master’s work and practical development. 17 chapters in seven parts.",
     ogImageAlt: "Book project — Marius Ottesen",
   },
 } as const;
