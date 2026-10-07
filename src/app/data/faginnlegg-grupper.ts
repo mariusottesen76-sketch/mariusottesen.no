@@ -135,6 +135,7 @@ export const AI_SUBTEMA: FaginnleggSubtema[] = [
     id: "ai-data-crm",
     label: { no: "Data, CRM og beslutningsstøtte", en: "Data, CRM and decision support" },
     innleggIds: [
+      "ki-norge-klare-data-2026-10",
       "bedre-data-beslutninger-tech-frokost-2026-08",
       "data-kontekst-rag-01",
       "rag-innsikt-handling-01",

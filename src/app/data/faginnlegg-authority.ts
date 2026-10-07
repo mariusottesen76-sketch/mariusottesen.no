@@ -679,6 +679,42 @@ export const FAGINNLEGG_AUTHORITY: Record<string, FaginnleggAuthorityEntry> = {
       { href: "/consulting", label: { no: "Se consulting-tilbud", en: "See consulting offerings" } },
     ],
   },
+  "ki-norge-klare-data-2026-10": {
+    slug: "ki-norge-klare-data-2026-10",
+    cluster: "crm-data",
+    role: "secondary-support",
+    ownedIntents: [
+      "KI-klare data",
+      "KI Norge Dialog",
+      "dataforvaltning KI",
+      "FAIR data",
+      "metadata og kontekst",
+    ],
+    coreSupportSlugs: [
+      "fra-data-til-beslutning-2026-09",
+      "bedre-data-beslutninger-tech-frokost-2026-08",
+    ],
+    secondarySupportSlugs: ["data-kontekst-rag-01", "ai-governance-i-praksis-01"],
+    relevantVidere: [
+      articleLink("fra-data-til-beslutning-2026-09", {
+        no: "Les også: Fra data til beslutning",
+        en: "Read also: From data to decision",
+      }),
+      articleLink("data-kontekst-rag-01", {
+        no: "Les også: Data, kontekst og RAG",
+        en: "Read also: Data, context and RAG",
+      }),
+      articleLink("bedre-data-beslutninger-tech-frokost-2026-08", {
+        no: "Les også: Bedre data. Bedre beslutninger.",
+        en: "Read also: Better data. Better decisions.",
+      }),
+      articleLink("forbedre-arbeidsmaten-tenke-pa-nytt-2026-10", {
+        no: "Les også: Forbedre arbeidsmåten – eller tenke den på nytt?",
+        en: "Read also: Improve the way we work – or rethink it?",
+      }),
+      { href: "/ai-readiness-scan", label: { no: "Se prosjektet: AI Readiness Scan", en: "See project: AI Readiness Scan" } },
+    ],
+  },
   "nar-en-feil-blir-hele-historien-2026-09": {
     slug: "nar-en-feil-blir-hele-historien-2026-09",
     cluster: "ledelse-mennesker",
