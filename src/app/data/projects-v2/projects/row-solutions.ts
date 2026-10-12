@@ -1,5 +1,6 @@
 import { ROW_SOLUTIONS_HERO_IMAGE, ROW_SOLUTIONS_LIVE_URL, ROW_SOLUTIONS_OVERVIEW_IMAGE } from "../../../lib/row-solutions-brand";
 import type { ProjectV2Record } from "../types";
+import { relevantVidereLinksForSlug } from "../relevant-videre-catalog";
 
 export const rowSolutionsV2: ProjectV2Record = {
   id: "row-solutions-2026",
@@ -97,4 +98,5 @@ export const rowSolutionsV2: ProjectV2Record = {
     canonicalPath: "/row-solutions",
   },
   strategicPlatformSlug: "row-solutions",
+  fagPerspektivLinks: relevantVidereLinksForSlug("row-solutions"),
 };

@@ -140,8 +140,13 @@ export const aiArkitekturBeslutningsstottePlatform: StrategicPlatformProject = {
     avslutning: {
       heading: { no: "Utforsk prosjektet videre", en: "Explore the project further" },
       body: {
-        no: "Ta kontakt dersom du ønsker å kartlegge hvordan AI kan brukes til bedre beslutningsstøtte, kommersiell prioritering eller lederstøtte.",
-        en: "Get in touch if you would like to map how AI can be used for better decision support, commercial prioritisation or leadership support.",
+        no: "Modellen viser hvordan AI kan støtte beslutninger når data, kontekst og kommersielle prioriteringer må henges sammen. Gjennom Marius Ottesen Consulting kan jeg bistå virksomheter med å vurdere beslutningsstøtte, arkitektur og praktisk gjennomføring — uten å fremstille løsningen som mer moden enn dokumentert.",
+        en: "The model shows how AI can support decisions when data, context and commercial priorities must connect. Through Marius Ottesen Consulting I can help organisations assess decision support, architecture and practical execution — without presenting the solution as more mature than documented.",
+      },
+      showContactPrimary: true,
+      contactPrimaryLabel: {
+        no: "Ta kontakt om AI som beslutningsstøtte",
+        en: "Contact about AI for decision support",
       },
     },
     utvikler,

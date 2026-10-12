@@ -285,8 +285,13 @@ export const mariusottesenNettsidePlatform: StrategicPlatformProject = {
     avslutning: {
       heading: { no: "Utforsk prosjektet videre", en: "Explore the project further" },
       body: {
-        no: "Åpne nettsiden for å se den live løsningen, eller ta kontakt for faglig dialog om porteføljen og utviklingsarbeidet.",
-        en: "Open the website to see the live solution, or get in touch for professional dialogue about the portfolio and development work.",
+        no: "Nettsiden er både lederprofil, portefølje og fagplattform — utviklet og publisert som eget case. Gjennom Marius Ottesen Consulting kan jeg bistå virksomheter med kommersiell utvikling, praktisk AI og digital profil — rådgivning etter avtale.",
+        en: "The website is both leadership profile, portfolio and professional platform — developed and published as its own case. Through Marius Ottesen Consulting I can support organisations with commercial development, practical AI and digital presence — advisory work by agreement.",
+      },
+      showContactPrimary: true,
+      contactPrimaryLabel: {
+        no: "Ta kontakt om consulting og digital profil",
+        en: "Contact about consulting and digital presence",
       },
     },
     utvikler,

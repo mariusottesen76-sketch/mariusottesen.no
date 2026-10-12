@@ -31,10 +31,17 @@ Hold **norsk og engelsk** i sync.
 12. **CV & åpen søknad** — `src/app/data/dokumentasjon.ts` (aiText, kompetanse), `src/app/data/rekrutterer-verdi.ts` (`cvRekrutterere`)
 13. **Kontakt** — `src/app/data/translations.ts` (`kontakt.*`), `src/app/lib/project-contact-query.ts`
 14. **Faginnlegg** — oppdater **porteføljelenker** i nyere innlegg (`src/app/data/innlegg/ai-governance.ts` m.fl.) — ikke omskriv historiske innlegg med feil antall apper
-15. **Nettsideprosjektet** — `mariusottesen-nettside` v2 + platform: demonstratorliste, teaser, skjermbilde
-16. **Landingssider** — `src/app/<slug>/page.tsx`, brand-fil under `src/app/lib/*-brand.ts`
-17. **Bilder** — `public/images/` + `needsNewOverviewImage` / `needsNewDetailHero` i v2-record
-18. **Side-metadata** — `src/app/<rute>/page.tsx`, `src/app/layout.tsx` der det er relevant
+15. **Relevant videre (obligatorisk vurdering)** — Når prosjektet dokumenteres i et faginnlegg, eller et nytt/endret prosjekt påvirker porteføljen: følg **`.cursor/rules/relevant-videre-nye-artikler.mdc`** (prosjekt → artikkel i `relevant-videre-catalog.ts`, artikkel → prosjekt i `faginnlegg-authority.ts`). Redaksjonell godkjenning — ingen mekanisk lenking.
+16. **Nettsideprosjektet** — `mariusottesen-nettside` v2 + platform: demonstratorliste, teaser, skjermbilde
+17. **Landingssider** — `src/app/<slug>/page.tsx`, brand-fil under `src/app/lib/*-brand.ts`
+18. **Bilder** — `public/images/` + `needsNewOverviewImage` / `needsNewDetailHero` i v2-record
+19. **Side-metadata** — `src/app/<rute>/page.tsx`, `src/app/layout.tsx` der det er relevant
+
+## Sjekkliste ved nytt eller vesentlig oppdatert faginnlegg
+
+1. **Innlegg og telling** — `src/app/data/innlegg/`, `faginnlegg-data.ts`; bruk `getFaginnleggTelling()` — aldri hardkode antall.
+2. **Relevant videre** — Les og følg **`.cursor/rules/relevant-videre-nye-artikler.mdc`** (regelen aktiveres automatisk når innlegg-/prosjekt-filer redigeres).
+3. **Prosjekt-synk** — Oppdater øvrige faner kun der innlegget endrer fakta (profil, consulting, CV) — ikke omskriv historikk uten grunn.
 
 ## Sjekkliste ved nytt resultat / ny erfaring
 

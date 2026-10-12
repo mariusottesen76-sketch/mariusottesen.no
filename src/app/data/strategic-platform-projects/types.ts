@@ -123,6 +123,13 @@ export type StrategicPlatformDemoPortfolio = {
   categories: StrategicPlatformDemoPortfolioCategory[];
 };
 
+/** Valgfri faglig videre-lenke under utfordringsseksjonen (f.eks. ekstern fordypningsartikkel). */
+export type StrategicPlatformContextLink = {
+  href: string;
+  label: LocalizedString;
+  external?: boolean;
+};
+
 export type StrategicPlatformDetail = {
   statusBadge: LocalizedString;
   hero: {
@@ -132,7 +139,11 @@ export type StrategicPlatformDetail = {
   };
   /** Kompakt posisjonering — etter hero, før utvidet beskrivelse. */
   kortFortalt?: { heading: LocalizedString; body: LocalizedString };
-  utfordring: { heading: LocalizedString; body: LocalizedString };
+  utfordring: {
+    heading: LocalizedString;
+    body: LocalizedString;
+    followUp?: { body: LocalizedString; link: StrategicPlatformContextLink };
+  };
   logikk: {
     heading: LocalizedString;
     body: LocalizedString;
@@ -170,7 +181,14 @@ export type StrategicPlatformDetail = {
   skalerbarhet: StrategicPlatformScalability & { heading: LocalizedString };
   /** Kompakt FAQ — semantisk details/summary, fullt lesbar uten JS. */
   faq?: { heading: LocalizedString; items: StrategicPlatformFaqItem[] };
-  avslutning: { heading: LocalizedString; body: LocalizedString; secondaryLabel?: LocalizedString };
+  avslutning: {
+    heading: LocalizedString;
+    body: LocalizedString;
+    secondaryLabel?: LocalizedString;
+    /** Primær CTA i avslutningsblokken peker til kontakt om prosjektet (MOC). */
+    showContactPrimary?: boolean;
+    contactPrimaryLabel?: LocalizedString;
+  };
   utvikler?: StrategicPlatformUtvikler;
 };
 

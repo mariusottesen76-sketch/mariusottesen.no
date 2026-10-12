@@ -1,4 +1,5 @@
 import type { ProjectV2Record } from "../types";
+import { relevantVidereLinksForSlug } from "../relevant-videre-catalog";
 
 export const strategiskAiImplementeringV2: ProjectV2Record = {
   id: "prosjektoppgave-strategisk-implementering-2026",
@@ -84,4 +85,5 @@ export const strategiskAiImplementeringV2: ProjectV2Record = {
     canonicalPath: "/strategisk-ai-implementering",
   },
   strategicPlatformSlug: "strategisk-ai-implementering",
+  fagPerspektivLinks: relevantVidereLinksForSlug("strategisk-ai-implementering"),
 };

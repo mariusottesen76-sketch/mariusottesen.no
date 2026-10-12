@@ -267,8 +267,13 @@ export const eventPlannerPlatform: StrategicPlatformProject = {
     avslutning: {
       heading: { no: "Utforsk prosjektet videre", en: "Explore the project further" },
       body: {
-        no: "Se demoen for å utforske arbeidsflyten og sentrale funksjoner, eller ta kontakt for tilgang til private beta.",
-        en: "View the demo to explore the workflow and core features, or get in touch for access to the private beta.",
+        no: "Event Planner viser hvordan arrangementsplanlegging kan kobles til struktur, roller og operativ gjennomføring. Gjennom Marius Ottesen Consulting kan jeg bistå med salg–drift-samspill, arrangementsplanlegging og praktisk digital støtte — inkludert operasjonell ledererfaring der det styrker leveransen.",
+        en: "Event Planner shows how event planning can connect to structure, roles and operational execution. Through Marius Ottesen Consulting I can support sales–operations alignment, event planning and practical digital support — including operational leadership experience where it strengthens delivery.",
+      },
+      showContactPrimary: true,
+      contactPrimaryLabel: {
+        no: "Ta kontakt om arrangementsplanlegging og gjennomføring",
+        en: "Contact about event planning and execution",
       },
     },
     utvikler,

@@ -3,6 +3,7 @@ import {
   AI_TRANSFORMATION_PILOT_PUBLIC,
 } from "../../../lib/ai-transformation-brand";
 import type { ProjectV2Record } from "../types";
+import { relevantVidereLinksForSlug } from "../relevant-videre-catalog";
 
 export const aiTransformationV2: ProjectV2Record = {
   id: "ai-transformation-value-realization",
@@ -100,4 +101,5 @@ export const aiTransformationV2: ProjectV2Record = {
   },
   strategicPlatformSlug: "ai-transformation-value-realization",
   applicationGroups: [],
+  fagPerspektivLinks: relevantVidereLinksForSlug("ai-transformation-value-realization"),
 };

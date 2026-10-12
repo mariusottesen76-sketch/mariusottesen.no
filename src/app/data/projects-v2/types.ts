@@ -57,6 +57,16 @@ export type ProjectApplicationGroup = {
   items: LocalizedString[];
 };
 
+export type ProjectRelevantSurface = "overview" | "detail";
+
+export type ProjectFagPerspektivLink = {
+  href: string;
+  label: LocalizedString;
+  external?: boolean;
+  /** Uten felt vises lenken på prosjektkort og detaljside. */
+  surfaces?: ProjectRelevantSurface[];
+};
+
 /** Statisk grunnrecord — updatedAt kan overstyres ved resolveProjectDates(). */
 export type ProjectV2BaseRecord = {
   id: string;
@@ -129,16 +139,10 @@ export type ProjectV2BaseRecord = {
   strategicPlatformSlug?: StrategicPlatformSlug;
   editorialReviewRequired?: (keyof ProjectOverviewContent | "overviewIntroduction")[];
   applicationGroups?: ProjectApplicationGroup[];
-  /** Valgfri kontekstuell fagartikkel-lenke etter relevans/informasjonsgrid på /prosjekter. */
-  fagPerspektivLink?: {
-    href: string;
-    label: LocalizedString;
-  };
-  /** Flere faglige videre-lenker (f.eks. Control Tower-prosjektside). */
-  fagPerspektivLinks?: {
-    href: string;
-    label: LocalizedString;
-  }[];
+  /** «Relevant videre» — valgfri enkeltlenke (prosjektkort og detaljside). */
+  fagPerspektivLink?: ProjectFagPerspektivLink;
+  /** «Relevant videre» — kuraterte lenker i rekkefølge (interne og eksterne faglenker). */
+  fagPerspektivLinks?: ProjectFagPerspektivLink[];
 };
 
 /** Resolved record etter dynamisk datoberegning — brukes i UI og metadata. */

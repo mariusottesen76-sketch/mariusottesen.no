@@ -290,8 +290,13 @@ export const skoyenasenTannklinikkPlatform: StrategicPlatformProject = {
     avslutning: {
       heading: { no: "Utforsk prosjektet videre", en: "Explore the project further" },
       body: {
-        no: "Ta kontakt dersom du ønsker å diskutere hvordan AI kan forbedre kundereise, intake, booking eller oppfølging i en service- eller helseorientert virksomhet.",
-        en: "Get in touch if you would like to discuss how AI can improve customer journey, intake, booking or follow-up in a service- or health-oriented organisation.",
+        no: "Caset dokumenterer et reelt behov-first AI-arbeid i en tannklinikk — ikke en generisk produktleveranse. Gjennom Marius Ottesen Consulting kan jeg bistå andre virksomheter med tilsvarende kartlegging, prioritering og praktisk AI — med respekt for eierskap og leveranseansvar i kundeprosjekter.",
+        en: "The case documents real needs-first AI work in a dental clinic — not a generic product delivery. Through Marius Ottesen Consulting I can support other organisations with similar assessment, prioritisation and practical AI — respecting ownership and delivery responsibility in client work.",
+      },
+      showContactPrimary: true,
+      contactPrimaryLabel: {
+        no: "Ta kontakt om praktisk AI og kundereise",
+        en: "Contact about practical AI and customer journey",
       },
     },
     utvikler,

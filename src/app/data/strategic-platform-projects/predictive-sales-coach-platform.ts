@@ -355,8 +355,13 @@ export const predictiveSalesCoachPlatform: StrategicPlatformProject = {
     avslutning: {
       heading: { no: "Utforsk prosjektet videre", en: "Explore the project further" },
       body: {
-        no: "Be om tilgangskode for å teste den tilgangsstyrte løsningen, eller ta kontakt for faglig dialog om hvordan modellen kan brukes i salgsorganisasjoner.",
-        en: "Request an access code to test the access-controlled solution, or get in touch for professional dialogue on how the model can be used in sales organisations.",
+        no: "PSC viser hvordan salgstrening kan kombinere struktur, tilbakemelding og AI-støttet øvelse. Gjennom Marius Ottesen Consulting kan jeg bistå med salgsutvikling, coaching og praktisk bruk av AI i salgsorganisasjoner — rådgivning og videreutvikling etter avtale, ikke ferdig produktsalg.",
+        en: "PSC shows how sales training can combine structure, feedback and AI-supported practice. Through Marius Ottesen Consulting I can support sales development, coaching and practical use of AI in sales organisations — advisory work and further development by agreement, not off-the-shelf product sales.",
+      },
+      showContactPrimary: true,
+      contactPrimaryLabel: {
+        no: "Ta kontakt om salgstrening, coaching og AI",
+        en: "Contact about sales training, coaching and AI",
       },
     },
     utvikler,

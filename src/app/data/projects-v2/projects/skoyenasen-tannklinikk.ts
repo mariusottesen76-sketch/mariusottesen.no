@@ -1,4 +1,5 @@
 import type { ProjectV2Record } from "../types";
+import { relevantVidereLinksForSlug } from "../relevant-videre-catalog";
 
 export const skoyenasenTannklinikkV2: ProjectV2Record = {
   id: "skoyenasen-tannklinikk-2026",
@@ -86,4 +87,5 @@ export const skoyenasenTannklinikkV2: ProjectV2Record = {
     canonicalPath: "/skoyenasen-tannklinikk",
   },
   strategicPlatformSlug: "skoyenasen-tannklinikk",
+  fagPerspektivLinks: relevantVidereLinksForSlug("skoyenasen-tannklinikk"),
 };

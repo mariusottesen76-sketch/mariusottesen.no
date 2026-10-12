@@ -419,8 +419,13 @@ export const controlTowerPlatform: StrategicPlatformProject = {
     avslutning: {
       heading: { no: "Fra virksomhetssignal til neste beste handling", en: "From business signal to next best action" },
       body: {
-        no: "Control Tower viser hvordan ledere kan gå fra fragmenterte data og rapporter til tydeligere prioritering, ansvar og gjennomføring. Ta kontakt dersom du ønsker å diskutere hvordan tilsvarende styringslogikk kan være relevant i en lederrolle, virksomhet eller mulig faglig sammenheng.",
-        en: "Control Tower shows how leaders can move from fragmented data and reports to clearer prioritisation, ownership and execution. Get in touch if you would like to discuss how similar governance logic could be relevant in a leadership role, organisation or potential professional context.",
+        no: "Control Tower illustrerer utfordringen med spredte signaler og uklar prioritering på tvers av salg, drift og leveranse. Gjennom Marius Ottesen Consulting kan jeg hjelpe virksomheter å vurdere beslutningsstøtte, kommersiell gjennomføring og praktisk AI — med utgangspunkt i kommersiell ledererfaring og dokumentert arbeid.",
+        en: "Control Tower illustrates the challenge of scattered signals and unclear prioritisation across sales, operations and delivery. Through Marius Ottesen Consulting I can help organisations assess decision support, commercial execution and practical AI — drawing on commercial leadership experience and documented work.",
+      },
+      showContactPrimary: true,
+      contactPrimaryLabel: {
+        no: "Ta kontakt om beslutningsstøtte og kommersiell gjennomføring",
+        en: "Contact about decision support and commercial execution",
       },
       secondaryLabel: {
         no: "Tilbake til AI-prosjekter",

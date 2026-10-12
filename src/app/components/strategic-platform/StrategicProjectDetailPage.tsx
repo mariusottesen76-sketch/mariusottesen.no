@@ -46,11 +46,15 @@ import GovernanceScenariosSection from "./GovernanceScenariosSection";
 import ProjectFaqSection from "./ProjectFaqSection";
 import { getProjectV2ById } from "../../data/projects-v2/registry";
 import { buildProjectDetailCta } from "../../data/projects-v2/cta";
+import { buildProjectContactHref, CONTACT_QUERY_TEMA } from "../../lib/project-contact-query";
 import { PROJECT_CATEGORY_LABELS } from "../../lib/project-v2-category";
 import ProjectDateMetadata from "../project-v2/ProjectDateMetadata";
 import { resolveDetailHeroFit } from "../../lib/project-v2-image";
 import LocaleLink from "../LocaleLink";
 import { localePathFromNoPath } from "../../lib/locale-routes";
+import ProjectRelevantVidere from "../project-v2/ProjectRelevantVidere";
+import ProjectEarlyMocContact from "./ProjectEarlyMocContact";
+import { TIDLIG_KONTAKT_BODY_BY_SLUG } from "../../data/strategic-platform-projects/tidlig-kontakt-copy";
 
 const linkClass =
   "text-indigo-400 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400";
@@ -207,6 +211,18 @@ function StrategicProjectDetailInner({ slug }: { slug: StrategicPlatformSlug }) 
         ) : null}
       </header>
 
+      {projectV2 &&
+      detail.avslutning.showContactPrimary &&
+      detail.avslutning.contactPrimaryLabel &&
+      TIDLIG_KONTAKT_BODY_BY_SLUG[slug] ? (
+        <ProjectEarlyMocContact
+          lang={lang}
+          projectSlug={projectV2.slug}
+          body={TIDLIG_KONTAKT_BODY_BY_SLUG[slug]!}
+          contactPrimaryLabel={detail.avslutning.contactPrimaryLabel}
+        />
+      ) : null}
+
       {detail.kortFortalt && (
         <section
           aria-labelledby="plattform-kort-fortalt"
@@ -222,6 +238,23 @@ function StrategicProjectDetailInner({ slug }: { slug: StrategicPlatformSlug }) 
       <section aria-labelledby="plattform-utfordring" className="mb-10">
         <SectionHeading id="plattform-utfordring">{t(detail.utfordring.heading, lang)}</SectionHeading>
         <MultilineBody text={t(detail.utfordring.body, lang)} className={bodyTextClass} />
+        {detail.utfordring.followUp ? (
+          <div className="mt-4 space-y-4">
+            <MultilineBody text={t(detail.utfordring.followUp.body, lang)} className={bodyTextClass} />
+            <p>
+              <Link
+                href={detail.utfordring.followUp.link.href}
+                className={`${linkClass} font-semibold`}
+                {...(detail.utfordring.followUp.link.external !== false &&
+                detail.utfordring.followUp.link.href.startsWith("http")
+                  ? { target: "_blank", rel: "noopener noreferrer" }
+                  : {})}
+              >
+                {t(detail.utfordring.followUp.link.label, lang)}
+              </Link>
+            </p>
+          </div>
+        ) : null}
       </section>
 
       {slug === "event-planner" && (
@@ -390,6 +423,8 @@ function StrategicProjectDetailInner({ slug }: { slug: StrategicPlatformSlug }) 
         <ProjectApplicationGroups groups={projectV2.applicationGroups} lang={lang} />
       )}
 
+      {projectV2 ? <ProjectRelevantVidere project={projectV2} lang={lang} variant="detail" /> : null}
+
       <section aria-labelledby="plattform-status" className="mb-10 p-6 bg-slate-900/40 rounded-2xl border border-slate-800">
         <h2 id="plattform-status" className={`${blockTitleClass} mb-3`}>
           {t(detail.status.heading, lang)}
@@ -405,28 +440,6 @@ function StrategicProjectDetailInner({ slug }: { slug: StrategicPlatformSlug }) 
       {detail.faq && (
         <ProjectFaqSection heading={detail.faq.heading} items={detail.faq.items} lang={lang} />
       )}
-
-      {projectV2 && (projectV2.fagPerspektivLink || projectV2.fagPerspektivLinks?.length) ? (
-        <section aria-labelledby="plattform-fag-perspektiv" className="mb-10 space-y-2">
-          <h2 id="plattform-fag-perspektiv" className={`${blockTitleClass} mb-3`}>
-            {lang === "no" ? "Faglig perspektiv" : "Professional perspective"}
-          </h2>
-          {projectV2.fagPerspektivLink ? (
-            <p>
-              <Link href={projectV2.fagPerspektivLink.href} className={linkClass}>
-                {t(projectV2.fagPerspektivLink.label, lang)}
-              </Link>
-            </p>
-          ) : null}
-          {projectV2.fagPerspektivLinks?.map((fagLink) => (
-            <p key={fagLink.href}>
-              <Link href={fagLink.href} className={linkClass}>
-                {t(fagLink.label, lang)}
-              </Link>
-            </p>
-          ))}
-        </section>
-      ) : null}
 
       {detail.utvikler && (
         <section aria-labelledby="plattform-utvikler" className="mb-10 p-6 bg-slate-900/40 rounded-2xl border border-slate-800 space-y-2">
@@ -449,15 +462,34 @@ function StrategicProjectDetailInner({ slug }: { slug: StrategicPlatformSlug }) 
         {projectV2 && detailCta ? (
           <ProjectCTAGroup
             lang={lang}
-            config={{
-              primary: {
-                href: localePathFromNoPath("/prosjekter", lang),
-                label: detail.avslutning.secondaryLabel ?? {
-                  no: "Tilbake til AI-prosjekter",
-                  en: "Back to AI projects",
-                },
-              },
-            }}
+            config={
+              detail.avslutning.showContactPrimary
+                ? {
+                    primary: {
+                      href: buildProjectContactHref(CONTACT_QUERY_TEMA.anvendelse, projectV2.slug),
+                      label: detail.avslutning.contactPrimaryLabel ?? {
+                        no: "Ta kontakt",
+                        en: "Contact",
+                      },
+                    },
+                    secondary: {
+                      href: "/prosjekter",
+                      label: detail.avslutning.secondaryLabel ?? {
+                        no: "Tilbake til AI-prosjekter",
+                        en: "Back to AI projects",
+                      },
+                    },
+                  }
+                : {
+                    primary: {
+                      href: "/prosjekter",
+                      label: detail.avslutning.secondaryLabel ?? {
+                        no: "Tilbake til AI-prosjekter",
+                        en: "Back to AI projects",
+                      },
+                    },
+                  }
+            }
           />
         ) : null}
       </section>

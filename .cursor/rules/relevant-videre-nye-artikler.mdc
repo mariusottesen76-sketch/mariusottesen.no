@@ -1,0 +1,27 @@
+---
+description: Redaksjonell sjekk når nye faginnlegg publiseres — Relevant videre og prosjektkoblinger
+alwaysApply: false
+globs: src/app/data/innlegg/**,src/app/lib/faginnlegg-data.ts,src/app/data/faginnlegg-authority.ts,src/app/data/projects-v2/**
+---
+
+# Nye faginnlegg — Relevant videre og prosjektkoblinger
+
+**Aktivering:** Denne regelen lastes når du redigerer filer som matcher `globs` over (ny/endret artikkel, authority, v2-prosjekt eller `relevant-videre-catalog.ts`). Den er **ikke** alltid aktiv globalt — kombiner med `prosjekt-synk-paa-tvers.mdc` ved porteføljeendringer.
+
+**Menneskelig oppfølging:** Agent foreslår lenker; Marius godkjenner rekkefølge, antall (1–2 kort / 2–4 detalj) og om en artikkel faktisk dokumenterer et prosjekt. Ingen masseoppdatering av hele arkivet uten eksplisitt beskjed.
+
+**Toveis vurdering (alltid begge retninger):**
+- **Prosjekt → artikkel:** `relevant-videre-catalog.ts` + `surfaces`.
+- **Artikkel → prosjekt:** `faginnlegg-authority.ts` (`relevantVidere`) når artikkelen tydelig dokumenterer leveransen.
+
+Når et **nytt** faginnlegg legges inn i `src/app/lib/faginnlegg-data.ts` (via `src/app/data/innlegg/`), eller et **vesentlig** oppdatert innlegg endrer prosjektdokumentasjon:
+
+1. **Dokumenterer det et av de 18 v2-prosjektene?** Søk etter prosjektnavn, `/psc`, `/control-tower`, Row, Value Lab, BI-case osv.
+2. **Prosjekt → artikkel:** Vurder oppdatering av `src/app/data/projects-v2/relevant-videre-catalog.ts` (1–2 lenker på kort, 2–4 på detalj). Bruk `surfaces` der det trengs.
+3. **Artikkel → prosjekt:** Ved tydelig dokumentasjon, legg `relevantVidere` i `src/app/data/faginnlegg-authority.ts` (eller utvid eksisterende entry) — ikke masseoppdater hele arkivet.
+4. **Bok:** Kun når artikkelen tydelig støtter bokprosjektets tema — lenk `/bok` med «under utvikling», ikke som utgitt bok.
+5. **Erstatt eldre lenke** i katalogen hvis den nye artikkelen er bedre dokumentasjon — ikke dupliser.
+6. **Antall artikler:** Bruk `getFaginnleggTelling()` om tall skal vises — **aldri** hardkode antall i «Relevant videre»-tekst.
+7. **Row / MOC:** Ingen nye Row-lenker uten godkjenning. Row Solutions skal ikke fremstilles som MOC-leveranse.
+
+Ingen automatisk lenking på nøkkelord. Redaksjonell godkjenning før nye eksterne URL-er.

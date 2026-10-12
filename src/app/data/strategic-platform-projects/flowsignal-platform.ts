@@ -223,7 +223,15 @@ export const flowSignalPlatform: StrategicPlatformProject = {
     },
     avslutning: {
       heading: { no: "Utforsk prosjektet videre", en: "Explore the project further" },
-      body: { no: "Ta kontakt for faglig dialog om hvordan FlowSignal kan brukes til å styrke samhandling, lederoppfølging og praktisk bruk av menneskelig innsikt.", en: "Get in touch for professional dialogue on how FlowSignal can be used to strengthen collaboration, leadership follow-up and practical use of human insight." },
+      body: {
+        no: "FlowSignal adresserer hvordan team og ledere kan jobbe mer bevisst med dagsform, samhandling og oppfølging. Gjennom Marius Ottesen Consulting kan jeg bistå med ledelse, teamutvikling og praktisk bruk av innsikt i kommersielle og tverrfaglige miljøer.",
+        en: "FlowSignal addresses how teams and leaders can work more deliberately with daily form, collaboration and follow-up. Through Marius Ottesen Consulting I can support leadership, team development and practical use of insight in commercial and cross-functional environments.",
+      },
+      showContactPrimary: true,
+      contactPrimaryLabel: {
+        no: "Ta kontakt om ledelse, teamutvikling og samhandling",
+        en: "Contact about leadership, team development and collaboration",
+      },
     },
     utvikler,
   },

@@ -1,5 +1,6 @@
 import { FLOW_SIGNAL_APP_URL } from "../../../lib/flowsignal-brand";
 import type { ProjectV2Record } from "../types";
+import { relevantVidereLinksForSlug } from "../relevant-videre-catalog";
 
 export const flowsignalV2: ProjectV2Record = {
   id: "flowsignal-2026-05",
@@ -90,4 +91,5 @@ export const flowsignalV2: ProjectV2Record = {
     canonicalPath: "/flowsignal",
   },
   strategicPlatformSlug: "flowsignal",
+  fagPerspektivLinks: relevantVidereLinksForSlug("flowsignal"),
 };

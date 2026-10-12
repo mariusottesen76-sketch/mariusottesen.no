@@ -350,8 +350,13 @@ export const aiTransformationPlatform: StrategicPlatformProject = {
     avslutning: {
       heading: { no: "Fra AI-piloter til realisert verdi", en: "From AI pilots to realised value" },
       body: {
-        no: "Prosjektet er utviklet som en faglig og praktisk demonstrasjon av hvordan AI-transformasjon kan prioriteres, styres og følges opp. Ta kontakt dersom du ønsker å diskutere tilsvarende problemstillinger i en lederrolle, virksomhet eller mulig faglig sammenheng.",
-        en: "The project is developed as a professional and practical demonstration of how AI transformation can be prioritised, governed and followed up. Get in touch if you would like to discuss similar challenges in a leadership role, organisation or potential professional context.",
+        no: "Plattformen viser hvordan virksomheter kan gå fra spredte AI-initiativer til tydeligere prioritering, styring og verdirealisering. Gjennom Marius Ottesen Consulting bistår jeg med å vurdere muligheter, modenhet og neste steg — kombinert kommersiell ledererfaring, strategi og praktisk AI-utvikling.",
+        en: "The platform shows how organisations can move from scattered AI initiatives to clearer prioritisation, governance and value realisation. Through Marius Ottesen Consulting I help assess opportunities, maturity and next steps — combining commercial leadership experience, strategy and practical AI development.",
+      },
+      showContactPrimary: true,
+      contactPrimaryLabel: {
+        no: "Ta kontakt om AI-transformasjon og verdirealisering",
+        en: "Contact about AI transformation and value realisation",
       },
       secondaryLabel: {
         no: "Tilbake til AI-prosjekter",

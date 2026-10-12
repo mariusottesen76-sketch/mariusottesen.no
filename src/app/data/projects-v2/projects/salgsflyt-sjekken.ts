@@ -1,5 +1,6 @@
 import { SMB_SALGSFLYT_APP_URL, SMB_SALGSFLYT_MATURITY_LABEL, SMB_SALGSFLYT_OVERVIEW_IMAGE } from "../../../lib/smb-salgsflyt-brand";
 import type { ProjectV2Record } from "../types";
+import { relevantVidereLinksForSlug } from "../relevant-videre-catalog";
 
 export const salgsflytSjekkenV2: ProjectV2Record = {
   id: "smb-salgsflyt-sjekken-2026",
@@ -73,15 +74,16 @@ export const salgsflytSjekkenV2: ProjectV2Record = {
   liveSolutionUrl: SMB_SALGSFLYT_APP_URL,
   seo: {
     title: {
-      no: "SMB Salgsflyt-sjekken | Marius Ottesen",
-      en: "SMB Sales Flow Check | Marius Ottesen",
+      no: "SMB Salgsflyt-sjekken | Diagnoseverktøy – Marius Ottesen",
+      en: "SMB Sales Flow Check | Diagnostic tool – Marius Ottesen",
     },
     description: {
-      no: "Tilgangsstyrt salgsdiagnose med ti kommersielle dimensjoner, AI-analyse, PDF-kunderapport og adminkonsoll — klar for avgrenset kundebruk.",
-      en: "Access-controlled sales diagnosis with ten commercial dimensions, AI analysis, PDF customer report and admin console — ready for limited customer use.",
+      no: "Se hvordan Marius Ottesen har utviklet SMB Salgsflyt-sjekken for å kartlegge friksjon i CRM, salgsprosesser, leadoppfølging og kundeoppfølging.",
+      en: "See how Marius Ottesen developed SMB Sales Flow Check to map friction in CRM, sales processes, lead follow-up and customer follow-up.",
     },
     ogImage: "/images/salgsflyt-sjekken-hero.png?v=20260720",
     canonicalPath: "/salgsflyt-sjekken",
   },
   strategicPlatformSlug: "salgsflyt-sjekken",
+  fagPerspektivLinks: relevantVidereLinksForSlug("salgsflyt-sjekken"),
 };

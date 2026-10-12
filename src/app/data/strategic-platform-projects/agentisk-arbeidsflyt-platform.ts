@@ -150,8 +150,13 @@ export const agentiskArbeidsflytPlatform: StrategicPlatformProject = {
     avslutning: {
       heading: { no: "Utforsk prosjektet videre", en: "Explore the project further" },
       body: {
-        no: "Ta kontakt dersom du ønsker å diskutere hvordan agentiske arbeidsflyter kan brukes i kommersiell utvikling, salgsoppfølging eller kunnskapsarbeid.",
-        en: "Get in touch if you would like to discuss how agentic workflows can be used in commercial development, sales follow-up or knowledge work.",
+        no: "Prosjektet utforsker hvordan agentiske arbeidsflyter kan støtte kommersiell utvikling og kunnskapsarbeid med tydelig menneskelig kontroll. Gjennom Marius Ottesen Consulting kan jeg bistå med kartlegging, arbeidsflyt og praktisk AI — rådgivning og videreutvikling etter avtale.",
+        en: "The project explores how agentic workflows can support commercial development and knowledge work with clear human control. Through Marius Ottesen Consulting I can help with assessment, workflow and practical AI — advisory work and further development by agreement.",
+      },
+      showContactPrimary: true,
+      contactPrimaryLabel: {
+        no: "Ta kontakt om agentiske arbeidsflyter og praktisk AI",
+        en: "Contact about agentic workflows and practical AI",
       },
     },
     utvikler,

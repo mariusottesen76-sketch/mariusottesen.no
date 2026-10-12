@@ -1,4 +1,3 @@
-import { CONTROL_TOWER_PROSJEKT_PATH } from "../lib/control-tower-brand";
 import { faginnleggDetailPath } from "../lib/faginnlegg-types";
 import type { RelevantVidereLink } from "../lib/faginnlegg-relevant-videre";
 import { SMB_SALGSFLYT_PILOT_PATH } from "../lib/smb-salgsflyt-brand";
@@ -97,7 +96,31 @@ export const FAGINNLEGG_AUTHORITY: Record<string, FaginnleggAuthorityEntry> = {
         en: "Read also: From strategy to execution",
       }),
       { href: "/resultater", label: { no: "Se dokumenterte resultater", en: "See documented results" } },
-      { href: CONTROL_TOWER_PROSJEKT_PATH, label: { no: "Se prosjektet: Control Tower", en: "See project: Control Tower" } },
+      { href: "/control-tower", label: { no: "Se prosjektet: Control Tower", en: "See project: Control Tower" } },
+    ],
+  },
+  "control-tower-operasjon-kommers-2026-07": {
+    slug: "control-tower-operasjon-kommers-2026-07",
+    cluster: "kommersiell-salg",
+    role: "core-support",
+    ownedIntents: [
+      "operasjon og kommers",
+      "Control Tower",
+      "COO",
+      "operativ og kommersiell styring",
+      "signal til handling",
+    ],
+    coreSupportSlugs: ["control-tower-verdikjede-ledelse-2026-08"],
+    relevantVidere: [
+      { href: "/control-tower", label: { no: "Se prosjektet: Control Tower", en: "See project: Control Tower" } },
+      articleLink("control-tower-verdikjede-ledelse-2026-08", {
+        no: "Les også: Når du som leder ikke eier hele verdikjeden",
+        en: "Read also: When you as a leader do not own the entire value chain",
+      }),
+      articleLink("fra-data-til-beslutning-2026-09", {
+        no: "Les også: Fra data til beslutning",
+        en: "Read also: From data to decision",
+      }),
     ],
   },
   "psykologisk-trygghet-krav-2026-01": {
@@ -126,6 +149,7 @@ export const FAGINNLEGG_AUTHORITY: Record<string, FaginnleggAuthorityEntry> = {
         no: "Les også: Du arver laget. Du eier utviklingen.",
         en: "Read also: You inherit the team. You own the development.",
       }),
+      { href: "/flowsignal", label: { no: "Se prosjektet: FlowSignal", en: "See project: FlowSignal" } },
       { href: "/referanser", label: { no: "Se referanser", en: "See references" } },
       { href: "/consulting", label: { no: "Se Consulting", en: "See consulting" } },
     ],
@@ -317,6 +341,10 @@ export const FAGINNLEGG_AUTHORITY: Record<string, FaginnleggAuthorityEntry> = {
         no: "Les også: Fra pilot til skalering – en praktisk oppskrift for ledere",
         en: "Read also: From pilot to scale – a practical recipe for leaders",
       }),
+      {
+        href: "/ai-readiness-scan",
+        label: { no: "Se prosjektet: AI Readiness Scan", en: "See project: AI Readiness Scan" },
+      },
       { href: "/resultater", label: { no: "Se dokumenterte resultater", en: "See documented results" } },
       { href: "/ai-value-lab-oslo", label: { no: "Se AI Value Lab Oslo", en: "See AI Value Lab Oslo" } },
     ],
@@ -339,6 +367,13 @@ export const FAGINNLEGG_AUTHORITY: Record<string, FaginnleggAuthorityEntry> = {
         no: "Les også: AI-governance i praksis",
         en: "Read also: AI governance in practice",
       }),
+      {
+        href: "/ai-transformation-value-realization",
+        label: {
+          no: "Se prosjektet: AI Transformation & Value Realization",
+          en: "See project: AI Transformation & Value Realization",
+        },
+      },
       { href: "/prosjekter", label: { no: "Se AI-prosjekter", en: "See AI projects" } },
       { href: "/consulting", label: { no: "Se Consulting", en: "See consulting" } },
     ],
@@ -743,6 +778,91 @@ export const FAGINNLEGG_AUTHORITY: Record<string, FaginnleggAuthorityEntry> = {
         en: "You inherit the team. You own the development.",
       }),
       { href: "/consulting", label: { no: "Se consulting-tilbud", en: "See consulting offerings" } },
+    ],
+  },
+  "nettside-lansering-2026-01": {
+    slug: "nettside-lansering-2026-01",
+    cluster: "ai-implementering",
+    role: "core-support",
+    ownedIntents: [
+      "mariusottesen.no",
+      "nettside lansering",
+      "Cursor",
+      "AI-assistert utvikling",
+      "Marius Ottesen Consulting",
+    ],
+    coreSupportSlugs: [],
+    relevantVidere: [
+      {
+        href: "/mariusottesen-nettside",
+        label: { no: "Se prosjektet: mariusottesen.no", en: "See project: mariusottesen.no" },
+      },
+      { href: "/prosjekter", label: { no: "Se AI-prosjektporteføljen", en: "See the AI project portfolio" } },
+    ],
+  },
+  "genai-foerste-reklamefilm-psc-2026-05": {
+    slug: "genai-foerste-reklamefilm-psc-2026-05",
+    cluster: "ai-implementering",
+    role: "core-support",
+    ownedIntents: ["GenAI video", "PSC promovideo", "salgstrening", "innholdsproduksjon"],
+    coreSupportSlugs: [],
+    relevantVidere: [
+      { href: "/psc", label: { no: "Se prosjektet: The Predictive Sales Coach", en: "See project: The Predictive Sales Coach" } },
+      articleLink("salgsledelse-i-praksis-2026-08", {
+        no: "Les også: Salgsledelse i praksis",
+        en: "Read also: Sales leadership in practice",
+      }),
+    ],
+  },
+  "ai-value-lab-01": {
+    slug: "ai-value-lab-01",
+    cluster: "ai-implementering",
+    role: "core-support",
+    ownedIntents: ["AI Value Lab Oslo", "praktisk AI", "SMB", "læringsinitiativ"],
+    coreSupportSlugs: [],
+    relevantVidere: [
+      { href: "/ai-value-lab-oslo", label: { no: "Se prosjektet: AI Value Lab Oslo", en: "See project: AI Value Lab Oslo" } },
+      { href: "/ai-transformation-value-realization", label: { no: "Se prosjektet: AI Transformation & Value Realization", en: "See project: AI Transformation & Value Realization" } },
+    ],
+  },
+  "ai-arkitektur-beslutningsstotte-01": {
+    slug: "ai-arkitektur-beslutningsstotte-01",
+    cluster: "ai-implementering",
+    role: "core-support",
+    ownedIntents: ["AI-arkitektur", "beslutningsstøtte", "kommersiell ledelse"],
+    coreSupportSlugs: [],
+    relevantVidere: [
+      { href: "/ai-arkitektur-beslutningsstotte", label: { no: "Se prosjektet: AI-arkitektur for beslutningsstøtte", en: "See project: AI architecture for decision support" } },
+      { href: "/control-tower", label: { no: "Se prosjektet: Control Tower", en: "See project: Control Tower" } },
+    ],
+  },
+  "event-planner-fest-planlegging-2026-08": {
+    slug: "event-planner-fest-planlegging-2026-08",
+    cluster: "ai-implementering",
+    role: "core-support",
+    ownedIntents: ["Event Planner", "arrangementsplanlegging", "agentisk arbeidsflyt"],
+    coreSupportSlugs: [],
+    relevantVidere: [
+      { href: "/event-planner", label: { no: "Se prosjektet: Event Planner", en: "See project: Event Planner" } },
+      articleLink("fra-strategi-til-gjennomforing-2026-09", {
+        no: "Les også: Fra strategi til gjennomføring",
+        en: "Read also: From strategy to execution",
+      }),
+    ],
+  },
+  "bi-genai-avslutning-master-2026-06": {
+    slug: "bi-genai-avslutning-master-2026-06",
+    cluster: "ai-implementering",
+    role: "core-support",
+    ownedIntents: ["BI master", "strategisk AI-implementering", "Skøyenåsen tannklinikk"],
+    coreSupportSlugs: [],
+    relevantVidere: [
+      { href: "/strategisk-ai-implementering", label: { no: "Se prosjektet: Strategisk AI-implementering", en: "See project: Strategic AI implementation" } },
+      { href: "/skoyenasen-tannklinikk", label: { no: "Se prosjektet: Skøyenåsen tannklinikk", en: "See project: Skøyenåsen dental clinic" } },
+      articleLink("ai-needs-first-tannklinikk-case-01", {
+        no: "Les også: De fleste starter feil med AI",
+        en: "Read also: Most people start wrong with AI",
+      }),
     ],
   },
 };

@@ -5,8 +5,8 @@ const utvikler = {
   navn: { no: "Marius Ottesen", en: "Marius Ottesen" },
   rolle: { no: "Kommersiell leder og AI-strateg", en: "Commercial leader and AI strategist" },
   beskrivelse: {
-    no: "Utvikler virksomhetsnære løsninger og konsepter i skjæringspunktet mellom kommersiell ledelse, mennesker, arbeidsflyt, teknologi og praktisk AI.",
-    en: "Develops business-oriented solutions and concepts at the intersection of commercial leadership, people, workflow, technology and practical AI.",
+    no: "Har utviklet SMB Salgsflyt-sjekken som tilgangsstyrt diagnoseverktøy. Arbeider i skjæringspunktet mellom kommersiell ledelse, salgsprosesser, CRM, arbeidsflyt og praktisk AI.",
+    en: "Developed SMB Sales Flow Check as an access-controlled diagnostic tool. Works at the intersection of commercial leadership, sales processes, CRM, workflow and practical AI.",
   },
 };
 
@@ -15,10 +15,13 @@ export const salgsflytSjekkenPlatform: StrategicPlatformProject = {
   prosjektId: "smb-salgsflyt-sjekken-2026",
   detailPath: "/salgsflyt-sjekken",
   meta: {
-    title: { no: "SMB Salgsflyt-sjekken | Marius Ottesen", en: "SMB Sales Flow Check | Marius Ottesen" },
+    title: {
+      no: "SMB Salgsflyt-sjekken | Diagnoseverktøy – Marius Ottesen",
+      en: "SMB Sales Flow Check | Diagnostic tool – Marius Ottesen",
+    },
     description: {
-      no: "Interaktiv diagnose og AI-rapportering for salgsfriksjon på tvers av ti kommersielle dimensjoner — med PDF-rapport og adminkonsoll.",
-      en: "Interactive diagnosis and AI reporting for sales friction across ten commercial dimensions — with a PDF report and admin console.",
+      no: "Se hvordan Marius Ottesen har utviklet SMB Salgsflyt-sjekken for å kartlegge friksjon i CRM, salgsprosesser, leadoppfølging og kundeoppfølging.",
+      en: "See how Marius Ottesen developed SMB Sales Flow Check to map friction in CRM, sales processes, lead follow-up and customer follow-up.",
     },
     ogImage: "/images/salgsflyt-sjekken-hero.png?v=20260720",
     canonicalPath: "/salgsflyt-sjekken",
@@ -204,7 +207,15 @@ export const salgsflytSjekkenPlatform: StrategicPlatformProject = {
     },
     avslutning: {
       heading: { no: "Utforsk prosjektet videre", en: "Explore the project further" },
-      body: { no: "Ta kontakt for faglig dialog om hvordan en strukturert salgsdiagnose kan gi grunnlag for prioritering, oppfølging og videre arbeidsflyt.", en: "Get in touch for professional dialogue on how a structured sales diagnosis can provide a basis for prioritisation, follow-up and further workflow." },
+      body: {
+        no: "Ønsker du å undersøke hvor virksomheten mister kommersiell effekt i salgsprosessen? Ta kontakt med Marius Ottesen Consulting for en uforpliktende samtale om Salgsflyt-sjekken, salgsutvikling og mulige forbedringstiltak.",
+        en: "Want to explore where your organisation loses commercial impact in the sales process? Contact Marius Ottesen Consulting for a no-obligation conversation about the Sales Flow Check, sales development and possible improvement measures.",
+      },
+      showContactPrimary: true,
+      contactPrimaryLabel: {
+        no: "Ta kontakt om Salgsflyt-sjekken",
+        en: "Contact about the Sales Flow Check",
+      },
     },
     utvikler,
   },

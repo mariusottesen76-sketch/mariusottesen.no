@@ -231,7 +231,7 @@ const translations: Translations = {
     no: "",
     en: "English version is not available. This article is shown in Norwegian.",
   },
-  "fag.artikkel.relevant": { no: "Relevant videre", en: "Relevant next steps" },
+  "fag.artikkel.relevant": { no: "Relevant videre", en: "Further reading" },
   "fag.nye": { no: "Nye innlegg under utarbeidelse...", en: "New articles in progress..." },
   "fag.linkedin.discussion": {
     no: "Følg diskusjonen og se flere perspektiver på LinkedIn →",
@@ -370,6 +370,10 @@ const translations: Translations = {
   "prosjekter.intro.2": {
     no: "Siden fungerer som en portefølje for arbeidsgivere, rekrutterere og beslutningstakere som ønsker å se praktisk AI-forståelse, digital transformasjon, produktutvikling og kommersiell og operasjonell gjennomføringsevne i praksis.",
     en: "This page serves as a portfolio for employers, recruiters and decision-makers who want to see practical AI understanding, digital transformation, product development and commercial and operational execution capability in practice.",
+  },
+  "prosjekter.intro.moc": {
+    no: "Prosjektene viser hvordan jeg kombinerer kommersiell ledererfaring, strategi og praktisk AI-utvikling. Gjennom Marius Ottesen Consulting bistår jeg virksomheter med å vurdere muligheter, prioritere tiltak og utvikle arbeidsmåter som skaper verdi.",
+    en: "The projects show how I combine commercial leadership experience, strategy and practical AI development. Through Marius Ottesen Consulting I help organisations assess opportunities, prioritise initiatives and develop ways of working that create value.",
   },
   "prosjekter.videreutdanning.title": {
     no: "Fra videreutdanning til bygde løsninger",

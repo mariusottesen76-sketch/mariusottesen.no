@@ -1,4 +1,5 @@
 import type { ProjectV2Record } from "../types";
+import { relevantVidereLinksForSlug } from "../relevant-videre-catalog";
 
 export const aiArkitekturBeslutningsstotteV2: ProjectV2Record = {
   id: "ai-arkitektur-beslutningsstotte-2026",
@@ -87,4 +88,5 @@ export const aiArkitekturBeslutningsstotteV2: ProjectV2Record = {
     canonicalPath: "/ai-arkitektur-beslutningsstotte",
   },
   strategicPlatformSlug: "ai-arkitektur-beslutningsstotte",
+  fagPerspektivLinks: relevantVidereLinksForSlug("ai-arkitektur-beslutningsstotte"),
 };

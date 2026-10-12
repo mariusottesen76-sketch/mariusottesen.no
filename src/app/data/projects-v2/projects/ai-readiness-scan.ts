@@ -1,5 +1,6 @@
 import { AI_READINESS_SCAN_APP_URL, AI_READINESS_SCAN_MATURITY_LABEL, AI_READINESS_SCAN_OVERVIEW_IMAGE } from "../../../lib/ai-readiness-scan-brand";
 import type { ProjectV2Record } from "../types";
+import { relevantVidereLinksForSlug } from "../relevant-videre-catalog";
 
 export const aiReadinessScanV2: ProjectV2Record = {
   id: "ai-readiness-scan-2026-06",
@@ -22,8 +23,8 @@ export const aiReadinessScanV2: ProjectV2Record = {
   statusLabel: AI_READINESS_SCAN_MATURITY_LABEL,
   maturityLevel: AI_READINESS_SCAN_MATURITY_LABEL,
   overviewIntroduction: {
-    no: "AI Readiness Scan er et tilgangsstyrt kartleggingsverktøy for ledere og virksomheter som vil avklare AI-modenhet, prioriteringer og neste steg — fra strategi og kompetanse til data, prosesser og ansvarlig bruk.",
-    en: "AI Readiness Scan is an access-controlled mapping tool for leaders and organisations that want to clarify AI maturity, priorities and next steps — from strategy and competence to data, processes and responsible use.",
+    no: "AI Readiness Scan er et tilgangsstyrt kartleggingsverktøy med 18 spørsmål fordelt på seks kjerneområder — for ledere og virksomheter som vil avklare AI-modenhet, prioriteringer og neste steg.",
+    en: "AI Readiness Scan is an access-controlled mapping tool with 18 questions across six core areas — for leaders and organisations that want to clarify AI maturity, priorities and next steps.",
   },
   overview: {
     what: {
@@ -35,12 +36,12 @@ export const aiReadinessScanV2: ProjectV2Record = {
       en: "Many organisations want to adopt AI, but lack a shared picture of the current situation and what should come first. The challenge is to create structure before investing in larger initiatives.",
     },
     built: {
-      no: "Det er utviklet et tilgangsstyrt kartleggingsverktøy med strukturert spørsmålsflyt, sikker innlogging, tilgangskoder og administrativ oppfølging av virksomheter og kartlegginger.",
-      en: "An access-controlled mapping tool has been developed with structured question flow, secure login, access codes and administrative follow-up of organisations and assessments.",
+      no: "Tilgangsstyrt kartleggingsverktøy med 18 spørsmål på seks kjerneområder, valg av forbedringsområder, regelstyrt resultatrapport (åtte hoveddeler), sikker innlogging og administrativ oppfølging.",
+      en: "Access-controlled mapping tool with 18 questions across six core areas, improvement area selection, rule-based results report (eight main sections), secure login and administrative follow-up.",
     },
     how: {
-      no: "Virksomheten får tilgang via kode eller innlogging, deltakeren svarer på spørsmål om strategi, kompetanse, prosesser, data og risiko, og resultatet brukes til prioritering og oppfølging.",
-      en: "The organisation gains access via code or login, the participant answers questions on strategy, competence, processes, data and risk, and the result is used for prioritisation and follow-up.",
+      no: "Virksomheten får tilgang via kode eller innlogging. Deltakeren svarer på scored spørsmål, velger forbedringsområder og får en regelstyrt rapport — analysen er svarbasert, ikke generativ AI i sanntid.",
+      en: "The organisation gains access via code or login. The participant answers scored questions, selects improvement areas and receives a rule-based report — analysis is response-driven, not generative AI in real time.",
     },
     relevance: {
       no: "Prosjektet viser hvordan strukturert kartlegging kan gi bedre prioritering og forberedelse før virksomheten investerer bredt i AI — uten å fremstilles som revisjon eller garanti.",
@@ -84,4 +85,5 @@ export const aiReadinessScanV2: ProjectV2Record = {
     canonicalPath: "/ai-readiness-scan",
   },
   strategicPlatformSlug: "ai-readiness-scan",
+  fagPerspektivLinks: relevantVidereLinksForSlug("ai-readiness-scan"),
 };

@@ -3,6 +3,7 @@ import {
   CONTROL_TOWER_PILOT_PUBLIC,
 } from "../../../lib/control-tower-brand";
 import type { ProjectV2Record } from "../types";
+import { relevantVidereLinksForSlug } from "../relevant-videre-catalog";
 
 export const controlTowerV2: ProjectV2Record = {
   id: "control-tower",
@@ -95,20 +96,5 @@ export const controlTowerV2: ProjectV2Record = {
     canonicalPath: "/control-tower",
   },
   strategicPlatformSlug: "control-tower",
-  fagPerspektivLink: {
-    href: "/faginnlegg/control-tower-verdikjede-ledelse-2026-08",
-    label: {
-      no: "Faglig perspektiv: Når du som leder ikke eier hele verdikjeden →",
-      en: "Professional perspective: When you as a leader do not own the entire value chain →",
-    },
-  },
-  fagPerspektivLinks: [
-    {
-      href: "/faginnlegg/fra-data-til-beslutning-2026-09",
-      label: {
-        no: "Fra data til beslutning →",
-        en: "From data to decision →",
-      },
-    },
-  ],
+  fagPerspektivLinks: relevantVidereLinksForSlug("control-tower"),
 };

@@ -1,5 +1,6 @@
 import { EVENT_PLANNER_DEMO_URL, EVENT_PLANNER_HERO_IMAGE, EVENT_PLANNER_OVERVIEW_IMAGE } from "../../../lib/event-planner-brand";
 import type { ProjectV2Record } from "../types";
+import { relevantVidereLinksForSlug } from "../relevant-videre-catalog";
 
 export const eventPlannerV2: ProjectV2Record = {
   id: "event-planner-2026-08",
@@ -97,4 +98,5 @@ export const eventPlannerV2: ProjectV2Record = {
     canonicalPath: "/event-planner",
   },
   strategicPlatformSlug: "event-planner",
+  fagPerspektivLinks: relevantVidereLinksForSlug("event-planner"),
 };

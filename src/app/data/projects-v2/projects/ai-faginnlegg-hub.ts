@@ -1,4 +1,5 @@
 import type { ProjectV2Record } from "../types";
+import { relevantVidereLinksForSlug } from "../relevant-videre-catalog";
 
 export const aiFaginnleggHubV2: ProjectV2Record = {
   id: "ai-faginnlegg-serie-2026",
@@ -87,4 +88,5 @@ export const aiFaginnleggHubV2: ProjectV2Record = {
     ogImage: "/images/ai-faginnlegg-hjemmeside.png?v=20260717",
     canonicalPath: "/faginnlegg",
   },
+  fagPerspektivLinks: relevantVidereLinksForSlug("ai-faginnlegg-hub"),
 };

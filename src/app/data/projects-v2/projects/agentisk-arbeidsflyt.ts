@@ -1,4 +1,5 @@
 import type { ProjectV2Record } from "../types";
+import { relevantVidereLinksForSlug } from "../relevant-videre-catalog";
 
 export const agentiskArbeidsflytV2: ProjectV2Record = {
   id: "ai-assistert-innsikts-og-opportunity-agent-2026",
@@ -84,4 +85,5 @@ export const agentiskArbeidsflytV2: ProjectV2Record = {
     canonicalPath: "/agentisk-arbeidsflyt",
   },
   strategicPlatformSlug: "agentisk-arbeidsflyt",
+  fagPerspektivLinks: relevantVidereLinksForSlug("agentisk-arbeidsflyt"),
 };

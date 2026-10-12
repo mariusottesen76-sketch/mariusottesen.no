@@ -296,8 +296,13 @@ export const strategiskAiImplementeringPlatform: StrategicPlatformProject = {
     avslutning: {
       heading: { no: "Utforsk prosjektet videre", en: "Explore the project further" },
       body: {
-        no: "Ta kontakt dersom du ønsker å diskutere hvordan et konkret AI-case kan utvikles fra idé til praktisk og ansvarlig implementeringsplan.",
-        en: "Get in touch if you would like to discuss how a concrete AI case can be developed from idea to practical and responsible implementation plan.",
+        no: "Prosjektoppgaven viser hvordan et AI-case kan struktureres fra behov og governance til gjennomførbar plan. Gjennom Marius Ottesen Consulting bistår jeg virksomheter med strategisk AI-implementering, prioritering og ansvarlig gjennomføring.",
+        en: "The master's project shows how an AI case can be structured from needs and governance to an executable plan. Through Marius Ottesen Consulting I support organisations with strategic AI implementation, prioritisation and responsible execution.",
+      },
+      showContactPrimary: true,
+      contactPrimaryLabel: {
+        no: "Ta kontakt om strategisk AI-implementering",
+        en: "Contact about strategic AI implementation",
       },
     },
     utvikler,

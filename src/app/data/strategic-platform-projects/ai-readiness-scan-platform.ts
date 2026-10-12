@@ -1,12 +1,21 @@
 import type { StrategicPlatformProject } from "./types";
 import { AI_READINESS_SCAN_MATURITY_LABEL } from "../../lib/ai-readiness-scan-brand";
 
+const KJERNEOMRADER = [
+  { tittel: { no: "Strategi og ledelse", en: "Strategy and leadership" }, beskrivelse: { no: "Tre scored spørsmål i dette kjerneområdet.", en: "Three scored questions in this core area." } },
+  { tittel: { no: "Arbeidsflyt og kundeverdi", en: "Workflow and customer value" }, beskrivelse: { no: "Tre scored spørsmål i dette kjerneområdet.", en: "Three scored questions in this core area." } },
+  { tittel: { no: "Data og systemer", en: "Data and systems" }, beskrivelse: { no: "Tre scored spørsmål i dette kjerneområdet.", en: "Three scored questions in this core area." } },
+  { tittel: { no: "Kompetanse og adopsjon", en: "Competence and adoption" }, beskrivelse: { no: "Tre scored spørsmål i dette kjerneområdet.", en: "Three scored questions in this core area." } },
+  { tittel: { no: "Trygg bruk og ansvar", en: "Safe use and responsibility" }, beskrivelse: { no: "Tre scored spørsmål i dette kjerneområdet.", en: "Three scored questions in this core area." } },
+  { tittel: { no: "Verdi og skalering", en: "Value and scaling" }, beskrivelse: { no: "Tre scored spørsmål i dette kjerneområdet.", en: "Three scored questions in this core area." } },
+] as const;
+
 const utvikler = {
   navn: { no: "Marius Ottesen", en: "Marius Ottesen" },
   rolle: { no: "Kommersiell leder og AI-strateg", en: "Commercial leader and AI strategist" },
   beskrivelse: {
-    no: "Utvikler virksomhetsnære løsninger og konsepter i skjæringspunktet mellom kommersiell ledelse, mennesker, arbeidsflyt, teknologi og praktisk AI.",
-    en: "Develops business-oriented solutions and concepts at the intersection of commercial leadership, people, workflow, technology and practical AI.",
+    no: "Har utviklet AI Readiness Scan som tilgangsstyrt kartleggingsverktøy. Arbeider i skjæringspunktet mellom kommersiell ledelse, arbeidsflyt, teknologi og praktisk AI.",
+    en: "Developed AI Readiness Scan as an access-controlled mapping tool. Works at the intersection of commercial leadership, workflow, technology and practical AI.",
   },
 };
 
@@ -81,23 +90,37 @@ export const aiReadinessScanPlatform: StrategicPlatformProject = {
     logikk: {
       heading: { no: "Prosjektets modell og hovedlogikk", en: "The project's model and core logic" },
       body: {
-        no: "Kartleggingen gir et strukturert bilde av AI-modenhet på tvers av sju områder:",
-        en: "The assessment provides a structured picture of AI maturity across seven areas:",
+        no: "AI Readiness Scan kartlegger virksomhetens AI-beredskap gjennom 18 spørsmål fordelt på seks kjerneområder. Vurderingen omfatter strategi og ledelse, arbeidsflyt og kundeverdi, data og systemer, kompetanse og adopsjon, trygg bruk og ansvar samt verdi og skalering.",
+        en: "AI Readiness Scan maps the organisation's AI readiness through 18 questions across six core areas. The assessment covers strategy and leadership, workflow and customer value, data and systems, competence and adoption, safe use and responsibility, and value and scaling.",
       },
-      steps: [
-        { tittel: { no: "Sju kartleggingsområder", en: "Seven assessment areas" }, beskrivelse: { no: "Spørsmålene dekker blant annet strategi, kompetanse, prosesser, data, risiko og ansvarlig bruk.", en: "The questions cover, among other areas, strategy, competence, processes, data, risk and responsible use." } },
-      ],
+      steps: [...KJERNEOMRADER],
       after: {
-        no: "Resultatet brukes som grunnlag for dialog om neste steg og mulige forbedringsområder.",
-        en: "The result is used as a basis for dialogue on next steps and possible improvement areas.",
+        no: "Hvert kjerneområde har tre spørsmål med fem scored svarnivåer og alternativet «Vet ikke». Dette er de seks scored kjerneområdene — ikke det samme som valgbare forbedringsområder eller rapportens åtte hoveddeler.",
+        en: "Each core area has three questions with five scored response levels and a “Don't know” option. These are the six scored core areas — not the same as selectable improvement areas or the report's eight main sections.",
       },
     },
+    contentSections: [
+      {
+        heading: { no: "Valgbare forbedringsområder", en: "Selectable improvement areas" },
+        body: {
+          no: "Etter de scored spørsmålene kan respondenten velge blant elleve valgbare forbedringsområder, inkludert «Vet ikke ennå». Dette er et eget lag i kartleggingen — ikke scored kjerneområder og ikke rapportmoduler.",
+          en: "After the scored questions, the respondent can choose among eleven selectable improvement areas, including “Don't know yet”. This is a separate layer in the assessment — not scored core areas and not report modules.",
+        },
+      },
+      {
+        heading: { no: "Resultatrapport og analyse", en: "Results report and analysis" },
+        body: {
+          no: "Resultatrapporten er bygget opp av åtte hoveddeler. Analysen er regelstyrt og svarbasert, med tilpassede vurderinger og prioriteringer ut fra besvarelsene — ikke generert av en språkmodell i sanntid.",
+          en: "The results report consists of eight main sections. Analysis is rule-based and response-driven, with tailored assessments and prioritisation from the answers — not generated by a language model in real time.",
+        },
+      },
+    ],
     bygget: {
       heading: { no: "Hva som er bygget eller utviklet", en: "What has been built or developed" },
       items: [
-        { no: "Strukturert spørsmålsflyt på tvers av sju modenhetsområder", en: "Structured question flow across seven maturity areas" },
-        { no: "Sikker innlogging og tilgangskoder", en: "Secure login and access codes" },
-        { no: "Administrasjonsflate for virksomheter og kartlegginger", en: "Admin environment for organisations and assessments" },
+        { no: "Strukturert spørsmålsflyt: 18 spørsmål på seks scored kjerneområder (3 per område)", en: "Structured question flow: 18 questions across six scored core areas (3 per area)" },
+        { no: "Regelstyrt resultatrapport med åtte hoveddeler og tilpassede anbefalinger", en: "Rule-based results report with eight main sections and tailored recommendations" },
+        { no: "Sikker innlogging, tilgangskoder og administrasjonsflate for virksomheter og kartlegginger", en: "Secure login, access codes and admin environment for organisations and assessments" },
       ],
     },
     moduler: {
@@ -108,9 +131,38 @@ export const aiReadinessScanPlatform: StrategicPlatformProject = {
       },
       modules: [
         { tittel: { no: "Tilgang og innlogging", en: "Access and login" }, beskrivelse: { no: "Virksomheten får tilgang gjennom unik tilgangskode eller sikker innlogging.", en: "The organisation gains access through a unique access code or secure login." }, bygget: true },
-        { tittel: { no: "Kartlegging", en: "Assessment" }, beskrivelse: { no: "Strukturert spørsmål om strategi, kompetanse, prosesser, data, risiko og ansvarlig bruk.", en: "Structured questions about strategy, competence, processes, data, risk and responsible use." }, bygget: true },
-        { tittel: { no: "Administrativ oppfølging", en: "Administrative follow-up" }, beskrivelse: { no: "Besvarelser samles for oversikt over mønstre og aktuelle prioriteringer.", en: "Responses are collected for an overview of patterns and current priorities." }, bygget: true },
-        { tittel: { no: "Prioritering", en: "Prioritisation" }, beskrivelse: { no: "Resultatet brukes som grunnlag for dialog om neste steg — ikke som formell sertifisering.", en: "The result is used as a basis for dialogue on next steps — not as formal certification." }, bygget: true },
+        {
+          tittel: { no: "Scored kartlegging", en: "Scored assessment" },
+          beskrivelse: {
+            no: "18 spørsmål fordelt på seks kjerneområder, med fem scored svarnivåer og «Vet ikke» per spørsmål.",
+            en: "18 questions across six core areas, with five scored response levels and “Don't know” per question.",
+          },
+          bygget: true,
+        },
+        {
+          tittel: { no: "Valg av forbedringsområder", en: "Improvement area selection" },
+          beskrivelse: {
+            no: "Elleve valgbare forbedringsområder, inkludert «Vet ikke ennå» — supplement til de scored kjerneområdene.",
+            en: "Eleven selectable improvement areas, including “Don't know yet” — a supplement to the scored core areas.",
+          },
+          bygget: true,
+        },
+        {
+          tittel: { no: "Resultatrapport", en: "Results report" },
+          beskrivelse: {
+            no: "Regelstyrt, svarbasert rapport med åtte hoveddeler og tilpassede vurderinger — ikke sanntids generativ AI-analyse.",
+            en: "Rule-based, response-driven report with eight main sections and tailored assessments — not real-time generative AI analysis.",
+          },
+          bygget: true,
+        },
+        {
+          tittel: { no: "Administrativ oppfølging", en: "Administrative follow-up" },
+          beskrivelse: {
+            no: "Besvarelser og rapporter samles for oversikt over mønstre, prioriteringer og dialog om neste steg.",
+            en: "Responses and reports are collected for an overview of patterns, priorities and dialogue on next steps.",
+          },
+          bygget: true,
+        },
       ],
     },
     hvordan: {
@@ -118,12 +170,12 @@ export const aiReadinessScanPlatform: StrategicPlatformProject = {
       intro: { no: "Virksomheten får tilgang, deltakeren svarer på kartlegging, og resultatet brukes til prioritering og oppfølging.", en: "The organisation gains access, the participant completes the assessment, and the result is used for prioritisation and follow-up." },
       detaljpunkter: [
         {
-          no: "Kartleggingen dekker strategi, kompetanse, prosesser, data, risiko og ansvarlig bruk.",
-          en: "The assessment covers strategy, competence, processes, data, risk and responsible use.",
+          no: "Respondenten svarer på 18 spørsmål fordelt på seks kjerneområder, velger relevante forbedringsområder og får en regelstyrt rapport.",
+          en: "The respondent answers 18 questions across six core areas, selects relevant improvement areas and receives a rule-based report.",
         },
         {
-          no: "Administrasjonsflaten samler besvarelser og mønstre som grunnlag for dialog om neste steg.",
-          en: "The admin environment collects responses and patterns as a basis for dialogue on next steps.",
+          no: "Administrasjonsflaten samler besvarelser og rapporter som grunnlag for prioritering og oppfølging — ikke som formell sertifisering.",
+          en: "The admin environment collects responses and reports as a basis for prioritisation and follow-up — not as formal certification.",
         },
       ],
     },
@@ -164,7 +216,15 @@ export const aiReadinessScanPlatform: StrategicPlatformProject = {
     },
     avslutning: {
       heading: { no: "Utforsk prosjektet videre", en: "Explore the project further" },
-      body: { no: "Ta kontakt for faglig dialog om hvordan en strukturert AI-kartlegging kan gi grunnlag for prioritering og videre arbeid.", en: "Get in touch for professional dialogue on how a structured AI assessment can provide a basis for prioritisation and further work." },
+      body: {
+        no: "Ønsker du å avklare AI-beredskap, prioriteringer og neste steg? Ta kontakt med Marius Ottesen Consulting for en uforpliktende samtale om AI Readiness Scan, kartlegging og videre arbeid.",
+        en: "Want to clarify AI readiness, priorities and next steps? Contact Marius Ottesen Consulting for a no-obligation conversation about AI Readiness Scan, assessment and further work.",
+      },
+      showContactPrimary: true,
+      contactPrimaryLabel: {
+        no: "Ta kontakt om AI Readiness Scan",
+        en: "Contact me about AI Readiness Scan",
+      },
     },
     utvikler,
   },

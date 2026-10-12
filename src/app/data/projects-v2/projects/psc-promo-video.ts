@@ -1,4 +1,5 @@
 import type { ProjectV2Record } from "../types";
+import { relevantVidereLinksForSlug } from "../relevant-videre-catalog";
 
 const PROMO_VIDEO_URL = "/images/promovideo-final.mov";
 
@@ -94,4 +95,5 @@ export const pscPromoVideoV2: ProjectV2Record = {
     ogImage: "/images/predictive-sales-coach-promovideo-hjemmeside.png?v=20260717",
     canonicalPath: "/prosjekter#psc-promo-video-moc-2026",
   },
+  fagPerspektivLinks: relevantVidereLinksForSlug("psc-promo-video"),
 };

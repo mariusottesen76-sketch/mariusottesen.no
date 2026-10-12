@@ -350,8 +350,13 @@ export const bilagsassistentPlatform: StrategicPlatformProject = {
     avslutning: {
       heading: { no: "Utforsk prosjektet videre", en: "Explore the project further" },
       body: {
-        no: "Bilagsassistent er foreløpig ikke tilgjengelig som offentlig demo eller kommersielt produkt. Ta kontakt for faglig dialog om arbeidsflyt, automatisering og praktisk AI i mindre virksomheter.",
-        en: "Receipt Assistant is not currently available as a public demo or commercial product. Get in touch for professional dialogue on workflow, automation and practical AI in smaller businesses.",
+        no: "Bilagsassistent er foreløpig ikke tilgjengelig som offentlig demo eller ferdig produkt. Prosjektet illustrerer likevel hvordan prosessforbedring og praktisk AI kan redusere friksjon i administrative arbeidsflyter. Gjennom Marius Ottesen Consulting kan jeg bistå med kartlegging, prioritering og ansvarlig videreutvikling etter avtale.",
+        en: "Receipt Assistant is not currently available as a public demo or finished product. The project still illustrates how process improvement and practical AI can reduce friction in administrative workflows. Through Marius Ottesen Consulting I can help with assessment, prioritisation and responsible further development by agreement.",
+      },
+      showContactPrimary: true,
+      contactPrimaryLabel: {
+        no: "Ta kontakt om prosessforbedring og praktisk AI",
+        en: "Contact about process improvement and practical AI",
       },
     },
     utvikler,

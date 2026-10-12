@@ -92,6 +92,17 @@ export const rowSolutionsPlatform: StrategicPlatformProject = {
         no: "Hovedutfordringen er ikke bare å bygge en nettside. SMB-ledere opplever ofte friksjon mellom synlighet, leadgenerering, CRM, salg, kundedialog, oppfølging og neste handling — uten at det finnes én tydelig struktur som binder det sammen.\n\nSamtidig kan et rådgivningsmiljø som kombinerer strategi, kommersiell utvikling, salg, transformasjon og AI raskt fremstå for bredt dersom tjenestene ikke er tydelig prioritert og strukturert. Utfordringen er å gjøre tilbudet forståelig og relevant uten å forenkle det til «en nettside» eller generisk rådgivning.",
         en: "The main challenge is not just to build a website. SMB leaders often experience friction between visibility, lead generation, CRM, sales, customer dialogue, follow-up and next action — without one clear structure tying it together.\n\nAt the same time, an advisory environment combining strategy, commercial development, sales, transformation and AI can quickly appear too broad if services are not clearly prioritised and structured. The challenge is to make the offering understandable and relevant without reducing it to «a website» or generic advisory work.",
       },
+      followUp: {
+        body: {
+          no: "Den publiserte plattformen for initiativet finnes på rowsolutions.no — med tjenester, faglig innsikt og kommersiell dialog.",
+          en: "The published platform for the initiative is at rowsolutions.no — with services, professional insight and commercial dialogue.",
+        },
+        link: {
+          href: "https://rowsolutions.no/",
+          label: { no: "Åpne rowsolutions.no →", en: "Open rowsolutions.no →" },
+          external: true,
+        },
+      },
     },
     logikk: {
       heading: { no: "Modell, tilnærming og prosjektlogikk", en: "Model, approach and project logic" },

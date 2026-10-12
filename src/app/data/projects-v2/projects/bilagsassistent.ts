@@ -5,6 +5,7 @@ import {
   BILAGSASSISTENT_OVERVIEW_IMAGE,
 } from "../../../lib/bilagsassistent-brand";
 import type { ProjectV2Record } from "../types";
+import { relevantVidereLinksForSlug } from "../relevant-videre-catalog";
 
 export const bilagsassistentV2: ProjectV2Record = {
   id: "bilagsassistent-2026-09",
@@ -88,4 +89,5 @@ export const bilagsassistentV2: ProjectV2Record = {
     canonicalPath: "/bilagsassistent",
   },
   strategicPlatformSlug: "bilagsassistent",
+  fagPerspektivLinks: relevantVidereLinksForSlug("bilagsassistent"),
 };

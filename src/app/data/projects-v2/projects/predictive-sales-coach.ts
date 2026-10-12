@@ -1,5 +1,6 @@
 import { PSC_APP_URL, PSC_MATURITY_LABEL, PSC_OVERVIEW_IMAGE, PSC_SEO_DESCRIPTION, PSC_SEO_TITLE, PSC_SHORT_DESCRIPTION } from "../../../lib/psc-brand";
 import type { ProjectV2Record } from "../types";
+import { relevantVidereLinksForSlug } from "../relevant-videre-catalog";
 
 export const predictiveSalesCoachV2: ProjectV2Record = {
   id: "predictive-sales-coach-2026",
@@ -81,4 +82,5 @@ export const predictiveSalesCoachV2: ProjectV2Record = {
     canonicalPath: "/psc",
   },
   strategicPlatformSlug: "predictive-sales-coach",
+  fagPerspektivLinks: relevantVidereLinksForSlug("psc"),
 };

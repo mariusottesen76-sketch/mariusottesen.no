@@ -237,8 +237,13 @@ export const aiValueLabOsloPlatform: StrategicPlatformProject = {
     avslutning: {
       heading: { no: "Ta kontakt om samarbeid", en: "Get in touch about collaboration" },
       body: {
-        no: "Ta kontakt dersom du ønsker faglig dialog om AI Value Lab Oslo, praktisk AI-verdi eller mulig samarbeid rundt virksomhetsnære problemstillinger.",
-        en: "Get in touch if you would like a professional conversation about AI Value Lab Oslo, practical AI value or possible collaboration around business-near challenges.",
+        no: "AI Value Lab Oslo er et faglig og nettverksorientert initiativ for praktisk AI-verdi. Gjennom Marius Ottesen Consulting kan jeg bistå virksomheter med verdirealisering, prioritering og gjennomføring — i tillegg til lab- og nettverksdialog der det er relevant.",
+        en: "AI Value Lab Oslo is a professional and network-oriented initiative for practical AI value. Through Marius Ottesen Consulting I can support organisations with value realisation, prioritisation and execution — in addition to lab and network dialogue where relevant.",
+      },
+      showContactPrimary: true,
+      contactPrimaryLabel: {
+        no: "Ta kontakt om praktisk AI-verdi",
+        en: "Contact about practical AI value",
       },
     },
     utvikler,

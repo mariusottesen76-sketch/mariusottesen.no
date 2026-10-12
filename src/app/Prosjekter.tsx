@@ -109,8 +109,11 @@ export default function Prosjekter({ onNavigate: _onNavigate }: { onNavigate?: (
         <p className="text-lg md:text-xl text-slate-300 leading-relaxed font-light mb-4 break-words">
           {tr("prosjekter.intro.1b")}
         </p>
-        <p className="text-lg md:text-xl text-slate-400 italic leading-relaxed font-light mb-6 break-words">
+        <p className="text-lg md:text-xl text-slate-400 italic leading-relaxed font-light mb-4 break-words">
           {tr("prosjekter.intro.2")}
+        </p>
+        <p className="text-base md:text-lg text-slate-400 leading-relaxed font-light mb-6 break-words">
+          {tr("prosjekter.intro.moc")}
         </p>
         <section
           aria-labelledby="prosjekter-videreutdanning-heading"

@@ -138,8 +138,13 @@ export const aiInnsiktsOgInnholdsmotorPlatform: StrategicPlatformProject = {
     avslutning: {
       heading: { no: "Utforsk prosjektet videre", en: "Explore the project further" },
       body: {
-        no: "Ta kontakt dersom du ønsker å diskutere hvordan AI kan gjøre kunnskapsbanker, faginnhold og lederkommunikasjon mer operativt.",
-        en: "Get in touch if you would like to discuss how AI can make knowledge bases, professional content and leadership communication more operational.",
+        no: "Innholdsmotoren viser hvordan kunnskapsbanker og faginnhold kan gjøres mer operativt med AI — med menneskelig kvalitetssikring. Gjennom Marius Ottesen Consulting kan jeg bistå med innholdsstrategi, arbeidsflyt og praktisk implementering.",
+        en: "The content engine shows how knowledge bases and professional content can become more operational with AI — with human quality assurance. Through Marius Ottesen Consulting I can support content strategy, workflow and practical implementation.",
+      },
+      showContactPrimary: true,
+      contactPrimaryLabel: {
+        no: "Ta kontakt om innhold, innsikt og praktisk AI",
+        en: "Contact about content, insight and practical AI",
       },
     },
     utvikler,

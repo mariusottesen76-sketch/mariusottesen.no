@@ -1,4 +1,5 @@
 import type { ProjectV2Record } from "../types";
+import { relevantVidereLinksForSlug } from "../relevant-videre-catalog";
 
 const LIVE_SITE_URL = "https://www.mariusottesen.no";
 
@@ -93,4 +94,5 @@ export const mariusottesenNettsideV2: ProjectV2Record = {
     canonicalPath: "/mariusottesen-nettside",
   },
   strategicPlatformSlug: "mariusottesen-nettside",
+  fagPerspektivLinks: relevantVidereLinksForSlug("mariusottesen-nettside"),
 };

@@ -1,4 +1,5 @@
 import type { ProjectV2Record } from "../types";
+import { relevantVidereLinksForSlug } from "../relevant-videre-catalog";
 
 export const aiValueLabOsloV2: ProjectV2Record = {
   id: "ai-value-lab-oslo-2026",
@@ -93,4 +94,5 @@ export const aiValueLabOsloV2: ProjectV2Record = {
     canonicalPath: "/ai-value-lab-oslo",
   },
   strategicPlatformSlug: "ai-value-lab-oslo",
+  fagPerspektivLinks: relevantVidereLinksForSlug("ai-value-lab-oslo"),
 };
