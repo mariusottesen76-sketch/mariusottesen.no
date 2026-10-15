@@ -23,8 +23,8 @@ export const salgsflytSjekkenV2: ProjectV2Record = {
   statusLabel: SMB_SALGSFLYT_MATURITY_LABEL,
   maturityLevel: SMB_SALGSFLYT_MATURITY_LABEL,
   overviewIntroduction: {
-    no: "SMB Salgsflyt-sjekken er et interaktivt diagnoseverktøy som kartlegger salgsfriksjon på tvers av ti kommersielle dimensjoner — med AI-generert analyse, kunderapport og adminkonsoll for oppfølging.",
-    en: "SMB Sales Flow Check is an interactive diagnostic tool that maps sales friction across ten commercial dimensions — with AI-generated analysis, customer report and admin console for follow-up.",
+    no: "SMB Salgsflyt-sjekken er et interaktivt diagnoseverktøy som kartlegger salgsfriksjon på tvers av ti suksessdimensjoner — med AI-generert analyse, kunderapport og adminkonsoll for oppfølging.",
+    en: "SMB Sales Flow Check is an interactive diagnostic tool that maps sales friction across ten success dimensions — with AI-generated analysis, customer report and admin console for follow-up.",
   },
   overview: {
     what: {

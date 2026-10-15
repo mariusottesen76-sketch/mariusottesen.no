@@ -1,6 +1,80 @@
 import type { StrategicPlatformProject } from "./types";
 import { SMB_SALGSFLYT_MATURITY_LABEL } from "../../lib/smb-salgsflyt-brand";
 
+/** Ti suksessdimensjoner i SMB Salgsflyt-sjekken (2 spørsmål per dimensjon). */
+const SUKSSESSDIMENSJONER = [
+  {
+    tittel: { no: "Leadfangst", en: "Lead capture" },
+    beskrivelse: {
+      no: "Måler om nye henvendelser og leads registreres systematisk i et felles system og tildeles ansvarlig person raskt, fremfor å bli liggende i innbokser.",
+      en: "Measures whether new enquiries and leads are registered systematically in a shared system and assigned to an owner quickly, rather than sitting in inboxes.",
+    },
+  },
+  {
+    tittel: { no: "Kundedata og innsikt", en: "Customer data and insight" },
+    beskrivelse: {
+      no: "Måler om bedriften har strukturert og tilgjengelig informasjon om kunders historikk, behov og kontaktpersoner, med felles tilgang på tvers av team.",
+      en: "Measures whether the business has structured, accessible information on customer history, needs and contacts, with shared access across the team.",
+    },
+  },
+  {
+    tittel: { no: "Salgsprosess og pipeline", en: "Sales process and pipeline" },
+    beskrivelse: {
+      no: "Måler om det finnes tydelig definerte salgsfaser og om aktive salgsmuligheter har oppdaterte verdier, sannsynligheter og lukkingsdatoer.",
+      en: "Measures whether there are clearly defined sales stages and whether active opportunities have updated values, probabilities and close dates.",
+    },
+  },
+  {
+    tittel: { no: "CRM-bruk", en: "CRM use" },
+    beskrivelse: {
+      no: "Måler om CRM-systemet brukes aktivt til daglig planlegging og oppleves som en reell hjelp for selgerne, fremfor kun en rapporteringsbyrde.",
+      en: "Measures whether the CRM is used actively for daily planning and is perceived as genuine help for salespeople, rather than only a reporting burden.",
+    },
+  },
+  {
+    tittel: { no: "Oppfølging og neste steg", en: "Follow-up and next steps" },
+    beskrivelse: {
+      no: "Måler disiplinen rundt alltid å sette et tidsfristet «neste steg» med definert eier, slik at varme leads og tilbud ikke glemmes.",
+      en: "Measures discipline around always setting a time-bound next step with a defined owner, so warm leads and proposals are not forgotten.",
+    },
+  },
+  {
+    tittel: { no: "Tilbud og konvertering", en: "Proposals and conversion" },
+    beskrivelse: {
+      no: "Måler effektiviteten i tilbudsprosessen og hvor systematisk sendte tilbud følges opp til avtalt tid frem mot signering.",
+      en: "Measures efficiency in the proposal process and how systematically sent proposals are followed up on time towards signing.",
+    },
+  },
+  {
+    tittel: { no: "Marketing til salg", en: "Marketing to sales" },
+    beskrivelse: {
+      no: "Måler koblingen mellom markedsføring og salg – om dere vet hvilke kilder som gir reelle avtaler, og hvor raskt leads overføres til selgerne.",
+      en: "Measures the link between marketing and sales — whether you know which sources produce real deals, and how quickly leads are handed to sales.",
+    },
+  },
+  {
+    tittel: { no: "Kundedialog og booking", en: "Customer dialogue and booking" },
+    beskrivelse: {
+      no: "Måler hvor lav terskelen er for at potensielle kunder kan booke møter direkte i kalenderen, samt responstid på generelle henvendelser.",
+      en: "Measures how low the threshold is for potential customers to book meetings directly in the calendar, and response time on general enquiries.",
+    },
+  },
+  {
+    tittel: { no: "Lederinnsikt", en: "Leadership insight" },
+    beskrivelse: {
+      no: "Måler om ledelsen har tilgang til sanntids prognoser, pipeline-helse og tidlig varsling av salgsmuligheter som stopper opp.",
+      en: "Measures whether leadership has access to real-time forecasts, pipeline health and early warning on opportunities that stall.",
+    },
+  },
+  {
+    tittel: { no: "Automatisering og smartere arbeidsflyt", en: "Automation and smarter workflows" },
+    beskrivelse: {
+      no: "Måler utnyttelse av automatiserte påminnelser, maler og integrerte flyter for å fjerne repeterende manuelt arbeid – samt kartlegger og kvalitetssikrer rammer (data, ansvar og kontroll) dersom AI benyttes.",
+      en: "Measures use of automated reminders, templates and integrated flows to remove repetitive manual work — and maps and quality-assures guardrails (data, responsibility and control) when AI is used.",
+    },
+  },
+] as const;
+
 const utvikler = {
   navn: { no: "Marius Ottesen", en: "Marius Ottesen" },
   rolle: { no: "Kommersiell leder og AI-strateg", en: "Commercial leader and AI strategist" },
@@ -84,16 +158,29 @@ export const salgsflytSjekkenPlatform: StrategicPlatformProject = {
     logikk: {
       heading: { no: "Prosjektets modell og hovedlogikk", en: "The project's model and core logic" },
       body: {
-        no: "Diagnosen kartlegger salgsfriksjon på tvers av ti kommersielle dimensjoner — fra leadfangst og CRM-bruk til oppfølging, tilbudsprosesser og AI-modenhet.",
-        en: "The diagnosis maps sales friction across ten commercial dimensions — from lead capture and CRM use to follow-up, proposal processes and AI maturity.",
+        no: "Diagnosen kartlegger salgsfriksjon på tvers av ti suksessdimensjoner — fra leadfangst og CRM-bruk til oppfølging, tilbudsprosesser og ansvarlig bruk av AI i arbeidsflyt.",
+        en: "The diagnosis maps sales friction across ten success dimensions — from lead capture and CRM use to follow-up, proposal processes and responsible use of AI in workflow.",
       },
       steps: [
-        { tittel: { no: "Hovedkartlegging", en: "Main assessment" }, beskrivelse: { no: "20 flervalgsspørsmål fordelt på ti dimensjoner gir dimensjons- og totalscore.", en: "20 multiple-choice questions across ten dimensions produce dimension and total scores." } },
+        { tittel: { no: "Hovedkartlegging", en: "Main assessment" }, beskrivelse: { no: "20 flervalgsspørsmål fordelt på ti suksessdimensjoner gir dimensjons- og totalscore.", en: "20 multiple-choice questions across ten success dimensions produce dimension and total scores." } },
         { tittel: { no: "Dypdykk", en: "Deep dive" }, beskrivelse: { no: "De svakeste områdene utløser oppfølgingsspørsmål om rotårsaker, varighet og historiske feilskjær.", en: "The weakest areas trigger follow-up questions on root causes, duration and historical missteps." } },
         { tittel: { no: "AI-analyse", en: "AI analysis" }, beskrivelse: { no: "Gemini tolker score og fritekst og genererer kunderapport og intern salgsvurdering parallelt.", en: "Gemini interprets scores and free text and generates a customer report and internal sales assessment in parallel." } },
         { tittel: { no: "Oppfølging", en: "Follow-up" }, beskrivelse: { no: "Besvarelser samles med kontaktinfo, score, lead-kvalitet og anbefalt oppfølging.", en: "Responses are collected with contact details, score, lead quality and recommended follow-up." } },
       ],
     },
+    contentSections: [
+      {
+        heading: {
+          no: "Suksessdimensjoner i SMB Salgsflyt-sjekken",
+          en: "Success dimensions in SMB Sales Flow Check",
+        },
+        body: {
+          no: "I SMB Salgsflyt-sjekken kartlegges følgende ti suksessdimensjoner. Hver dimensjon har to spørsmål i hovedkartleggingen og gir egen dimensjonsscore i rapporten.",
+          en: "SMB Sales Flow Check maps the following ten success dimensions. Each dimension has two questions in the main assessment and contributes its own dimension score in the report.",
+        },
+        steps: [...SUKSSESSDIMENSJONER],
+      },
+    ],
     bygget: {
       heading: { no: "Hva som er bygget eller utviklet", en: "What has been built or developed" },
       items: [
