@@ -865,6 +865,64 @@ export const FAGINNLEGG_AUTHORITY: Record<string, FaginnleggAuthorityEntry> = {
       }),
     ],
   },
+  "skalar-innovasjon-ideer-verdi-2026-10": {
+    slug: "skalar-innovasjon-ideer-verdi-2026-10",
+    cluster: "ai-implementering",
+    role: "secondary-support",
+    ownedIntents: [
+      "innovasjon idé til verdi",
+      "kommersialisering",
+      "pilot til marked",
+      "risikovilje innovasjon",
+      "organisatorisk innovasjonskapasitet",
+      "SMB kommersiell utvikling",
+    ],
+    coreSupportSlugs: [
+      "econa-innovasjon-ideer-verdi-01",
+      "fra-pilot-til-skalering-01",
+      "hr-som-innovasjonsmotor-bjørvika-2026-08",
+    ],
+    secondarySupportSlugs: ["rocket-verdilekkasje-ai-kommersiell-2026-06", "praktisk-oppskrift-skalering-01"],
+    relevantVidere: [
+      articleLink("econa-innovasjon-ideer-verdi-01", {
+        no: "Les også: Slik bygger du en organisasjon hvor idéer blir til verdi",
+        en: "Read also: How to build an organisation where ideas become value",
+      }),
+      articleLink("fra-pilot-til-skalering-01", {
+        no: "Les også: Fra pilot til skalering – hvorfor så mange AI-initiativer stopper",
+        en: "Read also: From pilot to scale – why so many AI initiatives stall",
+      }),
+      articleLink("hr-som-innovasjonsmotor-bjørvika-2026-08", {
+        no: "Les også: HR som innovasjonsmotor",
+        en: "Read also: HR as an innovation engine",
+      }),
+      articleLink("rocket-verdilekkasje-ai-kommersiell-2026-06", {
+        no: "Les også: Hvor lekker verdien i virksomheten din?",
+        en: "Read also: Where is value leaking in your organisation?",
+      }),
+      { href: "/consulting", label: { no: "Se Consulting – kommersiell utvikling og praktisk KI", en: "See consulting – commercial development and practical AI" } },
+      { href: "/ai-value-lab-oslo", label: { no: "Se AI Value Lab Oslo", en: "See AI Value Lab Oslo" } },
+    ],
+  },
+  "econa-innovasjon-ideer-verdi-01": {
+    slug: "econa-innovasjon-ideer-verdi-01",
+    cluster: "strategi-endring",
+    role: "secondary-support",
+    ownedIntents: ["innovasjon", "idéer til verdi", "organisatorisk innovasjon", "Econa"],
+    coreSupportSlugs: ["skalar-innovasjon-ideer-verdi-2026-10"],
+    secondarySupportSlugs: ["hr-som-innovasjonsmotor-bjørvika-2026-08"],
+    relevantVidere: [
+      articleLink("skalar-innovasjon-ideer-verdi-2026-10", {
+        no: "Les også: Hvorfor blir så mange gode ideer aldri til varig verdi?",
+        en: "Read also: Why do so many good ideas never become lasting value?",
+      }),
+      articleLink("fra-pilot-til-skalering-01", {
+        no: "Les også: Fra pilot til skalering",
+        en: "Read also: From pilot to scale",
+      }),
+      { href: "/consulting", label: { no: "Se Consulting", en: "See consulting" } },
+    ],
+  },
 };
 
 export const CORNERSTONE_SLUGS: readonly string[] = Object.values(FAGINNLEGG_AUTHORITY)
@@ -899,6 +957,7 @@ export const LESESTI_ARTICLE_IDS = {
     "ai-needs-first-tannklinikk-case-01",
   ],
   ledereKommersielle: [
+    "skalar-innovasjon-ideer-verdi-2026-10",
     "fra-strategi-til-gjennomforing-2026-09",
     "forbedre-arbeidsmaten-tenke-pa-nytt-2026-10",
     "salgsledelse-i-praksis-2026-08",

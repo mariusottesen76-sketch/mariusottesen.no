@@ -63,6 +63,10 @@ export const RELEVANT_VIDERE_BY_PROJECT_SLUG: Record<string, Link[]> = {
       no: "Fra strandidé til AI-plattform →",
       en: "From beach idea to AI platform →",
     }),
+    art("skalar-innovasjon-ideer-verdi-2026-10", {
+      no: "Innovasjon: fra idé til varig verdi →",
+      en: "Innovation: from idea to lasting value →",
+    }, detailOnly),
     art("praktisk-oppskrift-skalering-01", {
       no: "Fra pilot til skalering – praktisk oppskrift for ledere →",
       en: "From pilot to scale – a practical recipe for leaders →",
@@ -282,6 +286,10 @@ export const RELEVANT_VIDERE_BY_PROJECT_SLUG: Record<string, Link[]> = {
       no: "AI Transformation & Value Realization →",
       en: "AI Transformation & Value Realization →",
     }),
+    art("skalar-innovasjon-ideer-verdi-2026-10", {
+      no: "Hvorfor blir gode ideer aldri til varig verdi? →",
+      en: "Why good ideas never become lasting value →",
+    }, detailOnly),
     art("praktisk-oppskrift-skalering-01", {
       no: "Fra pilot til skalering →",
       en: "From pilot to scale →",

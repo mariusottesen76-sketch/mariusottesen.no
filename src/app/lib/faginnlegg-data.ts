@@ -15,6 +15,7 @@ import { narOrganisasjonenEgentligLaert } from "../data/innlegg/nar-organisasjon
 import { forbedreArbeidsmatenTenkePaNytt } from "../data/innlegg/forbedre-arbeidsmaten-tenke-pa-nytt";
 import { narEnFeilBlirHeleHistorien } from "../data/innlegg/nar-en-feil-blir-hele-historien";
 import { kiNorgeKlareData } from "../data/innlegg/ki-norge-klare-data";
+import { skalarInnovasjonIdeerVerdi } from "../data/innlegg/skalar-innovasjon-ideer-verdi";
 import { enrichFaginnleggHasTags } from "./faginnlegg-innhold";
 import type { FaginnleggInnlegg } from "./faginnlegg-types";
 
@@ -50,6 +51,7 @@ function normalizeFaginnlegg(innlegg: FaginnleggInnlegg): FaginnleggInnlegg {
 export function getAlleFaginnlegg(): FaginnleggInnlegg[] {
   return (
     [
+      skalarInnovasjonIdeerVerdi,
       kiNorgeKlareData,
       ...tennisLedelse,
       ...aiGovernance,
