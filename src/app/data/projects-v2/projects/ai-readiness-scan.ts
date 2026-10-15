@@ -23,8 +23,8 @@ export const aiReadinessScanV2: ProjectV2Record = {
   statusLabel: AI_READINESS_SCAN_MATURITY_LABEL,
   maturityLevel: AI_READINESS_SCAN_MATURITY_LABEL,
   overviewIntroduction: {
-    no: "AI Readiness Scan er et tilgangsstyrt kartleggingsverktøy med 18 spørsmål fordelt på seks kjerneområder — for ledere og virksomheter som vil avklare AI-modenhet, prioriteringer og neste steg.",
-    en: "AI Readiness Scan is an access-controlled mapping tool with 18 questions across six core areas — for leaders and organisations that want to clarify AI maturity, priorities and next steps.",
+    no: "AI Readiness Scan er et tilgangsstyrt kartleggingsverktøy med 18 scored spørsmål fordelt på seks dimensjoner — for ledere og virksomheter som vil avklare AI-modenhet, prioriteringer og neste steg.",
+    en: "AI Readiness Scan is an access-controlled mapping tool with 18 scored questions across six dimensions — for leaders and organisations that want to clarify AI maturity, priorities and next steps.",
   },
   overview: {
     what: {
@@ -36,8 +36,8 @@ export const aiReadinessScanV2: ProjectV2Record = {
       en: "Many organisations want to adopt AI, but lack a shared picture of the current situation and what should come first. The challenge is to create structure before investing in larger initiatives.",
     },
     built: {
-      no: "Tilgangsstyrt kartleggingsverktøy med 18 spørsmål på seks kjerneområder, valg av forbedringsområder, regelstyrt resultatrapport (åtte hoveddeler), sikker innlogging og administrativ oppfølging.",
-      en: "Access-controlled mapping tool with 18 questions across six core areas, improvement area selection, rule-based results report (eight main sections), secure login and administrative follow-up.",
+      no: "Tilgangsstyrt kartleggingsverktøy med kontekstspørsmål, 18 scored spørsmål på seks dimensjoner, valg av forbedringsområder, regelstyrt resultatrapport (åtte hoveddeler), sikker innlogging og administrativ oppfølging.",
+      en: "Access-controlled mapping tool with context questions, 18 scored questions across six dimensions, improvement area selection, rule-based results report (eight main sections), secure login and administrative follow-up.",
     },
     how: {
       no: "Virksomheten får tilgang via kode eller innlogging. Deltakeren svarer på scored spørsmål, velger forbedringsområder og får en regelstyrt rapport — analysen er svarbasert, ikke generativ AI i sanntid.",

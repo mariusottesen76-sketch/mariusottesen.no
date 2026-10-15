@@ -423,14 +423,14 @@ function StrategicProjectDetailInner({ slug }: { slug: StrategicPlatformSlug }) 
         <ProjectApplicationGroups groups={projectV2.applicationGroups} lang={lang} />
       )}
 
-      {projectV2 ? <ProjectRelevantVidere project={projectV2} lang={lang} variant="detail" /> : null}
-
       <section aria-labelledby="plattform-status" className="mb-10 p-6 bg-slate-900/40 rounded-2xl border border-slate-800">
         <h2 id="plattform-status" className={`${blockTitleClass} mb-3`}>
           {t(detail.status.heading, lang)}
         </h2>
         <MultilineBody text={t(detail.status.body, lang)} className={`text-sm ${bodyTextClass}`} />
       </section>
+
+      {projectV2 ? <ProjectRelevantVidere project={projectV2} lang={lang} variant="detail" /> : null}
 
       <section aria-labelledby="plattform-skalerbarhet" className="mb-10 space-y-4">
         <SectionHeading id="plattform-skalerbarhet">{t(detail.skalerbarhet.heading, lang)}</SectionHeading>

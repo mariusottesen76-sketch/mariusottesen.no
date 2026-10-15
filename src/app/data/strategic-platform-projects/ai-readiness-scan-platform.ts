@@ -1,13 +1,50 @@
 import type { StrategicPlatformProject } from "./types";
 import { AI_READINESS_SCAN_MATURITY_LABEL } from "../../lib/ai-readiness-scan-brand";
 
-const KJERNEOMRADER = [
-  { tittel: { no: "Strategi og ledelse", en: "Strategy and leadership" }, beskrivelse: { no: "Tre scored spørsmål i dette kjerneområdet.", en: "Three scored questions in this core area." } },
-  { tittel: { no: "Arbeidsflyt og kundeverdi", en: "Workflow and customer value" }, beskrivelse: { no: "Tre scored spørsmål i dette kjerneområdet.", en: "Three scored questions in this core area." } },
-  { tittel: { no: "Data og systemer", en: "Data and systems" }, beskrivelse: { no: "Tre scored spørsmål i dette kjerneområdet.", en: "Three scored questions in this core area." } },
-  { tittel: { no: "Kompetanse og adopsjon", en: "Competence and adoption" }, beskrivelse: { no: "Tre scored spørsmål i dette kjerneområdet.", en: "Three scored questions in this core area." } },
-  { tittel: { no: "Trygg bruk og ansvar", en: "Safe use and responsibility" }, beskrivelse: { no: "Tre scored spørsmål i dette kjerneområdet.", en: "Three scored questions in this core area." } },
-  { tittel: { no: "Verdi og skalering", en: "Value and scaling" }, beskrivelse: { no: "Tre scored spørsmål i dette kjerneområdet.", en: "Three scored questions in this core area." } },
+/** Seks dimensjoner i hovedkartleggingen (3 scored spørsmål per dimensjon — uten spørsmålstekst på nettsiden). */
+const HOVEDKARTLEGGING_DIMENSJONER = [
+  {
+    tittel: { no: "Strategi og forankring", en: "Strategy and anchoring" },
+    beskrivelse: {
+      no: "Kartlegger forankring i strategi og prioriteringer, ledelsens engasjement og eierskap, samt tid, kapasitet og ressurser til AI-arbeid.",
+      en: "Maps anchoring in strategy and priorities, leadership engagement and ownership, and time, capacity and resources for AI work.",
+    },
+  },
+  {
+    tittel: { no: "Kompetanse og kultur", en: "Competence and culture" },
+    beskrivelse: {
+      no: "Kartlegger grunnleggende AI-forståelse, kultur for eksperimentering og læring, samt strukturert opplæring og retningslinjer i arbeidshverdagen.",
+      en: "Maps basic AI literacy, a culture of experimentation and learning, and structured training and guidelines in everyday work.",
+    },
+  },
+  {
+    tittel: { no: "Data og teknologi", en: "Data and technology" },
+    beskrivelse: {
+      no: "Kartlegger tilgjengelighet og struktur i data for AI, datakvalitet og aktualitet, samt oversikt over systemer og integrasjonsmuligheter.",
+      en: "Maps availability and structure of data for AI, data quality and freshness, and overview of systems and integration options.",
+    },
+  },
+  {
+    tittel: { no: "Prosesser og bruk", en: "Processes and use" },
+    beskrivelse: {
+      no: "Kartlegger identifiserte arbeidsprosesser der AI kan skape verdi, faktisk verktøybruk i dag, og rutiner for å teste nye bruksområder før bred utrulling.",
+      en: "Maps identified work processes where AI can create value, actual tool use today, and routines for testing new use cases before broad rollout.",
+    },
+  },
+  {
+    tittel: { no: "Styring, etikk og sikkerhet", en: "Governance, ethics and security" },
+    beskrivelse: {
+      no: "Kartlegger retningslinjer for sikkerhet, personvern og data, bevissthet om risiko (konfidensialitet, opphavsrett, feilinformasjon), samt menneskelig kontroll og kvalitetssikring.",
+      en: "Maps guidelines for security, privacy and data, awareness of risks (confidentiality, copyright, misinformation), and human oversight and quality assurance.",
+    },
+  },
+  {
+    tittel: { no: "Verdi og gevinster", en: "Value and benefits" },
+    beskrivelse: {
+      no: "Kartlegger definerte mål med AI, måling eller evaluering av effekt fra verktøy og piloter, samt opplevd reell forbedring eller konkurransefortrinn.",
+      en: "Maps defined goals for AI, measurement or evaluation of effects from tools and pilots, and perceived real improvement or competitive advantage.",
+    },
+  },
 ] as const;
 
 const utvikler = {
@@ -90,21 +127,27 @@ export const aiReadinessScanPlatform: StrategicPlatformProject = {
     logikk: {
       heading: { no: "Prosjektets modell og hovedlogikk", en: "The project's model and core logic" },
       body: {
-        no: "AI Readiness Scan kartlegger virksomhetens AI-beredskap gjennom 18 spørsmål fordelt på seks kjerneområder. Vurderingen omfatter strategi og ledelse, arbeidsflyt og kundeverdi, data og systemer, kompetanse og adopsjon, trygg bruk og ansvar samt verdi og skalering.",
-        en: "AI Readiness Scan maps the organisation's AI readiness through 18 questions across six core areas. The assessment covers strategy and leadership, workflow and customer value, data and systems, competence and adoption, safe use and responsibility, and value and scaling.",
-      },
-      steps: [...KJERNEOMRADER],
-      after: {
-        no: "Hvert kjerneområde har tre spørsmål med fem scored svarnivåer og alternativet «Vet ikke». Dette er de seks scored kjerneområdene — ikke det samme som valgbare forbedringsområder eller rapportens åtte hoveddeler.",
-        en: "Each core area has three questions with five scored response levels and a “Don't know” option. These are the six scored core areas — not the same as selectable improvement areas or the report's eight main sections.",
+        no: "Kartleggingen starter med kontekstspørsmål, deretter hovedkartlegging med 18 scored spørsmål på seks dimensjoner, valg av forbedringsområder og regelstyrt rapport. Dimensjonene under beskriver hovedkartleggingen — ikke valgbare forbedringsområder eller rapportens åtte hoveddeler.",
+        en: "The assessment starts with context questions, then the main assessment with 18 scored questions across six dimensions, improvement area selection and a rule-based report. The dimensions below describe the main assessment — not selectable improvement areas or the report's eight main sections.",
       },
     },
     contentSections: [
       {
+        heading: {
+          no: "Del 2: Hovedkartleggingen (18 spørsmål fordelt på 6 dimensjoner)",
+          en: "Part 2: Main assessment (18 questions across 6 dimensions)",
+        },
+        body: {
+          no: "Kartleggingen består av 18 spørsmål fordelt med nøyaktig 3 spørsmål per dimensjon. Hvert spørsmål besvares på en skala fra 1 til 5, pluss et nøytralt svaralternativ for «Vet ikke / Uavklart».\n\nOppsummering: Totalt antall scoringsspørsmål: 18 · Dimensjoner: 6 (3 spørsmål per dimensjon) · Svarskala: 1–5 samt «Vet ikke / Uavklart» · Kontekstspørsmål i oppstarten: 5",
+          en: "The assessment consists of 18 questions with exactly 3 questions per dimension. Each question is answered on a scale from 1 to 5, plus a neutral option for “Don't know / Unclear”.\n\nSummary: Total scored questions: 18 · Dimensions: 6 (3 questions per dimension) · Response scale: 1–5 plus “Don't know / Unclear” · Context questions at the start: 5",
+        },
+        steps: [...HOVEDKARTLEGGING_DIMENSJONER],
+      },
+      {
         heading: { no: "Valgbare forbedringsområder", en: "Selectable improvement areas" },
         body: {
-          no: "Etter de scored spørsmålene kan respondenten velge blant elleve valgbare forbedringsområder, inkludert «Vet ikke ennå». Dette er et eget lag i kartleggingen — ikke scored kjerneområder og ikke rapportmoduler.",
-          en: "After the scored questions, the respondent can choose among eleven selectable improvement areas, including “Don't know yet”. This is a separate layer in the assessment — not scored core areas and not report modules.",
+          no: "Når hovedkartleggingen er ferdig, kan respondenten merke av hvilke utviklingsområder virksomheten vil prioritere videre — inntil elleve temaer. Dette er et eget, ikke-scoret lag: det supplerer dimensjonsscorene med egen prioritering, og skal ikke forveksles med de seks dimensjonene eller modulene i resultatrapporten.",
+          en: "When the main assessment is complete, the respondent can mark which development areas the organisation wants to prioritise next — up to eleven themes. This is a separate, non-scored layer: it supplements dimension scores with explicit priorities, and should not be confused with the six dimensions or the modules in the results report.",
         },
       },
       {
@@ -118,7 +161,7 @@ export const aiReadinessScanPlatform: StrategicPlatformProject = {
     bygget: {
       heading: { no: "Hva som er bygget eller utviklet", en: "What has been built or developed" },
       items: [
-        { no: "Strukturert spørsmålsflyt: 18 spørsmål på seks scored kjerneområder (3 per område)", en: "Structured question flow: 18 questions across six scored core areas (3 per area)" },
+        { no: "Strukturert spørsmålsflyt: 5 kontekstspørsmål og 18 scored spørsmål på seks dimensjoner (3 per dimensjon)", en: "Structured question flow: 5 context questions and 18 scored questions across six dimensions (3 per dimension)" },
         { no: "Regelstyrt resultatrapport med åtte hoveddeler og tilpassede anbefalinger", en: "Rule-based results report with eight main sections and tailored recommendations" },
         { no: "Sikker innlogging, tilgangskoder og administrasjonsflate for virksomheter og kartlegginger", en: "Secure login, access codes and admin environment for organisations and assessments" },
       ],
@@ -134,16 +177,16 @@ export const aiReadinessScanPlatform: StrategicPlatformProject = {
         {
           tittel: { no: "Scored kartlegging", en: "Scored assessment" },
           beskrivelse: {
-            no: "18 spørsmål fordelt på seks kjerneområder, med fem scored svarnivåer og «Vet ikke» per spørsmål.",
-            en: "18 questions across six core areas, with five scored response levels and “Don't know” per question.",
+            no: "18 spørsmål fordelt på seks dimensjoner, med skala 1–5 og «Vet ikke / Uavklart» per spørsmål.",
+            en: "18 questions across six dimensions, with a 1–5 scale and “Don't know / Unclear” per question.",
           },
           bygget: true,
         },
         {
           tittel: { no: "Valg av forbedringsområder", en: "Improvement area selection" },
           beskrivelse: {
-            no: "Elleve valgbare forbedringsområder, inkludert «Vet ikke ennå» — supplement til de scored kjerneområdene.",
-            en: "Eleven selectable improvement areas, including “Don't know yet” — a supplement to the scored core areas.",
+            no: "Inntil elleve selvvalgte utviklingsområder etter hovedkartleggingen — uten egen score, som supplement til dimensjonsvurderingen.",
+            en: "Up to eleven self-selected development areas after the main assessment — without their own score, as a supplement to the dimension assessment.",
           },
           bygget: true,
         },
@@ -170,8 +213,8 @@ export const aiReadinessScanPlatform: StrategicPlatformProject = {
       intro: { no: "Virksomheten får tilgang, deltakeren svarer på kartlegging, og resultatet brukes til prioritering og oppfølging.", en: "The organisation gains access, the participant completes the assessment, and the result is used for prioritisation and follow-up." },
       detaljpunkter: [
         {
-          no: "Respondenten svarer på 18 spørsmål fordelt på seks kjerneområder, velger relevante forbedringsområder og får en regelstyrt rapport.",
-          en: "The respondent answers 18 questions across six core areas, selects relevant improvement areas and receives a rule-based report.",
+          no: "Respondenten svarer på kontekst og hovedkartlegging (18 scored spørsmål på seks dimensjoner), velger relevante forbedringsområder og får en regelstyrt rapport.",
+          en: "The respondent answers context and main assessment questions (18 scored questions across six dimensions), selects relevant improvement areas and receives a rule-based report.",
         },
         {
           no: "Administrasjonsflaten samler besvarelser og rapporter som grunnlag for prioritering og oppfølging — ikke som formell sertifisering.",
