@@ -8,10 +8,10 @@
 | Label | SHA | Meaning |
 |---|---|---|
 | **T0 website-state (frozen)** | `b166582acc1098f95f759b1aec3a01623c733016` | POST_EN_T0 freeze (2026-09-02). See `external-discovery-pilot-post-en-t0.md` §0.1 |
-| **Production before this SEO round** | `f824c8fb0f46c6fd08def6fd85ad3e91bbd56ecf` | Last pushed `origin/main` at registry time |
-| **Post–SEO-round deploy** | *(record after deploy)* | Commit that includes JSON-LD, contact column, `serializeJsonLd` |
-
-**Local working tree (2026-10-16):** SEO/AEO changes + profil contact layout — **not committed**.
+| **Production before this SEO round** | `f824c8fb0f46c6fd08def6fd85ad3e91bbd56ecf` | Last pushed `origin/main` before SEO deploy |
+| **Post–SEO-round deploy (site)** | `0f83e3348099d0d9eb1e3e5d3fd4e663fdcc68f5` | `feat: improve structured data, hreflang and profile contact UX` |
+| **origin/main after deploy** | `52830c4d849fe392b4b052ecba13bb27f6446b06` | Includes T1 docs commit; site HTML matches `0f83e33` |
+| **Production deploy date** | 2026-10-16 | Verified live on www.mariusottesen.no after push |
 
 ## T0 baseline — what is documented
 
@@ -28,7 +28,7 @@
 
 ## SEO/AEO changes in this round (implementation only — not measured yet)
 
-Implemented locally (pending deploy):
+Deployed 2026-10-16 (commit `0f83e33`):
 
 - `@graph` JSON-LD: Person (`#person`), MOC (`#consulting`, Brreg `sameAs`), WebSite (`#website`), ProfilePage on `/` and `/en` only
 - Row Solutions as `affiliation` on Person (not subsidiary / not `worksFor` for Row)
