@@ -1,0 +1,27 @@
+test_label	engine	date	prompt_id	web_search_used	marius_mentioned	marius_rank	domain_found	mariusottesen_url_cited	specific_page_cited	source_type	en_page_used	profile_understanding	fit_accuracy	evidence_accuracy	hallucination_or_overclaim	competitors_returned	outcome	notes
+POST_EN_T1	CHATGPT		D01									n/a					
+POST_EN_T1	CHATGPT		D03													
+POST_EN_T1	CHATGPT		D23									n/a					
+POST_EN_T1	CHATGPT		D31									n/a					
+POST_EN_T1	CHATGPT		D45									n/a					
+POST_EN_T1	CHATGPT		D56									n/a					
+POST_EN_T1	CHATGPT		D58									n/a					
+POST_EN_T1	CHATGPT		D67									n/a					
+POST_EN_T1	CHATGPT		D75									n/a					
+POST_EN_T1	CHATGPT		D77									n/a					
+POST_EN_T1	CHATGPT		D90									n/a					
+POST_EN_T1	CHATGPT		D98									n/a					
+POST_EN_T1	CHATGPT		D12													
+POST_EN_T1	GEMINI		D01									n/a					
+POST_EN_T1	GEMINI		D03													
+POST_EN_T1	GEMINI		D23									n/a					
+POST_EN_T1	GEMINI		D31									n/a					
+POST_EN_T1	GEMINI		D45									n/a					
+POST_EN_T1	GEMINI		D56									n/a					
+POST_EN_T1	GEMINI		D58									n/a					
+POST_EN_T1	GEMINI		D67									n/a					
+POST_EN_T1	GEMINI		D75									n/a					
+POST_EN_T1	GEMINI		D77									n/a					
+POST_EN_T1	GEMINI		D90									n/a					
+POST_EN_T1	GEMINI		D98									n/a					
+POST_EN_T1	GEMINI		D12													

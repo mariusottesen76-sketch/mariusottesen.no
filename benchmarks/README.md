@@ -47,6 +47,16 @@ A prompt may have `ownership=WEAK`, `gapFlag=Y`, `gapPriority=OPTIONAL` — mean
 
 **Proxy exclusion:** Cursor WebSearch rows in `*-pilot.*` are `PROTOCOL_VALIDATION / PROXY ONLY` — diagnostic appendix, not baseline data.
 
+### T1 measurement (2026-10 — ready, not run)
+
+| File | Purpose |
+|---|---|
+| `results/t1-measurement-registry.md` | SHA registry, SEO round summary, T0 gap note, instructions |
+| `results/manual-pilot-v1.0-t1.tsv` | Master 5×4 capture sheet (empty) |
+| `results/external-discovery-t1-results.tsv` | POST_EN_T1 blind 13×2 capture sheet (empty) |
+
+Frozen T0 protocols are unchanged. Fill T1 files only after manual browser/LLM runs.
+
 ### Git provenance (5B.0b)
 
 The entire `benchmarks/` tree should be committed **separately** from production site changes:
