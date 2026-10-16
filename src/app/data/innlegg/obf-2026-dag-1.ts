@@ -92,7 +92,7 @@ Technology can improve decisions, workflows and productivity. But lasting value 
 
 That is also much of what I focus on in my work on commercial leadership and transformation.
 
-Strategy and technology only create value when they are translated into new decisions, new ways of working and execution in the organisation. See also <a href="/en/articles/fra-strategi-til-gjennomforing-2026-09" class="${linkClass}">From strategy to execution</a>.
+Strategy and technology only create value when they are translated into new decisions, new ways of working and execution in the organisation. See also <a href="/faginnlegg/fra-strategi-til-gjennomforing-2026-09" class="${linkClass}">From strategy to execution</a>.
 
 And fortunately, conferences are about more than what happens on stage.
 

@@ -360,7 +360,7 @@ But in being consistently good when expected, relevant when it matters and human
 - <a href="/en/articles/salgsledelse-i-praksis-2026-08" class="${linkClass}">Sales leadership in practice</a>
 - <a href="/en/articles/de-beste-kommersielle-grepene-2026-09" class="${linkClass}">The best commercial moves are made before you have to make them</a>
 - <a href="/en/articles/obf-2026-oppsummering-2026-09" class="${linkClass}">When the stage lights go out – OBF 2026 summary</a>
-- <a href="/en/articles/fra-data-til-beslutning-2026-09" class="${linkClass}">From data to decision</a>
+- <a href="/faginnlegg/fra-data-til-beslutning-2026-09" class="${linkClass}">From data to decision</a>
 - <a href="/en/consulting" class="${linkClass}">Marius Ottesen Consulting</a>
 - <a href="/en/contact" class="${linkClass}">Get in touch</a>`,
   },
