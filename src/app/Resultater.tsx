@@ -466,6 +466,7 @@ export default function Resultater() {
             <div>
               <LocaleLink
                 href="/kontakt"
+                data-analytics-cta="resultater_lederrolle_kontakt"
                 aria-label={
                   lang === "no"
                     ? "Ta kontakt om aktuell lederrolle, rekrutteringsdialog eller faglig problemstilling"

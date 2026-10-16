@@ -55,7 +55,13 @@ function PdfViewerBlock({
         )}
       </div>
       <p className="text-xs text-slate-500">
-        <a href={pdfSrc} target="_blank" rel="noopener noreferrer" className={linkClass}>
+        <a
+          href={pdfSrc}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={linkClass}
+          data-analytics-download={pdfSrc.includes("cv.pdf") ? "cv.pdf" : "soknad.pdf"}
+        >
           {openNewTabLabel}
         </a>
       </p>
@@ -184,7 +190,12 @@ export default function Dokumentasjon() {
               <Link href="/referanser" className={ctaBtnClass} aria-label="Gå til referanser">
                 {r.ctaReferanser}
               </Link>
-              <LocaleLink href="/kontakt" className={ctaBtnClass} aria-label="Gå til kontakt">
+              <LocaleLink
+                href="/kontakt"
+                className={ctaBtnClass}
+                aria-label="Gå til kontakt"
+                data-analytics-cta="cv_kontakt_primary"
+              >
                 {r.ctaKontakt}
               </LocaleLink>
             </div>
@@ -349,7 +360,12 @@ export default function Dokumentasjon() {
               <LocaleLink href="/resultater" className={linkClass} aria-label="Gå til resultater">
                 {d.ctaResultater}
               </LocaleLink>
-              <LocaleLink href="/kontakt" className={linkClass} aria-label="Gå til kontaktsiden">
+              <LocaleLink
+                href="/kontakt"
+                className={linkClass}
+                aria-label="Gå til kontaktsiden"
+                data-analytics-cta="cv_kontakt_secondary"
+              >
                 {d.ctaKontakt}
               </LocaleLink>
             </div>

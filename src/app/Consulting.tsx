@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import { useLanguage } from "./LanguageContext";
 import { getTranslation } from "./data/translations";
+import { trackGenerateLead } from "./lib/analytics";
 import { getAiReiseSteps } from "./data/ai-reise";
 import {
   getHovedpakker,
@@ -366,6 +367,7 @@ export default function Consulting() {
       }
 
       setStatus("success");
+      trackGenerateLead("consulting_contact");
       resetSkjema();
       setTimeout(() => setStatus("idle"), 5000);
     } catch {
@@ -478,7 +480,7 @@ export default function Consulting() {
           <h3 className={cardTitleClass}>{foredrag.bidrag.title}</h3>
           <p className="text-slate-400 text-sm leading-relaxed font-light">{foredrag.bidrag.text}</p>
         </div>
-        <LocaleLink href="/kontakt" className={ctaBtnClass}>
+        <LocaleLink href="/kontakt" className={ctaBtnClass} data-analytics-cta="consulting_foredrag_kontakt">
           {foredrag.cta}
         </LocaleLink>
       </section>

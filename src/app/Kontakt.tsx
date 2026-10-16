@@ -122,7 +122,12 @@ export default function Kontakt() {
                 </h2>
                 <p className="italic font-medium text-base leading-relaxed">
                   {tr("kontakt.dialog.desc")}{" "}
-                  <LocaleLink href="/consulting#cons-dialog-heading" className={linkClass} aria-label="Gå til kontaktskjema">
+                  <LocaleLink
+                    href="/consulting#cons-dialog-heading"
+                    className={linkClass}
+                    aria-label="Gå til kontaktskjema"
+                    data-analytics-cta="kontakt_til_skjema"
+                  >
                     {tr("kontakt.link.skjema")}
                   </LocaleLink>
                   .
@@ -137,7 +142,7 @@ export default function Kontakt() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full min-w-0">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full min-w-0" data-analytics-placement="kontakt_kort">
             <a
               href="mailto:marius.ottesen.76@gmail.com"
               className="group p-6 sm:p-8 bg-slate-900/40 rounded-2xl border border-slate-800 shadow-xl hover:border-indigo-500/50 transition-all flex flex-col items-center gap-3 text-center min-w-0"

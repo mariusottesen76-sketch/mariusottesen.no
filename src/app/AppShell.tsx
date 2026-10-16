@@ -15,6 +15,7 @@ import { Linkedin } from "lucide-react";
 import { LanguageProvider, useLanguage, LanguageToggle, type Lang } from "./LanguageContext";
 import { getTranslation } from "./data/translations";
 import BackToTop from "./components/BackToTop";
+import SiteLegalFooter from "./components/SiteLegalFooter";
 import MobileNav from "./components/MobileNav";
 import { pathForTab } from "./lib/locale-routes";
 
@@ -231,15 +232,13 @@ function AppContent({
           )}
         </div>
 
-        <footer className="mt-12 pt-6 border-t border-slate-800/40 flex flex-col sm:flex-row items-center justify-between gap-4 pb-4">
-          <p className="text-slate-600 text-[11px] font-bold tracking-wider">
-            &copy; {new Date().getFullYear()} Marius Ottesen Consulting &middot; Org. nr. 937 102 801
-          </p>
+        <footer className="mt-12 pt-6 border-t border-slate-800/40 flex flex-col sm:flex-row items-center justify-between gap-6 pb-4">
+          <SiteLegalFooter className="sm:items-start sm:text-left" />
           <a
             href="https://linkedin.com/in/mariusottesen"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-slate-900/40 border border-slate-800 text-slate-400 text-[11px] font-black uppercase tracking-widest hover:text-white hover:border-indigo-500/50 transition-all"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-slate-900/40 border border-slate-800 text-slate-400 text-[11px] font-black uppercase tracking-widest hover:text-white hover:border-indigo-500/50 transition-all shrink-0"
           >
             <Linkedin size={14} />
             {getTranslation("footer.linkedin", lang)}

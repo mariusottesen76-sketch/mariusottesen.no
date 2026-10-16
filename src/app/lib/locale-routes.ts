@@ -10,6 +10,7 @@ export const HREFLANG_EN = "en";
 import { localePathFromNoProjectPath, resolveProjectLocalePair } from "./project-locale-routes";
 import { localePathFromNoBokPath, resolveBokLocalePair } from "./bok-locale-routes";
 import { localePathFromNoArticlePath, resolveArticleLocalePair } from "./faginnlegg-locale-routes";
+import { PRIVACY_ROUTE } from "../data/privacy-content";
 
 export type SiteTabKey =
   | "Profil"
@@ -59,6 +60,9 @@ export function normalizePath(pathname: string): string {
 
 export function resolveLocalePair(pathname: string): { no: string; en: string } | null {
   const normalized = normalizePath(pathname);
+  if (normalized === PRIVACY_ROUTE.no || normalized === PRIVACY_ROUTE.en) {
+    return { no: PRIVACY_ROUTE.no, en: PRIVACY_ROUTE.en };
+  }
   for (const pair of Object.values(LOCALE_ROUTE_MAP)) {
     if (pair.no === normalized || pair.en === normalized) return pair;
   }
@@ -88,6 +92,11 @@ export function localePathFromNoPath(noHref: string, lang: Lang): string {
   const query = queryIdx >= 0 ? beforeHash.slice(queryIdx) : "";
 
   const normalized = normalizePath(pathPart);
+  if (normalized === PRIVACY_ROUTE.no) {
+    const base = PRIVACY_ROUTE[lang];
+    const withQuery = `${base}${query}`;
+    return hash ? `${withQuery}#${hash}` : withQuery;
+  }
   for (const pair of Object.values(LOCALE_ROUTE_MAP)) {
     if (pair.no === normalized) {
       const base = pair[lang];

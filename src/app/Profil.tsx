@@ -130,6 +130,7 @@ export default function Profil({ onNavigate }: { onNavigate?: (tab: string) => v
           </div>
           <nav
             aria-label={tr("profil.direkte.label")}
+            data-analytics-placement="profil_kontakt"
             className="w-full rounded-2xl border border-slate-800 bg-slate-900/40 px-3 py-2.5 text-left space-y-1.5"
           >
             <a

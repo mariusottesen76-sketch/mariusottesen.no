@@ -51,6 +51,7 @@ import { PROJECT_CATEGORY_LABELS } from "../../lib/project-v2-category";
 import ProjectDateMetadata from "../project-v2/ProjectDateMetadata";
 import { resolveDetailHeroFit } from "../../lib/project-v2-image";
 import LocaleLink from "../LocaleLink";
+import SiteLegalFooter from "../SiteLegalFooter";
 import { localePathFromNoPath } from "../../lib/locale-routes";
 import ProjectRelevantVidere from "../project-v2/ProjectRelevantVidere";
 import ProjectEarlyMocContact from "./ProjectEarlyMocContact";
@@ -155,13 +156,13 @@ function StrategicProjectDetailInner({ slug }: { slug: StrategicPlatformSlug }) 
           </span>
         </LocaleLink>
         <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs">
-          <LocaleLink href="/consulting" className={linkClass}>
+          <LocaleLink href="/consulting" className={linkClass} data-analytics-cta="project_header_consulting">
             Consulting
           </LocaleLink>
           <LocaleLink href="/prosjekter" className={linkClass}>
             {lang === "no" ? "Prosjekter" : "Projects"}
           </LocaleLink>
-          <LocaleLink href="/kontakt" className={linkClass}>
+          <LocaleLink href="/kontakt" className={linkClass} data-analytics-cta="project_header_kontakt">
             {lang === "no" ? "Kontakt" : "Contact"}
           </LocaleLink>
           <LanguageToggle />
@@ -494,10 +495,8 @@ function StrategicProjectDetailInner({ slug }: { slug: StrategicPlatformSlug }) 
         ) : null}
       </section>
 
-      <footer className="mt-10 pt-6 border-t border-slate-800/40 text-center">
-        <p className="text-slate-600 text-[11px] font-bold tracking-wider">
-          &copy; {new Date().getFullYear()} Marius Ottesen Consulting
-        </p>
+      <footer className="mt-10 pt-6 border-t border-slate-800/40">
+        <SiteLegalFooter showOrgNumber={false} />
       </footer>
 
       {activeImage && (

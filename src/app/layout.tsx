@@ -5,6 +5,7 @@ import { headers } from "next/headers";
 import { isEnPath } from "./lib/locale-routes";
 import { serializeJsonLd } from "./lib/json-ld";
 import { getStructuredDataGraph } from "./lib/structured-data";
+import SiteConsentRoot from "./components/consent/SiteConsentRoot";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -107,7 +108,7 @@ export default async function RootLayout({
         className={`${inter.className} bg-slate-950 text-slate-200 min-h-screen selection:bg-indigo-500/30`}
       >
         <div className="fixed inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-indigo-900/10 via-transparent to-transparent pointer-events-none" />
-        {children}
+        <SiteConsentRoot>{children}</SiteConsentRoot>
       </body>
     </html>
   );

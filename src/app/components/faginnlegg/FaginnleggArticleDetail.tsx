@@ -21,6 +21,7 @@ import {
 import { getFaginnleggLinkedInCta } from "../../lib/faginnlegg-linkedin-cta";
 import { blockTitleClass } from "../../lib/typography";
 import LocaleLink from "../LocaleLink";
+import SiteLegalFooter from "../SiteLegalFooter";
 
 const linkClass =
   "text-indigo-400 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400";
@@ -348,16 +349,15 @@ function FaginnleggArticleInner({ innlegg }: { innlegg: FaginnleggInnlegg }) {
         <p className="text-slate-400 text-sm italic">{tr("fag.cta")}</p>
         <LocaleLink
           href="/kontakt"
+          data-analytics-cta="faginnlegg_article_kontakt"
           className="inline-flex items-center gap-2 text-indigo-400 font-black text-sm uppercase tracking-widest hover:text-white transition-all"
         >
           {tr("fag.cta.link")} →
         </LocaleLink>
       </section>
 
-      <footer className="mt-10 pt-6 border-t border-slate-800/40 text-center">
-        <p className="text-slate-600 text-[11px] font-bold tracking-wider">
-          &copy; {new Date().getFullYear()} Marius Ottesen Consulting
-        </p>
+      <footer className="mt-10 pt-6 border-t border-slate-800/40">
+        <SiteLegalFooter showOrgNumber={false} />
       </footer>
     </article>
   );
