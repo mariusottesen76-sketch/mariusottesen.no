@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { SITE } from "./locale-routes";
+import { HREFLANG_EN, HREFLANG_NB, SITE } from "./locale-routes";
 import { PROJECTS_HUB_PAIR } from "./project-locale-routes";
 
 const HUB_META = {
@@ -32,8 +32,8 @@ export function buildProjectsHubMetadata(lang: "no" | "en"): Metadata {
     alternates: {
       canonical,
       languages: {
-        no: noUrl,
-        en: enUrl,
+        [HREFLANG_NB]: noUrl,
+        [HREFLANG_EN]: enUrl,
         "x-default": noUrl,
       },
     },

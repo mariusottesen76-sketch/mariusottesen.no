@@ -19,7 +19,7 @@ import { aiValueLabOsloV2 } from "./projects/ai-value-lab-oslo";
 import { aiFaginnleggHubV2 } from "./projects/ai-faginnlegg-hub";
 import { resolveProjectDates } from "./project-date-resolvers";
 import { projectSchemaDates } from "../../lib/project-overview-metadata";
-import { SITE } from "../../lib/locale-routes";
+import { HREFLANG_EN, HREFLANG_NB, SITE } from "../../lib/locale-routes";
 import { isIndexableEnProject, projectEnPath, projectNoPath } from "../../lib/project-locale-routes";
 
 export { t } from "../strategic-platform-projects/i18n";
@@ -86,8 +86,8 @@ export function buildProjectV2Metadata(project: ProjectV2Record, lang: "no" | "e
       ...(hasEnRoute && enUrl
         ? {
             languages: {
-              no: noUrl,
-              en: enUrl,
+              [HREFLANG_NB]: noUrl,
+              [HREFLANG_EN]: enUrl,
               "x-default": noUrl,
             },
           }

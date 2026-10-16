@@ -19,6 +19,9 @@ const translations: Translations = {
     no: "Kommersiell leder | Vekst, transformasjon og praktisk AI-forståelse",
     en: "Commercial leader | Growth, transformation and practical AI understanding",
   },
+  "profil.direkte.label": { no: "Direkte kontakt", en: "Direct contact" },
+  "profil.row.case": { no: "Case: Row Solutions", en: "Case: Row Solutions" },
+  "profil.row.live": { no: "rowsolutions.no", en: "rowsolutions.no" },
   "profil.selskap.desc": {
     no: "Marius Ottesen Consulting er en faglig plattform som samler erfaring, metoder og porteføljeprosjekter innen kommersiell utvikling, AI, arbeidsflyt og lederstøtte. Siden viser relevante problemstillinger, arbeidsmetoder og områder jeg kan bidra innenfor i en relevant lederrolle, rekrutteringsdialog eller mulig fremtidig samarbeid.\n\nJeg arbeider også med Row Solutions, et kommersielt samarbeidsinitiativ rettet mot SMB. Initiativet fungerer som en felles markeds- og utviklingsplattform for utvalgte prosjekter innen kommersiell utvikling, arbeidsflyt og praktisk bruk av AI.",
     en: "Marius Ottesen Consulting is a professional platform that brings together experience, methods and portfolio projects in commercial development, AI, workflow and leadership support. The site shows relevant problem areas, working methods and areas where I can contribute within a relevant leadership role, recruitment dialogue or possible future collaboration.\n\nI also work on Row Solutions, a commercial collaboration initiative for SMEs. The initiative serves as a shared market and development platform for selected projects in commercial development, workflow and practical use of AI.",

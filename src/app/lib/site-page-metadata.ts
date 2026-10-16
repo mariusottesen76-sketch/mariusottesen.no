@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { SITE, localePairForPage, type SitePageKey } from "./locale-routes";
+import { HREFLANG_EN, HREFLANG_NB, SITE, localePairForPage, type SitePageKey } from "./locale-routes";
 
 type PageMeta = {
   title: string;
@@ -121,8 +121,8 @@ export function buildSitePageMetadata(page: SitePageKey, lang: "no" | "en"): Met
     alternates: {
       canonical,
       languages: {
-        no: noUrl,
-        en: enUrl,
+        [HREFLANG_NB]: noUrl,
+        [HREFLANG_EN]: enUrl,
         "x-default": noUrl,
       },
     },

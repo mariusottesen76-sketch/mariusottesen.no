@@ -7,6 +7,7 @@ import {
   buildFaginnleggArticleMetadata,
   buildFaginnleggBreadcrumbJsonLd,
 } from "../../../lib/faginnlegg-metadata";
+import { serializeJsonLd } from "../../../lib/json-ld";
 import { getIndexableEnArticleStaticParams } from "../../../lib/faginnlegg-locale-routes";
 
 type PageProps = {
@@ -36,11 +37,11 @@ export default async function EnArticlePage({ params }: PageProps) {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(articleJsonLd) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbJsonLd) }}
       />
       <FaginnleggArticleDetail innlegg={innlegg} initialLang="en" />
     </>

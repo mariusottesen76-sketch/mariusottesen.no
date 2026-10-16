@@ -7,6 +7,8 @@ import {
   faginnleggEnArticlePath,
   faginnleggNoArticlePath,
 } from "./faginnlegg-locale-routes";
+import { HREFLANG_EN, HREFLANG_NB } from "./locale-routes";
+import { PERSON_SCHEMA_ID } from "./structured-data";
 
 const SITE = "https://www.mariusottesen.no";
 
@@ -60,8 +62,8 @@ export function buildFaginnleggArticleMetadata(
       ...(hasEn && enUrl
         ? {
             languages: {
-              no: noUrl,
-              en: enUrl,
+              [HREFLANG_NB]: noUrl,
+              [HREFLANG_EN]: enUrl,
               "x-default": noUrl,
             },
           }
@@ -110,9 +112,7 @@ export function buildFaginnleggArticleJsonLd(
     description,
     datePublished: innlegg.dato,
     author: {
-      "@type": "Person",
-      name: "Marius Ottesen",
-      url: lang === "en" ? `${SITE}/en` : SITE,
+      "@id": PERSON_SCHEMA_ID,
     },
     mainEntityOfPage: {
       "@type": "WebPage",

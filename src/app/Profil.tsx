@@ -3,7 +3,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import LocaleLink from "./components/LocaleLink";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Linkedin, Mail, Phone } from "lucide-react";
 import { getProfilData } from "./data/profil";
 import { useLanguage } from "./LanguageContext";
 import { getTranslation } from "./data/translations";
@@ -20,8 +20,8 @@ const introClass = "text-lg text-slate-300 leading-relaxed";
 const linkClass =
   "text-indigo-400 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400";
 
-const secondaryLinkClass =
-  "text-slate-500 underline underline-offset-2 decoration-slate-600/70 hover:text-slate-300 transition-colors text-xs";
+const profilContactLinkClass =
+  "text-slate-300 hover:text-indigo-300 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400 break-words min-w-0";
 
 const cardClass =
   "p-5 md:p-6 bg-slate-900/25 backdrop-blur-sm border border-slate-800 rounded-2xl shadow-xl";
@@ -117,7 +117,7 @@ export default function Profil({ onNavigate }: { onNavigate?: (tab: string) => v
       </div>
 
       <div className="flex flex-col md:flex-row gap-8 items-start text-left relative z-10">
-        <div className="w-full md:w-60 shrink-0">
+        <div className="w-full md:w-60 shrink-0 space-y-2.5">
           <div className="rounded-2xl overflow-hidden border border-slate-800 shadow-xl bg-slate-900">
             <Image
               src="/images/profil.jpg"
@@ -128,6 +128,34 @@ export default function Profil({ onNavigate }: { onNavigate?: (tab: string) => v
               priority
             />
           </div>
+          <nav
+            aria-label={tr("profil.direkte.label")}
+            className="w-full rounded-2xl border border-slate-800 bg-slate-900/40 px-3 py-2.5 text-left space-y-1.5"
+          >
+            <a
+              href="mailto:marius.ottesen.76@gmail.com"
+              className={`flex items-start gap-2 ${profilContactLinkClass} text-xs leading-snug`}
+            >
+              <Mail size={14} className="text-indigo-400/80 shrink-0 mt-0.5" aria-hidden="true" />
+              <span className="[overflow-wrap:anywhere]">marius.ottesen.76@gmail.com</span>
+            </a>
+            <a
+              href="tel:+4747012005"
+              className={`flex items-center gap-2 ${profilContactLinkClass} text-xs leading-snug whitespace-nowrap`}
+            >
+              <Phone size={14} className="text-indigo-400/80 shrink-0" aria-hidden="true" />
+              <span>+47 470 12 005</span>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/mariusottesen/"
+              className={`flex items-center gap-2 ${profilContactLinkClass} text-xs leading-snug`}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <Linkedin size={14} className="text-indigo-400/80 shrink-0" aria-hidden="true" />
+              <span>LinkedIn</span>
+            </a>
+          </nav>
         </div>
 
         <div className="flex-1 min-w-0 space-y-8">
@@ -324,6 +352,19 @@ export default function Profil({ onNavigate }: { onNavigate?: (tab: string) => v
               </div>
             </div>
             <p className="text-slate-400 text-sm leading-relaxed whitespace-pre-line">{tr("profil.selskap.desc")}</p>
+            <p className="text-sm flex flex-wrap gap-x-3 gap-y-1">
+              <a
+                href="https://rowsolutions.no/"
+                className={linkClass}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                {tr("profil.row.live")}
+              </a>
+              <LocaleLink href="/row-solutions" className={linkClass}>
+                {tr("profil.row.case")}
+              </LocaleLink>
+            </p>
             <NavLink
               href="/consulting"
               tab="Consulting"

@@ -6,6 +6,7 @@ import {
   buildFaginnleggArticleMetadata,
   buildFaginnleggBreadcrumbJsonLd,
 } from "../../lib/faginnlegg-metadata";
+import { serializeJsonLd } from "../../lib/json-ld";
 
 export async function generateStaticParams() {
   return getAllFaginnleggSlugs().map((slug) => ({ slug }));
@@ -38,11 +39,11 @@ export default async function FaginnleggSlugPage({
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(articleJsonLd) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbJsonLd) }}
       />
       <FaginnleggArticleDetail innlegg={innlegg} />
     </>

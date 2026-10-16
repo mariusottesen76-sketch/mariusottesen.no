@@ -2,6 +2,10 @@ import type { Lang } from "../LanguageContext";
 
 export const SITE = "https://www.mariusottesen.no" as const;
 
+/** hreflang keys for Metadata alternates.languages (Bokmål; aligns with openGraph locale nb_NO). */
+export const HREFLANG_NB = "nb-NO";
+export const HREFLANG_EN = "en";
+
 /** Tabs with indexable EN-1A URL pairs. */
 import { localePathFromNoProjectPath, resolveProjectLocalePair } from "./project-locale-routes";
 import { localePathFromNoBokPath, resolveBokLocalePair } from "./bok-locale-routes";

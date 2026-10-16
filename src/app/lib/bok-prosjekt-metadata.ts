@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { BOK_ROUTE } from "../data/bok-prosjekt-innhold";
-import { SITE } from "./locale-routes";
+import { HREFLANG_EN, HREFLANG_NB, SITE } from "./locale-routes";
 
 const META = {
   no: {
@@ -32,8 +32,8 @@ export function buildBokProsjektMetadata(lang: "no" | "en"): Metadata {
     alternates: {
       canonical,
       languages: {
-        no: noUrl,
-        en: enUrl,
+        [HREFLANG_NB]: noUrl,
+        [HREFLANG_EN]: enUrl,
         "x-default": noUrl,
       },
     },

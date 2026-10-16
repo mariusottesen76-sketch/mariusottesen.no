@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import type { Metadata } from "next";
 import { headers } from "next/headers";
 import { isEnPath } from "./lib/locale-routes";
+import { serializeJsonLd } from "./lib/json-ld";
 import { getStructuredDataGraph } from "./lib/structured-data";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -85,7 +86,8 @@ export default async function RootLayout({
   const headersList = await headers();
   const pathname = headersList.get("x-pathname") ?? "/";
   const lang = isEnPath(pathname) ? "en" : "no";
-  const jsonLd = getStructuredDataGraph(lang);
+  const isProfileHome = pathname === "/" || pathname === "/en";
+  const jsonLd = getStructuredDataGraph(lang, { includeProfilePage: isProfileHome });
 
   return (
     <html lang={lang} suppressHydrationWarning>
@@ -98,7 +100,7 @@ export default async function RootLayout({
         <link rel="apple-touch-icon" href="/images/moc.logo.png" sizes="180x180" />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }}
         />
       </head>
       <body
