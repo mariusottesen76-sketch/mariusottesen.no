@@ -55,17 +55,17 @@ export const BOK_ROUTE = { no: "/bok", en: "/en/book" } as const;
 /** Foreløpige omslag — filer i public/images (ikke dupliser eller gi nye navn). */
 export const BOK_OMSLAG = {
   forside: {
-    src: "/images/bok-forsideomslag.png",
+    src: "/images/VerdisKIftet_forside.jpg",
     alt: {
-      no: "Foreløpig forsideomslag for bokprosjektet til Marius Ottesen",
-      en: "Provisional front cover for Marius Ottesen's book project",
+      no: "Foreløpig forsideomslag — VerdisKiftet, bokprosjekt av Marius Ottesen",
+      en: "Provisional front cover — VerdisKiftet, book project by Marius Ottesen",
     },
   },
   bakside: {
-    src: "/images/bok-baksideomslag.png",
+    src: "/images/VerdisKIftet_bakside.jpg",
     alt: {
-      no: "Foreløpig bakomslag for bokprosjektet til Marius Ottesen",
-      en: "Provisional back cover for Marius Ottesen's book project",
+      no: "Foreløpig bakomslag — VerdisKiftet, bokprosjekt av Marius Ottesen",
+      en: "Provisional back cover — VerdisKiftet, book project by Marius Ottesen",
     },
   },
 } as const;
