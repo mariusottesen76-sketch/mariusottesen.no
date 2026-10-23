@@ -8,17 +8,22 @@ import ProjectImageModal from "../project-v2/ProjectImageModal";
 
 type OmslagVariant = keyof typeof BOK_OMSLAG;
 
-const omslagRammeClass =
-  "rounded-xl border border-slate-800/80 bg-slate-950/50 p-2 sm:p-3 shadow-lg w-full max-w-[min(100%,300px)]";
+const omslagRammeBySize = {
+  card: "rounded-xl border border-slate-800/80 bg-slate-950/50 p-2 sm:p-3 shadow-lg w-full max-w-[min(100%,300px)]",
+  hero: "rounded-xl border border-slate-800/80 bg-slate-950/50 p-2 sm:p-3 shadow-lg w-full max-w-[min(46vw,340px)] sm:max-w-[240px] md:max-w-[280px] lg:max-w-[300px] xl:max-w-[340px]",
+} as const;
 
 /** Viser hele omslaget med korrekt sideforhold — object-contain, ingen strekk. Klikk for forstørret visning. */
 export default function BokOmslagImage({
   variant,
   lang,
+  size = "card",
   className = "",
 }: {
   variant: OmslagVariant;
   lang: BokProsjektLang;
+  /** card = faginnlegg; hero = større par på /bok */
+  size?: keyof typeof omslagRammeBySize;
   className?: string;
 }) {
   const [enlarged, setEnlarged] = useState(false);
@@ -32,7 +37,7 @@ export default function BokOmslagImage({
 
   return (
     <>
-      <figure className={`${omslagRammeClass} ${className}`.trim()}>
+      <figure className={`${omslagRammeBySize[size]} ${className}`.trim()}>
         <button
           type="button"
           onClick={() => setEnlarged(true)}
@@ -44,8 +49,14 @@ export default function BokOmslagImage({
             alt={asset.alt[lang]}
             width={600}
             height={900}
-            className="w-full h-auto max-h-[min(72vh,520px)] object-contain object-center mx-auto pointer-events-none"
-            sizes="(max-width: 640px) 85vw, 300px"
+            className={`w-full h-auto object-contain object-center mx-auto pointer-events-none ${
+              size === "hero" ? "max-h-[min(78vh,640px)]" : "max-h-[min(72vh,520px)]"
+            }`}
+            sizes={
+              size === "hero"
+                ? "(max-width: 640px) 44vw, (max-width: 1280px) 280px, 340px"
+                : "(max-width: 640px) 85vw, 300px"
+            }
             unoptimized
           />
         </button>

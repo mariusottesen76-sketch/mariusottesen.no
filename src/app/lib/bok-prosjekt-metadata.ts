@@ -1,23 +1,25 @@
 import type { Metadata } from "next";
-import { BOK_ROUTE } from "../data/bok-prosjekt-innhold";
+import { BOK_OMSLAG, BOK_ROUTE } from "../data/bok-prosjekt-innhold";
 import { HREFLANG_EN, HREFLANG_NB, SITE } from "./locale-routes";
 
 const META = {
   no: {
-    title: "Bokprosjekt | Læring, ledelse og gjennomføring | Marius Ottesen",
+    title: "VerdisKIftet – Fra innsikt til nye fortrinn | Marius Ottesen",
     description:
-      "Én sammenhengende fagbok under utvikling — bygget på ledererfaring, faginnlegg, masterarbeid og praktisk utviklingsarbeid. 17 kapitler i syv deler.",
-    ogImageAlt: "Bokprosjekt — Marius Ottesen",
+      "VerdisKIftet er en fagbok under utvikling om ledelse, strategiske valg, mennesker, kundeverdi, kunstig intelligens og læring når spillereglene endres.",
+    ogImageAlt: "Foreløpig omslag til fagboka VerdisKIftet – Fra innsikt til nye fortrinn, av Marius Ottesen.",
   },
   en: {
-    title: "Book project | Learning, leadership and execution | Marius Ottesen",
+    title: "VerdisKIftet – From insight to new advantages | Marius Ottesen",
     description:
-      "One coherent professional book in development — built on leadership experience, articles, master’s work and practical development. 17 chapters in seven parts.",
-    ogImageAlt: "Book project — Marius Ottesen",
+      "VerdisKIftet is a professional book in development on leadership, strategic choices, people, customer value, artificial intelligence and learning when the rules of the game change.",
+    ogImageAlt: "Provisional cover for the book VerdisKIftet – From insight to new advantages, by Marius Ottesen.",
   },
 } as const;
 
-const OG_IMAGE = `${SITE}/images/blogg.jpg`;
+const OG_IMAGE = `${SITE}${BOK_OMSLAG.forside.src}`;
+const OG_IMAGE_WIDTH = 600;
+const OG_IMAGE_HEIGHT = 900;
 
 export function buildBokProsjektMetadata(lang: "no" | "en"): Metadata {
   const meta = META[lang];
@@ -45,7 +47,7 @@ export function buildBokProsjektMetadata(lang: "no" | "en"): Metadata {
       siteName: "Marius Ottesen",
       locale: lang === "en" ? "en_GB" : "nb_NO",
       alternateLocale: lang === "en" ? ["nb_NO"] : ["en_GB"],
-      images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: meta.ogImageAlt }],
+      images: [{ url: OG_IMAGE, width: OG_IMAGE_WIDTH, height: OG_IMAGE_HEIGHT, alt: meta.ogImageAlt }],
     },
     twitter: {
       card: "summary_large_image",

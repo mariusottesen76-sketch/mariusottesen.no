@@ -37,6 +37,8 @@ import { getFaginnleggLinkedInCta } from './lib/faginnlegg-linkedin-cta';
 import { hasFullEnFaginnleggBody } from './lib/faginnlegg-en-audit';
 import { faginnleggArticlePath } from './lib/faginnlegg-locale-routes';
 import BokOmslagImage from "./components/bok/BokOmslagImage";
+import VerdisKiftetTitle from "./components/bok/VerdisKiftetTitle";
+import { BookRichText } from "./components/bok/book-rich-text";
 import LocaleLink from './components/LocaleLink';
 import { ChevronRight } from 'lucide-react';
 
@@ -194,13 +196,21 @@ const Faginnlegg = ({ onNavigate: _onNavigate }: { onNavigate?: (tab: string) =>
         <p className="text-[10px] font-bold uppercase tracking-widest text-indigo-400 mb-3">
           {tr("fag.bok.eyebrow")}
         </p>
-        <h2 id="fag-bok-heading" className={`${sectionTitleClass} mb-3 ${bookFlowTextClass}`}>
-          {tr("fag.bok.title")}
+        <h2
+          id="fag-bok-heading"
+          className={`${sectionTitleClass} text-2xl md:text-3xl lg:text-4xl mb-3 ${bookFlowTextClass}`}
+        >
+          <VerdisKiftetTitle />
         </h2>
         <p
-          className={`text-base md:text-lg text-slate-300 leading-relaxed font-light mb-6 w-full min-w-0 ${bookFlowTextClass}`}
+          className={`text-base md:text-lg text-slate-200 leading-relaxed font-light mb-2.5 w-full min-w-0 max-w-3xl ${bookFlowTextClass}`}
         >
           {tr("fag.bok.subtitle")}
+        </p>
+        <p
+          className={`text-sm md:text-base text-slate-400 leading-relaxed font-light mb-6 w-full min-w-0 max-w-3xl ${bookFlowTextClass}`}
+        >
+          {tr("fag.bok.tagline")}
         </p>
         <div className="grid grid-cols-1 lg:grid-cols-[min(100%,280px)_minmax(0,1fr)] gap-8 lg:gap-10 items-start">
           <BokOmslagImage
@@ -208,11 +218,18 @@ const Faginnlegg = ({ onNavigate: _onNavigate }: { onNavigate?: (tab: string) =>
             lang={lang}
             className="shrink-0 mx-auto lg:mx-0 lg:sticky lg:top-28 lg:self-start"
           />
-          <div className="min-w-0 flex flex-col">
-            <div
-              className={`text-base md:text-lg text-slate-400 leading-relaxed font-light space-y-4 mb-6 whitespace-pre-line ${bookFlowTextClass}`}
-            >
-              {tr("fag.bok.body")}
+          <div className="min-w-0 flex flex-col max-w-3xl">
+            <div className={`text-base md:text-lg text-slate-400 leading-[1.65] font-light mb-6 ${bookFlowTextClass}`}>
+              {tr("fag.bok.body")
+                .split("\n\n")
+                .map((paragraph, index, paragraphs) => (
+                  <p
+                    key={paragraph.slice(0, 32)}
+                    className={index < paragraphs.length - 1 ? "mb-6" : undefined}
+                  >
+                    <BookRichText text={paragraph} />
+                  </p>
+                ))}
             </div>
             <dl className="grid grid-cols-2 xl:grid-cols-4 gap-3 mb-6 auto-rows-fr">
               {(
