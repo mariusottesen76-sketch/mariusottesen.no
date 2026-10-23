@@ -1,4 +1,5 @@
 import { Lang } from "../LanguageContext";
+import { getBokResultatPunktHtml } from "./bok-prosjekt-innhold";
 import { getFaginnleggTelling } from "../lib/faginnlegg-data";
 import { AI_READINESS_SCAN_PROSJEKT_PATH } from "../lib/ai-readiness-scan-brand";
 import { BILAGSASSISTENT_PROSJEKT_PATH } from "../lib/bilagsassistent-brand";
@@ -38,7 +39,15 @@ export type MocResultatPunkt =
 /** Korte resultatpunkter for MOC på Resultater-siden — samme format som øvrige selskapskort. */
 export function getMocResultaterPunkter(lang: Lang): MocResultatPunkt[] {
   const bokHref = lang === "en" ? "/en/book" : "/bok";
+  const bokLang = lang === "en" ? "en" : "no";
   const { totalt } = getFaginnleggTelling();
+  const bokPunkt = getBokResultatPunktHtml(
+    bokLang,
+    lenke,
+    bokHref,
+    prosjektLenker.faginnlegg,
+    lang === "en" ? "professional texts and reflections" : "faginnlegg og refleksjoner",
+  );
 
   if (lang === "en") {
     return [
@@ -55,7 +64,7 @@ export function getMocResultaterPunkter(lang: Lang): MocResultatPunkt[] {
       `Built and published ${lenke(prosjektLenker.nettside, "mariusottesen.no")}: leadership profile, portfolio, articles and access-controlled AI demonstrators`,
       `Co-developed ${lenke(prosjektLenker.rowSolutions, "Row Solutions")}, a commercial collaboration initiative for SMEs, and launched its digital platform, rowsolutions.no – from positioning and service structure to user journey, professional content and AI-assisted development`,
       `${totalt} published ${lenke(prosjektLenker.faginnlegg, "articles")} on leadership, commercial development, transformation and practical AI`,
-      `A major professional undertaking is also in progress: one coherent ${lenke(bokHref, "non-fiction book in development")}, built on 25+ years of leadership and professional experience, 100+ ${lenke(prosjektLenker.faginnlegg, "professional texts and reflections")}, four graduate and project papers, and practical development projects`,
+      bokPunkt,
       "Contributed as an invited panelist in a professional HR network discussing innovation, AI, leadership responsibility and execution.",
       `Initiator of ${lenke(prosjektLenker.valueLab, "AI Value Lab Oslo")}: cross-disciplinary arena for AI learning, experience sharing and exploration of practical problem areas`,
       `Completed further education in ${lenke(prosjektLenker.bi, "Generative AI for Business")} at BI Norwegian Business School with grade A`,
@@ -76,7 +85,7 @@ export function getMocResultaterPunkter(lang: Lang): MocResultatPunkt[] {
     `Bygget og publisert ${lenke(prosjektLenker.nettside, "mariusottesen.no")}: lederprofil, portefølje, faginnlegg og tilgangsstyrte AI-demonstratorer`,
     `Medutviklet ${lenke(prosjektLenker.rowSolutions, "Row Solutions")}, et kommersielt samarbeidsinitiativ for SMB, og lansert den digitale plattformen rowsolutions.no – fra posisjonering og tjenestestruktur til brukerreise, faglig innhold og AI-assistert utvikling`,
     `${totalt} publiserte ${lenke(prosjektLenker.faginnlegg, "faginnlegg")} om ledelse, kommersiell utvikling, transformasjon og praktisk AI`,
-    `Et større faglig arbeid pågår også: én sammenhengende ${lenke(bokHref, "fagbok under utvikling")}, bygget på 25+ års leder- og arbeidserfaring, 100+ ${lenke(prosjektLenker.faginnlegg, "faglige tekster og refleksjoner")}, fire master- og prosjektarbeider og praktiske utviklingsprosjekter`,
+    bokPunkt,
     "Bidratt som invitert paneldeltaker i faglig HR-nettverk om innovasjon, AI, lederansvar og gjennomføring.",
     `Initiativtaker til ${lenke(prosjektLenker.valueLab, "AI Value Lab Oslo")}: tverrfaglig arena for AI-læring, erfaringsutveksling og utforsking av praktiske problemstillinger`,
     `Fullført videreutdanning i ${lenke(prosjektLenker.bi, "Generative AI for Business")} ved Handelshøyskolen BI med karakter A`,

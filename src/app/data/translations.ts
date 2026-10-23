@@ -63,7 +63,7 @@ const translations: Translations = {
     en: "Explore perspectives, projects and potential areas for collaboration.",
   },
   "profil.videre.groupC.faginnlegg": { no: "Faginnlegg", en: "Articles" },
-  "profil.videre.groupC.bok": { no: "Bokprosjekt", en: "Book project" },
+  "profil.videre.groupC.bok": { no: "VerdisKIftet", en: "VerdisKIftet" },
   "profil.videre.groupC.prosjekter": { no: "AI-prosjekter og demonstratorer", en: "AI projects and demonstrators" },
   "profil.videre.groupC.kontakt": { no: "Ta kontakt", en: "Get in touch" },
   "profil.videre.resultater": { no: "Se dokumenterte resultater", en: "See documented results" },
@@ -93,6 +93,12 @@ const translations: Translations = {
   "profil.ai.link.consulting": { no: "Se kompetanseområder og portefølje", en: "See competence areas and portfolio" },
   "profil.ai.link.prosjekter": { no: "Se AI-prosjekter og demonstratorer", en: "See AI projects and demonstrators" },
   "profil.ai.link.faginnlegg": { no: "Les faginnlegg", en: "Read articles" },
+  "profil.bok.titleSuffix": { no: " — fagbok under utvikling", en: " — professional book in development" },
+  "profil.bok.body": {
+    no: "Jeg utvikler fagboka VerdisKIftet – Fra innsikt til nye fortrinn. Det er et redaksjonelt prosjekt med samlet, faglig låst manus (17 kapitler fordelt på syv deler), bygget på faginnlegg, ledererfaring og masterarbeid. Boka er fortsatt under utvikling; redaksjonell kvalitetssikring og bokproduksjon pågår.",
+    en: "I am developing VerdisKIftet – From insight to new advantages. It is an editorial project with a coherent, locked manuscript (17 chapters in seven parts), built on articles, leadership experience and graduate work. The book remains in development; editorial quality assurance and book production continue.",
+  },
+  "profil.bok.link": { no: "Les om VerdisKIftet", en: "About VerdisKIftet" },
 
   // Erfaring
   "erfaring.title": { no: "Karriere høydepunkter", en: "Career Highlights" },
@@ -135,14 +141,14 @@ const translations: Translations = {
   "ref.videre.cv": { no: "Se CV og lederprofil", en: "See CV and leadership profile" },
   "ref.videre.kontakt": { no: "Ta kontakt", en: "Get in touch" },
   "ref.videre.faginnlegg": { no: "Faglig fordypning", en: "Professional depth" },
-  "ref.videre.bok": { no: "Bokprosjekt", en: "Book project" },
+  "ref.videre.bok": { no: "VerdisKIftet", en: "VerdisKIftet" },
 
   // Faginnlegg
   "fag.title.1": { no: "Innsikt &", en: "Insight &" },
   "fag.title.2": { no: "faglig fordypning", en: "professional depth" },
   "fag.intro.1": {
-    no: "Faginnlegg om kommersiell ledelse, transformasjon og praktisk AI (kunstig intelligens/KI) — strukturert som faglig formidling, ikke som salgsmateriell. Innholdet inngår også i kunnskapsgrunnlaget for utviklingen av én sammenhengende fagbok.",
-    en: "Articles on commercial leadership, transformation and practical AI — structured as professional communication, not sales material. The body of work also informs the development of one coherent professional book.",
+    no: "Faginnlegg om kommersiell ledelse, transformasjon og praktisk AI (kunstig intelligens/KI) — strukturert som faglig formidling, ikke som salgsmateriell. Innholdet inngår også i kunnskapsgrunnlaget for fagboka VerdisKIftet (under utvikling).",
+    en: "Articles on commercial leadership, transformation and practical AI — structured as professional communication, not sales material. The body of work also informs VerdisKIftet, a professional book in development.",
   },
   "fag.bok.eyebrow": { no: "Bokprosjekt · under utvikling", en: "Book project · work in progress" },
   "fag.bok.subtitle": { no: "Fra innsikt til nye fortrinn", en: "From insight to new advantages" },
@@ -360,12 +366,12 @@ const translations: Translations = {
     en: "Ongoing track on AI, leadership and value creation — where theory meets practice",
   },
   "prosjekter.intro.punkt.faginnlegg.bookPrefix": {
-    no: "Parallelt utvikles en sammenhengende fagbok som et redaksjonelt og faglig prosjekt – se",
-    en: "In parallel, a coherent non-fiction book is being developed as an editorial and professional project – see the",
+    no: "Parallelt utvikles fagboka VerdisKIftet – samlet manus med 17 kapitler (under utvikling). Se",
+    en: "In parallel, VerdisKIftet is in development — a coherent manuscript with 17 chapters. See",
   },
   "prosjekter.intro.punkt.faginnlegg.bookLink": {
-    no: "bokprosjektet",
-    en: "book project",
+    no: "VerdisKIftet",
+    en: "VerdisKIftet",
   },
   "prosjekter.intro.2": {
     no: "Siden fungerer som en portefølje for arbeidsgivere, rekrutterere og beslutningstakere som ønsker å se praktisk AI-forståelse, digital transformasjon, produktutvikling og kommersiell og operasjonell gjennomføringsevne i praksis.",
@@ -487,7 +493,7 @@ const translations: Translations = {
   "cons.fagligFordypning.prefix": { no: "Se også", en: "See also" },
   "cons.fagligFordypning.faginnlegg": { no: "faginnlegg", en: "articles" },
   "cons.fagligFordypning.and": { no: "og", en: "and" },
-  "cons.fagligFordypning.bok": { no: "bokprosjektet", en: "the book project" },
+  "cons.fagligFordypning.bok": { no: "VerdisKIftet", en: "VerdisKIftet" },
   "cons.fagligFordypning.suffix": {
     no: "for mer om perspektivene bak arbeidet med ledelse, kommersiell utvikling, transformasjon og praktisk AI.",
     en: "for more on the perspectives behind work on leadership, commercial development, transformation and practical AI.",
@@ -517,7 +523,7 @@ const translations: Translations = {
     en: "I have experience in commercial leadership, national sales leadership, P&L accountability, team development, change, CRM, workflow and practical AI — including operational leadership experience from sales and operations. The website brings together documented results, experience, AI projects,",
   },
   "kontakt.link.faginnlegg": { no: "100+ faginnlegg", en: "100+ articles" },
-  "kontakt.link.bok": { no: "bokprosjekt under utvikling", en: "book project in development" },
+  "kontakt.link.bok": { no: "VerdisKIftet (under utvikling)", en: "VerdisKIftet (in development)" },
   "kontakt.dialog": { no: "Komme i dialog", en: "Start a conversation" },
   "kontakt.dialog.desc": {
     no: "Bruk gjerne skjemaet dersom du ønsker å komme i dialog. Henvendelser vurderes ut fra relevans for aktuelle lederroller, rekrutteringsprosesser, faglige problemstillinger, paneldebatter, innlegg, sparring eller mulige fremtidige sammenhenger.",
@@ -569,10 +575,10 @@ const translations: Translations = {
   },
   "dok.fagFordypning.faginnlegg": { no: "100+ faglige tekster", en: "100+ professional texts" },
   "dok.fagFordypning.and": { no: "og", en: "and" },
-  "dok.fagFordypning.bok": { no: "bokprosjektet", en: "book project" },
+  "dok.fagFordypning.bok": { no: "VerdisKIftet", en: "VerdisKIftet" },
   "dok.fagFordypning.outro": {
-    no: ": én fagbok under utvikling, bygget på erfaring, masterarbeid, faglige tekster og praktiske utviklingsprosjekter.",
-    en: ": one professional book in development, built on experience, graduate work, professional writing and practical development projects.",
+    no: ": fagbok under utvikling med samlet, faglig låst manus (17 kapitler i syv deler), bygget på erfaring, masterarbeid, faglige tekster og praktiske utviklingsprosjekter.",
+    en: ": a professional book in development with a coherent, locked manuscript (17 chapters in seven parts), built on experience, graduate work, professional writing and practical development projects.",
   },
 
   // Footer

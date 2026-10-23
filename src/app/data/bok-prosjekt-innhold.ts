@@ -29,6 +29,25 @@ export interface BokProsjektCopy {
 
 export const BOK_ROUTE = { no: "/bok", en: "/en/book" } as const;
 
+/** Offentlig tittel — samme på norsk og engelsk. */
+export const BOK_TITTEL = "VerdisKIftet" as const;
+
+/** Resultater / MOC: ett punkt, HTML-lenker via callback. */
+export function getBokResultatPunktHtml(
+  lang: BokProsjektLang,
+  link: (href: string, label: string) => string,
+  bokHref: string,
+  faginnleggHref: string,
+  faginnleggLinkLabel: string,
+): string {
+  const bok = link(bokHref, BOK_TITTEL);
+  const fag = link(faginnleggHref, faginnleggLinkLabel);
+  if (lang === "en") {
+    return `A major professional book is nearing completion: ${bok} — in development with a coherent, locked manuscript (17 chapters in seven parts), built on 25+ years of leadership and work experience, 100+ ${fag}, four graduate and project papers, and practical development and AI projects. Editorial quality assurance and book production continue.`;
+  }
+  return `Et større faglig arbeid nærmer seg ferdigstilling: ${bok} – fagbok under utvikling med samlet, faglig låst manus (17 kapitler fordelt på syv deler), bygget på 25+ års leder- og arbeidserfaring, 100+ ${fag}, fire master- og prosjektarbeider og praktiske utviklings- og KI-prosjekter. Redaksjonell kvalitetssikring og bokproduksjon pågår.`;
+}
+
 /** Foreløpige omslag — filer i public/images (ikke dupliser eller gi nye navn). */
 export const BOK_OMSLAG = {
   forside: {

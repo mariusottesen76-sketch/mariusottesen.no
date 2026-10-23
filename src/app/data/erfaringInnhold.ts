@@ -26,7 +26,7 @@ const data = {
           {
             title: "Faglig posisjonering og samarbeid",
             body:
-              'Videreutviklet faglig plattform gjennom <a href="/strategisk-ai-implementering">BI</a>, <a href="/ai-value-lab-oslo">AI Value Lab Oslo</a>, <a href="/row-solutions">Row Solutions</a>, <a href="/faginnlegg">faginnlegg</a> og <a href="/bok">bokprosjekt</a>.',
+              'Videreutviklet faglig plattform gjennom <a href="/strategisk-ai-implementering">BI</a>, <a href="/ai-value-lab-oslo">AI Value Lab Oslo</a>, <a href="/row-solutions">Row Solutions</a>, <a href="/faginnlegg">faginnlegg</a> og fagboka <a href="/bok">VerdisKIftet</a> (under utvikling).',
           },
         ],
         resultsMoreLink: {
@@ -113,7 +113,7 @@ const data = {
           {
             title: "Professional positioning and collaboration",
             body:
-              'Further developed the professional platform through <a href="/strategisk-ai-implementering">BI</a>, <a href="/ai-value-lab-oslo">AI Value Lab Oslo</a>, <a href="/row-solutions">Row Solutions</a>, <a href="/faginnlegg">articles</a> and a <a href="/en/book">book project</a>.',
+              'Further developed the professional platform through <a href="/strategisk-ai-implementering">BI</a>, <a href="/ai-value-lab-oslo">AI Value Lab Oslo</a>, <a href="/row-solutions">Row Solutions</a>, <a href="/faginnlegg">articles</a> and <a href="/en/book">VerdisKIftet</a> (in development).',
           },
         ],
         resultsMoreLink: {

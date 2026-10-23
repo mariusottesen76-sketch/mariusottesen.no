@@ -35,6 +35,16 @@ function bookLink(label: { no: string; en: string }, surfaces?: ProjectRelevantS
   return { href: BOK_ROUTE.no, label, surfaces: surfaces ?? detailOnly };
 }
 
+const BOK_RELEVANT_STANDARD = {
+  no: "VerdisKIftet – fagbok under utvikling →",
+  en: "VerdisKIftet – professional book in development →",
+} as const;
+
+const BOK_RELEVANT_NETTSIDE = {
+  no: "VerdisKIftet – samlet manus, 17 kapitler (under utvikling) →",
+  en: "VerdisKIftet – coherent manuscript, 17 chapters (in development) →",
+} as const;
+
 /**
  * Redaksjonelt kuraterte «Relevant videre»-lenker per prosjektslug (v2).
  * Ved nye artikler: se .cursor/rules/relevant-videre-nye-artikler.mdc
@@ -79,10 +89,7 @@ export const RELEVANT_VIDERE_BY_PROJECT_SLUG: Record<string, Link[]> = {
       no: "AI Readiness Scan →",
       en: "AI Readiness Scan →",
     }, detailOnly),
-    bookLink({
-      no: "Bokprosjekt: transformasjon og verdirealisering (under utvikling) →",
-      en: "Book project: transformation and value realisation (in development) →",
-    }),
+    bookLink(BOK_RELEVANT_STANDARD),
   ],
   psc: [
     art("salgsledelse-i-praksis-2026-08", {
@@ -169,10 +176,7 @@ export const RELEVANT_VIDERE_BY_PROJECT_SLUG: Record<string, Link[]> = {
       no: "Skøyenåsen tannklinikk – case →",
       en: "Skøyenåsen dental clinic – case →",
     }, detailOnly),
-    bookLink({
-      no: "Bokprosjekt: strategi og gjennomføring (under utvikling) →",
-      en: "Book project: strategy and execution (in development) →",
-    }),
+    bookLink(BOK_RELEVANT_STANDARD),
   ],
   "skoyenasen-tannklinikk": [
     art("ai-needs-first-tannklinikk-case-01", {
@@ -193,17 +197,8 @@ export const RELEVANT_VIDERE_BY_PROJECT_SLUG: Record<string, Link[]> = {
       no: "Fra koding i 1999 til AI-revolusjon i 2026 – ny hjemmeside og nytt consultingselskap! →",
       en: "From coding in 1999 to AI revolution in 2026 - new website and new consulting company! →",
     }),
-    bookLink(
-      {
-        no: "Bokprosjektet – fra faginnlegg til fagbok under utvikling →",
-        en: "The book project – from articles to a professional book in development →",
-      },
-      overviewOnly,
-    ),
-    bookLink({
-      no: "Bokprosjekt: ledelse og gjennomføring (under utvikling) →",
-      en: "Book project: leadership and execution (in development) →",
-    }),
+    bookLink(BOK_RELEVANT_NETTSIDE, overviewOnly),
+    bookLink(BOK_RELEVANT_STANDARD),
     proj("/prosjekter", {
       no: "Se hele AI-prosjektporteføljen →",
       en: "See the full AI project portfolio →",
@@ -272,10 +267,7 @@ export const RELEVANT_VIDERE_BY_PROJECT_SLUG: Record<string, Link[]> = {
       no: "Control Tower →",
       en: "Control Tower →",
     }, detailOnly),
-    bookLink({
-      no: "Bokprosjekt: beslutninger og gjennomføring (under utvikling) →",
-      en: "Book project: decisions and execution (in development) →",
-    }),
+    bookLink(BOK_RELEVANT_STANDARD),
   ],
   "ai-value-lab-oslo": [
     art("ai-value-lab-01", {
@@ -320,13 +312,7 @@ export const RELEVANT_VIDERE_BY_PROJECT_SLUG: Record<string, Link[]> = {
     }, detailOnly),
   ],
   "ai-faginnlegg-hub": [
-    bookLink(
-      {
-        no: "Bokprosjekt: ledelse, strategi og gjennomføring (under utvikling) →",
-        en: "Book project: leadership, strategy and execution (in development) →",
-      },
-      [],
-    ),
+    bookLink(BOK_RELEVANT_STANDARD),
     art("fra-strategi-til-gjennomforing-2026-09", {
       no: "Fra strategi til gjennomføring →",
       en: "From strategy to execution →",

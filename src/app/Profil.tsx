@@ -3,6 +3,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import LocaleLink from "./components/LocaleLink";
+import VerdisKiftetTitle from "./components/bok/VerdisKiftetTitle";
 import { ArrowRight, Linkedin, Mail, Phone } from "lucide-react";
 import { getProfilData } from "./data/profil";
 import { useLanguage } from "./LanguageContext";
@@ -259,9 +260,9 @@ export default function Profil({ onNavigate }: { onNavigate?: (tab: string) => v
                   {tr("profil.kompetanse.title")}
                 </h2>
                 <p className="text-[10px] text-slate-500 italic">{tr("profil.kompetanse.sub")}</p>
-                <ul className="flex flex-wrap gap-2">
+                <ul className="flex flex-col items-start gap-2">
                   {d.kompetanse.map((item) => (
-                    <li key={item} className={`${chipClass} max-w-full text-xs sm:text-sm leading-snug`}>
+                    <li key={item} className={`${chipClass} w-fit max-w-full text-xs sm:text-sm leading-snug`}>
                       {item}
                     </li>
                   ))}
@@ -309,6 +310,19 @@ export default function Profil({ onNavigate }: { onNavigate?: (tab: string) => v
                 {tr("profil.ai.link.faginnlegg")}
               </NavLink>
             </div>
+            </div>
+          </section>
+
+          <section aria-labelledby="profil-bok-heading" className="space-y-3">
+            <h2 id="profil-bok-heading" className={sectionTitleClass}>
+              <VerdisKiftetTitle />
+              {tr("profil.bok.titleSuffix")}
+            </h2>
+            <div className={`${cardClassSubtle} space-y-2.5`}>
+              <p className="text-slate-400 text-sm leading-relaxed">{tr("profil.bok.body")}</p>
+              <LocaleLink href="/bok" className={`${linkClass} text-sm font-medium`} aria-label="Gå til VerdisKIftet">
+                {tr("profil.bok.link")} →
+              </LocaleLink>
             </div>
           </section>
 
