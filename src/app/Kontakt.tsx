@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import LocaleLink from "./components/LocaleLink";
+import { VerdisKiftetInText } from "./components/bok/VerdisKiftetInText";
 import { useRouter } from "next/navigation";
 import { Mail, Smartphone, Linkedin, ChevronRight, Target, MessageSquare, Globe } from "lucide-react";
 import { useLanguage } from "./LanguageContext";
@@ -95,7 +96,7 @@ export default function Kontakt() {
                   </LocaleLink>
                   {lang === "no" ? " og et " : " and a "}
                   <LocaleLink href="/bok" className={linkClass} aria-label="Gå til bokprosjekt">
-                    {tr("kontakt.link.bok")}
+                    <VerdisKiftetInText text={tr("kontakt.link.bok")} />
                   </LocaleLink>
                   {". "}
                   <LocaleLink href="/cv" className={linkClass} aria-label="Gå til CV og lederprofil">

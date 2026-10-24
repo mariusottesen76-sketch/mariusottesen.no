@@ -36,9 +36,11 @@ import { bildeCacheVersion } from './lib/faginnlegg-types';
 import { getFaginnleggLinkedInCta } from './lib/faginnlegg-linkedin-cta';
 import { hasFullEnFaginnleggBody } from './lib/faginnlegg-en-audit';
 import { faginnleggArticlePath } from './lib/faginnlegg-locale-routes';
+import { isObf2026Faginnlegg } from './lib/faginnlegg-obf-display';
 import BokOmslagImage from "./components/bok/BokOmslagImage";
 import VerdisKiftetTitle from "./components/bok/VerdisKiftetTitle";
 import { BookRichText } from "./components/bok/book-rich-text";
+import { VerdisKiftetInText } from "./components/bok/VerdisKiftetInText";
 import LocaleLink from './components/LocaleLink';
 import { ChevronRight } from 'lucide-react';
 
@@ -62,7 +64,6 @@ const kortBildeStil = (innlegg: FaginnleggInnlegg): React.CSSProperties => ({
 /** Felles kortdimensjoner – én regel for alle innlegg */
 const KORT_BILDE_BREDDE = 122;
 const KORT_BILDE_HOYDE = 186;
-const KORT_TITTEL_HOYDE = "2.875rem"; // 2 linjer text-lg leading-tight
 
 const linkClass =
   "text-indigo-400 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400";
@@ -148,7 +149,9 @@ const Faginnlegg = ({ onNavigate: _onNavigate }: { onNavigate?: (tab: string) =>
             <span className="text-indigo-500">{tr("fag.title.2")}</span>
           </h1>
           <div className="w-full min-w-0 max-w-none">
-            <p className={`${pageIntroClass} mb-4`}>{tr("fag.intro.1")}</p>
+            <p className={`${pageIntroClass} mb-4`}>
+              <VerdisKiftetInText text={tr("fag.intro.1")} />
+            </p>
             <p className="text-base md:text-lg text-slate-300 leading-relaxed font-light">
               <a href="#fag-innlegg-oversikt" className={linkClass}>
                 {tr("fag.intro.scroll")}
@@ -429,9 +432,58 @@ const Faginnlegg = ({ onNavigate: _onNavigate }: { onNavigate?: (tab: string) =>
           {tr("fag.kort.seksjon.intro.lead")}
           <span className="whitespace-nowrap">{tr("fag.kort.seksjon.intro.linkedin")}</span>
         </p>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
-        <section aria-labelledby="fag-kort-ledelse-heading" className="flex flex-col w-full min-w-0">
-          <h3 id="fag-kort-ledelse-heading" className={fagKortKolonneOverskriftKlasse}>
+      {/* Desktop: radpar slik at kort i samme rad får lik høyde på tvers av kolonnene */}
+      <div
+        className="hidden lg:grid lg:grid-cols-2 lg:gap-x-12 lg:gap-y-3 lg:items-stretch"
+        aria-label={tr("fag.kort.seksjon.title")}
+      >
+        <h3 id="fag-kort-ledelse-heading" className={`${fagKortKolonneOverskriftKlasse} mb-2`}>
+          {tr("fag.kat.ledelse")}
+        </h3>
+        <h3 id="fag-kort-ai-heading" className={`${fagKortKolonneOverskriftKlasse} mb-2`}>
+          {tr("fag.kat.ai")}
+        </h3>
+        {Math.max(ledelseInnlegg.length, aiInnlegg.length) === 0 ? (
+          <div className="col-span-2 p-12 rounded-2xl border border-slate-800 bg-slate-900/40 italic text-slate-500 text-center font-light">
+            {tr("fag.nye")}
+          </div>
+        ) : (
+          Array.from({ length: Math.max(ledelseInnlegg.length, aiInnlegg.length) }, (_, i) => (
+            <React.Fragment key={i}>
+              <div className="flex min-h-0 min-w-0">
+                {ledelseInnlegg[i] ? (
+                  <InnleggsKort
+                    innlegg={ledelseInnlegg[i]}
+                    lang={lang}
+                    lesLabel={tr("fag.les")}
+                    noOnlyLabel={tr("fag.artikkel.norwegianOnly")}
+                    className="w-full"
+                  />
+                ) : (
+                  <div className="w-full" aria-hidden="true" />
+                )}
+              </div>
+              <div className="flex min-h-0 min-w-0">
+                {aiInnlegg[i] ? (
+                  <InnleggsKort
+                    innlegg={aiInnlegg[i]}
+                    lang={lang}
+                    lesLabel={tr("fag.les")}
+                    noOnlyLabel={tr("fag.artikkel.norwegianOnly")}
+                    className="w-full"
+                  />
+                ) : (
+                  <div className="w-full" aria-hidden="true" />
+                )}
+              </div>
+            </React.Fragment>
+          ))
+        )}
+      </div>
+
+      <div className="grid grid-cols-1 gap-8 lg:hidden">
+        <section aria-labelledby="fag-kort-ledelse-heading-mobile" className="flex flex-col w-full min-w-0">
+          <h3 id="fag-kort-ledelse-heading-mobile" className={fagKortKolonneOverskriftKlasse}>
             {tr("fag.kat.ledelse")}
           </h3>
           <div className="flex flex-col gap-4">
@@ -451,8 +503,8 @@ const Faginnlegg = ({ onNavigate: _onNavigate }: { onNavigate?: (tab: string) =>
           </div>
         </section>
 
-        <section aria-labelledby="fag-kort-ai-heading" className="flex flex-col w-full min-w-0">
-          <h3 id="fag-kort-ai-heading" className={fagKortKolonneOverskriftKlasse}>
+        <section aria-labelledby="fag-kort-ai-heading-mobile" className="flex flex-col w-full min-w-0">
+          <h3 id="fag-kort-ai-heading-mobile" className={fagKortKolonneOverskriftKlasse}>
             {tr("fag.kat.ai")}
           </h3>
           <div className="flex flex-col gap-4">
@@ -483,11 +535,13 @@ const InnleggsKort = ({
   lang,
   lesLabel,
   noOnlyLabel,
+  className = "",
 }: {
   innlegg: FaginnleggInnlegg;
   lang: "no" | "en";
   lesLabel: string;
   noOnlyLabel: string;
+  className?: string;
 }) => {
   const cacheVersion = bildeCacheVersion(innlegg);
   const kortSrc = kortBildeSrc(innlegg);
@@ -499,8 +553,13 @@ const InnleggsKort = ({
         kortSrc.toLowerCase().endsWith(".webm") ||
         kortSrc.toLowerCase().endsWith(".mov"))
   );
+  const kortUndertittel =
+    isObf2026Faginnlegg(innlegg.id) && innlegg.undertittel?.[lang] ? innlegg.undertittel[lang] : null;
+
   return (
-    <article className="group bg-slate-900/40 rounded-2xl border border-indigo-500/20 px-4 pt-3 pb-2.5 hover:bg-slate-900/60 transition-all duration-300 shadow-xl flex flex-row items-start gap-4 w-full text-left">
+    <article
+      className={`group bg-slate-900/40 rounded-2xl border border-indigo-500/20 px-4 pt-2.5 pb-2 hover:bg-slate-900/60 transition-all duration-300 shadow-xl flex flex-row items-start gap-3.5 w-full h-full text-left ${className}`.trim()}
+    >
       <div
         className="relative shrink-0 rounded-lg overflow-hidden bg-slate-900 border border-slate-800"
         style={{ width: KORT_BILDE_BREDDE, height: KORT_BILDE_HOYDE }}
@@ -559,18 +618,26 @@ const InnleggsKort = ({
           )}
         </div>
       </div>
-      <div className="flex-1 min-w-0 flex flex-col min-h-[186px]">
-        <span className="text-[9px] font-mono text-indigo-400 uppercase tracking-widest font-bold block mb-3 leading-none shrink-0">{innlegg.visningsDato}</span>
+      <div className="flex-1 min-w-0 flex flex-col h-full">
+        <div className="flex flex-col gap-1 shrink-0">
+        <span className="text-[9px] font-mono text-indigo-400 uppercase tracking-widest font-bold block leading-none shrink-0">
+          {innlegg.visningsDato}
+        </span>
         <h3
-          className="text-lg font-sans font-bold text-white leading-tight line-clamp-2 overflow-hidden shrink-0 mb-2 group-hover:text-indigo-300 transition-colors [&_em]:italic"
-          style={{ height: KORT_TITTEL_HOYDE }}
+          className="text-lg font-sans font-bold text-white leading-snug line-clamp-2 overflow-hidden shrink-0 group-hover:text-indigo-300 transition-colors [&_em]:italic"
           dangerouslySetInnerHTML={{ __html: formatInnleggTittelHtml(innlegg.tittel[lang]) }}
         />
+        {kortUndertittel ? (
+          <p
+            className="text-[11px] text-indigo-300/90 leading-snug font-medium line-clamp-2 shrink-0 [&_em]:italic"
+            dangerouslySetInnerHTML={{ __html: applyProductNameItalicsPlain(kortUndertittel) }}
+          />
+        ) : null}
         <p
-          className="text-slate-400 text-sm leading-snug font-light mb-2 [&_em]:italic"
+          className="text-slate-400 text-sm leading-snug font-light line-clamp-3 overflow-hidden shrink-0 [&_em]:italic"
           dangerouslySetInnerHTML={{ __html: applyProductNameItalicsPlain(innlegg.teaser[lang]) }}
         />
-        <div className="shrink-0 flex flex-col items-start gap-2 mt-auto pt-2">
+        <div className="shrink-0 flex flex-col items-start gap-1.5 mt-1.5">
           <Link
             href={articleHref}
             className="inline-flex items-center text-[10px] font-black uppercase tracking-widest text-indigo-400 hover:text-indigo-200 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
@@ -584,11 +651,13 @@ const InnleggsKort = ({
             href={innlegg.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 text-xs text-slate-500 hover:text-slate-300 transition-colors leading-snug focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
+            className="inline-flex items-center gap-1 text-xs text-slate-500 hover:text-slate-300 transition-colors leading-snug line-clamp-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
           >
             {getFaginnleggLinkedInCta(innlegg.link, lang)}
           </a>
         </div>
+        </div>
+        <div className="flex-1 min-h-0" aria-hidden="true" />
       </div>
     </article>
   );

@@ -9,6 +9,7 @@ import { getTranslation } from "./data/translations";
 import { getResultaterProofPoints } from "./data/proof-points";
 import { getMocResultaterPunkter, erMocResultatPunktMedUnderpunkter, erMocSelskapsresultater } from "./data/moc-consulting-resultater";
 import { pageEyebrowClass, pageTitleClass, sectionTitleClass, selskapNavnHeroClass } from "./lib/typography";
+import { applyVerdisKiftetHighlightHtml } from "./lib/verdiskiftet-display";
 
 const linkClass =
   "text-indigo-400 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400";
@@ -373,7 +374,7 @@ export default function Resultater() {
                               {mocHtml ? (
                                 <span
                                   className={mocResultatLinkClass}
-                                  dangerouslySetInnerHTML={{ __html: r.tekst }}
+                                  dangerouslySetInnerHTML={{ __html: applyVerdisKiftetHighlightHtml(r.tekst) }}
                                 />
                               ) : (
                                 r.tekst
@@ -389,7 +390,7 @@ export default function Resultater() {
                                   {mocHtml ? (
                                     <span
                                       className={mocResultatLinkClass}
-                                      dangerouslySetInnerHTML={{ __html: u }}
+                                      dangerouslySetInnerHTML={{ __html: applyVerdisKiftetHighlightHtml(u) }}
                                     />
                                   ) : (
                                     u
@@ -406,7 +407,7 @@ export default function Resultater() {
                           {mocHtml && typeof r === "string" ? (
                             <span
                               className={mocResultatLinkClass}
-                              dangerouslySetInnerHTML={{ __html: r }}
+                              dangerouslySetInnerHTML={{ __html: applyVerdisKiftetHighlightHtml(r) }}
                             />
                           ) : (
                             r

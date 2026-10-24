@@ -14,8 +14,8 @@ export const obf2026Dag2: FaginnleggInnlegg = {
     en: "Reflections from day 2 at Oslo Business Forum 2026 – from team performance to Clarity",
   },
   teaser: {
-    no: "Etter dag 2 på OBF 2026: Ståle Solbakken, AI, kundeloyalitet og Seth Godin. Mer kapasitet er ikke det samme som bedre beslutninger – og ledelse blir enda viktigere.",
-    en: "After day 2 at OBF 2026: Ståle Solbakken, AI, customer loyalty and Seth Godin. More capacity is not the same as better decisions – and leadership matters even more.",
+    no: "Etter dag 2 på Oslo Business Forum (OBF) 2026: Ståle Solbakken, AI, kundeloyalitet og Seth Godin. Mer kapasitet er ikke det samme som bedre beslutninger – og ledelse blir enda viktigere.",
+    en: "After day 2 at Oslo Business Forum (OBF) 2026: Ståle Solbakken, AI, customer loyalty and Seth Godin. More capacity is not the same as better decisions – and leadership matters even more.",
   },
   metaDescription: {
     no: "Refleksjoner fra dag 2 på Oslo Business Forum 2026 om dømmekraft, lagprestasjon, AI, kundeopplevelse og overgangen fra The Human Edge til Clarity.",

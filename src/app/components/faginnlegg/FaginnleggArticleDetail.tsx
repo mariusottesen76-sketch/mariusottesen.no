@@ -22,6 +22,9 @@ import { getFaginnleggLinkedInCta } from "../../lib/faginnlegg-linkedin-cta";
 import { blockTitleClass } from "../../lib/typography";
 import LocaleLink from "../LocaleLink";
 import SiteLegalFooter from "../SiteLegalFooter";
+import { VerdisKiftetInText } from "../bok/VerdisKiftetInText";
+import { applyVerdisKiftetHighlightHtml } from "../../lib/verdiskiftet-display";
+import { isObf2026Faginnlegg, obf2026EventContextHtml } from "../../lib/faginnlegg-obf-display";
 
 const linkClass =
   "text-indigo-400 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400";
@@ -197,7 +200,9 @@ function FaginnleggArticleInner({ innlegg }: { innlegg: FaginnleggInnlegg }) {
   const tr = (key: string) => getTranslation(key, lang);
   const cacheVersion = bildeCacheVersion(innlegg);
   const body = resolveFaginnleggBody(innlegg, lang);
-  const bodyHtml = localizeFaginnleggBodyLinks(formatFaginnleggBodyHtml(body), lang);
+  const bodyHtml = applyVerdisKiftetHighlightHtml(
+    localizeFaginnleggBodyLinks(formatFaginnleggBodyHtml(body), lang),
+  );
   const relevantLinks = getRelevantVidereLinks(innlegg.id, innlegg.kategori);
   const hubPath = lang === "en" ? "/en/articles" : "/faginnlegg";
   const enNotAvailable =
@@ -289,6 +294,13 @@ function FaginnleggArticleInner({ innlegg }: { innlegg: FaginnleggInnlegg }) {
         />
       </header>
 
+      {isObf2026Faginnlegg(innlegg.id) ? (
+        <aside
+          className="mb-8 text-sm text-slate-400 leading-relaxed border border-slate-800/80 rounded-xl px-4 py-3 bg-slate-900/30 [&_a]:text-indigo-300 [&_a]:underline [&_a]:underline-offset-2 [&_em]:italic"
+          dangerouslySetInnerHTML={{ __html: obf2026EventContextHtml(lang) }}
+        />
+      ) : null}
+
       {enNotAvailable ? (
         <p className="mb-6 text-sm text-slate-500 border border-slate-800/80 rounded-lg px-4 py-3 bg-slate-900/30">
           {enNotAvailable}
@@ -338,7 +350,7 @@ function FaginnleggArticleInner({ innlegg }: { innlegg: FaginnleggInnlegg }) {
           {relevantLinks.map((item) => (
             <li key={item.href}>
               <Link href={resolveRelevantVidereHref(item.href, lang)} className={`${linkClass} text-sm font-medium`}>
-                {labelForLang(item, lang)} →
+                <VerdisKiftetInText text={`${labelForLang(item, lang)} →`} />
               </Link>
             </li>
           ))}

@@ -14,8 +14,8 @@ export const obf2026Dag1: FaginnleggInnlegg = {
     en: "Reflections from day 1 at Oslo Business Forum 2026 – The Human Edge",
   },
   teaser: {
-    no: "Etter dag 1 på OBF 2026: teknologien blir kraftigere, men mennesker, dømmekraft og ledelse blir ikke mindre viktige. Gary Hamel, transformasjon og AI i praksis.",
-    en: "After day 1 at OBF 2026: technology grows more powerful, but people, judgement and leadership do not become less important. Gary Hamel, transformation and AI in practice.",
+    no: "Etter dag 1 på Oslo Business Forum (OBF) 2026: teknologien blir kraftigere, men mennesker, dømmekraft og ledelse blir ikke mindre viktige. Gary Hamel, transformasjon og AI i praksis.",
+    en: "After day 1 at Oslo Business Forum (OBF) 2026: technology grows more powerful, but people, judgement and leadership do not become less important. Gary Hamel, transformation and AI in practice.",
   },
   metaDescription: {
     no: "Refleksjoner fra dag 1 på Oslo Business Forum 2026 om The Human Edge, Gary Hamel, transformasjon, AI og hva som skal til for at mennesker og organisasjoner lykkes.",

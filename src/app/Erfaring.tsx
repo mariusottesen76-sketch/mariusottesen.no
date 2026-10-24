@@ -8,6 +8,7 @@ import { cvPdfUrl } from "./data/dokumentasjon";
 import { useLanguage } from "./LanguageContext";
 import { getTranslation } from "./data/translations";
 import { blockTitleClass, pageTitleClass, selskapNavnClass } from "./lib/typography";
+import { applyVerdisKiftetHighlightHtml } from "./lib/verdiskiftet-display";
 
 const selskapLogo: Record<string, string | null> = {
   "Marius Ottesen Consulting": "/images/moc.logo.png",
@@ -98,14 +99,14 @@ export default function Erfaring() {
                     <p className="text-white text-[10px] uppercase tracking-widest flex items-center gap-2 font-black mb-2"><Target size={14} className="text-indigo-500"/>{tr("erfaring.mandat")}</p>
                     <p
                       className={`text-slate-300 leading-relaxed ${erfaringTekstLinkClass}`}
-                      dangerouslySetInnerHTML={{ __html: j.mandate }}
+                      dangerouslySetInnerHTML={{ __html: applyVerdisKiftetHighlightHtml(j.mandate) }}
                     />
                   </div>
                   <div>
                     <p className="text-white text-[10px] uppercase tracking-widest flex items-center gap-2 font-black mb-2"><Lightbulb size={14} className="text-indigo-500"/>{tr("erfaring.strategi")}</p>
                     <p
                       className={`text-slate-300 leading-relaxed ${erfaringTekstLinkClass}`}
-                      dangerouslySetInnerHTML={{ __html: j.strategy }}
+                      dangerouslySetInnerHTML={{ __html: applyVerdisKiftetHighlightHtml(j.strategy) }}
                     />
                   </div>
                   <div className="pt-5 border-t border-slate-800/80">
@@ -123,7 +124,7 @@ export default function Erfaring() {
                                 <p className="text-slate-200 font-semibold leading-snug">{item.title}</p>
                                 <p
                                   className={`text-slate-400 leading-relaxed mt-1.5 ${erfaringResultatLinkClass}`}
-                                  dangerouslySetInnerHTML={{ __html: item.body }}
+                                  dangerouslySetInnerHTML={{ __html: applyVerdisKiftetHighlightHtml(item.body) }}
                                 />
                               </div>
                             </li>
@@ -143,7 +144,7 @@ export default function Erfaring() {
                     ) : (
                       <p
                         className={`text-slate-300 leading-relaxed ${erfaringResultatLinkClass}`}
-                        dangerouslySetInnerHTML={{ __html: j.results }}
+                        dangerouslySetInnerHTML={{ __html: applyVerdisKiftetHighlightHtml(j.results) }}
                       />
                     )}
                   </div>

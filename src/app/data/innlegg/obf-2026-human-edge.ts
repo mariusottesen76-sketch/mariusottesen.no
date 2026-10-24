@@ -10,8 +10,8 @@ export const obf2026HumanEdge: FaginnleggInnlegg = {
     en: "Oslo Business Forum 2026 – The Human Edge",
   },
   undertittel: {
-    no: "Kommersiell ledelse, transformasjon og praktisk AI – forventninger før OBF",
-    en: "Commercial leadership, transformation and practical AI – expectations ahead of OBF",
+    no: "Kommersiell ledelse, transformasjon og praktisk AI – forventninger før Oslo Business Forum (OBF) 2026",
+    en: "Commercial leadership, transformation and practical AI – expectations ahead of Oslo Business Forum (OBF) 2026",
   },
   teaser: {
     no: "Oslo Business Forum 2026 starter med temaet The Human Edge. Jeg gleder meg til diskusjoner om AI, verdiskaping, prestasjonskultur og hvordan lederrollen endres.",

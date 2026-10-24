@@ -14,8 +14,8 @@ export const obf2026Oppsummering: FaginnleggInnlegg = {
     en: "Summary after Oslo Business Forum 2026 – The Human Edge",
   },
   teaser: {
-    no: "Et døgn etter OBF 2026: teknologien gjør at vi kan gjøre mer – utfordringen er å forstå hva som faktisk er verdt å gjøre. Dømmekraft, prioritering og mennesker i sentrum.",
-    en: "A day after OBF 2026: technology lets us do more – the challenge is understanding what is actually worth doing. Judgement, prioritisation and people at the centre.",
+    no: "Et døgn etter Oslo Business Forum (OBF) 2026: teknologien gjør at vi kan gjøre mer – utfordringen er å forstå hva som faktisk er verdt å gjøre. Dømmekraft, prioritering og mennesker i sentrum.",
+    en: "A day after Oslo Business Forum (OBF) 2026: technology lets us do more – the challenge is understanding what is actually worth doing. Judgement, prioritisation and people at the centre.",
   },
   metaDescription: {
     no: "Oppsummering etter Oslo Business Forum 2026 om dømmekraft, prioritering, AI, kundeverdi og overgangen fra The Human Edge til Clarity.",

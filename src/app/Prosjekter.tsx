@@ -18,6 +18,8 @@ import ProjectOverviewV2 from "./components/project-v2/ProjectOverviewV2";
 import ProjectCategorySection from "./components/project-v2/ProjectCategorySection";
 import ProjectImageModal from "./components/project-v2/ProjectImageModal";
 import ProjectVideoModal from "./components/project-v2/ProjectVideoModal";
+import VerdisKiftetTitle from "./components/bok/VerdisKiftetTitle";
+import { VerdisKiftetInText } from "./components/bok/VerdisKiftetInText";
 import LocaleLink from "./components/LocaleLink";
 
 function getProsjektBildeHint(prosjekt: ProsjektType, lang: Lang) {
@@ -162,9 +164,9 @@ export default function Prosjekter({ onNavigate: _onNavigate }: { onNavigate?: (
                       {lenke.introSlug === "faginnlegg" ? (
                         <>
                           {" "}
-                          {tr("prosjekter.intro.punkt.faginnlegg.bookPrefix")}{" "}
+                          <VerdisKiftetInText text={`${tr("prosjekter.intro.punkt.faginnlegg.bookPrefix")} `} />
                           <LocaleLink href="/bok" className="text-indigo-400 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors">
-                            {tr("prosjekter.intro.punkt.faginnlegg.bookLink")}
+                            <VerdisKiftetTitle />
                           </LocaleLink>
                           .
                         </>

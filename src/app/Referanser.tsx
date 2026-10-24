@@ -8,6 +8,7 @@ import { referanserData } from "./data/referanser";
 import { useLanguage } from "./LanguageContext";
 import { getTranslation } from "./data/translations";
 import { blockTitleClass, cardSubtitleClass, pageEyebrowClass, pageTitleClass } from "./lib/typography";
+import { VerdisKiftetInText } from "./components/bok/VerdisKiftetInText";
 
 const linkClass =
   "text-indigo-400 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400";
@@ -120,7 +121,11 @@ export default function Referanser() {
                     className={`${linkClass} text-sm font-medium no-underline hover:underline`}
                     aria-label={item.aria}
                   >
-                    {item.label}
+                    {item.href === "/bok" ? (
+                      <VerdisKiftetInText text={item.label} />
+                    ) : (
+                      item.label
+                    )}
                   </LocaleLink>
                 </li>
               ))}

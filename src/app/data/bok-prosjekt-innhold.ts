@@ -1,6 +1,8 @@
 /**
  * Levende innhold for bokprosjektet — oppdater seksjoner her etter hvert som manus og struktur modnes.
  */
+import { VERDIS_KIFTET_HTML } from "../lib/verdiskiftet-display";
+
 export type BokProsjektLang = "no" | "en";
 
 export interface BokProsjektCopy {
@@ -40,12 +42,12 @@ export function getBokResultatPunktHtml(
   faginnleggHref: string,
   faginnleggLinkLabel: string,
 ): string {
-  const bok = link(bokHref, BOK_TITTEL);
+  const bok = `<a href="${bokHref}">${VERDIS_KIFTET_HTML}</a>`;
   const fag = link(faginnleggHref, faginnleggLinkLabel);
   if (lang === "en") {
-    return `A major professional book is nearing completion: ${bok} — in development with a coherent, locked manuscript (17 chapters in seven parts), built on 25+ years of leadership and work experience, 100+ ${fag}, four graduate and project papers, and practical development and AI projects. Editorial quality assurance and book production continue.`;
+    return `A major professional book is nearing completion: ${bok} — in development with a coherent, locked manuscript (17 chapters in seven parts), built on the author’s 25+ years of leadership and work experience, 100+ ${fag}, four graduate and project papers, and practical development and AI projects. Editorial quality assurance and book production continue.`;
   }
-  return `Et større faglig arbeid nærmer seg ferdigstilling: ${bok} – fagbok under utvikling med samlet, faglig låst manus (17 kapitler fordelt på syv deler), bygget på 25+ års leder- og arbeidserfaring, 100+ ${fag}, fire master- og prosjektarbeider og praktiske utviklings- og KI-prosjekter. Redaksjonell kvalitetssikring og bokproduksjon pågår.`;
+  return `Et større faglig arbeid nærmer seg ferdigstilling: ${bok} – fagbok under utvikling med samlet, faglig låst manus (17 kapitler fordelt på syv deler), bygget på forfatterens 25+ års leder- og arbeidserfaring, 100+ ${fag}, fire master- og prosjektarbeider og praktiske utviklings- og KI-prosjekter. Redaksjonell kvalitetssikring og bokproduksjon pågår.`;
 }
 
 /** Foreløpige omslag — filer i public/images (ikke dupliser eller gi nye navn). */
@@ -58,7 +60,7 @@ export const BOK_OMSLAG = {
     },
   },
   bakside: {
-    src: "/images/VerdisKIftet_bakside.jpg",
+    src: "/images/VerdisKIftet_BAKSIDE_24-10-2026.jpg",
     alt: {
       no: "Foreløpig bakomslag til fagboka VerdisKIftet – Fra innsikt til nye fortrinn, av Marius Ottesen.",
       en: "Provisional back cover for the book VerdisKIftet – From insight to new advantages, by Marius Ottesen.",
@@ -91,16 +93,16 @@ export const BOK_PROSJEKT_COPY: Record<BokProsjektLang, BokProsjektCopy> = {
     audienceTitle: "For ledere som skal skape resultater og utvikle virksomheten videre",
     audienceParagraph:
       "Boka henvender seg til ledere og nøkkelpersoner som har ansvar for å skape resultater gjennom mennesker, kunder, beslutninger og arbeidsmåter.\n\nDen er skrevet for dem som skal levere i dag, samtidig som de må utvikle virksomhetens evne til å lykkes i morgen. Det gjelder enten ansvaret omfatter en hel virksomhet, et forretningsområde, et team eller en viktig endringsprosess.\n\nAmbisjonen er å gi leseren nye perspektiver på utfordringer fra egen arbeidshverdag og et bedre grunnlag for å forstå, prioritere, gjennomføre og lære. Boka presenterer ikke én universell oppskrift, men undersøker hva som gjør ulike valg og tiltak relevante i forskjellige situasjoner.",
-    evidenceTitle: "Fra erfaring og forskning til én sammenhengende bok",
+    evidenceTitle: "Fra erfaring og faglig fordypning til én sammenhengende bok",
     evidenceParagraphs: [
-      "Boka bygger på et omfattende faglig grunnlag utviklet gjennom mer enn 25 års leder- og arbeidserfaring, over 100 publiserte faginnlegg og refleksjoner, fire master- og prosjektarbeider, praktiske utviklingsprosjekter og relevant forskning.",
+      "Grunnlaget for boka bygger på forfatterens mer enn 25 års leder- og arbeidserfaring, over 100 publiserte faginnlegg og refleksjoner, fire master- og prosjektarbeider, praktiske utviklingsprosjekter og faglig fordypning.",
       "Gjennom arbeid med blant annet kommersiell ledelse, mennesker, strategi, kunder, gjennomføring og KI har jeg stadig vendt tilbake til spørsmålene om hvorfor noen valg skaper verdi, hvorfor gode initiativer kan stoppe opp, og hvordan virksomheter utvikler evnen til å lære og fornye seg.",
       "Faginnleggene og erfaringene har vært råstoff for bokarbeidet. De er ikke samlet som enkeltstående artikler, men bearbeidet til én fortellende fagbok med et gjennomgående argument og en bevisst leserreise.",
     ],
     authorTitle: "Om forfatteren",
     authorParagraphs: [
       "Marius Ottesen er utdannet siviløkonom og har bred erfaring fra kommersiell ledelse, salg og virksomhetsutvikling på tvers av flere bransjer. Han har arbeidet med strategiske prioriteringer, medarbeiderutvikling, kundearbeid og gjennomføring, og har de senere årene utviklet og prøvd ut KI-løsninger for ulike arbeidsprosesser.",
-      "Han har en Master of Science in Business Administration fra USA, Executive Master of Management fra Handelshøyskolen BI og masterkurset *Generative AI for Business*. I arbeidet sitt kombinerer han praktisk ledererfaring med forskning, læring og interesse for nye måter å utvikle virksomheter på.",
+      "Han har en Master of Science in Business Administration fra USA, Executive Master of Management fra Handelshøyskolen BI og masterkurset *Generative AI for Business*. I arbeidet sitt kombinerer han praktisk ledererfaring med faglig fordypning, læring og interesse for nye måter å utvikle virksomheter på.",
     ],
     statusTitle: "Boka er under utvikling",
     statusParagraphs: [
@@ -134,16 +136,16 @@ export const BOK_PROSJEKT_COPY: Record<BokProsjektLang, BokProsjektCopy> = {
     audienceTitle: "For leaders who must deliver results and develop the organisation",
     audienceParagraph:
       "The book is written for leaders and key people responsible for results through people, customers, decisions and ways of working.\n\nIt is for those who must deliver today while building the organisation’s ability to succeed tomorrow — whether that responsibility covers the whole company, a business area, a team or an important change process.\n\nThe aim is to give readers new perspectives on challenges from their own working life and a stronger basis to understand, prioritise, execute and learn. The book does not offer one universal recipe, but explores what makes different choices and actions relevant in different situations.",
-    evidenceTitle: "From experience and research to one coherent book",
+    evidenceTitle: "From experience and professional depth to one coherent book",
     evidenceParagraphs: [
-      "The book draws on more than 25 years of leadership and work experience, over 100 published articles and reflections, four master’s and project theses, practical development projects and relevant research.",
+      "The foundation for the book builds on the author’s more than 25 years of leadership and work experience, over 100 published articles and reflections, four master’s and project theses, practical development projects and continued professional depth.",
       "Through work in commercial leadership, people, strategy, customers, execution and AI, I have kept returning to why some choices create value, why good initiatives stall, and how organisations develop the ability to learn and renew.",
       "Articles and experience have been raw material for the book. They are not republished as standalone pieces, but shaped into one narrative professional book with a clear argument and reading journey.",
     ],
     authorTitle: "About the author",
     authorParagraphs: [
       "Marius Ottesen is a business graduate with broad experience in commercial leadership, sales and business development across several industries. He has worked with strategic priorities, people development, customer work and execution, and in recent years has developed and tested AI solutions for different work processes.",
-      "He holds a Master of Science in Business Administration from the USA, an Executive Master of Management from BI Norwegian Business School and the master’s course *Generative AI for Business*. In his work he combines practical leadership experience with research, learning and interest in new ways to develop organisations.",
+      "He holds a Master of Science in Business Administration from the USA, an Executive Master of Management from BI Norwegian Business School and the master’s course *Generative AI for Business*. In his work he combines practical leadership experience with study, learning and interest in new ways to develop organisations.",
     ],
     statusTitle: "The book is in development",
     statusParagraphs: [

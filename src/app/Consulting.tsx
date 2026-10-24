@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import LocaleLink from "./components/LocaleLink";
+import VerdisKiftetTitle from "./components/bok/VerdisKiftetTitle";
 import {
   Send,
   ChevronDown,
@@ -524,7 +525,7 @@ export default function Consulting() {
           </LocaleLink>{" "}
           {tr("cons.fagligFordypning.and")}{" "}
           <LocaleLink href="/bok" className={linkClass}>
-            {tr("cons.fagligFordypning.bok")}
+            <VerdisKiftetTitle />
           </LocaleLink>{" "}
           {tr("cons.fagligFordypning.suffix")}
         </p>

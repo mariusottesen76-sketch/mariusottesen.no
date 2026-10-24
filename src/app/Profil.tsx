@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import LocaleLink from "./components/LocaleLink";
 import VerdisKiftetTitle from "./components/bok/VerdisKiftetTitle";
+import { VerdisKiftetInText } from "./components/bok/VerdisKiftetInText";
 import { ArrowRight, Linkedin, Mail, Phone } from "lucide-react";
 import { getProfilData } from "./data/profil";
 import { useLanguage } from "./LanguageContext";
@@ -319,9 +320,11 @@ export default function Profil({ onNavigate }: { onNavigate?: (tab: string) => v
               {tr("profil.bok.titleSuffix")}
             </h2>
             <div className={`${cardClassSubtle} space-y-2.5`}>
-              <p className="text-slate-400 text-sm leading-relaxed">{tr("profil.bok.body")}</p>
+              <p className="text-slate-400 text-sm leading-relaxed">
+                <VerdisKiftetInText text={tr("profil.bok.body")} />
+              </p>
               <LocaleLink href="/bok" className={`${linkClass} text-sm font-medium`} aria-label="Gå til VerdisKIftet">
-                {tr("profil.bok.link")} →
+                <VerdisKiftetInText text={`${tr("profil.bok.link")} →`} />
               </LocaleLink>
             </div>
           </section>
@@ -415,7 +418,11 @@ export default function Profil({ onNavigate }: { onNavigate?: (tab: string) => v
                           className={`${linkClass} text-sm font-medium no-underline hover:underline`}
                           aria-label={item.aria}
                         >
-                          {item.label}
+                          {item.href === "/bok" ? (
+                            <VerdisKiftetInText text={item.label} />
+                          ) : (
+                            item.label
+                          )}
                         </LocaleLink>
                       </li>
                     ))}

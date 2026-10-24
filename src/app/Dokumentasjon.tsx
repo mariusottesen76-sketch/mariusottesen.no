@@ -3,6 +3,8 @@ import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import LocaleLink from "./components/LocaleLink";
+import VerdisKiftetTitle from "./components/bok/VerdisKiftetTitle";
+import { applyVerdisKiftetHighlightHtml } from "./lib/verdiskiftet-display";
 import { FileText, Linkedin, ChevronRight, ArrowDown } from "lucide-react";
 import { getDokumentasjonData, linkedinUrl, cvPdfUrl, soknadPdfUrl } from "./data/dokumentasjon";
 import { getRekruttererVerdiData } from "./data/rekrutterer-verdi";
@@ -263,7 +265,10 @@ export default function Dokumentasjon() {
             </h2>
             <div className="space-y-3 text-slate-300 text-base leading-relaxed">
               {d.aiText.map((avsnitt) => (
-                <p key={avsnitt.slice(0, 40)} dangerouslySetInnerHTML={{ __html: avsnitt }} />
+                <p
+                  key={avsnitt.slice(0, 40)}
+                  dangerouslySetInnerHTML={{ __html: applyVerdisKiftetHighlightHtml(avsnitt) }}
+                />
               ))}
             </div>
             <p>
@@ -278,7 +283,7 @@ export default function Dokumentasjon() {
               </LocaleLink>{" "}
               {tr("dok.fagFordypning.and")}{" "}
               <LocaleLink href="/bok" className={linkClass} aria-label="Gå til bokprosjekt">
-                {tr("dok.fagFordypning.bok")}
+                <VerdisKiftetTitle />
               </LocaleLink>{" "}
               {tr("dok.fagFordypning.outro")}
             </p>

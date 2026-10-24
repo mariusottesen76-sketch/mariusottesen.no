@@ -12,6 +12,7 @@ import {
   resolveProjectRelevantHref,
 } from "../../lib/project-relevant-videre";
 import type { ProjectV2Record } from "../../data/projects-v2/types";
+import { VerdisKiftetInText } from "../bok/VerdisKiftetInText";
 
 const linkClass =
   "text-indigo-400 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400";
@@ -31,7 +32,7 @@ function RelevantLink({ link, lang }: { link: ProjectFagPerspektivLink; lang: La
       className={`${linkClass} text-sm font-medium`}
       {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
     >
-      {t(link.label, lang)}
+      <VerdisKiftetInText text={t(link.label, lang)} />
     </Link>
   );
 }
