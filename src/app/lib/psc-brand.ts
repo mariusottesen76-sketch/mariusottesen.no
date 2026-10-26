@@ -16,7 +16,7 @@ export const PSC_FULL_TITLE = {
 } as const;
 
 /** 1:3 oversiktsbilde på /prosjekter. */
-export const PSC_OVERVIEW_IMAGE = "/images/Row_Project_PredictiveSalesCoach_Detail_MASTER_v1.png";
+export const PSC_OVERVIEW_IMAGE = "/images/psc-vertikal.jpg?v=20261027";
 
 /** Konsekvent modenhetslabel — verktøytype · kundebruk. */
 export const PSC_MATURITY_LABEL = {
