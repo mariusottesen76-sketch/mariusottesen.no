@@ -17,20 +17,20 @@ export const flowsignalV2: ProjectV2Record = {
     en: "FlowSignal v1.0: Profile insight, daily form and collaboration",
   },
   subtitle: {
-    no: "Lukket pilot og tilgangsstyrt arbeidsflate for profilinnsikt, dagsform, samhandling og lederoppfølging",
-    en: "Closed pilot and access-controlled workspace for profile insight, daily form, collaboration and leadership follow-up",
+    no: "Profilinnsikt, dagsform og samhandling i hverdagen — for team og ledere",
+    en: "Profile insight, daily form and collaboration in everyday work — for teams and leaders",
   },
   statusLabel: {
-    no: "Lukket pilot og tilgangsstyrt arbeidsflate for profilinnsikt, dagsform, samhandling og lederoppfølging",
-    en: "Closed pilot and access-controlled workspace for profile insight, daily form, collaboration and leadership follow-up",
+    no: "Lukket pilot · tilgangsstyrt arbeidsflate",
+    en: "Closed pilot · access-controlled workspace",
   },
   maturityLevel: {
     no: "Lukket pilot",
     en: "Closed pilot",
   },
   overviewIntroduction: {
-    no: "FlowSignal er et AI-støttet samhandlings- og utviklingsverktøy for ledere, kommersielle team og organisasjoner som vil gjøre profilinnsikt, dagsform og dialog mer praktisk anvendbart i hverdagen — uten å være et kontroll- eller diagnoseverktøy.",
-    en: "FlowSignal is an AI-supported collaboration and development tool for leaders, commercial teams and organisations that want to make profile insight, daily form and dialogue more practically useful in everyday work — without being a control or diagnostic tool.",
+    no: "Gir team og ledere et praktisk språk for arbeidsstil, dagsform og samhandling — slik at 1:1-samtaler, møter og oppfølging blir mer presise. Ikke et kontroll- eller psykologisk diagnoseverktøy.",
+    en: "Gives teams and leaders practical language for work style, daily form and collaboration — so 1:1 conversations, meetings and follow-up become more precise. Not a control or psychological diagnostic tool.",
   },
   overview: {
     what: {
@@ -42,16 +42,16 @@ export const flowsignalV2: ProjectV2Record = {
       en: "Many teams have access to person profiles and development tools, but struggle to use that insight in meetings, prioritisation, collaboration and demanding dialogues. Profile reports often remain static.",
     },
     built: {
-      no: "Det er utviklet en lukket pilotversjon med profilgrunnlag, Talent Dynamics-inspirert flytrefleksjon, dagsformregistrering, Fyrtårnet, dialogstøtte, trening, refleksjon og anbefalte neste steg.",
-      en: "A closed pilot version has been developed with profile foundation, Talent Dynamics-inspired flow reflection, daily form registration, the Lighthouse, dialogue support, training, reflection and recommended next steps.",
+      no: "Lukket pilot: profilgrunnlag, dagsform (Fyrtårnet), dialogstøtte, refleksjon og trening — tilgang etter avtale.",
+      en: "Closed pilot: profile foundation, daily form (the Lighthouse), dialogue support, reflection and training — access by agreement.",
     },
     how: {
       no: "Brukeren starter med profil og arbeidsstil, registrerer dagsform via Fyrtårnet, og bruker dialogstøtte og refleksjon til 1:1-samtaler, teammøter, onboarding og krevende dialoger.",
       en: "The user starts with profile and work style, registers daily form via the Lighthouse, and uses dialogue support and reflection for 1:1 conversations, team meetings, onboarding and demanding dialogues.",
     },
     relevance: {
-      no: "Prosjektet viser hvordan AI kan støtte lederoppfølging, teamutvikling, rolleforståelse og bedre samhandling — med fokus på mennesker, roller og dagsform fremfor kundedialog.",
-      en: "The project shows how AI can support leadership follow-up, team development, role understanding and better collaboration — with focus on people, roles and daily form rather than customer dialogue.",
+      no: "Aktuelt for ledere som vil styrke samhandling og rolleforståelse i kommersielle eller tverrfaglige team — uten å erstatte HR-prosesser eller kundedialogtrening.",
+      en: "Relevant for leaders who want to strengthen collaboration and role understanding in commercial or cross-functional teams — without replacing HR processes or customer dialogue training.",
     },
     status: {
       no: "Lukket pilot og tilgangsstyrt arbeidsflate for avgrenset testbruk. Enkel flytrefleksjon er foreløpig selvkartlegging, ikke en formell Talent Dynamics-profil.",
@@ -84,8 +84,8 @@ export const flowsignalV2: ProjectV2Record = {
       en: "FlowSignal v1.0 | Marius Ottesen",
     },
     description: {
-      no: "Tilgangsstyrt arbeidsflate for profilinnsikt, dagsform, dialogstøtte, samhandling og lederoppfølging — lukket pilot for team og ledere.",
-      en: "Access-controlled workspace for profile insight, daily form, dialogue support, collaboration and leadership follow-up — closed pilot for teams and leaders.",
+      no: "FlowSignal kobler profilinnsikt, dagsform og dialogstøtte til bedre teamoppfølging — lukket pilot med tilgangskode.",
+      en: "FlowSignal links profile insight, daily form and dialogue support to better team follow-up — closed pilot with access code.",
     },
     ogImage: "/images/flowsignal-hero.png?v=20260719",
     canonicalPath: "/flowsignal",

@@ -63,20 +63,20 @@ export const aiReadinessScanPlatform: StrategicPlatformProject = {
   meta: {
     title: { no: "AI Readiness Scan | Marius Ottesen", en: "AI Readiness Scan | Marius Ottesen" },
     description: {
-      no: "Tilgangsstyrt kartlegging av AI-beredskap og gjennomføringsevne — med prioriterte utviklingsområder og administrativ oppfølging.",
-      en: "Access-controlled mapping of AI readiness and execution capability — with prioritised development areas and administrative follow-up.",
+      no: "Avklar AI-modenhet og prioriteringer før større investeringer — tilgangsstyrt kartlegging med lederrapport.",
+      en: "Clarify AI maturity and priorities before major investments — access-controlled assessment with leadership report.",
     },
     ogImage: "/images/ai-readiness-scan-hero.png?v=20260719",
     canonicalPath: "/ai-readiness-scan",
   },
   teaser: {
     undertittel: {
-      no: "Tilgangsstyrt kartlegging av AI-modenhet, prioriteringer og neste steg",
-      en: "Access-controlled mapping of AI maturity, priorities and next steps",
+      no: "Avklar forutsetninger og prioriteringer før større AI-investeringer",
+      en: "Clarify prerequisites and priorities before major AI investments",
     },
     intro: {
-      no: "AI Readiness Scan er et tilgangsstyrt kartleggingsverktøy for ledere og virksomheter som vil avklare AI-modenhet, prioriteringer og neste steg.",
-      en: "AI Readiness Scan is an access-controlled mapping tool for leaders and organisations that want to clarify AI maturity, priorities and next steps.",
+      no: "For ledere som vil vite om virksomheten er rustet til AI — og hva som bør styrkes før neste store satsing.",
+      en: "For leaders who want to know if the organisation is ready for AI — and what to strengthen before the next major initiative.",
     },
     blokker: {
       utfordring: {
@@ -105,12 +105,12 @@ export const aiReadinessScanPlatform: StrategicPlatformProject = {
     statusBadge: AI_READINESS_SCAN_MATURITY_LABEL,
     hero: {
       verdiforslag: {
-        no: "Strukturert kartlegging av AI-modenhet, prioriteringer og neste steg.",
-        en: "Structured mapping of AI maturity, priorities and next steps.",
+        no: "Felless bilde av AI-forutsetninger — før verktøy, piloter og transformasjon.",
+        en: "Shared picture of AI prerequisites — before tools, pilots and transformation.",
       },
       executiveSummary: {
-        no: "AI Readiness Scan er utviklet for ledere og virksomheter som vil avklare AI-modenhet, prioriteringer og neste steg — fra strategi og kompetanse til data, arbeidsprosesser og ansvarlig bruk.",
-        en: "AI Readiness Scan is built for leaders and organisations that want to clarify AI maturity, priorities and next steps — from strategy and competence to data, work processes and responsible use.",
+        no: "Du får en regelstyrt rapport på tvers av strategi, kompetanse, data, prosesser, styring og verdi — som grunnlag for prioriteringsmøter, ikke som sertifisering eller revisjon.",
+        en: "You receive a rule-based report across strategy, competence, data, processes, governance and value — as a basis for prioritisation meetings, not as certification or audit.",
       },
       bildeAlt: {
         no: "AI Readiness Scan – kartlegging av AI-beredskap og gjennomføringsevne",
@@ -260,14 +260,10 @@ export const aiReadinessScanPlatform: StrategicPlatformProject = {
     avslutning: {
       heading: { no: "Utforsk prosjektet videre", en: "Explore the project further" },
       body: {
-        no: "Ønsker du å avklare AI-beredskap, prioriteringer og neste steg? Ta kontakt med Marius Ottesen Consulting for en uforpliktende samtale om AI Readiness Scan, kartlegging og videre arbeid.",
-        en: "Want to clarify AI readiness, priorities and next steps? Contact Marius Ottesen Consulting for a no-obligation conversation about AI Readiness Scan, assessment and further work.",
+        no: "Med tilgangskode kan du gjennomføre kartleggingen og få en rapport til bruk i ledermøter. Uten kode kan du be om tilgang eller ta kontakt om hvordan verktøyet kan brukes i din virksomhet.",
+        en: "With an access code you can complete the assessment and receive a report for leadership meetings. Without a code you can request access or get in touch about how the tool can be used in your organisation.",
       },
-      showContactPrimary: true,
-      contactPrimaryLabel: {
-        no: "Ta kontakt om AI Readiness Scan",
-        en: "Contact me about AI Readiness Scan",
-      },
+      showContactPrimary: false,
     },
     utvikler,
   },

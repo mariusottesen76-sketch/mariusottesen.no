@@ -16,20 +16,20 @@ export const flowSignalPlatform: StrategicPlatformProject = {
   meta: {
     title: { no: "FlowSignal v1.0 | Marius Ottesen", en: "FlowSignal v1.0 | Marius Ottesen" },
     description: {
-      no: "AI-støttet samhandlings- og utviklingsverktøy for profilinnsikt, dagsform, dialog og praktisk teamutvikling — tilgangsstyrt lukket pilot.",
-      en: "AI-supported collaboration and development tool for profile insight, daily form, dialogue and practical team development — access-controlled closed pilot.",
+      no: "FlowSignal kobler profilinnsikt, dagsform og dialogstøtte til bedre teamoppfølging — lukket pilot med tilgangskode.",
+      en: "FlowSignal links profile insight, daily form and dialogue support to better team follow-up — closed pilot with access code.",
     },
     ogImage: "/images/flowsignal-hero.png?v=20260719",
     canonicalPath: "/flowsignal",
   },
   teaser: {
     undertittel: {
-      no: "Lukket pilot og tilgangsstyrt arbeidsflate for profilinnsikt, dagsform og samhandling",
-      en: "Closed pilot and access-controlled workspace for profile insight, daily form and collaboration",
+      no: "Profilinnsikt, dagsform og samhandling i hverdagen — for team og ledere",
+      en: "Profile insight, daily form and collaboration in everyday work — for teams and leaders",
     },
     intro: {
-      no: "FlowSignal v1.0 er et AI-støttet samhandlings- og utviklingsverktøy for ledere, kommersielle team og organisasjoner som vil gjøre menneskelig innsikt mer praktisk anvendbart i hverdagen.",
-      en: "FlowSignal v1.0 is an AI-supported collaboration and development tool for leaders, commercial teams and organisations that want to make human insight more practically useful in everyday work.",
+      no: "Gir et praktisk språk for arbeidsstil og dagsform i 1:1-samtaler og teammøter — ikke et diagnose- eller kontrollverktøy.",
+      en: "Provides practical language for work style and daily form in 1:1 conversations and team meetings — not a diagnostic or control tool.",
     },
     blokker: {
       utfordring: {
@@ -56,8 +56,8 @@ export const flowSignalPlatform: StrategicPlatformProject = {
   },
   detail: {
     statusBadge: {
-      no: "Lukket pilot og tilgangsstyrt arbeidsflate for profilinnsikt, dagsform og samhandling",
-      en: "Closed pilot and access-controlled workspace for profile insight, daily form and collaboration",
+      no: "Lukket pilot · tilgangsstyrt arbeidsflate",
+      en: "Closed pilot · access-controlled workspace",
     },
     hero: {
       verdiforslag: {
@@ -65,8 +65,8 @@ export const flowSignalPlatform: StrategicPlatformProject = {
         en: "AI-supported collaboration and development with practical insight into people, daily form and dialogue.",
       },
       executiveSummary: {
-        no: "FlowSignal v1.0 er utviklet for ledere, kommersielle team og organisasjoner som vil gjøre profilinnsikt, dagsform og dialog mer praktisk anvendbart i hverdagen — i én tilgangsstyrt arbeidsflate.",
-        en: "FlowSignal v1.0 is built for leaders, commercial teams and organisations that want to make profile insight, daily form and dialogue more practically useful in everyday work — in one access-controlled workspace.",
+        no: "Når profilrapporter ligger i skuffen og utfordringene oppstår i møter, gir FlowSignal støtte til refleksjon, dagsform og samhandling — med human-in-the-loop, ikke automatiske vurderinger av medarbeidere.",
+        en: "When profile reports sit in a drawer and challenges arise in meetings, FlowSignal supports reflection, daily form and collaboration — with human-in-the-loop, not automatic assessments of employees.",
       },
       bildeAlt: {
         no: "FlowSignal v1.0 – profilinnsikt, dagsform og samhandling",
@@ -227,7 +227,7 @@ export const flowSignalPlatform: StrategicPlatformProject = {
         no: "FlowSignal adresserer hvordan team og ledere kan jobbe mer bevisst med dagsform, samhandling og oppfølging. Gjennom Marius Ottesen Consulting kan jeg bistå med ledelse, teamutvikling og praktisk bruk av innsikt i kommersielle og tverrfaglige miljøer.",
         en: "FlowSignal addresses how teams and leaders can work more deliberately with daily form, collaboration and follow-up. Through Marius Ottesen Consulting I can support leadership, team development and practical use of insight in commercial and cross-functional environments.",
       },
-      showContactPrimary: true,
+      showContactPrimary: false,
       contactPrimaryLabel: {
         no: "Ta kontakt om ledelse, teamutvikling og samhandling",
         en: "Contact about leadership, team development and collaboration",

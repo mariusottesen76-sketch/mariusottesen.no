@@ -10,8 +10,8 @@ export const aiTransformationPlatform: StrategicPlatformProject = {
       en: "AI Transformation & Value Realization | Marius Ottesen",
     },
     description: {
-      no: "Executive konseptplattform for prioritering, gjennomføring, scenarioanalyse og dokumentert verdirealisering av AI-initiativer.",
-      en: "Executive concept platform for prioritisation, execution, scenario analysis and documented value realisation of AI initiatives.",
+      no: "Styr AI-initiativer fra idé til prioritering og verdirealisering — lederdemo med portefølje, beslutninger og effektsporing.",
+      en: "Govern AI initiatives from idea to prioritisation and value realisation — leadership demo with portfolio, decisions and impact tracking.",
     },
     ogImage: "/images/ai-transformation-value-realization-hero.png?v=20260721",
     canonicalPath: "/ai-transformation-value-realization",
@@ -22,8 +22,8 @@ export const aiTransformationPlatform: StrategicPlatformProject = {
       en: "Executive concept platform for prioritisation, execution and documented value realisation of AI initiatives",
     },
     intro: {
-      no: "AI Transformation & Value Realization gir ledergrupper en samlet arbeidsflate for å prioritere AI-initiativer, håndtere beslutninger og faseporter, følge gjennomførbarhet og styring, sammenligne scenarioer og dokumentere forventet, godkjent og realisert verdi.",
-      en: "AI Transformation & Value Realization gives leadership teams a unified workspace to prioritise AI initiatives, manage decisions and phase gates, track feasibility and governance, compare scenarios and document expected, approved and realised value.",
+      no: "Hjelper ledergruppen å velge hvilke AI-initiativer som fortjener ressurser — og følge dem fra beslutning til dokumentert effekt. Åpen konseptdemo med fiktive data.",
+      en: "Helps the leadership team choose which AI initiatives deserve resources — and follow them from decision to documented impact. Open concept demo with fictional data.",
     },
     blokker: {
       utfordring: {
@@ -59,8 +59,8 @@ export const aiTransformationPlatform: StrategicPlatformProject = {
         en: "A leadership-oriented concept platform for organisations moving AI from ideas and standalone pilots to prioritised initiatives, controlled execution, new practice and documented business value.",
       },
       executiveSummary: {
-        no: "Plattformen gir ledergrupper et samlet bilde av hvilke AI-initiativer virksomheten har, hva som bør prioriteres nå, hvilke beslutninger og kritiske hindringer som bremser fremdrift, hvem som eier neste steg, og hvordan forventet og godkjent verdi utvikler seg til målt og realisert effekt.",
-        en: "The platform gives leadership teams a consolidated view of which AI initiatives the organisation has, what should be prioritised now, which decisions and critical blockers are slowing progress, who owns the next step, and how expected and approved value develops into measured and realised impact.",
+        no: "Typisk situasjon: mange AI-piloter, uklar prioritering og svak oppfølging av gevinst. Demoen viser hvordan initiativer, beslutninger og verdi kan følges i én lederflate — uten å fremstille seg som ferdig enterprise-styring.",
+        en: "Typical situation: many AI pilots, unclear prioritisation and weak benefit follow-up. The demo shows how initiatives, decisions and value can be tracked in one leadership workspace — without presenting itself as finished enterprise governance.",
       },
       bildeAlt: {
         no: "AI Transformation & Value Realization – horisontalt banner med transformasjonsreisen og verdirealisering med AI",
@@ -353,7 +353,7 @@ export const aiTransformationPlatform: StrategicPlatformProject = {
         no: "Plattformen viser hvordan virksomheter kan gå fra spredte AI-initiativer til tydeligere prioritering, styring og verdirealisering. Gjennom Marius Ottesen Consulting bistår jeg med å vurdere muligheter, modenhet og neste steg — kombinert kommersiell ledererfaring, strategi og praktisk AI-utvikling.",
         en: "The platform shows how organisations can move from scattered AI initiatives to clearer prioritisation, governance and value realisation. Through Marius Ottesen Consulting I help assess opportunities, maturity and next steps — combining commercial leadership experience, strategy and practical AI development.",
       },
-      showContactPrimary: true,
+      showContactPrimary: false,
       contactPrimaryLabel: {
         no: "Ta kontakt om AI-transformasjon og verdirealisering",
         en: "Contact about AI transformation and value realisation",

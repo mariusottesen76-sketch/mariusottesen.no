@@ -23,8 +23,8 @@ export const bilagsassistentPlatform: StrategicPlatformProject = {
       en: "Receipt Assistant | Automated voucher workflow for small businesses | Marius Ottesen",
     },
     description: {
-      no: "Bilagsassistent samler, kontrollerer, registrerer og arkiverer kvitteringer og bilag fra Gmail, vedlegg og synkroniserte mapper.",
-      en: "Receipt Assistant collects, reviews, registers and archives receipts and vouchers from Gmail, attachments and synced folders.",
+      no: "Reduser manuelt bilagsarbeid i små virksomheter — MVP testet i avgrenset bruk, demo etter avtale.",
+      en: "Reduce manual voucher work in small businesses — MVP tested in limited use, demo by agreement.",
     },
     ogImage: BILAGSASSISTENT_HERO_IMAGE,
     canonicalPath: "/bilagsassistent",
@@ -35,8 +35,8 @@ export const bilagsassistentPlatform: StrategicPlatformProject = {
       en: "Automated collection, review and structuring of receipts and vouchers",
     },
     intro: {
-      no: "En Windows-basert arbeidsflate som finner, samler, kontrollerer, registrerer og arkiverer bilag fra Gmail, vedlegg og lokale eller synkroniserte mapper.",
-      en: "A Windows-based workspace that finds, gathers, reviews, registers and archives vouchers from Gmail, attachments and local or synced folders.",
+      no: "Mindre tid på å lete etter kvitteringer — tydelig kontrollkø før bilag registreres og arkiveres.",
+      en: "Less time searching for receipts — a clear review queue before vouchers are registered and archived.",
     },
     blokker: {
       utfordring: {
@@ -69,8 +69,8 @@ export const bilagsassistentPlatform: StrategicPlatformProject = {
         en: "From scattered receipts to a structured document workflow",
       },
       executiveSummary: {
-        no: "En Windows-basert arbeidsflate som finner, samler, kontrollerer, registrerer og arkiverer bilag fra Gmail, vedlegg og lokale eller synkroniserte mapper.",
-        en: "A Windows-based workspace that finds, gathers, reviews, registers and archives vouchers from Gmail, attachments and local or synced folders.",
+        no: "Kvitteringer ligger i innboks, mobil og mapper — Bilagsassistent foreslår bilag, sjekker duplikater og lar deg godkjenne før register og arkiv. Windows-MVP; ikke regnskapssystem.",
+        en: "Receipts sit in inboxes, phones and folders — Receipt Assistant suggests vouchers, checks duplicates and lets you approve before register and archive. Windows MVP; not an accounting system.",
       },
       bildeAlt: {
         no: "Bilagsassistent – automatisert innhenting og strukturering av kvitteringer og bilag",

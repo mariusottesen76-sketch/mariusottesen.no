@@ -33,13 +33,13 @@ export const controlTowerV2: ProjectV2Record = {
     en: "Concept prototype",
   },
   overviewIntroduction: {
-    no: "Control Tower omsetter operative og kommersielle signaler til konsekvens, prioritet, neste beste handling, tydelig ansvar og strukturert effektoppfølging.",
-    en: "Control Tower turns operational and commercial signals into consequence, priority, next best action, clear ownership and structured impact follow-up.",
+    no: "Hjelper ledelsen å se hvilke operative og kommersielle signaler som krever handling nå — med tydelig prioritet, ansvar og oppfølging av effekt, ikke bare flere rapporter.",
+    en: "Helps leadership see which operational and commercial signals require action now — with clear priority, ownership and impact follow-up, not just more reports.",
   },
   overview: {
     what: {
-      no: "En modulær lederplattform som omsetter spredte operative og kommersielle signaler til tydelige prioriteringer, neste beste handling, ansvar og strukturert effektoppfølging.",
-      en: "A modular leadership platform that turns scattered operational and commercial signals into clear priorities, next best action, ownership and structured impact follow-up.",
+      no: "Konseptdemo som viser hvordan signaler kan samles i Operations- og Commercial-moduler, prioriteres og kobles til tiltak med eier — med åpen demo på fiktive data.",
+      en: "Concept demo showing how signals can be gathered in Operations and Commercial modules, prioritised and linked to actions with owners — with an open demo on fictional data.",
     },
     challenge: {
       no: "Mange virksomheter har nok data og rapporter, men mangler tydelig prioritering, eierskap og kobling til konkret handling. Kritiske signaler kan derfor oppdages sent, mens tiltak og effekt blir svakt fulgt opp.",
@@ -58,8 +58,8 @@ export const controlTowerV2: ProjectV2Record = {
       en: "The project shows how operational and commercial leadership information can be turned into next best action, clear ownership and more structured execution.",
     },
     status: {
-      no: "Funksjonell konseptprototype med Operations- og Commercial-modul, transparent regelmotor og fiktive demodata.",
-      en: "Functional concept prototype with Operations and Commercial modules, transparent rules engine and fictional demo data.",
+      no: "Konseptprototype — ikke produksjonssatt kundeløsning. Demo viser logikk og brukerflyt; integrasjoner mot reelle systemer er fremtidig arbeid.",
+      en: "Concept prototype — not a production customer solution. The demo shows logic and user flow; integrations to real systems are future work.",
     },
     development: {
       no: "Videreutvikling kan omfatte produksjonsintegrasjoner, sikker innlogging, permanent historikk, varslinger og mer avansert prediktiv analyse.",
@@ -89,8 +89,8 @@ export const controlTowerV2: ProjectV2Record = {
       en: "Control Tower – Decision & Execution Intelligence | Marius Ottesen",
     },
     description: {
-      no: "Beslutnings- og gjennomføringsplattform som omsetter operative og kommersielle signaler til prioritering, handling, ansvar og effekt.",
-      en: "Decision and execution platform that turns operational and commercial signals into prioritisation, action, ownership and impact.",
+      no: "Konseptdemo: prioriter operative og kommersielle signaler, tiltak og ansvar — åpen demo på fiktive data.",
+      en: "Concept demo: prioritise operational and commercial signals, actions and ownership — open demo on fictional data.",
     },
     ogImage: "/images/control-tower-hjemmeside-bak.png?v=20260720",
     canonicalPath: "/control-tower",

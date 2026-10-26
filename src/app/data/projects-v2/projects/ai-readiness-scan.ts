@@ -17,19 +17,19 @@ export const aiReadinessScanV2: ProjectV2Record = {
     en: "AI Readiness Scan: Mapping AI readiness and execution capability",
   },
   subtitle: {
-    no: "Strukturert kartlegging av AI-modenhet, prioriteringer og neste steg",
-    en: "Structured mapping of AI maturity, priorities and next steps",
+    no: "Avklar forutsetninger og prioriteringer før større AI-investeringer",
+    en: "Clarify prerequisites and priorities before major AI investments",
   },
   statusLabel: AI_READINESS_SCAN_MATURITY_LABEL,
   maturityLevel: AI_READINESS_SCAN_MATURITY_LABEL,
   overviewIntroduction: {
-    no: "AI Readiness Scan er et tilgangsstyrt kartleggingsverktøy med 18 scored spørsmål fordelt på seks dimensjoner — for ledere og virksomheter som vil avklare AI-modenhet, prioriteringer og neste steg.",
-    en: "AI Readiness Scan is an access-controlled mapping tool with 18 scored questions across six dimensions — for leaders and organisations that want to clarify AI maturity, priorities and next steps.",
+    no: "Hjelper ledelsen å vurdere om virksomheten er rustet til AI — og hva som bør styrkes før dere investerer bredt i verktøy, piloter eller transformasjon.",
+    en: "Helps leadership assess whether the organisation is ready for AI — and what to strengthen before investing broadly in tools, pilots or transformation.",
   },
   overview: {
     what: {
-      no: "Et tilgangsstyrt kartleggingsverktøy som gir virksomheter et strukturert bilde av AI-modenhet, prioriterte utviklingsområder og grunnlag for neste steg — ikke en formell sertifisering.",
-      en: "An access-controlled mapping tool that gives organisations a structured picture of AI maturity, prioritised development areas and a basis for next steps — not a formal certification.",
+      no: "Tilgangsstyrt kartlegging som samler svar om strategi, kompetanse, data, prosesser, styring og verdi — og gir en rapport ledelsen kan bruke i prioriteringsmøter.",
+      en: "Access-controlled assessment that gathers answers on strategy, competence, data, processes, governance and value — and produces a report leadership can use in prioritisation meetings.",
     },
     challenge: {
       no: "Mange virksomheter ønsker å ta i bruk AI, men mangler felles bilde av nåsituasjonen og hva som bør komme først. Utfordringen er å skape struktur før man investerer i større initiativer.",
@@ -44,8 +44,8 @@ export const aiReadinessScanV2: ProjectV2Record = {
       en: "The organisation gains access via code or login. The participant answers scored questions, selects improvement areas and receives a rule-based report — analysis is response-driven, not generative AI in real time.",
     },
     relevance: {
-      no: "Prosjektet viser hvordan strukturert kartlegging kan gi bedre prioritering og forberedelse før virksomheten investerer bredt i AI — uten å fremstilles som revisjon eller garanti.",
-      en: "The project shows how structured mapping can provide better prioritisation and preparation before the organisation invests broadly in AI — without being presented as audit or guarantee.",
+      no: "Passer når ledelsen trenger felles bilde av modenhet og vil unngå dyre AI-tiltak uten forankring i data, kompetanse og styring.",
+      en: "Suited when leadership needs a shared maturity picture and wants to avoid costly AI initiatives without grounding in data, competence and governance.",
     },
     status: {
       no: "Tilgangsstyrt kartleggingsverktøy · klar for avgrenset kundebruk. Resultatet er et grunnlag for dialog og prioritering, ikke en autoritativ vurdering av AI-modenhet.",
@@ -74,12 +74,12 @@ export const aiReadinessScanV2: ProjectV2Record = {
   liveSolutionUrl: AI_READINESS_SCAN_APP_URL,
   seo: {
     title: {
-      no: "AI Readiness Scan | Marius Ottesen",
-      en: "AI Readiness Scan | Marius Ottesen",
+      no: "AI Readiness Scan | Kartlegg AI-modenhet før investering | Marius Ottesen",
+      en: "AI Readiness Scan | Map AI readiness before you invest | Marius Ottesen",
     },
     description: {
-      no: "Tilgangsstyrt kartlegging av AI-modenhet, strategi, data, organisasjon og styring — med administrativ oppfølging og grunnlag for prioritering.",
-      en: "Access-controlled mapping of AI maturity, strategy, data, organisation and governance — with administrative follow-up and a basis for prioritisation.",
+      no: "Ledelsesverktøy for å avklare AI-forutsetninger på tvers av strategi, data, kompetanse og styring — med rapport og tilgangskode for avgrenset kundebruk.",
+      en: "Leadership tool to clarify AI prerequisites across strategy, data, competence and governance — with report and access code for limited customer use.",
     },
     ogImage: "/images/ai-readiness-scan-hero.png?v=20260719",
     canonicalPath: "/ai-readiness-scan",

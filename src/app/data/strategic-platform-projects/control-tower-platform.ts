@@ -10,8 +10,8 @@ export const controlTowerPlatform: StrategicPlatformProject = {
       en: "Control Tower – Decision & Execution Intelligence | Marius Ottesen",
     },
     description: {
-      no: "Beslutnings- og gjennomføringsplattform som omsetter operative og kommersielle signaler til prioritering, handling, ansvar og effekt.",
-      en: "Decision and execution platform that turns operational and commercial signals into prioritisation, action, ownership and impact.",
+      no: "Konseptdemo for ledere: prioriter operative og kommersielle signaler, tiltak og ansvar — åpen demo på fiktive data.",
+      en: "Concept demo for leaders: prioritise operational and commercial signals, actions and ownership — open demo on fictional data.",
     },
     ogImage: "/images/control-tower-hjemmeside-bak.png?v=20260720",
     canonicalPath: "/control-tower",
@@ -25,8 +25,8 @@ export const controlTowerPlatform: StrategicPlatformProject = {
       en: "Decision and execution platform for operational and commercial prioritisation",
     },
     intro: {
-      no: "Control Tower omsetter operative og kommersielle signaler til konsekvens, prioritet, neste beste handling, tydelig ansvar og strukturert effektoppfølging.",
-      en: "Control Tower turns operational and commercial signals into consequence, priority, next best action, clear ownership and structured impact follow-up.",
+      no: "Hjelper ledelsen å se hvilke signaler som krever handling nå — med prioritet, ansvar og oppfølging av effekt, ikke bare flere rapporter.",
+      en: "Helps leadership see which signals require action now — with priority, ownership and impact follow-up, not just more reports.",
     },
     blokker: {
       utfordring: {
@@ -58,8 +58,8 @@ export const controlTowerPlatform: StrategicPlatformProject = {
     },
     hero: {
       verdiforslag: {
-        no: "En modulær lederplattform som omsetter spredte operative og kommersielle signaler til tydelige prioriteringer, neste beste handling, ansvar og strukturert effektoppfølging.",
-        en: "A modular leadership platform that turns scattered operational and commercial signals into clear priorities, next best action, ownership and structured impact follow-up.",
+        no: "Fra virksomhetssignal til tydelig prioritet, eier og neste steg",
+        en: "From business signal to clear priority, owner and next step",
       },
       executiveSummary: {
         no: "Control Tower er utviklet for ledere som trenger å forstå hva som krever oppmerksomhet nå, hvorfor det betyr noe, hvem som eier neste steg, og hvordan gjennomførte tiltak skal følges opp.",
@@ -422,7 +422,7 @@ export const controlTowerPlatform: StrategicPlatformProject = {
         no: "Control Tower illustrerer utfordringen med spredte signaler og uklar prioritering på tvers av salg, drift og leveranse. Gjennom Marius Ottesen Consulting kan jeg hjelpe virksomheter å vurdere beslutningsstøtte, kommersiell gjennomføring og praktisk AI — med utgangspunkt i kommersiell ledererfaring og dokumentert arbeid.",
         en: "Control Tower illustrates the challenge of scattered signals and unclear prioritisation across sales, operations and delivery. Through Marius Ottesen Consulting I can help organisations assess decision support, commercial execution and practical AI — drawing on commercial leadership experience and documented work.",
       },
-      showContactPrimary: true,
+      showContactPrimary: false,
       contactPrimaryLabel: {
         no: "Ta kontakt om beslutningsstøtte og kommersiell gjennomføring",
         en: "Contact about decision support and commercial execution",

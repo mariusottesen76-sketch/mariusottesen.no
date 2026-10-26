@@ -45,8 +45,8 @@ export const salgsflytSjekkenV2: ProjectV2Record = {
       en: "Leader report with strengths, improvement areas and prioritised actions — based on 36 core questions and business context.",
     },
     how: {
-      no: "Svar på spørsmål (ca. 10–12 min) → eventuelle korte dypdykk → lederrapport med anbefalinger. Tilgang med kode.",
-      en: "Answer questions (about 10–12 min) → optional short deep dives → leader report with recommendations. Access with code.",
+      no: "Svar på spørsmål → eventuelle korte dypdykk → lederrapport med anbefalinger. Tilgang med kode.",
+      en: "Answer questions → optional short deep dives → leader report with recommendations. Access with code.",
     },
     relevance: {
       no: "Gir klarere prioriteringer og kommersiell lederinnsikt — som grunnlag for forbedring, ikke som ferdig salgsstrategi.",

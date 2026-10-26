@@ -37,8 +37,8 @@ export const aiTransformationV2: ProjectV2Record = {
     en: "Concept prototype",
   },
   overviewIntroduction: {
-    no: "AI Transformation & Value Realization gir ledergrupper en samlet arbeidsflate for å prioritere AI-initiativer, håndtere beslutninger og faseporter, følge gjennomførbarhet og styring, sammenligne scenarioer og dokumentere forventet, godkjent og realisert verdi.",
-    en: "AI Transformation & Value Realization gives leadership teams a unified workspace to prioritise AI initiatives, manage decisions and phase gates, track feasibility and governance, compare scenarios and document expected, approved and realised value.",
+    no: "Hjelper ledergruppen å velge hvilke AI-initiativer som fortjener ressurser, følge dem gjennom beslutninger og faser — og dokumentere forventet versus realisert verdi. Åpen konseptdemo med fiktive data.",
+    en: "Helps the leadership team choose which AI initiatives deserve resources, follow them through decisions and phases — and document expected versus realised value. Open concept demo with fictional data.",
   },
   overview: {
     what: {
@@ -62,8 +62,8 @@ export const aiTransformationV2: ProjectV2Record = {
       en: "The project shows how strategic prioritisation, portfolio management, organisational understanding and practical AI can be connected in one leadership-oriented workspace.",
     },
     status: {
-      no: "Funksjonell konseptprototype med fiktive, sesjonsbaserte demodata.",
-      en: "Functional concept prototype with fictional, session-based demo data.",
+      no: "Konseptdemo — endringer lagres ikke permanent. Viser portefølje-, verdi- og styringslogikk, ikke ferdig enterprise-styring.",
+      en: "Concept demo — changes are not saved permanently. Shows portfolio, value and governance logic, not finished enterprise governance.",
     },
     development: {
       no: "Videreutvikling kan omfatte sikker autentisering, serverbasert organisasjonsisolasjon, permanent datalagring, virksomhetsintegrasjoner og varslinger.",
@@ -93,8 +93,8 @@ export const aiTransformationV2: ProjectV2Record = {
       en: "AI Transformation & Value Realization | Marius Ottesen",
     },
     description: {
-      no: "Executive konseptplattform for prioritering, gjennomføring, scenarioanalyse og dokumentert verdirealisering av AI-initiativer.",
-      en: "Executive concept platform for prioritisation, execution, scenario analysis and documented value realisation of AI initiatives.",
+      no: "Styr AI-initiativer fra idé til prioritering og verdirealisering — lederdemo med fiktive data.",
+      en: "Govern AI initiatives from idea to prioritisation and value realisation — leadership demo with fictional data.",
     },
     ogImage: "/images/ai-transformation-value-realization-hero.png?v=20260721",
     canonicalPath: "/ai-transformation-value-realization",

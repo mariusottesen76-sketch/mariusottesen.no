@@ -20,8 +20,8 @@ export const eventPlannerPlatform: StrategicPlatformProject = {
       en: "Event Planner | AI-assisted event planning | Marius Ottesen",
     },
     description: {
-      no: "Event Planner kombinerer AI-assistert planlegging, samarbeid, Event Readiness, samtaler og økonomistyring i én arbeidsflate — fungerende full-stack prototype i private beta, med skrivebeskyttet demo.",
-      en: "Event Planner combines AI-assisted planning, collaboration, Event Readiness, conversations and financial control in one workspace — working full-stack prototype in private beta, with write-protected demo.",
+      no: "Planlegg arrangementer med felles oversikt over ansvar, oppgaver og budsjett — prøv demo uten innlogging eller be om beta-tilgang.",
+      en: "Plan events with shared visibility of ownership, tasks and budget — try the demo without login or request beta access.",
     },
     ogImage: EVENT_PLANNER_HERO_IMAGE,
     canonicalPath: "/event-planner",
@@ -32,8 +32,8 @@ export const eventPlannerPlatform: StrategicPlatformProject = {
       en: "AI-assisted planning, collaboration and execution of events",
     },
     intro: {
-      no: "Event Planner kombinerer generativ AI med strukturert prosjektlogikk for deltakere, oppgaver, program, samtaler, økonomi, dokumenter og arrangementsklarhet.",
-      en: "Event Planner combines generative AI with structured project logic for participants, tasks, programme, conversations, finance, documents and event readiness.",
+      no: "Samler avtaler, ansvar, oppgaver, program og økonomi for ett arrangement — med AI-forslag som godkjennes før de lagres.",
+      en: "Brings agreements, ownership, tasks, programme and finances for one event together — with AI suggestions approved before they are saved.",
     },
     blokker: {
       utfordring: {
@@ -65,12 +65,12 @@ export const eventPlannerPlatform: StrategicPlatformProject = {
     },
     hero: {
       verdiforslag: {
-        no: "AI-assistert planlegging, samarbeid og gjennomføring av arrangementer",
-        en: "AI-assisted planning, collaboration and execution of events",
+        no: "Én arbeidsflate for hele arrangementet — fra plan til arrangementsklarhet",
+        en: "One workspace for the entire event — from plan to event readiness",
       },
       executiveSummary: {
-        no: "En full-stack arbeidsflate som kobler deltakere, oppgaver, program, samtaler, økonomi og dokumenter — med AI-forslag som må godkjennes før lagring.",
-        en: "A full-stack workspace that connects participants, tasks, programme, conversations, finance and documents — with AI suggestions that must be approved before saving.",
+        no: "Typisk situasjon: avtaler ligger i e-post, oppgaver i regneark og budsjett i hodet på én person. Event Planner samler dette slik at flere arrangører ser hva som mangler og hvem som eier neste steg.",
+        en: "Typical situation: agreements sit in email, tasks in spreadsheets and budget in one person's head. Event Planner brings this together so multiple organisers see what is missing and who owns the next step.",
       },
       bildeAlt: {
         no: "Event Planner – AI-assistert arbeidsflate for planlegging, samarbeid og gjennomføring av arrangementer",
@@ -78,10 +78,10 @@ export const eventPlannerPlatform: StrategicPlatformProject = {
       },
     },
     kortFortalt: {
-      heading: { no: "Hva prosjektet er", en: "What the project is" },
+      heading: { no: "Kort fortalt", en: "In brief" },
       body: {
-        no: "Event Planner er en fungerende AI-assistert full-stack prototype for planlegging og gjennomføring av private og profesjonelle arrangementer. Løsningen samler informasjon, samarbeid og oppfølging i ett system og støtter reisen fra tidlig planlegging til arrangementsdagen.",
-        en: "Event Planner is a working AI-assisted full-stack prototype for planning and execution of private and professional events. The solution brings information, collaboration and follow-up together in one system and supports the journey from early planning through event day.",
+        no: "Private beta for virksomhets- og teamarrangementer, plus skrivebeskyttet demo med fiktive data. Ikke ferdig kommersielt SaaS — men brukt i reell planlegging i utviklingsløpet.",
+        en: "Private beta for business and team events, plus a write-protected demo with fictional data. Not finished commercial SaaS — but used in real planning during development.",
       },
     },
     utfordring: {
@@ -270,7 +270,7 @@ export const eventPlannerPlatform: StrategicPlatformProject = {
         no: "Event Planner viser hvordan arrangementsplanlegging kan kobles til struktur, roller og operativ gjennomføring. Gjennom Marius Ottesen Consulting kan jeg bistå med salg–drift-samspill, arrangementsplanlegging og praktisk digital støtte — inkludert operasjonell ledererfaring der det styrker leveransen.",
         en: "Event Planner shows how event planning can connect to structure, roles and operational execution. Through Marius Ottesen Consulting I can support sales–operations alignment, event planning and practical digital support — including operational leadership experience where it strengthens delivery.",
       },
-      showContactPrimary: true,
+      showContactPrimary: false,
       contactPrimaryLabel: {
         no: "Ta kontakt om arrangementsplanlegging og gjennomføring",
         en: "Contact about event planning and execution",

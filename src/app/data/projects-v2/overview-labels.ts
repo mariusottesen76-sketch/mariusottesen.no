@@ -1,38 +1,38 @@
 import type { LocalizedString } from "./types";
 
-/** Faste overskrifter for de åtte innholdsboksene på /prosjekter — gjelder alle project_v2-prosjekter. */
+/** Felles overskrifter for informasjonsboksene på /prosjekter — kundeorientert, sammenlignbar portefølje. */
 export const OVERVIEW_BOX_LABELS: Record<keyof import("./types").ProjectOverviewContent, LocalizedString> = {
   what: {
-    no: "Hva prosjektet er",
-    en: "What the project is",
+    no: "Hva løsningen gjør",
+    en: "What the solution does",
   },
   challenge: {
     no: "Utfordringen",
     en: "The challenge",
   },
   built: {
-    no: "Hva som er bygget eller utviklet",
-    en: "What has been built or developed",
+    no: "Dette er tilgjengelig",
+    en: "What is available",
   },
   how: {
-    no: "Hvordan løsningen fungerer",
-    en: "How the solution works",
+    no: "Hvordan det brukes",
+    en: "How it is used",
   },
   relevance: {
-    no: "Relevans",
-    en: "Relevance",
+    no: "Verdien for virksomheten",
+    en: "Value for the business",
   },
   status: {
-    no: "Status og modenhet",
-    en: "Status and maturity",
+    no: "Status og anvendelighet",
+    en: "Status and applicability",
   },
   development: {
-    no: "Videreutvikling av løsningen",
-    en: "Further development of the solution",
+    no: "Videre utviklingsmuligheter",
+    en: "Further development potential",
   },
   adaptation: {
-    no: "Tilpasning til funksjoner og bransjer",
-    en: "Adaptation to functions and industries",
+    no: "Tilpasning til virksomheter",
+    en: "Adaptation to organisations",
   },
 };
 

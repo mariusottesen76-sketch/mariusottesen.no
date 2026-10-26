@@ -30,20 +30,20 @@ export const predictiveSalesCoachV2: ProjectV2Record = {
   overviewIntroduction: PSC_SHORT_DESCRIPTION,
   overview: {
     what: {
-      no: "En tilgangsstyrt trenings-, simulerings- og evalueringsplattform for B2B-kundedialog — med scenario-oppsett, kundesimulering, scorecard, DISC-inspirert kommunikasjon og lederinnsikt.",
-      en: "An access-controlled training, simulation and evaluation platform for B2B customer dialogue — with scenario setup, customer simulation, scorecard, DISC-inspired communication and leadership insight.",
+      no: "Treningsflate der selgere øver på realistiske kundescenarioer, får tilbakemelding etter økten og bygger trygghet før møter — med grunnlag for lederoppfølging.",
+      en: "Training workspace where sales reps practise realistic customer scenarios, receive feedback after sessions and build confidence before meetings — with a basis for leadership follow-up.",
     },
     challenge: {
-      no: "Mange selgere trener for lite før viktige kundemøter. Forberedelser blir ofte generelle, kundeinnsikt brukes ujevnt, og salgsledere mangler strukturert innsikt i hvilke ferdigheter teamet faktisk må utvikle.",
-      en: "Many sales reps train too little before important customer meetings. Preparation is often generic, customer insight is used unevenly, and sales leaders lack structured insight into which skills the team actually needs to develop.",
+      no: "Før viktige kundemøter er forberedelsen ofte for generell — og salgsledere ser sent hvilke dialogferdigheter som faktisk svikter i praksis.",
+      en: "Before important customer meetings, preparation is often too generic — and sales leaders see too late which dialogue skills actually fail in practice.",
     },
     built: {
-      no: "Det er utviklet en AI-basert plattform med scenario-oppsett, kundetype, bransje, salgsfase, simulert kundedialog, strukturert evaluering, scorecard, arkiv og grunnlag for lederinnsikt.",
-      en: "An AI-based platform has been developed with scenario setup, customer type, industry, sales phase, simulated customer dialogue, structured evaluation, scorecard, archive and a foundation for leadership insight.",
+      no: "Tilgangsstyrt app: scenario, simulert kundedialog, evaluering etter økt og arkiv — tekstbasert i dagens versjon.",
+      en: "Access-controlled app: scenario, simulated customer dialogue, post-session evaluation and archive — text-based in the current version.",
     },
     how: {
-      no: "Brukeren setter opp et kundescenario, trener på kundedialogen med AI-simulert kunde, og får strukturert feedback på salgsfase, kommunikasjon, verdiargumentasjon og innvendingshåndtering etter økten.",
-      en: "The user sets up a customer scenario, trains on the customer dialogue with an AI-simulated customer, and receives structured feedback on sales phase, communication, value argumentation and objection handling after the session.",
+      no: "Velg scenario og kundetype → dialog med simulert kunde → scorecard og konkrete forbedringspunkter. Tekstbasert i dagens versjon; tilgang med kode.",
+      en: "Choose scenario and customer type → dialogue with simulated customer → scorecard and concrete improvement points. Text-based in the current version; access with code.",
     },
     relevance: {
       no: "Prosjektet viser hvordan AI kan støtte salgstrening, møteforberedelse, onboarding og mer presis coaching før viktige kundemøter — uten å erstatte salgsledelse.",

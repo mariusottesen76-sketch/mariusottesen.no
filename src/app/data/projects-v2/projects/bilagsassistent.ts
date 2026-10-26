@@ -28,8 +28,8 @@ export const bilagsassistentV2: ProjectV2Record = {
   statusLabel: BILAGSASSISTENT_MATURITY_LABEL,
   maturityLevel: BILAGSASSISTENT_MATURITY_LABEL,
   overviewIntroduction: {
-    no: "Bilagsassistent samler kvitteringer og bilag fra Gmail, e-postvedlegg og lokale eller synkroniserte mapper. Løsningen identifiserer mulige bilag, henter ut sentrale opplysninger, håndterer duplikater og sender usikre saker til kontroll før dokumentene registreres og arkiveres.",
-    en: "Receipt Assistant gathers receipts and vouchers from Gmail, email attachments and local or synced folders. The solution identifies possible vouchers, extracts key information, handles duplicates and sends uncertain cases to review before documents are registered and archived.",
+    no: "Reduserer tiden ledere og admin bruker på å finne, kontrollere og arkivere kvitteringer — med tydelig kontrollkø før bilag registreres.",
+    en: "Reduces the time leaders and admins spend finding, reviewing and archiving receipts — with a clear review queue before vouchers are registered.",
   },
   overview: {
     what: {
@@ -41,8 +41,8 @@ export const bilagsassistentV2: ProjectV2Record = {
       en: "Receipts and invoices are often scattered across inboxes, attachments, mobile photos, downloads and supplier portals. That creates time-consuming searching, incomplete documentation and risk of duplicates or forgotten vouchers.",
     },
     built: {
-      no: "Funksjonell MVP med Gmail-tilkobling, bilagssøk, kandidatoversikt, kontrollkø, dokumentuttrekk, kategorisering, duplikatkontroll, standardisert navngivning, virksomhetsvalg, bilagsregister og arkivering.",
-      en: "Functional MVP with Gmail connection, voucher search, candidate overview, review queue, document extraction, categorisation, duplicate control, standardised naming, entity selection, voucher register and archiving.",
+      no: "Pilotklar MVP: innhenting fra e-post og mapper, forslag til bilag, duplikatsjekk, menneskelig godkjenning, register og arkiv — testet i avgrenset reell bruk.",
+      en: "Pilot-ready MVP: collection from email and folders, voucher suggestions, duplicate check, human approval, register and archive — tested in limited real-world use.",
     },
     how: {
       no: "Kilde → mulig bilag → dokumentuttrekk → duplikatkontroll → klassifisering → menneskelig kontroll → registrering → arkivering.",
@@ -82,8 +82,8 @@ export const bilagsassistentV2: ProjectV2Record = {
       en: "Receipt Assistant | Automated voucher workflow for small businesses | Marius Ottesen",
     },
     description: {
-      no: "Bilagsassistent samler, kontrollerer, registrerer og arkiverer kvitteringer og bilag fra Gmail, vedlegg og synkroniserte mapper.",
-      en: "Receipt Assistant collects, reviews, registers and archives receipts and vouchers from Gmail, attachments and synced folders.",
+      no: "Mindre manuelt bilagsarbeid for små virksomheter — innhenting, kontrollkø og arkiv. MVP, demo etter avtale.",
+      en: "Less manual voucher work for small businesses — collection, review queue and archive. MVP, demo by agreement.",
     },
     ogImage: BILAGSASSISTENT_HERO_IMAGE,
     canonicalPath: "/bilagsassistent",

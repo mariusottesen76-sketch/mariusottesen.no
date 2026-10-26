@@ -5,7 +5,8 @@ export const SMB_SALGSFLYT_APP_URL =
 export const SMB_SALGSFLYT_PILOT_PATH = "/salgsflyt-sjekken";
 
 /** 1:3 oversiktsbilde på /prosjekter (vertikal app-forside). */
-export const SMB_SALGSFLYT_OVERVIEW_IMAGE = "/images/smb-salgsflyt-sjekken-hjemmeside-v2.jpg?v=20261027";
+export const SMB_SALGSFLYT_OVERVIEW_IMAGE =
+  "/images/smb-salgsflyt-sjekken-hjemmeside.png?v=20261026m";
 
 /** 3:1 detaljbanner på /salgsflyt-sjekken. */
 export const SMB_SALGSFLYT_HERO_IMAGE = "/images/salgsflyt-sjekken-hero.png?v=20261026";

@@ -28,8 +28,8 @@ export const predictiveSalesCoachPlatform: StrategicPlatformProject = {
     intro: PSC_SHORT_DESCRIPTION,
     blokker: {
       utfordring: {
-        no: "Mange selgere trener for lite før viktige kundemøter. Forberedelser blir ofte generelle, kundeinnsikt brukes ujevnt, og salgsledere mangler strukturert innsikt i hvilke ferdigheter teamet faktisk må utvikle.",
-        en: "Many sales reps train too little before important customer meetings. Preparation is often generic, customer insight is used unevenly, and sales leaders lack structured insight into which skills the team actually needs to develop.",
+        no: "Før viktige kundemøter er forberedelsen ofte for generell — og salgsledere ser sent hvilke dialogferdigheter som svikter i praksis.",
+        en: "Before important customer meetings, preparation is often too generic — and sales leaders see too late which dialogue skills fail in practice.",
       },
       bygget: {
         no: "Det er utviklet en AI-basert plattform med scenario-oppsett, kundetype, bransje, salgsfase, simulert kundedialog, strukturert evaluering, scorecard, arkiv og grunnlag for lederinnsikt.",
@@ -54,8 +54,8 @@ export const predictiveSalesCoachPlatform: StrategicPlatformProject = {
     hero: {
       verdiforslag: PSC_SHORT_DESCRIPTION,
       executiveSummary: {
-        no: "Utviklet for selgere, salgsledere og kommersielle team — som tilgangsstyrt salgsutviklingsverktøy klar for avgrenset kundebruk, ikke som CRM-system, salgsprognoseverktøy eller ferdig kommersielt produkt.",
-        en: "Built for sales reps, sales leaders and commercial teams — as an access-controlled sales development tool ready for limited customer use, not as a CRM system, sales forecasting tool or finished commercial product.",
+        no: "Selgere øver på realistiske kundescenarioer og får tilbakemelding etter økten. Salgsledere får bedre grunnlag for coaching — uten at løsningen erstatter CRM eller pipeline-prognoser.",
+        en: "Sales reps practise realistic customer scenarios and receive feedback after the session. Sales leaders get a better basis for coaching — without the solution replacing CRM or pipeline forecasting.",
       },
       bildeAlt: {
         no: "The Predictive Sales Coach v2.0 – AI-basert salgstrening og møteforberedelse",
@@ -358,7 +358,7 @@ export const predictiveSalesCoachPlatform: StrategicPlatformProject = {
         no: "PSC viser hvordan salgstrening kan kombinere struktur, tilbakemelding og AI-støttet øvelse. Gjennom Marius Ottesen Consulting kan jeg bistå med salgsutvikling, coaching og praktisk bruk av AI i salgsorganisasjoner — rådgivning og videreutvikling etter avtale, ikke ferdig produktsalg.",
         en: "PSC shows how sales training can combine structure, feedback and AI-supported practice. Through Marius Ottesen Consulting I can support sales development, coaching and practical use of AI in sales organisations — advisory work and further development by agreement, not off-the-shelf product sales.",
       },
-      showContactPrimary: true,
+      showContactPrimary: false,
       contactPrimaryLabel: {
         no: "Ta kontakt om salgstrening, coaching og AI",
         en: "Contact about sales training, coaching and AI",

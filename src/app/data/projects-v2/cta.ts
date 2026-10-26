@@ -1,5 +1,10 @@
 import type { LocalizedString, ProjectV2Record } from "./types";
 import {
+  portfolioDetailPrimaryLabel,
+  portfolioOverviewPrimaryLabel,
+  portfolioOverviewSecondaryLabel,
+} from "./portfolio-explore-labels";
+import {
   buildAccessCodeContactHref,
   buildProjectContactHref,
   CONTACT_QUERY_TEMA,
@@ -142,11 +147,20 @@ function externalPlatformAriaLabel(project: ProjectV2Record): LocalizedString {
   };
 }
 
+function openDemoExternalLabel(project: ProjectV2Record): LocalizedString {
+  return (
+    project.ctaLabels?.overviewSecondary ??
+    project.ctaLabels?.detailPrimary ??
+    portfolioDetailPrimaryLabel(project.slug) ??
+    labels.openPlatform
+  );
+}
+
 function openPlatformAction(project: ProjectV2Record): ProjectCtaAction {
   const liveUrl = project.liveSolutionUrl!;
   return {
     href: liveUrl,
-    label: project.ctaLabels?.overviewSecondary ?? project.ctaLabels?.detailPrimary ?? labels.openPlatform,
+    label: openDemoExternalLabel(project),
     external: true,
     ariaLabel: externalPlatformAriaLabel(project),
   };
@@ -160,10 +174,22 @@ function pendingPlatformAction(): ProjectCtaAction {
 }
 
 /** Primær på /prosjekter: alltid detaljside når den finnes (ikke live-løsning). */
-const salgsflytOpenAppLabel: LocalizedString = {
-  no: "Åpne Salgsflyt-sjekken",
-  en: "Open Sales Flow Check",
-};
+const ACCESS_CODE_APP_SLUGS = new Set([
+  "salgsflyt-sjekken",
+  "ai-readiness-scan",
+  "predictive-sales-coach",
+  "flowsignal",
+]);
+
+function accessCodeAppDetailLabel(project: ProjectV2Record): LocalizedString {
+  return (
+    project.ctaLabels?.detailPrimary ??
+    portfolioDetailPrimaryLabel(project.slug) ?? {
+      no: "Åpne løsningen",
+      en: "Open the solution",
+    }
+  );
+}
 
 function primaryOverviewAction(project: ProjectV2Record): ProjectCtaAction {
   if (project.playbackVideo) {
@@ -178,7 +204,10 @@ function primaryOverviewAction(project: ProjectV2Record): ProjectCtaAction {
   const href = project.detailDestination;
   return {
     href,
-    label: project.ctaLabels?.overviewPrimary ?? labels.explore,
+    label:
+      project.ctaLabels?.overviewPrimary ??
+      portfolioOverviewPrimaryLabel(project.slug) ??
+      labels.explore,
     external: isExternalProjectHref(href),
   };
 }
@@ -203,6 +232,27 @@ function secondaryOverviewAction(project: ProjectV2Record): ProjectCtaAction {
   }
 
   const liveUrl = project.liveSolutionUrl;
+
+  const portfolioSecondary = portfolioOverviewSecondaryLabel(project);
+  if (portfolioSecondary) {
+    if (project.slug === "event-planner" && project.liveSolutionUrl) {
+      return {
+        href: project.liveSolutionUrl,
+        label: portfolioSecondary,
+        external: true,
+        ariaLabel: eventPlannerDemoAriaLabel(project),
+      };
+    }
+    const tema =
+      project.accessMode === "access_code"
+        ? CONTACT_QUERY_TEMA.tilgangskode
+        : secondaryContactTema(project);
+    const href =
+      project.accessMode === "access_code"
+        ? buildAccessCodeContactHref(project.slug)
+        : contactHref(tema, project.slug);
+    return { href, label: portfolioSecondary };
+  }
 
   switch (project.accessMode) {
     case "access_code":
@@ -238,7 +288,10 @@ function primaryDetailAction(project: ProjectV2Record): ProjectCtaAction {
     return isPlatformLive(project)
       ? {
           ...openPlatformAction(project),
-          label: project.ctaLabels?.detailPrimary ?? labels.openPlatform,
+          label:
+            project.ctaLabels?.detailPrimary ??
+            portfolioDetailPrimaryLabel(project.slug) ??
+            labels.openPlatform,
         }
       : pendingPlatformAction();
   }
@@ -247,11 +300,19 @@ function primaryDetailAction(project: ProjectV2Record): ProjectCtaAction {
 
   switch (project.accessMode) {
     case "access_code":
-      if (project.slug === "salgsflyt-sjekken" && liveUrl) {
+      if (liveUrl && ACCESS_CODE_APP_SLUGS.has(project.slug)) {
         return {
           href: liveUrl,
-          label: salgsflytOpenAppLabel,
+          label: accessCodeAppDetailLabel(project),
           external: true,
+        };
+      }
+      if (project.slug === "event-planner" && liveUrl) {
+        return {
+          href: liveUrl,
+          label: accessCodeAppDetailLabel(project),
+          external: true,
+          ariaLabel: eventPlannerDemoAriaLabel(project),
         };
       }
       return { href: buildAccessCodeContactHref(project.slug), label: labels.requestAccess };
@@ -260,7 +321,10 @@ function primaryDetailAction(project: ProjectV2Record): ProjectCtaAction {
     case "public":
       return {
         href: liveUrl ?? project.detailDestination,
-        label: project.ctaLabels?.detailPrimary ?? labels.openSolution,
+        label:
+          project.ctaLabels?.detailPrimary ??
+          portfolioDetailPrimaryLabel(project.slug) ??
+          labels.openSolution,
         external: Boolean(liveUrl),
       };
     case "external_destination": {
@@ -278,7 +342,10 @@ function primaryDetailAction(project: ProjectV2Record): ProjectCtaAction {
         project.slug === "ai-value-lab-oslo" ? CONTACT_QUERY_TEMA.samarbeid : CONTACT_QUERY_TEMA.anvendelse;
       return {
         href: contactHref(tema, project.slug),
-        label: project.ctaLabels?.detailPrimary ?? labels.contactApplication,
+        label:
+          project.ctaLabels?.detailPrimary ??
+          portfolioDetailPrimaryLabel(project.slug) ??
+          labels.contactApplication,
       };
     }
   }
@@ -303,7 +370,7 @@ function secondaryDetailAction(project: ProjectV2Record): ProjectCtaAction | und
 
   switch (project.accessMode) {
     case "access_code":
-      if (project.slug === "salgsflyt-sjekken") {
+      if (ACCESS_CODE_APP_SLUGS.has(project.slug) || project.slug === "event-planner") {
         return { href: buildAccessCodeContactHref(project.slug), label: labels.requestAccess };
       }
       return liveUrl

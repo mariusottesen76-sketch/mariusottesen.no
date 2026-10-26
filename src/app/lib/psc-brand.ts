@@ -37,8 +37,8 @@ export const PSC_SEO_TITLE = {
 } as const;
 
 export const PSC_SEO_DESCRIPTION = {
-  no: "AI-basert salgstrening og møteforberedelse for B2B-salg, med realistiske kundesimuleringer, strukturert feedback, scorecard og salgslederinnsikt.",
-  en: "AI-based sales training and meeting preparation for B2B sales, with realistic customer simulations, structured feedback, scorecard and sales leadership insight.",
+  no: "Tren på krevende kundedialoger før møtet — simulert B2B-kunde, tilbakemelding og utviklingspunkter for selger og leder.",
+  en: "Practise demanding customer dialogues before the meeting — simulated B2B customer, feedback and development points for rep and leader.",
 } as const;
 
 export const PSC_CANONICAL_URL = "https://www.mariusottesen.no/psc";
