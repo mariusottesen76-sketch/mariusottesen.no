@@ -77,7 +77,7 @@ export const projectMigrationOverview: ProjectMigrationEntry[] = [
   },
   {
     id: "smb-salgsflyt-sjekken-2026",
-    name: { no: "SMB Salgsflyt-sjekken", en: "SMB Sales Flow Check" },
+    name: { no: "SMB Salgsflyt-sjekken 2.0", en: "SMB Sales Flow Check 2.0" },
     category: "app_prototype",
     layoutVersion: "project_v2",
     existingDetailPage: "/salgsflyt-sjekken",

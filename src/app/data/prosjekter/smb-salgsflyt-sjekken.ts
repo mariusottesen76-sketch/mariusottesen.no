@@ -5,20 +5,20 @@ import { SMB_SALGSFLYT_OVERVIEW_IMAGE } from "../../lib/smb-salgsflyt-brand";
 export const smbSalgsflytSjekken: ProsjektType = {
   id: "smb-salgsflyt-sjekken-2026",
   tittel: {
-    no: "SMB Salgsflyt-sjekken: Interaktiv diagnose og AI-rapportering",
-    en: "SMB Sales Flow Check: Interactive diagnosis and AI reporting",
+    no: "SMB Salgsflyt-sjekken 2.0 – Fra salgsfriksjon til prioriterte tiltak",
+    en: "SMB Sales Flow Check 2.0 – From sales friction to prioritised actions",
   },
   teaser: {
-    no: "Interaktiv diagnose med scoring, AI-analyse, rapportering og administrativ oppfølging — dokumentert på egen prosjektside.",
-    en: "Interactive diagnosis with scoring, AI analysis, reporting and administrative follow-up — documented on a dedicated project page.",
+    no: "Lederorientert diagnose med 12 suksessdimensjoner, 36 spørsmål og prioriterte tiltak for bedre salgsflyt — utviklet av MOC.",
+    en: "Leadership-oriented diagnosis with 12 success dimensions, 36 questions and prioritised actions for better sales flow — developed by MOC.",
   },
   bildeUrl: SMB_SALGSFLYT_OVERVIEW_IMAGE,
   bildeRamme: "natural",
   dato: "2026-05-08",
-  visningsDato: "16.06.26",
+  visningsDato: "26.10.26",
   bildeHint: {
-    no: "Klikk på bildet for å se SMB Salgsflyt-sjekken i større format.",
-    en: "Click the image to view SMB Sales Flow Check in a larger format.",
+    no: "Klikk på bildet for å se SMB Salgsflyt-sjekken 2.0 i større format.",
+    en: "Click the image to view SMB Sales Flow Check 2.0 in a larger format.",
   },
   innhold: { no: "", en: "" },
 };

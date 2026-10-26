@@ -1,4 +1,9 @@
-import { SMB_SALGSFLYT_APP_URL, SMB_SALGSFLYT_MATURITY_LABEL, SMB_SALGSFLYT_OVERVIEW_IMAGE } from "../../../lib/smb-salgsflyt-brand";
+import {
+  SMB_SALGSFLYT_APP_URL,
+  SMB_SALGSFLYT_HERO_IMAGE,
+  SMB_SALGSFLYT_MATURITY_LABEL,
+  SMB_SALGSFLYT_OVERVIEW_IMAGE,
+} from "../../../lib/smb-salgsflyt-brand";
 import type { ProjectV2Record } from "../types";
 import { relevantVidereLinksForSlug } from "../relevant-videre-catalog";
 
@@ -9,64 +14,64 @@ export const salgsflytSjekkenV2: ProjectV2Record = {
   layoutVersion: "project_v2",
   accessMode: "access_code",
   detailLevel: "full",
-  publishedAt: "2026-06-16",
+  publishedAt: "2026-10-26",
   date: "2026-05-08",
-  displayDate: { no: "08.05.26", en: "08.05.26" },
+  displayDate: { no: "26.10.26", en: "26.10.26" },
   title: {
-    no: "SMB Salgsflyt-sjekken: Interaktiv diagnose og AI-rapportering",
-    en: "SMB Sales Flow Check: Interactive diagnosis and AI reporting",
+    no: "SMB Salgsflyt-sjekken 2.0 – Fra salgsfriksjon til prioriterte tiltak",
+    en: "SMB Sales Flow Check 2.0 – From sales friction to prioritised actions",
   },
   subtitle: {
-    no: "Interaktiv diagnose med scoring, AI-analyse, rapportering og administrativ oppfølging",
-    en: "Interactive diagnosis with scoring, AI analysis, reporting and administrative follow-up",
+    no: "Lederorientert diagnose med 12 suksessdimensjoner og 36 spørsmål",
+    en: "Leadership-oriented diagnosis with 12 success dimensions and 36 questions",
   },
   statusLabel: SMB_SALGSFLYT_MATURITY_LABEL,
   maturityLevel: SMB_SALGSFLYT_MATURITY_LABEL,
   overviewIntroduction: {
-    no: "SMB Salgsflyt-sjekken er et interaktivt diagnoseverktøy som kartlegger salgsfriksjon på tvers av ti suksessdimensjoner — med AI-generert analyse, kunderapport og adminkonsoll for oppfølging.",
-    en: "SMB Sales Flow Check is an interactive diagnostic tool that maps sales friction across ten success dimensions — with AI-generated analysis, customer report and admin console for follow-up.",
+    no: "En lederorientert diagnose av hvor virksomheten mister fremdrift og kommersielle muligheter — med 12 suksessdimensjoner, 36 spørsmål og konkrete anbefalinger for bedre salgsflyt.",
+    en: "A leadership-oriented diagnosis of where the organisation loses momentum and commercial opportunity — with 12 success dimensions, 36 questions and concrete recommendations for better sales flow.",
   },
   overview: {
     what: {
-      no: "Et tilgangsstyrt diagnoseverktøy for ledere som avdekker friksjon og flaskehalser i salgsleddet — særlig relevant for SMB, men tilpassbart til andre kommersielle miljøer.",
-      en: "An access-controlled diagnostic tool for leaders that uncovers friction and bottlenecks in the sales function — especially relevant for SMBs, but adaptable to other commercial environments.",
+      no: "Et tilgangsstyrt diagnoseverktøy fra Marius Ottesen Consulting (MOC) som kartlegger friksjon i salgsarbeid, kundedialog, digital kundereise og kundeoppfølging — på tvers av 12 suksessdimensjoner.",
+      en: "An access-controlled diagnostic tool from Marius Ottesen Consulting (MOC) that maps friction in sales work, customer dialogue, digital customer journey and customer follow-up — across 12 success dimensions.",
     },
     challenge: {
-      no: "Mange virksomheter har usynlig friksjon i salgsleddet: ubrukte CRM-systemer, ustrukturerte tilbudsprosesser og svak leadoppfølging. Rotårsaker avdekkes sjelden systematisk.",
-      en: "Many organisations have invisible friction in their sales function: unused CRM systems, unstructured proposal processes and weak lead follow-up. Root causes are rarely uncovered systematically.",
+      no: "Muligheter forsvinner ofte i overgangene mellom synlighet, henvendelse, dialog, tilbud, beslutning og videre kundeutvikling — uten at ledelsen ser hvor verdien lekker ut.",
+      en: "Opportunities are often lost in transitions between visibility, enquiry, dialogue, proposal, decision and further customer development — without leadership seeing where value leaks.",
     },
     built: {
-      no: "Det er utviklet en tilgangsstyrt diagnoseapp med hovedkartlegging, dypdykk i svake områder, automatisk scoring, AI-generert kunderapport og intern salgsvurdering — med adminkonsoll.",
-      en: "An access-controlled diagnostic app has been developed with main assessment, deep dives into weak areas, automatic scoring, AI-generated customer report and internal sales assessment — with admin console.",
+      no: "v2.0 er deployert som tilgangsstyrt diagnose: virksomhetskontekst, 36 atferdsbaserte spørsmål, adaptive dypdykk, strukturert scoring, lederrapport og fortrolig rådgivergrunnlag for MOC.",
+      en: "v2.0 is deployed as an access-controlled diagnosis: business context, 36 behaviour-based questions, adaptive deep dives, structured scoring, leader report and confidential advisor basis for MOC.",
     },
     how: {
-      no: "Respondenten gjennomfører hovedkartlegging og dypdykk, AI tolker scores og fritekst, og kunden får PDF-rapport mens besvarelser samles i adminkonsollet for prioritering og oppfølging.",
-      en: "The respondent completes main assessment and deep dive, AI interprets scores and free text, and the customer receives a PDF report while responses are collected in the admin console for prioritisation and follow-up.",
+      no: "Virksomhetskontekst → 36 kjernespørsmål → eventuelle adaptive dypdykk → samlet scoring og lederrapport med prioriterte tiltak. Estimert tidsbruk ca. 10–12 minutter.",
+      en: "Business context → 36 core questions → optional adaptive deep dives → overall scoring and leader report with prioritised actions. Estimated time about 10–12 minutes.",
     },
     relevance: {
-      no: "Prosjektet viser hvordan AI kan strukturere diagnose og forberede prioritering — og samtidig levere umiddelbar verdi til respondenten gjennom rapport og refleksjon.",
-      en: "The project shows how AI can structure diagnosis and prepare prioritisation — while also delivering immediate value to the respondent through report and reflection.",
+      no: "Gir SMB-ledere klarere prioriteringer og strukturert innsikt i salgsflyt — som grunnlag for forbedring, ikke som ferdig CRM-prosjekt eller salgsstrategi.",
+      en: "Gives SMB leaders clearer priorities and structured insight into sales flow — as a basis for improvement, not as a finished CRM project or sales strategy.",
     },
     status: {
-      no: "Tilgangsstyrt diagnoseverktøy · klar for avgrenset kundebruk. Scoring, AI-analyse og adminkonsoll — hele prosessen tar under ti minutter.",
-      en: "Access-controlled diagnostic tool · ready for limited customer use. Scoring, AI analysis and admin console — the full process takes under ten minutes.",
+      no: SMB_SALGSFLYT_MATURITY_LABEL.no,
+      en: SMB_SALGSFLYT_MATURITY_LABEL.en,
     },
     development: {
-      no: "Videre potensial inkluderer CRM-integrasjon, bransjetilpassede spørsmål, pipeline-styring, oppfølgingslogikk og rapportering for ulike kommersielle team.",
-      en: "Further potential includes CRM integration, industry-adapted questions, pipeline management, follow-up logic and reporting for different commercial teams.",
+      no: "Videre modenhet kan omfatte bransjetilpasning, CRM-koblinger, utvidet rapportering og oppfølging etter gjennomgang — etter avtale med MOC.",
+      en: "Further maturity may include industry adaptation, CRM connections, extended reporting and follow-up after review — by agreement with MOC.",
     },
     adaptation: {
-      no: "Grunnmodellen kan tilpasses andre selskaper, bransjer og salgsmodeller — uten at dette fremstilles som allerede implementert i kundevirksomheter.",
-      en: "The core model can be adapted for other organisations, industries and sales models — without presenting this as already implemented in customer organisations.",
+      no: "Grunnmodellen kan tilpasses andre SMB-er og salgsmodeller etter avtale — blant annet bransjetilpasning og utvidet rapportering.",
+      en: "The core model can be adapted for other SMEs and sales models by agreement — including industry adaptation and extended reporting.",
     },
   },
   overviewImage: SMB_SALGSFLYT_OVERVIEW_IMAGE,
-  detailHeroImage: "/images/salgsflyt-sjekken-hero.png?v=20260720",
+  detailHeroImage: SMB_SALGSFLYT_HERO_IMAGE,
   detailHeroObjectPosition: "center",
   needsNewDetailHero: false,
   altText: {
-    no: "SMB Salgsflyt-sjekken – interaktiv diagnose og AI-rapportering",
-    en: "SMB Sales Flow Check – interactive diagnosis and AI reporting",
+    no: "SMB Salgsflyt-sjekken 2.0 – lederorientert kommersiell diagnose",
+    en: "SMB Sales Flow Check 2.0 – leadership-oriented commercial diagnosis",
   },
   overviewImageFormat: "standard_1x3",
   detailHeroMissing: false,
@@ -74,14 +79,14 @@ export const salgsflytSjekkenV2: ProjectV2Record = {
   liveSolutionUrl: SMB_SALGSFLYT_APP_URL,
   seo: {
     title: {
-      no: "SMB Salgsflyt-sjekken | Diagnoseverktøy – Marius Ottesen",
-      en: "SMB Sales Flow Check | Diagnostic tool – Marius Ottesen",
+      no: "SMB Salgsflyt-sjekken 2.0 | Kommersiell diagnose – Marius Ottesen",
+      en: "SMB Sales Flow Check 2.0 | Commercial diagnosis – Marius Ottesen",
     },
     description: {
-      no: "Se hvordan Marius Ottesen har utviklet SMB Salgsflyt-sjekken for å kartlegge friksjon i CRM, salgsprosesser, leadoppfølging og kundeoppfølging.",
-      en: "See how Marius Ottesen developed SMB Sales Flow Check to map friction in CRM, sales processes, lead follow-up and customer follow-up.",
+      no: "Lederorientert diagnose for SMB: 12 suksessdimensjoner, 36 spørsmål og prioriterte tiltak. Utviklet av Marius Ottesen Consulting (MOC).",
+      en: "Leadership-oriented SMB diagnosis: 12 success dimensions, 36 questions and prioritised actions. Developed by Marius Ottesen Consulting (MOC).",
     },
-    ogImage: "/images/salgsflyt-sjekken-hero.png?v=20260720",
+    ogImage: SMB_SALGSFLYT_HERO_IMAGE,
     canonicalPath: "/salgsflyt-sjekken",
   },
   strategicPlatformSlug: "salgsflyt-sjekken",

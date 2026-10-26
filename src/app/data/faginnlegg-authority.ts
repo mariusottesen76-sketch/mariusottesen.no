@@ -316,7 +316,7 @@ export const FAGINNLEGG_AUTHORITY: Record<string, FaginnleggAuthorityEntry> = {
         en: "Read also: Sales leadership in practice",
       }),
       { href: "/erfaring", label: { no: "Se erfaring", en: "See experience" } },
-      { href: SMB_SALGSFLYT_PILOT_PATH, label: { no: "Se prosjektet: SMB Salgsflyt-sjekken", en: "See project: SMB Sales Flow Check" } },
+      { href: SMB_SALGSFLYT_PILOT_PATH, label: { no: "Se prosjektet: SMB Salgsflyt-sjekken 2.0", en: "See project: SMB Sales Flow Check 2.0" } },
     ],
   },
   "ai-needs-first-tannklinikk-case-01": {

@@ -300,10 +300,10 @@ const translations: Translations = {
     no: "AI-basert salgstrening og møteforberedelse for B2B-salg, med realistiske kundesimuleringer, strukturert feedback og salgslederinnsikt.",
     en: "AI-based sales training and meeting preparation for B2B sales, with realistic customer simulations, structured feedback and sales leadership insight.",
   },
-  "prosjekter.intro.punkt.salgsflyt.label": { no: "SMB Salgsflyt-sjekken", en: "SMB Sales Flow Check" },
+  "prosjekter.intro.punkt.salgsflyt.label": { no: "SMB Salgsflyt-sjekken 2.0", en: "SMB Sales Flow Check 2.0" },
   "prosjekter.intro.punkt.salgsflyt.desc": {
-    no: "Interaktiv SMB-diagnose med AI-rapportering, strukturert innsikt og oppfølgingslogikk",
-    en: "Interactive SMB diagnosis with AI reporting, structured insight and follow-up logic",
+    no: "Lederorientert diagnose med 12 suksessdimensjoner, 36 spørsmål og prioriterte tiltak for bedre salgsflyt",
+    en: "Leadership-oriented diagnosis with 12 success dimensions, 36 questions and prioritised actions for better sales flow",
   },
   "prosjekter.intro.punkt.event-planner.label": { no: "Event Planner", en: "Event Planner" },
   "prosjekter.intro.punkt.event-planner.desc": {

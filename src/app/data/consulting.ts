@@ -57,14 +57,14 @@ const flowSignalDemonstratorStotte: Record<Lang, PakkePilotStotte> = {
 
 const salgsflytDemonstratorStotte: Record<Lang, PakkePilotStotte> = {
   no: {
-    tekst: "Prosjektet viser hvordan salgsmodenhet, friksjon og prioriteringer kan kartlegges strukturert.",
+    tekst: "SMB Salgsflyt-sjekken 2.0 kartlegger friksjon og prioriteringer på tvers av 12 suksessdimensjoner — lederorientert diagnose fra MOC.",
     lenkeHref: SMB_SALGSFLYT_PILOT_PATH,
-    lenkeLabel: "Se SMB Salgsflyt-sjekken",
+    lenkeLabel: "Se SMB Salgsflyt-sjekken 2.0",
   },
   en: {
-    tekst: "The project shows how sales maturity, friction and priorities can be mapped in a structured way.",
+    tekst: "SMB Sales Flow Check 2.0 maps friction and priorities across 12 success dimensions — leadership-oriented diagnosis from MOC.",
     lenkeHref: SMB_SALGSFLYT_PILOT_PATH,
-    lenkeLabel: "See SMB Sales Flow Check",
+    lenkeLabel: "See SMB Sales Flow Check 2.0",
   },
 };
 
@@ -446,8 +446,8 @@ const metoder: Record<Lang, MetodeKomponent[]> = {
       pilotStotte: prosjektLenke(EVENT_PLANNER_PILOT_PATH).no,
     },
     {
-      tittel: "SMB Salgsflyt-sjekken",
-      beskrivelse: "Interaktiv demonstrator for strukturert innsikt i salgsmodenhet",
+      tittel: "SMB Salgsflyt-sjekken 2.0",
+      beskrivelse: "Lederorientert diagnose med 12 suksessdimensjoner, prioritert salgsflyt og kundeoppfølging (MOC)",
       pilotStotte: prosjektLenke(SMB_SALGSFLYT_PILOT_PATH).no,
     },
     {
@@ -496,8 +496,8 @@ const metoder: Record<Lang, MetodeKomponent[]> = {
       pilotStotte: prosjektLenke(EVENT_PLANNER_PILOT_PATH).en,
     },
     {
-      tittel: "SMB Sales Flow Check",
-      beskrivelse: "Interactive demonstrator for structured insight into sales maturity",
+      tittel: "SMB Sales Flow Check 2.0",
+      beskrivelse: "Leadership-oriented diagnosis with 12 success dimensions, prioritised sales flow and follow-up (MOC)",
       pilotStotte: prosjektLenke(SMB_SALGSFLYT_PILOT_PATH).en,
     },
     {

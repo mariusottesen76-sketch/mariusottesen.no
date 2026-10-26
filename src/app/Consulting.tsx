@@ -121,7 +121,7 @@ const produktLenker = [
   { label: "The Predictive Sales Coach", href: "/psc" },
   { label: "FlowSignal", href: "/flowsignal" },
   { label: "Event Planner", href: "/event-planner" },
-  { label: "SMB Salgsflyt-sjekken", href: "/salgsflyt-sjekken" },
+  { label: "SMB Salgsflyt-sjekken 2.0", href: "/salgsflyt-sjekken" },
   { label: "AI Readiness Scan", href: "/ai-readiness-scan" },
   { label: "Bilagsassistent", href: "/bilagsassistent" },
 ] as const;

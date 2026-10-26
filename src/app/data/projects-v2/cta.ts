@@ -242,6 +242,13 @@ function primaryDetailAction(project: ProjectV2Record): ProjectCtaAction {
 
   switch (project.accessMode) {
     case "access_code":
+      if (project.slug === "salgsflyt-sjekken" && liveUrl) {
+        return {
+          href: liveUrl,
+          label: { no: "Åpne pilotversjonen", en: "Open pilot version" },
+          external: true,
+        };
+      }
       return { href: buildAccessCodeContactHref(project.slug), label: labels.requestAccess };
     case "closed_demo":
       return { href: contactHref(CONTACT_QUERY_TEMA.demonstrasjon, project.slug), label: labels.contactDemo };
@@ -291,6 +298,9 @@ function secondaryDetailAction(project: ProjectV2Record): ProjectCtaAction | und
 
   switch (project.accessMode) {
     case "access_code":
+      if (project.slug === "salgsflyt-sjekken") {
+        return { href: buildAccessCodeContactHref(project.slug), label: labels.requestAccess };
+      }
       return liveUrl
         ? { href: liveUrl, label: labels.openAccessControlled, external: true }
         : undefined;
@@ -323,9 +333,15 @@ function tertiaryDetailAction(project: ProjectV2Record): ProjectCtaAction | unde
   return undefined;
 }
 
+const salgsflytPilotNote: LocalizedString = {
+  no: "Tilgangsstyrt diagnoseverktøy · klar for avgrenset kundebruk etter avtale og tildelt tilgangskode. v2.0 kjører i eget Cloud Run-miljø. Eies av Marius Ottesen Consulting (MOC). Ingen tilgangskoder publiseres her.",
+  en: "Access-controlled diagnostic tool · ready for limited customer use by agreement and assigned access code. v2.0 runs in a dedicated Cloud Run environment. Owned by Marius Ottesen Consulting (MOC). No access codes are published here.",
+};
+
 function overviewNote(project: ProjectV2Record): LocalizedString | undefined {
   if (isEventPlannerWithDemo(project)) return eventPlannerDemoNote;
   if (isOpenDemoPlatform(project)) return openDemoNote;
+  if (project.slug === "salgsflyt-sjekken") return salgsflytPilotNote;
   if (project.accessMode === "access_code") return accessCodeNote;
   if (project.category === "professional_initiative" || project.category === "video_communication") {
     return undefined;

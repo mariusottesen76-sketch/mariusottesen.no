@@ -54,12 +54,12 @@ const flowSignalBlokk = {
 
 const smbSalgsflytBlokk = {
   tekst: {
-    no: `Status og modenhet: ${SMB_SALGSFLYT_MATURITY_LABEL.no}.`,
-    en: `Status and maturity: ${SMB_SALGSFLYT_MATURITY_LABEL.en}.`,
+    no: `${SMB_SALGSFLYT_MATURITY_LABEL.no}. Eier: Marius Ottesen Consulting (MOC). v2.0 på egen Cloud Run-adresse — tilgang etter avtale.`,
+    en: `${SMB_SALGSFLYT_MATURITY_LABEL.en}. Owner: Marius Ottesen Consulting (MOC). v2.0 on a dedicated Cloud Run URL — access by agreement.`,
   },
   pilotHref: "/salgsflyt-sjekken",
-  pilotCta: { no: "Se hvordan løsningen fungerer", en: "See how the solution works" },
-  appCta: { no: "Åpne lukket testflate", en: "Open closed test environment" },
+  pilotCta: { no: "Les om SMB Salgsflyt-sjekken 2.0", en: "About SMB Sales Flow Check 2.0" },
+  appCta: { no: "Åpne pilotversjonen", en: "Open pilot version" },
   tilgangNote: {
     no: `${tilgangIntro.no} ${kontaktDialog.no}`,
     en: `${tilgangIntro.en} ${kontaktDialog.en}`,

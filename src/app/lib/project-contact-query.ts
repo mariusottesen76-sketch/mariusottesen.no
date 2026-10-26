@@ -69,8 +69,8 @@ export const PROJECT_SLUG_DISPLAY: Record<string, { no: string; en: string }> = 
     en: "AI Readiness Scan",
   },
   "salgsflyt-sjekken": {
-    no: "SMB Salgsflyt-sjekken",
-    en: "SMB Sales Flow Check",
+    no: "SMB Salgsflyt-sjekken 2.0",
+    en: "SMB Sales Flow Check 2.0",
   },
   "event-planner": {
     no: "Event Planner",

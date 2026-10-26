@@ -24,8 +24,8 @@ export const TIDLIG_KONTAKT_BODY_BY_SLUG: Partial<Record<StrategicPlatformSlug, 
     en: "Before major AI investments many organisations need clarity on maturity and priorities. MOC can help with assessment and next steps.",
   },
   "salgsflyt-sjekken": {
-    no: "Friksjon i salgsprosessen koster ofte kommersiell effekt. MOC kan bistå med Salgsflyt-sjekken, salgsutvikling og forbedringstiltak.",
-    en: "Friction in the sales process often costs commercial impact. MOC can support the Sales Flow Check, sales development and improvement measures.",
+    no: "Når salgsflyt og kundeoppfølging henger dårlig sammen, trenger ledelsen ofte tydeligere prioriteringer. MOC tilbyr SMB Salgsflyt-sjekken 2.0, salgsutvikling og forbedringstiltak.",
+    en: "When sales flow and customer follow-up do not connect well, leadership often needs clearer priorities. MOC offers SMB Sales Flow Check 2.0, sales development and improvement measures.",
   },
   "strategisk-ai-implementering": {
     no: "Fra AI-mulighet til gjennomførbar plan krever struktur og governance. MOC bistår med strategisk AI-implementering etter avtale.",

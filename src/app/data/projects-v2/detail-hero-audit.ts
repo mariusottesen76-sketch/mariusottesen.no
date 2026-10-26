@@ -67,7 +67,7 @@ export const detailHeroAudit: DetailHeroAuditEntry[] = [
   {
     route: "/salgsflyt-sjekken",
     projectId: "smb-salgsflyt-sjekken-2026",
-    heroImage: "/images/salgsflyt-sjekken-hero.png?v=20260720",
+    heroImage: "/images/salgsflyt-sjekken-hero.png?v=20261026",
     aspectNote: "Horisontalt banner — 3:1 landscape for detaljside",
     objectPosition: "center",
     fit: "cover",
