@@ -156,15 +156,15 @@ export type StrategicPlatformDetail = {
   datagrunnlag?: { heading: LocalizedString; body: LocalizedString };
   /** Ekstra seksjoner mellom logikk og datagrunnlag — kun der definert. */
   contentSections?: StrategicPlatformContentSection[];
-  bygget: { heading: LocalizedString; body?: LocalizedString; items: LocalizedString[] };
-  moduler: { heading: LocalizedString; intro?: LocalizedString; modules: StrategicPlatformModule[] };
+  bygget?: { heading: LocalizedString; body?: LocalizedString; items: LocalizedString[] };
+  moduler?: { heading: LocalizedString; intro?: LocalizedString; modules: StrategicPlatformModule[] };
   hvordan: {
     heading: LocalizedString;
     intro?: LocalizedString;
     steps?: StrategicPlatformStep[];
     detaljpunkter?: LocalizedString[];
   };
-  relevans: {
+  relevans?: {
     heading: LocalizedString;
     body?: LocalizedString;
     sections?: StrategicPlatformRelevansSection[];
@@ -177,8 +177,10 @@ export type StrategicPlatformDetail = {
   demoPortfolio?: StrategicPlatformDemoPortfolio;
   /** Illustrative styringscenarioer — kun på utvalgte plattformdetaljsider. */
   governanceScenarios?: StrategicPlatformGovernanceScenarios;
-  status: { heading: LocalizedString; body: LocalizedString };
-  skalerbarhet: StrategicPlatformScalability & { heading: LocalizedString };
+  status?: { heading: LocalizedString; body: LocalizedString };
+  skalerbarhet?: StrategicPlatformScalability & { heading: LocalizedString };
+  /** Diskret metodepresisering nær bunnen — uten egen seksjonstittel. */
+  methodDisclaimer?: LocalizedString;
   /** Kompakt FAQ — semantisk details/summary, fullt lesbar uten JS. */
   faq?: { heading: LocalizedString; items: StrategicPlatformFaqItem[] };
   avslutning: {

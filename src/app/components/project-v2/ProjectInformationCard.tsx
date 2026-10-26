@@ -12,6 +12,9 @@ type ProjectInformationCardProps = {
 };
 
 export default function ProjectInformationCard({ label, text, lang, needsReview }: ProjectInformationCardProps) {
+  const body = t(text, lang).trim();
+  if (!body) return null;
+
   return (
     <div className="p-3 bg-slate-950/40 rounded-lg border border-slate-800/80 min-w-0 h-full flex flex-col">
       <h3 className="text-[10px] font-black uppercase tracking-widest text-indigo-400 mb-1.5">
@@ -22,7 +25,7 @@ export default function ProjectInformationCard({ label, text, lang, needsReview 
           </span>
         )}
       </h3>
-      <p className="text-sm text-slate-400 font-light leading-relaxed flex-1">{t(text, lang)}</p>
+      <p className="text-sm text-slate-400 font-light leading-relaxed flex-1">{body}</p>
     </div>
   );
 }

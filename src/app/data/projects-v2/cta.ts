@@ -160,6 +160,11 @@ function pendingPlatformAction(): ProjectCtaAction {
 }
 
 /** Primær på /prosjekter: alltid detaljside når den finnes (ikke live-løsning). */
+const salgsflytOpenAppLabel: LocalizedString = {
+  no: "Åpne Salgsflyt-sjekken",
+  en: "Open Sales Flow Check",
+};
+
 function primaryOverviewAction(project: ProjectV2Record): ProjectCtaAction {
   if (project.playbackVideo) {
     return {
@@ -245,7 +250,7 @@ function primaryDetailAction(project: ProjectV2Record): ProjectCtaAction {
       if (project.slug === "salgsflyt-sjekken" && liveUrl) {
         return {
           href: liveUrl,
-          label: { no: "Åpne pilotversjonen", en: "Open pilot version" },
+          label: salgsflytOpenAppLabel,
           external: true,
         };
       }
@@ -334,8 +339,8 @@ function tertiaryDetailAction(project: ProjectV2Record): ProjectCtaAction | unde
 }
 
 const salgsflytPilotNote: LocalizedString = {
-  no: "Tilgangsstyrt diagnoseverktøy · klar for avgrenset kundebruk etter avtale og tildelt tilgangskode. v2.0 kjører i eget Cloud Run-miljø. Eies av Marius Ottesen Consulting (MOC). Ingen tilgangskoder publiseres her.",
-  en: "Access-controlled diagnostic tool · ready for limited customer use by agreement and assigned access code. v2.0 runs in a dedicated Cloud Run environment. Owned by Marius Ottesen Consulting (MOC). No access codes are published here.",
+  no: "Tilgangsstyrt diagnoseverktøy · klar for avgrenset kundebruk etter avtale. Be om tilgangskode dersom du ikke har kode ennå. Utviklet av Marius Ottesen Consulting (MOC).",
+  en: "Access-controlled diagnostic tool · ready for limited customer use by agreement. Request an access code if you do not have one yet. Developed by Marius Ottesen Consulting (MOC).",
 };
 
 function overviewNote(project: ProjectV2Record): LocalizedString | undefined {

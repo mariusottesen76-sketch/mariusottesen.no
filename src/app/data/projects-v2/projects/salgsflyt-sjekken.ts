@@ -28,41 +28,41 @@ export const salgsflytSjekkenV2: ProjectV2Record = {
   statusLabel: SMB_SALGSFLYT_MATURITY_LABEL,
   maturityLevel: SMB_SALGSFLYT_MATURITY_LABEL,
   overviewIntroduction: {
-    no: "En lederorientert diagnose av hvor virksomheten mister fremdrift og kommersielle muligheter — med 12 suksessdimensjoner, 36 spørsmål og konkrete anbefalinger for bedre salgsflyt.",
-    en: "A leadership-oriented diagnosis of where the organisation loses momentum and commercial opportunity — with 12 success dimensions, 36 questions and concrete recommendations for better sales flow.",
+    no: "Finn ut hvor salgsarbeidet lekker verdi — og hva ledelsen bør prioritere først. Ca. 10–12 minutter til en lederrapport med konkrete anbefalinger.",
+    en: "Find where sales work leaks value — and what leadership should prioritise first. About 10–12 minutes to a leader report with concrete recommendations.",
   },
   overview: {
     what: {
-      no: "Et tilgangsstyrt diagnoseverktøy fra Marius Ottesen Consulting (MOC) som kartlegger friksjon i salgsarbeid, kundedialog, digital kundereise og kundeoppfølging — på tvers av 12 suksessdimensjoner.",
-      en: "An access-controlled diagnostic tool from Marius Ottesen Consulting (MOC) that maps friction in sales work, customer dialogue, digital customer journey and customer follow-up — across 12 success dimensions.",
+      no: "En tilgangsstyrt diagnose for SMB-ledere som kartlegger friksjon og forbedringsmuligheter i salgsflyt, kundedialog og kundeoppfølging — på tvers av 12 suksessdimensjoner.",
+      en: "An access-controlled diagnosis for SMB leaders that maps friction and improvement opportunities in sales flow, customer dialogue and follow-up — across 12 success dimensions.",
     },
     challenge: {
-      no: "Muligheter forsvinner ofte i overgangene mellom synlighet, henvendelse, dialog, tilbud, beslutning og videre kundeutvikling — uten at ledelsen ser hvor verdien lekker ut.",
-      en: "Opportunities are often lost in transitions between visibility, enquiry, dialogue, proposal, decision and further customer development — without leadership seeing where value leaks.",
+      no: "Muligheter forsvinner ofte mellom synlighet, dialog, tilbud og videre kundeoppfølging — uten at ledelsen ser det tydelig nok.",
+      en: "Opportunities are often lost between visibility, dialogue, proposals and follow-up — without leadership seeing it clearly enough.",
     },
     built: {
-      no: "v2.0 er deployert som tilgangsstyrt diagnose: virksomhetskontekst, 36 atferdsbaserte spørsmål, adaptive dypdykk, strukturert scoring, lederrapport og fortrolig rådgivergrunnlag for MOC.",
-      en: "v2.0 is deployed as an access-controlled diagnosis: business context, 36 behaviour-based questions, adaptive deep dives, structured scoring, leader report and confidential advisor basis for MOC.",
+      no: "Lederrapport med styrker, forbedringsområder og prioriterte tiltak — basert på 36 kjernespørsmål og virksomhetskontekst.",
+      en: "Leader report with strengths, improvement areas and prioritised actions — based on 36 core questions and business context.",
     },
     how: {
-      no: "Virksomhetskontekst → 36 kjernespørsmål → eventuelle adaptive dypdykk → samlet scoring og lederrapport med prioriterte tiltak. Estimert tidsbruk ca. 10–12 minutter.",
-      en: "Business context → 36 core questions → optional adaptive deep dives → overall scoring and leader report with prioritised actions. Estimated time about 10–12 minutes.",
+      no: "Svar på spørsmål (ca. 10–12 min) → eventuelle korte dypdykk → lederrapport med anbefalinger. Tilgang med kode.",
+      en: "Answer questions (about 10–12 min) → optional short deep dives → leader report with recommendations. Access with code.",
     },
     relevance: {
-      no: "Gir SMB-ledere klarere prioriteringer og strukturert innsikt i salgsflyt — som grunnlag for forbedring, ikke som ferdig CRM-prosjekt eller salgsstrategi.",
-      en: "Gives SMB leaders clearer priorities and structured insight into sales flow — as a basis for improvement, not as a finished CRM project or sales strategy.",
+      no: "Gir klarere prioriteringer og kommersiell lederinnsikt — som grunnlag for forbedring, ikke som ferdig salgsstrategi.",
+      en: "Gives clearer priorities and commercial leadership insight — as a basis for improvement, not as a finished sales strategy.",
     },
     status: {
       no: SMB_SALGSFLYT_MATURITY_LABEL.no,
       en: SMB_SALGSFLYT_MATURITY_LABEL.en,
     },
     development: {
-      no: "Videre modenhet kan omfatte bransjetilpasning, CRM-koblinger, utvidet rapportering og oppfølging etter gjennomgang — etter avtale med MOC.",
-      en: "Further maturity may include industry adaptation, CRM connections, extended reporting and follow-up after review — by agreement with MOC.",
+      no: "Løsningen kan videreutvikles med bransjetilpassede vurderinger, tettere CRM-samspill og oppfølging av forbedringstiltak over tid. Erfaringene fra kundebruk vil avgjøre hva som prioriteres videre.",
+      en: "The solution can be further developed with industry-adapted assessments, closer CRM interaction and follow-up of improvement measures over time. Experience from customer use will determine what is prioritised next.",
     },
     adaptation: {
-      no: "Grunnmodellen kan tilpasses andre SMB-er og salgsmodeller etter avtale — blant annet bransjetilpasning og utvidet rapportering.",
-      en: "The core model can be adapted for other SMEs and sales models by agreement — including industry adaptation and extended reporting.",
+      no: "Kartleggingen kan tilpasses ulike SMB-virksomheter, salgsmodeller og kommersielle utfordringer – slik at vurderingene blir relevante for hvordan den enkelte virksomhet skaper og følger opp kunder.",
+      en: "The assessment can be adapted to different SME businesses, sales models and commercial challenges — so that the evaluations are relevant to how each business creates and follows up customers.",
     },
   },
   overviewImage: SMB_SALGSFLYT_OVERVIEW_IMAGE,
@@ -79,12 +79,12 @@ export const salgsflytSjekkenV2: ProjectV2Record = {
   liveSolutionUrl: SMB_SALGSFLYT_APP_URL,
   seo: {
     title: {
-      no: "SMB Salgsflyt-sjekken 2.0 | Kommersiell diagnose – Marius Ottesen",
-      en: "SMB Sales Flow Check 2.0 | Commercial diagnosis – Marius Ottesen",
+      no: "SMB Salgsflyt-sjekken 2.0 | Kartlegg salgsflyt – Marius Ottesen",
+      en: "SMB Sales Flow Check 2.0 | Map sales flow – Marius Ottesen",
     },
     description: {
-      no: "Lederorientert diagnose for SMB: 12 suksessdimensjoner, 36 spørsmål og prioriterte tiltak. Utviklet av Marius Ottesen Consulting (MOC).",
-      en: "Leadership-oriented SMB diagnosis: 12 success dimensions, 36 questions and prioritised actions. Developed by Marius Ottesen Consulting (MOC).",
+      no: "Oppdag friksjon i salgsflyten: 12 dimensjoner, 36 spørsmål, lederrapport og prioriterte tiltak. Ca. 10–12 min. MOC.",
+      en: "Discover friction in the sales flow: 12 dimensions, 36 questions, leader report and prioritised actions. About 10–12 min. MOC.",
     },
     ogImage: SMB_SALGSFLYT_HERO_IMAGE,
     canonicalPath: "/salgsflyt-sjekken",

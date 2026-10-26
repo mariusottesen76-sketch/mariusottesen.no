@@ -213,6 +213,7 @@ function StrategicProjectDetailInner({ slug }: { slug: StrategicPlatformSlug }) 
       </header>
 
       {projectV2 &&
+      slug !== "salgsflyt-sjekken" &&
       detail.avslutning.showContactPrimary &&
       detail.avslutning.contactPrimaryLabel &&
       TIDLIG_KONTAKT_BODY_BY_SLUG[slug] ? (
@@ -258,7 +259,7 @@ function StrategicProjectDetailInner({ slug }: { slug: StrategicPlatformSlug }) 
         ) : null}
       </section>
 
-      {slug === "event-planner" && (
+      {slug === "event-planner" && detail.bygget && (
         <section aria-labelledby="plattform-bygget" className="mb-10">
           <SectionHeading id="plattform-bygget">{t(detail.bygget.heading, lang)}</SectionHeading>
           {detail.bygget.body && <p className={`${bodyTextClass} mb-4`}>{t(detail.bygget.body, lang)}</p>}
@@ -329,7 +330,7 @@ function StrategicProjectDetailInner({ slug }: { slug: StrategicPlatformSlug }) 
         <GovernanceScenariosSection data={detail.governanceScenarios} lang={lang} />
       )}
 
-      {slug !== "event-planner" && (
+      {slug !== "event-planner" && detail.bygget && (
         <section aria-labelledby="plattform-bygget" className="mb-10">
           <SectionHeading id="plattform-bygget">{t(detail.bygget.heading, lang)}</SectionHeading>
           {detail.bygget.body && <p className={`${bodyTextClass} mb-4`}>{t(detail.bygget.body, lang)}</p>}
@@ -346,16 +347,18 @@ function StrategicProjectDetailInner({ slug }: { slug: StrategicPlatformSlug }) 
         </section>
       )}
 
-      <section id="plattform-moduler" aria-labelledby="plattform-moduler-heading" className="mb-10 scroll-mt-24">
-        <SectionHeading id="plattform-moduler-heading">{t(detail.moduler.heading, lang)}</SectionHeading>
-        {detail.moduler.intro && <p className={`${bodyTextClass} mb-4`}>{t(detail.moduler.intro, lang)}</p>}
-        <ProjectModuleGrid
-          modules={detail.moduler.modules}
-          lang={lang}
-          category={projectV2?.category}
-          slug={slug}
-        />
-      </section>
+      {detail.moduler && (
+        <section id="plattform-moduler" aria-labelledby="plattform-moduler-heading" className="mb-10 scroll-mt-24">
+          <SectionHeading id="plattform-moduler-heading">{t(detail.moduler.heading, lang)}</SectionHeading>
+          {detail.moduler.intro && <p className={`${bodyTextClass} mb-4`}>{t(detail.moduler.intro, lang)}</p>}
+          <ProjectModuleGrid
+            modules={detail.moduler.modules}
+            lang={lang}
+            category={projectV2?.category}
+            slug={slug}
+          />
+        </section>
+      )}
 
       <section aria-labelledby="plattform-hvordan" className="mb-10">
         <SectionHeading id="plattform-hvordan">{t(detail.hvordan.heading, lang)}</SectionHeading>
@@ -383,6 +386,7 @@ function StrategicProjectDetailInner({ slug }: { slug: StrategicPlatformSlug }) 
 
       {detail.demoPortfolio && <DemoPortfolioSection data={detail.demoPortfolio} lang={lang} />}
 
+      {detail.relevans && (
       <section aria-labelledby="plattform-relevans" className="mb-10">
         <SectionHeading id="plattform-relevans">{t(detail.relevans.heading, lang)}</SectionHeading>
         {detail.relevans.sections && detail.relevans.sections.length > 0 ? (
@@ -398,6 +402,7 @@ function StrategicProjectDetailInner({ slug }: { slug: StrategicPlatformSlug }) 
           <MultilineBody text={t(detail.relevans.body, lang)} className={bodyTextClass} />
         ) : null}
       </section>
+      )}
 
       {detail.effektomrader && (
         <section aria-labelledby="plattform-effektomrader" className="mb-10">
@@ -424,25 +429,29 @@ function StrategicProjectDetailInner({ slug }: { slug: StrategicPlatformSlug }) 
         <ProjectApplicationGroups groups={projectV2.applicationGroups} lang={lang} />
       )}
 
-      <section aria-labelledby="plattform-status" className="mb-10 p-6 bg-slate-900/40 rounded-2xl border border-slate-800">
-        <h2 id="plattform-status" className={`${blockTitleClass} mb-3`}>
-          {t(detail.status.heading, lang)}
-        </h2>
-        <MultilineBody text={t(detail.status.body, lang)} className={`text-sm ${bodyTextClass}`} />
-      </section>
+      {detail.status && (
+        <section aria-labelledby="plattform-status" className="mb-10 p-6 bg-slate-900/40 rounded-2xl border border-slate-800">
+          <h2 id="plattform-status" className={`${blockTitleClass} mb-3`}>
+            {t(detail.status.heading, lang)}
+          </h2>
+          <MultilineBody text={t(detail.status.body, lang)} className={`text-sm ${bodyTextClass}`} />
+        </section>
+      )}
 
       {projectV2 ? <ProjectRelevantVidere project={projectV2} lang={lang} variant="detail" /> : null}
 
-      <section aria-labelledby="plattform-skalerbarhet" className="mb-10 space-y-4">
-        <SectionHeading id="plattform-skalerbarhet">{t(detail.skalerbarhet.heading, lang)}</SectionHeading>
-        <ScalabilitySection data={detail.skalerbarhet} lang={lang} />
-      </section>
+      {detail.skalerbarhet && (
+        <section aria-labelledby="plattform-skalerbarhet" className="mb-10 space-y-4">
+          <SectionHeading id="plattform-skalerbarhet">{t(detail.skalerbarhet.heading, lang)}</SectionHeading>
+          <ScalabilitySection data={detail.skalerbarhet} lang={lang} />
+        </section>
+      )}
 
       {detail.faq && (
         <ProjectFaqSection heading={detail.faq.heading} items={detail.faq.items} lang={lang} />
       )}
 
-      {detail.utvikler && (
+      {detail.utvikler && slug !== "salgsflyt-sjekken" && (
         <section aria-labelledby="plattform-utvikler" className="mb-10 p-6 bg-slate-900/40 rounded-2xl border border-slate-800 space-y-2">
           <h2 id="plattform-utvikler" className={`${blockTitleClass} mb-1`}>
             {t(detail.utvikler.navn, lang)}
@@ -450,6 +459,12 @@ function StrategicProjectDetailInner({ slug }: { slug: StrategicPlatformSlug }) 
           <p className="text-sm text-indigo-300/90 font-medium italic">{t(detail.utvikler.rolle, lang)}</p>
           <p className={`text-sm ${bodyTextClass}`}>{t(detail.utvikler.beskrivelse, lang)}</p>
         </section>
+      )}
+
+      {detail.methodDisclaimer && (
+        <p className="mb-10 text-sm text-slate-500 font-light leading-relaxed border-t border-slate-800/80 pt-6">
+          {t(detail.methodDisclaimer, lang)}
+        </p>
       )}
 
       <section
@@ -481,7 +496,7 @@ function StrategicProjectDetailInner({ slug }: { slug: StrategicPlatformSlug }) 
                       },
                     },
                   }
-                : {
+                : (detailCta ?? {
                     primary: {
                       href: "/prosjekter",
                       label: detail.avslutning.secondaryLabel ?? {
@@ -489,7 +504,7 @@ function StrategicProjectDetailInner({ slug }: { slug: StrategicPlatformSlug }) 
                         en: "Back to AI projects",
                       },
                     },
-                  }
+                  })
             }
           />
         ) : null}

@@ -9,8 +9,8 @@ export const smbSalgsflytSjekken: ProsjektType = {
     en: "SMB Sales Flow Check 2.0 – From sales friction to prioritised actions",
   },
   teaser: {
-    no: "Lederorientert diagnose med 12 suksessdimensjoner, 36 spørsmål og prioriterte tiltak for bedre salgsflyt — utviklet av MOC.",
-    en: "Leadership-oriented diagnosis with 12 success dimensions, 36 questions and prioritised actions for better sales flow — developed by MOC.",
+    no: "Kartlegg friksjon i salgsflyten og få prioriterte tiltak — ca. 10–12 minutter. Fra Marius Ottesen Consulting (MOC).",
+    en: "Map friction in the sales flow and get prioritised actions — about 10–12 minutes. From Marius Ottesen Consulting (MOC).",
   },
   bildeUrl: SMB_SALGSFLYT_OVERVIEW_IMAGE,
   bildeRamme: "natural",

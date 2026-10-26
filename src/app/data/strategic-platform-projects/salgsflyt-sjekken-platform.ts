@@ -1,9 +1,5 @@
 import type { StrategicPlatformProject } from "./types";
-import {
-  SMB_SALGSFLYT_HERO_IMAGE,
-  SMB_SALGSFLYT_MATURITY_LABEL,
-  SMB_SALGSFLYT_OWNER_LABEL,
-} from "../../lib/smb-salgsflyt-brand";
+import { SMB_SALGSFLYT_HERO_IMAGE, SMB_SALGSFLYT_MATURITY_LABEL } from "../../lib/smb-salgsflyt-brand";
 
 /** 12 suksessdimensjoner i v2.0 (36 kjernespørsmål — tre per dimensjon). */
 const SUKSSESSDIMENSJONER = [
@@ -93,15 +89,6 @@ const SUKSSESSDIMENSJONER = [
   },
 ] as const;
 
-const utvikler = {
-  navn: { no: "Marius Ottesen", en: "Marius Ottesen" },
-  rolle: { no: "Kommersiell leder · Marius Ottesen Consulting", en: "Commercial leader · Marius Ottesen Consulting" },
-  beskrivelse: {
-    no: "Har utviklet SMB Salgsflyt-sjekken 2.0 som tilgangsstyrt diagnoseverktøy for SMB-ledere. Løsningen eies og videreutvikles av Marius Ottesen Consulting (MOC).",
-    en: "Developed SMB Sales Flow Check 2.0 as an access-controlled diagnostic tool for SMB leaders. The solution is owned and further developed by Marius Ottesen Consulting (MOC).",
-  },
-};
-
 export const salgsflytSjekkenPlatform: StrategicPlatformProject = {
   slug: "salgsflyt-sjekken",
   prosjektId: "smb-salgsflyt-sjekken-2026",
@@ -112,8 +99,8 @@ export const salgsflytSjekkenPlatform: StrategicPlatformProject = {
       en: "SMB Sales Flow Check 2.0 | Commercial diagnosis – Marius Ottesen",
     },
     description: {
-      no: "Lederorientert diagnose for SMB: 12 suksessdimensjoner, 36 spørsmål og prioriterte tiltak for bedre salgsflyt, kundedialog og kundeoppfølging. Utviklet av Marius Ottesen Consulting.",
-      en: "Leadership-oriented SMB diagnosis: 12 success dimensions, 36 questions and prioritised actions for better sales flow, customer dialogue and follow-up. Developed by Marius Ottesen Consulting.",
+      no: "Kartlegg friksjon i salgsflyten: 12 dimensjoner, 36 spørsmål og lederrapport med prioriterte tiltak. Ca. 10–12 min. Fra Marius Ottesen Consulting.",
+      en: "Map friction in your sales flow: 12 dimensions, 36 questions and a leader report with prioritised actions. About 10–12 min. From Marius Ottesen Consulting.",
     },
     ogImage: SMB_SALGSFLYT_HERO_IMAGE,
     canonicalPath: "/salgsflyt-sjekken",
@@ -124,21 +111,21 @@ export const salgsflytSjekkenPlatform: StrategicPlatformProject = {
       en: "From sales friction to prioritised actions",
     },
     intro: {
-      no: "En lederorientert diagnose av hvor virksomheten mister fremdrift og kommersielle muligheter — med 12 suksessdimensjoner, 36 spørsmål og konkrete anbefalinger for bedre salgsflyt.",
-      en: "A leadership-oriented diagnosis of where the organisation loses momentum and commercial opportunity — with 12 success dimensions, 36 questions and concrete recommendations for better sales flow.",
+      no: "Finn ut hvor salgsarbeidet lekker verdi — og hva ledelsen bør prioritere først. Kartleggingen tar ca. 10–12 minutter og gir en lederrapport med konkrete anbefalinger.",
+      en: "Find where sales work leaks value — and what leadership should prioritise first. The assessment takes about 10–12 minutes and produces a leader report with concrete recommendations.",
     },
     blokker: {
       utfordring: {
-        no: "Mange SMB-er opplever at muligheter forsvinner i overgangene mellom synlighet, dialog, tilbud og videre kundeutvikling — uten at ledelsen ser hvor friksjonen sitter.",
-        en: "Many SMEs lose opportunities in the transitions between visibility, dialogue, proposals and further customer development — without leadership seeing where friction sits.",
+        no: "Muligheter forsvinner ofte mellom synlighet, dialog, tilbud og videre kundeoppfølging — uten at ledelsen ser det tydelig nok.",
+        en: "Opportunities are often lost between visibility, dialogue, proposals and follow-up — without leadership seeing it clearly enough.",
       },
       bygget: {
-        no: "v2.0 er deployert som tilgangsstyrt diagnose hos MOC: virksomhetskontekst, 36 atferdsbaserte spørsmål, adaptive dypdykk, strukturert scoring og lederrapport med prioriterte tiltak.",
-        en: "v2.0 is deployed as an access-controlled MOC diagnosis: business context, 36 behaviour-based questions, adaptive deep dives, structured scoring and a leader report with prioritised actions.",
+        no: "Du får oversikt over styrker og forbedringsområder på tvers av 12 suksessdimensjoner, med prioriterte tiltak du kan bruke videre.",
+        en: "You get an overview of strengths and improvement areas across 12 success dimensions, with prioritised actions you can use going forward.",
       },
       relevans: {
-        no: "Gir SMB-ledere strukturert innsikt i salgsflyt, kundedialog, digital kundereise og kundeoppfølging — som grunnlag for prioritering, ikke som ferdig salgsstrategi.",
-        en: "Gives SMB leaders structured insight into sales flow, customer dialogue, digital customer journey and follow-up — as a basis for prioritisation, not as a finished sales strategy.",
+        no: "Relevant for daglige ledere som vil styrke salgsflyt, kundeoppfølging og kommersiell lederinnsikt — ikke som ferdig salgsstrategi.",
+        en: "Relevant for managing directors who want stronger sales flow, customer follow-up and commercial leadership insight — not as a finished sales strategy.",
       },
       status: {
         no: SMB_SALGSFLYT_MATURITY_LABEL.no,
@@ -146,8 +133,8 @@ export const salgsflytSjekkenPlatform: StrategicPlatformProject = {
       },
     },
     videreutvikling: {
-      no: "Videre modenhet kan inkludere bransjetilpasning, CRM-koblinger, utvidet rapportering og støtte for oppfølging etter gjennomgang — etter avtale med MOC.",
-      en: "Further maturity may include industry adaptation, CRM connections, extended reporting and support for follow-up after review — by agreement with MOC.",
+      no: "",
+      en: "",
     },
   },
   detail: {
@@ -158,8 +145,8 @@ export const salgsflytSjekkenPlatform: StrategicPlatformProject = {
         en: "Where is the business leaking value in sales work?",
       },
       executiveSummary: {
-        no: "SMB Salgsflyt-sjekken 2.0 hjelper små og mellomstore virksomheter med å identifisere friksjon, forbedringsmuligheter og prioriterte tiltak i salgsarbeid, kundedialog, digital kundereise og kundeoppfølging. Dette er en lederorientert kommersiell diagnose — utviklet og eid av Marius Ottesen Consulting (MOC) — ikke en ren CRM-sjekk eller generell AI-app.",
-        en: "SMB Sales Flow Check 2.0 helps small and medium-sized businesses identify friction, improvement opportunities and prioritised actions in sales work, customer dialogue, digital customer journey and customer follow-up. It is a leadership-oriented commercial diagnosis — developed and owned by Marius Ottesen Consulting (MOC) — not a pure CRM check or generic AI app.",
+        no: "En strukturert diagnose for SMB-ledere som vil se hvor salgsarbeidet henger sammen — og hva som bør forbedres først. Utviklet av Marius Ottesen Consulting (MOC).",
+        en: "A structured diagnosis for SMB leaders who want to see how sales work fits together — and what to improve first. Developed by Marius Ottesen Consulting (MOC).",
       },
       bildeAlt: {
         no: "SMB Salgsflyt-sjekken 2.0 – lederorientert kommersiell diagnose",
@@ -169,22 +156,22 @@ export const salgsflytSjekkenPlatform: StrategicPlatformProject = {
     kortFortalt: {
       heading: { no: "Hva du får", en: "What you get" },
       body: {
-        no: "Et samlet resultat med styrker og svakheter, prioriterte friksjonsområder, mulige forklaringer og konkrete første tiltak — presentert i en lederrapport etter gjennomført kartlegging. AI støtter analyse og rapportstruktur, men hovedverdien er den kommersielle diagnosen og prioriteringene den gir.",
-        en: "An overall result with strengths and weaknesses, prioritised friction areas, possible explanations and concrete first actions — presented in a leader report after the assessment. AI supports analysis and report structure, but the main value is the commercial diagnosis and prioritisation it provides.",
+        no: "• Oppdag friksjon og tapte muligheter i salgsflyten\n• Bedre oversikt over styrker og forbedringsområder\n• Se hva ledelsen bør prioritere først\n• Få konkrete anbefalinger til videre arbeid\n\nEtter ca. 10–12 minutter får du en lederrapport med prioriterte tiltak.",
+        en: "• Discover friction and missed opportunities in the sales flow\n• Better overview of strengths and improvement areas\n• See what leadership should prioritise first\n• Get concrete recommendations for next steps\n\nAfter about 10–12 minutes you receive a leader report with prioritised actions.",
       },
     },
     utfordring: {
       heading: { no: "Hvorfor dette er viktig", en: "Why this matters" },
       body: {
-        no: "Salgsarbeid stopper sjelden i én enkelt aktivitet. Muligheter går ofte tapt i overgangene:\n\n• fra digital synlighet til faktisk henvendelse\n• fra henvendelse til kvalifisert dialog\n• fra dialog til tilbud\n• fra tilbud til beslutning\n• fra leveranse til videre kundeutvikling\n\nNår disse overgangene er uklare, bruker teamet mye tid uten at ledelsen ser hvor verdien lekker ut. SMB Salgsflyt-sjekken 2.0 er laget for å gjøre disse lekkasjene synlige og prioriterbare.",
-        en: "Sales work rarely fails in a single activity. Opportunities are often lost in transitions:\n\n• from digital visibility to actual enquiry\n• from enquiry to qualified dialogue\n• from dialogue to proposal\n• from proposal to decision\n• from delivery to further customer development\n\nWhen these transitions are unclear, teams spend time without leadership seeing where value leaks. SMB Sales Flow Check 2.0 is designed to make those leaks visible and prioritisable.",
+        no: "Muligheter går ofte tapt i overgangene mellom synlighet, henvendelse, dialog, tilbud, beslutning og videre kundeutvikling. Salgsflyt-sjekken hjelper deg å se hvor friksjonen sitter — og hva som bør prioriteres.",
+        en: "Opportunities are often lost in transitions between visibility, enquiry, dialogue, proposal, decision and further customer development. The Sales Flow Check helps you see where friction sits — and what to prioritise.",
       },
     },
     logikk: {
       heading: { no: "Hvordan kartleggingen fungerer", en: "How the assessment works" },
       body: {
-        no: "Kartleggingen følger en fast, men adaptiv flyt. Estimert tidsbruk på forsiden er om lag 10–12 minutter — avhengig av svar og om adaptive dypdykk utløses.",
-        en: "The assessment follows a fixed but adaptive flow. Estimated time on the landing page is about 10–12 minutes — depending on answers and whether adaptive deep dives are triggered.",
+        no: "Du svarer på spørsmål om virksomheten og salgsarbeidet. Kartleggingen tar normalt ca. 10–12 minutter. Noen svar kan utløse korte oppfølgingsspørsmål for å forstå utfordringen bedre.",
+        en: "You answer questions about the business and sales work. The assessment usually takes about 10–12 minutes. Some answers may trigger short follow-up questions to understand the challenge better.",
       },
       steps: [
         {
@@ -209,10 +196,10 @@ export const salgsflytSjekkenPlatform: StrategicPlatformProject = {
           },
         },
         {
-          tittel: { no: "Scoring og lederrapport", en: "Scoring and leader report" },
+          tittel: { no: "Lederrapport", en: "Leader report" },
           beskrivelse: {
-            no: "Strukturert scoring med vurdering av datagrunnlag og usikkerhet, samlet resultat, dimensjonsvurderinger og prioriterte anbefalinger.",
-            en: "Structured scoring with assessment of data basis and uncertainty, overall result, dimension ratings and prioritised recommendations.",
+            no: "Samlet vurdering, dimensjonsinnsikt og prioriterte anbefalinger du kan ta videre i organisasjonen.",
+            en: "Overall assessment, dimension insight and prioritised recommendations you can take forward in the organisation.",
           },
         },
       ],
@@ -234,148 +221,53 @@ export const salgsflytSjekkenPlatform: StrategicPlatformProject = {
         steps: [...SUKSSESSDIMENSJONER],
       },
     ],
-    bygget: {
-      heading: { no: "Hva som er utviklet i v2.0", en: "What has been developed in v2.0" },
-      items: [
-        { no: "Tilgangsstyrt diagnoseflyt med invitasjon og tilgangskode", en: "Access-controlled diagnostic flow with invitation and access code" },
-        { no: "12 dimensjoner · 36 kjernespørsmål · seks kontekstspørsmål", en: "12 dimensions · 36 core questions · six context questions" },
-        { no: "Adaptive dypdykk og strukturert scoring med usikkerhetsvurdering", en: "Adaptive deep dives and structured scoring with uncertainty assessment" },
-        { no: "Lederrapport med prioriterte friksjonsområder og første tiltak", en: "Leader report with prioritised friction areas and first actions" },
-        { no: "Separat, fortrolig rådgivergrunnlag for MOC (ikke synlig for respondenten)", en: "Separate confidential advisor basis for MOC (not visible to the respondent)" },
-      ],
-    },
-    moduler: {
-      heading: { no: "Faser i kundereisen", en: "Phases of the customer journey" },
-      intro: {
-        no: "Dimensjonene er organisert slik at ledere kan se sammenheng mellom markedsføring, salg og eksisterende kunder.",
-        en: "Dimensions are organised so leaders can see the links between marketing, sales and existing customers.",
-      },
-      modules: [
-        {
-          tittel: { no: "Synlighet og etterspørsel", en: "Visibility and demand" },
-          beskrivelse: { no: "Markedsposisjon, digital synlighet og konvertering til henvendelse.", en: "Market position, digital visibility and conversion to enquiry." },
-          bygget: true,
-        },
-        {
-          tittel: { no: "Dialog og salg", en: "Dialogue and sales" },
-          beskrivelse: { no: "Leadkvalifisering, kundedialog, salgsprosess og tilbud.", en: "Lead qualification, customer dialogue, sales process and proposals." },
-          bygget: true,
-        },
-        {
-          tittel: { no: "Kunder og styring", en: "Customers and governance" },
-          beskrivelse: { no: "Eksisterende kunder, CRM og data, lederinnsikt, kompetanse og forbedring.", en: "Existing customers, CRM and data, leadership insight, competence and improvement." },
-          bygget: true,
-        },
-      ],
-    },
     hvordan: {
       heading: { no: "Fra innsikt til handling", en: "From insight to action" },
       intro: {
-        no: "Resultatene er ment som beslutningsstøtte for ledelsen — ikke som en automatisk salgsplan. Du får verdi av kartleggingen også uten videre rådgivning, men kan etter eget ønske booke en kostnadsfri gjennomgang på inntil 45 minutter for å diskutere funn og prioriteter.",
-        en: "Results are intended as decision support for leadership — not as an automatic sales plan. You gain value from the assessment without further advisory work, but may optionally book a free review of up to 45 minutes to discuss findings and priorities.",
+        no: "Lederrapporten er ment som beslutningsstøtte — du får verdi av kartleggingen uten videre rådgivning. Ønsker du det, kan du etter eget valg booke en kostnadsfri gjennomgang på inntil 45 minutter.",
+        en: "The leader report is decision support — you gain value from the assessment without further advisory work. If you wish, you may optionally book a free review of up to 45 minutes.",
       },
       detaljpunkter: [
         {
-          no: "Lederrapporten oppsummerer styrker, friksjon og anbefalte første tiltak.",
-          en: "The leader report summarises strengths, friction and recommended first actions.",
+          no: "Bruk funnene internt for å prioritere forbedringstiltak.",
+          en: "Use the findings internally to prioritise improvement measures.",
         },
         {
-          no: "Gjennomgangen er frivillig og kostnadsfri (inntil 45 min) — for avklaring, ikke som forutsetning for å bruke funnene.",
-          en: "The review is optional and free (up to 45 minutes) — for clarification, not as a prerequisite for using the findings.",
-        },
-      ],
-    },
-    relevans: {
-      heading: { no: "Relevans for SMB-ledere", en: "Relevance for SMB leaders" },
-      sections: [
-        {
-          tittel: { no: "Kommersiell diagnose", en: "Commercial diagnosis" },
-          tekst: {
-            no: "Gir et felles bilde av salgsflyt, kundedialog og oppfølging — uten å erstatte CRM, salgsledelse eller implementeringsprosjekter.",
-            en: "Provides a shared picture of sales flow, customer dialogue and follow-up — without replacing CRM, sales leadership or implementation projects.",
-          },
-        },
-        {
-          tittel: { no: "Prioritering", en: "Prioritisation" },
-          tekst: {
-            no: "Hjelper ledelsen å velge hvor forbedring gir størst effekt før ressurser settes inn.",
-            en: "Helps leadership choose where improvement has the greatest impact before resources are committed.",
-          },
-        },
-        {
-          tittel: { no: "Eier og utvikler", en: "Owner and developer" },
-          tekst: {
-            no: SMB_SALGSFLYT_OWNER_LABEL.no + " — ikke Row Solutions eller andre partnere som produkteier.",
-            en: SMB_SALGSFLYT_OWNER_LABEL.en + " — not Row Solutions or other partners as product owner.",
-          },
+          no: "Gjennomgang med MOC er frivillig — ikke en forutsetning for å bruke rapporten.",
+          en: "A review with MOC is optional — not a prerequisite for using the report.",
         },
       ],
     },
     anvendelsesformat: {
-      heading: { no: "Kontakt og tilgang", en: "Contact and access" },
+      heading: { no: "Kom i gang", en: "Get started" },
       steg: [
         {
-          tittel: { no: "Avgrenset kundebruk", en: "Limited customer use" },
+          tittel: { no: "Be om tilgangskode", en: "Request access code" },
           beskrivelse: {
-            no: "Løsningen er tilgangsstyrt og klar for avgrenset kundebruk etter avtale. v2.0 kjører i eget Cloud Run-miljø; eieren gjennomfører egne funksjonstester parallelt med utrulling.",
-            en: "The solution is access-controlled and ready for limited customer use by agreement. v2.0 runs in a dedicated Cloud Run environment; the owner runs own functional tests in parallel with rollout.",
+            no: "Kartleggingen er tilgangsstyrt. Ta kontakt dersom du trenger kode eller vil avklare om verktøyet passer for virksomheten din.",
+            en: "The assessment is access-controlled. Contact us if you need a code or want to clarify whether the tool fits your business.",
           },
         },
         {
-          tittel: { no: "Tilgangskode", en: "Access code" },
+          tittel: { no: "Åpne Salgsflyt-sjekken", en: "Open Sales Flow Check" },
           beskrivelse: {
-            no: "Løsningen er tilgangsstyrt. Be om tilgangskode via kontaktskjemaet dersom du er invitert eller ønsker dialog om pilotdeltakelse.",
-            en: "The solution is access-controlled. Request an access code via the contact form if you are invited or wish to discuss pilot participation.",
-          },
-        },
-        {
-          tittel: { no: "Pilotversjon", en: "Pilot version" },
-          beskrivelse: {
-            no: "Når du har kode, åpner du pilotversjonen i nettleseren. Ikke del koder eller administrative adresser videre.",
-            en: "When you have a code, open the pilot version in your browser. Do not share codes or administrative addresses further.",
+            no: "Når du har tilgangskode, starter du kartleggingen i nettleseren. Sett av ca. 10–12 minutter.",
+            en: "When you have an access code, start the assessment in your browser. Allow about 10–12 minutes.",
           },
         },
       ],
     },
-    status: {
-      heading: { no: "Status, metode og avgrensninger", en: "Status, method and limitations" },
-      body: {
-        no: `${SMB_SALGSFLYT_MATURITY_LABEL.no}\n\nv2.0 er deployert i separat Cloud Run-miljø. Eieren gjennomfører egne funksjonstester før bredere bruk.\n\nKartleggingen er en egenvurdering basert på informasjon respondenten oppgir. Den er ikke en uavhengig revisjon, objektiv kontroll eller garanti for kommersiell effekt. Skill mellom dokumenterte svar, diagnostiske indikasjoner og hypoteser som bør undersøkes nærmere.\n\nTidligere versjoner (v1.0) er urørt som historikk; v2.0 er gjeldende versjon for avgrenset kundebruk.`,
-        en: `${SMB_SALGSFLYT_MATURITY_LABEL.en}\n\nv2.0 is deployed in a separate Cloud Run environment. The owner runs own functional tests before broader use.\n\nThe assessment is a self-evaluation based on information the respondent provides. It is not an independent audit, objective control or guarantee of commercial effect. Distinguish documented answers, diagnostic indications and hypotheses that should be investigated further.\n\nEarlier versions (v1.0) remain unchanged as history; v2.0 is the current version for limited customer use.`,
-      },
-    },
-    skalerbarhet: {
-      heading: { no: "Mulig videreutvikling", en: "Possible further development" },
-      platform: {
-        heading: { no: "Modenhet etter pilot", en: "Maturity after pilot" },
-        punkter: [
-          { no: "Bransjetilpassede spørsmål og referanser", en: "Industry-adapted questions and benchmarks" },
-          { no: "CRM- og datakilder for rikere datagrunnlag", en: "CRM and data sources for a richer evidence base" },
-          { no: "Oppfølgingsmaler og handlingsplaner", en: "Follow-up templates and action plans" },
-          { no: "Rapportering for ledergrupper og rådgivere", en: "Reporting for leadership teams and advisors" },
-        ],
-      },
-      tilpasning: {
-        heading: { no: "Anvendelse", en: "Application" },
-        punkter: [
-          { no: "Andre SMB-er og salgsmodeller", en: "Other SMEs and sales models" },
-          { no: "Kommersielle team med hybrid salg", en: "Commercial teams with hybrid sales" },
-          { no: "Rådgivere som ønsker strukturert forberedelse", en: "Advisors seeking structured preparation" },
-        ],
-      },
+    methodDisclaimer: {
+      no: "Resultatet bygger på dine svar og gir et strukturert grunnlag for å identifisere forbedringsmuligheter. Det er ikke en uavhengig revisjon.",
+      en: "The result is based on your answers and provides a structured basis for identifying improvement opportunities. It is not an independent audit.",
     },
     avslutning: {
-      heading: { no: "Utforsk prosjektet videre", en: "Explore the project further" },
+      heading: { no: "Klar til å kartlegge salgsflyten?", en: "Ready to map your sales flow?" },
       body: {
-        no: "Ønsker du å kartlegge hvor virksomheten mister fremdrift i salgsarbeidet? Ta kontakt med Marius Ottesen Consulting om SMB Salgsflyt-sjekken 2.0, tilgang til piloten eller mulig samarbeid om salgsutvikling.",
-        en: "Want to map where your organisation loses momentum in sales work? Contact Marius Ottesen Consulting about SMB Sales Flow Check 2.0, access to the pilot or possible collaboration on sales development.",
+        no: "SMB Salgsflyt-sjekken 2.0 eies og utvikles av Marius Ottesen Consulting (MOC).",
+        en: "SMB Sales Flow Check 2.0 is owned and developed by Marius Ottesen Consulting (MOC).",
       },
-      showContactPrimary: true,
-      contactPrimaryLabel: {
-        no: "Be om tilgangskode eller dialog om pilot",
-        en: "Request access code or pilot dialogue",
-      },
+      showContactPrimary: false,
     },
-    utvikler,
   },
 };

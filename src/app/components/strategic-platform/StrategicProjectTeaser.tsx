@@ -101,10 +101,12 @@ export default function StrategicProjectTeaser({
           <InfoBlock label={blockLabels.status} text={teaser.blokker.status} lang={lang} />
         </div>
 
-        <div className="p-3 bg-slate-950/40 rounded-lg border border-slate-800/80 min-w-0">
-          <h3 className={`${cardTitleClass} text-xs mb-2`}>{t(blockLabels.videreutvikling, lang)}</h3>
-          <p className="text-sm text-slate-400 font-light leading-relaxed">{t(teaser.videreutvikling, lang)}</p>
-        </div>
+        {t(teaser.videreutvikling, lang).trim() ? (
+          <div className="p-3 bg-slate-950/40 rounded-lg border border-slate-800/80 min-w-0">
+            <h3 className={`${cardTitleClass} text-xs mb-2`}>{t(blockLabels.videreutvikling, lang)}</h3>
+            <p className="text-sm text-slate-400 font-light leading-relaxed">{t(teaser.videreutvikling, lang)}</p>
+          </div>
+        ) : null}
 
         <ProjectCTA
           lang={lang}
