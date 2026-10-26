@@ -4,9 +4,9 @@ export const SMB_SALGSFLYT_APP_URL =
 
 export const SMB_SALGSFLYT_PILOT_PATH = "/salgsflyt-sjekken";
 
-/** 1:3 oversiktsbilde på /prosjekter (vertikal app-forside). */
+/** 1:3 oversiktsbilde på /prosjekter — Row Solutions MASTER (som levert). */
 export const SMB_SALGSFLYT_OVERVIEW_IMAGE =
-  "/images/smb-salgsflyt-sjekken-hjemmeside.png?v=20261026m";
+  "/images/Row_Project_SMBSalgsflytSjekken_Detail_MASTER_v1.png";
 
 /** 3:1 detaljbanner på /salgsflyt-sjekken. */
 export const SMB_SALGSFLYT_HERO_IMAGE = "/images/salgsflyt-sjekken-hero.png?v=20261026";

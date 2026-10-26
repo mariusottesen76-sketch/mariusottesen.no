@@ -66,13 +66,13 @@ export const overviewImageAudit: OverviewImageAuditEntry[] = [
   },
   {
     projectId: "smb-salgsflyt-sjekken-2026",
-    overviewImage: "/images/smb-salgsflyt-sjekken-hjemmeside.png?v=20261026j",
-    aspectNote: "Vertikalt 1:3 — godkjent prosjektkort-illustrasjon",
+    overviewImage: "/images/Row_Project_SMBSalgsflytSjekken_Detail_MASTER_v1.png",
+    aspectNote: "Vertikalt 1:3 — Row Solutions MASTER-detail",
     fit: "contain",
     needsNewOverviewImage: false,
-    recommendedFilename: "smb-salgsflyt-sjekken-hjemmeside.png",
-    recommendedDimensions: "341×1024 px",
-    notes: "Oversikt på /prosjekter; landscape salgsflyt-sjekken-hero.png på detaljside.",
+    recommendedFilename: "Row_Project_SMBSalgsflytSjekken_Detail_MASTER_v1.png",
+    recommendedDimensions: "724×2172 px",
+    notes: "Row Solutions MASTER-detail. Erstattet smb-salgsflyt-sjekken-hjemmeside.png på /prosjekter.",
   },
   {
     projectId: "psc-promo-video-moc-2026",
