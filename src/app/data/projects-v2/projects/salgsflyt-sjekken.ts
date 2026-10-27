@@ -3,6 +3,7 @@ import {
   SMB_SALGSFLYT_HERO_IMAGE,
   SMB_SALGSFLYT_MATURITY_LABEL,
   SMB_SALGSFLYT_OVERVIEW_IMAGE,
+  SMB_SALGSFLYT_OVERVIEW_STATUS,
 } from "../../../lib/smb-salgsflyt-brand";
 import type { ProjectV2Record } from "../types";
 import { relevantVidereLinksForSlug } from "../relevant-videre-catalog";
@@ -53,8 +54,8 @@ export const salgsflytSjekkenV2: ProjectV2Record = {
       en: "Gives clearer priorities and commercial leadership insight — as a basis for improvement, not as a finished sales strategy.",
     },
     status: {
-      no: SMB_SALGSFLYT_MATURITY_LABEL.no,
-      en: SMB_SALGSFLYT_MATURITY_LABEL.en,
+      no: SMB_SALGSFLYT_OVERVIEW_STATUS.no,
+      en: SMB_SALGSFLYT_OVERVIEW_STATUS.en,
     },
     development: {
       no: "Løsningen kan videreutvikles med bransjetilpassede vurderinger, tettere CRM-samspill og oppfølging av forbedringstiltak over tid. Erfaringene fra kundebruk vil avgjøre hva som prioriteres videre.",

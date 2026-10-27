@@ -1,5 +1,10 @@
 import type { StrategicPlatformProject } from "./types";
-import { SMB_SALGSFLYT_HERO_IMAGE, SMB_SALGSFLYT_MATURITY_LABEL } from "../../lib/smb-salgsflyt-brand";
+import {
+  SMB_SALGSFLYT_EXECUTIVE_SUMMARY,
+  SMB_SALGSFLYT_HERO_IMAGE,
+  SMB_SALGSFLYT_MATURITY_LABEL,
+  SMB_SALGSFLYT_OVERVIEW_STATUS,
+} from "../../lib/smb-salgsflyt-brand";
 
 /** 12 suksessdimensjoner i v2.0 (36 kjernespørsmål — tre per dimensjon). */
 const SUKSSESSDIMENSJONER = [
@@ -128,8 +133,8 @@ export const salgsflytSjekkenPlatform: StrategicPlatformProject = {
         en: "Relevant for managing directors who want stronger sales flow, customer follow-up and commercial leadership insight — not as a finished sales strategy.",
       },
       status: {
-        no: SMB_SALGSFLYT_MATURITY_LABEL.no,
-        en: SMB_SALGSFLYT_MATURITY_LABEL.en,
+        no: SMB_SALGSFLYT_OVERVIEW_STATUS.no,
+        en: SMB_SALGSFLYT_OVERVIEW_STATUS.en,
       },
     },
     videreutvikling: {
@@ -145,8 +150,8 @@ export const salgsflytSjekkenPlatform: StrategicPlatformProject = {
         en: "Where is the business leaking value in sales work?",
       },
       executiveSummary: {
-        no: "En strukturert diagnose for SMB-ledere som vil se hvor salgsarbeidet henger sammen — og hva som bør forbedres først. Utviklet av Marius Ottesen Consulting (MOC).",
-        en: "A structured diagnosis for SMB leaders who want to see how sales work fits together — and what to improve first. Developed by Marius Ottesen Consulting (MOC).",
+        no: SMB_SALGSFLYT_EXECUTIVE_SUMMARY.no,
+        en: SMB_SALGSFLYT_EXECUTIVE_SUMMARY.en,
       },
       bildeAlt: {
         no: "SMB Salgsflyt-sjekken 2.0 – lederorientert kommersiell diagnose",

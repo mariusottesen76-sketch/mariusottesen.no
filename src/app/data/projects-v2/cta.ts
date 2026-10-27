@@ -10,6 +10,7 @@ import {
   CONTACT_QUERY_TEMA,
   type ContactQueryTema,
 } from "../../lib/project-contact-query";
+import { SMB_SALGSFLYT_DETAIL_ACCESS_NOTE } from "../../lib/smb-salgsflyt-brand";
 
 export type ProjectCtaAction = {
   href?: string;
@@ -422,6 +423,11 @@ function overviewNote(project: ProjectV2Record): LocalizedString | undefined {
   return undefined;
 }
 
+function detailNote(project: ProjectV2Record): LocalizedString | undefined {
+  if (project.slug === "salgsflyt-sjekken") return SMB_SALGSFLYT_DETAIL_ACCESS_NOTE;
+  return overviewNote(project);
+}
+
 function overviewDemoBadge(project: ProjectV2Record): LocalizedString | undefined {
   if (isOpenDemoPlatform(project) && isPlatformLive(project)) return openDemoBadge;
   return undefined;
@@ -443,7 +449,7 @@ export function buildProjectDetailCta(project: ProjectV2Record): ProjectCtaConfi
     primary: primaryDetailAction(project),
     secondary: secondaryDetailAction(project),
     tertiary: tertiaryDetailAction(project),
-    note: overviewNote(project),
+    note: detailNote(project),
     demoBadge: isOpenDemoPlatform(project) && isPlatformLive(project) ? openDemoBadge : undefined,
   };
 }

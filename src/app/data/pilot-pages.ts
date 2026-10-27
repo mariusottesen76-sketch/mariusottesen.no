@@ -12,8 +12,6 @@ const tilgangNoteStandard: L = {
 
 const kontaktFagligCta: L = { no: "Ta kontakt for faglig dialog", en: "Contact for professional dialogue" };
 const apneTilgangsstyrtCta: L = { no: "Åpne tilgangsstyrt løsning", en: "Open access-controlled solution" };
-const apneLukketTestflateCta: L = { no: "Åpne lukket testflate", en: "Open closed test environment" };
-const apnePilotversjonCta: L = { no: "Åpne pilotversjonen", en: "Open pilot version" };
 const beOmTilgangskodeCta: L = { no: "Be om tilgangskode", en: "Request access code" };
 
 export type PilotSteg = { tittel: L; beskrivelse: L };
@@ -352,14 +350,14 @@ const salgsflytSjekkenSide: PilotSide = {
       en: "SMB Sales Flow Check 2.0 — leadership-oriented diagnosis of friction, improvement opportunities and prioritised actions in sales work, customer dialogue and follow-up.",
     },
     tekst: {
-      no: "Tilgangsstyrt pilot fra Marius Ottesen Consulting (MOC). Kartleggingen bygger på 12 suksessdimensjoner, 36 atferdsbaserte spørsmål og eventuelle adaptive dypdykk — med lederrapport og konkrete første tiltak. Estimert tidsbruk ca. 10–12 minutter. AI støtter analyse og rapportstruktur, men er ikke hovedbudskapet.",
-      en: "Access-controlled pilot from Marius Ottesen Consulting (MOC). The assessment uses 12 success dimensions, 36 behaviour-based questions and optional adaptive deep dives — with a leader report and concrete first actions. Estimated time about 10–12 minutes. AI supports analysis and report structure, but is not the main message.",
+      no: "Tilgangsstyrt diagnose fra Marius Ottesen Consulting (MOC), tilgjengelig på eget domene salgsflytsjekken.no. Kartleggingen bygger på 12 suksessdimensjoner, 36 atferdsbaserte spørsmål og eventuelle adaptive dypdykk — med lederrapport og konkrete første tiltak. Estimert tidsbruk ca. 10–12 minutter.",
+      en: "Access-controlled diagnosis from Marius Ottesen Consulting (MOC), available on its own domain salgsflytsjekken.no. The assessment uses 12 success dimensions, 36 behaviour-based questions and optional adaptive deep dives — with a leader report and concrete first actions. Estimated time about 10–12 minutes.",
     },
     primaerCta: beOmTilgangskodeCta,
-    sekundaerCta: apnePilotversjonCta,
+    sekundaerCta: { no: "Åpne Salgsflyt-sjekken", en: "Open Sales Flow Check" },
     tilgangNote: {
-      no: "Piloten gjennomføres med inviterte deltakere. Ekstern testfase åpnes når kvalitetssikring er fullført. Ingen tilgangskoder publiseres på nettsiden.",
-      en: "The pilot runs with invited participants. An external test phase opens when quality assurance is complete. No access codes are published on the website.",
+      no: "Klar for avgrenset kundebruk med tilgangskode. Ingen koder publiseres på nettsiden.",
+      en: "Ready for limited customer use with an access code. No codes are published on the website.",
     },
   },
   hvem: {
@@ -444,15 +442,14 @@ const salgsflytSjekkenSide: PilotSide = {
   format: {
     tittel: { no: "Status og tilgang", en: "Status and access" },
     tekst: {
-      no: "v2.0 er deployert i lukket pilot under kvalitetssikring (26.10.2026). Automatiserte tester og bygg er rapportert bestått; manuell ende-til-ende-akseptanse og personvernklarering gjenstår før eksterne pilotdeltakere inviteres.",
-      en: "v2.0 is deployed in a closed pilot under quality assurance (26 Oct 2026). Automated tests and builds are reported passing; manual end-to-end acceptance and privacy clarification remain before external pilot participants are invited.",
+      no: "SMB Salgsflyt-sjekken 2.0 er tilgjengelig på eget domene (salgsflytsjekken.no) og klar for avgrenset kundebruk med tilgangskode.",
+      en: "SMB Sales Flow Check 2.0 is available on its own domain (salgsflytsjekken.no) and ready for limited customer use with an access code.",
     },
     punkter: [
       { no: "Eier: Marius Ottesen Consulting (MOC)", en: "Owner: Marius Ottesen Consulting (MOC)" },
       { no: "Be om tilgangskode via kontakt", en: "Request access code via contact" },
-      { no: "Åpne pilotversjonen når du har kode", en: "Open the pilot version when you have a code" },
-      { no: "Ikke del koder eller administrative adresser", en: "Do not share codes or administrative addresses" },
-      { no: "v1.0 urørt som historikk; v2.0 er gjeldende pilot", en: "v1.0 unchanged as history; v2.0 is the current pilot" },
+      { no: "Åpne kartleggingen på salgsflytsjekken.no når du har kode", en: "Open the assessment at salgsflytsjekken.no when you have a code" },
+      { no: "Ikke del tilgangskoder videre", en: "Do not share access codes" },
     ],
   },
   utbytte: {
@@ -479,10 +476,10 @@ const salgsflytSjekkenSide: PilotSide = {
       en: "The solution connects to experience and methods in commercial development and sales flow on the Consulting page and project detail at /salgsflyt-sjekken.",
     },
     primaerCta: beOmTilgangskodeCta,
-    sekundaerCta: apnePilotversjonCta,
+    sekundaerCta: { no: "Åpne Salgsflyt-sjekken", en: "Open Sales Flow Check" },
     tilgangNote: {
-      no: "Piloten er tilgangsstyrt. Kontakt MOC for tilgang eller dialog om deltakelse.",
-      en: "The pilot is access-controlled. Contact MOC for access or dialogue about participation.",
+      no: "Løsningen er tilgangsstyrt. Kontakt MOC for tilgangskode eller faglig dialog.",
+      en: "The solution is access-controlled. Contact MOC for an access code or professional dialogue.",
     },
   },
   pilotAppUrl: SMB_SALGSFLYT_APP_URL,
