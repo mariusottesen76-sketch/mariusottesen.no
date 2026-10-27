@@ -27,6 +27,7 @@ export const LEDELSE_SUBTEMA: FaginnleggSubtema[] = [
     id: "ledelse-kommersiell",
     label: { no: "Kommersiell og operasjonell ledelse", en: "Commercial and operational leadership" },
     innleggIds: [
+      "hvor-mye-salg-virksomheten-glipp-av-2026-10",
       "fornoyd-kunde-lojal-kunde-2026-09",
       "de-beste-kommersielle-grepene-2026-09",
       "salgsledelse-i-praksis-2026-08",

@@ -29,6 +29,34 @@ function articleLink(slug: string, label: { no: string; en: string }): RelevantV
 
 /** Sentralt authority-kart — Core Authority Set v1.0 + støtteartikler (data only i fase 4B.1). */
 export const FAGINNLEGG_AUTHORITY: Record<string, FaginnleggAuthorityEntry> = {
+  "hvor-mye-salg-virksomheten-glipp-av-2026-10": {
+    slug: "hvor-mye-salg-virksomheten-glipp-av-2026-10",
+    cluster: "kommersiell-salg",
+    role: "core-support",
+    ownedIntents: [
+      "tapt salgspotensial",
+      "salgsflyt SMB",
+      "SMB Salgsflyt-sjekken",
+      "salgsfriksjon",
+      "kommersiell diagnose",
+    ],
+    coreSupportSlugs: [
+      "salgsledelse-i-praksis-2026-08",
+      "crm-mer-enn-et-systemprosjekt-2026-09",
+    ],
+    relevantVidere: [
+      { href: SMB_SALGSFLYT_PILOT_PATH, label: { no: "Se prosjektet: SMB Salgsflyt-sjekken 2.0", en: "See project: SMB Sales Flow Check 2.0" } },
+      articleLink("crm-mer-enn-et-systemprosjekt-2026-09", {
+        no: "Les også: CRM er mer enn et systemprosjekt",
+        en: "Read also: CRM is more than a system project",
+      }),
+      articleLink("salgsledelse-i-praksis-2026-08", {
+        no: "Les også: Salgsledelse i praksis",
+        en: "Read also: Sales leadership in practice",
+      }),
+      { href: "/consulting", label: { no: "Se Consulting", en: "See consulting" } },
+    ],
+  },
   "salgsledelse-i-praksis-2026-08": {
     slug: "salgsledelse-i-praksis-2026-08",
     cluster: "kommersiell-salg",
@@ -46,6 +74,7 @@ export const FAGINNLEGG_AUTHORITY: Record<string, FaginnleggAuthorityEntry> = {
       "trykk-prestasjon-kommersiell-ledelse-2026-05",
       "verdier-kultur-kommersiell-ledelse-2026-06",
       "crm-mer-enn-et-systemprosjekt-2026-09",
+      "hvor-mye-salg-virksomheten-glipp-av-2026-10",
     ],
     secondarySupportSlugs: [
       "control-tower-verdikjede-ledelse-2026-08",

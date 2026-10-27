@@ -146,10 +146,14 @@ export const RELEVANT_VIDERE_BY_PROJECT_SLUG: Record<string, Link[]> = {
     }, detailOnly),
   ],
   "salgsflyt-sjekken": [
+    art("hvor-mye-salg-virksomheten-glipp-av-2026-10", {
+      no: "Hvor mye salg går virksomheten glipp av? →",
+      en: "How much sales is your business missing? →",
+    }),
     ext("https://rowsolutions.no/innsikt/hvor-stopper-salgsflyten", {
       no: "Hvor stopper salgsflyten egentlig opp? →",
       en: "Where does the sales flow actually stop? →",
-    }),
+    }, detailOnly),
     art("crm-mer-enn-et-systemprosjekt-2026-09", {
       no: "CRM er mer enn et systemprosjekt →",
       en: "CRM is more than a system project →",
