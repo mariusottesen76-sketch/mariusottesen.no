@@ -36,13 +36,13 @@ function bookLink(label: { no: string; en: string }, surfaces?: ProjectRelevantS
 }
 
 const BOK_RELEVANT_STANDARD = {
-  no: "VerdisKIftet – fagbok under utvikling →",
-  en: "VerdisKIftet – professional book in development →",
+  no: "VerdisKIftet – fagbok i avsluttende redaksjonell fase →",
+  en: "VerdisKIftet – professional book in final editorial phase →",
 } as const;
 
 const BOK_RELEVANT_NETTSIDE = {
-  no: "VerdisKIftet – samlet manus, 17 kapitler (under utvikling) →",
-  en: "VerdisKIftet – coherent manuscript, 17 chapters (in development) →",
+  no: "VerdisKIftet – komplett manus, 17 kapitler →",
+  en: "VerdisKIftet – complete manuscript, 17 chapters →",
 } as const;
 
 /**

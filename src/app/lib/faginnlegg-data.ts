@@ -17,6 +17,7 @@ import { narEnFeilBlirHeleHistorien } from "../data/innlegg/nar-en-feil-blir-hel
 import { kiNorgeKlareData } from "../data/innlegg/ki-norge-klare-data";
 import { skalarInnovasjonIdeerVerdi } from "../data/innlegg/skalar-innovasjon-ideer-verdi";
 import { hvorMyeSalgVirksomhetenGlippAv } from "../data/innlegg/hvor-mye-salg-virksomheten-glipp-av";
+import { femtiArSkrevetBok } from "../data/innlegg/femti-ar-skrevet-bok";
 import { enrichFaginnleggHasTags } from "./faginnlegg-innhold";
 import type { FaginnleggInnlegg } from "./faginnlegg-types";
 
@@ -52,6 +53,7 @@ function normalizeFaginnlegg(innlegg: FaginnleggInnlegg): FaginnleggInnlegg {
 export function getAlleFaginnlegg(): FaginnleggInnlegg[] {
   return (
     [
+      femtiArSkrevetBok,
       hvorMyeSalgVirksomhetenGlippAv,
       skalarInnovasjonIdeerVerdi,
       kiNorgeKlareData,

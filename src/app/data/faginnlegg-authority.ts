@@ -1,6 +1,7 @@
 import { faginnleggDetailPath } from "../lib/faginnlegg-types";
 import type { RelevantVidereLink } from "../lib/faginnlegg-relevant-videre";
 import { SMB_SALGSFLYT_PILOT_PATH } from "../lib/smb-salgsflyt-brand";
+import { BOK_ROUTE } from "./bok-prosjekt-innhold";
 
 /** Intern cluster-inndeling for Core Authority Set v1.0 — vises aldri i UI. */
 export type FaginnleggAuthorityCluster =
@@ -29,6 +30,34 @@ function articleLink(slug: string, label: { no: string; en: string }): RelevantV
 
 /** Sentralt authority-kart — Core Authority Set v1.0 + støtteartikler (data only i fase 4B.1). */
 export const FAGINNLEGG_AUTHORITY: Record<string, FaginnleggAuthorityEntry> = {
+  "femti-ar-skrevet-bok-2026-11": {
+    slug: "femti-ar-skrevet-bok-2026-11",
+    cluster: "strategi-endring",
+    role: "core-support",
+    ownedIntents: [
+      "VerdisKIftet",
+      "fagbok Marius Ottesen",
+      "testleser bok",
+      "strategi og transformasjon bok",
+    ],
+    coreSupportSlugs: [
+      "fra-strategi-til-gjennomforing-2026-09",
+      "forbedre-arbeidsmaten-tenke-pa-nytt-2026-10",
+      "det-virksomheten-enna-ikke-ser-2026-09",
+    ],
+    relevantVidere: [
+      { href: BOK_ROUTE.no, label: { no: "Les om VerdisKIftet", en: "About VerdisKIftet" } },
+      articleLink("fra-strategi-til-gjennomforing-2026-09", {
+        no: "Les også: Fra strategi til gjennomføring",
+        en: "Read also: From strategy to execution",
+      }),
+      articleLink("forbedre-arbeidsmaten-tenke-pa-nytt-2026-10", {
+        no: "Les også: Forbedre arbeidsmåten – eller tenke den på nytt?",
+        en: "Read also: Improve the way of working — or rethink it?",
+      }),
+      { href: "/faginnlegg", label: { no: "Faginnlegg", en: "Articles" } },
+    ],
+  },
   "hvor-mye-salg-virksomheten-glipp-av-2026-10": {
     slug: "hvor-mye-salg-virksomheten-glipp-av-2026-10",
     cluster: "kommersiell-salg",

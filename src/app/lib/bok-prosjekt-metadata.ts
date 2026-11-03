@@ -6,13 +6,13 @@ const META = {
   no: {
     title: "VerdisKIftet – Fra innsikt til nye fortrinn | Marius Ottesen",
     description:
-      "VerdisKIftet er en fagbok under utvikling om ledelse, strategiske valg, mennesker, kundeverdi, kunstig intelligens og læring når spillereglene endres.",
+      "VerdisKIftet er en fagbok av Marius Ottesen om ledelse, strategi, mennesker, kundeverdi, gjennomføring og KI. Les om de syv delene og bokprosjektet.",
     ogImageAlt: "Foreløpig omslag til fagboka VerdisKIftet – Fra innsikt til nye fortrinn, av Marius Ottesen.",
   },
   en: {
     title: "VerdisKIftet – From insight to new advantages | Marius Ottesen",
     description:
-      "VerdisKIftet is a professional book in development on leadership, strategic choices, people, customer value, artificial intelligence and learning when the rules of the game change.",
+      "VerdisKIftet is a professional book by Marius Ottesen on leadership, strategy, people, customer value, execution and AI. Read about the seven parts and the book project.",
     ogImageAlt: "Provisional cover for the book VerdisKIftet – From insight to new advantages, by Marius Ottesen.",
   },
 } as const;

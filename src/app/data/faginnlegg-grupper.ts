@@ -78,6 +78,7 @@ export const LEDELSE_SUBTEMA: FaginnleggSubtema[] = [
     id: "ledelse-strategi",
     label: { no: "Strategi og virksomhetsutvikling", en: "Strategy and business development" },
     innleggIds: [
+      "femti-ar-skrevet-bok-2026-11",
       "det-virksomheten-enna-ikke-ser-2026-09",
       "obf-2026-oppsummering-2026-09",
       "obf-2026-dag-2-2026-09",
