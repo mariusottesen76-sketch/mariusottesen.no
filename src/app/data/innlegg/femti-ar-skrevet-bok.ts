@@ -70,13 +70,13 @@ Leseren følger reisen fra å se og forstå, velge retning og mobilisere mennesk
 
 Fortellingen begynner i et ledermøte der resultatene utfordres og behovet for handling er tydelig. Mot slutten vender vi tilbake, men med et nytt perspektiv. Har organisasjonen lært nok til å utfordre ikke bare svarene, men også spørsmålene den opprinnelig stilte?
 
-Alle 17 kapitlene er skrevet, fordelt på syv deler og rundt 70 000 ord, tilsvarende anslagsvis 250–300 boksider. Nå gjenstår siste redaksjonelle gjennomgang og eksterne vurderinger før veien videre mot utgivelse. Tittel og omslag er foreløpige.
+Alle 17 kapitlene er skrevet, fordelt på syv deler og rundt 70 000 ord, anslagsvis ca. 300 boksider. Nå gjenstår siste redaksjonelle gjennomgang og eksterne vurderinger før veien videre mot utgivelse. Tittel og omslag er foreløpige.
 
 👉 Jeg søker noen få kritiske testlesere med erfaring fra ledelse, strategi, organisasjonsutvikling eller teknologi. Vil du utfordre resonnementene og gi ærlige innspill, send meg gjerne en melding.
 
 <a href="${bokHref}#bok-testleser" class="${ctaButtonClass}">Meld interesse som testleser</a>
 
-👇 Mer informasjon om boka finner du på <a href="${bokHref}" class="${linkClass}">bokprosjektsiden</a> — med de syv delene og kapitteloversikten.
+Mer informasjon om boka finner du på <a href="${bokHref}" class="${linkClass}">bokprosjektsiden</a> — med de syv delene og kapitteloversikten.
 
 Og når vi først snakker om alder og nye kapitler:
 
@@ -109,13 +109,13 @@ The reader follows the journey from seeing and understanding, choosing direction
 
 The story opens in a leadership meeting where results are challenged and the need for action is clear. Towards the end we return, but with a new perspective. Has the organisation learned enough to challenge not only the answers, but also the questions it originally asked?
 
-All 17 chapters are written, spread across seven parts and around 70,000 words — approximately 250–300 book pages. What remains is final editorial review and external assessment before the path towards publication. Title and cover are provisional.
+All 17 chapters are written, spread across seven parts and around 70,000 words — approximately 300 book pages. What remains is final editorial review and external assessment before the path towards publication. Title and cover are provisional.
 
 👉 I am looking for a few critical test readers with experience in leadership, strategy, organisational development or technology. If you would like to challenge the arguments and give honest input, please get in touch.
 
 <a href="${bokHrefEn}#bok-testleser" class="${ctaButtonClass}">Register interest as test reader</a>
 
-👇 More information about the book is on the <a href="${bokHrefEn}" class="${linkClass}">book project page</a> — including the seven parts and chapter overview.
+More information about the book is on the <a href="${bokHrefEn}" class="${linkClass}">book project page</a> — including the seven parts and chapter overview.
 
 And since we are talking about age and new chapters:
 
