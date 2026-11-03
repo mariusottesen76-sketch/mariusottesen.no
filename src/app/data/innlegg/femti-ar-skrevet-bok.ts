@@ -68,9 +68,9 @@ Bokas hovedargument er:
 
 Leseren følger reisen fra å se og forstå, velge retning og mobilisere mennesker, til å skape kundeverdi, endre arbeidsmåter, forsterke med KI og lære av erfaringene. KI åpner nye muligheter, men verdien avhenger av hvordan teknologien brukes sammen med menneskelig dømmekraft, ledelse og gjennomføring.
 
-Alle 17 kapitlene er skrevet. Boka har fått sin helhetlige form, med syv deler og rundt 70 000 ord — anslagsvis 280–330 sider (ordinært fagbokformat med god lesbarhet). Nå gjenstår siste redaksjonelle gjennomgang og eksterne vurderinger før veien videre mot utgivelse. Tittel og omslag er foreløpige.
+Fortellingen begynner i et ledermøte der resultatene utfordres og behovet for handling er tydelig. Mot slutten vender vi tilbake, men med et nytt perspektiv. Har organisasjonen lært nok til å utfordre ikke bare svarene, men også spørsmålene den opprinnelig stilte?
 
-Fortellingen begynner i et ledermøte der resultatene utfordres og behovet for handling er tydelig. Mot slutten vender vi tilbake til den samme situasjonen, men med et nytt perspektiv. Har organisasjonen lært nok til å utfordre ikke bare svarene, men også spørsmålene den opprinnelig stilte?
+Alle 17 kapitlene er skrevet, fordelt på syv deler og rundt 70 000 ord, tilsvarende anslagsvis 250–300 boksider. Nå gjenstår siste redaksjonelle gjennomgang og eksterne vurderinger før veien videre mot utgivelse. Tittel og omslag er foreløpige.
 
 👉 Jeg søker noen få kritiske testlesere med erfaring fra ledelse, strategi, organisasjonsutvikling eller teknologi. Vil du utfordre resonnementene og gi ærlige innspill, send meg gjerne en melding.
 
@@ -107,9 +107,9 @@ The book’s main argument is:
 
 The reader follows the journey from seeing and understanding, choosing direction and mobilising people, to creating customer value, changing ways of working, reinforcing with AI and learning from experience. AI opens new possibilities, but the value depends on how technology is used together with human judgement, leadership and execution.
 
-All 17 chapters are written. The book has found its overall form, with seven parts and around 70,000 words — approximately 280–330 pages (standard professional book format with good readability). What remains is final editorial review and external assessment before the path towards publication. Title and cover are provisional.
+The story opens in a leadership meeting where results are challenged and the need for action is clear. Towards the end we return, but with a new perspective. Has the organisation learned enough to challenge not only the answers, but also the questions it originally asked?
 
-The story opens in a leadership meeting where results are challenged and the need for action is clear. Towards the end we return to the same situation, but with a new perspective. Has the organisation learned enough to challenge not only the answers, but also the questions it originally asked?
+All 17 chapters are written, spread across seven parts and around 70,000 words — approximately 250–300 book pages. What remains is final editorial review and external assessment before the path towards publication. Title and cover are provisional.
 
 👉 I am looking for a few critical test readers with experience in leadership, strategy, organisational development or technology. If you would like to challenge the arguments and give honest input, please get in touch.
 
