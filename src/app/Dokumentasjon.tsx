@@ -10,7 +10,6 @@ import { getDokumentasjonData, linkedinUrl, cvPdfUrl, soknadPdfUrl } from "./dat
 import { getRekruttererVerdiData } from "./data/rekrutterer-verdi";
 import { useLanguage } from "./LanguageContext";
 import { getTranslation } from "./data/translations";
-import PdfJsSinglePageViewer from "./components/PdfJsSinglePageViewer";
 import { cardSubtitleClass, pageEyebrowClass, pageTitleClass, sectionTitleClass } from "./lib/typography";
 
 const linkClass =
@@ -29,8 +28,6 @@ function PdfViewerBlock({
   placeholder,
   pdfSrc,
   visible,
-  embedParams = "view=FitH&toolbar=1",
-  usePdfJs = false,
 }: {
   title: string;
   hint: string;
@@ -39,57 +36,17 @@ function PdfViewerBlock({
   placeholder: string;
   pdfSrc: string;
   visible: boolean;
-  /** Chrome PDF viewer hash — FitH for multi-page CV. */
-  embedParams?: string;
-  /** PDF.js canvas preview (single-page documents). */
-  usePdfJs?: boolean;
 }) {
-  const frameRef = useRef<HTMLDivElement>(null);
-  const [frameWidth, setFrameWidth] = useState(0);
-
-  useEffect(() => {
-    if (!visible) {
-      setFrameWidth(0);
-      return;
-    }
-    const node = frameRef.current;
-    if (!node) return;
-
-    const update = () => {
-      const w = node.clientWidth;
-      if (w > 0) setFrameWidth(w);
-    };
-
-    update();
-    const ro = new ResizeObserver(update);
-    ro.observe(node);
-    return () => ro.disconnect();
-  }, [visible]);
-
-  const showEmbed = visible && frameWidth > 0;
-
   return (
-    <div className="space-y-2 min-w-0 max-w-full">
+    <div className="space-y-2 min-w-0">
       <h3 className={cardSubtitleClass}>{title}</h3>
       <p className="text-xs text-slate-500 italic">{hint}</p>
-      <div
-        ref={frameRef}
-        className="rounded-2xl border border-slate-800 overflow-hidden bg-white shadow-xl min-w-0 max-w-full w-full"
-      >
-        {showEmbed && usePdfJs ? (
-          <PdfJsSinglePageViewer
-            pdfUrl={pdfSrc}
+      <div className="rounded-2xl border border-slate-800 overflow-hidden bg-white shadow-xl">
+        {visible ? (
+          <iframe
+            src={`${pdfSrc}#view=FitH&toolbar=1`}
             title={viewerTitle}
             className={pdfFrameClass}
-            placeholder={placeholder}
-            active={showEmbed}
-          />
-        ) : showEmbed ? (
-          <iframe
-            key={`${pdfSrc}-${embedParams}-${frameWidth}`}
-            src={`${pdfSrc}#${embedParams}`}
-            title={viewerTitle}
-            className={`${pdfFrameClass} block max-w-full`}
           />
         ) : (
           <div
@@ -349,7 +306,7 @@ export default function Dokumentasjon() {
               <p className="text-sm text-slate-400 italic">{d.pdfIntro}</p>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 min-w-0 [&>*]:min-w-0">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
               <PdfViewerBlock
                 title={tr("dok.cv")}
                 hint={tr("dok.cv.viewerHint")}
@@ -358,7 +315,6 @@ export default function Dokumentasjon() {
                 placeholder={tr("dok.pdf.placeholder")}
                 pdfSrc={cvPdfUrl}
                 visible={docsVisible}
-                embedParams="view=FitH&toolbar=1"
               />
 
               <PdfViewerBlock
@@ -369,7 +325,6 @@ export default function Dokumentasjon() {
                 placeholder={tr("dok.pdf.placeholder")}
                 pdfSrc={soknadPdfUrl}
                 visible={docsVisible}
-                usePdfJs
               />
             </div>
           </section>
