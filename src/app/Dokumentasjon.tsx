@@ -10,6 +10,7 @@ import { getDokumentasjonData, linkedinUrl, cvPdfUrl, soknadPdfUrl } from "./dat
 import { getRekruttererVerdiData } from "./data/rekrutterer-verdi";
 import { useLanguage } from "./LanguageContext";
 import { getTranslation } from "./data/translations";
+import PdfJsSinglePageViewer from "./components/PdfJsSinglePageViewer";
 import { cardSubtitleClass, pageEyebrowClass, pageTitleClass, sectionTitleClass } from "./lib/typography";
 
 const linkClass =
@@ -29,6 +30,7 @@ function PdfViewerBlock({
   pdfSrc,
   visible,
   embedParams = "view=FitH&toolbar=1",
+  usePdfJs = false,
 }: {
   title: string;
   hint: string;
@@ -37,8 +39,10 @@ function PdfViewerBlock({
   placeholder: string;
   pdfSrc: string;
   visible: boolean;
-  /** Chrome PDF viewer hash — FitH for multi-page CV; Fit for single-page søknad. */
+  /** Chrome PDF viewer hash — FitH for multi-page CV. */
   embedParams?: string;
+  /** PDF.js canvas preview (single-page documents). */
+  usePdfJs?: boolean;
 }) {
   const frameRef = useRef<HTMLDivElement>(null);
   const [frameWidth, setFrameWidth] = useState(0);
@@ -72,7 +76,15 @@ function PdfViewerBlock({
         ref={frameRef}
         className="rounded-2xl border border-slate-800 overflow-hidden bg-white shadow-xl min-w-0 max-w-full w-full"
       >
-        {showEmbed ? (
+        {showEmbed && usePdfJs ? (
+          <PdfJsSinglePageViewer
+            pdfUrl={pdfSrc}
+            title={viewerTitle}
+            className={pdfFrameClass}
+            placeholder={placeholder}
+            active={showEmbed}
+          />
+        ) : showEmbed ? (
           <iframe
             key={`${pdfSrc}-${embedParams}-${frameWidth}`}
             src={`${pdfSrc}#${embedParams}`}
@@ -357,7 +369,7 @@ export default function Dokumentasjon() {
                 placeholder={tr("dok.pdf.placeholder")}
                 pdfSrc={soknadPdfUrl}
                 visible={docsVisible}
-                embedParams="view=Fit&toolbar=1"
+                usePdfJs
               />
             </div>
           </section>
