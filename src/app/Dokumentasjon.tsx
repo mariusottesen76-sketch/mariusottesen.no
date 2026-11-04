@@ -6,7 +6,13 @@ import LocaleLink from "./components/LocaleLink";
 import VerdisKiftetTitle from "./components/bok/VerdisKiftetTitle";
 import { applyVerdisKiftetHighlightHtml } from "./lib/verdiskiftet-display";
 import { FileText, Linkedin, ChevronRight, ArrowDown } from "lucide-react";
-import { getDokumentasjonData, linkedinUrl, cvPdfUrl, soknadPdfUrl } from "./data/dokumentasjon";
+import {
+  getDokumentasjonData,
+  linkedinUrl,
+  cvPdfUrl,
+  soknadPdfUrl,
+  soknadEmbedPdfUrl,
+} from "./data/dokumentasjon";
 import { getRekruttererVerdiData } from "./data/rekrutterer-verdi";
 import { useLanguage } from "./LanguageContext";
 import { getTranslation } from "./data/translations";
@@ -28,6 +34,8 @@ function PdfViewerBlock({
   placeholder,
   pdfSrc,
   visible,
+  pdfFragment = "view=FitH&toolbar=1",
+  pdfDownloadHref,
 }: {
   title: string;
   hint: string;
@@ -36,7 +44,12 @@ function PdfViewerBlock({
   placeholder: string;
   pdfSrc: string;
   visible: boolean;
+  /** Hash for in-browser PDF viewer (page=1 helps single-page docs scale like multi-page CV). */
+  pdfFragment?: string;
+  /** Nedlasting/ny fane — når viseren bruker annen fil (f.eks. embed-kopi). */
+  pdfDownloadHref?: string;
 }) {
+  const downloadHref = pdfDownloadHref ?? pdfSrc;
   const frameRef = useRef<HTMLDivElement>(null);
   const [frameWidth, setFrameWidth] = useState(0);
 
@@ -71,8 +84,8 @@ function PdfViewerBlock({
       >
         {showEmbed ? (
           <iframe
-            key={`${pdfSrc}-${frameWidth}`}
-            src={`${pdfSrc}#view=FitH&toolbar=1`}
+            key={`${pdfSrc}-${pdfFragment}-${frameWidth}`}
+            src={`${pdfSrc}#${pdfFragment}`}
             title={viewerTitle}
             className={`${pdfFrameClass} block max-w-full`}
           />
@@ -86,11 +99,11 @@ function PdfViewerBlock({
       </div>
       <p className="text-xs text-slate-500">
         <a
-          href={pdfSrc}
+          href={downloadHref}
           target="_blank"
           rel="noopener noreferrer"
           className={linkClass}
-          data-analytics-download={pdfSrc.includes("cv.pdf") ? "cv.pdf" : "soknad.pdf"}
+          data-analytics-download={downloadHref.includes("cv.pdf") ? "cv.pdf" : "soknad.pdf"}
         >
           {openNewTabLabel}
         </a>
@@ -351,7 +364,9 @@ export default function Dokumentasjon() {
                 viewerTitle={tr("dok.soknad.viewerTitle")}
                 openNewTabLabel={tr("dok.soknad.openNewTab")}
                 placeholder={tr("dok.pdf.placeholder")}
-                pdfSrc={soknadPdfUrl}
+                pdfSrc={soknadEmbedPdfUrl}
+                pdfDownloadHref={soknadPdfUrl}
+                pdfFragment="page=1&view=FitH&toolbar=1"
                 visible={docsVisible}
               />
             </div>
