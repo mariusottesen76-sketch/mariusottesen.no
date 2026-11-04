@@ -37,16 +37,44 @@ function PdfViewerBlock({
   pdfSrc: string;
   visible: boolean;
 }) {
+  const frameRef = useRef<HTMLDivElement>(null);
+  const [frameWidth, setFrameWidth] = useState(0);
+
+  useEffect(() => {
+    if (!visible) {
+      setFrameWidth(0);
+      return;
+    }
+    const node = frameRef.current;
+    if (!node) return;
+
+    const update = () => {
+      const w = node.clientWidth;
+      if (w > 0) setFrameWidth(w);
+    };
+
+    update();
+    const ro = new ResizeObserver(update);
+    ro.observe(node);
+    return () => ro.disconnect();
+  }, [visible]);
+
+  const showEmbed = visible && frameWidth > 0;
+
   return (
     <div className="space-y-2 min-w-0">
       <h3 className={cardSubtitleClass}>{title}</h3>
       <p className="text-xs text-slate-500 italic">{hint}</p>
-      <div className="rounded-2xl border border-slate-800 overflow-hidden bg-white shadow-xl">
-        {visible ? (
+      <div
+        ref={frameRef}
+        className="rounded-2xl border border-slate-800 overflow-hidden bg-white shadow-xl min-w-0 w-full"
+      >
+        {showEmbed ? (
           <iframe
+            key={`${pdfSrc}-${frameWidth}`}
             src={`${pdfSrc}#view=FitH&toolbar=1`}
             title={viewerTitle}
-            className={pdfFrameClass}
+            className={`${pdfFrameClass} block max-w-full`}
           />
         ) : (
           <div
@@ -306,7 +334,7 @@ export default function Dokumentasjon() {
               <p className="text-sm text-slate-400 italic">{d.pdfIntro}</p>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 min-w-0 [&>*]:min-w-0">
               <PdfViewerBlock
                 title={tr("dok.cv")}
                 hint={tr("dok.cv.viewerHint")}

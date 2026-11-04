@@ -3,7 +3,7 @@ import { Lang } from "../LanguageContext";
 export const linkedinUrl = "https://www.linkedin.com/in/mariusottesen/";
 
 /** Cache-bust når CV/søknad-PDF oppdateres (filnavn på disk: cv.pdf / soknad.pdf). */
-export const CV_PDF_VERSJON = "202611043";
+export const CV_PDF_VERSJON = "202611045";
 export const cvPdfUrl = `/pdf/cv.pdf?v=${CV_PDF_VERSJON}`;
 export const soknadPdfUrl = `/pdf/soknad.pdf?v=${CV_PDF_VERSJON}`;
 
