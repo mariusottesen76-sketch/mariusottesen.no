@@ -28,6 +28,7 @@ function PdfViewerBlock({
   placeholder,
   pdfSrc,
   visible,
+  embedParams = "view=FitH&toolbar=1",
 }: {
   title: string;
   hint: string;
@@ -36,17 +37,19 @@ function PdfViewerBlock({
   placeholder: string;
   pdfSrc: string;
   visible: boolean;
+  /** Chrome PDF viewer hash — FitH for multi-page CV; Fit for single-page søknad. */
+  embedParams?: string;
 }) {
   return (
-    <div className="space-y-2 min-w-0">
+    <div className="space-y-2 min-w-0 max-w-full">
       <h3 className={cardSubtitleClass}>{title}</h3>
       <p className="text-xs text-slate-500 italic">{hint}</p>
-      <div className="rounded-2xl border border-slate-800 overflow-hidden bg-white shadow-xl">
+      <div className="rounded-2xl border border-slate-800 overflow-hidden bg-white shadow-xl min-w-0 max-w-full w-full">
         {visible ? (
           <iframe
-            src={`${pdfSrc}#view=FitH&toolbar=1`}
+            src={`${pdfSrc}#${embedParams}`}
             title={viewerTitle}
-            className={pdfFrameClass}
+            className={`${pdfFrameClass} block max-w-full`}
           />
         ) : (
           <div
@@ -306,7 +309,7 @@ export default function Dokumentasjon() {
               <p className="text-sm text-slate-400 italic">{d.pdfIntro}</p>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 min-w-0 [&>*]:min-w-0">
               <PdfViewerBlock
                 title={tr("dok.cv")}
                 hint={tr("dok.cv.viewerHint")}
@@ -315,6 +318,7 @@ export default function Dokumentasjon() {
                 placeholder={tr("dok.pdf.placeholder")}
                 pdfSrc={cvPdfUrl}
                 visible={docsVisible}
+                embedParams="view=FitH&toolbar=1"
               />
 
               <PdfViewerBlock
@@ -325,6 +329,7 @@ export default function Dokumentasjon() {
                 placeholder={tr("dok.pdf.placeholder")}
                 pdfSrc={soknadPdfUrl}
                 visible={docsVisible}
+                embedParams="view=Fit&toolbar=1"
               />
             </div>
           </section>
