@@ -11,6 +11,7 @@ import {
   linkedinUrl,
   cvPdfUrl,
   soknadPdfUrl,
+  soknadEmbedPdfUrl,
 } from "./data/dokumentasjon";
 import { getRekruttererVerdiData } from "./data/rekrutterer-verdi";
 import { useLanguage } from "./LanguageContext";
@@ -23,7 +24,8 @@ const linkClass =
 const ctaBtnClass =
   "inline-flex items-center justify-center px-4 py-2.5 rounded-lg border border-indigo-500/40 bg-indigo-500/10 text-indigo-200 text-sm font-bold hover:bg-indigo-500/20 hover:border-indigo-400/60 transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400";
 
-const pdfFrameClass = "w-full h-[75vh] min-h-[560px] border-0";
+const pdfViewportClass = "relative w-full min-w-0 max-w-full overflow-hidden h-[75vh] min-h-[560px] [contain:inline-size]";
+const pdfFrameClass = "absolute inset-0 w-full h-full border-0 max-w-full";
 
 function PdfViewerBlock({
   title,
@@ -79,18 +81,20 @@ function PdfViewerBlock({
       <p className="text-xs text-slate-500 italic">{hint}</p>
       <div
         ref={frameRef}
-        className="rounded-2xl border border-slate-800 overflow-hidden bg-white shadow-xl min-w-0 w-full"
+        className="rounded-2xl border border-slate-800 overflow-hidden bg-white shadow-xl min-w-0 w-full max-w-full"
       >
         {showEmbed ? (
-          <iframe
-            key={`${pdfSrc}-${pdfFragment}-${frameWidth}`}
-            src={`${pdfSrc}#${pdfFragment}`}
-            title={viewerTitle}
-            className={`${pdfFrameClass} block max-w-full`}
-          />
+          <div className={pdfViewportClass}>
+            <iframe
+              key={`${pdfSrc}-${pdfFragment}-${frameWidth}`}
+              src={`${pdfSrc}#${pdfFragment}`}
+              title={viewerTitle}
+              className={pdfFrameClass}
+            />
+          </div>
         ) : (
           <div
-            className={`${pdfFrameClass} flex items-center justify-center bg-slate-100 text-slate-500 text-sm italic px-6 text-center`}
+            className={`${pdfViewportClass} flex items-center justify-center bg-slate-100 text-slate-500 text-sm italic px-6 text-center`}
           >
             {placeholder}
           </div>
@@ -346,7 +350,7 @@ export default function Dokumentasjon() {
               <p className="text-sm text-slate-400 italic">{d.pdfIntro}</p>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 min-w-0 [&>*]:min-w-0">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 min-w-0 max-w-full overflow-hidden [&>*]:min-w-0 [&>*]:max-w-full">
               <PdfViewerBlock
                 title={tr("dok.cv")}
                 hint={tr("dok.cv.viewerHint")}
@@ -363,7 +367,8 @@ export default function Dokumentasjon() {
                 viewerTitle={tr("dok.soknad.viewerTitle")}
                 openNewTabLabel={tr("dok.soknad.openNewTab")}
                 placeholder={tr("dok.pdf.placeholder")}
-                pdfSrc={soknadPdfUrl}
+                pdfSrc={soknadEmbedPdfUrl}
+                pdfDownloadHref={soknadPdfUrl}
                 pdfFragment="page=1&view=FitH&toolbar=1"
                 visible={docsVisible}
               />

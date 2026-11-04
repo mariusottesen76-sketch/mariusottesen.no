@@ -3,9 +3,11 @@ import { Lang } from "../LanguageContext";
 export const linkedinUrl = "https://www.linkedin.com/in/mariusottesen/";
 
 /** Cache-bust når CV/søknad-PDF oppdateres (filnavn på disk: cv.pdf / soknad.pdf). */
-export const CV_PDF_VERSJON = "202611047";
+export const CV_PDF_VERSJON = "202611048";
 export const cvPdfUrl = `/pdf/cv.pdf?v=${CV_PDF_VERSJON}`;
 export const soknadPdfUrl = `/pdf/soknad.pdf?v=${CV_PDF_VERSJON}`;
+/** Tre sider (som CV) kun for innebygd viser — unngår feil FitH-skala for én-siders fil. */
+export const soknadEmbedPdfUrl = `/pdf/soknad-embed.pdf?v=${CV_PDF_VERSJON}`;
 
 const data = {
   no: {
