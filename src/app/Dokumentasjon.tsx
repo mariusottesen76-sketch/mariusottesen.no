@@ -11,7 +11,6 @@ import {
   linkedinUrl,
   cvPdfUrl,
   soknadPdfUrl,
-  soknadEmbedPdfUrl,
 } from "./data/dokumentasjon";
 import { getRekruttererVerdiData } from "./data/rekrutterer-verdi";
 import { useLanguage } from "./LanguageContext";
@@ -364,8 +363,7 @@ export default function Dokumentasjon() {
                 viewerTitle={tr("dok.soknad.viewerTitle")}
                 openNewTabLabel={tr("dok.soknad.openNewTab")}
                 placeholder={tr("dok.pdf.placeholder")}
-                pdfSrc={soknadEmbedPdfUrl}
-                pdfDownloadHref={soknadPdfUrl}
+                pdfSrc={soknadPdfUrl}
                 pdfFragment="page=1&view=FitH&toolbar=1"
                 visible={docsVisible}
               />
