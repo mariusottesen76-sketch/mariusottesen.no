@@ -40,13 +40,41 @@ function PdfViewerBlock({
   /** Chrome PDF viewer hash — FitH for multi-page CV; Fit for single-page søknad. */
   embedParams?: string;
 }) {
+  const frameRef = useRef<HTMLDivElement>(null);
+  const [frameWidth, setFrameWidth] = useState(0);
+
+  useEffect(() => {
+    if (!visible) {
+      setFrameWidth(0);
+      return;
+    }
+    const node = frameRef.current;
+    if (!node) return;
+
+    const update = () => {
+      const w = node.clientWidth;
+      if (w > 0) setFrameWidth(w);
+    };
+
+    update();
+    const ro = new ResizeObserver(update);
+    ro.observe(node);
+    return () => ro.disconnect();
+  }, [visible]);
+
+  const showEmbed = visible && frameWidth > 0;
+
   return (
     <div className="space-y-2 min-w-0 max-w-full">
       <h3 className={cardSubtitleClass}>{title}</h3>
       <p className="text-xs text-slate-500 italic">{hint}</p>
-      <div className="rounded-2xl border border-slate-800 overflow-hidden bg-white shadow-xl min-w-0 max-w-full w-full">
-        {visible ? (
+      <div
+        ref={frameRef}
+        className="rounded-2xl border border-slate-800 overflow-hidden bg-white shadow-xl min-w-0 max-w-full w-full"
+      >
+        {showEmbed ? (
           <iframe
+            key={`${pdfSrc}-${embedParams}-${frameWidth}`}
             src={`${pdfSrc}#${embedParams}`}
             title={viewerTitle}
             className={`${pdfFrameClass} block max-w-full`}
