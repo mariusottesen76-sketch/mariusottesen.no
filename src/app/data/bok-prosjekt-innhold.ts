@@ -98,7 +98,7 @@ const PARTS_NO: BokPartBlock[] = [
       "Hvorfor må ledelsen forstå problemet før den velger løsning? Hvordan oppdager virksomheten endringer før de blir synlige i resultatene?",
     chapters: [
       { num: 1, title: "Se problemet før du løser det" },
-      { num: 2, title: "Se før tallene blir røde" },
+      { num: 2, title: "Før tallene blir røde" },
     ],
   },
   {
@@ -128,7 +128,7 @@ const PARTS_NO: BokPartBlock[] = [
       "Hvordan opplever kunden virksomheten som helhet? Hva skaper sammenhengende kundeopplevelser og sterkere lojalitet?",
     chapters: [
       { num: 7, title: "Kunden møter virksomheten, ikke organisasjonskartet" },
-      { num: 8, title: "Fra tilfreds kunde til sterkere lojalitet" },
+      { num: 8, title: "Hvorfor fornøyde kunder likevel forsvinner" },
     ],
   },
   {
@@ -174,7 +174,7 @@ const PARTS_EN: BokPartBlock[] = [
       "Why must leadership understand the problem before choosing a solution? How does the organisation notice change before it shows up in the results?",
     chapters: [
       { num: 1, title: "See the problem before you solve it" },
-      { num: 2, title: "See before the figures turn red" },
+      { num: 2, title: "Before the Numbers Turn Red" },
     ],
   },
   {
@@ -204,7 +204,7 @@ const PARTS_EN: BokPartBlock[] = [
       "How does the customer experience the organisation as a whole? What creates coherent customer experiences and stronger loyalty?",
     chapters: [
       { num: 7, title: "The customer meets the organisation, not the org chart" },
-      { num: 8, title: "From satisfied customer to stronger loyalty" },
+      { num: 8, title: "Why Satisfied Customers Still Leave" },
     ],
   },
   {
