@@ -30,6 +30,39 @@ function articleLink(slug: string, label: { no: string; en: string }): RelevantV
 
 /** Sentralt authority-kart — Core Authority Set v1.0 + støtteartikler (data only i fase 4B.1). */
 export const FAGINNLEGG_AUTHORITY: Record<string, FaginnleggAuthorityEntry> = {
+  "nar-alle-kan-bygge-fuse-2026-11": {
+    slug: "nar-alle-kan-bygge-fuse-2026-11",
+    cluster: "ai-implementering",
+    role: "secondary-support",
+    ownedIntents: [
+      "AI produktutvikling",
+      "Fuse",
+      "prioritering AI",
+      "prototype til produkt",
+      "eksperimentering til verdi",
+    ],
+    coreSupportSlugs: [
+      "skalar-innovasjon-ideer-verdi-2026-10",
+      "fra-pilot-til-skalering-01",
+      "femti-ar-skrevet-bok-2026-11",
+    ],
+    relevantVidere: [
+      { href: BOK_ROUTE.no, label: { no: "Les om VerdisKIftet", en: "About VerdisKIftet" } },
+      articleLink("skalar-innovasjon-ideer-verdi-2026-10", {
+        no: "Les også: Hvorfor blir så mange gode ideer aldri til varig verdi?",
+        en: "Read also: Why do so many good ideas never become lasting value?",
+      }),
+      articleLink("fra-pilot-til-skalering-01", {
+        no: "Les også: Fra pilot til skalering – hvorfor så mange AI-initiativer stopper",
+        en: "Read also: From pilot to scale – why so many AI initiatives stall",
+      }),
+      articleLink("praktisk-oppskrift-skalering-01", {
+        no: "Les også: Praktisk oppskrift på skalering",
+        en: "Read also: A practical recipe for scaling",
+      }),
+      { href: "/consulting", label: { no: "Se Consulting – praktisk KI", en: "See consulting – practical AI" } },
+    ],
+  },
   "femti-ar-skrevet-bok-2026-11": {
     slug: "femti-ar-skrevet-bok-2026-11",
     cluster: "strategi-endring",
