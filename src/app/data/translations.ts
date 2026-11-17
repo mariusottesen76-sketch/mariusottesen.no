@@ -8,7 +8,8 @@ const translations: Translations = {
   "tab.erfaring": { no: "Erfaring", en: "Experience" },
   "tab.resultater": { no: "Resultater", en: "Results" },
   "tab.referanser": { no: "Referanser", en: "References" },
-  "tab.faginnlegg": { no: "Faginnlegg", en: "Articles" },
+  "tab.faginnlegg": { no: "Innsikt", en: "Insights" },
+  "tab.bok": { no: "Bok", en: "Book" },
   "tab.prosjekter": { no: "AI-prosjekter", en: "AI Projects" },
   "tab.consulting": { no: "Consulting", en: "Consulting" },
   "tab.cv": { no: "CV & Åpen søknad", en: "CV & Application" },
@@ -62,7 +63,7 @@ const translations: Translations = {
     no: "Utforsk faglige perspektiver, prosjekter og mulige samarbeidsflater.",
     en: "Explore perspectives, projects and potential areas for collaboration.",
   },
-  "profil.videre.groupC.faginnlegg": { no: "Faginnlegg", en: "Articles" },
+  "profil.videre.groupC.faginnlegg": { no: "Innsikt", en: "Insights" },
   "profil.videre.groupC.bok": { no: "VerdisKIftet", en: "VerdisKIftet" },
   "profil.videre.groupC.prosjekter": { no: "AI-prosjekter og demonstratorer", en: "AI projects and demonstrators" },
   "profil.videre.groupC.kontakt": { no: "Ta kontakt", en: "Get in touch" },
@@ -93,10 +94,13 @@ const translations: Translations = {
   "profil.ai.link.consulting": { no: "Se kompetanseområder og portefølje", en: "See competence areas and portfolio" },
   "profil.ai.link.prosjekter": { no: "Se AI-prosjekter og demonstratorer", en: "See AI projects and demonstrators" },
   "profil.ai.link.faginnlegg": { no: "Les faginnlegg", en: "Read articles" },
-  "profil.bok.titleSuffix": { no: " — fagbok under utvikling", en: " — professional book in development" },
+  "profil.bok.titleSuffix": {
+    no: " – fagbok av Marius Ottesen",
+    en: " – a professional book by Marius Ottesen",
+  },
   "profil.bok.body": {
-    no: "Jeg utvikler fagboka VerdisKIftet – Fra innsikt til nye fortrinn. Det er et redaksjonelt prosjekt med samlet, faglig låst manus (17 kapitler fordelt på syv deler), bygget på faginnlegg, ledererfaring og masterarbeid. Boka er fortsatt under utvikling; redaksjonell kvalitetssikring og bokproduksjon pågår.",
-    en: "I am developing VerdisKIftet – From insight to new advantages. It is an editorial project with a coherent, locked manuscript (17 chapters in seven parts), built on articles, leadership experience and graduate work. The book remains in development; editorial quality assurance and book production continue.",
+    no: "Jeg har skrevet VerdisKIftet – Fra innsikt til nye fortrinn, en fagbok om hvordan ledere og virksomheter kan omsette innsikt til strategiske valg, mobilisere mennesker og skape varige resultater. Manuskriptet (17 kapitler i syv deler) er i hovedsak ferdigskrevet og er til faglig testlesing. Boka bygger på faginnlegg, ledererfaring og masterarbeid — ikke en samling artikler, men én sammenhengende fortelling. Den er ikke publisert.",
+    en: "I have written VerdisKIftet – From insight to new advantages, a professional book on how leaders and organisations turn insight into strategic choices, mobilise people and create lasting results. The manuscript (17 chapters in seven parts) is largely complete and undergoing expert review. It builds on articles, leadership experience and graduate work — one coherent narrative, not a collection of posts. It is not published.",
   },
   "profil.bok.link": { no: "Les om VerdisKIftet", en: "About VerdisKIftet" },
 
@@ -147,18 +151,37 @@ const translations: Translations = {
   "fag.title.1": { no: "Innsikt &", en: "Insight &" },
   "fag.title.2": { no: "faglig fordypning", en: "professional depth" },
   "fag.intro.1": {
-    no: "Faginnlegg om kommersiell ledelse, transformasjon og praktisk AI (kunstig intelligens/KI) — strukturert som faglig formidling, ikke som salgsmateriell. Innholdet inngår også i kunnskapsgrunnlaget for fagboka VerdisKIftet (under utvikling).",
-    en: "Articles on commercial leadership, transformation and practical AI — structured as professional communication, not sales material. The body of work also informs VerdisKIftet, a professional book in development.",
+    no: "Faginnlegg om kommersiell ledelse, transformasjon og praktisk AI (kunstig intelligens/KI) — strukturert som faglig formidling, ikke som salgsmateriell. Innholdet inngår også i kunnskapsgrunnlaget for fagboka VerdisKIftet (ferdigskrevet manus, faglig testlesing).",
+    en: "Articles on commercial leadership, transformation and practical AI — structured as professional communication, not sales material. The body of work also informs VerdisKIftet (manuscript completed, expert review).",
   },
-  "fag.bok.eyebrow": { no: "Bokprosjekt · under utvikling", en: "Book project · work in progress" },
+  "fag.bok.eyebrow": {
+    no: "Ferdigskrevet manus – til faglig testlesing",
+    en: "Manuscript completed — expert review",
+  },
   "fag.bok.subtitle": { no: "Fra innsikt til nye fortrinn", en: "From insight to new advantages" },
   "fag.bok.tagline": {
     no: "Hvordan ledere skaper varige resultater når spillereglene endres",
     en: "How leaders create lasting results when the rules of the game change",
   },
-  "fag.bok.body": {
-    no: "En virksomhet kan levere gode resultater og likevel være i ferd med å miste konkurransekraft. Hva skal til for at ledere oppdager når forutsetningene endres, prioriterer riktig og utvikler virksomheten videre?\n\nDet er et sentralt spørsmål i *VerdisKIftet*, en fagbok om hvordan forståelse blir til strategiske valg, hvordan valgene former menneskers arbeid, og hvordan erfaringene kan brukes til å skape nye fortrinn.\n\nBoka utforsker sammenhengen mellom ledelse, mennesker, kundeverdi, gjennomføring og læring. Kunstig intelligens har en sentral plass fordi den åpner nye muligheter, men også stiller større krav til virksomhetens dømmekraft og evne til endring.\n\nGrunnlaget for boka bygger på forfatterens mer enn 25 års leder- og arbeidserfaring, over 100 faglige tekster og refleksjoner, fire master- og prosjektarbeider, praktiske utviklingsprosjekter og faglig fordypning. Materialet er utviklet til ett sammenhengende manus med 17 kapitler, ikke en samling tidligere artikler.",
-    en: "An organisation can deliver good results and still be losing competitiveness. What does it take for leaders to notice when the premises change, prioritise well and develop the organisation further?\n\nThat is a central question in *VerdisKIftet*, a professional book on how understanding becomes strategic choices, how choices shape people’s work, and how experience can be used to create new advantages.\n\nThe book explores the links between leadership, people, customer value, execution and learning. Artificial intelligence has a central place because it opens new possibilities, but also demands more of the organisation’s judgement and ability to change.\n\nThe foundation for the book builds on the author’s more than 25 years of leadership and work experience, over 100 articles and reflections, four master’s and project theses, practical development projects and continued professional depth. The material has been shaped into one coherent manuscript with 17 chapters — not a collection of past articles.",
+  "fag.bok.body.1": {
+    no: "VerdisKIftet utforsker hvordan virksomheter kan levere gode resultater og samtidig risikere å miste konkurransekraft. Boka undersøker hvordan forståelse blir til strategiske valg, hvordan ledere mobiliserer mennesker, og hvordan gjennomføring, læring og utvikling skaper nye fortrinn.",
+    en: "VerdisKIftet explores how organisations can deliver good results while still risking loss of competitiveness. It examines how understanding becomes strategic choices, how leaders mobilise people, and how execution, learning and development create new advantages.",
+  },
+  "fag.bok.body.2": {
+    no: "Den kobler strategisk ledelse, mennesker, kundeverdi og organisatorisk utvikling med praktisk gjennomføring. Kunstig intelligens behandles som en viktig forsterker av virksomhetens muligheter, ikke som bokas eneste tema.",
+    en: "It connects strategic leadership, people, customer value and organisational development with practical execution. Artificial intelligence is treated as an important amplifier of the organisation’s opportunities — not the book’s only theme.",
+  },
+  "fag.bok.background": {
+    no: "Boka bygger på mer enn 25 års leder- og arbeidserfaring, videreutdanning, faglige refleksjoner og praktiske utviklingsprosjekter, inkludert arbeid med kunstig intelligens.",
+    en: "The book builds on more than 25 years of leadership and work experience, graduate education, professional reflections and practical development projects, including work with artificial intelligence.",
+  },
+  "fag.bok.manuscript": {
+    no: "17 kapitler fordelt på syv deler. Manus er i hovedsak ferdigskrevet og er nå til faglig testlesing.",
+    en: "17 chapters across seven parts. The manuscript is largely complete and undergoing expert review.",
+  },
+  "fag.bok.factsLine": {
+    no: "25+ års ledererfaring · 100+ faglige tekster · fire master- og prosjektarbeider · utviklings- og KI-prosjekter",
+    en: "25+ years of leadership experience · 100+ professional texts · four graduate and project theses · development and AI projects",
   },
   "fag.bok.proof.1.heading": { no: "25+ års leder- og arbeidserfaring", en: "25+ years of leadership and work experience" },
   "fag.bok.proof.1.secondary": { no: "", en: "" },
@@ -171,7 +194,7 @@ const translations: Translations = {
     en: "Practical development and AI projects",
   },
   "fag.bok.proof.4.secondary": { no: "", en: "" },
-  "fag.bok.cta": { no: "Se bokprosjektet", en: "View the book project" },
+  "fag.bok.cta": { no: "Utforsk VerdisKIftet", en: "Explore VerdisKIftet" },
   "fag.intro.2": {
     no: "Under finner du anbefalte lesestier og innholdsfortegnelse etter tema. Alle innlegg er nærmere beskrevet lenger ned på siden — med ingress, bilde og mulighet til å lese hele teksten.",
     en: "Below you will find recommended reading paths and a table of contents by topic. Every article is described in more detail further down the page — with a teaser, image and option to read the full text.",
@@ -209,10 +232,13 @@ const translations: Translations = {
     no: "Hopp til alle innlegg i detalj",
     en: "Jump to all articles in detail",
   },
-  "fag.lesestier.title": { no: "Anbefalte lesestier", en: "Recommended reading paths" },
+  "fag.lesestier.title": {
+    no: "Faginnlegg – anbefalte lesestier",
+    en: "Articles – recommended reading paths",
+  },
   "fag.lesestier.intro": {
-    no: "Velg lesesti ut fra rolle, behov eller interesse. Artiklene er satt i anbefalt leserekkefølge.",
-    en: "Choose a reading path based on role, need or interest. The articles are listed in recommended reading order.",
+    no: "Her finner du mine faginnlegg om ledelse, kommersiell utvikling, strategi, transformasjon og kunstig intelligens. Innleggene er organisert i anbefalte lesestier for ulike målgrupper, med en samlet innholdsoversikt lenger ned på siden.",
+    en: "Here you will find my articles on leadership, commercial development, strategy, transformation and artificial intelligence. They are organised into recommended reading paths for different audiences, with a full table of contents further down the page.",
   },
   "fag.kort.seksjon.title": { no: "Alle innlegg i detalj", en: "All articles in detail" },
   "fag.kort.seksjon.intro.lead": {
@@ -231,7 +257,7 @@ const translations: Translations = {
   "fag.toc.sort.label": { no: "Sorter innlegg", en: "Sort posts" },
   "fag.les": { no: "Les hele innlegget →", en: "Read full article →" },
   "fag.lukk": { no: "Lukk innlegget ↑", en: "Close article ↑" },
-  "fag.artikkel.tilbake": { no: "Tilbake til Faginnlegg", en: "Back to Articles" },
+  "fag.artikkel.tilbake": { no: "Tilbake til Innsikt", en: "Back to Insights" },
   "fag.artikkel.norwegianOnly": { no: "", en: "Norwegian only" },
   "fag.artikkel.enNotAvailable": {
     no: "",
@@ -366,8 +392,8 @@ const translations: Translations = {
     en: "Ongoing track on AI, leadership and value creation — where theory meets practice",
   },
   "prosjekter.intro.punkt.faginnlegg.bookPrefix": {
-    no: "Parallelt utvikles fagboka VerdisKIftet – samlet manus med 17 kapitler (under utvikling). Se",
-    en: "In parallel, VerdisKIftet is in development — a coherent manuscript with 17 chapters. See",
+    no: "Parallelt finnes fagboka VerdisKIftet – ferdigskrevet manus med 17 kapitler (faglig testlesing). Se",
+    en: "In parallel, VerdisKIftet — a completed manuscript with 17 chapters (expert review). See",
   },
   "prosjekter.intro.punkt.faginnlegg.bookLink": {
     no: "VerdisKIftet",
@@ -523,7 +549,7 @@ const translations: Translations = {
     en: "I have experience in commercial leadership, national sales leadership, P&L accountability, team development, change, CRM, workflow and practical AI — including operational leadership experience from sales and operations. The website brings together documented results, experience, AI projects,",
   },
   "kontakt.link.faginnlegg": { no: "100+ faginnlegg", en: "100+ articles" },
-  "kontakt.link.bok": { no: "VerdisKIftet (under utvikling)", en: "VerdisKIftet (in development)" },
+  "kontakt.link.bok": { no: "VerdisKIftet (faglig testlesing)", en: "VerdisKIftet (expert review)" },
   "kontakt.dialog": { no: "Komme i dialog", en: "Start a conversation" },
   "kontakt.dialog.desc": {
     no: "Bruk gjerne skjemaet dersom du ønsker å komme i dialog. Henvendelser vurderes ut fra relevans for aktuelle lederroller, rekrutteringsprosesser, faglige problemstillinger, paneldebatter, innlegg, sparring eller mulige fremtidige sammenhenger.",
@@ -577,8 +603,8 @@ const translations: Translations = {
   "dok.fagFordypning.and": { no: "og", en: "and" },
   "dok.fagFordypning.bok": { no: "VerdisKIftet", en: "VerdisKIftet" },
   "dok.fagFordypning.outro": {
-    no: ": fagbok under utvikling med samlet, faglig låst manus (17 kapitler i syv deler), bygget på erfaring, masterarbeid, faglige tekster og praktiske utviklingsprosjekter.",
-    en: ": a professional book in development with a coherent, locked manuscript (17 chapters in seven parts), built on experience, graduate work, professional writing and practical development projects.",
+    no: ": fagbok med ferdigskrevet manus (17 kapitler i syv deler), til faglig testlesing — bygget på erfaring, masterarbeid, faglige tekster og praktiske utviklingsprosjekter.",
+    en: ": a professional book with a completed manuscript (17 chapters in seven parts), undergoing expert review — built on experience, graduate work, professional writing and practical development projects.",
   },
 
   // Footer

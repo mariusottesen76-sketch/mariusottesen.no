@@ -10,6 +10,8 @@ type OmslagVariant = keyof typeof BOK_OMSLAG;
 
 const omslagRammeBySize = {
   card: "rounded-xl border border-slate-800/80 bg-slate-950/50 p-2 sm:p-3 shadow-lg w-full max-w-[min(100%,300px)]",
+  insight:
+    "rounded-xl border border-slate-800/80 bg-slate-950/50 p-1.5 sm:p-2 shadow-lg w-full max-w-[min(100%,285px)]",
   hero: "rounded-xl border border-slate-800/80 bg-slate-950/50 p-2 sm:p-3 shadow-lg w-full max-w-[min(46vw,340px)] sm:max-w-[240px] md:max-w-[280px] lg:max-w-[300px] xl:max-w-[340px]",
 } as const;
 
@@ -19,12 +21,15 @@ export default function BokOmslagImage({
   lang,
   size = "card",
   className = "",
+  priority = false,
 }: {
   variant: OmslagVariant;
   lang: BokProsjektLang;
-  /** card = faginnlegg; hero = større par på /bok */
+  /** card = generisk; insight = kompakt på Innsikt; hero = større par på /bok */
   size?: keyof typeof omslagRammeBySize;
   className?: string;
+  /** Prioriter LCP/indeksering for forsideomslag på /bok */
+  priority?: boolean;
 }) {
   const [enlarged, setEnlarged] = useState(false);
   const asset = BOK_OMSLAG[variant];
@@ -50,13 +55,20 @@ export default function BokOmslagImage({
             width={600}
             height={900}
             className={`w-full h-auto object-contain object-center mx-auto pointer-events-none ${
-              size === "hero" ? "max-h-[min(78vh,640px)]" : "max-h-[min(72vh,520px)]"
+              size === "hero"
+                ? "max-h-[min(78vh,640px)]"
+                : size === "insight"
+                  ? "max-h-[430px]"
+                  : "max-h-[min(72vh,520px)]"
             }`}
             sizes={
               size === "hero"
                 ? "(max-width: 640px) 44vw, (max-width: 1280px) 280px, 340px"
-                : "(max-width: 640px) 85vw, 300px"
+                : size === "insight"
+                  ? "(max-width: 768px) 45vw, 285px"
+                  : "(max-width: 640px) 85vw, 300px"
             }
+            priority={priority}
             unoptimized
           />
         </button>

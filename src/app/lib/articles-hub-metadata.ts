@@ -4,15 +4,15 @@ import { ARTICLES_HUB_PAIR } from "./faginnlegg-locale-routes";
 
 const HUB_META = {
   no: {
-    title: "Faginnlegg | Innsikt & faglig fordypning — Marius Ottesen",
+    title: "Innsikt og faginnlegg om ledelse, strategi og AI | Marius Ottesen",
     description:
-      "Faginnlegg om kommersiell ledelse, transformasjon og praktisk AI — og utviklingen av fagboka VerdisKIftet (under utvikling). Strategisk ledelse, gjennomføring og faglig formidling.",
+      "Innsikt og faginnlegg om kommersiell ledelse, transformasjon og praktisk AI — og fagboka VerdisKIftet (ferdigskrevet manus, faglig testlesing). Strategi, gjennomføring og faglig formidling.",
     ogImageAlt: "Innsikt og faglig fordypning — Marius Ottesen",
   },
   en: {
-    title: "Articles | Insight & professional depth — Marius Ottesen",
+    title: "Insights and articles on leadership, strategy and AI | Marius Ottesen",
     description:
-      "Articles on commercial leadership, transformation and practical AI — and VerdisKIftet, a professional book in development. Strategic leadership, execution and professional communication.",
+      "Insights and articles on commercial leadership, transformation and practical AI — and VerdisKIftet (manuscript completed, expert review). Strategy, execution and professional communication.",
     ogImageAlt: "Insight and professional depth — Marius Ottesen",
   },
 } as const;

@@ -24,9 +24,9 @@ const data = {
               "Tatt metodikk i bruk i praktisk B2B-kundearbeid, salgsutvikling, coaching og AI-basert trening.",
           },
           {
-            title: "Faglig posisjonering og samarbeid",
+            title: "Forfatterskap og faglig posisjonering",
             body:
-              'Videreutviklet faglig plattform gjennom <a href="/strategisk-ai-implementering">BI</a>, <a href="/ai-value-lab-oslo">AI Value Lab Oslo</a>, <a href="/row-solutions">Row Solutions</a>, <a href="/faginnlegg">faginnlegg</a> og fagboka <a href="/bok">VerdisKIftet</a> (under utvikling).',
+              'Skrev manuskriptet til <a href="/bok">VerdisKIftet</a>, en fagbok om strategisk ledelse, mennesker, gjennomføring, endringsledelse og kunstig intelligens. Manus er i hovedsak ferdigskrevet og til faglig testlesing. Parallelt videreutviklet faglig plattform gjennom <a href="/strategisk-ai-implementering">BI</a>, <a href="/ai-value-lab-oslo">AI Value Lab Oslo</a>, <a href="/row-solutions">Row Solutions</a> og <a href="/faginnlegg">innsikt</a>.',
           },
         ],
         resultsMoreLink: {
@@ -111,9 +111,9 @@ const data = {
               "Applied methodology in practical B2B client work, sales development, coaching and AI-based training.",
           },
           {
-            title: "Professional positioning and collaboration",
+            title: "Authorship and professional positioning",
             body:
-              'Further developed the professional platform through <a href="/strategisk-ai-implementering">BI</a>, <a href="/ai-value-lab-oslo">AI Value Lab Oslo</a>, <a href="/row-solutions">Row Solutions</a>, <a href="/faginnlegg">articles</a> and <a href="/en/book">VerdisKIftet</a> (in development).',
+              'Wrote the manuscript for <a href="/en/book">VerdisKIftet</a>, a professional book on strategic leadership, people, execution, change management and artificial intelligence. The manuscript is largely complete and undergoing expert review. In parallel, further developed the platform through <a href="/strategisk-ai-implementering">BI</a>, <a href="/ai-value-lab-oslo">AI Value Lab Oslo</a>, <a href="/row-solutions">Row Solutions</a> and <a href="/faginnlegg">insight</a>.',
           },
         ],
         resultsMoreLink: {

@@ -314,36 +314,6 @@ export default function Profil({ onNavigate }: { onNavigate?: (tab: string) => v
             </div>
           </section>
 
-          <section aria-labelledby="profil-bok-heading" className="space-y-3">
-            <h2 id="profil-bok-heading" className={sectionTitleClass}>
-              <VerdisKiftetTitle />
-              {tr("profil.bok.titleSuffix")}
-            </h2>
-            <div className={`${cardClassSubtle} space-y-2.5`}>
-              <p className="text-slate-400 text-sm leading-relaxed">
-                <VerdisKiftetInText text={tr("profil.bok.body")} />
-              </p>
-              <LocaleLink href="/bok" className={`${linkClass} text-sm font-medium`} aria-label="Gå til VerdisKIftet">
-                <VerdisKiftetInText text={`${tr("profil.bok.link")} →`} />
-              </LocaleLink>
-            </div>
-          </section>
-
-          <section aria-labelledby="profil-utdanning-heading" className="space-y-3">
-            <h2 id="profil-utdanning-heading" className={sectionTitleClass}>
-              {tr("profil.utdanning.title")}
-            </h2>
-            <div
-              className={`${cardClassSubtle} text-slate-400 text-sm leading-relaxed whitespace-pre-line`}
-              dangerouslySetInnerHTML={{
-                __html: d.utdanning.replace(
-                  /\*(.*?)\*/g,
-                  '<em class="text-indigo-400 italic">$1</em>'
-                ),
-              }}
-            />
-          </section>
-
           <section aria-labelledby="profil-consulting-heading" className="space-y-3">
             <h2 id="profil-consulting-heading" className="sr-only">
               Marius Ottesen Consulting
@@ -395,6 +365,36 @@ export default function Profil({ onNavigate }: { onNavigate?: (tab: string) => v
               </span>
             </NavLink>
             </div>
+          </section>
+
+          <section aria-labelledby="profil-bok-heading" className="space-y-3">
+            <h2 id="profil-bok-heading" className={sectionTitleClass}>
+              <VerdisKiftetTitle />
+              {tr("profil.bok.titleSuffix")}
+            </h2>
+            <div className={`${cardClassSubtle} space-y-2.5`}>
+              <p className="text-slate-400 text-sm leading-relaxed">
+                <VerdisKiftetInText text={tr("profil.bok.body")} />
+              </p>
+              <LocaleLink href="/bok" className={`${linkClass} text-sm font-medium`} aria-label="Gå til VerdisKIftet">
+                <VerdisKiftetInText text={`${tr("profil.bok.link")} →`} />
+              </LocaleLink>
+            </div>
+          </section>
+
+          <section aria-labelledby="profil-utdanning-heading" className="space-y-3">
+            <h2 id="profil-utdanning-heading" className={sectionTitleClass}>
+              {tr("profil.utdanning.title")}
+            </h2>
+            <div
+              className={`${cardClassSubtle} text-slate-400 text-sm leading-relaxed whitespace-pre-line`}
+              dangerouslySetInnerHTML={{
+                __html: d.utdanning.replace(
+                  /\*(.*?)\*/g,
+                  '<em class="text-indigo-400 italic">$1</em>'
+                ),
+              }}
+            />
           </section>
 
           <section aria-labelledby="profil-videre-heading" className="space-y-4">

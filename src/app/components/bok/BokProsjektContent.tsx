@@ -7,8 +7,11 @@ import { BookRichText } from "./book-rich-text";
 import LocaleLink from "../LocaleLink";
 import {
   BOK_PROSJEKT_COPY,
+  BOK_RELATED_INSIGHT_SLUGS,
   BOK_TESTLESER_MAILTO,
 } from "../../data/bok-prosjekt-innhold";
+import { getFaginnleggBySlug } from "../../lib/faginnlegg-data";
+import { faginnleggDetailPath } from "../../lib/faginnlegg-types";
 import { useLanguage } from "../../LanguageContext";
 import { bookFlowTextClass, pageIntroClass, pageTitleClass } from "../../lib/typography";
 
@@ -35,12 +38,6 @@ function BokProsjektInner() {
 
   return (
     <article className="py-4 text-left w-full overflow-x-hidden">
-      <p className={`mb-6 ${bookReadColumnClass}`}>
-        <LocaleLink href="/faginnlegg" className={`${linkClass} text-sm font-medium`}>
-          ← {copy.backToArticles}
-        </LocaleLink>
-      </p>
-
       <header className="border-b border-slate-800/40 pb-12 mb-14">
         <div className={bookReadColumnClass}>
           <p className="text-[10px] font-bold uppercase tracking-widest text-indigo-400 mb-4">
@@ -49,6 +46,7 @@ function BokProsjektInner() {
           <h1 className={bookH1Class}>
             <VerdisKiftetTitle />
           </h1>
+          <p className="text-sm text-slate-300 font-medium mb-2">{copy.heroAuthorLine}</p>
           <p
             className={`${pageIntroClass} mb-2.5 ${bookFlowTextClass} text-lg md:text-xl lg:text-2xl text-slate-200`}
           >
@@ -70,7 +68,13 @@ function BokProsjektInner() {
           className="mt-10 flex flex-col sm:flex-row flex-wrap gap-8 sm:gap-10 justify-center sm:justify-start items-center sm:items-end"
           aria-label={lang === "no" ? "Foreløpige omslag" : "Provisional covers"}
         >
-          <BokOmslagImage variant="forside" lang={lang} size="hero" className="mx-auto sm:mx-0" />
+          <BokOmslagImage
+            variant="forside"
+            lang={lang}
+            size="hero"
+            priority
+            className="mx-auto sm:mx-0"
+          />
           <BokOmslagImage variant="bakside" lang={lang} size="hero" className="mx-auto sm:mx-0" />
         </aside>
       </header>
@@ -200,6 +204,32 @@ function BokProsjektInner() {
           <a href={testleserHref} className={ctaButtonClass}>
             {copy.testReaderCta}
           </a>
+        </section>
+
+        <section aria-labelledby="bok-relatert-innsikt" className="min-w-0 pt-2 border-t border-slate-800/40">
+          <h2 id="bok-relatert-innsikt" className={bookSectionTitleClass}>
+            {copy.relatedInsightTitle}
+          </h2>
+          <p className={`${bodyClass} mb-5`}>{copy.relatedInsightIntro}</p>
+          <ul className="space-y-3 list-none p-0 m-0">
+            {BOK_RELATED_INSIGHT_SLUGS.map((slug) => {
+              const post = getFaginnleggBySlug(slug);
+              if (!post) return null;
+              const title = post.tittel[lang];
+              return (
+                <li key={slug}>
+                  <LocaleLink href={faginnleggDetailPath(slug)} className={`${linkClass} text-sm font-medium`}>
+                    {title} →
+                  </LocaleLink>
+                </li>
+              );
+            })}
+          </ul>
+          <p className="mt-6 mb-0">
+            <LocaleLink href="/faginnlegg" className={`${linkClass} text-sm font-medium text-slate-400`}>
+              {copy.moreInsightsLink}
+            </LocaleLink>
+          </p>
         </section>
 
         <section aria-labelledby="bok-videre" className="min-w-0 pt-4 border-t border-slate-800/40 pb-4">

@@ -36,8 +36,8 @@ function bookLink(label: { no: string; en: string }, surfaces?: ProjectRelevantS
 }
 
 const BOK_RELEVANT_STANDARD = {
-  no: "VerdisKIftet – fagbok i avsluttende redaksjonell fase →",
-  en: "VerdisKIftet – professional book in final editorial phase →",
+  no: "VerdisKIftet – ferdigskrevet manus, faglig testlesing →",
+  en: "VerdisKIftet – manuscript completed, expert review →",
 } as const;
 
 const BOK_RELEVANT_NETTSIDE = {

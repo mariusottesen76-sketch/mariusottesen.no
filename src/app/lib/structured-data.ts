@@ -1,3 +1,4 @@
+import { BOK_OMSLAG, BOK_ROUTE } from "../data/bok-prosjekt-innhold";
 import { SITE } from "./locale-routes";
 
 export const PERSON_SCHEMA_ID = `${SITE}/#person`;
@@ -42,6 +43,24 @@ function consultingOrgNode(lang: "no" | "en") {
   };
 }
 
+function verdisKiftetBookNode(lang: "no" | "en") {
+  const bookUrl = `${SITE}${lang === "en" ? BOK_ROUTE.en : BOK_ROUTE.no}`;
+  const bookName =
+    lang === "en"
+      ? "VerdisKIftet – From insight to new advantages"
+      : "VerdisKIftet – Fra innsikt til nye fortrinn";
+  return {
+    "@type": "Book" as const,
+    "@id": `${bookUrl}#book`,
+    name: bookName,
+    url: bookUrl,
+    image: `${SITE}${BOK_OMSLAG.forside.src}`,
+    author: { "@id": PERSON_ID },
+    inLanguage: lang === "en" ? "en" : "nb",
+    creativeWorkStatus: "InProgress" as const,
+  };
+}
+
 function personNode(lang: "no" | "en") {
   const homeUrl = lang === "en" ? `${SITE}/en` : SITE;
   return {
@@ -77,7 +96,9 @@ function personNode(lang: "no" | "en") {
       "Business Development",
       "Team Development",
       "B2B Markets",
+      "VerdisKIftet",
     ],
+    workExample: verdisKiftetBookNode(lang),
     alumniOf: [
       { "@type": "EducationalOrganization", name: "BI Norwegian Business School" },
       { "@type": "EducationalOrganization", name: "University of Utah" },

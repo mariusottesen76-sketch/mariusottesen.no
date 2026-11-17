@@ -96,6 +96,7 @@ function AppContent({
     "Erfaring",
     "Resultater",
     "Faginnlegg",
+    "Bok",
     "Prosjekter",
     "Consulting",
     "CV & Åpen søknad",
@@ -109,6 +110,7 @@ function AppContent({
     Resultater: getTranslation("tab.resultater", lang),
     Referanser: getTranslation("tab.referanser", lang),
     Faginnlegg: getTranslation("tab.faginnlegg", lang),
+    Bok: getTranslation("tab.bok", lang),
     Prosjekter: getTranslation("tab.prosjekter", lang),
     Consulting: getTranslation("tab.consulting", lang),
     "CV & Åpen søknad": getTranslation("tab.cv", lang),
@@ -132,7 +134,7 @@ function AppContent({
       const maxPx = Math.min(15, Math.max(6.5, cw * 0.026));
       const safetyPx = Math.min(26, Math.max(12, Math.round(10 + cw * 0.024)));
 
-      const next = fitDesktopTabFontPx(mid, row, 4.25, maxPx, safetyPx);
+      const next = fitDesktopTabFontPx(mid, row, 4.05, maxPx, safetyPx);
       setDesktopTabFontPx((prev) => (Math.abs(prev - next) < 0.05 ? prev : next));
     };
 
@@ -156,7 +158,7 @@ function AppContent({
   return (
     <main className="min-h-screen bg-slate-950 text-slate-200 px-16 sm:px-24 md:px-32 lg:px-40 xl:px-48 2xl:px-56 py-4 md:py-8 relative overflow-x-hidden w-full">
       <div
-        className={`${activeTab === "Faginnlegg" || activeTab === "Prosjekter" || activeTab === "Consulting" ? "max-w-7xl" : "max-w-6xl"} mx-auto relative z-10 transition-all duration-500 w-full`}
+        className={`${activeTab === "Faginnlegg" || activeTab === "Bok" || activeTab === "Prosjekter" || activeTab === "Consulting" ? "max-w-7xl" : "max-w-6xl"} mx-auto relative z-10 transition-all duration-500 w-full`}
       >
         <nav className="mb-8 flex w-full items-center justify-between gap-2 border-b border-slate-800/40 pb-3 md:grid md:grid-cols-[auto_minmax(0,1fr)_auto] md:items-center md:gap-x-3">
           <button
@@ -189,7 +191,7 @@ function AppContent({
           >
             <div
               ref={tabBarRowRef}
-              className="inline-flex max-w-full min-w-0 flex-nowrap items-end justify-center gap-x-0 font-black tracking-tight [letter-spacing:-0.05em] uppercase md:gap-x-0.5 lg:gap-x-0.5 xl:gap-x-1"
+              className="inline-flex max-w-full min-w-0 flex-nowrap items-end justify-center gap-x-0 font-black tracking-tight [letter-spacing:-0.04em] uppercase md:gap-x-0.5 lg:gap-x-1 xl:gap-x-1.5"
             >
               {tabKeys.map((tab) => (
                 <button

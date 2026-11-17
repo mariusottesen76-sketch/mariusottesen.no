@@ -1,25 +1,34 @@
 import type { Metadata } from "next";
-import { BOK_OMSLAG, BOK_ROUTE } from "../data/bok-prosjekt-innhold";
+import { BOK_OMSLAG, BOK_ROUTE, BOK_TITTEL } from "../data/bok-prosjekt-innhold";
 import { HREFLANG_EN, HREFLANG_NB, SITE } from "./locale-routes";
+import { PERSON_SCHEMA_ID } from "./structured-data";
 
 const META = {
   no: {
-    title: "VerdisKIftet – Fra innsikt til nye fortrinn | Marius Ottesen",
+    title: "VerdisKIftet | Fagbok om ledelse, endring og AI | Marius Ottesen",
     description:
-      "VerdisKIftet er en fagbok av Marius Ottesen om ledelse, strategi, mennesker, kundeverdi, gjennomføring og KI. Les om de syv delene og bokprosjektet.",
-    ogImageAlt: "Foreløpig omslag til fagboka VerdisKIftet – Fra innsikt til nye fortrinn, av Marius Ottesen.",
+      "VerdisKIftet er en fagbok av Marius Ottesen om ledelse, strategi, mennesker, gjennomføring og AI. Manus er ferdigskrevet og til faglig testlesing.",
+    ogImageAlt:
+      "Foreløpig forsideomslag til VerdisKIftet – Fra innsikt til nye fortrinn, fagbok skrevet av Marius Ottesen.",
+    bookName: `${BOK_TITTEL} – Fra innsikt til nye fortrinn`,
+    bookAbstract:
+      "Fagbok om hvordan ledere omsetter innsikt til strategiske valg, mobiliserer mennesker og skaper varige resultater. Manuskriptet (17 kapitler, syv deler) er ferdigskrevet og til faglig testlesing — ikke publisert.",
   },
   en: {
-    title: "VerdisKIftet – From insight to new advantages | Marius Ottesen",
+    title: "VerdisKIftet | Book on leadership, change and AI | Marius Ottesen",
     description:
-      "VerdisKIftet is a professional book by Marius Ottesen on leadership, strategy, people, customer value, execution and AI. Read about the seven parts and the book project.",
-    ogImageAlt: "Provisional cover for the book VerdisKIftet – From insight to new advantages, by Marius Ottesen.",
+      "VerdisKIftet is a professional book by Marius Ottesen on leadership, strategy, people, execution and AI. The manuscript is completed and undergoing expert review.",
+    ogImageAlt:
+      "Provisional front cover for VerdisKIftet – From insight to new advantages, professional book written by Marius Ottesen.",
+    bookName: `${BOK_TITTEL} – From insight to new advantages`,
+    bookAbstract:
+      "A professional book on how leaders turn insight into strategic choices, mobilise people and create lasting results. The manuscript (17 chapters, seven parts) is completed and undergoing expert review — not published.",
   },
 } as const;
 
 const OG_IMAGE = `${SITE}${BOK_OMSLAG.forside.src}`;
-const OG_IMAGE_WIDTH = 600;
-const OG_IMAGE_HEIGHT = 900;
+const OG_IMAGE_WIDTH = 682;
+const OG_IMAGE_HEIGHT = 1024;
 
 export function buildBokProsjektMetadata(lang: "no" | "en"): Metadata {
   const meta = META[lang];
@@ -53,7 +62,41 @@ export function buildBokProsjektMetadata(lang: "no" | "en"): Metadata {
       card: "summary_large_image",
       title: meta.title,
       description: meta.description,
-      images: [OG_IMAGE],
+      images: [{ url: OG_IMAGE, alt: meta.ogImageAlt }],
     },
   };
+}
+
+export function getBokBookJsonLd(lang: "no" | "en") {
+  const meta = META[lang];
+  const pageUrl = `${SITE}${lang === "en" ? BOK_ROUTE.en : BOK_ROUTE.no}`;
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "Book",
+    "@id": `${pageUrl}#book`,
+    name: meta.bookName,
+    author: {
+      "@type": "Person",
+      "@id": PERSON_SCHEMA_ID,
+      name: "Marius Ottesen",
+      url: lang === "en" ? `${SITE}/en` : SITE,
+    },
+    url: pageUrl,
+    inLanguage: lang === "en" ? "en" : "nb",
+    image: OG_IMAGE,
+    description: meta.bookAbstract,
+    abstract: meta.bookAbstract,
+    genre: lang === "en" ? "Professional literature" : "Faglitteratur",
+    creativeWorkStatus: "InProgress",
+    workExample: {
+      "@type": "Book",
+      bookEdition: lang === "en" ? "Manuscript — expert review" : "Manuskript — faglig testlesing",
+      inLanguage: lang === "en" ? "en" : "nb",
+    },
+  };
+}
+
+export function serializeBokBookJsonLd(lang: "no" | "en"): string {
+  return JSON.stringify(getBokBookJsonLd(lang)).replace(/</g, "\\u003c");
 }

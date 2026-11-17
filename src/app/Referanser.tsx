@@ -25,8 +25,7 @@ export default function Referanser() {
     { href: "/erfaring", label: tr("ref.videre.erfaring"), aria: "Gå til erfaring" },
     { href: "/resultater", label: tr("ref.videre.resultater"), aria: "Gå til dokumenterte resultater" },
     { href: "/cv", label: tr("ref.videre.cv"), aria: "Gå til CV og lederprofil" },
-    { href: "/faginnlegg", label: tr("ref.videre.faginnlegg"), aria: "Gå til faginnlegg" },
-    { href: "/bok", label: tr("ref.videre.bok"), aria: "Gå til bokprosjekt" },
+    { href: "/faginnlegg", label: tr("ref.videre.faginnlegg"), aria: "Gå til innsikt" },
     { href: "/kontakt", label: tr("ref.videre.kontakt"), aria: "Gå til kontakt" },
   ];
 

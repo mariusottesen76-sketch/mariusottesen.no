@@ -20,7 +20,8 @@ export type SiteTabKey =
   | "CV & Åpen søknad"
   | "Kontakt"
   | "Prosjekter"
-  | "Faginnlegg";
+  | "Faginnlegg"
+  | "Bok";
 
 export const LOCALE_ROUTE_MAP: Record<SiteTabKey, { no: string; en: string }> = {
   Profil: { no: "/", en: "/en" },
@@ -31,6 +32,7 @@ export const LOCALE_ROUTE_MAP: Record<SiteTabKey, { no: string; en: string }> = 
   Kontakt: { no: "/kontakt", en: "/en/contact" },
   Prosjekter: { no: "/prosjekter", en: "/en/projects" },
   Faginnlegg: { no: "/faginnlegg", en: "/en/articles" },
+  Bok: { no: "/bok", en: "/en/book" },
 };
 
 /** Tabs without dedicated EN route — always Norwegian URL. */

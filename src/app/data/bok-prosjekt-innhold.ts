@@ -16,6 +16,7 @@ export type BokPartBlock = {
 
 export interface BokProsjektCopy {
   heroEyebrow: string;
+  heroAuthorLine: string;
   subtitle: string;
   tagline: string;
   heroIngress: string;
@@ -46,8 +47,20 @@ export interface BokProsjektCopy {
   linkProjects: string;
   linkProfile: string;
   linkContact: string;
-  backToArticles: string;
+  relatedInsightTitle: string;
+  relatedInsightIntro: string;
+  moreInsightsLink: string;
 }
+
+/** Kuraterte faginnlegg som bygger opp under bokas temaer (prioritert først). */
+export const BOK_RELATED_INSIGHT_SLUGS = [
+  "femti-ar-skrevet-bok-2026-11",
+  "fra-strategi-til-gjennomforing-2026-09",
+  "forbedre-arbeidsmaten-tenke-pa-nytt-2026-10",
+  "fornoyd-kunde-lojal-kunde-2026-09",
+  "nar-alle-kan-bygge-fuse-2026-11",
+  "nar-organisasjonen-egentlig-laert-2026-09",
+] as const;
 
 export const BOK_ROUTE = { no: "/bok", en: "/en/book" } as const;
 
@@ -68,17 +81,17 @@ export function getBokResultatPunktHtml(
   const bok = `<a href="${bokHref}">${VERDIS_KIFTET_HTML}</a>`;
   const fag = link(faginnleggHref, faginnleggLinkLabel);
   if (lang === "en") {
-    return `A major professional book is nearing completion: ${bok} — complete manuscript (17 chapters in seven parts), in final editorial phase, built on the author’s leadership experience, 100+ ${fag}, four graduate and project papers, and practical development work. External review and book production follow before publication.`;
+    return `Developed and wrote the manuscript for ${bok}, a professional work in 17 chapters on leadership, strategy, value creation, change and AI — built on leadership experience, 100+ ${fag}, four graduate and project papers, and practical development work. The manuscript is in external expert review; the book is not published.`;
   }
-  return `Et større faglig arbeid nærmer seg ferdigstilling: ${bok} – komplett manus (17 kapitler fordelt på syv deler), i avsluttende redaksjonell fase, bygget på ledererfaring, 100+ ${fag}, fire master- og prosjektarbeider og praktisk utviklingsarbeid. Ekstern vurdering og bokproduksjon følger før utgivelse.`;
+  return `Utviklet og skrevet manuskriptet til ${bok}, et faglig arbeid i 17 kapitler om ledelse, strategi, verdiskaping, endring og KI — bygget på ledererfaring, 100+ ${fag}, fire master- og prosjektarbeider og praktisk utviklingsarbeid. Manus er til ekstern faglig testlesing; boka er ikke publisert.`;
 }
 
 export const BOK_OMSLAG = {
   forside: {
     src: "/images/VerdisKIftet_forside.jpg",
     alt: {
-      no: "Foreløpig omslag til fagboka VerdisKIftet – Fra innsikt til nye fortrinn, av Marius Ottesen.",
-      en: "Provisional cover for the book VerdisKIftet – From insight to new advantages, by Marius Ottesen.",
+      no: "Foreløpig forsideomslag til VerdisKIftet – Fra innsikt til nye fortrinn, fagbok skrevet av Marius Ottesen.",
+      en: "Provisional front cover for VerdisKIftet – From insight to new advantages, professional book written by Marius Ottesen.",
     },
   },
   bakside: {
@@ -244,7 +257,8 @@ const PARTS_EN: BokPartBlock[] = [
 
 export const BOK_PROSJEKT_COPY: Record<BokProsjektLang, BokProsjektCopy> = {
   no: {
-    heroEyebrow: "Fagbok · I avsluttende redaksjonell fase",
+    heroEyebrow: "Ferdigskrevet manus · til faglig testlesing",
+    heroAuthorLine: "Forfatter: Marius Ottesen",
     subtitle: "Fra innsikt til nye fortrinn",
     tagline: "Hvordan ledere skaper varige resultater når spillereglene endres.",
     heroIngress:
@@ -278,15 +292,15 @@ export const BOK_PROSJEKT_COPY: Record<BokProsjektLang, BokProsjektCopy> = {
       "Faginnleggene ble utgangspunktet, men boka er ikke en samling av dem. Erfaringer fra arbeidslivet, egne utviklingsprosjekter, fire master- og prosjektarbeider og ekstern forskning er bearbeidet til én sammenhengende fortelling.",
       "Målet har vært å skrive en fagbok som både utfordrer etablerte oppfatninger og gir ledere et bedre grunnlag for å forstå og utvikle virksomheten de har ansvar for.",
     ],
-    statusTitle: "Et komplett manus – på vei mot utgivelse",
+    statusTitle: "Ferdigskrevet manus – til faglig testlesing",
     statusParagraphs: [
-      "Alle 17 kapitlene er skrevet, og boka har fått sin helhetlige form. Arbeidet er nå i den avsluttende redaksjonelle fasen, med særlig oppmerksomhet på sammenhengende bokprosa, kvalitet og leseropplevelse.",
-      "Før utgivelse ønsker jeg også å invitere noen eksterne lesere til å vurdere manuset og gi ærlige, konstruktive tilbakemeldinger. Deretter følger den siste ferdigstillingen og bokproduksjonen.",
+      "Manuskriptet består av 17 kapitler fordelt på syv deler og er i hovedsak ferdigskrevet. Boka er nå til faglig testlesing hos personer med erfaring og kompetanse innen ledelse, kunstig intelligens, endringsledelse og tilgrensende områder.",
+      "Tilbakemeldingene inngår i den videre kvalitetssikringen før eventuell publisering. Boka utforsker hvordan virksomheter kan omsette innsikt til strategiske valg, mobilisere mennesker, gjennomføre endringer og utvikle varige fortrinn. Kunstig intelligens inngår som en viktig del av dette, men boka handler om mer enn teknologi.",
     ],
-    statusDateNote: "Endelig utgivelsesdato er ikke fastsatt.",
+    statusDateNote: "Boka er ikke publisert. Endelig utgivelsesdato, forlag og distribusjon er ikke fastsatt.",
     testReaderTitle: "Vil du bidra som testleser?",
     testReaderParagraphs: [
-      "Jeg ønsker å få noen nye og kritiske blikk på manuset før boka ferdigstilles. Derfor vil jeg invitere et mindre antall lesere med relevant erfaring fra ledelse, strategi, organisasjonsutvikling, kommersiell utvikling eller teknologi.",
+      "Jeg ønsker fortsatt nye og kritiske blikk på manuset før boka ferdigstilles. Flere lesere med relevant erfaring har allerede sagt ja; det er fortsatt rom for flere med bakgrunn innen ledelse, strategi, organisasjonsutvikling, kommersiell utvikling eller teknologi.",
       "Jeg er særlig interessert i tilbakemeldinger på om argumentene er tydelige, om eksemplene treffer, og om boka gir en sammenhengende og engasjerende leseropplevelse.",
       "Hvis dette kunne vært interessant, setter jeg pris på en kort melding om din bakgrunn og hvorfor du ønsker å lese boka.",
     ],
@@ -294,14 +308,18 @@ export const BOK_PROSJEKT_COPY: Record<BokProsjektLang, BokProsjektCopy> = {
     closingTitle: "Videre lesning",
     closingIntro:
       "Boka står på egne ben, men deler kunnskapsgrunnlag med annet faglig arbeid på denne nettsiden.",
-    linkArticles: "Faginnlegg",
+    linkArticles: "Innsikt",
     linkProjects: "Prosjekter",
     linkProfile: "Profil",
     linkContact: "Kontakt",
-    backToArticles: "Tilbake til Faginnlegg",
+    relatedInsightTitle: "Relatert innsikt",
+    relatedInsightIntro:
+      "Utvalgte faginnlegg som bygger opp under bokas temaer — strategi, mennesker, kundeverdi, endring og praktisk AI.",
+    moreInsightsLink: "Se flere faginnlegg → Innsikt",
   },
   en: {
-    heroEyebrow: "Professional book · Final editorial phase",
+    heroEyebrow: "Manuscript completed — expert review",
+    heroAuthorLine: "Author: Marius Ottesen",
     subtitle: "From insight to new advantages",
     tagline: "How leaders create lasting results when the rules of the game change.",
     heroIngress:
@@ -335,15 +353,15 @@ export const BOK_PROSJEKT_COPY: Record<BokProsjektLang, BokProsjektCopy> = {
       "The articles were the starting point, but the book is not a collection of them. Experience from working life, development projects, four master’s and project theses and external research have been shaped into one coherent narrative.",
       "The aim has been to write a professional book that both challenges established views and gives leaders a stronger basis for understanding and developing the organisation they are responsible for.",
     ],
-    statusTitle: "A complete manuscript — on the way to publication",
+    statusTitle: "Manuscript completed — expert review",
     statusParagraphs: [
-      "All 17 chapters are written, and the book has found its overall form. Work is now in the final editorial phase, with particular attention to coherent book prose, quality and the reading experience.",
-      "Before publication I also want to invite external readers to review the manuscript and give honest, constructive feedback. Then comes final completion and book production.",
+      "The manuscript comprises 17 chapters across seven parts and is largely complete. The book is now with expert readers who have experience in leadership, artificial intelligence, change management and related fields.",
+      "Their feedback feeds into further quality assurance before any future publication. The book explores how organisations turn insight into strategic choices, mobilise people, implement change and develop lasting advantages. Artificial intelligence is an important part of this story — but the book is about more than technology.",
     ],
-    statusDateNote: "No publication date has been set.",
+    statusDateNote: "The book is not published. No publication date, publisher or distribution has been set.",
     testReaderTitle: "Would you like to contribute as a test reader?",
     testReaderParagraphs: [
-      "I want fresh, critical eyes on the manuscript before the book is finished. I will invite a small number of readers with relevant experience in leadership, strategy, organisational development, commercial development or technology.",
+      "I still want fresh, critical eyes on the manuscript before the book is finished. Several readers have already agreed to take part; there is still room for more with backgrounds in leadership, strategy, organisational development, commercial development or technology.",
       "I am especially interested in feedback on whether the arguments are clear, whether the examples land, and whether the book offers a coherent and engaging reading experience.",
       "If this could be of interest, I would appreciate a short message about your background and why you would like to read the book.",
     ],
@@ -354,6 +372,9 @@ export const BOK_PROSJEKT_COPY: Record<BokProsjektLang, BokProsjektCopy> = {
     linkProjects: "Projects",
     linkProfile: "Profile",
     linkContact: "Contact",
-    backToArticles: "Back to Articles",
+    relatedInsightTitle: "Related insight",
+    relatedInsightIntro:
+      "Selected articles that support the book’s themes — strategy, people, customer value, change and practical AI.",
+    moreInsightsLink: "Explore more articles → Insights",
   },
 };
