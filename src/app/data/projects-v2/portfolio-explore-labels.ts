@@ -37,6 +37,7 @@ export const PORTFOLIO_OVERVIEW_PRIMARY_LABEL: Record<ProjectV2Record["slug"], L
     en: "Explore the website project",
   },
   "row-solutions": { no: "Utforsk Row Solutions", en: "Explore Row Solutions" },
+  "ai-laget": { no: "Utforsk AI-laget", en: "Explore AI-laget" },
   "agentisk-arbeidsflyt": {
     no: "Utforsk agentisk arbeidsflyt",
     en: "Explore agentic workflow",
@@ -75,6 +76,7 @@ export const PORTFOLIO_DETAIL_PRIMARY_LABEL: Partial<
   },
   "mariusottesen-nettside": { no: "Åpne nettsiden", en: "Open the website" },
   "row-solutions": { no: "Se Row Solutions", en: "View Row Solutions" },
+  "ai-laget": { no: "Åpne ai-laget.no", en: "Open ai-laget.no" },
   "ai-faginnlegg-hub": { no: "Gå til faginnlegg", en: "Go to articles" },
   "psc-promo-video": { no: "Se promovideoen", en: "Watch the promo video" },
   bilagsassistent: { no: "Be om demonstrasjon", en: "Request a demonstration" },

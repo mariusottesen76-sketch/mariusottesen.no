@@ -99,6 +99,11 @@ export type ProjectV2BaseRecord = {
   subtitle: LocalizedString;
   statusLabel: LocalizedString;
   maturityLevel?: LocalizedString;
+  /**
+   * Valgfri fast metadatarekke på portefølje- og detaljside (f.eks. podcast-lansering).
+   * Erstatter kategori + status + «Publisert» når satt.
+   */
+  overviewMetadataLine?: LocalizedString;
   overviewIntroduction: LocalizedString;
   overview: ProjectOverviewContent;
   overviewImage: string;

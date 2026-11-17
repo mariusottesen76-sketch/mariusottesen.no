@@ -1,14 +1,15 @@
+import { ROW_SOLUTIONS_HERO_IMAGE } from "../../lib/row-solutions-brand";
 import type { StrategicPlatformProject } from "./types";
 
 const utvikler = {
   navn: { no: "Marius Ottesen", en: "Marius Ottesen" },
   rolle: {
-    no: "Kommersiell strategi, konseptutvikling og AI-assistert digital utvikling",
-    en: "Commercial strategy, concept development and AI-assisted digital development",
+    no: "Kommersiell strategi, tjeneste- og konseptutvikling, metoder, digital plattform og markedsarbeid",
+    en: "Commercial strategy, service and concept development, methods, digital platform and market work",
   },
   beskrivelse: {
-    no: "Rollen har omfattet arbeid fra kundeproblem og posisjonering til tjenestestruktur, informasjonsarkitektur og digital gjennomføring — med Cursor og generativ AI som kapasitetsforsterker i analyse, strukturering, kode, iterasjon og kvalitetssikring.",
-    en: "The role has included work from customer problem and positioning to service structure, information architecture and digital execution — with Cursor and generative AI as capacity multipliers in analysis, structuring, code, iteration and quality assurance.",
+    no: "Bidrar med strategi og posisjonering, tjenesteutvikling, metode- og verktøyutvikling, informasjonsarkitektur, utvikling av rowsolutions.no og videre kommersiell utvikling — i samarbeid med Thomas Holm i kunde- og markedsarbeid.",
+    en: "Contributes strategy and positioning, service development, method and tool development, information architecture, development of rowsolutions.no and further commercial development — in collaboration with Thomas Holm in customer and market work.",
   },
 };
 
@@ -22,29 +23,29 @@ export const rowSolutionsPlatform: StrategicPlatformProject = {
       en: "Row Solutions | Marius Ottesen",
     },
     description: {
-      no: "Case om Row Solutions og rowsolutions.no: kommersielt samarbeidsinitiativ og live digital plattform for posisjonering, tjenestestruktur, salg, kundedialog og AI-assistert utvikling for SMB.",
-      en: "Case on Row Solutions and rowsolutions.no: commercial collaboration initiative and live digital platform for positioning, service structure, sales, customer dialogue and AI-assisted development for SMEs.",
+      no: "Row Solutions — kommersielt samarbeid for SMB mellom Marius Ottesen og Thomas Holm. Strategi, tjenester, metoder, verktøy og live plattform på rowsolutions.no.",
+      en: "Row Solutions — commercial collaboration for SMEs between Marius Ottesen and Thomas Holm. Strategy, services, methods, tools and live platform at rowsolutions.no.",
     },
-    ogImage: "/images/strategisk-ai-implementering-hero.png?v=20260719",
+    ogImage: ROW_SOLUTIONS_HERO_IMAGE,
     canonicalPath: "/row-solutions",
   },
   teaser: {
     undertittel: {
-      no: "Fra kommersiell idé til digital plattform",
-      en: "From commercial idea to digital platform",
+      no: "Retning. Kraft. Fremdrift. Resultat.",
+      en: "Direction. Power. Momentum. Results.",
     },
     intro: {
-      no: "Kommersielt samarbeidsinitiativ med live plattform på rowsolutions.no — posisjonering, tjenestestruktur og AI-assistert utvikling.",
-      en: "Commercial collaboration initiative with a live platform at rowsolutions.no — positioning, service structure and AI-assisted development.",
+      no: "Kommersielt samarbeid — ikke bare et nettsideprosjekt.",
+      en: "Commercial collaboration — not just a website project.",
     },
     blokker: {
       utfordring: {
-        no: "Bredt kommersielt tilbud må gjøres forståelig uten å fremstå som generisk rådgivning.",
-        en: "A broad commercial offering must be made understandable without appearing as generic advisory work.",
+        no: "SMB-ledere opplever friksjon mellom synlighet, salg, kundedialog og oppfølging — uten én tydelig struktur.",
+        en: "SMB leaders experience friction between visibility, sales, customer dialogue and follow-up — without one clear structure.",
       },
       bygget: {
-        no: "Posisjonering, tjenestestruktur, informasjonsarkitektur og publisert nettside for rowsolutions.no.",
-        en: "Positioning, service structure, information architecture and published website for rowsolutions.no.",
+        no: "Strategi, tjenestestruktur, metoder, verktøy og publisert nettside.",
+        en: "Strategy, service structure, methods, tools and published website.",
       },
       relevans: {
         no: "Viser kommersiell utvikling, transformasjon og AI-assistert gjennomføringsevne.",
@@ -67,35 +68,35 @@ export const rowSolutionsPlatform: StrategicPlatformProject = {
     },
     hero: {
       verdiforslag: {
-        no: "Fra kommersiell idé til digital plattform for små og mellomstore virksomheter.",
-        en: "From commercial idea to digital platform for small and medium-sized organisations.",
+        no: "Retning. Kraft. Fremdrift. Resultat.",
+        en: "Direction. Power. Momentum. Results.",
       },
       executiveSummary: {
-        no: "Row Solutions er et kommersielt samarbeidsinitiativ rettet mot SMB-er som ønsker bedre flyt mellom synlighet, leadgenerering, CRM, salg, kundedialog og oppfølging. rowsolutions.no er initiativets publiserte digitale plattform for posisjonering, tjenester, faglig innsikt, prosjekter og kommersiell dialog — utviklet med kundeproblem først, deretter struktur, brukerreise og teknologi. Caset dokumenterer Marius' arbeid med kommersiell posisjonering, tjenestestruktur, brukerreise, innhold og AI-assistert digital gjennomføring i initiativet.",
-        en: "Row Solutions is a commercial collaboration initiative aimed at SMEs that want better flow between visibility, lead generation, CRM, sales, customer dialogue and follow-up. rowsolutions.no is the initiative's published digital platform for positioning, services, professional insight, projects and commercial dialogue — developed with customer problems first, then structure, user journey and technology. The case documents Marius' work on commercial positioning, service structure, user journey, content and AI-assisted digital execution in the initiative.",
+        no: "Row Solutions er et kommersielt samarbeid mellom Marius Ottesen og Thomas Holm, rettet mot små og mellomstore virksomheter. Vi kombinerer kommersiell erfaring, rådgivning og praktisk teknologi for å forbedre sammenhengen mellom synlighet, salg, kundedialog og oppfølging.\n\nArbeidet omfatter utvikling av strategi, tjenester, metoder og verktøy, samt den publiserte nettsiden rowsolutions.no. Gjennom kartlegging, ledersparring, kompetanseutvikling og praktisk implementering hjelper vi virksomheter å prioritere forbedringer med utgangspunkt i faktiske kundeproblemer.",
+        en: "Row Solutions is a commercial collaboration between Marius Ottesen and Thomas Holm, aimed at small and medium-sized organisations. We combine commercial experience, advisory work and practical technology to improve the connection between visibility, sales, customer dialogue and follow-up.\n\nThe work includes development of strategy, services, methods and tools, as well as the published website rowsolutions.no. Through mapping, leadership sparring, skills development and practical implementation, we help organisations prioritise improvements based on real customer problems.",
       },
       bildeAlt: {
-        no: "Row Solutions – fra kommersiell idé til digital plattform",
-        en: "Row Solutions – from commercial idea to digital platform",
+        no: "Row Solutions – bedre kommersiell flyt fra synlighet til salg og oppfølging",
+        en: "Row Solutions – better commercial flow from visibility to sales and follow-up",
       },
     },
     kortFortalt: {
-      heading: { no: "Hva prosjektet er", en: "What the project is" },
+      heading: { no: "Hva Row Solutions er", en: "What Row Solutions is" },
       body: {
-        no: "Row Solutions er et kommersielt samarbeidsinitiativ rettet mot SMB. rowsolutions.no er initiativets publiserte digitale plattform for posisjonering, tjenester, faglig innsikt, prosjekter og kommersiell dialog — koblet til kundeproblem, tjenestestruktur og praktisk gjennomføring.",
-        en: "Row Solutions is a commercial collaboration initiative for SMEs. rowsolutions.no is the initiative's published digital platform for positioning, services, professional insight, projects and commercial dialogue — linked to customer problems, service structure and practical execution.",
+        no: "Et kommersielt samarbeid mellom Marius Ottesen og Thomas Holm for SMB — med strategi, posisjonering, tjenester, leveranseformer, metoder, verktøy, salg, kundedialog og markedsutvikling. Initiativet er ikke et eget juridisk selskap. Den publiserte nettsiden rowsolutions.no er én synlig del av arbeidet, sammen med faglig formidling (bl.a. via AI-laget).",
+        en: "A commercial collaboration between Marius Ottesen and Thomas Holm for SMEs — covering strategy, positioning, services, delivery formats, methods, tools, sales, customer dialogue and market development. The initiative is not a separate legal entity. The published website rowsolutions.no is one visible part of the work, together with professional communication (including via AI-laget).",
       },
     },
     utfordring: {
-      heading: { no: "Utfordringen prosjektet adresserer", en: "The challenge the project addresses" },
+      heading: { no: "Kundeutfordringene", en: "Customer challenges" },
       body: {
-        no: "Hovedutfordringen er ikke bare å bygge en nettside. SMB-ledere opplever ofte friksjon mellom synlighet, leadgenerering, CRM, salg, kundedialog, oppfølging og neste handling — uten at det finnes én tydelig struktur som binder det sammen.\n\nSamtidig kan et rådgivningsmiljø som kombinerer strategi, kommersiell utvikling, salg, transformasjon og AI raskt fremstå for bredt dersom tjenestene ikke er tydelig prioritert og strukturert. Utfordringen er å gjøre tilbudet forståelig og relevant uten å forenkle det til «en nettside» eller generisk rådgivning.",
-        en: "The main challenge is not just to build a website. SMB leaders often experience friction between visibility, lead generation, CRM, sales, customer dialogue, follow-up and next action — without one clear structure tying it together.\n\nAt the same time, an advisory environment combining strategy, commercial development, sales, transformation and AI can quickly appear too broad if services are not clearly prioritised and structured. The challenge is to make the offering understandable and relevant without reducing it to «a website» or generic advisory work.",
+        no: "Row Solutions er strukturert rundt fire områder som ofte henger sammen, men som mange virksomheter jobber med separat:\n\n1. Synlighet og posisjonering — hvordan virksomheten forstås, finnes og skiller seg ut.\n2. Salg og kundeoppfølging — fra første kontakt til oppfølging og neste handling.\n3. Arbeidsflyt og praktisk AI — struktur, verktøy og kapasitet i hverdagen uten at teknologi blir målet i seg selv.\n4. Forretningsutvikling og gjennomføring — prioritering, retning og evne til å omsette beslutninger til fremdrift.\n\nOmrådene er presentert som arbeidsformer på rowsolutions.no — ikke som dokumenterte enkeltkundeoppdrag med mindre det er eksplisitt publisert der.",
+        en: "Row Solutions is structured around four areas that are often connected, but that many organisations work on separately:\n\n1. Visibility and positioning — how the organisation is understood, found and differentiated.\n2. Sales and customer follow-up — from first contact to follow-up and next action.\n3. Workflow and practical AI — structure, tools and capacity in day-to-day work without technology becoming the goal in itself.\n4. Business development and execution — prioritisation, direction and ability to turn decisions into momentum.\n\nThe areas are presented as working methods at rowsolutions.no — not as documented single client engagements unless explicitly published there.",
       },
       followUp: {
         body: {
-          no: "Den publiserte plattformen for initiativet finnes på rowsolutions.no — med tjenester, faglig innsikt og kommersiell dialog.",
-          en: "The published platform for the initiative is at rowsolutions.no — with services, professional insight and commercial dialogue.",
+          no: "Se hvordan områdene og tjenestene er strukturert på den live plattformen.",
+          en: "See how the areas and services are structured on the live platform.",
         },
         link: {
           href: "https://rowsolutions.no/",
@@ -105,224 +106,187 @@ export const rowSolutionsPlatform: StrategicPlatformProject = {
       },
     },
     logikk: {
-      heading: { no: "Modell, tilnærming og prosjektlogikk", en: "Model, approach and project logic" },
+      heading: { no: "Arbeidsprinsipp", en: "Working principle" },
       body: {
-        no: "Arbeidet er strukturert rundt kundeproblem før teknologi — med en iterativ arbeidsform fra idé til ferdigstilt plattform:",
-        en: "The work is structured around customer problems before technology — with an iterative approach from idea to completed platform:",
+        no: "Retning → Kraft → Fremdrift → Resultat: tydelig retning og prioritering før tiltak, kraft bak valgte grep, fremdrift i gjennomføring og resultater som kan følges opp — uten å love dokumenterte kundeeffekter som ikke er verifisert.",
+        en: "Direction → Power → Momentum → Results: clear direction and prioritisation before action, power behind chosen moves, momentum in execution and results that can be followed up — without promising documented customer effects that are not verified.",
       },
-      steps: [
-        {
-          tittel: { no: "Kundeproblem og forretningsforståelse", en: "Customer problem and business understanding" },
-          beskrivelse: {
-            no: "Avklaring av hvor SMB-er opplever friksjon i den kommersielle kjeden — fra synlighet til neste kundehandling.",
-            en: "Clarification of where SMBs experience friction in the commercial chain — from visibility to next customer action.",
-          },
-        },
-        {
-          tittel: { no: "Posisjonering og tjenestestruktur", en: "Positioning and service structure" },
-          beskrivelse: {
-            no: "Prioritering og strukturering av tjenester slik at tilbudet blir forståelig uten å bli generisk.",
-            en: "Prioritisation and structuring of services so the offering becomes understandable without becoming generic.",
-          },
-        },
-        {
-          tittel: { no: "Informasjonsarkitektur og brukerreise", en: "Information architecture and user journey" },
-          beskrivelse: {
-            no: "Kobling mellom målgruppe, innhold, navigasjon og CTA-logikk — fra overordnet forståelse til relevant handling.",
-            en: "Connection between audience, content, navigation and CTA logic — from overall understanding to relevant action.",
-          },
-        },
-        {
-          tittel: { no: "Digital løsning og innhold", en: "Digital solution and content" },
-          beskrivelse: {
-            no: "Nettstedstruktur, UX, norsk og engelsk innhold, SEO-grunnlag og gjenbrukbare maler for tjenester og prosjekter.",
-            en: "Website structure, UX, Norwegian and English content, SEO foundation and reusable templates for services and projects.",
-          },
-        },
-        {
-          tittel: { no: "Evaluering og forbedring", en: "Evaluation and improvement" },
-          beskrivelse: {
-            no: "Iterativ testing, justering og kvalitetssikring — med menneskelig eierskap til prioriteringer og beslutninger.",
-            en: "Iterative testing, adjustment and quality assurance — with human ownership of priorities and decisions.",
-          },
-        },
-      ],
+      steps: [],
       after: {
-        no: "AI og automasjon er brukt der de gjør arbeidet enklere, raskere og mer presist — ikke som erstatning for kommersielle vurderinger eller kvalitetssikring.",
-        en: "AI and automation are used where they make the work simpler, faster and more precise — not as a replacement for commercial judgement or quality assurance.",
+        no: "AI og automasjon brukes der de gjør arbeidet enklere og mer presist — ikke som erstatning for kommersielle vurderinger eller kvalitetssikring.",
+        en: "AI and automation are used where they make the work simpler and more precise — not as a replacement for commercial judgement or quality assurance.",
       },
     },
+    contentSections: [
+      {
+        heading: { no: "Tjenester og leveranseformer", en: "Services and delivery formats" },
+        body: {
+          no: "Arbeidet leveres gjennom seks leveranseformer, i tråd med tjenestestrukturen på rowsolutions.no:\n\n• Kartlegging og analyse\n• Workshop og ledersparring\n• Kurs, webinar og fagdag\n• Praktisk AI-trening\n• Sprint og pilot\n• Implementering og forbedring\n\nValg av form avhenger av modenhet, hast og hva virksomheten faktisk trenger å få på plass først.",
+          en: "Work is delivered through six delivery formats, aligned with the service structure on rowsolutions.no:\n\n• Mapping and analysis\n• Workshop and leadership sparring\n• Course, webinar and professional day\n• Practical AI training\n• Sprint and pilot\n• Implementation and improvement\n\nChoice of format depends on maturity, pace and what the organisation actually needs in place first.",
+        },
+      },
+      {
+        heading: { no: "Metoder og verktøy", en: "Methods and tools" },
+        body: {
+          no: "Initiativet bygger på og tilbyr flere metoder — med ulik modenhet:\n\n• AI Discovery — forskning og tjenesteområde i Row-regi (live på rowsolutions.no).\n• AI Readiness Scan — konsept/tilbud avhengig av publisering og anvendelse.\n• The Predictive Sales Coach — AI-basert salgstrening, simulering og møteforberedelse (ikke CRM eller prognoseverktøy).\n• SMB Salgsflyt-sjekken 2.0 — eid og utviklet av Marius Ottesen Consulting; kan brukes og presenteres i Row-kontekst, men eies ikke av Row Solutions.\n\nSkille mellom utviklede løsninger, tilgjengelige tjenester og planlagte konsepter følger det som faktisk er dokumentert og publisert.",
+          en: "The initiative builds on and offers several methods — with varying maturity:\n\n• AI Discovery — research and service area under Row (live on rowsolutions.no).\n• AI Readiness Scan — concept/offering depending on publication and use.\n• The Predictive Sales Coach — AI-based sales training, simulation and meeting preparation (not CRM or forecasting).\n• SMB Sales Flow Check 2.0 — owned and developed by Marius Ottesen Consulting; may be used and presented in Row context, but is not owned by Row Solutions.\n\nDistinguish developed solutions, available services and planned concepts according to what is actually documented and published.",
+        },
+      },
+      {
+        heading: { no: "Marius Ottesens rolle", en: "Marius Ottesen’s role" },
+        body: {
+          no: "Marius bidrar med kommersiell strategi og posisjonering, tjeneste- og konseptutvikling, metode- og verktøyutvikling, informasjonsarkitektur, utvikling av rowsolutions.no, markeds- og kundedialog samt videre kommersiell utvikling. Thomas Holm er medvirkende partner i kunde- og markedsarbeid. Leveranser utvikles i samarbeid der det er naturlig; enkelte metoder (som SMB Salgsflyt-sjekken) forblir under MOC-eierskap.",
+          en: "Marius contributes commercial strategy and positioning, service and concept development, method and tool development, information architecture, development of rowsolutions.no, market and customer dialogue, and further commercial development. Thomas Holm is a collaborating partner in customer and market work. Deliverables are developed together where appropriate; some methods (such as the SMB Sales Flow Check) remain under MOC ownership.",
+        },
+      },
+      {
+        heading: { no: "MOC, Row Solutions og AI-laget", en: "MOC, Row Solutions and AI-laget" },
+        body: {
+          no: "Marius Ottesen Consulting (MOC) er Marius' egen konsulentvirksomhet. Row Solutions er kommersielt samarbeid mellom Marius og Thomas Holm rettet mot SMB. AI-laget er et faglig samarbeids- og formidlingsinitiativ for praktisk AI — tilknyttet Row uten å være det samme som Row eller MOC. Se prosjektet AI-laget i porteføljen og rowsolutions.no/ai-laget.",
+          en: "Marius Ottesen Consulting (MOC) is Marius' own consulting practice. Row Solutions is commercial collaboration between Marius and Thomas Holm aimed at SMEs. AI-laget is a professional collaboration and communication initiative for practical AI — linked to Row without being the same as Row or MOC. See the AI-laget project in the portfolio and rowsolutions.no/ai-laget.",
+        },
+      },
+    ],
     bygget: {
-      heading: { no: "Hva som er bygget eller utviklet", en: "What has been built or developed" },
+      heading: { no: "Hva vi har utviklet", en: "What we have developed" },
       items: [
-        { no: "Publisert norsk og engelsk nettsted på rowsolutions.no", en: "Published Norwegian and English website at rowsolutions.no" },
-        { no: "Kommersiell posisjonering og målgruppeforståelse for SMB", en: "Commercial positioning and audience understanding for SMB" },
-        { no: "Tjenestestruktur og kommersiell brukerreise med tydelig CTA-logikk", en: "Service structure and commercial user journey with clear CTA logic" },
-        { no: "Struktur for tjenester, prosjekter og faglig innsikt", en: "Structure for services, projects and professional insight" },
-        { no: "AI Discovery som live tjenesteområde koblet til posisjonering og synlighet", en: "AI Discovery as a live service area linked to positioning and visibility" },
-        { no: "Kontakt- og CTA-flyt for kommersiell dialog", en: "Contact and CTA flow for commercial dialogue" },
-        { no: "Responsiv Next.js-løsning publisert i Production på Vercel", en: "Responsive Next.js solution published in production on Vercel" },
-        { no: "SEO- og AI-synlighetsgrunnlag, med AI-assistert utviklingsarbeidsflyt i Cursor", en: "SEO and AI visibility foundation, with AI-assisted development workflow in Cursor" },
+        { no: "Kommersiell strategi og markedsposisjonering for SMB", en: "Commercial strategy and market positioning for SMB" },
+        { no: "Tjenestekonsept og tilbudsstruktur med seks leveranseformer", en: "Service concept and offering structure with six delivery formats" },
+        { no: "Metoder og verktøy — inkl. AI Discovery som live tjenesteområde", en: "Methods and tools — including AI Discovery as a live service area" },
+        { no: "Kommersiell brukerreise, CTA-logikk og kundedialog", en: "Commercial user journey, CTA logic and customer dialogue" },
+        { no: "Innholdsstruktur for tjenester, prosjekter og faglig innsikt", en: "Content structure for services, projects and professional insight" },
+        { no: "Faglig formidling og markedsutvikling — inkl. kobling til AI-laget", en: "Professional communication and market development — including link to AI-laget" },
+        { no: "Publisert norsk og engelsk nettsted på rowsolutions.no (Next.js, Production)", en: "Published Norwegian and English website at rowsolutions.no (Next.js, production)" },
       ],
     },
     moduler: {
-      heading: { no: "Sentrale leveranser og funksjonsområder", en: "Core deliverables and functional areas" },
+      heading: { no: "Digital plattform — funksjonsområder", en: "Digital platform — functional areas" },
       intro: {
-        no: "Plattformen er strukturert i tydelige områder som støtter både forståelse og kommersiell dialog:",
-        en: "The platform is structured in clear areas that support both understanding and commercial dialogue:",
+        no: "rowsolutions.no samler forståelse og kommersiell dialog i tydelige områder:",
+        en: "rowsolutions.no brings together understanding and commercial dialogue in clear areas:",
       },
       modules: [
         {
           tittel: { no: "Posisjonering og verdiforslag", en: "Positioning and value proposition" },
           beskrivelse: {
-            no: "Tydelig kommersiell kjerne og kobling til kundeproblem for SMB.",
-            en: "Clear commercial core and link to customer problems for SMB.",
+            no: "Overordnet kommersiell kjerne for SMB.",
+            en: "Overall commercial core for SMB.",
           },
           bygget: true,
         },
         {
           tittel: { no: "Tjenester og tilbud", en: "Services and offerings" },
           beskrivelse: {
-            no: "Strukturert fremstilling av tjenester — inkludert AI Discovery som live område for hvordan virksomheter blir forstått og funnet i AI-søk, koblet til posisjonering og kommersiell synlighet.",
-            en: "Structured presentation of services — including AI Discovery as a live area exploring how organisations are understood and found in AI search, linked to positioning and commercial visibility.",
+            no: "Strukturert fremstilling — inkl. AI Discovery.",
+            en: "Structured presentation — including AI Discovery.",
           },
           bygget: true,
         },
         {
           tittel: { no: "Prosjekter og erfaring", en: "Projects and experience" },
           beskrivelse: {
-            no: "Ramme for å vise konkret gjennomføringsevne og relevante leveranser.",
-            en: "Framework for showing concrete execution capability and relevant deliverables.",
+            no: "Ramme for dokumentert gjennomføringsevne.",
+            en: "Framework for documented execution capability.",
           },
           bygget: true,
         },
         {
           tittel: { no: "Faglig innsikt", en: "Professional insight" },
           beskrivelse: {
-            no: "Struktur for innhold som bygger tillit og tydeliggjør metode og perspektiv.",
-            en: "Structure for content that builds trust and clarifies method and perspective.",
+            no: "Innhold som bygger tillit og tydeliggjør metode.",
+            en: "Content that builds trust and clarifies method.",
           },
           bygget: true,
         },
         {
           tittel: { no: "Kontakt og kommersiell dialog", en: "Contact and commercial dialogue" },
           beskrivelse: {
-            no: "CTA-er og kontaktlogikk som leder videre til relevant dialog.",
-            en: "CTAs and contact logic that lead to relevant dialogue.",
+            no: "CTA-er og kontaktlogikk.",
+            en: "CTAs and contact logic.",
           },
           bygget: true,
         },
       ],
     },
     hvordan: {
-      heading: { no: "Hvordan prosjektet eller løsningen fungerer", en: "How the project or solution works" },
+      heading: { no: "Digital plattform — teknisk og innhold", en: "Digital platform — technical and content" },
       intro: {
-        no: "Brukerreisen på rowsolutions.no er lagt opp for å bygge forståelse trinnvis:",
-        en: "The user journey on rowsolutions.no is designed to build understanding step by step:",
+        no: "Brukerreisen bygger forståelse trinnvis; teknisk er løsningen bygget for produksjon på norsk og engelsk:",
+        en: "The user journey builds understanding step by step; technically the solution is built for production in Norwegian and English:",
       },
       steps: [
         {
           tittel: { no: "Forstå Row Solutions", en: "Understand Row Solutions" },
           beskrivelse: {
-            no: "Overordnet posisjonering, kundeproblem og verdiforslag for SMB.",
-            en: "Overall positioning, customer problem and value proposition for SMB.",
+            no: "Posisjonering og kjernebudskap.",
+            en: "Positioning and core message.",
           },
         },
         {
           tittel: { no: "Finn relevant tjeneste", en: "Find relevant service" },
           beskrivelse: {
-            no: "Navigasjon fra behov til strukturerte tjeneste- og tilbudssider — inkludert AI Discovery der det er relevant.",
-            en: "Navigation from need to structured service and offering pages — including AI Discovery where relevant.",
+            no: "Fra behov til tjenestesider.",
+            en: "From need to service pages.",
           },
         },
         {
-          tittel: { no: "Se erfaring og prosjekter", en: "See experience and projects" },
+          tittel: { no: "Faglig innsikt og prosjekter", en: "Professional insight and projects" },
           beskrivelse: {
-            no: "Konkret dokumentasjon av metode, gjennomføring og relevans.",
-            en: "Concrete documentation of method, execution and relevance.",
+            no: "Metode, erfaring og relevans.",
+            en: "Method, experience and relevance.",
           },
         },
         {
           tittel: { no: "Ta neste steg", en: "Take the next step" },
           beskrivelse: {
-            no: "Kontakt og kommersiell dialog via tydelige CTA-er.",
-            en: "Contact and commercial dialogue through clear CTAs.",
+            no: "Kontakt via tydelige CTA-er.",
+            en: "Contact through clear CTAs.",
           },
         },
       ],
       detaljpunkter: [
         {
-          no: "Teknisk er løsningen bygget med Next.js, komponentbasert frontend og responsivt design — med tospråklig innholdsstruktur, gjenbrukbare maler og SEO-vennlig arkitektur. Utviklingen er gjort med Cursor og generativ AI som støtte i analyse, strukturering, kode og iterasjon, med menneskelig eierskap til krav, prioriteringer og kvalitetssikring.",
-          en: "Technically, the solution is built with Next.js, component-based frontend and responsive design — with bilingual content structure, reusable templates and SEO-friendly architecture. Development uses Cursor and generative AI as support in analysis, structuring, code and iteration, with human ownership of requirements, priorities and quality assurance.",
-        },
-      ],
-    },
-    relevans: {
-      heading: { no: "Hvorfor prosjektet er relevant", en: "Why the project is relevant" },
-      sections: [
-        {
-          tittel: { no: "Kommersiell utvikling og transformasjon", en: "Commercial development and transformation" },
-          tekst: {
-            no: "Viser evne til å starte i kundeproblem og bygge struktur, posisjonering og digital gjennomføring — relevant for SMB-er og rådgivningsmiljøer som må gjøre brede tilbud forståelige.",
-            en: "Shows ability to start from customer problems and build structure, positioning and digital execution — relevant for SMBs and advisory environments that must make broad offerings understandable.",
-          },
-        },
-        {
-          tittel: { no: "AI Value Realization og gjennomføring", en: "AI value realization and execution" },
-          tekst: {
-            no: "Dokumenterer hvordan AI kan brukes som kapasitetsforsterker i utviklingsarbeid — fra analyse og struktur til kode og iterasjon — uten at teknologien blir hovedhistorien.",
-            en: "Documents how AI can be used as a capacity multiplier in development work — from analysis and structure to code and iteration — without technology becoming the main story.",
-          },
-        },
-        {
-          tittel: { no: "Strategi til praktisk leveranse", en: "Strategy to practical delivery" },
-          tekst: {
-            no: "Kobler kommersiell problemforståelse, brukerreise, informasjonsarkitektur og teknologi i én sammenhengende case — uten å posisjonere arbeidet som tradisjonell webutvikling eller byråleveranse.",
-            en: "Connects commercial problem understanding, user journey, information architecture and technology in one coherent case — without positioning the work as traditional web development or agency delivery.",
-          },
+          no: "Next.js, responsivt design, tospråklig innholdsstruktur, gjenbrukbare maler, SEO/AEO-grunnlag og AI-assistert utvikling i Cursor — med menneskelig eierskap til krav, prioriteringer og kvalitetssikring. Publisert i Production på Vercel.",
+          en: "Next.js, responsive design, bilingual content structure, reusable templates, SEO/AEO foundation and AI-assisted development in Cursor — with human ownership of requirements, priorities and quality assurance. Published in production on Vercel.",
         },
       ],
     },
     status: {
-      heading: { no: "Status, modenhet og avgrensninger", en: "Status, maturity and limitations" },
+      heading: { no: "Status og videreutvikling", en: "Status and further development" },
       body: {
-        no: "Nettsiden for rowsolutions.no er publisert og live i Production. Plattformen samler Rows posisjonering, tjenester, prosjekter, faglig innhold og kundedialog i én kommersiell struktur. Videre utvikling skjer iterativt basert på markedslæring, kundedialog og dokumenterte behov — uten at det er påstått dokumentert markedseffekt, kundetall eller kommersiell traction.",
-        en: "The website for rowsolutions.no is published and live in production. The platform brings together Row's positioning, services, projects, professional content and customer dialogue in one commercial structure. Further development happens iteratively based on market learning, customer dialogue and documented needs — without claimed documented market effect, customer numbers or commercial traction.",
+        no: "Publisert: rowsolutions.no er live i Production. Etablert: tjenesteområder, leveranseformer og struktur for kommersiell dialog. Utviklet: metoder og verktøy der modenhet er dokumentert (bl.a. AI Discovery). Pågående: kommersiell utvikling, faginnhold, konverterings- og brukerreiseanalyse, videre AI Discovery, SEO/AEO/GEO, analytics og mulig CRM-integrasjon der det ikke er bygget.\n\nDet er ikke påstått dokumentert omsetning, kundetall eller kommersiell traction utover det som er publisert på rowsolutions.no.",
+        en: "Published: rowsolutions.no is live in production. Established: service areas, delivery formats and structure for commercial dialogue. Developed: methods and tools where maturity is documented (including AI Discovery). Ongoing: commercial development, professional content, conversion and user journey analysis, further AI Discovery, SEO/AEO/GEO, analytics and possible CRM integration where not yet built.\n\nDocumented revenue, customer numbers or commercial traction are not claimed beyond what is published on rowsolutions.no.",
       },
     },
     skalerbarhet: {
-      heading: { no: "Videreutvikling og skalerbar anvendelse", en: "Further development and scalable application" },
+      heading: { no: "Overførbar arbeidsmetode", en: "Transferable working method" },
       platform: {
-        heading: { no: "Videreutvikling av løsningen", en: "Further development of the solution" },
+        heading: { no: "Videreutvikling av initiativet", en: "Further development of the initiative" },
         punkter: [
-          { no: "Videre faginnhold og dokumenterte case", en: "Further professional content and documented cases" },
-          { no: "Konverterings- og brukerreiseanalyse", en: "Conversion and user journey analysis" },
-          { no: "Videreutvikling av AI Discovery", en: "Further development of AI Discovery" },
-          { no: "Optimalisering av kundereise, CTA-er og leadflyt", en: "Optimisation of customer journey, CTAs and lead flows" },
-          { no: "Videre SEO/AEO/GEO/AIO-arbeid", en: "Further SEO/AEO/GEO/AIO work" },
-          { no: "Analytics og læring fra faktisk bruk", en: "Analytics and learning from actual use" },
-          { no: "CRM-integrasjon og dypere lead-/oppfølgingsflyt der det ikke er bygget", en: "CRM integration and deeper lead/follow-up flows where not yet built" },
+          { no: "Dokumenterte case og mer faginnhold", en: "Documented cases and more professional content" },
+          { no: "Konverterings- og leadflyt", en: "Conversion and lead flows" },
+          { no: "Videreutvikling av AI Discovery og CTA-er", en: "Further development of AI Discovery and CTAs" },
+          { no: "CRM-integrasjon der det ikke er bygget", en: "CRM integration where not yet built" },
         ],
       },
       tilpasning: {
-        heading: { no: "Tilpasning til funksjoner og bransjer", en: "Adaptation to functions and industries" },
+        heading: { no: "Relevant for", en: "Relevant for" },
         punkter: [
           { no: "SMB-er med fragmentert kommersiell kjed", en: "SMBs with a fragmented commercial chain" },
           { no: "Rådgivnings- og konsulentmiljøer", en: "Advisory and consulting environments" },
-          { no: "Kunnskapsbedrifter og profesjonelle tjenestevirksomheter", en: "Knowledge businesses and professional service organisations" },
-          { no: "Virksomheter som må koble posisjonering, innhold og digital tilstedeværelse", en: "Organisations that must connect positioning, content and digital presence" },
+          { no: "Kunnskapsbedrifter som må koble posisjonering, innhold og digital tilstedeværelse", en: "Knowledge businesses that must connect positioning, content and digital presence" },
         ],
         note: {
-          no: "Arbeidsmetoden er dokumentert som eget utviklingscase — ikke presentert som allerede leverte kundeprosjekter.",
-          en: "The working method is documented as own development case — not presented as already delivered client projects.",
+          no: "Casen dokumenterer utviklingsarbeid i Row-initiativet — ikke presentert som allerede leverte kundeprosjekter uten grunnlag.",
+          en: "The case documents development work in the Row initiative — not presented as already delivered client projects without basis.",
         },
       },
     },
     avslutning: {
       heading: { no: "Utforsk prosjektet videre", en: "Explore the project further" },
       body: {
-        no: "Utforsk rowsolutions.no for å se den live plattformen, eller ta kontakt dersom du ønsker å diskutere hvordan tilnærmingen kan overføres til andre kommersielle initiativ, rådgivningsmiljøer eller digitale plattformer.",
-        en: "Explore rowsolutions.no to see the live platform, or get in touch if you would like to discuss how the approach can be transferred to other commercial initiatives, advisory environments or digital platforms.",
+        no: "Utforsk rowsolutions.no for den live plattformen, eller ta kontakt dersom du vil diskutere hvordan tilnærmingen kan overføres til andre kommersielle initiativ.",
+        en: "Explore rowsolutions.no for the live platform, or get in touch if you would like to discuss how the approach can transfer to other commercial initiatives.",
       },
     },
     utvikler,

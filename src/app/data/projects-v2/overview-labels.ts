@@ -46,3 +46,13 @@ export const OVERVIEW_BOX_ORDER: (keyof import("./types").ProjectOverviewContent
   "development",
   "adaptation",
 ];
+
+/** Porteføljeoversikt på /prosjekter — uten videreutvikling og tilpasning (disse på detaljside). */
+export const PORTFOLIO_OVERVIEW_BOX_ORDER: (keyof import("./types").ProjectOverviewContent)[] = [
+  "what",
+  "challenge",
+  "built",
+  "how",
+  "relevance",
+  "status",
+];

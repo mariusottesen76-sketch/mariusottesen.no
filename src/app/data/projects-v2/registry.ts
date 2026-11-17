@@ -16,6 +16,7 @@ import { aiInnsiktsOgInnholdsmotorV2 } from "./projects/ai-innsikts-og-innholdsm
 import { aiArkitekturBeslutningsstotteV2 } from "./projects/ai-arkitektur-beslutningsstotte";
 import { pscPromoVideoV2 } from "./projects/psc-promo-video";
 import { aiValueLabOsloV2 } from "./projects/ai-value-lab-oslo";
+import { aiLagetV2 } from "./projects/ai-laget";
 import { aiFaginnleggHubV2 } from "./projects/ai-faginnlegg-hub";
 import { resolveProjectDates } from "./project-date-resolvers";
 import { projectSchemaDates } from "../../lib/project-overview-metadata";
@@ -41,6 +42,7 @@ const baseProjectV2Records: ProjectV2BaseRecord[] = [
   aiInnsiktsOgInnholdsmotorV2,
   aiArkitekturBeslutningsstotteV2,
   aiValueLabOsloV2,
+  aiLagetV2,
   aiFaginnleggHubV2,
   pscPromoVideoV2,
 ];

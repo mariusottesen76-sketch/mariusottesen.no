@@ -4,16 +4,16 @@ import { PROJECTS_HUB_PAIR } from "./project-locale-routes";
 
 const HUB_META = {
   no: {
-    title: "AI-prosjekter og faglig utvikling | Marius Ottesen",
+    title: "AI, prosjekter & utvikling | Marius Ottesen",
     description:
-      "Egenutviklede AI-prosjekter, apper, plattformer, demonstratorer og casearbeid innen kommersiell ledelse, salgsutvikling, arbeidsflyt, transformasjon, beslutningsstøtte og praktisk AI — med operasjonell erfaring fra salg, drift og gjennomføring.",
-    ogImageAlt: "AI-prosjekter og utvikling — Marius Ottesen",
+      "Kommersielle initiativer, AI-løsninger, digitale plattformer, implementeringscase og faglige samarbeid innen kommersiell ledelse, salgsutvikling, transformasjon, arbeidsflyt og praktisk AI — inkludert Row Solutions og AI-laget.",
+    ogImageAlt: "AI, prosjekter og utvikling — Marius Ottesen",
   },
   en: {
-    title: "AI Projects and professional development | Marius Ottesen",
+    title: "AI, Projects & Development | Marius Ottesen",
     description:
-      "Custom AI projects, apps, platforms, demonstrators and case work in commercial leadership, sales development, workflow, transformation, decision support and practical AI — with operational experience from sales, operations and execution.",
-    ogImageAlt: "AI projects and development — Marius Ottesen",
+      "Commercial initiatives, AI solutions, digital platforms, implementation cases and professional collaborations in commercial leadership, sales development, transformation, workflow and practical AI — including Row Solutions and AI-laget.",
+    ogImageAlt: "AI, projects and development — Marius Ottesen",
   },
 } as const;
 

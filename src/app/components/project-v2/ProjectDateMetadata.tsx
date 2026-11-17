@@ -56,6 +56,17 @@ export function ProjectOverviewMetadataRow({
   categoryLabel?: string;
   lang: Lang;
 }) {
+  const customLine = project.overviewMetadataLine
+    ? t(project.overviewMetadataLine, lang).trim()
+    : "";
+  if (customLine) {
+    return (
+      <p className="text-[10px] font-mono uppercase tracking-widest font-bold leading-snug text-indigo-400/90 break-words">
+        {customLine}
+      </p>
+    );
+  }
+
   const statusPart = project.maturityLevel
     ? t(project.maturityLevel, lang)
     : t(project.statusLabel, lang);

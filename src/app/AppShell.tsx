@@ -104,6 +104,10 @@ function AppContent({
     "Kontakt",
   ];
 
+  const tabBarMidRef = useRef<HTMLDivElement>(null);
+  const tabBarRowRef = useRef<HTMLDivElement>(null);
+  const [desktopTabFontPx, setDesktopTabFontPx] = useState(9);
+
   const tabLabels: Record<string, string> = {
     Profil: getTranslation("tab.profil", lang),
     Erfaring: getTranslation("tab.erfaring", lang),
@@ -116,10 +120,6 @@ function AppContent({
     "CV & Åpen søknad": getTranslation("tab.cv", lang),
     Kontakt: getTranslation("tab.kontakt", lang),
   };
-
-  const tabBarMidRef = useRef<HTMLDivElement>(null);
-  const tabBarRowRef = useRef<HTMLDivElement>(null);
-  const [desktopTabFontPx, setDesktopTabFontPx] = useState(9);
 
   useLayoutEffect(() => {
     const mid = tabBarMidRef.current;

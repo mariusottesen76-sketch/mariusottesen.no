@@ -13,6 +13,7 @@ import { agentiskArbeidsflytPlatform } from "./agentisk-arbeidsflyt-platform";
 import { aiInnsiktsOgInnholdsmotorPlatform } from "./ai-innsikts-og-innholdsmotor-platform";
 import { aiArkitekturBeslutningsstottePlatform } from "./ai-arkitektur-beslutningsstotte-platform";
 import { aiValueLabOsloPlatform } from "./ai-value-lab-oslo-platform";
+import { aiLagetPlatform } from "./ai-laget-platform";
 import { eventPlannerPlatform } from "./event-planner-platform";
 import { bilagsassistentPlatform } from "./bilagsassistent-platform";
 
@@ -34,6 +35,7 @@ const strategicPlatforms: StrategicPlatformProject[] = [
   aiInnsiktsOgInnholdsmotorPlatform,
   aiArkitekturBeslutningsstottePlatform,
   aiValueLabOsloPlatform,
+  aiLagetPlatform,
   eventPlannerPlatform,
   bilagsassistentPlatform,
 ];

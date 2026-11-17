@@ -22,6 +22,8 @@ import { aiAssistertInnsiktsagent } from "../../data/prosjekter/ai-assistert-inn
 import { aiAssistertInnsiktsOgInnholdsagent } from "../../data/prosjekter/ai-assistert-innsikts-og-innholdsagent";
 import { aiArkitekturBeslutningsstotte } from "../../data/prosjekter/ai-arkitektur-beslutningsstotte";
 import { aiValueLabOslo } from "../../data/prosjekter/ai-value-lab-oslo";
+import { aiLaget } from "../../data/prosjekter/ai-laget";
+import { getTranslation } from "../../data/translations";
 import { eventPlanner } from "../../data/prosjekter/event-planner";
 import { bilagsassistent } from "../../data/prosjekter/bilagsassistent";
 import type { ProsjektType } from "../../data/prosjekter/predictive-sales-coach";
@@ -54,7 +56,9 @@ import LocaleLink from "../LocaleLink";
 import SiteLegalFooter from "../SiteLegalFooter";
 import { localePathFromNoPath } from "../../lib/locale-routes";
 import ProjectRelevantVidere from "../project-v2/ProjectRelevantVidere";
+import ProjectV2ScalabilityFallback from "../project-v2/ProjectV2ScalabilityFallback";
 import ProjectEarlyMocContact from "./ProjectEarlyMocContact";
+import PodcastListenSection from "./PodcastListenSection";
 import { TIDLIG_KONTAKT_BODY_BY_SLUG } from "../../data/strategic-platform-projects/tidlig-kontakt-copy";
 
 const linkClass =
@@ -95,6 +99,7 @@ const prosjektBySlug: Record<StrategicPlatformSlug, ProsjektType> = {
   "ai-innsikts-og-innholdsmotor": aiAssistertInnsiktsOgInnholdsagent,
   "ai-arkitektur-beslutningsstotte": aiArkitekturBeslutningsstotte,
   "ai-value-lab-oslo": aiValueLabOslo,
+  "ai-laget": aiLaget,
   "event-planner": eventPlanner,
   bilagsassistent,
 };
@@ -125,10 +130,10 @@ function TilbakeKnapp() {
         }
       }}
       className="inline-flex items-center gap-1.5 text-xs text-slate-500 hover:text-indigo-300 transition-colors mb-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400 rounded-sm"
-      aria-label={lang === "no" ? "Tilbake til AI-prosjekter" : "Back to AI projects"}
+      aria-label={getTranslation("prosjekter.back", lang)}
     >
       <ChevronLeft size={14} aria-hidden="true" />
-      {lang === "no" ? "Tilbake til AI-prosjekter" : "Back to AI projects"}
+      {getTranslation("prosjekter.back", lang)}
     </button>
   );
 }
@@ -175,9 +180,15 @@ function StrategicProjectDetailInner({ slug }: { slug: StrategicPlatformSlug }) 
         <ProjectStatusBadge label={detail.statusBadge} lang={lang} />
         {projectV2 && (
           <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[10px] font-mono uppercase tracking-widest text-slate-500">
-            <ProjectDateMetadata project={projectV2} lang={lang} className="text-indigo-400 font-bold" />
-            <span aria-hidden="true">·</span>
-            <span>{PROJECT_CATEGORY_LABELS[projectV2.category][lang]}</span>
+            {projectV2.overviewMetadataLine ? (
+              <span className="text-indigo-400 font-bold">{t(projectV2.overviewMetadataLine, lang)}</span>
+            ) : (
+              <>
+                <ProjectDateMetadata project={projectV2} lang={lang} className="text-indigo-400 font-bold" />
+                <span aria-hidden="true">·</span>
+                <span>{PROJECT_CATEGORY_LABELS[projectV2.category][lang]}</span>
+              </>
+            )}
           </div>
         )}
         <h1
@@ -187,7 +198,10 @@ function StrategicProjectDetailInner({ slug }: { slug: StrategicPlatformSlug }) 
           }}
         />
         <p className="text-lg md:text-xl text-indigo-300/90 font-medium italic">{t(detail.hero.verdiforslag, lang)}</p>
-        <p className={`text-slate-300 ${bodyTextClass}`}>{t(detail.hero.executiveSummary, lang)}</p>
+        <MultilineBody
+          text={t(detail.hero.executiveSummary, lang)}
+          className={`text-slate-300 ${bodyTextClass}`}
+        />
 
         <ProjectHero
           src={heroSrc}
@@ -292,6 +306,10 @@ function StrategicProjectDetailInner({ slug }: { slug: StrategicPlatformSlug }) 
         )}
         {detail.logikk.after && <MultilineBody text={t(detail.logikk.after, lang)} className={bodyTextClass} />}
       </section>
+
+      {detail.podcastListen ? (
+        <PodcastListenSection data={detail.podcastListen} lang={lang} />
+      ) : null}
 
       {detail.contentSections?.map((section) => (
         <section
@@ -440,12 +458,14 @@ function StrategicProjectDetailInner({ slug }: { slug: StrategicPlatformSlug }) 
 
       {projectV2 ? <ProjectRelevantVidere project={projectV2} lang={lang} variant="detail" /> : null}
 
-      {detail.skalerbarhet && (
+      {detail.skalerbarhet ? (
         <section aria-labelledby="plattform-skalerbarhet" className="mb-10 space-y-4">
           <SectionHeading id="plattform-skalerbarhet">{t(detail.skalerbarhet.heading, lang)}</SectionHeading>
           <ScalabilitySection data={detail.skalerbarhet} lang={lang} />
         </section>
-      )}
+      ) : projectV2 ? (
+        <ProjectV2ScalabilityFallback overview={projectV2.overview} lang={lang} />
+      ) : null}
 
       {detail.faq && (
         <ProjectFaqSection heading={detail.faq.heading} items={detail.faq.items} lang={lang} />
@@ -490,19 +510,21 @@ function StrategicProjectDetailInner({ slug }: { slug: StrategicPlatformSlug }) 
                     },
                     secondary: {
                       href: "/prosjekter",
-                      label: detail.avslutning.secondaryLabel ?? {
-                        no: "Tilbake til AI-prosjekter",
-                        en: "Back to AI projects",
-                      },
+                      label:
+                        detail.avslutning.secondaryLabel ?? {
+                          no: getTranslation("prosjekter.back", "no"),
+                          en: getTranslation("prosjekter.back", "en"),
+                        },
                     },
                   }
                 : (detailCta ?? {
                     primary: {
                       href: "/prosjekter",
-                      label: detail.avslutning.secondaryLabel ?? {
-                        no: "Tilbake til AI-prosjekter",
-                        en: "Back to AI projects",
-                      },
+                      label:
+                        detail.avslutning.secondaryLabel ?? {
+                          no: getTranslation("prosjekter.back", "no"),
+                          en: getTranslation("prosjekter.back", "en"),
+                        },
                     },
                   })
             }

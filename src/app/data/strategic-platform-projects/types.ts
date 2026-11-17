@@ -18,6 +18,7 @@ export type StrategicPlatformSlug =
   | "ai-innsikts-og-innholdsmotor"
   | "ai-arkitektur-beslutningsstotte"
   | "ai-value-lab-oslo"
+  | "ai-laget"
   | "event-planner"
   | "bilagsassistent";
 
@@ -130,6 +131,22 @@ export type StrategicPlatformContextLink = {
   external?: boolean;
 };
 
+/** Podcast-plattformknapper på detaljside (offisielle show-lenker). */
+export type StrategicPlatformPodcastListen = {
+  heading: LocalizedString;
+  body: LocalizedString;
+  showTitle: LocalizedString;
+  hostsLine: LocalizedString;
+  /** Dokumentert første episode (ISO) — brukes ikke som prosjektets publishedAt. */
+  firstEpisodeAt?: string;
+  spotifyUrl: string;
+  applePodcastsUrl: string;
+  spotifyLabel: LocalizedString;
+  appleLabel: LocalizedString;
+  aboutUrl: string;
+  aboutLabel: LocalizedString;
+};
+
 export type StrategicPlatformDetail = {
   statusBadge: LocalizedString;
   hero: {
@@ -152,6 +169,7 @@ export type StrategicPlatformDetail = {
     /** Forklaring av «Predictive» — plasseres i logikk-seksjonen. */
     predictiveForklaring?: { heading: LocalizedString; body: LocalizedString };
   };
+  podcastListen?: StrategicPlatformPodcastListen;
   /** Datagrunnlag og integrasjoner — avgrenser mot CRM/live-data. */
   datagrunnlag?: { heading: LocalizedString; body: LocalizedString };
   /** Ekstra seksjoner mellom logikk og datagrunnlag — kun der definert. */

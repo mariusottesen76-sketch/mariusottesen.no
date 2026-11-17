@@ -10,7 +10,8 @@ const translations: Translations = {
   "tab.referanser": { no: "Referanser", en: "References" },
   "tab.faginnlegg": { no: "Innsikt", en: "Insights" },
   "tab.bok": { no: "Bok", en: "Book" },
-  "tab.prosjekter": { no: "AI-prosjekter", en: "AI Projects" },
+  "tab.prosjekter": { no: "AI & prosjekter", en: "AI & Projects" },
+  "prosjekter.back": { no: "Tilbake til AI, prosjekter & utvikling", en: "Back to AI, Projects & Development" },
   "tab.consulting": { no: "Consulting", en: "Consulting" },
   "tab.cv": { no: "CV & Åpen søknad", en: "CV & Application" },
   "tab.kontakt": { no: "Kontakt", en: "Contact" },
@@ -24,8 +25,8 @@ const translations: Translations = {
   "profil.row.case": { no: "Case: Row Solutions", en: "Case: Row Solutions" },
   "profil.row.live": { no: "rowsolutions.no", en: "rowsolutions.no" },
   "profil.selskap.desc": {
-    no: "Marius Ottesen Consulting er en faglig plattform som samler erfaring, metoder og porteføljeprosjekter innen kommersiell utvikling, AI, arbeidsflyt og lederstøtte. Siden viser relevante problemstillinger, arbeidsmetoder og områder jeg kan bidra innenfor i en relevant lederrolle, rekrutteringsdialog eller mulig fremtidig samarbeid.\n\nJeg arbeider også med Row Solutions, et kommersielt samarbeidsinitiativ rettet mot SMB. Initiativet fungerer som en felles markeds- og utviklingsplattform for utvalgte prosjekter innen kommersiell utvikling, arbeidsflyt og praktisk bruk av AI.",
-    en: "Marius Ottesen Consulting is a professional platform that brings together experience, methods and portfolio projects in commercial development, AI, workflow and leadership support. The site shows relevant problem areas, working methods and areas where I can contribute within a relevant leadership role, recruitment dialogue or possible future collaboration.\n\nI also work on Row Solutions, a commercial collaboration initiative for SMEs. The initiative serves as a shared market and development platform for selected projects in commercial development, workflow and practical use of AI.",
+    no: "Marius Ottesen Consulting er en faglig plattform som samler erfaring, metoder og porteføljeprosjekter innen kommersiell utvikling, AI, arbeidsflyt og lederstøtte. Siden viser relevante problemstillinger, arbeidsmetoder og områder jeg kan bidra innenfor i en relevant lederrolle, rekrutteringsdialog eller mulig fremtidig samarbeid.\n\nJeg arbeider også med Row Solutions, et kommersielt samarbeidsinitiativ rettet mot SMB (sammen med Thomas Holm), og deltar faglig i AI-laget — praktisk AI, samarbeid og formidling.",
+    en: "Marius Ottesen Consulting is a professional platform that brings together experience, methods and portfolio projects in commercial development, AI, workflow and leadership support. The site shows relevant problem areas, working methods and areas where I can contribute within a relevant leadership role, recruitment dialogue or possible future collaboration.\n\nI also work on Row Solutions, a commercial collaboration initiative for SMEs (together with Thomas Holm), and participate professionally in AI-laget — practical AI, collaboration and communication.",
   },
   "profil.roller.title": { no: "Aktuell for roller innen", en: "Relevant for roles in" },
   "profil.proof.title": {
@@ -56,7 +57,7 @@ const translations: Translations = {
     en: "See the challenges I can help solve, and the working methods and projects that show how.",
   },
   "profil.videre.groupB.consulting": { no: "Consulting", en: "Consulting" },
-  "profil.videre.groupB.prosjekter": { no: "AI-prosjekter og demonstratorer", en: "AI projects and demonstrators" },
+  "profil.videre.groupB.prosjekter": { no: "AI, prosjekter & utvikling", en: "AI, Projects & Development" },
   "profil.videre.groupB.kontakt": { no: "Ta kontakt", en: "Get in touch" },
   "profil.videre.groupC.title": { no: "For faglig fordypning og samarbeid", en: "For professional insight and collaboration" },
   "profil.videre.groupC.intro": {
@@ -65,11 +66,11 @@ const translations: Translations = {
   },
   "profil.videre.groupC.faginnlegg": { no: "Innsikt", en: "Insights" },
   "profil.videre.groupC.bok": { no: "VerdisKIftet", en: "VerdisKIftet" },
-  "profil.videre.groupC.prosjekter": { no: "AI-prosjekter og demonstratorer", en: "AI projects and demonstrators" },
+  "profil.videre.groupC.prosjekter": { no: "AI, prosjekter & utvikling", en: "AI, Projects & Development" },
   "profil.videre.groupC.kontakt": { no: "Ta kontakt", en: "Get in touch" },
   "profil.videre.resultater": { no: "Se dokumenterte resultater", en: "See documented results" },
   "profil.videre.erfaring": { no: "Se erfaring", en: "See experience" },
-  "profil.videre.prosjekter": { no: "Se AI-prosjekter og demonstratorer", en: "See AI projects and demonstrators" },
+  "profil.videre.prosjekter": { no: "Se AI, prosjekter & utvikling", en: "See AI, Projects & Development" },
   "profil.videre.consulting": { no: "Se kompetanseområder og portefølje", en: "See competence areas and portfolio" },
   "profil.videre.cv": { no: "Se CV og lederprofil", en: "See CV and leadership profile" },
   "profil.videre.kontakt": { no: "Ta kontakt", en: "Get in touch" },
@@ -92,7 +93,7 @@ const translations: Translations = {
   "profil.utdanning.title": { no: "Utdanning", en: "Education" },
   "profil.ai.title": { no: "AI som praktisk lederverktøy", en: "AI as a practical leadership tool" },
   "profil.ai.link.consulting": { no: "Se kompetanseområder og portefølje", en: "See competence areas and portfolio" },
-  "profil.ai.link.prosjekter": { no: "Se AI-prosjekter og demonstratorer", en: "See AI projects and demonstrators" },
+  "profil.ai.link.prosjekter": { no: "Se AI, prosjekter & utvikling", en: "See AI, Projects & Development" },
   "profil.ai.link.faginnlegg": { no: "Les faginnlegg", en: "Read articles" },
   "profil.bok.titleSuffix": {
     no: " – fagbok av Marius Ottesen",
@@ -280,12 +281,80 @@ const translations: Translations = {
   "fag.cta.link": { no: "Gå til kontakt", en: "Go to contact" },
 
   // Prosjekter
-  "prosjekter.title.1": { no: "AI-prosjekter &", en: "AI Projects &" },
-  "prosjekter.title.2": { no: "Utvikling", en: "Development" },
+  "prosjekter.title.1": { no: "AI, prosjekter", en: "AI, Projects" },
+  "prosjekter.title.2": { no: "& utvikling", en: "& Development" },
   "prosjekter.intro.1": {
-    no: "Her finner du AI-prosjekter (kunstig intelligens, ofte forkortet KI på norsk), apper, nettsider, casearbeid og arbeidsflyter i skjæringspunktet mellom digital transformasjon og konkrete kommersielle, operative og arrangementsrelaterte behov.",
-    en: "Here you will find AI projects — artificial intelligence applied in practice — alongside apps, websites, case work and workflows at the intersection of digital transformation and concrete commercial, operational and event-related needs.",
+    no: "Her viser jeg hvordan jeg omsetter kommersiell ledererfaring og strategisk forståelse til konkrete initiativer, digitale løsninger og praktisk AI. Porteføljen dokumenterer arbeid med forretningsutvikling, beslutningsstøtte, salgsprosesser og gjennomføring, fra idé og prototype til publiserte løsninger.",
+    en: "Here I show how I translate commercial leadership experience and strategic understanding into concrete initiatives, digital solutions and practical AI. The portfolio documents work on business development, decision support, sales processes and execution — from idea and prototype to published solutions.",
   },
+  "prosjekter.featured.commercial.heading": { no: "Utvalgt kommersielt initiativ", en: "Featured commercial initiative" },
+  "prosjekter.featured.commercial.caseNote": {
+    no: "Se også utvalgt initiativ øverst på siden.",
+    en: "See also the featured initiative at the top of the page.",
+  },
+  "prosjekter.featured.row.title": {
+    no: "Row Solutions – bedre kommersiell flyt fra synlighet til salg og oppfølging",
+    en: "Row Solutions – better commercial flow from visibility to sales and follow-up",
+  },
+  "prosjekter.featured.row.subtitle": {
+    no: "Retning. Kraft. Fremdrift. Resultat.",
+    en: "Direction. Power. Momentum. Results.",
+  },
+  "prosjekter.featured.row.intro": {
+    no: "Kommersielt samarbeid mellom Marius Ottesen og Thomas Holm for SMB — med strategi, posisjonering, tjenester, arbeidsformer, metoder, verktøy og utvikling av rowsolutions.no.",
+    en: "Commercial collaboration between Marius Ottesen and Thomas Holm for SMEs — spanning strategy, positioning, services, working methods, methods, tools and development of rowsolutions.no.",
+  },
+  "prosjekter.featured.row.status": {
+    no: "Kommersielt samarbeid · Publisert nettside · Tjenester og metoder",
+    en: "Commercial collaboration · Published website · Services and methods",
+  },
+  "prosjekter.featured.row.box.what.label": { no: "Hva Row Solutions er", en: "What Row Solutions is" },
+  "prosjekter.featured.row.box.what.body": {
+    no: "Et kommersielt rådgivningssamarbeid med utgangspunkt i kundeproblemer, salgsflyt og praktisk gjennomføring.",
+    en: "A commercial advisory collaboration grounded in customer problems, sales flow and practical execution.",
+  },
+  "prosjekter.featured.row.box.challenge.label": { no: "Utfordringene vi adresserer", en: "Challenges we address" },
+  "prosjekter.featured.row.box.challenge.body": {
+    no: "Svikt i synlighet, leadhåndtering, tilbudsoppfølging, kundedialog, arbeidsflyt og prioritering.",
+    en: "Gaps in visibility, lead handling, proposal follow-up, customer dialogue, workflow and prioritisation.",
+  },
+  "prosjekter.featured.row.box.areas.label": { no: "Tjenesteområder", en: "Service areas" },
+  "prosjekter.featured.row.box.areas.body": {
+    no: "Posisjonering og synlighet, salg og kundeoppfølging, arbeidsflyt og praktisk AI, samt forretningsutvikling.",
+    en: "Positioning and visibility, sales and customer follow-up, workflow and practical AI, and business development.",
+  },
+  "prosjekter.featured.row.box.delivery.label": { no: "Hvordan vi leverer", en: "How we deliver" },
+  "prosjekter.featured.row.box.delivery.body": {
+    no: "Kartlegging, workshops, ledersparring, kurs, webinarer, AI-trening, sprint/pilot og implementering.",
+    en: "Mapping, workshops, leadership sparring, courses, webinars, AI training, sprint/pilot and implementation.",
+  },
+  "prosjekter.featured.row.box.developed.label": { no: "Hva vi har utviklet", en: "What we have developed" },
+  "prosjekter.featured.row.box.developed.body": {
+    no: "Kommersiell strategi, tjenestekonsept, metoder, verktøy og den publiserte nettsiden rowsolutions.no.",
+    en: "Commercial strategy, service concept, methods, tools and the published website rowsolutions.no.",
+  },
+  "prosjekter.featured.row.box.marius.label": { no: "Marius Ottesens bidrag", en: "Marius Ottesen’s contribution" },
+  "prosjekter.featured.row.box.marius.body": {
+    no: "Kommersiell strategi, posisjonering, tjenesteutvikling, metode- og verktøyutvikling og digital plattform, i samarbeid med Thomas Holm.",
+    en: "Commercial strategy, positioning, service development, method and tool development, and digital platform — in collaboration with Thomas Holm.",
+  },
+  "prosjekter.featured.row.imageAlt": {
+    no: "Row Solutions – kommersielt initiativ",
+    en: "Row Solutions – commercial initiative",
+  },
+  "prosjekter.fordypning.title": { no: "Mer faglig fordypning", en: "Further professional reading" },
+  "prosjekter.fordypning.innsikt.title": { no: "Innsikt og faginnlegg", en: "Insights and articles" },
+  "prosjekter.fordypning.innsikt.desc": {
+    no: "Artikler og refleksjoner om kommersiell ledelse, strategi, transformasjon, mennesker og praktisk AI.",
+    en: "Articles and reflections on commercial leadership, strategy, transformation, people and practical AI.",
+  },
+  "prosjekter.fordypning.innsikt.cta": { no: "Gå til innsikt →", en: "Go to insights →" },
+  "prosjekter.fordypning.bok.subtitle": { no: "Fra innsikt til nye fortrinn", en: "From insight to new advantages" },
+  "prosjekter.fordypning.bok.desc": {
+    no: "Fagbok skrevet av Marius Ottesen. Manus består av 17 kapitler fordelt på syv deler og er nå til faglig testlesing.",
+    en: "Professional book written by Marius Ottesen. The manuscript has 17 chapters across seven parts and is now undergoing expert review.",
+  },
+  "prosjekter.fordypning.bok.cta": { no: "Les om boka →", en: "About the book →" },
   "prosjekter.intro.scroll": {
     no: "Bla ned for å utforske prosjektene.",
     en: "Scroll down to explore the projects.",
@@ -354,8 +423,13 @@ const translations: Translations = {
   },
   "prosjekter.intro.punkt.row-solutions.label": { no: "Row Solutions", en: "Row Solutions" },
   "prosjekter.intro.punkt.row-solutions.desc": {
-    no: "Kommersielt samarbeidsinitiativ og live digital plattform — posisjonering, tjenestestruktur og AI-assistert utvikling",
-    en: "Commercial collaboration initiative and live digital platform — positioning, service structure and AI-assisted development",
+    no: "Kommersielt samarbeid med utviklet strategi, tjenester, metoder, verktøy og publisert digital plattform.",
+    en: "Commercial collaboration with developed strategy, services, methods, tools and a published digital platform.",
+  },
+  "prosjekter.intro.punkt.ai-laget.label": { no: "AI-laget", en: "AI-laget" },
+  "prosjekter.intro.punkt.ai-laget.desc": {
+    no: "Faglig samarbeid om praktisk AI, erfaringsdeling og formidling, med tilknytning til podcasten AI-laget.",
+    en: "Professional collaboration on practical AI, experience sharing and communication, with links to the AI-laget podcast.",
   },
   "prosjekter.intro.punkt.strategisk.desc": {
     no: "Fra case til gjennomførbar plan (BI) — modell for ansvarlig implementering",
@@ -383,8 +457,8 @@ const translations: Translations = {
   },
   "prosjekter.intro.punkt.value-lab.label": { no: "AI Value Lab Oslo", en: "AI Value Lab Oslo" },
   "prosjekter.intro.punkt.value-lab.desc": {
-    no: "Praktisk AI-læring, erfaringsutveksling og utforsking av reelle problemstillinger",
-    en: "Practical AI learning, experience sharing and exploration of real problem areas",
+    no: "Praktisk AI-læring og utforsking av virksomhetsnære problemstillinger",
+    en: "Practical AI learning and exploration of business-near challenges",
   },
   "prosjekter.intro.punkt.faginnlegg.label": { no: "Faginnlegg", en: "Articles" },
   "prosjekter.intro.punkt.faginnlegg.desc": {
@@ -412,26 +486,17 @@ const translations: Translations = {
     en: "From further education to built solutions",
   },
   "prosjekter.videreutdanning.para1": {
-    no: "I 2026 fullførte jeg masterkurset Generative AI for Business ved BI med karakter A. Parallelt har jeg bygget og publisert flere virksomhetsnære AI-prosjekter som utforsker hvordan AI kan brukes til transformasjonsstyring, AI-beredskap, operativ prioritering, salgsflyt, kundedialog, teamutvikling, arrangementsplanlegging, arbeidsflyt og kommersiell gjennomføring — inkludert executive-plattformene AI Transformation & Value Realization og Control Tower, samt apper som Event Planner.",
-    en: "In 2026 I completed the master's course Generative AI for Business at BI Norwegian Business School with grade A. In parallel I have built and published several business-oriented AI projects exploring how AI can be used for transformation governance, AI readiness, operational prioritisation, sales flow, customer dialogue, team development, event planning, workflow and commercial execution — including the executive platforms AI Transformation & Value Realization and Control Tower, and apps such as Event Planner.",
+    no: "I 2026 fullførte jeg masterkurset Generative AI for Business ved Handelshøyskolen BI med karakter A. Parallelt har jeg utviklet kommersielle initiativer, konkrete AI-løsninger og faglige arbeidsmodeller.",
+    en: "In 2026 I completed the master's course Generative AI for Business at BI Norwegian Business School with grade A. In parallel I have developed commercial initiatives, concrete AI solutions and professional working models.",
   },
   "prosjekter.videreutdanning.para2": {
-    no: "Arbeidet omfatter blant annet beslutnings- og gjennomføringsplattformer for operativ og kommersiell styring, AI-assistert planlegging og oppfølging av arrangementer, AI-støttet pasientreise, intake og booking for tannklinikk, AI-arkitektur for beslutningsstøtte og prioritering, samt en AI-assistert innsikts- og innholdsmotor som gjør kunnskap og markedssignaler mer anvendbare.",
-    en: "The work includes, among other things, decision and execution platforms for operational and commercial governance, AI-assisted planning and follow-up for events, AI-supported patient journey, intake and booking for a dental clinic, AI architecture for decision support and prioritisation, and an AI-assisted insight and content engine that makes knowledge and market signals more actionable.",
+    no: "Porteføljen omfatter blant annet Row Solutions, AI-plattformer, salgs- og kundeverktøy, AI Value Lab Oslo og AI-laget. Prosjektene har ulik modenhet — fra konsept og prototype til publiserte løsninger og aktivt faglig samarbeid.",
+    en: "The portfolio includes Row Solutions, AI platforms, sales and customer tools, AI Value Lab Oslo and AI-laget. Projects vary in maturity — from concept and prototype to published solutions and active professional collaboration.",
   },
-  "prosjekter.videreutdanning.para3.lead": {
-    no: "Jeg har også tatt initiativ til",
-    en: "I have also initiated",
-  },
-  "prosjekter.videreutdanning.valueLab": { no: "AI Value Lab Oslo", en: "AI Value Lab Oslo" },
-  "prosjekter.videreutdanning.para3.tail": {
-    no: ", med mål om å utforske praktisk AI-verdi, læring og virksomhetsnære problemstillinger sammen med andre. Prosjektene nedenfor viser konkrete løsninger, modeller og arbeidsflyter som kobler forretning, drift, brukerbehov, teknologi og gjennomføring i praksis.",
-    en: ", with the aim of exploring practical AI value, learning and business-oriented problem areas together with others. The projects below show concrete solutions, models and workflows that connect business, operations, user needs, technology and execution in practice.",
-  },
-  "prosjekter.kort.seksjon.title": { no: "AI-prosjekter – kort forklart", en: "AI projects – briefly explained" },
+  "prosjekter.kort.seksjon.title": { no: "Portefølje", en: "Portfolio" },
   "prosjekter.kort.seksjon.intro": {
-    no: "Kort oversikt over hva som er utviklet, hvordan det fungerer og hvorfor det er relevant. Prosjektene er gruppert etter type og sortert etter strategisk relevans og modenhet — lederorienterte plattformer først, deretter apper, case, modeller og faglige initiativer.",
-    en: "Brief overview of what has been built, how it works and why it matters. Projects are grouped by type and ordered by strategic relevance and maturity — leadership-oriented platforms first, then apps, cases, models and professional initiatives.",
+    no: "Utforsk prosjektene og se hva som er utviklet, hvordan løsningene fungerer og hvilken praktisk verdi de kan ha. Detaljsidene gir mer informasjon om funksjonalitet, modenhet og videreutvikling.",
+    en: "Explore the projects and see what has been developed, how the solutions work and what practical value they can offer. Detail pages provide more on functionality, maturity and further development.",
   },
   "prosjekter.les": { no: "Les mer", en: "Read more" },
   "prosjekter.hurtig.title": { no: "Utforsk prosjektene etter type", en: "Explore projects by type" },
@@ -515,7 +580,7 @@ const translations: Translations = {
     no: "Poenget er å forstå hvor AI kan bidra i en arbeidsflyt, hvilke forutsetninger som må være på plass og hvordan løsningen kan brukes ansvarlig og med menneskelig kontroll.",
     en: "The point is to understand where AI can contribute in a workflow, what prerequisites must be in place and how the solution can be used responsibly with human control.",
   },
-  "cons.prosjekter.link": { no: "Se AI-prosjekter", en: "See AI projects" },
+  "cons.prosjekter.link": { no: "Se porteføljen", en: "See the portfolio" },
   "cons.fagligFordypning.prefix": { no: "Se også", en: "See also" },
   "cons.fagligFordypning.faginnlegg": { no: "faginnlegg", en: "articles" },
   "cons.fagligFordypning.and": { no: "og", en: "and" },
@@ -563,7 +628,7 @@ const translations: Translations = {
   "kontakt.link.cv": { no: "Se CV og lederprofil", en: "See CV and leadership profile" },
   "kontakt.link.erfaring": { no: "Se erfaring", en: "See experience" },
   "kontakt.link.resultater": { no: "Se dokumenterte resultater", en: "See documented results" },
-  "kontakt.link.prosjekter": { no: "Se AI-prosjekter og portefølje", en: "See AI projects and portfolio" },
+  "kontakt.link.prosjekter": { no: "Se AI, prosjekter & utvikling", en: "See AI, Projects & Development" },
   "kontakt.link.skjema": { no: "Åpne kontaktskjema", en: "Open contact form" },
 
   // Dokumentasjon

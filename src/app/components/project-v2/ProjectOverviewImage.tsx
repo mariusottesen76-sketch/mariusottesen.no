@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { PROJECT_OVERVIEW_IMAGE } from "../../lib/project-v2-image";
+import { PROJECT_OVERVIEW_IMAGE, PROJECT_PORTFOLIO_OVERVIEW_IMAGE } from "../../lib/project-v2-image";
 
 type ProjectOverviewImageProps = {
   src: string;
@@ -12,6 +12,8 @@ type ProjectOverviewImageProps = {
   backgroundSrc?: string;
   /** Behold 1:3-ramme uten bilde — samme layout som øvrige prosjektkort. */
   empty?: boolean;
+  /** Porteføljeoversikt på /prosjekter — 1:3 med smalere ramme (ca. 150–168 px). */
+  compact?: boolean;
 };
 
 export default function ProjectOverviewImage({
@@ -21,22 +23,38 @@ export default function ProjectOverviewImage({
   onImageClick,
   backgroundSrc,
   empty = false,
+  compact = false,
 }: ProjectOverviewImageProps) {
+  const spec = compact ? PROJECT_PORTFOLIO_OVERVIEW_IMAGE : PROJECT_OVERVIEW_IMAGE;
   const frameStyle = {
-    aspectRatio: PROJECT_OVERVIEW_IMAGE.aspectRatio,
-    maxHeight: `${PROJECT_OVERVIEW_IMAGE.desktopHeightPx}px`,
+    aspectRatio: spec.aspectRatio,
+    maxHeight: `${spec.desktopHeightPx}px`,
   };
   const frameClassName =
     "w-full relative bg-slate-900/60 overflow-hidden rounded-lg border border-slate-700/60 flex items-center justify-center";
 
+  const imgWidth = compact ? spec.desktopWidthPx : PROJECT_OVERVIEW_IMAGE.desktopWidthPx;
+  const imgHeight = compact ? spec.desktopHeightPx : PROJECT_OVERVIEW_IMAGE.desktopHeightPx;
+
   return (
-    <div className="w-full max-w-[260px] md:max-w-none md:w-[232px] shrink-0 flex flex-col items-center gap-1.5 self-start mx-auto md:mx-0">
+    <div
+      className={`shrink-0 flex flex-col items-center gap-1.5 self-start mx-auto md:mx-0 ${
+        compact
+          ? "w-full max-w-[220px] sm:max-w-[160px] md:max-w-none md:w-[190px] lg:w-[200px]"
+          : "w-full max-w-[260px] md:max-w-none md:w-[232px]"
+      }`}
+    >
       {empty ? (
         <div
-          className={frameClassName}
+          className={`${frameClassName} px-3 py-4 text-center`}
           style={frameStyle}
-          aria-hidden="true"
-        />
+          role="img"
+          aria-label={alt}
+        >
+          <p className="text-[11px] text-slate-400 leading-snug font-light normal-case tracking-normal">
+            {bildeHint}
+          </p>
+        </div>
       ) : (
         <button
           type="button"
@@ -52,17 +70,21 @@ export default function ProjectOverviewImage({
               aria-hidden="true"
               fill
               className="object-cover object-center"
-              sizes="(max-width: 768px) 260px, 232px"
+              sizes={compact ? "(max-width: 768px) 220px, 198px" : "(max-width: 768px) 260px, 232px"}
             />
           )}
           <Image
             src={src}
             alt={alt}
-            width={PROJECT_OVERVIEW_IMAGE.desktopWidthPx}
-            height={PROJECT_OVERVIEW_IMAGE.desktopHeightPx}
+            width={imgWidth}
+            height={imgHeight}
             loading="lazy"
             className="relative z-10 w-full h-full object-contain transition-transform duration-300 group-hover:scale-[1.01]"
-            sizes="(max-width: 768px) 260px, 232px"
+            sizes={
+              compact
+                ? "(max-width: 640px) 220px, (max-width: 1024px) 160px, 200px"
+                : "(max-width: 768px) 260px, 232px"
+            }
           />
         </button>
       )}
@@ -71,8 +93,8 @@ export default function ProjectOverviewImage({
           {bildeHint}
         </p>
       ) : (
-        <p className="text-[10px] text-transparent uppercase tracking-widest font-black text-center px-1 select-none" aria-hidden="true">
-          &nbsp;
+        <p className="text-[10px] text-slate-500 uppercase tracking-widest font-black text-center px-1">
+          {bildeHint}
         </p>
       )}
     </div>

@@ -6,6 +6,16 @@ export const PROJECT_OVERVIEW_IMAGE = {
   aspectRatio: "1 / 3",
 } as const;
 
+/** Kompakt portefølje på /prosjekter — 1:3, smalere enn full oversikt. */
+export const PROJECT_PORTFOLIO_OVERVIEW_IMAGE = {
+  desktopWidthPx: 198,
+  desktopHeightPx: 594,
+  tabletWidthPx: 160,
+  tabletHeightPx: 480,
+  mobileMaxWidthPx: 220,
+  aspectRatio: "1 / 3",
+} as const;
+
 /** Felles hero-/bannerstandard på alle prosjektdetaljsider — 3:1 (ca. 40 % lavere enn 16:9 ved 1200 px bredde). */
 export const PROJECT_DETAIL_HERO = {
   maxWidthPx: 1200,

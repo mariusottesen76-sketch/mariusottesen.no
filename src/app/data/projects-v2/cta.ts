@@ -64,8 +64,8 @@ const labels = {
     en: "Get in touch about a demonstration",
   },
   backToProjects: {
-    no: "Tilbake til AI-prosjekter",
-    en: "Back to AI projects",
+    no: "Tilbake til AI, prosjekter & utvikling",
+    en: "Back to AI, Projects & Development",
   },
   contactShort: {
     no: "Ta kontakt",
@@ -441,6 +441,27 @@ export function buildProjectCta(project: ProjectV2Record): ProjectCtaConfig {
     note: overviewNote(project),
     demoBadge: overviewDemoBadge(project),
   };
+}
+
+/** Portefølje på /prosjekter — ingen repetisjon av demoforbehold under knappene. */
+export function buildProjectPortfolioCta(project: ProjectV2Record): ProjectCtaConfig {
+  const base = buildProjectCta(project);
+  const omitDemoFootnotes = shouldOmitPortfolioCtaFootnotes(project);
+  return {
+    primary: base.primary,
+    secondary: base.secondary,
+    note: omitDemoFootnotes ? undefined : base.note,
+    demoBadge: omitDemoFootnotes ? undefined : base.demoBadge,
+  };
+}
+
+function shouldOmitPortfolioCtaFootnotes(project: ProjectV2Record): boolean {
+  if (isOpenDemoPlatform(project)) return true;
+  if (project.accessMode === "access_code") return true;
+  if (project.accessMode === "concept" || project.accessMode === "no_live_solution") return true;
+  if (isEventPlannerWithDemo(project)) return true;
+  if (project.slug === "salgsflyt-sjekken") return true;
+  return false;
 }
 
 /** CTA-er på project_v2-detaljsider — plattform/kontakt primær, støttende handlinger sekundær/tertiær. */

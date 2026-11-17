@@ -10,29 +10,33 @@ export const rowSolutionsV2: ProjectV2Record = {
   accessMode: "public",
   detailLevel: "full",
   publishedAt: "2026-08-28",
-  updatedAt: "2026-10-06",
+  updatedAt: "2026-11-17",
   date: "2026-08-28",
   displayDate: { no: "28.08.26", en: "28.08.26" },
   title: {
-    no: "Row Solutions – fra kommersiell idé til digital plattform",
-    en: "Row Solutions – from commercial idea to digital platform",
+    no: "Row Solutions – bedre kommersiell flyt fra synlighet til salg og oppfølging",
+    en: "Row Solutions – better commercial flow from visibility to sales and follow-up",
   },
   subtitle: {
-    no: "Kommersielt samarbeidsinitiativ — posisjonering, tjenestestruktur og live digital plattform for SMB",
-    en: "Commercial collaboration initiative — positioning, service structure and live digital platform for SMEs",
+    no: "Retning. Kraft. Fremdrift. Resultat.",
+    en: "Direction. Power. Momentum. Results.",
+  },
+  overviewMetadataLine: {
+    no: "Kommersielle initiativer · Publisert nettside · Tjenester og metoder",
+    en: "Commercial Initiatives · Published website · Services and methods",
   },
   statusLabel: {
     no: "Publisert og live",
     en: "Published and live",
   },
   overviewIntroduction: {
-    no: "Marius' arbeid med posisjonering, tjenestestruktur, informasjonsarkitektur og den publiserte digitale plattformen rowsolutions.no — i et kommersielt samarbeidsinitiativ gjennom iterativ og AI-assistert arbeidsform der kundeproblem kommer før teknologi.",
-    en: "Marius' work on positioning, service structure, information architecture and the published digital platform rowsolutions.no — in a commercial collaboration initiative through an iterative and AI-assisted working method where customer problems come before technology.",
+    no: "Row Solutions er et kommersielt samarbeid mellom Marius Ottesen og Thomas Holm, rettet mot små og mellomstore virksomheter. Vi kombinerer kommersiell erfaring, rådgivning og praktisk teknologi for å forbedre sammenhengen mellom synlighet, salg, kundedialog og oppfølging.\n\nArbeidet omfatter utvikling av strategi, tjenester, metoder og verktøy, samt den publiserte nettsiden rowsolutions.no.",
+    en: "Row Solutions is a commercial collaboration between Marius Ottesen and Thomas Holm, aimed at small and medium-sized organisations. We combine commercial experience, advisory work and practical technology to improve the connection between visibility, sales, customer dialogue and follow-up.\n\nThe work includes development of strategy, services, methods and tools, as well as the published website rowsolutions.no.",
   },
   overview: {
     what: {
-      no: "Row Solutions er et kommersielt samarbeidsinitiativ rettet mot SMB. rowsolutions.no er initiativets publiserte digitale plattform for posisjonering, tjenester, faglig innsikt, prosjekter og kommersiell dialog — koblet til kundeproblem, tjenestestruktur og praktisk gjennomføring.",
-      en: "Row Solutions is a commercial collaboration initiative for SMEs. rowsolutions.no is the initiative's published digital platform for positioning, services, professional insight, projects and commercial dialogue — linked to customer problems, service structure and practical execution.",
+      no: "Kommersielt samarbeid mellom Marius Ottesen og Thomas Holm for SMB — strategi, tjenester, metoder, verktøy, salg og kundedialog, med rowsolutions.no som publisert digital plattform.",
+      en: "Commercial collaboration between Marius Ottesen and Thomas Holm for SMEs — strategy, services, methods, tools, sales and customer dialogue, with rowsolutions.no as the published digital platform.",
     },
     challenge: {
       no: "Utfordringen er ikke bare å bygge en nettside, men å gjøre et bredt kommersielt tilbud forståelig for SMB-ledere. Virksomheter opplever friksjon mellom synlighet, leadgenerering, CRM, salg, kundedialog og oppfølging — samtidig som et rådgivningsmiljø som kombinerer strategi, salg, transformasjon og AI raskt kan fremstå for bredt uten tydelig struktur.",
@@ -73,17 +77,17 @@ export const rowSolutionsV2: ProjectV2Record = {
     en: "Row Solutions – logo and brand graphic",
   },
   detailHeroAlt: {
-    no: "Row Solutions – Retning. Kraft. Fremdrift. Resultat.",
-    en: "Row Solutions – Direction. Power. Momentum. Results.",
+    no: "Row Solutions – Bedre kommersiell flyt, fra synlighet til salg og oppfølging",
+    en: "Row Solutions – Better commercial flow, from visibility to sales and follow-up",
   },
   overviewImageFormat: "standard_1x3",
   detailHeroMissing: false,
   detailDestination: "/row-solutions",
   liveSolutionUrl: ROW_SOLUTIONS_LIVE_URL,
   ctaLabels: {
-    overviewSecondary: { no: "Åpne Row Solutions", en: "Open Row Solutions" },
+    overviewSecondary: { no: "Åpne rowsolutions.no", en: "Open rowsolutions.no" },
     detailPrimary: { no: "Utforsk Row Solutions", en: "Explore Row Solutions" },
-    detailSecondary: { no: "Tilbake til AI-prosjekter", en: "Back to AI projects" },
+    detailSecondary: { no: "Tilbake til AI, prosjekter & utvikling", en: "Back to AI, Projects & Development" },
   },
   seo: {
     title: {
@@ -91,8 +95,8 @@ export const rowSolutionsV2: ProjectV2Record = {
       en: "Row Solutions | Marius Ottesen",
     },
     description: {
-      no: "Case om Row Solutions og rowsolutions.no: kommersielt samarbeidsinitiativ og live digital plattform for posisjonering, SMB, tjenestestruktur, salg, kundedialog og AI-assistert utvikling.",
-      en: "Case on Row Solutions and rowsolutions.no: commercial collaboration initiative and live digital platform for positioning, SMEs, service structure, sales, customer dialogue and AI-assisted development.",
+      no: "Row Solutions — kommersielt samarbeid for SMB: strategi, tjenester, metoder, verktøy, salg og kundedialog. Dokumentert på mariusottesen.no; live plattform på rowsolutions.no.",
+      en: "Row Solutions — commercial collaboration for SMEs: strategy, services, methods, tools, sales and customer dialogue. Documented on mariusottesen.no; live platform at rowsolutions.no.",
     },
     ogImage: ROW_SOLUTIONS_HERO_IMAGE,
     canonicalPath: "/row-solutions",

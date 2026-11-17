@@ -17,6 +17,10 @@ import { aiValueLabOslo } from "./prosjekter/ai-value-lab-oslo";
 import { aiFaginnleggHub } from "./prosjekter/ai-faginnlegg-hub";
 import { mariusottesenNettside } from "./prosjekter/mariusottesen-nettside";
 import { rowSolutions } from "./prosjekter/row-solutions";
+import { aiLaget } from "./prosjekter/ai-laget";
+
+/** Fremhevet øverst på /prosjekter — ikke gjengitt som fullt kort i kategorilisten. */
+export const FEATURED_COMMERCIAL_PROJECT_ID = "row-solutions-2026";
 
 export type ProsjektPortfolioEntry = {
   id: string;
@@ -34,6 +38,8 @@ export type ProsjektPortfolioKategori = {
   /** Kort etikett i metadatarekken på prosjektkort. */
   metadataLabel: { no: string; en: string };
   projects: ProsjektPortfolioEntry[];
+  /** Kun i «Kort oversikt» — ingen egen prosjektkortseksjon lenger ned. */
+  hurtigoversiktOnly?: boolean;
 };
 
 /** Tidligere kategori-ankere → nåværende anchorId (for eksterne lenker). */
@@ -85,6 +91,10 @@ export const PROSJEKT_PORTFOLIO_KATEGORIER: ProsjektPortfolioKategori[] = [
   {
     anchorId: "case-og-implementering",
     title: { no: "Case og implementering", en: "Case and implementation" },
+    overviewDescription: {
+      no: "Konkrete utviklings- og implementeringscase som viser hvordan strategi, teknologi og brukerbehov omsettes til praktiske løsninger.",
+      en: "Concrete development and implementation cases showing how strategy, technology and user needs are translated into practical solutions.",
+    },
     listDescription: {
       no: "Prosjekter som dokumenterer hvordan AI, digital utvikling og implementeringslogikk kan omsettes fra behov og metode til konkret anvendelse.",
       en: "Projects documenting how AI, digital development and implementation logic can be translated from needs and method into concrete application.",
@@ -94,13 +104,16 @@ export const PROSJEKT_PORTFOLIO_KATEGORIER: ProsjektPortfolioKategori[] = [
       { id: "prosjektoppgave-strategisk-implementering-2026", introSlug: "strategisk" },
       { id: "skoyenasen-tannklinikk-2026", introSlug: "tannklinikk" },
       { id: "mariusottesen-no-2025", introSlug: "nettside" },
-      { id: "row-solutions-2026", introSlug: "row-solutions" },
     ],
   },
   {
     anchorId: "modeller-og-arbeidsflyter",
     legacyAnchorIds: ["modell-og-arbeidsflyt"],
     title: { no: "Modeller og arbeidsflyter", en: "Models and workflows" },
+    overviewDescription: {
+      no: "Konsepter og arbeidsmodeller for å strukturere innsikt, støtte beslutninger og utvikle mer effektive arbeidsprosesser.",
+      en: "Concepts and working models to structure insight, support decisions and develop more effective work processes.",
+    },
     listDescription: {
       no: "Modeller og arbeidsflyter for beslutningsstøtte, kunnskapsarbeid, kommunikasjon, prioritering og neste beste handling.",
       en: "Models and workflows for decision support, knowledge work, communication, prioritisation and next best action.",
@@ -127,9 +140,24 @@ export const PROSJEKT_PORTFOLIO_KATEGORIER: ProsjektPortfolioKategori[] = [
     metadataLabel: { no: "Faglig initiativ", en: "Professional initiative" },
     projects: [
       { id: "ai-value-lab-oslo-2026", introSlug: "value-lab" },
-      { id: "ai-faginnlegg-serie-2026", introSlug: "faginnlegg" },
+      { id: "ai-laget-2026", introSlug: "ai-laget" },
       { id: "psc-promo-video-moc-2026", introSlug: "psc-video" },
     ],
+  },
+  {
+    anchorId: "kommersielle-initiativer",
+    title: { no: "Kommersielle initiativer", en: "Commercial Initiatives" },
+    overviewDescription: {
+      no: "Kommersielle samarbeid og satsinger med utviklet strategi, tjenester, metoder, verktøy og digital tilstedeværelse.",
+      en: "Commercial collaborations and initiatives with developed strategy, services, methods, tools and digital presence.",
+    },
+    listDescription: {
+      no: "Kommersielle samarbeid og satsinger — se kort oversikt og utvalgt initiativ øverst.",
+      en: "Commercial collaborations and initiatives — see quick overview and featured initiative at the top.",
+    },
+    metadataLabel: { no: "Kommersielt initiativ", en: "Commercial initiative" },
+    projects: [],
+    hurtigoversiktOnly: true,
   },
 ];
 
@@ -150,6 +178,7 @@ const legacyProsjekter: ProsjektType[] = [
   pscPromoVideo,
   mariusottesenNettside,
   rowSolutions,
+  aiLaget,
   prosjektoppgaveStrategiskImplementering,
   skoyenasenTannklinikk,
   aiAssistertInnsiktsagent,
@@ -186,13 +215,19 @@ export type ProsjektHurtigKategori = {
 };
 
 export function getProsjektHurtigoversikt(_lang: Lang): ProsjektHurtigKategori[] {
-  return PROSJEKT_PORTFOLIO_KATEGORIER.map((kategori) => ({
-    title: kategori.title,
-    description: kategori.overviewDescription,
-    anchorId: kategori.anchorId,
-    legacyAnchorIds: kategori.legacyAnchorIds,
-    lenker: kategori.projects,
-  }));
+  return PROSJEKT_PORTFOLIO_KATEGORIER.map((kategori) => {
+    const lenker =
+      kategori.anchorId === "kommersielle-initiativer"
+        ? [{ id: FEATURED_COMMERCIAL_PROJECT_ID, introSlug: "row-solutions" as const }]
+        : kategori.projects;
+    return {
+      title: kategori.title,
+      description: kategori.overviewDescription,
+      anchorId: kategori.anchorId,
+      legacyAnchorIds: kategori.legacyAnchorIds,
+      lenker,
+    };
+  });
 }
 
 export function getProsjektPortfolioKategoriMetadataLabel(kategori: ProsjektPortfolioKategori, lang: Lang): string {
