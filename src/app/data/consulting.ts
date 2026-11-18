@@ -57,12 +57,12 @@ const flowSignalDemonstratorStotte: Record<Lang, PakkePilotStotte> = {
 
 const salgsflytDemonstratorStotte: Record<Lang, PakkePilotStotte> = {
   no: {
-    tekst: "SMB Salgsflyt-sjekken 2.0 kartlegger friksjon og prioriteringer på tvers av 12 suksessdimensjoner — lederorientert diagnose fra MOC.",
+    tekst: "SMB Salgsflyt-sjekken 2.0 kartlegger friksjon og prioriteringer på tvers av 12 suksessdimensjoner — tilgangsstyrt diagnose (utviklingsversjon) fra MOC, med tilgang på avtale.",
     lenkeHref: SMB_SALGSFLYT_PILOT_PATH,
     lenkeLabel: "Se SMB Salgsflyt-sjekken 2.0",
   },
   en: {
-    tekst: "SMB Sales Flow Check 2.0 maps friction and priorities across 12 success dimensions — leadership-oriented diagnosis from MOC.",
+    tekst: "SMB Sales Flow Check 2.0 maps friction and priorities across 12 success dimensions — access-controlled diagnosis (development version) from MOC, with access by agreement.",
     lenkeHref: SMB_SALGSFLYT_PILOT_PATH,
     lenkeLabel: "See SMB Sales Flow Check 2.0",
   },
@@ -447,7 +447,8 @@ const metoder: Record<Lang, MetodeKomponent[]> = {
     },
     {
       tittel: "SMB Salgsflyt-sjekken 2.0",
-      beskrivelse: "Lederorientert diagnose med 12 suksessdimensjoner, prioritert salgsflyt og kundeoppfølging (MOC)",
+      beskrivelse:
+        "Tilgangsstyrt lederdiagnose med 12 suksessdimensjoner (utviklingsversjon på salgsflytsjekken.no, MOC)",
       pilotStotte: prosjektLenke(SMB_SALGSFLYT_PILOT_PATH).no,
     },
     {
@@ -497,7 +498,8 @@ const metoder: Record<Lang, MetodeKomponent[]> = {
     },
     {
       tittel: "SMB Sales Flow Check 2.0",
-      beskrivelse: "Leadership-oriented diagnosis with 12 success dimensions, prioritised sales flow and follow-up (MOC)",
+      beskrivelse:
+        "Access-controlled leadership diagnosis with 12 success dimensions (development version at salgsflytsjekken.no, MOC)",
       pilotStotte: prosjektLenke(SMB_SALGSFLYT_PILOT_PATH).en,
     },
     {

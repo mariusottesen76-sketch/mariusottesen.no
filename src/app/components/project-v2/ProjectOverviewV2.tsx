@@ -40,9 +40,12 @@ export default function ProjectOverviewV2({
   variant = "full",
 }: ProjectOverviewV2Props) {
   const portfolio = variant === "portfolio";
-  const portfolioBoxOrder = project.strategicPlatformSlug
-    ? PORTFOLIO_OVERVIEW_BOX_ORDER
-    : OVERVIEW_BOX_ORDER;
+  const portfolioBoxOrder =
+    portfolio && project.slug === "ai-laget"
+      ? (["what", "challenge", "relevance", "status"] as typeof PORTFOLIO_OVERVIEW_BOX_ORDER)
+      : project.strategicPlatformSlug
+        ? PORTFOLIO_OVERVIEW_BOX_ORDER
+        : OVERVIEW_BOX_ORDER;
   const cta = portfolio ? buildProjectPortfolioCta(project) : buildProjectCta(project);
   const title = t(project.title, lang);
   const TitleTag = titleHeadingLevel === 3 ? "h3" : "h2";

@@ -33,8 +33,8 @@ export const aiLagetV2: ProjectV2Record = {
     en: "Professional collaboration · Podcast · First episode 30 Oct 2026",
   },
   overviewIntroduction: {
-    no: "AI-laget er en faglig arena for å utforske, teste og dele erfaringer med kunstig intelligens. Marius Ottesen deltar i samarbeidet med Thomas Holm og Gunnar Gundersen, med særlig interesse for hvordan AI kan brukes i ledelse, forretningsutvikling og praktisk gjennomføring.\n\nGjennom faglige aktiviteter og podcasten «AI-laget – AI for folk flest» formidles konkrete erfaringer, muligheter og utfordringer ved bruk av AI.",
-    en: "AI-laget is a professional arena for exploring, testing and sharing experience with artificial intelligence. Marius Ottesen takes part in the collaboration with Thomas Holm and Gunnar Gundersen, with particular interest in how AI can be used in leadership, business development and practical execution.\n\nThrough professional activities and the podcast «AI-laget – AI for folk flest», concrete experience, opportunities and challenges in using AI are communicated.",
+    no: "Faglig samarbeid mellom Marius Ottesen, Thomas Holm og Gunnar Gundersen om å teste og dele praktisk AI — særlig knyttet til ledelse og forretningsutvikling. Utforsk mer i boksene under og via podcasten lenger ned.",
+    en: "Professional collaboration between Marius Ottesen, Thomas Holm and Gunnar Gundersen on testing and sharing practical AI — especially linked to leadership and business development. Explore more in the boxes below and via the podcast further down.",
   },
   overview: {
     what: {
@@ -46,12 +46,12 @@ export const aiLagetV2: ProjectV2Record = {
       en: "Much AI discourse becomes abstract or tool-oriented. The challenge is to connect insight to things that can actually be tested and used — without overstating maturity or promises.",
     },
     built: {
-      no: "Synlig gjennom ai-laget.no og podcasten «AI-laget – AI for folk flest», med tilknytning til Row Solutions. Marius Ottesen, Thomas Holm og Gunnar Gundersen deltar i initiativet.",
-      en: "Visible through ai-laget.no and the podcast «AI-laget – AI for folk flest», with links to Row Solutions. Marius Ottesen, Thomas Holm and Gunnar Gundersen take part in the initiative.",
+      no: "ai-laget.no og podcasten «AI-laget – AI for folk flest» — med tilknytning til Row Solutions.",
+      en: "ai-laget.no and the podcast «AI-laget – AI for folk flest» — with links to Row Solutions.",
     },
     how: {
-      no: "Marius bidrar som faglig deltaker med vekt på ledelse, forretningsutvikling og praktisk gjennomføring — erfaringer deles i podcast og på nett, uten at han er programleder eller produsent.",
-      en: "Marius contributes as a professional participant with emphasis on leadership, business development and practical execution — experience is shared in the podcast and online, without him being host or producer.",
+      no: "Marius deltar faglig (ikke programleder). Thomas Holm og Gunnar Gundersen er programverter — se «Hør AI-laget» under.",
+      en: "Marius participates professionally (not host). Thomas Holm and Gunnar Gundersen are show hosts — see «Listen to AI-laget» below.",
     },
     relevance: {
       no: "Relevant for arbeidsgivere og samarbeidspartnere som vil se teknologiforståelse, testkultur og evne til å dele læring — utover enkeltverktøy og hype.",

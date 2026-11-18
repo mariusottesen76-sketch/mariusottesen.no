@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import type { StrategicPlatformProject } from "../data/strategic-platform-projects/types";
+import { PROJECT_DETAIL_HERO_OG } from "./project-v2-image";
 
 const SITE = "https://www.mariusottesen.no";
 
@@ -23,7 +24,14 @@ export function buildStrategicPlatformMetadata(
       url,
       type: "website",
       siteName: "Marius Ottesen",
-      images: [{ url: ogImage, width: 1200, height: 630, alt: title }],
+      images: [
+        {
+          url: ogImage,
+          width: PROJECT_DETAIL_HERO_OG.widthPx,
+          height: PROJECT_DETAIL_HERO_OG.heightPx,
+          alt: title,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",

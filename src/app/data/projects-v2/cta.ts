@@ -407,8 +407,8 @@ function tertiaryDetailAction(project: ProjectV2Record): ProjectCtaAction | unde
 }
 
 const salgsflytPilotNote: LocalizedString = {
-  no: "Tilgangsstyrt diagnoseverktøy · klar for avgrenset kundebruk etter avtale. Be om tilgangskode dersom du ikke har kode ennå. Utviklet av Marius Ottesen Consulting (MOC).",
-  en: "Access-controlled diagnostic tool · ready for limited customer use by agreement. Request an access code if you do not have one yet. Developed by Marius Ottesen Consulting (MOC).",
+  no: "Tilgangsstyrt diagnoseverktøy · utviklingsversjon. Tilgang med kode etter avtale — be om kode dersom du ikke har en ennå. Utviklet av Marius Ottesen Consulting (MOC).",
+  en: "Access-controlled diagnostic tool · development version. Access with code by agreement — request a code if you do not have one yet. Developed by Marius Ottesen Consulting (MOC).",
 };
 
 function overviewNote(project: ProjectV2Record): LocalizedString | undefined {

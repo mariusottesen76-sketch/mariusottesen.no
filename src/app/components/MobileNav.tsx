@@ -1,8 +1,9 @@
 "use client";
 import React, { useState } from "react";
+import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { useLanguage } from "../LanguageContext";
-import { getTranslation } from "../data/translations";
+import { pathForTab } from "../lib/locale-routes";
 
 interface MobileNavProps {
   tabs: string[];
@@ -11,7 +12,7 @@ interface MobileNavProps {
   onTabClick: (tab: string) => void;
 }
 
-export default function MobileNav({ tabs, tabLabels, activeTab, onTabClick }: MobileNavProps) {
+export default function MobileNav({ tabs, tabLabels, activeTab }: MobileNavProps) {
   const [isOpen, setIsOpen] = useState(false);
   const { lang } = useLanguage();
 
@@ -34,20 +35,19 @@ export default function MobileNav({ tabs, tabLabels, activeTab, onTabClick }: Mo
           <div className="fixed top-0 left-0 right-0 bg-slate-950 border-b border-slate-800 shadow-2xl">
             <div className="p-4 space-y-2 max-h-[80vh] overflow-y-auto">
               {tabs.map((tab) => (
-                <button
+                <Link
                   key={tab}
-                  onClick={() => {
-                    onTabClick(tab);
-                    setIsOpen(false);
-                  }}
-                  className={`w-full text-left px-4 py-3 rounded-lg font-black uppercase text-base tracking-widest transition-all focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:outline-none ${
+                  href={pathForTab(tab, lang)}
+                  onClick={() => setIsOpen(false)}
+                  aria-current={activeTab === tab ? "page" : undefined}
+                  className={`block w-full text-left px-4 py-3 rounded-lg font-black uppercase text-base tracking-widest transition-all focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:outline-none ${
                     activeTab === tab
                       ? "bg-indigo-500/20 text-indigo-400 border border-indigo-500/30"
                       : "text-slate-400 hover:text-white hover:bg-slate-900/60"
                   }`}
                 >
                   {tabLabels[tab]}
-                </button>
+                </Link>
               ))}
             </div>
           </div>

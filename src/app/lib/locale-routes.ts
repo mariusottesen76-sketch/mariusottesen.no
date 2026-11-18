@@ -36,9 +36,9 @@ export const LOCALE_ROUTE_MAP: Record<SiteTabKey, { no: string; en: string }> = 
 };
 
 /** Tabs without dedicated EN route — always Norwegian URL. */
-const UNMAPPED_TAB_SLUGS: Record<string, string> = {
-  Referanser: "referanser",
-};
+const UNMAPPED_TAB_SLUGS: Record<string, string> = {};
+
+export const REFERANSER_LOCALE = { no: "/referanser", en: "/en/references" } as const;
 
 export type SitePageKey = "home" | "experience" | "results" | "consulting" | "cv" | "contact";
 
@@ -62,6 +62,9 @@ export function normalizePath(pathname: string): string {
 
 export function resolveLocalePair(pathname: string): { no: string; en: string } | null {
   const normalized = normalizePath(pathname);
+  if (normalized === REFERANSER_LOCALE.no || normalized === REFERANSER_LOCALE.en) {
+    return REFERANSER_LOCALE;
+  }
   if (normalized === PRIVACY_ROUTE.no || normalized === PRIVACY_ROUTE.en) {
     return { no: PRIVACY_ROUTE.no, en: PRIVACY_ROUTE.en };
   }
@@ -78,6 +81,7 @@ export function resolveLocalePair(pathname: string): { no: string; en: string } 
 export function pathForTab(tab: string, lang: Lang): string {
   const mapped = LOCALE_ROUTE_MAP[tab as SiteTabKey];
   if (mapped) return mapped[lang];
+  if (tab === "Referanser") return REFERANSER_LOCALE[lang];
   const slug = UNMAPPED_TAB_SLUGS[tab];
   if (slug) return `/${slug}`;
   return lang === "en" ? "/en" : "/";
@@ -94,6 +98,11 @@ export function localePathFromNoPath(noHref: string, lang: Lang): string {
   const query = queryIdx >= 0 ? beforeHash.slice(queryIdx) : "";
 
   const normalized = normalizePath(pathPart);
+  if (normalized === REFERANSER_LOCALE.no) {
+    const base = REFERANSER_LOCALE[lang];
+    const withQuery = `${base}${query}`;
+    return hash ? `${withQuery}#${hash}` : withQuery;
+  }
   if (normalized === PRIVACY_ROUTE.no) {
     const base = PRIVACY_ROUTE[lang];
     const withQuery = `${base}${query}`;

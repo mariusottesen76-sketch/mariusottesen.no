@@ -2,7 +2,7 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from "react";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
-import { resolveLocalePair } from "./lib/locale-routes";
+import { normalizePath, resolveLocalePair } from "./lib/locale-routes";
 
 export type Lang = "no" | "en";
 
@@ -59,11 +59,16 @@ export function LanguageToggle() {
   const pair = resolveLocalePair(pathname ?? "/");
 
   const switchTo = (target: Lang) => {
-    if (target === lang) return;
     if (pair) {
-      router.push(pair[target]);
+      const dest = pair[target];
+      if (normalizePath(pathname ?? "/") !== normalizePath(dest)) {
+        router.push(dest);
+      } else if (target !== lang) {
+        setLang(target);
+      }
       return;
     }
+    if (target === lang) return;
     setLang(target);
   };
 

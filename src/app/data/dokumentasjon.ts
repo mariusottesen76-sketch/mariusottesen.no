@@ -9,6 +9,19 @@ export const soknadPdfUrl = `/pdf/soknad.pdf?v=${CV_PDF_VERSJON}`;
 /** Tre sider (som CV) kun for innebygd viser — unngår feil FitH-skala for én-siders fil. */
 export const soknadEmbedPdfUrl = `/pdf/soknad-embed.pdf?v=${CV_PDF_VERSJON}`;
 
+/** Interne detaljsider for AI-seksjonen på /cv — delt NO/EN-etikett der navnet er likt. */
+export const CV_AI_SECTION_LINKS = {
+  atvr: {
+    href: "/ai-transformation-value-realization",
+    label: "AI Transformation & Value Realization",
+  },
+  controlTower: { href: "/control-tower", label: "Control Tower" },
+  psc: { href: "/psc", label: "The Predictive Sales Coach" },
+  rowSolutions: { href: "/row-solutions", label: "Row Solutions" },
+  valueLab: { href: "/ai-value-lab-oslo", label: "AI Value Lab Oslo" },
+  aiLaget: { href: "/ai-laget", label: "AI-laget" },
+} as const;
+
 const data = {
   no: {
     heroSub: "Profil, dokumenter og executive summary",
@@ -28,7 +41,7 @@ const data = {
     kompetanseTitle: "Kjernekompetanse",
     kompetanse: [
       "Kommersiell ledelse, salgsledelse og salgsstrategi",
-      "Resultat- og personalansvar, P/L, KPI og lønnsom vekst",
+      "Resultat- og personalansvar (inkl. P/L-ansvar), KPI og lønnsom vekst",
       "Endringsledelse, coaching og team-/organisasjonsutvikling",
       "Samspill mellom strategi, salg, drift og gjennomføring",
       "CRM, salgsprosesser og datadrevet salgsledelse",
@@ -36,10 +49,33 @@ const data = {
       "Digital transformasjon, AI/KI og nye arbeidsformer",
     ],
     aiTitle: "AI, data og nye arbeidsformer",
-    aiText: [
-      "Jeg har videreutviklet min kommersielle og strategiske lederkompetanse innen AI (kunstig intelligens/KI) gjennom masterkurset <em class=\"italic\">Generative AI for Business</em> ved BI, kombinert med egne AI-prosjekter innen transformasjonsstyring, operasjonell planlegning, salgstrening, samhandling, innsiktsarbeid, beslutningsstøtte og agentiske arbeidsflyter. Dette inkluderer executive konseptplattformen <em class=\"italic\">AI Transformation & Value Realization</em>, <em class=\"italic\">Control Tower</em> og apper som <em class=\"italic\">Event Planner</em> og <em class=\"italic\">Bilagsassistent</em>. Jeg har også medutviklet <em class=\"italic\">Row Solutions</em>, et kommersielt samarbeidsinitiativ med live digital plattform på rowsolutions.no. Jeg har også tatt initiativ til <em class=\"italic\">AI Value Lab Oslo</em>, et tverrfaglig lærings- og utviklingsinitiativ med fokus på praktisk testing, ansvarlig bruk av AI og reell verdiskaping gjennom virksomhetsnære case.",
-    ],
+    aiCv: {
+      p1BeforeBi:
+        "Jeg har videreutviklet min kommersielle og strategiske lederkompetanse gjennom masterkurset ",
+      p1BiCourse: "Generative AI for Business",
+      p1AfterBi:
+        " ved BI og praktisk arbeid med AI-prosjekter. Arbeidet omfatter transformasjonsstyring, beslutningsstøtte, salgstrening og nye arbeidsflyter. Blant eksemplene er ",
+      p1BetweenAtvrAndCt: ", ",
+      p1PscPrefix: " og salgstreningsverktøyet ",
+      p1End: ".",
+      p2BeforeRow: "Sammen med Thomas Holm utvikler jeg ",
+      p2AfterRow:
+        ", et kommersielt samarbeid rettet mot SMB-bedrifter. Vi arbeider med bedre flyt fra synlighet og kundereise til salg og oppfølging, gjennom strategi, metoder, tjenester og praktisk bruk av teknologi. Den publiserte nettsiden er én del av satsingen.",
+      p3BeforeValueLab: "Jeg har også tatt initiativ til ",
+      p3AfterValueLab:
+        ", en arena for tverrfaglig AI-læring og utforsking. I ",
+      p3AfterAiLaget:
+        " deltar jeg som faglig bidragsyter i et samarbeid som også formidler erfaringer gjennom podcasten «AI-laget – AI for folk flest».",
+    },
     aiLink: "Se AI-prosjekter",
+    fagligFordypningTitle: "Faglig fordypning",
+    fagligFordypning: {
+      beforeFaginnlegg: "Jeg deler erfaringer og faglige perspektiver gjennom ",
+      faginnleggLink: "over 100 tekster om ledelse, strategi, salg, transformasjon og AI",
+      between: ". Jeg har også skrevet ",
+      afterBok:
+        ", en fagbok om ledelse, mennesker, gjennomføring og teknologi. Manus er nå til faglig testlesing.",
+    },
     pdfTitle: "CV og åpen søknad",
     pdfIntro:
       "Les CV og åpen søknad (oppdatert november 2026) direkte i viserne under. Du kan også åpne hvert dokument i egen fane for nedlasting.",
@@ -70,7 +106,7 @@ const data = {
     kompetanseTitle: "Core competencies",
     kompetanse: [
       "Commercial leadership, sales leadership and sales strategy",
-      "P&L and people accountability, KPIs and profitable growth",
+      "Results and people accountability (incl. P&L accountability), KPIs and profitable growth",
       "Change leadership, coaching and team/organisational development",
       "Alignment between strategy, sales, operations and execution",
       "CRM, sales processes and data-driven sales leadership",
@@ -78,10 +114,33 @@ const data = {
       "Digital transformation, AI and new ways of working",
     ],
     aiTitle: "AI, data and new ways of working",
-    aiText: [
-      "I have further developed my commercial and strategic leadership competence in AI (artificial intelligence) through the <em class=\"italic\">Generative AI for Business</em> master's programme at BI, combined with my own AI projects in transformation governance, operational planning, sales training, collaboration, insight work, decision support and agentic workflows. This includes the executive concept platform <em class=\"italic\">AI Transformation & Value Realization</em>, <em class=\"italic\">Control Tower</em> and apps such as <em class=\"italic\">Event Planner</em> and <em class=\"italic\">Receipt Assistant</em>. I have also co-developed <em class=\"italic\">Row Solutions</em>, a commercial collaboration initiative with a live digital platform at rowsolutions.no. I have also initiated <em class=\"italic\">AI Value Lab Oslo</em>, a cross-disciplinary learning and development initiative focused on practical testing, responsible use of AI and real value creation through business-near cases.",
-    ],
+    aiCv: {
+      p1BeforeBi:
+        "I have further developed my commercial and strategic leadership competence through the ",
+      p1BiCourse: "Generative AI for Business",
+      p1AfterBi:
+        " master's course at BI and practical work on AI projects. The work covers transformation governance, decision support, sales training and new workflows. Among the examples are ",
+      p1BetweenAtvrAndCt: ", ",
+      p1PscPrefix: " and the sales training tool ",
+      p1End: ".",
+      p2BeforeRow: "Together with Thomas Holm I am developing ",
+      p2AfterRow:
+        ", a commercial collaboration for SMB organisations. We work on better flow from visibility and customer journey to sales and follow-up, through strategy, methods, services and practical use of technology. The published website is one part of the initiative.",
+      p3BeforeValueLab: "I have also initiated ",
+      p3AfterValueLab:
+        ", an arena for cross-disciplinary AI learning and exploration. In ",
+      p3AfterAiLaget:
+        " I participate as a professional contributor in a collaboration that also shares experience through the podcast «AI-laget – AI for folk flest».",
+    },
     aiLink: "See AI projects",
+    fagligFordypningTitle: "Professional depth",
+    fagligFordypning: {
+      beforeFaginnlegg: "I share experience and professional perspectives through ",
+      faginnleggLink: "more than 100 texts on leadership, strategy, sales, transformation and AI",
+      between: ". I have also written ",
+      afterBok:
+        ", a professional book on leadership, people, execution and technology. The manuscript is now in expert review.",
+    },
     pdfTitle: "CV and open application",
     pdfIntro:
       "Read the CV and open application (updated November 2026) directly in the viewers below. The PDF documents are in Norwegian. You can also open each document in a new tab to download.",

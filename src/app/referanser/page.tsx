@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { ResolvingMetadata } from "next";
 import Page from "../page";
+import { HREFLANG_EN, HREFLANG_NB, REFERANSER_LOCALE, SITE } from "../lib/locale-routes";
 
 export async function generateMetadata(
   parent: ResolvingMetadata
@@ -9,13 +10,19 @@ export async function generateMetadata(
     title: "Referanser & Anbefalinger — Marius Ottesen",
   description:
     "Referanser og anbefalinger fra kollegaer og medarbeidere som har jobbet direkte med meg. Publisert på LinkedIn.",
-  metadataBase: new URL("https://www.mariusottesen.no"),
-  alternates: { canonical: "https://www.mariusottesen.no/referanser" },
+  metadataBase: new URL(SITE),
+  alternates: {
+    canonical: `${SITE}${REFERANSER_LOCALE.no}`,
+    languages: {
+      [HREFLANG_NB]: `${SITE}${REFERANSER_LOCALE.no}`,
+      [HREFLANG_EN]: `${SITE}${REFERANSER_LOCALE.en}`,
+    },
+  },
   openGraph: {
     title: "Referanser & Anbefalinger — Marius Ottesen",
     description:
       "Hva andre sier om mitt lederskap. Tilbakemeldinger fra kollegaer og medarbeidere som har jobbet direkte med meg.",
-    url: "https://www.mariusottesen.no/referanser",
+    url: `${SITE}${REFERANSER_LOCALE.no}`,
     type: "website",
     siteName: "Marius Ottesen",
     images: [

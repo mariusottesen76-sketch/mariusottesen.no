@@ -25,8 +25,8 @@ const translations: Translations = {
   "profil.row.case": { no: "Case: Row Solutions", en: "Case: Row Solutions" },
   "profil.row.live": { no: "rowsolutions.no", en: "rowsolutions.no" },
   "profil.selskap.desc": {
-    no: "Marius Ottesen Consulting er en faglig plattform som samler erfaring, metoder og porteføljeprosjekter innen kommersiell utvikling, AI, arbeidsflyt og lederstøtte. Siden viser relevante problemstillinger, arbeidsmetoder og områder jeg kan bidra innenfor i en relevant lederrolle, rekrutteringsdialog eller mulig fremtidig samarbeid.\n\nJeg arbeider også med Row Solutions, et kommersielt samarbeidsinitiativ rettet mot SMB (sammen med Thomas Holm), og deltar faglig i AI-laget — praktisk AI, samarbeid og formidling.",
-    en: "Marius Ottesen Consulting is a professional platform that brings together experience, methods and portfolio projects in commercial development, AI, workflow and leadership support. The site shows relevant problem areas, working methods and areas where I can contribute within a relevant leadership role, recruitment dialogue or possible future collaboration.\n\nI also work on Row Solutions, a commercial collaboration initiative for SMEs (together with Thomas Holm), and participate professionally in AI-laget — practical AI, collaboration and communication.",
+    no: "Marius Ottesen Consulting samler erfaring, metoder og porteføljeprosjekter innen kommersiell utvikling, AI, arbeidsflyt og lederstøtte — relevant for lederroller, rekruttering og mulig fremtidig samarbeid.\n\nRow Solutions er kommersielt samarbeid med Thomas Holm for SMB; AI-laget er faglig samarbeid og podcast om praktisk AI.",
+    en: "Marius Ottesen Consulting brings together experience, methods and portfolio projects in commercial development, AI, workflow and leadership support — relevant for leadership roles, recruitment and possible future collaboration.\n\nRow Solutions is commercial collaboration with Thomas Holm for SMEs; AI-laget is professional collaboration and a podcast on practical AI.",
   },
   "profil.roller.title": { no: "Aktuell for roller innen", en: "Relevant for roles in" },
   "profil.proof.title": {
@@ -133,7 +133,11 @@ const translations: Translations = {
   "ref.sub": { no: "Hva andre sier om mitt lederskap", en: "What colleagues say about my leadership" },
   "ref.intro": {
     no: "Tilbakemeldinger fra kollegaer og medarbeidere som har jobbet direkte med meg — publisert på LinkedIn.",
-    en: "Testimonials from colleagues and team members who have worked alongside me — published on LinkedIn.",
+    en: "Testimonials from colleagues and team members who have worked alongside me — published on LinkedIn. Quotes are shown in the original language (Norwegian).",
+  },
+  "ref.imageAlt": {
+    no: "Referanser og anbefalinger fra kollegaer",
+    en: "References and recommendations from colleagues",
   },
   "ref.linkedin": { no: "Se alle anbefalinger på LinkedIn", en: "View all recommendations on LinkedIn" },
   "ref.videre.title": { no: "Veien videre", en: "Next steps" },
@@ -301,8 +305,8 @@ const translations: Translations = {
     en: "Direction. Power. Momentum. Results.",
   },
   "prosjekter.featured.row.intro": {
-    no: "Kommersielt samarbeid mellom Marius Ottesen og Thomas Holm for SMB — med strategi, posisjonering, tjenester, arbeidsformer, metoder, verktøy og utvikling av rowsolutions.no.",
-    en: "Commercial collaboration between Marius Ottesen and Thomas Holm for SMEs — spanning strategy, positioning, services, working methods, methods, tools and development of rowsolutions.no.",
+    no: "Kommersielt samarbeid mellom Marius Ottesen og Thomas Holm for SMB — bedre sammenheng fra synlighet og salg til kundeoppfølging, med tjenester, metoder og rowsolutions.no.",
+    en: "Commercial collaboration between Marius Ottesen and Thomas Holm for SMEs — stronger flow from visibility and sales to customer follow-up, with services, methods and rowsolutions.no.",
   },
   "prosjekter.featured.row.status": {
     no: "Kommersielt samarbeid · Publisert nettside · Tjenester og metoder",
@@ -310,8 +314,8 @@ const translations: Translations = {
   },
   "prosjekter.featured.row.box.what.label": { no: "Hva Row Solutions er", en: "What Row Solutions is" },
   "prosjekter.featured.row.box.what.body": {
-    no: "Et kommersielt rådgivningssamarbeid med utgangspunkt i kundeproblemer, salgsflyt og praktisk gjennomføring.",
-    en: "A commercial advisory collaboration grounded in customer problems, sales flow and practical execution.",
+    no: "Rådgivningssamarbeid for SMB — fra kundeproblemer og salgsflyt til struktur, metoder og digital tilstedeværelse.",
+    en: "Advisory collaboration for SMEs — from customer problems and sales flow to structure, methods and digital presence.",
   },
   "prosjekter.featured.row.box.challenge.label": { no: "Utfordringene vi adresserer", en: "Challenges we address" },
   "prosjekter.featured.row.box.challenge.body": {
@@ -330,13 +334,13 @@ const translations: Translations = {
   },
   "prosjekter.featured.row.box.developed.label": { no: "Hva vi har utviklet", en: "What we have developed" },
   "prosjekter.featured.row.box.developed.body": {
-    no: "Kommersiell strategi, tjenestekonsept, metoder, verktøy og den publiserte nettsiden rowsolutions.no.",
-    en: "Commercial strategy, service concept, methods, tools and the published website rowsolutions.no.",
+    no: "Publisert rowsolutions.no med tjenestestruktur, metoder og kontaktflate — uten påstått dokumentert markedseffekt.",
+    en: "Published rowsolutions.no with service structure, methods and contact surface — without claimed documented market effect.",
   },
   "prosjekter.featured.row.box.marius.label": { no: "Marius Ottesens bidrag", en: "Marius Ottesen’s contribution" },
   "prosjekter.featured.row.box.marius.body": {
-    no: "Kommersiell strategi, posisjonering, tjenesteutvikling, metode- og verktøyutvikling og digital plattform, i samarbeid med Thomas Holm.",
-    en: "Commercial strategy, positioning, service development, method and tool development, and digital platform — in collaboration with Thomas Holm.",
+    no: "Kommersiell strategi, posisjonering, tjeneste- og metodeutvikling samt digital plattform — sammen med Thomas Holm.",
+    en: "Commercial strategy, positioning, service and method development, and digital platform — together with Thomas Holm.",
   },
   "prosjekter.featured.row.imageAlt": {
     no: "Row Solutions – kommersielt initiativ",
@@ -512,12 +516,12 @@ const translations: Translations = {
     en: "Relevant experience, working methods and possible areas of contribution",
   },
   "cons.intro.1": {
-    no: "Denne siden samler erfaring, metoder og egenutviklede prosjekter innen kommersiell ledelse, salgsutvikling, CRM, arbeidsflyt, transformasjon og praktisk bruk av AI (kunstig intelligens/KI) — med operasjonell erfaring fra salg, drift og gjennomføring.",
-    en: "This page brings together experience, methods and custom projects in commercial leadership, sales development, CRM, workflow, transformation and practical use of AI (artificial intelligence) — with operational experience from sales, operations and execution.",
+    no: "Her finner du erfaring, metoder og porteføljeprosjekter innen kommersiell ledelse, salg, CRM, arbeidsflyt, transformasjon og praktisk AI — med operasjonell erfaring fra salg og drift. Sidens innhold viser typiske problemstillinger og hvor jeg kan bidra i lederrolle, rekruttering eller mulig samarbeid; kontaktskjemaet nederst er korteste vei til dialog.",
+    en: "Here you will find experience, methods and portfolio projects in commercial leadership, sales, CRM, workflow, transformation and practical AI — with operational experience from sales and operations. The content shows typical problem areas and where I can contribute in a leadership role, recruitment or possible collaboration; the contact form at the bottom is the shortest path to a conversation.",
   },
   "cons.intro.2": {
-    no: "Innholdet viser problemstillinger jeg har erfaring med og områder jeg kan bidra innenfor i en relevant lederrolle, rekrutteringsdialog eller et mulig fremtidig samarbeid.",
-    en: "The content shows problem areas I have experience with and areas where I can contribute within a relevant leadership role, recruitment dialogue or possible future collaboration.",
+    no: "",
+    en: "",
   },
   "cons.tjenester.title": { no: "Kompetanseområder og arbeidsmetoder", en: "Competence areas and working methods" },
   "cons.tjenester.intro": {
@@ -527,8 +531,8 @@ const translations: Translations = {
   "cons.spesialisert.title": { no: "Flere aktuelle kompetanseområder", en: "Further relevant competence areas" },
   "cons.metoder.title": { no: "Metoder og porteføljeprosjekter", en: "Methods and portfolio projects" },
   "cons.metoder.intro": {
-    no: "Noen av temaene på denne siden er dokumentert gjennom egne metoder, arbeidsflyter og porteføljeprosjekter. De viser hvordan kommersiell forståelse, ledelse, brukerbehov og AI kan kombineres i praksis — også der operativ gjennomføring er viktig.",
-    en: "Some of the themes on this page are documented through my own methods, workflows and portfolio projects. They show how commercial understanding, leadership, user needs and AI can be combined in practice — including where operational execution matters.",
+    no: "Utvalgte temaer er dokumentert gjennom egne metoder og porteføljeprosjekter — med lenker der du vil se konkret anvendelse.",
+    en: "Selected themes are documented through my own methods and portfolio projects — with links where you want to see concrete application.",
   },
   "cons.pakke.hvem": { no: "Typiske problemstillinger", en: "Typical problem areas" },
   "cons.pakke.nummer": { no: "Fokusområde", en: "Focus area" },
@@ -610,11 +614,16 @@ const translations: Translations = {
   },
   "kontakt.profil": { no: "Erfaring og profil", en: "Experience and profile" },
   "kontakt.profil.desc": {
-    no: "Jeg har erfaring fra kommersiell ledelse, nasjonal salgsledelse, P/L-ansvar, teamutvikling, endring, CRM, arbeidsflyt og praktisk AI — inkludert operasjonell ledererfaring fra salg og drift. Nettsiden samler dokumenterte resultater, erfaring, AI-prosjekter,",
-    en: "I have experience in commercial leadership, national sales leadership, P&L accountability, team development, change, CRM, workflow and practical AI — including operational leadership experience from sales and operations. The website brings together documented results, experience, AI projects,",
+    no: "Nettsiden samler dokumenterte resultater, erfaring, AI-prosjekter,",
+    en: "The website brings together documented results, experience, AI projects,",
   },
-  "kontakt.link.faginnlegg": { no: "100+ faginnlegg", en: "100+ articles" },
-  "kontakt.link.bok": { no: "VerdisKIftet (faglig testlesing)", en: "VerdisKIftet (expert review)" },
+  "kontakt.link.faginnlegg": { no: "Over 100 faginnlegg", en: "over 100 articles" },
+  "kontakt.link.bok": { no: "VerdisKIftet", en: "VerdisKIftet" },
+  "kontakt.profil.bokMid": { no: " og fagboka ", en: " and the book " },
+  "kontakt.profil.bokSuffix": {
+    no: ", som nå er til faglig testlesing.",
+    en: ", which is now in expert review.",
+  },
   "kontakt.dialog": { no: "Komme i dialog", en: "Start a conversation" },
   "kontakt.dialog.desc": {
     no: "Bruk gjerne skjemaet dersom du ønsker å komme i dialog. Henvendelser vurderes ut fra relevans for aktuelle lederroller, rekrutteringsprosesser, faglige problemstillinger, paneldebatter, innlegg, sparring eller mulige fremtidige sammenhenger.",

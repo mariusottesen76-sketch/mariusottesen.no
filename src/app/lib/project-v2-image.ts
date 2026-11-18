@@ -17,6 +17,12 @@ export const PROJECT_PORTFOLIO_OVERVIEW_IMAGE = {
 } as const;
 
 /** Felles hero-/bannerstandard på alle prosjektdetaljsider — 3:1 (ca. 40 % lavere enn 16:9 ved 1200 px bredde). */
+/** Faktisk filstørrelse på flere 3:1 detail-hero-bilder (f.eks. Row Solutions) — brukes i Open Graph metadata. */
+export const PROJECT_DETAIL_HERO_OG = {
+  widthPx: 1024,
+  heightPx: 341,
+} as const;
+
 export const PROJECT_DETAIL_HERO = {
   maxWidthPx: 1200,
   maxHeightPx: 400,

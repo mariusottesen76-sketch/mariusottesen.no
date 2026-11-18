@@ -1,7 +1,11 @@
 import Link from "next/link";
 import { PSC_APP_URL, PSC_MATURITY_LABEL } from "../lib/psc-brand";
 import { FLOW_SIGNAL_APP_URL } from "../lib/flowsignal-brand";
-import { SMB_SALGSFLYT_APP_URL, SMB_SALGSFLYT_MATURITY_LABEL } from "../lib/smb-salgsflyt-brand";
+import {
+  SMB_SALGSFLYT_APP_URL,
+  SMB_SALGSFLYT_DETAIL_ACCESS_NOTE,
+  SMB_SALGSFLYT_MATURITY_LABEL,
+} from "../lib/smb-salgsflyt-brand";
 import { AI_READINESS_SCAN_APP_URL, AI_READINESS_SCAN_MATURITY_LABEL } from "../lib/ai-readiness-scan-brand";
 import type { Lang } from "../LanguageContext";
 
@@ -61,8 +65,8 @@ const smbSalgsflytBlokk = {
   pilotCta: { no: "Les om SMB Salgsflyt-sjekken 2.0", en: "About SMB Sales Flow Check 2.0" },
   appCta: { no: "Åpne Salgsflyt-sjekken", en: "Open Sales Flow Check" },
   tilgangNote: {
-    no: `${tilgangIntro.no} ${kontaktDialog.no}`,
-    en: `${tilgangIntro.en} ${kontaktDialog.en}`,
+    no: `${SMB_SALGSFLYT_DETAIL_ACCESS_NOTE.no} ${kontaktDialog.no}`,
+    en: `${SMB_SALGSFLYT_DETAIL_ACCESS_NOTE.en} ${kontaktDialog.en}`,
   },
   appUrl: SMB_SALGSFLYT_APP_URL,
   accent: "default" as const,

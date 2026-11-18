@@ -7,6 +7,7 @@ import VerdisKiftetTitle from "./components/bok/VerdisKiftetTitle";
 import { applyVerdisKiftetHighlightHtml } from "./lib/verdiskiftet-display";
 import { FileText, Linkedin, ChevronRight, ArrowDown } from "lucide-react";
 import {
+  CV_AI_SECTION_LINKS,
   getDokumentasjonData,
   linkedinUrl,
   cvPdfUrl,
@@ -20,6 +21,16 @@ import { cardSubtitleClass, pageEyebrowClass, pageTitleClass, sectionTitleClass 
 
 const linkClass =
   "text-indigo-400 underline underline-offset-2 decoration-indigo-500/70 hover:text-indigo-200 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400";
+
+const cvAiProductLinkClass = `${linkClass} italic font-normal`;
+
+function CvAiSectionLink({ href, label, ariaLabel }: { href: string; label: string; ariaLabel: string }) {
+  return (
+    <LocaleLink href={href} className={cvAiProductLinkClass} aria-label={ariaLabel}>
+      {label}
+    </LocaleLink>
+  );
+}
 
 const ctaBtnClass =
   "inline-flex items-center justify-center px-4 py-2.5 rounded-lg border border-indigo-500/40 bg-indigo-500/10 text-indigo-200 text-sm font-bold hover:bg-indigo-500/20 hover:border-indigo-400/60 transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400";
@@ -233,9 +244,9 @@ export default function Dokumentasjon() {
               <LocaleLink href="/resultater" className={ctaBtnClass} aria-label="Gå til resultater">
                 {r.ctaResultater}
               </LocaleLink>
-              <Link href="/referanser" className={ctaBtnClass} aria-label="Gå til referanser">
+              <LocaleLink href="/referanser" className={ctaBtnClass} aria-label="Gå til referanser">
                 {r.ctaReferanser}
-              </Link>
+              </LocaleLink>
               <LocaleLink
                 href="/kontakt"
                 className={ctaBtnClass}
@@ -308,28 +319,83 @@ export default function Dokumentasjon() {
               {d.aiTitle}
             </h2>
             <div className="space-y-3 text-slate-300 text-base leading-relaxed">
-              {d.aiText.map((avsnitt) => (
-                <p
-                  key={avsnitt.slice(0, 40)}
-                  dangerouslySetInnerHTML={{ __html: applyVerdisKiftetHighlightHtml(avsnitt) }}
+              <p>
+                {d.aiCv.p1BeforeBi}
+                <em className="text-slate-300 italic">{d.aiCv.p1BiCourse}</em>
+                {d.aiCv.p1AfterBi}
+                <CvAiSectionLink
+                  href={CV_AI_SECTION_LINKS.atvr.href}
+                  label={CV_AI_SECTION_LINKS.atvr.label}
+                  ariaLabel={
+                    lang === "no"
+                      ? "Gå til AI Transformation & Value Realization"
+                      : "Go to AI Transformation & Value Realization"
+                  }
                 />
-              ))}
+                {d.aiCv.p1BetweenAtvrAndCt}
+                <CvAiSectionLink
+                  href={CV_AI_SECTION_LINKS.controlTower.href}
+                  label={CV_AI_SECTION_LINKS.controlTower.label}
+                  ariaLabel={lang === "no" ? "Gå til Control Tower" : "Go to Control Tower"}
+                />
+                {d.aiCv.p1PscPrefix}
+                <CvAiSectionLink
+                  href={CV_AI_SECTION_LINKS.psc.href}
+                  label={CV_AI_SECTION_LINKS.psc.label}
+                  ariaLabel={lang === "no" ? "Gå til The Predictive Sales Coach" : "Go to The Predictive Sales Coach"}
+                />
+                {d.aiCv.p1End}
+              </p>
+              <p>
+                {d.aiCv.p2BeforeRow}
+                <CvAiSectionLink
+                  href={CV_AI_SECTION_LINKS.rowSolutions.href}
+                  label={CV_AI_SECTION_LINKS.rowSolutions.label}
+                  ariaLabel={lang === "no" ? "Gå til Row Solutions" : "Go to Row Solutions"}
+                />
+                {d.aiCv.p2AfterRow}
+              </p>
+              <p>
+                {d.aiCv.p3BeforeValueLab}
+                <CvAiSectionLink
+                  href={CV_AI_SECTION_LINKS.valueLab.href}
+                  label={CV_AI_SECTION_LINKS.valueLab.label}
+                  ariaLabel={lang === "no" ? "Gå til AI Value Lab Oslo" : "Go to AI Value Lab Oslo"}
+                />
+                {d.aiCv.p3AfterValueLab}
+                <CvAiSectionLink
+                  href={CV_AI_SECTION_LINKS.aiLaget.href}
+                  label={CV_AI_SECTION_LINKS.aiLaget.label}
+                  ariaLabel={lang === "no" ? "Gå til AI-laget" : "Go to AI-laget"}
+                />
+                {d.aiCv.p3AfterAiLaget}
+              </p>
             </div>
             <p>
               <Link href="/prosjekter" className={linkClass} aria-label="Gå til AI-prosjekter">
                 {d.aiLink}
               </Link>
             </p>
-            <p className="text-sm text-slate-400 leading-relaxed">
-              {tr("dok.fagFordypning.intro")}{" "}
-              <LocaleLink href="/faginnlegg" className={linkClass} aria-label="Gå til faginnlegg">
-                {tr("dok.fagFordypning.faginnlegg")}
-              </LocaleLink>{" "}
-              {tr("dok.fagFordypning.and")}{" "}
-              <LocaleLink href="/bok" className={linkClass} aria-label="Gå til bokprosjekt">
+          </section>
+
+          <section aria-labelledby="cv-faglig-fordypning-heading" className="space-y-3">
+            <h2 id="cv-faglig-fordypning-heading" className={sectionTitleClass}>
+              {d.fagligFordypningTitle}
+            </h2>
+            <p className="text-slate-300 text-base leading-relaxed">
+              {d.fagligFordypning.beforeFaginnlegg}
+              <LocaleLink
+                href="/faginnlegg"
+                className={linkClass}
+                aria-label={lang === "no" ? "Gå til faginnlegg" : "Go to articles"}
+              >
+                {d.fagligFordypning.faginnleggLink}
+              </LocaleLink>
+              {d.fagligFordypning.between}
+              <LocaleLink href="/bok" className={linkClass} aria-label={lang === "no" ? "Gå til bokprosjekt" : "Go to book project"}>
                 <VerdisKiftetTitle />
-              </LocaleLink>{" "}
-              {tr("dok.fagFordypning.outro")}
+              </LocaleLink>
+              {d.fagligFordypning.afterBok}
             </p>
           </section>
 
@@ -339,15 +405,14 @@ export default function Dokumentasjon() {
             aria-labelledby="cv-pdf-heading"
             className="space-y-8 scroll-mt-24"
           >
-            <p className="text-xs text-slate-500 leading-relaxed">
-              <span className="text-slate-400 font-medium">{d.mobilityLabel}:</span> {d.mobilityPractical}
-            </p>
-
-            <div className="space-y-2">
+            <div className="space-y-3">
               <h2 id="cv-pdf-heading" className={sectionTitleClass}>
                 {d.pdfTitle}
               </h2>
               <p className="text-sm text-slate-400 italic">{d.pdfIntro}</p>
+              <p className="text-slate-300 text-sm md:text-base leading-relaxed">
+                <span className="font-medium text-slate-200">{d.mobilityLabel}:</span> {d.mobilityPractical}
+              </p>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 min-w-0 max-w-full overflow-hidden [&>*]:min-w-0 [&>*]:max-w-full">

@@ -94,11 +94,11 @@ export default function Kontakt() {
                   <LocaleLink href="/faginnlegg" className={linkClass} aria-label="Gå til faginnlegg">
                     {tr("kontakt.link.faginnlegg")}
                   </LocaleLink>
-                  {lang === "no" ? " og et " : " and a "}
+                  {tr("kontakt.profil.bokMid")}
                   <LocaleLink href="/bok" className={linkClass} aria-label="Gå til bokprosjekt">
                     <VerdisKiftetInText text={tr("kontakt.link.bok")} />
                   </LocaleLink>
-                  {". "}
+                  {tr("kontakt.profil.bokSuffix")}{" "}
                   <LocaleLink href="/cv" className={linkClass} aria-label="Gå til CV og lederprofil">
                     {tr("kontakt.link.cv")}
                   </LocaleLink>

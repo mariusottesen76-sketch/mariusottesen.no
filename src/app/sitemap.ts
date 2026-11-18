@@ -105,6 +105,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE}/en/consulting`, lastModified: mainSiteLastMod, changeFrequency: "monthly", priority: 0.8 },
     { url: `${SITE}/en/cv`, lastModified: mainSiteLastMod, changeFrequency: "monthly", priority: 0.8 },
     { url: `${SITE}/en/contact`, lastModified: mainSiteLastMod, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${SITE}/en/references`, lastModified: mainSiteLastMod, changeFrequency: "monthly", priority: 0.7 },
     { url: `${SITE}/en/privacy`, lastModified: mainSiteLastMod, changeFrequency: "yearly", priority: 0.35 },
     {
       url: `${SITE}${PROJECTS_HUB_PAIR.en}`,

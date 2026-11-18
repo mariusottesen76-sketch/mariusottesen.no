@@ -33,7 +33,7 @@ export default function FeaturedCommercialInitiative({
 
   return (
     <section
-      id="row-solutions-2026"
+      id="kommersielle-initiativer"
       aria-labelledby="prosjekter-featured-commercial-heading"
       className="scroll-mt-24 mt-6 mb-2 min-w-0"
     >

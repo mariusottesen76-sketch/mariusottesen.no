@@ -80,8 +80,8 @@ export const flowsignalV2: ProjectV2Record = {
   liveSolutionUrl: FLOW_SIGNAL_APP_URL,
   seo: {
     title: {
-      no: "FlowSignal v1.0 | Marius Ottesen",
-      en: "FlowSignal v1.0 | Marius Ottesen",
+      no: "FlowSignal v1.0 — samhandling og salgsinnsikt | Marius Ottesen",
+      en: "FlowSignal v1.0 — collaboration and sales insight | Marius Ottesen",
     },
     description: {
       no: "FlowSignal kobler profilinnsikt, dagsform og dialogstøtte til bedre teamoppfølging — lukket pilot med tilgangskode.",

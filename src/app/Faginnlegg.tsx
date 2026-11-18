@@ -33,7 +33,7 @@ import {
   type FaginnleggInnlegg,
 } from './lib/faginnlegg-data';
 import { bildeCacheVersion } from './lib/faginnlegg-types';
-import { getFaginnleggLinkedInCta } from './lib/faginnlegg-linkedin-cta';
+import { getFaginnleggLinkedInCta, isLinkedInActivityFeed } from './lib/faginnlegg-linkedin-cta';
 import { hasFullEnFaginnleggBody } from './lib/faginnlegg-en-audit';
 import { faginnleggArticlePath } from './lib/faginnlegg-locale-routes';
 import { isObf2026Faginnlegg } from './lib/faginnlegg-obf-display';
@@ -647,14 +647,16 @@ const InnleggsKort = ({
               <span className="normal-case font-medium text-slate-500 ml-1">({noOnlyLabel})</span>
             ) : null}
           </Link>
-          <a
-            href={innlegg.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 text-xs text-slate-500 hover:text-slate-300 transition-colors leading-snug line-clamp-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
-          >
-            {getFaginnleggLinkedInCta(innlegg.link, lang)}
-          </a>
+          {!isLinkedInActivityFeed(innlegg.link) ? (
+            <a
+              href={innlegg.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 text-xs text-slate-500 hover:text-slate-300 transition-colors leading-snug line-clamp-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
+            >
+              {getFaginnleggLinkedInCta(innlegg.link, lang)}
+            </a>
+          ) : null}
         </div>
         </div>
         <div className="flex-1 min-h-0" aria-hidden="true" />

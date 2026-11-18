@@ -438,7 +438,9 @@ export default function Consulting() {
             <h1 className={`${pageTitleClass} mb-3`}>{tr("cons.title.1")}</h1>
             <p className="text-lg md:text-xl text-indigo-300/90 font-semibold leading-snug mb-4">{tr("cons.title.2")}</p>
             <p className={pageIntroClass}>{tr("cons.intro.1")}</p>
-            <p className={`${pageIntroClass} mt-4`}>{tr("cons.intro.2")}</p>
+            {tr("cons.intro.2").trim() ? (
+              <p className={`${pageIntroClass} mt-4`}>{tr("cons.intro.2")}</p>
+            ) : null}
           </div>
         </div>
       </section>

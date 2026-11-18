@@ -1,7 +1,11 @@
 import { Lang } from "../LanguageContext";
 import { FLOW_SIGNAL_APP_URL } from "../lib/flowsignal-brand";
 import { PSC_APP_URL, PSC_SHORT_DESCRIPTION } from "../lib/psc-brand";
-import { SMB_SALGSFLYT_APP_URL } from "../lib/smb-salgsflyt-brand";
+import {
+  SMB_SALGSFLYT_APP_URL,
+  SMB_SALGSFLYT_PILOT_HERO_ACCESS_NOTE,
+  SMB_SALGSFLYT_PILOT_STATUS_BODY,
+} from "../lib/smb-salgsflyt-brand";
 
 type L = { no: string; en: string };
 
@@ -355,10 +359,7 @@ const salgsflytSjekkenSide: PilotSide = {
     },
     primaerCta: beOmTilgangskodeCta,
     sekundaerCta: { no: "Åpne Salgsflyt-sjekken", en: "Open Sales Flow Check" },
-    tilgangNote: {
-      no: "Klar for avgrenset kundebruk med tilgangskode. Ingen koder publiseres på nettsiden.",
-      en: "Ready for limited customer use with an access code. No codes are published on the website.",
-    },
+    tilgangNote: SMB_SALGSFLYT_PILOT_HERO_ACCESS_NOTE,
   },
   hvem: {
     tittel: { no: "Relevans for SMB-ledere", en: "Relevance for SMB leaders" },
@@ -441,10 +442,7 @@ const salgsflytSjekkenSide: PilotSide = {
   },
   format: {
     tittel: { no: "Status og tilgang", en: "Status and access" },
-    tekst: {
-      no: "SMB Salgsflyt-sjekken 2.0 er tilgjengelig på eget domene (salgsflytsjekken.no) og klar for avgrenset kundebruk med tilgangskode.",
-      en: "SMB Sales Flow Check 2.0 is available on its own domain (salgsflytsjekken.no) and ready for limited customer use with an access code.",
-    },
+    tekst: SMB_SALGSFLYT_PILOT_STATUS_BODY,
     punkter: [
       { no: "Eier: Marius Ottesen Consulting (MOC)", en: "Owner: Marius Ottesen Consulting (MOC)" },
       { no: "Be om tilgangskode via kontakt", en: "Request access code via contact" },

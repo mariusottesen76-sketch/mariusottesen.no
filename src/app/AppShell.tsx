@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useCallback, useEffect, useLayoutEffect, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import Profil from "./Profil";
 import Erfaring from "./Erfaring";
@@ -31,7 +32,7 @@ function fitDesktopTabFontPx(
   const maxW = Math.max(0, raw - safetyPx);
   if (maxW < 24) return minPx;
 
-  const tabs = row.querySelectorAll<HTMLButtonElement>("button");
+  const tabs = row.querySelectorAll<HTMLAnchorElement>("a[data-site-tab]");
   if (tabs.length === 0) return minPx;
 
   const applyPx = (px: number) => {
@@ -161,9 +162,9 @@ function AppContent({
         className={`${activeTab === "Faginnlegg" || activeTab === "Bok" || activeTab === "Prosjekter" || activeTab === "Consulting" ? "max-w-7xl" : "max-w-6xl"} mx-auto relative z-10 transition-all duration-500 w-full`}
       >
         <nav className="mb-8 flex w-full items-center justify-between gap-2 border-b border-slate-800/40 pb-3 md:grid md:grid-cols-[auto_minmax(0,1fr)_auto] md:items-center md:gap-x-3">
-          <button
-            onClick={() => setActiveTab("Profil")}
-            className="relative z-20 flex items-center gap-2 sm:gap-2.5 group transition-all shrink-0 rounded-full bg-slate-950 pr-2 sm:pr-3"
+          <Link
+            href={pathForTab("Profil", lang)}
+            className="relative z-20 flex items-center gap-2 sm:gap-2.5 group transition-all shrink-0 rounded-full bg-slate-950 pr-2 sm:pr-3 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
           >
             <div className="w-[36px] h-[36px] sm:w-[44px] sm:h-[44px] rounded-full overflow-hidden shrink-0 bg-slate-800">
               <Image
@@ -183,7 +184,7 @@ function AppContent({
                 Ottesen
               </span>
             </div>
-          </button>
+          </Link>
 
           <div
             ref={tabBarMidRef}
@@ -194,11 +195,12 @@ function AppContent({
               className="inline-flex max-w-full min-w-0 flex-nowrap items-end justify-center gap-x-0 font-black tracking-tight [letter-spacing:-0.04em] uppercase md:gap-x-0.5 lg:gap-x-1 xl:gap-x-1.5"
             >
               {tabKeys.map((tab) => (
-                <button
+                <Link
                   key={tab}
-                  type="button"
-                  onClick={() => setActiveTab(tab)}
+                  href={pathForTab(tab, lang)}
+                  data-site-tab={tab}
                   style={{ fontSize: `${desktopTabFontPx}px`, lineHeight: 1.12 }}
+                  aria-current={activeTab === tab ? "page" : undefined}
                   className={`shrink-0 whitespace-nowrap pb-0.5 px-0 transition-colors md:px-0.5 focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:outline-none rounded-sm ${
                     activeTab === tab
                       ? "text-indigo-400 border-b-2 border-indigo-400"
@@ -207,7 +209,7 @@ function AppContent({
                   title={tabLabels[tab]}
                 >
                   {tabLabels[tab]}
-                </button>
+                </Link>
               ))}
             </div>
           </div>

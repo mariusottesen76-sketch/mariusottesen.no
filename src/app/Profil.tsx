@@ -209,6 +209,21 @@ export default function Profil({ onNavigate }: { onNavigate?: (tab: string) => v
             </ul>
           </section>
 
+          <nav
+            aria-label={lang === "no" ? "Dokumentasjon og kontakt" : "Documentation and contact"}
+            className="flex flex-wrap gap-x-4 gap-y-2 text-sm font-medium"
+          >
+            <LocaleLink href="/cv" className={linkClass}>
+              {tr("profil.videre.cv")}
+            </LocaleLink>
+            <LocaleLink href="/resultater" className={linkClass}>
+              {tr("profil.videre.resultater")}
+            </LocaleLink>
+            <LocaleLink href="/kontakt" className={linkClass}>
+              {tr("profil.videre.kontakt")}
+            </LocaleLink>
+          </nav>
+
           <section aria-labelledby="profil-verdi-heading" className="space-y-3">
             <h2 id="profil-verdi-heading" className={sectionTitleClass}>
               {d.verdiSituasjoner.title}
@@ -290,6 +305,17 @@ export default function Profil({ onNavigate }: { onNavigate?: (tab: string) => v
             </h2>
             <div className={`${cardClassSubtle} space-y-2.5`}>
               <p className="text-slate-400 text-sm leading-relaxed whitespace-pre-line">{d.aiSeksjon}</p>
+              <p className="text-slate-400 text-sm leading-relaxed">
+                {d.aiSeksjonAiLaget.before}
+                <LocaleLink
+                  href="/ai-laget"
+                  className={linkClass}
+                  aria-label={lang === "no" ? "Gå til AI-laget" : "Go to AI-laget"}
+                >
+                  AI-laget
+                </LocaleLink>
+                {d.aiSeksjonAiLaget.after}
+              </p>
               <div className="flex flex-wrap gap-x-4 gap-y-1.5 text-sm pt-1">
               <Link href="/prosjekter" className={linkClass} aria-label="Gå til AI-prosjekter og demonstratorer">
                 {tr("profil.ai.link.prosjekter")}

@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
 import LocaleLink from "./components/LocaleLink";
 import { Quote, Calendar, UserCheck, Linkedin } from "lucide-react";
 import { referanserData } from "./data/referanser";
@@ -34,7 +33,7 @@ export default function Referanser() {
       <div className="flex flex-col md:flex-row gap-8 items-start">
         <div className="w-full md:w-60 shrink-0">
           <div className="rounded-2xl overflow-hidden border border-slate-800 shadow-xl bg-slate-900">
-            <Image src="/images/referanser.jpg.jpg" alt="Referanser og anbefalinger fra kollegaer" width={240} height={320} className="w-full h-auto" />
+            <Image src="/images/referanser.jpg.jpg" alt={tr("ref.imageAlt")} width={240} height={320} className="w-full h-auto" />
           </div>
         </div>
 

@@ -4,7 +4,7 @@ import { Lang } from "../LanguageContext";
 export const PROFIL_PROOF_POINTS: Record<Lang, string[]> = {
   no: [
     "Ledet nasjonale salgsorganisasjoner med 10 - 20 ansatte.",
-    "Personal-, P/L- og KPI-ansvar i komplekse B2B-miljøer.",
+    "Personalansvar og P/L-ansvar med KPI i komplekse B2B-miljøer.",
     "67 % salgsvekst i Norengros Johs. Olsen.",
     "Ledet team til global #1-ranking i Mundipharma.",
     "Etablerte tydeligere KPI-, styrings- og salgsmodell på tvers av 18 driftssteder i Franzefoss.",
@@ -12,7 +12,7 @@ export const PROFIL_PROOF_POINTS: Record<Lang, string[]> = {
   ],
   en: [
     "Led national sales organisations with 10–20 people.",
-    "People, P&L and KPI accountability in complex B2B environments.",
+    "People leadership and P&L accountability with KPIs in complex B2B environments.",
     "67% revenue growth at Norengros Johs. Olsen.",
     "Led the team to a global #1 ranking at Mundipharma.",
     "Established a clearer KPI, governance and sales model across 18 operational sites at Franzefoss.",

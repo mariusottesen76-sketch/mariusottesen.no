@@ -20,6 +20,7 @@ import { aiLagetV2 } from "./projects/ai-laget";
 import { aiFaginnleggHubV2 } from "./projects/ai-faginnlegg-hub";
 import { resolveProjectDates } from "./project-date-resolvers";
 import { projectSchemaDates } from "../../lib/project-overview-metadata";
+import { PROJECT_DETAIL_HERO_OG } from "../../lib/project-v2-image";
 import { HREFLANG_EN, HREFLANG_NB, SITE } from "../../lib/locale-routes";
 import { isIndexableEnProject, projectEnPath, projectNoPath } from "../../lib/project-locale-routes";
 
@@ -103,7 +104,14 @@ export function buildProjectV2Metadata(project: ProjectV2Record, lang: "no" | "e
       siteName: "Marius Ottesen",
       locale: lang === "en" ? "en_GB" : "nb_NO",
       alternateLocale: lang === "en" ? ["nb_NO"] : ["en_GB"],
-      images: [{ url: ogImage, width: 1200, height: 400, alt: title }],
+      images: [
+        {
+          url: ogImage,
+          width: PROJECT_DETAIL_HERO_OG.widthPx,
+          height: PROJECT_DETAIL_HERO_OG.heightPx,
+          alt: title,
+        },
+      ],
       ...(dateModified
         ? { publishedTime: datePublished, modifiedTime: dateModified }
         : { publishedTime: datePublished }),

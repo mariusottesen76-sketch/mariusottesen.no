@@ -30,25 +30,25 @@ export const rowSolutionsV2: ProjectV2Record = {
     en: "Published and live",
   },
   overviewIntroduction: {
-    no: "Row Solutions er et kommersielt samarbeid mellom Marius Ottesen og Thomas Holm, rettet mot små og mellomstore virksomheter. Vi kombinerer kommersiell erfaring, rådgivning og praktisk teknologi for å forbedre sammenhengen mellom synlighet, salg, kundedialog og oppfølging.\n\nArbeidet omfatter utvikling av strategi, tjenester, metoder og verktøy, samt den publiserte nettsiden rowsolutions.no.",
-    en: "Row Solutions is a commercial collaboration between Marius Ottesen and Thomas Holm, aimed at small and medium-sized organisations. We combine commercial experience, advisory work and practical technology to improve the connection between visibility, sales, customer dialogue and follow-up.\n\nThe work includes development of strategy, services, methods and tools, as well as the published website rowsolutions.no.",
+    no: "Row Solutions er kommersielt samarbeid mellom Marius Ottesen og Thomas Holm for SMB — bedre sammenheng mellom synlighet, salg, kundedialog og oppfølging, med tjenester, metoder og rowsolutions.no.",
+    en: "Row Solutions is commercial collaboration between Marius Ottesen and Thomas Holm for SMEs — stronger alignment between visibility, sales, customer dialogue and follow-up, with services, methods and rowsolutions.no.",
   },
   overview: {
     what: {
-      no: "Kommersielt samarbeid mellom Marius Ottesen og Thomas Holm for SMB — strategi, tjenester, metoder, verktøy, salg og kundedialog, med rowsolutions.no som publisert digital plattform.",
-      en: "Commercial collaboration between Marius Ottesen and Thomas Holm for SMEs — strategy, services, methods, tools, sales and customer dialogue, with rowsolutions.no as the published digital platform.",
+      no: "Rådgivningssamarbeid for SMB med strategi, tjenester, metoder og rowsolutions.no som publisert plattform.",
+      en: "Advisory collaboration for SMEs with strategy, services, methods and rowsolutions.no as the published platform.",
     },
     challenge: {
-      no: "Utfordringen er ikke bare å bygge en nettside, men å gjøre et bredt kommersielt tilbud forståelig for SMB-ledere. Virksomheter opplever friksjon mellom synlighet, leadgenerering, CRM, salg, kundedialog og oppfølging — samtidig som et rådgivningsmiljø som kombinerer strategi, salg, transformasjon og AI raskt kan fremstå for bredt uten tydelig struktur.",
-      en: "The challenge is not just to build a website, but to make a broad commercial offering understandable for SMB leaders. Organisations experience friction between visibility, lead generation, CRM, sales, customer dialogue and follow-up — while an advisory environment combining strategy, sales, transformation and AI can quickly appear too broad without clear structure.",
+      no: "SMB-ledere møter friksjon mellom synlighet, leads, salg og oppfølging — og trenger et tilbud som er forståelig uten å bli for bredt eller teknisk.",
+      en: "SMB leaders face friction between visibility, leads, sales and follow-up — and need an offering that is understandable without becoming too broad or technical.",
     },
     built: {
-      no: "Arbeidet har omfattet kommersiell posisjonering, målgruppeforståelse, tjenestestruktur, informasjonsarkitektur, kundereise og CTA-logikk — og publisering av rowsolutions.no på norsk og engelsk med Next.js i Production, responsivt design og AI-assistert utviklingsarbeidsflyt i Cursor.",
-      en: "The work has included commercial positioning, audience understanding, service structure, information architecture, customer journey and CTA logic — and publishing rowsolutions.no in Norwegian and English with Next.js in production, responsive design and an AI-assisted development workflow in Cursor.",
+      no: "Posisjonering, tjenestestruktur, kundereise og publisert rowsolutions.no (norsk og engelsk).",
+      en: "Positioning, service structure, customer journey and published rowsolutions.no (Norwegian and English).",
     },
     how: {
-      no: "rowsolutions.no leder fra overordnet forståelse av Row Solutions til relevante tjenester — inkludert AI Discovery — faglig innsikt, prosjekter og kontakt. Arbeidsprosessen bak løsningen følger forretningsproblem → posisjonering → informasjonsarkitektur → live løsning → evaluering → forbedring.",
-      en: "rowsolutions.no leads from an overall understanding of Row Solutions to relevant services — including AI Discovery — professional insight, projects and contact. The process behind the solution follows business problem → positioning → information architecture → live solution → evaluation → improvement.",
+      no: "Nettsiden leder fra hvem Row er til tjenester, AI Discovery, innhold og kontakt.",
+      en: "The site leads from who Row is to services, AI Discovery, content and contact.",
     },
     relevance: {
       no: "Prosjektet dokumenterer evne til å koble kommersiell problemforståelse, struktur, brukerreise, teknologi og praktisk gjennomføring — relevant for kommersiell utvikling, digital transformasjon og AI Value Realization.",
@@ -91,8 +91,8 @@ export const rowSolutionsV2: ProjectV2Record = {
   },
   seo: {
     title: {
-      no: "Row Solutions | Marius Ottesen",
-      en: "Row Solutions | Marius Ottesen",
+      no: "Row Solutions — kommersielt SMB-samarbeid | Marius Ottesen",
+      en: "Row Solutions — commercial SMB collaboration | Marius Ottesen",
     },
     description: {
       no: "Row Solutions — kommersielt samarbeid for SMB: strategi, tjenester, metoder, verktøy, salg og kundedialog. Dokumentert på mariusottesen.no; live plattform på rowsolutions.no.",

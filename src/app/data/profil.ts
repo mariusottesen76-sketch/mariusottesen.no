@@ -16,6 +16,7 @@ export type ProfilData = {
   verdiSituasjoner: ReturnType<typeof getRekruttererVerdiData>["verdiSituasjoner"];
   lederprofil: ProfilKort[];
   aiSeksjon: string;
+  aiSeksjonAiLaget: { before: string; after: string };
   utdanning: string;
   kompetanse: string[];
   styrker: string[];
@@ -24,10 +25,10 @@ export type ProfilData = {
 const data: Record<Lang, ProfilData> = {
   no: {
     ingress:
-      "Jeg har erfaring med å skape retning, vekst og gjennomføring i skjæringspunktet mellom kommersiell ledelse, salgsutvikling, transformasjon og praktisk bruk av AI — med operasjonell ledererfaring fra salg, drift og gjennomføring.",
+      "Kommersiell leder med dokumentert vekst — salgsledelse, P/L-ansvar, personalansvar, transformasjon og praktisk AI i samme bilde.",
 
     intro:
-      "Jeg er en kommersiell leder med lang erfaring fra å bygge vekst, styrke lønnsomhet og utvikle team i komplekse B2B-virksomheter. Jeg har ledet salg, marked og kommersiell utvikling med personal- og P/L-ansvar, og trives best når strategi skal omsettes til tydelig retning, sterk gjennomføring og målbare resultater.\n\nJeg er aktuell for faste lederroller der virksomheten trenger tydelig retning, sterkere gjennomføring og bedre samspill mellom strategi, salg, drift og teknologi.",
+      "Jeg har lang erfaring med å bygge vekst, styrke lønnsomhet og utvikle team i komplekse B2B-miljøer, med salg, marked og kommersiell utvikling under personal- og resultatansvar. Jeg er aktuell for faste lederroller der virksomheten trenger tydelig kommersiell retning og gjennomføring på tvers av strategi, salg, drift og teknologi.",
 
     roller: AKTUELL_FOR_ROLLER.no,
 
@@ -51,7 +52,13 @@ const data: Record<Lang, ProfilData> = {
     ],
 
     aiSeksjon:
-      "Jeg bruker AI (kunstig intelligens/KI), data og nye arbeidsformer som lederverktøy for å strukturere innsikt, forbedre arbeidsflyt og styrke kommersiell gjennomføring.\n\nDe egenutviklede AI-prosjektene fungerer som en konkret portefølje, presentert på en egenutviklet og publisert nettside. De omfatter blant annet executive plattformen AI Transformation & Value Realization, Control Tower, Event Planner, Bilagsassistent og andre porteføljeprosjekter som viser hvordan kommersiell forståelse, brukerbehov, arbeidsflyt og AI kan kombineres i praktiske løsninger — også der operativ gjennomføring og salg/drift-samspill er viktig.",
+      "Jeg bruker AI (KI), data og nye arbeidsformer som lederverktøy for innsikt, arbeidsflyt og kommersiell gjennomføring. Porteføljen på denne siden — blant annet AI Transformation & Value Realization, Control Tower, Event Planner og Bilagsassistent — viser hvordan det kan se ut i praksis, også der salg og drift må henge sammen.",
+    aiSeksjonAiLaget: {
+      before:
+        "Jeg har også tatt initiativ til AI Value Lab Oslo, en arena for praktisk AI-læring, og deltar faglig i ",
+      after:
+        ", som kombinerer erfaringsdeling med podcasten «AI-laget – AI for folk flest».",
+    },
 
     utdanning: `Gjennom det fullførte masterkurset *Generative AI for Business* ved Handelshøyskolen BI har jeg utviklet strategisk AI-kompetanse med fokus på lederverktøy for beslutningsstøtte, effektiv dokumentasjon og økt kommersiell effektivitet. Initiativtaker til *AI Value Lab Oslo*, et tverrfaglig initiativ for AI-læring, erfaringsutveksling og utforsking av praktiske problemstillinger i skjæringspunktet mellom teknologi, forretning og organisasjon.
 
@@ -79,10 +86,10 @@ Jeg er utdannet *Master of Science in Business Administration (Siviløkonom)* fr
   },
   en: {
     ingress:
-      "I have experience creating direction, growth and execution at the intersection of commercial leadership, sales development, transformation and practical use of AI — with operational leadership experience from sales, operations and execution.",
+      "Commercial leader with documented growth — sales leadership, P&L accountability, people leadership, transformation and practical AI in one profile.",
 
     intro:
-      "I am a commercial leader with extensive experience building growth, strengthening profitability and developing teams in complex B2B organisations. I have led sales, marketing and commercial development with people and P&L accountability, and thrive best when strategy must translate into clear direction, strong execution and measurable results.\n\nI am relevant for permanent leadership roles where the organisation needs clearer direction, stronger execution and better alignment between strategy, sales, operations and technology.",
+      "I have extensive experience building growth, profitability and teams in complex B2B environments, leading sales, marketing and commercial development with people and P&L accountability. I am relevant for permanent leadership roles where the organisation needs clear commercial direction and execution across strategy, sales, operations and technology.",
 
     roller: AKTUELL_FOR_ROLLER.en,
 
@@ -106,7 +113,13 @@ Jeg er utdannet *Master of Science in Business Administration (Siviløkonom)* fr
     ],
 
     aiSeksjon:
-      "I use AI, data and new ways of working as leadership tools to structure insight, improve workflow and strengthen commercial execution.\n\nThe custom AI projects function as a concrete portfolio, presented on a custom-built and published website. They include, among others, the executive platform AI Transformation & Value Realization, Control Tower, Event Planner, Receipt Assistant and other portfolio projects that show how commercial understanding, user needs, workflow and AI can be combined in practical solutions — including where operational execution and sales/operations alignment matter.",
+      "I use AI, data and new ways of working as leadership tools for insight, workflow and commercial execution. The portfolio on this site — including AI Transformation & Value Realization, Control Tower, Event Planner and Receipt Assistant — shows what that can look like in practice, including where sales and operations must align.",
+    aiSeksjonAiLaget: {
+      before:
+        "I have also initiated AI Value Lab Oslo, an arena for practical AI learning, and take part professionally in ",
+      after:
+        ", which combines experience sharing with the podcast «AI-laget – AI for folk flest».",
+    },
 
     utdanning: `Through the completed master's course *Generative AI for Business* at BI Norwegian Business School, I have developed strategic AI competence focused on leadership tools for decision support, efficient documentation and enhanced commercial effectiveness. Initiator of *AI Value Lab Oslo*, a cross-disciplinary initiative for AI learning, experience sharing and exploration of practical issues at the intersection of technology, business and organisation.
 

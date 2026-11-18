@@ -50,7 +50,7 @@ const data = {
         "Denne siden er laget for deg som raskt vil vurdere min relevans for kommersielle lederroller, salgsledelse, daglig leder-roller i SMB, Business Unit Management eller kommersiell transformasjon.",
       kortVurderingLabel: "Kort vurdering",
       kortVurdering:
-        "Jeg passer best i roller der kommersiell retning, salgsstruktur, teamutvikling, endringskraft og gjennomføring må henge sammen. Min styrke ligger i å kombinere ledererfaring, P/L-forståelse, salgsledelse, KPI/CRM, organisasjonsutvikling og praktisk AI- og digital kompetanse. Jeg er kjent for å skape fremdrift i organisasjoner som trenger klar retning, høy gjennomføringsevne og bedre samspill mellom strategi, salg, drift og teknologi.",
+        "Jeg passer best i roller der kommersiell retning, salgsstruktur, teamutvikling, endringskraft og gjennomføring må henge sammen. Min styrke ligger i å kombinere ledererfaring, P/L-ansvar, salgsledelse, KPI/CRM, organisasjonsutvikling og praktisk AI- og digital kompetanse. Jeg er kjent for å skape fremdrift i organisasjoner som trenger klar retning, høy gjennomføringsevne og bedre samspill mellom strategi, salg, drift og teknologi.",
       discoverySignals: [
         "Internasjonal erfaring fra globale konsern, strategigrupper og salg på tvers av Europa, USA og Asia.",
         "Erfaringen er særlig overførbar til B2B-virksomheter der kommersiell ledelse, teamutvikling og gjennomføring veier tyngre enn spesifikk bransjebakgrunn.",
@@ -109,7 +109,7 @@ const data = {
         "This page is designed for you who want to quickly assess my relevance for commercial leadership roles, sales leadership, managing director roles in SMBs, Business Unit Management or commercial transformation.",
       kortVurderingLabel: "Quick assessment",
       kortVurdering:
-        "I fit best in roles where commercial direction, sales structure, team development, change capability and execution must work together. My strength lies in combining leadership experience, P/L understanding, sales leadership, KPI/CRM, organisational development and practical AI and digital competence. I am known for creating momentum in organisations that need clear direction, strong execution capability and better alignment between strategy, sales, operations and technology.",
+        "I fit best in roles where commercial direction, sales structure, team development, change capability and execution must work together. My strength lies in combining leadership experience, P&L accountability, sales leadership, KPI/CRM, organisational development and practical AI and digital competence. I am known for creating momentum in organisations that need clear direction, strong execution capability and better alignment between strategy, sales, operations and technology.",
       discoverySignals: [
         "International experience from global organisations, strategy groups and sales across Europe, the US and Asia.",
         "The experience is particularly transferable to B2B organisations where commercial leadership, team development and execution matter more than exact industry background.",

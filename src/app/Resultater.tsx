@@ -453,9 +453,9 @@ export default function Resultater() {
                 {lang === "no" ? "Erfaring" : "Experience"}
               </LocaleLink>
               {", "}
-              <Link href="/referanser" className={linkClass} aria-label="Gå til Referanser">
+              <LocaleLink href="/referanser" className={linkClass} aria-label="Gå til Referanser">
                 {lang === "no" ? "Referanser" : "References"}
-              </Link>
+              </LocaleLink>
               {lang === "no" ? " eller " : " or "}
               <LocaleLink href="/cv" className={linkClass} aria-label="Gå til CV og åpen søknad">
                 {lang === "no" ? "CV & åpen søknad" : "CV & open application"}
