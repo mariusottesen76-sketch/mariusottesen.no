@@ -1,4 +1,4 @@
-import { AI_LAGET_HERO_IMAGE } from "../../lib/ai-laget-brand";
+import { AI_LAGET_HERO_IMAGE, AI_LAGET_TEAM_URL } from "../../lib/ai-laget-brand";
 import type { StrategicPlatformProject } from "./types";
 import { AI_LAGET_PODCAST_LISTEN } from "./ai-laget-podcast";
 
@@ -97,7 +97,7 @@ export const aiLagetPlatform: StrategicPlatformProject = {
           en: "Official sources for participants and the initiative's profile:",
         },
         link: {
-          href: "https://www.ai-laget.no/oss/",
+          href: AI_LAGET_TEAM_URL,
           label: { no: "Les om laget på ai-laget.no →", en: "Read about the team at ai-laget.no →" },
           external: true,
         },

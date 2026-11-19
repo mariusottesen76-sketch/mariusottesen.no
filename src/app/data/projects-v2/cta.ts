@@ -10,6 +10,7 @@ import {
   CONTACT_QUERY_TEMA,
   type ContactQueryTema,
 } from "../../lib/project-contact-query";
+import { AI_LAGET_TEAM_URL } from "../../lib/ai-laget-brand";
 import { SMB_SALGSFLYT_DETAIL_ACCESS_NOTE } from "../../lib/smb-salgsflyt-brand";
 
 export type ProjectCtaAction = {
@@ -380,6 +381,16 @@ function secondaryDetailAction(project: ProjectV2Record): ProjectCtaAction | und
     case "public":
       if (project.slug === "row-solutions") {
         return { href: "/prosjekter", label: project.ctaLabels?.detailSecondary ?? labels.backToProjects };
+      }
+      if (project.slug === "ai-laget") {
+        return {
+          href: AI_LAGET_TEAM_URL,
+          label: project.ctaLabels?.detailSecondary ?? {
+            no: "Les om laget på ai-laget.no",
+            en: "Read about the team at ai-laget.no",
+          },
+          external: true,
+        };
       }
       return {
         href: contactHref(CONTACT_QUERY_TEMA.anvendelse, project.slug),

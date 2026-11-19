@@ -6,6 +6,8 @@
  */
 export const AI_LAGET_LIVE_URL = "https://www.ai-laget.no/";
 
+export const AI_LAGET_TEAM_URL = "https://www.ai-laget.no/oss/";
+
 export const AI_LAGET_OVERVIEW_IMAGE = "/images/ai-laget-portefolje.jpg?v=20261117";
 
 export const AI_LAGET_HERO_IMAGE = "/images/ai-laget-detail-hero.jpg?v=20261117";

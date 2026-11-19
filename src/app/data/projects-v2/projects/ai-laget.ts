@@ -92,7 +92,10 @@ export const aiLagetV2: ProjectV2Record = {
     overviewPrimary: { no: "Utforsk AI-laget", en: "Explore AI-laget" },
     overviewSecondary: { no: "Besøk ai-laget.no", en: "Visit ai-laget.no" },
     detailPrimary: { no: "Åpne ai-laget.no", en: "Open ai-laget.no" },
-    detailSecondary: { no: "Tilbake til AI, prosjekter & utvikling", en: "Back to AI, Projects & Development" },
+    detailSecondary: {
+      no: "Les om laget på ai-laget.no",
+      en: "Read about the team at ai-laget.no",
+    },
   },
   seo: {
     title: {

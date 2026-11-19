@@ -1,3 +1,4 @@
+import { AI_LAGET_TEAM_URL } from "../../lib/ai-laget-brand";
 import type { StrategicPlatformPodcastListen } from "./types";
 
 /** Delt podcastmetadata for /ai-laget og AI-laget-kortet på /prosjekter. */
@@ -18,6 +19,6 @@ export const AI_LAGET_PODCAST_LISTEN: StrategicPlatformPodcastListen = {
     "https://podcasts.apple.com/no/podcast/ai-laget-ai-for-folk-flest/id1734093925?l=nb",
   spotifyLabel: { no: "Hør på Spotify", en: "Listen on Spotify" },
   appleLabel: { no: "Hør på Apple Podcasts", en: "Listen on Apple Podcasts" },
-  aboutUrl: "https://www.ai-laget.no/oss/",
+  aboutUrl: AI_LAGET_TEAM_URL,
   aboutLabel: { no: "Om AI-laget", en: "About AI-laget" },
 };
