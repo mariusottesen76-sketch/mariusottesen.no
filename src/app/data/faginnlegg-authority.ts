@@ -144,10 +144,6 @@ export const FAGINNLEGG_AUTHORITY: Record<string, FaginnleggAuthorityEntry> = {
       "fornoyd-kunde-lojal-kunde-2026-09",
     ],
     relevantVidere: [
-      articleLink("fornoyd-kunde-lojal-kunde-2026-09", {
-        no: "Les også: En fornøyd kunde er ikke nødvendigvis en lojal kunde",
-        en: "Read also: A satisfied customer is not necessarily a loyal customer",
-      }),
       articleLink("fra-data-til-beslutning-2026-09", {
         no: "Les også: Fra data til beslutning",
         en: "Read also: From data to decision",
@@ -156,7 +152,10 @@ export const FAGINNLEGG_AUTHORITY: Record<string, FaginnleggAuthorityEntry> = {
         no: "Les også: CRM er mer enn et systemprosjekt",
         en: "Read also: CRM is more than a system project",
       }),
-      { href: "/erfaring", label: { no: "Se erfaring", en: "See experience" } },
+      {
+        href: "/resultater",
+        label: { no: "Se dokumenterte lederresultater", en: "See documented leadership results" },
+      },
       { href: "/psc", label: { no: "Se prosjektet: The Predictive Sales Coach", en: "See project: The Predictive Sales Coach" } },
     ],
   },
@@ -339,19 +338,7 @@ export const FAGINNLEGG_AUTHORITY: Record<string, FaginnleggAuthorityEntry> = {
         no: "CRM er mer enn et systemprosjekt",
         en: "CRM is more than a system project",
       }),
-      articleLink("fornoyd-kunde-lojal-kunde-2026-09", {
-        no: "En fornøyd kunde er ikke nødvendigvis en lojal kunde",
-        en: "A satisfied customer is not necessarily a loyal customer",
-      }),
-      articleLink("salgsledelse-i-praksis-2026-08", {
-        no: "Salgsledelse i praksis",
-        en: "Sales leadership in practice",
-      }),
       { href: "/control-tower", label: { no: "Control Tower – Decision & Execution Intelligence", en: "Control Tower – Decision & Execution Intelligence" } },
-      articleLink("bedre-data-beslutninger-tech-frokost-2026-08", {
-        no: "Bedre data. Bedre beslutninger.",
-        en: "Better data. Better decisions.",
-      }),
     ],
   },
   "tillit-endring-gjennomforing-2025-01": {
@@ -436,7 +423,10 @@ export const FAGINNLEGG_AUTHORITY: Record<string, FaginnleggAuthorityEntry> = {
         href: "/ai-readiness-scan",
         label: { no: "Se prosjektet: AI Readiness Scan", en: "See project: AI Readiness Scan" },
       },
-      { href: "/resultater", label: { no: "Se dokumenterte resultater", en: "See documented results" } },
+      {
+        href: "/skoyenasen-tannklinikk",
+        label: { no: "Se caset: Skøyenåsen Tannklinikk", en: "See case: Skøyenåsen Dental Clinic" },
+      },
       { href: "/ai-value-lab-oslo", label: { no: "Se AI Value Lab Oslo", en: "See AI Value Lab Oslo" } },
     ],
   },
@@ -483,6 +473,23 @@ export const FAGINNLEGG_AUTHORITY: Record<string, FaginnleggAuthorityEntry> = {
     role: "core-support",
     ownedIntents: ["AI governance praksis", "human in the loop", "beslutningsrom AI"],
     coreSupportSlugs: [],
+    relevantVidere: [
+      {
+        href: "/ai-transformation-value-realization",
+        label: {
+          no: "AI Transformation & Value Realization",
+          en: "AI Transformation & Value Realization",
+        },
+      },
+      {
+        href: "/ai-readiness-scan",
+        label: { no: "AI Readiness Scan", en: "AI Readiness Scan" },
+      },
+      articleLink("ai-needs-first-tannklinikk-case-01", {
+        no: "De fleste starter feil med AI",
+        en: "Most people start wrong with AI",
+      }),
+    ],
   },
   "bedre-data-beslutninger-tech-frokost-2026-08": {
     slug: "bedre-data-beslutninger-tech-frokost-2026-08",
