@@ -3,8 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import { LanguageProvider, LanguageToggle, useLanguage, type Lang } from "../../LanguageContext";
 import type { StrategicPlatformSlug } from "../../data/strategic-platform-projects/types";
 import { getStrategicPlatformBySlug, t } from "../../data/strategic-platform-projects";
@@ -48,14 +47,14 @@ import DemoPortfolioSection from "./DemoPortfolioSection";
 import GovernanceScenariosSection from "./GovernanceScenariosSection";
 import ProjectFaqSection from "./ProjectFaqSection";
 import { getProjectV2ById } from "../../data/projects-v2/registry";
-import { buildProjectDetailCta } from "../../data/projects-v2/cta";
+import { buildProjectDetailCta, projectDetailHeaderCta } from "../../data/projects-v2/cta";
 import { buildProjectContactHref, CONTACT_QUERY_TEMA } from "../../lib/project-contact-query";
 import { PROJECT_CATEGORY_LABELS } from "../../lib/project-v2-category";
 import ProjectDateMetadata from "../project-v2/ProjectDateMetadata";
 import { resolveDetailHeroFit } from "../../lib/project-v2-image";
 import LocaleLink from "../LocaleLink";
 import SiteLegalFooter from "../SiteLegalFooter";
-import { localePathFromNoPath } from "../../lib/locale-routes";
+import ProjectBackToPortfolioLink from "../project-v2/ProjectBackToPortfolioLink";
 import ProjectRelevantVidere from "../project-v2/ProjectRelevantVidere";
 import ProjectV2ScalabilityFallback from "../project-v2/ProjectV2ScalabilityFallback";
 import ProjectEarlyMocContact from "./ProjectEarlyMocContact";
@@ -116,30 +115,6 @@ function SectionHeading({ id, children }: { id: string; children: React.ReactNod
   );
 }
 
-function TilbakeKnapp() {
-  const { lang } = useLanguage();
-  const router = useRouter();
-  const projectsHub = localePathFromNoPath("/prosjekter", lang);
-
-  return (
-    <button
-      type="button"
-      onClick={() => {
-        if (typeof window !== "undefined" && window.history.length > 1) {
-          router.back();
-        } else {
-          router.push(projectsHub);
-        }
-      }}
-      className="inline-flex items-center gap-1.5 text-xs text-slate-500 hover:text-indigo-300 transition-colors mb-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400 rounded-sm"
-      aria-label={getTranslation("prosjekter.back", lang)}
-    >
-      <ChevronLeft size={14} aria-hidden="true" />
-      {getTranslation("prosjekter.back", lang)}
-    </button>
-  );
-}
-
 function StrategicProjectDetailInner({ slug }: { slug: StrategicPlatformSlug }) {
   const { lang } = useLanguage();
   const platform = getStrategicPlatformBySlug(slug);
@@ -176,7 +151,7 @@ function StrategicProjectDetailInner({ slug }: { slug: StrategicPlatformSlug }) 
         </div>
       </nav>
 
-      <TilbakeKnapp />
+      <ProjectBackToPortfolioLink />
 
       <header className="border-b border-white/10 pb-6 mb-8 space-y-4">
         <ProjectStatusBadge label={detail.statusBadge} lang={lang} />
@@ -224,7 +199,7 @@ function StrategicProjectDetailInner({ slug }: { slug: StrategicPlatformSlug }) 
         />
 
         {projectV2 && detailCta ? (
-          <ProjectCTAGroup lang={lang} config={detailCta} />
+          <ProjectCTAGroup lang={lang} config={projectDetailHeaderCta(detailCta)} />
         ) : null}
       </header>
 

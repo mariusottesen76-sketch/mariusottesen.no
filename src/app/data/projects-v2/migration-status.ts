@@ -266,7 +266,7 @@ export const projectMigrationOverview: ProjectMigrationEntry[] = [
     recommendedDetailLevel: "full",
     accessMode: "access_code",
     overviewImageFormat: "standard_1x3",
-    detailHeroMissing: true,
+    detailHeroMissing: false,
     missingOverviewFields: [],
     editorialReviewRequired: false,
     recommendedMigrationOrder: 16,

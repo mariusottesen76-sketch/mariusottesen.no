@@ -499,3 +499,20 @@ export function buildProjectDetailCta(project: ProjectV2Record): ProjectCtaConfi
     demoBadge: isOpenDemoPlatform(project) && isPlatformLive(project) ? openDemoBadge : undefined,
   };
 }
+
+function isPortfolioBackAction(action?: ProjectCtaAction): boolean {
+  if (!action?.href || action.href !== "/prosjekter") return false;
+  const { no, en } = action.label;
+  return no === labels.backToProjects.no && en === labels.backToProjects.en;
+}
+
+/** Hero-CTA på detaljside — uten duplikat «tilbake til portefølje» (egen lenke over hero). */
+export function projectDetailHeaderCta(config: ProjectCtaConfig): ProjectCtaConfig {
+  return {
+    primary: config.primary,
+    secondary:
+      config.secondary && !isPortfolioBackAction(config.secondary) ? config.secondary : undefined,
+    note: config.note,
+    demoBadge: config.demoBadge,
+  };
+}

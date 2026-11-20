@@ -77,7 +77,7 @@ export const eventPlannerV2: ProjectV2Record = {
     en: "Event Planner – AI-assisted workspace for planning, collaboration and execution of events",
   },
   overviewImageFormat: "standard_1x3",
-  detailHeroMissing: true,
+  detailHeroMissing: false,
   detailDestination: "/event-planner",
   liveSolutionUrl: EVENT_PLANNER_DEMO_URL,
   ctaLabels: {
