@@ -65,6 +65,16 @@ export const overviewImageAudit: OverviewImageAuditEntry[] = [
     notes: "Oversikt på /prosjekter. MASTER-PNG brukes ikke på kort.",
   },
   {
+    projectId: "ai-discovery-2026-11",
+    overviewImage: "/images/ai-discovery-portefolje.png?v=20261120a",
+    aspectNote: "Vertikalt 1:3 — aidiscovery.no-marketinggrafikk",
+    fit: "contain",
+    needsNewOverviewImage: false,
+    recommendedFilename: "ai-discovery-portefolje.png",
+    recommendedDimensions: "1200×3600 px",
+    notes: "Oversikt på /prosjekter. Detail hero: ai-discovery-hero.png (3:1).",
+  },
+  {
     projectId: "smb-salgsflyt-sjekken-2026",
     overviewImage: "/images/salgsflytsjekken-vertikal-2.jpg?v=20261027",
     aspectNote: "Vertikalt 1:3 — godkjent v2.0-illustrasjon (salgsflytsjekken-vertikal-2)",

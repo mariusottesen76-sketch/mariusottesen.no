@@ -389,6 +389,11 @@ const translations: Translations = {
     no: "AI-modenhet, prioriteringer og konkret grunnlag for videre AI-arbeid",
     en: "AI maturity, priorities and a concrete basis for further AI work",
   },
+  "prosjekter.intro.punkt.ai-discovery.label": { no: "AI Discovery", en: "AI Discovery" },
+  "prosjekter.intro.punkt.ai-discovery.desc": {
+    no: "Synlighet og forståelse i ChatGPT, Claude og Perplexity — utviklet av Thomas Holm",
+    en: "Visibility and understanding in ChatGPT, Claude and Perplexity — developed by Thomas Holm",
+  },
   "prosjekter.intro.punkt.flowsignal.label": { no: "FlowSignal", en: "FlowSignal" },
   "prosjekter.intro.punkt.flowsignal.desc": {
     no: "Profilinnsikt, dagsform og teamflyt — kan tilpasses leder- og teambehov",

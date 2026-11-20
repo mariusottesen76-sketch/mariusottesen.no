@@ -3,6 +3,7 @@ import { controlTowerV2 } from "./projects/control-tower";
 import { aiTransformationV2 } from "./projects/ai-transformation-value-realization";
 import { predictiveSalesCoachV2 } from "./projects/predictive-sales-coach";
 import { flowsignalV2 } from "./projects/flowsignal";
+import { aiDiscoveryV2 } from "./projects/ai-discovery";
 import { aiReadinessScanV2 } from "./projects/ai-readiness-scan";
 import { salgsflytSjekkenV2 } from "./projects/salgsflyt-sjekken";
 import { eventPlannerV2 } from "./projects/event-planner";
@@ -32,6 +33,7 @@ const baseProjectV2Records: ProjectV2BaseRecord[] = [
   predictiveSalesCoachV2,
   flowsignalV2,
   aiReadinessScanV2,
+  aiDiscoveryV2,
   salgsflytSjekkenV2,
   eventPlannerV2,
   bilagsassistentV2,

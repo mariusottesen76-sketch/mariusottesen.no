@@ -22,6 +22,7 @@ import { aiAssistertInnsiktsagent } from "../../data/prosjekter/ai-assistert-inn
 import { aiAssistertInnsiktsOgInnholdsagent } from "../../data/prosjekter/ai-assistert-innsikts-og-innholdsagent";
 import { aiArkitekturBeslutningsstotte } from "../../data/prosjekter/ai-arkitektur-beslutningsstotte";
 import { aiValueLabOslo } from "../../data/prosjekter/ai-value-lab-oslo";
+import { aiDiscovery } from "../../data/prosjekter/ai-discovery";
 import { aiLaget } from "../../data/prosjekter/ai-laget";
 import { getTranslation } from "../../data/translations";
 import { eventPlanner } from "../../data/prosjekter/event-planner";
@@ -90,6 +91,7 @@ const prosjektBySlug: Record<StrategicPlatformSlug, ProsjektType> = {
   "predictive-sales-coach": predictiveSalesCoach,
   flowsignal: flowSignal,
   "ai-readiness-scan": aiReadinessScan,
+  "ai-discovery": aiDiscovery,
   "salgsflyt-sjekken": smbSalgsflytSjekken,
   "strategisk-ai-implementering": prosjektoppgaveStrategiskImplementering,
   "skoyenasen-tannklinikk": skoyenasenTannklinikk,

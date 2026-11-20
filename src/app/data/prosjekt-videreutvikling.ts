@@ -15,6 +15,10 @@ const tekster: Record<string, Record<Lang, string>> = {
     no: "AI Readiness Scan er bygget for AI-modenhetsvurdering, men kan tilpasses andre virksomheter, bransjer og modenhetsnivåer. Videre potensial inkluderer bransjespesifikke spørsmålssett, AI-generert oppsummering, modenhetsprofiler, prioriteringsmatriser og kobling mot implementerings- og læringsløp.",
     en: "AI Readiness Scan is built for AI maturity assessment, but can be adapted for other organisations, industries and maturity levels. Further potential includes industry-specific question sets, AI-generated summaries, maturity profiles, prioritisation matrices and links to implementation and learning tracks.",
   },
+  "ai-discovery-2026-11": {
+    no: "AI Discovery utvikles videre av Thomas Holm og Row Solutions — inkludert Playbook, metode og Check. Porteføljesiden dokumenterer partnerløsningen; videre utvikling og kundeleveranse følger Row Solutions og aidiscovery.no.",
+    en: "AI Discovery is further developed by Thomas Holm and Row Solutions — including Playbook, method and Check. The portfolio page documents the partner solution; further development and client delivery follow Row Solutions and aidiscovery.no.",
+  },
   "control-tower": {
     no: "Control Tower er bygget som beslutnings- og gjennomføringsplattform, men kan tilpasses andre virksomheter, bransjer og styringsmodeller. Videre potensial inkluderer integrasjon mot CRM, ERP, BI og kontraktssystemer, rollebaserte arbeidsflater, varslinger, scenarioer og executive overblikk for ledergruppe, COO og CCO.",
     en: "Control Tower is built as a decision and execution platform, but can be adapted for other organisations, industries and governance models. Further potential includes integration with CRM, ERP, BI and contract systems, role-based workspaces, alerts, scenarios and executive overview for leadership teams, COOs and CCOs.",

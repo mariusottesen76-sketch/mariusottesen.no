@@ -123,6 +123,24 @@ export const RELEVANT_VIDERE_BY_PROJECT_SLUG: Record<string, Link[]> = {
       en: "Four own AI apps – friction, prioritisation and teams →",
     }, detailOnly),
   ],
+  "ai-discovery": [
+    proj("/row-solutions", {
+      no: "Row Solutions – kommersielt samarbeid →",
+      en: "Row Solutions – commercial collaboration →",
+    }),
+    ext("https://rowsolutions.no/metoder/ai-discovery", {
+      no: "AI Discovery hos Row Solutions →",
+      en: "AI Discovery at Row Solutions →",
+    }),
+    proj("/ai-readiness-scan", {
+      no: "AI Readiness Scan – modenhet før investering →",
+      en: "AI Readiness Scan – maturity before investment →",
+    }),
+    ext("https://aidiscovery.no/playbook", {
+      no: "The AI Discovery Playbook →",
+      en: "The AI Discovery Playbook →",
+    }, detailOnly),
+  ],
   "ai-readiness-scan": [
     ext("https://rowsolutions.no/innsikt/ai-konkurransekraft-smb", {
       no: "AI kan endre konkurransebildet for SMB. Hvem utnytter mulighetene først? →",
@@ -209,6 +227,10 @@ export const RELEVANT_VIDERE_BY_PROJECT_SLUG: Record<string, Link[]> = {
     }, detailOnly),
   ],
   "row-solutions": [
+    proj("/ai-discovery", {
+      no: "AI Discovery – partnerverktøy i porteføljen →",
+      en: "AI Discovery – partner tool in the portfolio →",
+    }, detailOnly),
     ext(ROW_SOLUTIONS_LIVE_URL, {
       no: "rowsolutions.no – live plattform →",
       en: "rowsolutions.no – live platform →",

@@ -1,6 +1,7 @@
 import type { Lang } from "../LanguageContext";
 import { controlTower } from "./prosjekter/control-tower";
 import { aiTransformationValueRealization } from "./prosjekter/ai-transformation-value-realization";
+import { aiDiscovery } from "./prosjekter/ai-discovery";
 import { aiReadinessScan } from "./prosjekter/ai-readiness-scan";
 import { flowSignal } from "./prosjekter/flowsignal";
 import { predictiveSalesCoach, type ProsjektType } from "./prosjekter/predictive-sales-coach";
@@ -82,8 +83,9 @@ export const PROSJEKT_PORTFOLIO_KATEGORIER: ProsjektPortfolioKategori[] = [
     projects: [
       { id: "predictive-sales-coach-2026", introSlug: "psc" },
       { id: "flowsignal-2026-05", introSlug: "flowsignal" },
-      { id: "ai-readiness-scan-2026-06", introSlug: "readiness-scan" },
       { id: "smb-salgsflyt-sjekken-2026", introSlug: "salgsflyt" },
+      { id: "ai-readiness-scan-2026-06", introSlug: "readiness-scan" },
+      { id: "ai-discovery-2026-11", introSlug: "ai-discovery" },
       { id: "event-planner-2026-08", introSlug: "event-planner" },
       { id: "bilagsassistent-2026-09", introSlug: "bilagsassistent" },
     ],
@@ -171,8 +173,9 @@ const legacyProsjekter: ProsjektType[] = [
   controlTower,
   predictiveSalesCoach,
   flowSignal,
-  aiReadinessScan,
   smbSalgsflytSjekken,
+  aiReadinessScan,
+  aiDiscovery,
   eventPlanner,
   bilagsassistent,
   pscPromoVideo,

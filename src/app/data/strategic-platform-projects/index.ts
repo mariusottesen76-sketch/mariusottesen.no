@@ -3,6 +3,7 @@ import { controlTowerPlatform } from "./control-tower-platform";
 import { aiTransformationPlatform } from "./ai-transformation-platform";
 import { predictiveSalesCoachPlatform } from "./predictive-sales-coach-platform";
 import { flowSignalPlatform } from "./flowsignal-platform";
+import { aiDiscoveryPlatform } from "./ai-discovery-platform";
 import { aiReadinessScanPlatform } from "./ai-readiness-scan-platform";
 import { salgsflytSjekkenPlatform } from "./salgsflyt-sjekken-platform";
 import { strategiskAiImplementeringPlatform } from "./strategisk-ai-implementering-platform";
@@ -26,6 +27,7 @@ const strategicPlatforms: StrategicPlatformProject[] = [
   predictiveSalesCoachPlatform,
   flowSignalPlatform,
   aiReadinessScanPlatform,
+  aiDiscoveryPlatform,
   salgsflytSjekkenPlatform,
   strategiskAiImplementeringPlatform,
   skoyenasenTannklinikkPlatform,

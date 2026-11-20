@@ -9,6 +9,7 @@ export type StrategicPlatformSlug =
   | "predictive-sales-coach"
   | "flowsignal"
   | "ai-readiness-scan"
+  | "ai-discovery"
   | "salgsflyt-sjekken"
   | "strategisk-ai-implementering"
   | "skoyenasen-tannklinikk"

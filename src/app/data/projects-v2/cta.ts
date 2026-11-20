@@ -10,6 +10,7 @@ import {
   CONTACT_QUERY_TEMA,
   type ContactQueryTema,
 } from "../../lib/project-contact-query";
+import { AI_DISCOVERY_ROW_METHOD_URL } from "../../lib/ai-discovery-brand";
 import { AI_LAGET_TEAM_URL } from "../../lib/ai-laget-brand";
 import { SMB_SALGSFLYT_DETAIL_ACCESS_NOTE } from "../../lib/smb-salgsflyt-brand";
 
@@ -392,6 +393,16 @@ function secondaryDetailAction(project: ProjectV2Record): ProjectCtaAction | und
           external: true,
         };
       }
+      if (project.slug === "ai-discovery") {
+        return {
+          href: AI_DISCOVERY_ROW_METHOD_URL,
+          label: project.ctaLabels?.detailSecondary ?? {
+            no: "Se AI Discovery hos Row Solutions",
+            en: "See AI Discovery at Row Solutions",
+          },
+          external: true,
+        };
+      }
       return {
         href: contactHref(CONTACT_QUERY_TEMA.anvendelse, project.slug),
         label: project.ctaLabels?.detailSecondary ?? labels.contactApplication,
@@ -412,6 +423,9 @@ function tertiaryDetailAction(project: ProjectV2Record): ProjectCtaAction | unde
     return { href: "/prosjekter", label: labels.backToProjects };
   }
   if (isOpenDemoPlatform(project)) {
+    return { href: "/prosjekter", label: labels.backToProjects };
+  }
+  if (project.slug === "ai-discovery") {
     return { href: "/prosjekter", label: labels.backToProjects };
   }
   return undefined;

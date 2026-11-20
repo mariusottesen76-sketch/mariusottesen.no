@@ -18,6 +18,7 @@ export const PORTFOLIO_OVERVIEW_PRIMARY_LABEL: Record<ProjectV2Record["slug"], L
   },
   flowsignal: { no: "Utforsk FlowSignal", en: "Explore FlowSignal" },
   "ai-readiness-scan": { no: "Utforsk AI Readiness Scan", en: "Explore AI Readiness Scan" },
+  "ai-discovery": { no: "Utforsk AI Discovery", en: "Explore AI Discovery" },
   "salgsflyt-sjekken": {
     no: "Utforsk SMB Salgsflyt-sjekken",
     en: "Explore SMB Sales Flow Check",
@@ -65,6 +66,7 @@ export const PORTFOLIO_DETAIL_PRIMARY_LABEL: Partial<
   Record<ProjectV2Record["slug"], LocalizedString>
 > = {
   "ai-readiness-scan": { no: "Åpne AI Readiness Scan", en: "Open AI Readiness Scan" },
+  "ai-discovery": { no: "Prøv AI Discovery Check", en: "Try AI Discovery Check" },
   "salgsflyt-sjekken": { no: "Åpne Salgsflyt-sjekken", en: "Open Sales Flow Check" },
   "predictive-sales-coach": { no: "Åpne Predictive Sales Coach", en: "Open Predictive Sales Coach" },
   flowsignal: { no: "Åpne FlowSignal", en: "Open FlowSignal" },
