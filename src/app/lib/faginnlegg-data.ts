@@ -19,6 +19,7 @@ import { skalarInnovasjonIdeerVerdi } from "../data/innlegg/skalar-innovasjon-id
 import { hvorMyeSalgVirksomhetenGlippAv } from "../data/innlegg/hvor-mye-salg-virksomheten-glipp-av";
 import { femtiArSkrevetBok } from "../data/innlegg/femti-ar-skrevet-bok";
 import { narAlleKanByggeFuse } from "../data/innlegg/nar-alle-kan-bygge-fuse";
+import { hvaSierAiOmBedriftenDin } from "../data/innlegg/hva-sier-ai-om-bedriften-din";
 import { enrichFaginnleggHasTags } from "./faginnlegg-innhold";
 import type { FaginnleggInnlegg } from "./faginnlegg-types";
 
@@ -54,6 +55,7 @@ function normalizeFaginnlegg(innlegg: FaginnleggInnlegg): FaginnleggInnlegg {
 export function getAlleFaginnlegg(): FaginnleggInnlegg[] {
   return (
     [
+      hvaSierAiOmBedriftenDin,
       narAlleKanByggeFuse,
       femtiArSkrevetBok,
       hvorMyeSalgVirksomhetenGlippAv,

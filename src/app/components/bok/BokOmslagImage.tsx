@@ -33,10 +33,21 @@ export default function BokOmslagImage({
 }) {
   const [enlarged, setEnlarged] = useState(false);
   const asset = BOK_OMSLAG[variant];
-  const enlargeLabel =
-    lang === "no"
-      ? `Forstør ${variant === "forside" ? "forsideomslag" : "bakomslag"}`
-      : `Enlarge ${variant === "forside" ? "front cover" : "back cover"}`;
+  const coverLabel =
+    variant === "bakside"
+      ? lang === "no"
+        ? "bakomslag"
+        : "back cover"
+      : variant === "forsideFaginnlegg"
+        ? lang === "no"
+          ? "3D-omslag"
+          : "3D cover"
+        : lang === "no"
+          ? "forsideomslag"
+          : "front cover";
+  const enlargeLabel = lang === "no" ? `Forstør ${coverLabel}` : `Enlarge ${coverLabel}`;
+  const imgWidth = "width" in asset && typeof asset.width === "number" ? asset.width : 600;
+  const imgHeight = "height" in asset && typeof asset.height === "number" ? asset.height : 900;
   const dialogLabel =
     lang === "no" ? "Forstørret omslagsbilde" : "Enlarged cover image";
 
@@ -52,8 +63,8 @@ export default function BokOmslagImage({
           <Image
             src={asset.src}
             alt={asset.alt[lang]}
-            width={600}
-            height={900}
+            width={imgWidth}
+            height={imgHeight}
             className={`w-full h-auto object-contain object-center mx-auto pointer-events-none ${
               size === "hero"
                 ? "max-h-[min(78vh,640px)]"

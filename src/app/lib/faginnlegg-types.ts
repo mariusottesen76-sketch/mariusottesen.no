@@ -26,6 +26,8 @@ export interface FaginnleggInnlegg {
   bildeFit?: "cover" | "contain";
   bildeUrlKort?: string;
   bildeModalBred?: boolean;
+  /** Større landskapsbilde i hero på detaljsiden (innenfor samme ramme). */
+  bildeDetaljStor?: boolean;
   bildeVersjon?: string;
   bildeKortFokus?: string;
   bildeKortZoom?: number;

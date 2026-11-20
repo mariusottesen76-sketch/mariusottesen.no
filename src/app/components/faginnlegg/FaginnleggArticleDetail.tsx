@@ -31,6 +31,8 @@ const linkClass =
 
 const MODAL_LANDSCAPE_KLASSE =
   "w-full max-w-[min(100%,754px)] mx-auto h-auto min-h-[286px] md:min-h-[325px] max-h-[59vh] md:max-h-[65vh] object-contain rounded-lg";
+const MODAL_LANDSCAPE_STOR_KLASSE =
+  "w-full max-w-full mx-auto h-auto max-h-[min(85vh,820px)] object-contain rounded-lg";
 const MODAL_PORTRAIT_KLASSE =
   "w-auto max-w-[min(100%,480px)] md:max-w-[560px] max-h-[68vh] md:max-h-[72vh] h-auto object-contain rounded-lg mx-auto";
 
@@ -155,10 +157,19 @@ function FaginnleggArticleMedia({
     setErLandscape(erLandscapeProporsjon(w, h));
   };
 
-  const mediaKlasse = erLandscape ? MODAL_LANDSCAPE_KLASSE : MODAL_PORTRAIT_KLASSE;
+  const storLandscape = erLandscape && Boolean(innlegg.bildeDetaljStor);
+  const mediaKlasse = erLandscape
+    ? storLandscape
+      ? MODAL_LANDSCAPE_STOR_KLASSE
+      : MODAL_LANDSCAPE_KLASSE
+    : MODAL_PORTRAIT_KLASSE;
 
   return (
-    <figure className={`w-full flex justify-center bg-slate-900/50 ${erLandscape ? "px-2 sm:px-3 pt-2 pb-4" : "p-4 sm:p-6"} rounded-xl border border-slate-800/60 mb-8`}>
+    <figure
+      className={`w-full flex justify-center bg-slate-900/50 ${
+        storLandscape ? "px-1 sm:px-1.5 pt-1 pb-2" : erLandscape ? "px-2 sm:px-3 pt-2 pb-4" : "p-4 sm:p-6"
+      } rounded-xl border border-slate-800/60 mb-8`}
+    >
       {hasKarusell ? (
         <FaginnleggKarusell
           key={innlegg.id}
@@ -310,7 +321,7 @@ function FaginnleggArticleInner({ innlegg }: { innlegg: FaginnleggInnlegg }) {
       <FaginnleggArticleMedia innlegg={innlegg} lang={lang} cacheVersion={cacheVersion} />
 
       <div
-        className="text-slate-300 text-base leading-relaxed [&_p]:mb-4 [&_p_strong]:font-semibold [&_em]:italic [&_a]:text-indigo-300 [&_a]:underline [&_a]:underline-offset-2 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:space-y-2 [&_ul]:my-4 [&_ul]:marker:text-indigo-400"
+        className="text-slate-300 text-base leading-relaxed [&_p]:mb-4 [&_p:has(>strong.block)]:mb-1 [&_p_strong]:font-semibold [&_em]:italic [&_a]:text-indigo-300 [&_a]:underline [&_a]:underline-offset-2 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:space-y-2 [&_ul]:my-4 [&_ul]:marker:text-indigo-400"
         dangerouslySetInnerHTML={{ __html: bodyHtml }}
       />
 

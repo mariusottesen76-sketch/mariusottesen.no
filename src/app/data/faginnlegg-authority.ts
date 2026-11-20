@@ -30,6 +30,38 @@ function articleLink(slug: string, label: { no: string; en: string }): RelevantV
 
 /** Sentralt authority-kart — Core Authority Set v1.0 + støtteartikler (data only i fase 4B.1). */
 export const FAGINNLEGG_AUTHORITY: Record<string, FaginnleggAuthorityEntry> = {
+  "hva-sier-ai-om-bedriften-din-2026-11": {
+    slug: "hva-sier-ai-om-bedriften-din-2026-11",
+    cluster: "ai-implementering",
+    role: "core-support",
+    ownedIntents: [
+      "AEO",
+      "GEO",
+      "AI Discovery",
+      "synlighet i AI",
+      "salgscoaching",
+      "ChatGPT leverandørsøk",
+      "digital synlighet",
+    ],
+    coreSupportSlugs: [
+      "alle-snakker-ai-01",
+      "nar-alle-kan-bygge-fuse-2026-11",
+      "hvor-mye-salg-virksomheten-glipp-av-2026-10",
+    ],
+    secondarySupportSlugs: ["salgsledelse-i-praksis-2026-08", "bedre-data-beslutninger-tech-frokost-2026-08"],
+    relevantVidere: [
+      { href: "/ai-discovery", label: { no: "Se prosjektet: AI Discovery", en: "See project: AI Discovery" } },
+      { href: "/row-solutions", label: { no: "Se Row Solutions i porteføljen", en: "See Row Solutions in the portfolio" } },
+      articleLink("nar-alle-kan-bygge-fuse-2026-11", {
+        no: "Les også: Når alle kan bygge, hva bør vi bygge?",
+        en: "Read also: When everyone can build, what should we build?",
+      }),
+      articleLink("salgsledelse-i-praksis-2026-08", {
+        no: "Les også: Salgsledelse i praksis",
+        en: "Read also: Sales leadership in practice",
+      }),
+    ],
+  },
   "nar-alle-kan-bygge-fuse-2026-11": {
     slug: "nar-alle-kan-bygge-fuse-2026-11",
     cluster: "ai-implementering",

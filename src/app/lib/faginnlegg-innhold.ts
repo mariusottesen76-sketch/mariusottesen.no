@@ -80,6 +80,9 @@ function formatParagraphHtml(trimmed: string): string {
     const inner = trimmed.replace(/^<h3[^>]*>/i, "").replace(/<\/h3>$/i, "").trim();
     return `<h3 class="${H3_CLASS}">${formatInnleggHtml(inner)}</h3>`;
   }
+  if (/^<ul[\s>]/i.test(trimmed)) {
+    return formatInnleggHtml(trimmed);
+  }
   if (STANDALONE_STRONG_RE.test(trimmed)) {
     return formatStandaloneStrongParagraph(trimmed);
   }

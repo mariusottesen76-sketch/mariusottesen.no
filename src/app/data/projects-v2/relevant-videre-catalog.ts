@@ -124,6 +124,10 @@ export const RELEVANT_VIDERE_BY_PROJECT_SLUG: Record<string, Link[]> = {
     }, detailOnly),
   ],
   "ai-discovery": [
+    art("hva-sier-ai-om-bedriften-din-2026-11", {
+      no: "Hva sier AI om bedriften din? →",
+      en: "What does AI say about your business? →",
+    }, detailOnly),
     proj("/row-solutions", {
       no: "Row Solutions – kommersielt samarbeid →",
       en: "Row Solutions – commercial collaboration →",

@@ -87,6 +87,16 @@ export function getBokResultatPunktHtml(
 }
 
 export const BOK_OMSLAG = {
+  /** 3D-mockup med forside og bokrygg — kun Innsikt (/faginnlegg), ikke /bok. */
+  forsideFaginnlegg: {
+    src: "/images/Verdiskiftet -bok-forside.png",
+    alt: {
+      no: "3D-fremstilling av fagboken VerdisKIftet – Fra innsikt til nye fortrinn, med forside og bokrygg synlig, av Marius Ottesen.",
+      en: "Three-dimensional rendering of VerdisKIftet – From insight to new advantages, showing front cover and spine, by Marius Ottesen.",
+    },
+    width: 545,
+    height: 819,
+  },
   forside: {
     src: "/images/VerdisKIftet_forside.jpg",
     alt: {
@@ -100,6 +110,21 @@ export const BOK_OMSLAG = {
       no: "Foreløpig bakomslag til fagboka VerdisKIftet – Fra innsikt til nye fortrinn, av Marius Ottesen.",
       en: "Provisional back cover for the book VerdisKIftet – From insight to new advantages, by Marius Ottesen.",
     },
+  },
+} as const;
+
+/** 3D-spread (forside, rygg, bakside) — kun nederst på /bok, ikke i hero. */
+export const BOK_VISUALISERING_3D = {
+  src: "/images/Verdiskiftet - bokbilde.png",
+  width: 819,
+  height: 545,
+  alt: {
+    no: "Tredimensjonal visualisering av fagboka VerdisKIftet av Marius Ottesen, med forside, bokrygg og bakside.",
+    en: "Three-dimensional visualization of the book VerdisKIftet by Marius Ottesen, showing front cover, spine and back cover.",
+  },
+  caption: {
+    no: "Foreløpig visualisering av VerdisKIftet. Endelig bokomslag er ikke fastsatt.",
+    en: "Provisional visualization of VerdisKIftet. The final book cover has not been finalized.",
   },
 } as const;
 

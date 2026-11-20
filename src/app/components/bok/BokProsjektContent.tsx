@@ -1,6 +1,7 @@
 "use client";
 
 import { ChevronDown } from "lucide-react";
+import Image from "next/image";
 import BokOmslagImage from "./BokOmslagImage";
 import VerdisKiftetTitle from "./VerdisKiftetTitle";
 import { BookRichText } from "./book-rich-text";
@@ -9,6 +10,7 @@ import {
   BOK_PROSJEKT_COPY,
   BOK_RELATED_INSIGHT_SLUGS,
   BOK_TESTLESER_MAILTO,
+  BOK_VISUALISERING_3D,
 } from "../../data/bok-prosjekt-innhold";
 import { getFaginnleggBySlug } from "../../lib/faginnlegg-data";
 import { faginnleggDetailPath } from "../../lib/faginnlegg-types";
@@ -261,6 +263,21 @@ function BokProsjektInner() {
           </ul>
         </section>
       </div>
+
+      <figure className="w-full min-w-0 max-w-[68rem] mx-auto mt-12 md:mt-16 mb-10 md:mb-14 px-0">
+        <Image
+          src={BOK_VISUALISERING_3D.src}
+          alt={BOK_VISUALISERING_3D.alt[lang]}
+          width={BOK_VISUALISERING_3D.width}
+          height={BOK_VISUALISERING_3D.height}
+          className="w-full h-auto max-w-full object-contain object-center mx-auto"
+          sizes="(max-width: 768px) 100vw, 1050px"
+          unoptimized
+        />
+        <figcaption className="mt-4 text-center text-xs md:text-sm text-slate-500 font-medium leading-relaxed px-2">
+          {BOK_VISUALISERING_3D.caption[lang]}
+        </figcaption>
+      </figure>
     </article>
   );
 }

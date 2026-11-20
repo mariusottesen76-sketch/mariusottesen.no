@@ -218,7 +218,7 @@ const Faginnlegg = ({ onNavigate: _onNavigate }: { onNavigate?: (tab: string) =>
               {tr("fag.bok.tagline")}
             </p>
             <div className="flex justify-center py-1 mb-4 md:hidden">
-              <BokOmslagImage variant="forside" lang={lang} size="insight" className="mx-auto" />
+              <BokOmslagImage variant="forsideFaginnlegg" lang={lang} size="insight" className="mx-auto" />
             </div>
             <div className="flex flex-col gap-5 mb-4">
               <p className={`text-sm md:text-base text-slate-400 leading-[1.6] font-light ${bookFlowTextClass}`}>
@@ -265,7 +265,7 @@ const Faginnlegg = ({ onNavigate: _onNavigate }: { onNavigate?: (tab: string) =>
             </LocaleLink>
           </div>
           <div className="hidden md:block w-full max-w-[285px] justify-self-end">
-            <BokOmslagImage variant="forside" lang={lang} size="insight" className="ml-auto" />
+            <BokOmslagImage variant="forsideFaginnlegg" lang={lang} size="insight" className="ml-auto" />
           </div>
         </div>
       </section>
