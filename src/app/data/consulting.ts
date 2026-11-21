@@ -161,6 +161,10 @@ const hovedpakker: Record<Lang, TjenestePakke[]> = {
       leveranseDetalj:
         "Kundereise, salgstrakt, CRM, oppfølging, arbeidsflyt, prioritering av forbedringsområder og struktur for videre gjennomføring.",
       pilotStotte: salgsflytDemonstratorStotte.no,
+      fagArtikkelLink: {
+        href: "/faginnlegg/hvor-mye-salg-virksomheten-glipp-av-2026-10",
+        label: "Les: Hvor mye salg glipper virksomheten av →",
+      },
     },
     {
       id: "crm-sales",
@@ -217,6 +221,10 @@ const hovedpakker: Record<Lang, TjenestePakke[]> = {
       leveranseDetalj:
         "Customer journey, sales funnel, CRM, follow-up, workflow, prioritisation of improvement areas and structure for further execution.",
       pilotStotte: salgsflytDemonstratorStotte.en,
+      fagArtikkelLink: {
+        href: "/faginnlegg/hvor-mye-salg-virksomheten-glipp-av-2026-10",
+        label: "Read: How much sales potential businesses miss →",
+      },
     },
     {
       id: "crm-sales",

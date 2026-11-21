@@ -59,16 +59,16 @@ const PAGE_META: Record<SitePageKey, Record<"no" | "en", PageMeta>> = {
   },
   consulting: {
     no: {
-      title: "Kommersiell utvikling, drift, arbeidsflyt og praktisk AI | Marius Ottesen Consulting",
+      title: "B2B salg, salgscoaching og kommersiell utvikling | Marius Ottesen Consulting",
       description:
-        "Relevant erfaring, arbeidsmetoder og porteføljeprosjekter innen kommersiell ledelse, salgsutvikling, CRM, arbeidsflyt, transformasjon og praktisk AI.",
+        "Rådgivning og dokumentert erfaring for norske B2B- og SMB-virksomheter: salgsutvikling, salgscoaching, salgsledelse, CRM, salgsprosesser, kundeoppfølging, transformasjon og praktisk AI.",
       ogImage: `${SITE}/images/profil.jpg`,
       ogImageAlt: "Marius Ottesen Consulting",
     },
     en: {
-      title: "Commercial development, operations, workflow and practical AI | Marius Ottesen Consulting",
+      title: "B2B sales, sales coaching and commercial development | Marius Ottesen Consulting",
       description:
-        "Relevant experience, working methods and portfolio projects in commercial leadership, sales development, CRM, workflow, transformation and practical AI.",
+        "Advisory and documented experience for B2B and SME organisations in Norway: sales development, sales coaching, sales leadership, CRM, sales processes, customer follow-up, transformation and practical AI.",
       ogImage: `${SITE}/images/profil.jpg`,
       ogImageAlt: "Marius Ottesen Consulting",
     },

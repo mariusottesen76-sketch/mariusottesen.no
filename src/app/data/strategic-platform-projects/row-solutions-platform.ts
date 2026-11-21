@@ -23,8 +23,8 @@ export const rowSolutionsPlatform: StrategicPlatformProject = {
       en: "Row Solutions | Marius Ottesen",
     },
     description: {
-      no: "Row Solutions — kommersielt samarbeid for SMB mellom Marius Ottesen og Thomas Holm. Strategi, tjenester, metoder, verktøy og live plattform på rowsolutions.no.",
-      en: "Row Solutions — commercial collaboration for SMEs between Marius Ottesen and Thomas Holm. Strategy, services, methods, tools and live platform at rowsolutions.no.",
+      no: "Row Solutions — kommersielt rådgivningssamarbeid for norske SMB og B2B mellom Marius Ottesen og Thomas Holm: synlighet, salg, salgsutvikling, kundeoppfølging, AI Discovery og praktisk AI. Live plattform på rowsolutions.no.",
+      en: "Row Solutions — commercial advisory collaboration for Norwegian SMEs and B2B between Marius Ottesen and Thomas Holm: visibility, sales, sales development, customer follow-up, AI Discovery and practical AI. Live platform at rowsolutions.no.",
     },
     ogImage: ROW_SOLUTIONS_HERO_IMAGE,
     canonicalPath: "/row-solutions",

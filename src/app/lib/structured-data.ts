@@ -15,11 +15,16 @@ type StructuredDataOptions = {
   includeProfilePage?: boolean;
 };
 
-function rowSolutionsOrgNode() {
+function rowSolutionsOrgNode(lang: "no" | "en") {
   return {
     "@type": "Organization" as const,
     name: "Row Solutions",
     url: ROW_SOLUTIONS_URL,
+    areaServed: "NO",
+    description:
+      lang === "en"
+        ? "Commercial collaboration between Marius Ottesen and Thomas Holm for SMEs in Norway — visibility, B2B sales, customer follow-up, sales development and practical AI (via rowsolutions.no)."
+        : "Kommersielt samarbeid mellom Marius Ottesen og Thomas Holm for SMB i Norge — synlighet, B2B-salg, kundeoppfølging, salgsutvikling og praktisk AI (via rowsolutions.no).",
   };
 }
 
@@ -36,10 +41,30 @@ function consultingOrgNode(lang: "no" | "en") {
     sameAs: [BRREG_ENTITY_URL],
     description:
       lang === "en"
-        ? "Professional platform bringing together experience, methods and portfolio projects in commercial development, AI, workflow and leadership support."
-        : "Faglig plattform som samler erfaring, metoder og porteføljeprosjekter innen kommersiell utvikling, AI, arbeidsflyt og lederstøtte.",
+        ? "Marius Ottesen Consulting — advisory and leadership experience for B2B and SME organisations in Norway: sales development, sales coaching, CRM and sales processes, commercial leadership, transformation and practical AI."
+        : "Marius Ottesen Consulting — rådgivnings- og ledererfaring for B2B- og SMB-virksomheter i Norge: salgsutvikling, salgscoaching, CRM og salgsprosesser, kommersiell ledelse, transformasjon og praktisk AI.",
     areaServed: "NO",
     additionalType: "https://schema.org/ProfessionalService",
+    serviceType:
+      lang === "en"
+        ? [
+            "Commercial leadership advisory",
+            "B2B sales development",
+            "Sales coaching",
+            "Sales leadership",
+            "CRM and sales process improvement",
+            "SME commercial development",
+            "Practical AI in sales and operations",
+          ]
+        : [
+            "Kommersiell ledelsesrådgivning",
+            "B2B-salgsutvikling",
+            "Salgscoaching",
+            "Salgsledelse",
+            "CRM og forbedring av salgsprosesser",
+            "Kommersiell utvikling for SMB",
+            "Praktisk AI i salg og drift",
+          ],
   };
 }
 
@@ -76,7 +101,7 @@ function personNode(lang: "no" | "en") {
     image: `${SITE}/images/profil.jpg`,
     sameAs: ["https://www.linkedin.com/in/mariusottesen/"],
     worksFor: { "@id": CONSULTING_ID },
-    affiliation: rowSolutionsOrgNode(),
+    affiliation: rowSolutionsOrgNode(lang),
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "professional",
@@ -89,6 +114,10 @@ function personNode(lang: "no" | "en") {
       "Sales Management",
       "Sales Director",
       "International B2B sales",
+      "B2B sales development",
+      "Sales coaching",
+      "Sales process improvement",
+      "CRM",
       "Digital Transformation",
       "Artificial Intelligence",
       "Generative AI",

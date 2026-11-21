@@ -521,8 +521,8 @@ const translations: Translations = {
     en: "Relevant experience, working methods and possible areas of contribution",
   },
   "cons.intro.1": {
-    no: "Her finner du erfaring, metoder og porteføljeprosjekter innen kommersiell ledelse, salg, CRM, arbeidsflyt, transformasjon og praktisk AI — med operasjonell erfaring fra salg og drift. Sidens innhold viser typiske problemstillinger og hvor jeg kan bidra i lederrolle, rekruttering eller mulig samarbeid; kontaktskjemaet nederst er korteste vei til dialog.",
-    en: "Here you will find experience, methods and portfolio projects in commercial leadership, sales, CRM, workflow, transformation and practical AI — with operational experience from sales and operations. The content shows typical problem areas and where I can contribute in a leadership role, recruitment or possible collaboration; the contact form at the bottom is the shortest path to a conversation.",
+    no: "Her finner du erfaring, metoder og porteføljeprosjekter innen kommersiell ledelse, B2B-salg, salgsutvikling, salgscoaching, CRM, salgsprosesser, arbeidsflyt, transformasjon og praktisk AI — med operasjonell erfaring fra salg og drift. Målgruppe er særlig norske B2B- og SMB-virksomheter som vil forbedre salg, ledelse og gjennomføring. Sidens innhold viser typiske problemstillinger og hvor jeg kan bidra i lederrolle, rekruttering eller mulig samarbeid; kontaktskjemaet nederst er korteste vei til dialog.",
+    en: "Here you will find experience, methods and portfolio projects in commercial leadership, B2B sales, sales development, sales coaching, CRM, sales processes, workflow, transformation and practical AI — with operational experience from sales and operations. The primary audience is B2B and SME organisations in Norway seeking stronger sales, leadership and execution. The content shows typical problem areas and where I can contribute in a leadership role, recruitment or possible collaboration; the contact form at the bottom is the shortest path to a conversation.",
   },
   "cons.intro.2": {
     no: "",
