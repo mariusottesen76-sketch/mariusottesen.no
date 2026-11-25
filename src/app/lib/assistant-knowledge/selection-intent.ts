@@ -49,7 +49,7 @@ export function inferSelectionIntent(question: string): SelectionIntent {
     preferredCategories.push("consulting");
     tabHints.push("consulting");
   }
-  if (/\b(kontakt|contact|skjema|collaboration|samarbeid|nå\s+marius)\b/i.test(q)) {
+  if (/\b(kontakt\w*|contact\w*|skjema|collaboration|samarbeid|nå\s+marius|henvendelse|get\s+in\s+touch)\b/i.test(q)) {
     preferredCategories.push("contact", "consulting");
     tabHints.push("contact");
   }

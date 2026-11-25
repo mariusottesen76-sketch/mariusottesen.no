@@ -6,7 +6,13 @@ import { fixedReply, contactPath } from "./fixed-replies";
 import { lookupKnowledgeSource } from "./lookup";
 import { buildSystemPrompt, buildUserPrompt } from "./model-prompt";
 import { shouldAnswerConservatively } from "./factual-answer-policy";
-import { classifyQuestionPreModel, detectQuestionLang, isNavigationQuestion } from "./question-policy";
+import {
+  classifyQuestionPreModel,
+  detectQuestionLang,
+  isContactGuidanceQuestion,
+  isNavigationQuestion,
+  isUndocumentedAvailabilityQuestion,
+} from "./question-policy";
 import { selectRelevantSourceIds } from "./source-selection";
 import { urlsForSourceIds, validateModelPayload, assertUrlsAllowed } from "./validate-response";
 import type {
@@ -101,6 +107,14 @@ function navigationAnswer(
   return buildResponse("ANSWER", text, lang, [primary.sourceId]);
 }
 
+function contactGuidanceAnswer(lang: Lang, context: SourceContext): AssistantResponseBody {
+  const text =
+    lang === "no"
+      ? `Du finner kontaktinformasjon og veiledning på ${context.title}: ${context.url}. For profesjonell dialog og henvendelser, bruk skjemaet på Consulting-siden: ${contactPath(lang)}.`
+      : `You can find contact guidance on ${context.title}: ${context.url}. For professional enquiries, use the form on the Consulting page: ${contactPath(lang)}.`;
+  return buildResponse("ANSWER", text, lang, [context.sourceId]);
+}
+
 export async function runAssistantQuery(
   body: AssistantRequestBody,
   deps?: Partial<AssistantServiceDeps>
@@ -136,6 +150,16 @@ export async function runAssistantQuery(
 
   const sourceIds = selectRelevantSourceIds(question, lang, ASSISTANT_LIMITS.maxSources);
   const contexts = loadSourceContexts(sourceIds, lang);
+
+  if (isContactGuidanceQuestion(question)) {
+    const contactId = lang === "no" ? "tab:contact:no" : "tab:contact:en";
+    const contactContexts = loadSourceContexts(
+      sourceIds.includes(contactId) ? sourceIds : [contactId, ...sourceIds],
+      lang
+    );
+    const contactCtx = contactContexts.find((c) => /:contact:/.test(c.sourceId));
+    if (contactCtx) return contactGuidanceAnswer(lang, contactCtx);
+  }
 
   if (isNavigationQuestion(question)) {
     const nav = navigationAnswer(lang, contexts, question);
@@ -224,7 +248,11 @@ export async function runAssistantQuery(
 
   const payload: ModelReplyPayload = validated.payload;
   if (payload.category !== "ANSWER") {
-    return buildResponse(payload.category, payload.answer.trim() || fixedReply(payload.category, lang), lang, []);
+    let category = payload.category;
+    if (category === "RESTRICTED" && isUndocumentedAvailabilityQuestion(question)) {
+      category = "NOT_ON_SITE";
+    }
+    return buildResponse(category, payload.answer.trim() || fixedReply(category, lang), lang, []);
   }
 
   return buildResponse("ANSWER", payload.answer.trim(), lang, payload.sourceIds);

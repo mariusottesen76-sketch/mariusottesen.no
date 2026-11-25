@@ -34,6 +34,7 @@ const CATEGORY_KEYWORDS: Record<string, KnowledgeCategory[]> = {
   consulting: ["consulting"],
   moc: ["consulting"],
   kontakt: ["contact", "consulting"],
+  kontakter: ["contact", "consulting"],
   contact: ["contact", "consulting"],
   cv: ["cv"],
   bok: ["book"],
@@ -171,7 +172,7 @@ export function selectRelevantSourceIds(
     no: "tab:home:no",
     en: "tab:home:en",
   };
-  if (/\b(kontakt|contact|dialog)\b/i.test(question)) {
+  if (/\b(kontakt\w*|contact\w*|dialog)\b/i.test(question)) {
     return [lang === "no" ? "tab:contact:no" : "tab:contact:en"];
   }
   if (/\b(consulting|moc|rådgiv)\b/i.test(question)) {

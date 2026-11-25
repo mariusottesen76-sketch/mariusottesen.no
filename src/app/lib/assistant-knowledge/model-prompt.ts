@@ -19,7 +19,9 @@ Rules:
 - For NOT_ON_SITE, RESTRICTED or OFF_TOPIC, sourceIds may be [].
 - Keep answer under 120 words unless the user asked for a list.
 - Do not invent employers, job titles, metrics or dates.
-- If the question mixes documented and undocumented parts, answer only the documented part and state what is not on the site.`;
+- If the question mixes documented and undocumented parts, answer only the documented part and state what is not on the site.
+- Use NOT_ON_SITE (not RESTRICTED) when the user asks about start dates, availability or interim/fixed leadership roles that excerpts do not document. Suggest professional contact when appropriate.
+- RESTRICTED is for private/sensitive personal data and security abuse — not undocumented scheduling.`;
 }
 
 export function buildUserPrompt(question: string, contexts: SourceContext[]): string {

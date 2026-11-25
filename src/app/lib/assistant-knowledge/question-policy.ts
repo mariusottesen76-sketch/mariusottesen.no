@@ -7,7 +7,7 @@ export type PreModelClassification = {
 } | null;
 
 const RESTRICTED_PATTERNS: RegExp[] = [
-  /\b(lønn|lonn|salary|inntekt|income|hva\s+tjener|how\s+much\s+(does\s+he\s+)?earn|tjente\s+(han|de|marius))\b/i,
+  /\b(lønn|lonn|salary|inntekt|income|hva\s+tjener|how\s+much\s+(does\s+)?(\w+\s+)?earn|tjente\s+(han|de|marius))\b/i,
   /\b(api\s+secret|secret\s+key)\b/i,
   /\b(api[\s-]?nøkkel\w*|api[\s_-]?key\w*|anthropic|openai)\b/i,
   /\b(ignor(er|e)\s+(alle\s+)?(instruksjon\w*|instruks\w*|regl\w*|prompt)|ignore\s+(all\s+)?(your\s+)?(instructions|rules|prompt))\b/i,
@@ -42,13 +42,39 @@ const OFF_TOPIC_PATTERNS: RegExp[] = [
 ];
 
 const IN_SCOPE_HINT =
-  /\b(marius|ottesen|consulting|moc|norengros|franzefoss|verdiskiftet|faginnlegg|prosjekt|cv|erfaring|resultat|consulting|ai[-\s]?prosjekt|leder|rekrutt|bok|article)\b/i;
+  /\b(marius|ottesen|consulting|moc|norengros|franzefoss|verdiskiftet|faginnlegg|prosjekt|cv|erfaring|resultat|consulting|ai[-\s]?prosjekt|leder|rekrutt|bok|article|flowsignal|flowsigan)\b/i;
 
 const NOT_ON_SITE_PATTERNS: RegExp[] = [
   /\b(tilgjengelig|available|oppsigelsestid|notice\s+period)\b.*\b(neste\s+måned|next\s+month|nå|now|immediately)\b/i,
   /\b(når\s+kan\s+han\s+starte|when\s+can\s+he\s+start)\b/i,
   /\b(lønnsforventning|salary\s+expectation)\b/i,
 ];
+
+/** Start date / role availability when excerpts do not document timing — not RESTRICTED. */
+const UNDOCUMENTED_AVAILABILITY =
+  /\b(kan\s+(marius|han)\s+|can\s+(marius|he)\s+|is\s+marius\s+)(starte|start|available|tilgjengelig)\b/i;
+
+const UNDOCUMENTED_AVAILABILITY_EXTENDED =
+  /\b(starte|start)\s+.*(som\s+)?(interim|daglig\s+leder|ceo|commercial\s+director|lederstilling|director\s+position).*(neste|next|\?)/i;
+
+const MARIUS_SUBJECT = /\b(marius|ottesen|han|he)\b/i;
+
+export function hasInScopeSiteAnchor(question: string): boolean {
+  const q = question.trim();
+  return IN_SCOPE_HINT.test(q) || /\b(flowsignal|mixed:)\b/i.test(q);
+}
+
+export function isUndocumentedAvailabilityQuestion(question: string): boolean {
+  const q = question.trim();
+  if (!MARIUS_SUBJECT.test(q)) return false;
+  if (/\b(lønn|lonn|salary|inntekt|income|personnummer)\b/i.test(q)) return false;
+  return (
+    UNDOCUMENTED_AVAILABILITY.test(q) ||
+    UNDOCUMENTED_AVAILABILITY_EXTENDED.test(q) ||
+    (/\b(tilgjengelig|available)\b/i.test(q) &&
+      /\b(rolle|role|stilling|position|ceo|daglig\s+leder|interim|commercial\s+director)\b/i.test(q))
+  );
+}
 
 export function detectQuestionLang(question: string, hint?: Lang): Lang {
   if (hint === "no" || hint === "en") return hint;
@@ -65,9 +91,15 @@ export function classifyQuestionPreModel(question: string): PreModelClassificati
     }
   }
   for (const pattern of OFF_TOPIC_PATTERNS) {
-    if (pattern.test(q) && !IN_SCOPE_HINT.test(q)) {
-      return { category: "OFF_TOPIC", reason: "policy_off_topic" };
+    if (pattern.test(q)) {
+      if (hasInScopeSiteAnchor(q)) continue;
+      if (!IN_SCOPE_HINT.test(q)) {
+        return { category: "OFF_TOPIC", reason: "policy_off_topic" };
+      }
     }
+  }
+  if (isUndocumentedAvailabilityQuestion(q)) {
+    return { category: "NOT_ON_SITE", reason: "policy_availability_undocumented" };
   }
   const mixedDocAndAvailability =
     IN_SCOPE_HINT.test(q) &&
@@ -82,7 +114,14 @@ export function classifyQuestionPreModel(question: string): PreModelClassificati
   return null;
 }
 
+export function isContactGuidanceQuestion(question: string): boolean {
+  return /\b(hvor\s+kontakt\w*|hvordan\s+kontakt\w*|kontakt\w*\s+(jeg|meg)|profesjonell\s+kontakt|how\s+(can|do)\s+i\s+contact|get\s+in\s+touch|sende\s+en?\s+henvendelse|send\s+an?\s+(inquiry|message)|reach\s+(out\s+)?(to\s+)?marius|contact\s+marius|kan\s+jeg\s+kontakt\w*|about\s+sales\s+development)\b/i.test(
+    question
+  );
+}
+
 export function isNavigationQuestion(question: string): boolean {
+  if (isContactGuidanceQuestion(question)) return true;
   return /\b(hvor\s+finn(er|es)?|hvor\s+er|hvor\s+kan\s+jeg|where\s+(can\s+i\s+)?find|where\s+should\s+i\s+look|where\s+is|where\s+are|how\s+do\s+i\s+contact|lenke\s+til|link\s+(me\s+)?to)\b/i.test(
     question
   );

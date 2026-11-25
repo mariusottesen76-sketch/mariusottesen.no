@@ -1,5 +1,8 @@
 /**
  * Oppdrag 04A — plan only. No live Anthropic calls.
+ *
+ * 04D: Selvstendig OFF_TOPIC («Hvordan bestiller jeg pizza?») ligger i `precision-04d.test.ts`,
+ * ikke i de 18 live-spørsmålene. Ved neste 18-kjøring: vurder å erstatte f.eks. H14 med pizza-OFF_TOPIC.
  */
 
 export const MANUAL_HAIKU_QUESTIONS = [
