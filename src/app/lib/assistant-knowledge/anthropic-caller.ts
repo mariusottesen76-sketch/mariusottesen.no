@@ -10,8 +10,15 @@ export type ModelCallParams = {
   signal?: AbortSignal;
 };
 
+export type ModelTokenUsage = {
+  input_tokens: number;
+  output_tokens: number;
+  cache_creation_input_tokens?: number;
+  cache_read_input_tokens?: number;
+};
+
 export type ModelCallResult =
-  | { ok: true; payload: ModelReplyPayload; rawText: string }
+  | { ok: true; payload: ModelReplyPayload; rawText: string; usage?: ModelTokenUsage }
   | { ok: false; code: "model_error" | "timeout" | "parse_error"; message: string };
 
 function extractJsonObject(text: string): string | null {
@@ -54,7 +61,15 @@ export async function callAnthropicModel(params: ModelCallParams): Promise<Model
     if (!payload) {
       return { ok: false, code: "parse_error", message: "Model response was not valid JSON." };
     }
-    return { ok: true, payload, rawText };
+    const usage: ModelTokenUsage | undefined = response.usage
+      ? {
+          input_tokens: response.usage.input_tokens ?? 0,
+          output_tokens: response.usage.output_tokens ?? 0,
+          cache_creation_input_tokens: response.usage.cache_creation_input_tokens ?? undefined,
+          cache_read_input_tokens: response.usage.cache_read_input_tokens ?? undefined,
+        }
+      : undefined;
+    return { ok: true, payload, rawText, usage };
   } catch (err: unknown) {
     if (err instanceof Error && err.name === "AbortError") {
       return { ok: false, code: "timeout", message: "Model request timed out." };
