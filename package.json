@@ -7,9 +7,11 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test:knowledge": "npx tsx --test src/app/lib/assistant-knowledge/*.test.ts"
+    "test:knowledge": "npx tsx --test src/app/lib/assistant-knowledge/*.test.ts",
+    "test:assistant": "npx tsx --test src/app/lib/assistant-knowledge/assistant-api.test.ts"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^1.14.0",
     "@types/nodemailer": "^7.0.9",
     "lucide-react": "^0.563.0",
     "next": "16.1.6",
