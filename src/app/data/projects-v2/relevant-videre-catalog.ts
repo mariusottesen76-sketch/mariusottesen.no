@@ -231,21 +231,21 @@ export const RELEVANT_VIDERE_BY_PROJECT_SLUG: Record<string, Link[]> = {
     }, detailOnly),
   ],
   "row-solutions": [
-    proj("/ai-discovery", {
-      no: "AI Discovery – partnerverktøy i porteføljen →",
-      en: "AI Discovery – partner tool in the portfolio →",
-    }, detailOnly),
     ext(ROW_SOLUTIONS_LIVE_URL, {
-      no: "rowsolutions.no – live plattform →",
-      en: "rowsolutions.no – live platform →",
+      no: "Besøk Row Solutions →",
+      en: "Visit Row Solutions →",
     }),
-    ext("https://rowsolutions.no/innsikt/vi-har-startet-row-solutions", {
-      no: "Vi har startet Row Solutions →",
-      en: "We have started Row Solutions →",
+    proj("/ai-discovery", {
+      no: "AI Discovery – metode og porteføljeoversikt →",
+      en: "AI Discovery – method and portfolio overview →",
     }),
     ext("https://rowsolutions.no/innsikt/hvor-stopper-salgsflyten", {
       no: "Hvor stopper salgsflyten egentlig opp? →",
       en: "Where does the sales flow actually stop? →",
+    }),
+    ext("https://rowsolutions.no/ai-laget", {
+      no: "AI-laget – podcast og praksis →",
+      en: "AI-laget – podcast and practice →",
     }, detailOnly),
     ext("https://rowsolutions.no/innsikt/marketing-skaper-ikke-verdi-for-noen-folger-opp", {
       no: "Marketing skaper ikke verdi – hvis ingen følger opp →",

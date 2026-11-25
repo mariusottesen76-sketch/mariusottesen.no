@@ -30,8 +30,8 @@ export const rowSolutionsV2: ProjectV2Record = {
     en: "Published website and active commercial collaboration",
   },
   overviewIntroduction: {
-    no: "Row Solutions er kommersielt samarbeid mellom Marius Ottesen og Thomas Holm for SMB — bedre sammenheng mellom synlighet, salg, kundedialog og oppfølging, med tjenester, metoder og rowsolutions.no.",
-    en: "Row Solutions is commercial collaboration between Marius Ottesen and Thomas Holm for SMEs — stronger alignment between visibility, sales, customer dialogue and follow-up, with services, methods and rowsolutions.no.",
+    no: "Aktivt kommersielt rådgivningssamarbeid med publisert nettsted. Denne siden dokumenterer utviklingen av rowsolutions.no og mitt bidrag som plattformutvikler.",
+    en: "Active commercial advisory collaboration with a published website. This page documents the development of rowsolutions.no and my contribution as platform developer.",
   },
   overview: {
     what: {
@@ -55,17 +55,11 @@ export const rowSolutionsV2: ProjectV2Record = {
       en: "The project documents ability to connect commercial problem understanding, structure, user journey, technology and practical execution — relevant for commercial development, digital transformation and AI value realization.",
     },
     status: {
-      no: "Nettsiden for rowsolutions.no er publisert og live i Production. Plattformen samler posisjonering, tjenester, prosjekter, faglig innhold og kundedialog i én kommersiell struktur, uten at det er påstått dokumentert markedseffekt eller kommersiell traction.",
-      en: "The website for rowsolutions.no is published and live in production. The platform brings together positioning, services, projects, professional content and customer dialogue in one commercial structure, without claimed documented market effect or commercial traction.",
+      no: "Publisert nettsted med tjenester, metoder, faglig innsikt og kontakt. Videreutvikles løpende med nytt innhold og bedre brukeropplevelse.",
+      en: "Published website with services, methods, professional insight and contact. Continues to evolve with new content and improved user experience.",
     },
-    development: {
-      no: "Videre utvikling inkluderer mer faginnhold og dokumenterte case, konverterings- og brukerreiseanalyse, videreutvikling av AI Discovery, optimalisering av CTA-er og leadflyt, SEO/AEO/GEO-arbeid, analytics og læring fra faktisk bruk — samt CRM-integrasjon som mulig videreutvikling der det ikke er bygget.",
-      en: "Further development includes more professional content and documented cases, conversion and user journey analysis, further development of AI Discovery, optimisation of CTAs and lead flows, SEO/AEO/GEO work, analytics and learning from actual use — plus CRM integration as possible further development where not yet built.",
-    },
-    adaptation: {
-      no: "Arbeidsmetoden kan overføres til andre SMB-er, rådgivningsmiljøer, kunnskapsbedrifter og profesjonelle tjenestevirksomheter som må koble posisjonering, tjenester, innhold og kommersiell digital tilstedeværelse — uten å fremstilles som leverte kundeprosjekter.",
-      en: "The working method can be transferred to other SMBs, advisory environments, knowledge businesses and professional service organisations that need to connect positioning, services, content and commercial digital presence — without being presented as delivered client projects.",
-    },
+    development: { no: "", en: "" },
+    adaptation: { no: "", en: "" },
   },
   overviewImage: ROW_SOLUTIONS_OVERVIEW_IMAGE,
   detailHeroImage: ROW_SOLUTIONS_HERO_IMAGE,
@@ -95,8 +89,8 @@ export const rowSolutionsV2: ProjectV2Record = {
       en: "Row Solutions — commercial SMB collaboration | Marius Ottesen",
     },
     description: {
-      no: "Row Solutions — kommersielt samarbeid for SMB: strategi, tjenester, metoder, verktøy, salg og kundedialog. Dokumentert på mariusottesen.no; live plattform på rowsolutions.no.",
-      en: "Row Solutions — commercial collaboration for SMEs: strategy, services, methods, tools, sales and customer dialogue. Documented on mariusottesen.no; live platform at rowsolutions.no.",
+      no: "Row Solutions — aktivt kommersielt rådgivningssamarbeid og porteføljecase om utvikling av den publiserte plattformen rowsolutions.no.",
+      en: "Row Solutions — active commercial advisory collaboration and portfolio case on developing the published platform at rowsolutions.no.",
     },
     ogImage: ROW_SOLUTIONS_HERO_IMAGE,
     canonicalPath: "/row-solutions",

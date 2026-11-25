@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, ExternalLink } from "lucide-react";
 import { LanguageProvider, LanguageToggle, useLanguage, type Lang } from "../../LanguageContext";
 import type { StrategicPlatformSlug } from "../../data/strategic-platform-projects/types";
 import { getStrategicPlatformBySlug, t } from "../../data/strategic-platform-projects";
@@ -46,6 +46,7 @@ import NumberedStepGrid from "./NumberedStepGrid";
 import DemoPortfolioSection from "./DemoPortfolioSection";
 import GovernanceScenariosSection from "./GovernanceScenariosSection";
 import ProjectFaqSection from "./ProjectFaqSection";
+import { PROJECT_CTA_SECONDARY_CLASS } from "../../lib/project-v2-cta-styles";
 import { getProjectV2ById } from "../../data/projects-v2/registry";
 import { buildProjectDetailCta, projectDetailHeaderCta } from "../../data/projects-v2/cta";
 import { buildProjectContactHref, CONTACT_QUERY_TEMA } from "../../lib/project-contact-query";
@@ -224,7 +225,22 @@ function StrategicProjectDetailInner({ slug }: { slug: StrategicPlatformSlug }) 
           <h2 id="plattform-kort-fortalt" className={`${blockTitleClass} mb-3`}>
             {t(detail.kortFortalt.heading, lang)}
           </h2>
-          <p className={`text-sm ${bodyTextClass}`}>{t(detail.kortFortalt.body, lang)}</p>
+          <MultilineBody text={t(detail.kortFortalt.body, lang)} className={bodyTextClass} />
+          {detail.kortFortalt.link ? (
+            <div className="mt-5">
+              <Link
+                href={detail.kortFortalt.link.href}
+                className={PROJECT_CTA_SECONDARY_CLASS}
+                {...(detail.kortFortalt.link.external !== false &&
+                detail.kortFortalt.link.href.startsWith("http")
+                  ? { target: "_blank", rel: "noopener noreferrer" }
+                  : {})}
+              >
+                {t(detail.kortFortalt.link.label, lang)}
+                <ExternalLink size={16} aria-hidden="true" />
+              </Link>
+            </div>
+          ) : null}
         </section>
       )}
 
@@ -298,6 +314,31 @@ function StrategicProjectDetailInner({ slug }: { slug: StrategicPlatformSlug }) 
             {t(section.heading, lang)}
           </SectionHeading>
           <MultilineBody text={t(section.body, lang)} className={bodyTextClass} />
+          {section.toolLinks && section.toolLinks.length > 0 ? (
+            <ul className="mt-4 space-y-3">
+              {section.toolLinks.map((item) => (
+                <li
+                  key={item.href}
+                  className="flex items-start gap-2 text-sm text-slate-400 font-light leading-relaxed"
+                >
+                  <ChevronRight size={14} className="text-indigo-400 shrink-0 mt-0.5" aria-hidden="true" />
+                  <span>
+                    <Link
+                      href={item.href}
+                      className={`${linkClass} font-semibold text-slate-300`}
+                      {...(item.external !== false && item.href.startsWith("http")
+                        ? { target: "_blank", rel: "noopener noreferrer" }
+                        : {})}
+                    >
+                      {t(item.name, lang)}
+                    </Link>
+                    <span aria-hidden="true"> – </span>
+                    {t(item.description, lang)}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          ) : null}
           {section.flowLine && (
             <p className={`${bodyTextClass} mt-4 text-indigo-300/90 font-medium`}>
               {t(section.flowLine, lang).split("\n").map((line, index) => (
@@ -311,6 +352,20 @@ function StrategicProjectDetailInner({ slug }: { slug: StrategicPlatformSlug }) 
           {section.steps && section.steps.length > 0 && (
             <NumberedStepGrid steps={section.steps} lang={lang} className="mt-4" />
           )}
+          {section.link ? (
+            <div className="mt-5">
+              <Link
+                href={section.link.href}
+                className={PROJECT_CTA_SECONDARY_CLASS}
+                {...(section.link.external !== false && section.link.href.startsWith("http")
+                  ? { target: "_blank", rel: "noopener noreferrer" }
+                  : {})}
+              >
+                {t(section.link.label, lang)}
+                <ExternalLink size={16} aria-hidden="true" />
+              </Link>
+            </div>
+          ) : null}
         </section>
       ))}
 
@@ -355,22 +410,26 @@ function StrategicProjectDetailInner({ slug }: { slug: StrategicPlatformSlug }) 
         </section>
       )}
 
-      <section aria-labelledby="plattform-hvordan" className="mb-10">
-        <SectionHeading id="plattform-hvordan">{t(detail.hvordan.heading, lang)}</SectionHeading>
-        {detail.hvordan.intro && <p className={`${bodyTextClass} mb-4`}>{t(detail.hvordan.intro, lang)}</p>}
-        {detail.hvordan.detaljpunkter && detail.hvordan.detaljpunkter.length > 0 ? (
-          <ul className="space-y-2">
-            {detail.hvordan.detaljpunkter.map((punkt) => (
-              <li key={punkt.no} className="flex items-start gap-2 text-sm text-slate-400 font-light leading-relaxed">
-                <ChevronRight size={14} className="text-indigo-400 shrink-0 mt-0.5" aria-hidden="true" />
-                <span>{t(punkt, lang)}</span>
-              </li>
-            ))}
-          </ul>
-        ) : detail.hvordan.steps && detail.hvordan.steps.length > 0 ? (
-          <NumberedStepGrid steps={detail.hvordan.steps} lang={lang} />
-        ) : null}
-      </section>
+      {((detail.hvordan.intro && t(detail.hvordan.intro, lang).trim()) ||
+        (detail.hvordan.detaljpunkter && detail.hvordan.detaljpunkter.length > 0) ||
+        (detail.hvordan.steps && detail.hvordan.steps.length > 0)) && (
+        <section aria-labelledby="plattform-hvordan" className="mb-10">
+          <SectionHeading id="plattform-hvordan">{t(detail.hvordan.heading, lang)}</SectionHeading>
+          {detail.hvordan.intro && <p className={`${bodyTextClass} mb-4`}>{t(detail.hvordan.intro, lang)}</p>}
+          {detail.hvordan.detaljpunkter && detail.hvordan.detaljpunkter.length > 0 ? (
+            <ul className="space-y-2">
+              {detail.hvordan.detaljpunkter.map((punkt) => (
+                <li key={punkt.no} className="flex items-start gap-2 text-sm text-slate-400 font-light leading-relaxed">
+                  <ChevronRight size={14} className="text-indigo-400 shrink-0 mt-0.5" aria-hidden="true" />
+                  <span>{t(punkt, lang)}</span>
+                </li>
+              ))}
+            </ul>
+          ) : detail.hvordan.steps && detail.hvordan.steps.length > 0 ? (
+            <NumberedStepGrid steps={detail.hvordan.steps} lang={lang} />
+          ) : null}
+        </section>
+      )}
 
       {detail.datagrunnlag && slug === "event-planner" && (
         <section aria-labelledby="plattform-datagrunnlag" className="mb-10">

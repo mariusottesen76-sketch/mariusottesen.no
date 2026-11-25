@@ -51,12 +51,22 @@ export type StrategicPlatformStep = {
   beskrivelse: LocalizedString;
 };
 
+/** Navngitt ekstern/intern lenke med kort beskrivelse (f.eks. Row-metodesider). */
+export type StrategicPlatformToolLinkItem = {
+  href: string;
+  name: LocalizedString;
+  description: LocalizedString;
+  external?: boolean;
+};
+
 /** Valgfritt innholdsblokk på detaljside — brukes bl.a. Event Planner. */
 export type StrategicPlatformContentSection = {
   heading: LocalizedString;
   body: LocalizedString;
   steps?: StrategicPlatformStep[];
   flowLine?: LocalizedString;
+  link?: StrategicPlatformContextLink;
+  toolLinks?: StrategicPlatformToolLinkItem[];
 };
 
 export type StrategicPlatformScalability = {
@@ -156,7 +166,11 @@ export type StrategicPlatformDetail = {
     bildeAlt: LocalizedString;
   };
   /** Kompakt posisjonering — etter hero, før utvidet beskrivelse. */
-  kortFortalt?: { heading: LocalizedString; body: LocalizedString };
+  kortFortalt?: {
+    heading: LocalizedString;
+    body: LocalizedString;
+    link?: StrategicPlatformContextLink;
+  };
   utfordring: {
     heading: LocalizedString;
     body: LocalizedString;
