@@ -1,5 +1,6 @@
 import type { Lang } from "../../LanguageContext";
 import type { KnowledgeCategory } from "./types";
+import { inferSelectionIntent, projectSlugMatches } from "./selection-intent";
 import { listKnowledgeManifestEntries } from "./manifest";
 
 const STOP = new Set([
@@ -42,6 +43,38 @@ const CATEGORY_KEYWORDS: Record<string, KnowledgeCategory[]> = {
   article: ["article", "hub"],
   prosjekt: ["project", "hub"],
   project: ["project", "hub"],
+  rådgiv: ["consulting"],
+  advisory: ["consulting"],
+  workshop: ["consulting"],
+  crm: ["consulting", "article"],
+  utdanning: ["cv", "experience"],
+  education: ["cv", "experience"],
+  referanse: ["references"],
+  references: ["references"],
+  profil: ["profile"],
+  profile: ["profile"],
+  stilling: ["cv", "profile"],
+  roller: ["cv"],
+  roles: ["cv"],
+  kommersiell: ["profile", "consulting", "cv"],
+  commercial: ["profile", "consulting", "cv"],
+  prosjekter: ["project", "hub"],
+  projects: ["project", "hub"],
+  predictive: ["project"],
+  sales: ["project", "consulting"],
+  coach: ["project", "book"],
+  flowsigan: ["project"],
+  flowsignal: ["project"],
+  bilags: ["project"],
+  salgsflyt: ["project"],
+  linkedin: ["contact", "profile"],
+  kontaktskjema: ["contact"],
+  proof: ["results", "profile"],
+  points: ["results"],
+  leadership: ["profile", "experience", "cv"],
+  psc: ["project"],
+  atvr: ["project"],
+  row: ["project"],
   ai: ["project", "article", "results"],
   leder: ["profile", "experience", "cv"],
   rekrutt: ["cv", "profile", "contact"],
@@ -61,6 +94,8 @@ export function selectRelevantSourceIds(
   limit = 3
 ): string[] {
   const tokens = tokenize(question);
+  const qLower = question.toLowerCase();
+  const intent = inferSelectionIntent(question);
   const entries = listKnowledgeManifestEntries().filter((e) => e.lang === lang);
 
   const scored = entries
@@ -71,6 +106,55 @@ export function selectRelevantSourceIds(
         if (hay.includes(token)) score += 3;
         const cats = CATEGORY_KEYWORDS[token];
         if (cats?.includes(entry.category)) score += 4;
+      }
+      if (intent.preferredCategories.includes(entry.category)) {
+        score += 5;
+      }
+      if (entry.category === "project") {
+        const slugRaw = entry.id.replace(/^project:/, "").replace(/:(no|en)$/, "");
+        const slug = slugRaw.replace(/-/g, " ");
+        for (const token of tokens) {
+          if (slug.includes(token)) score += 6;
+        }
+        if (projectSlugMatches(slugRaw, intent.projectSlugHints)) {
+          score += 22;
+        }
+      }
+      if (intent.bookOrHub === "book" && entry.id.startsWith("book:")) {
+        score += 20;
+      }
+      if (intent.bookOrHub === "hub:articles" && entry.id === `hub:articles:${lang}`) {
+        score += 16;
+      }
+      if (intent.bookOrHub === "hub:projects" && entry.id === `hub:projects:${lang}`) {
+        score += 16;
+      }
+      if (entry.id === `hub:articles:${lang}` && /\b(faginnlegg|articles?|artikkel)\b/i.test(qLower)) {
+        score += 12;
+      }
+      if (entry.id === `hub:projects:${lang}` && /\b(prosjekter|projects|portefølje|portfolio)\b/i.test(qLower)) {
+        score += 12;
+      }
+      if (entry.id.startsWith("tab:")) {
+        for (const hint of intent.tabHints) {
+          if (entry.id.includes(`:${hint}:`)) score += 16;
+        }
+        if (entry.id.includes(":experience:") && /\b(erfaring|experience|franzefoss|norengros)\b/i.test(qLower)) {
+          score += 16;
+        }
+        if (entry.id.includes(":results:") && /\b(resultat|results|proof)\b/i.test(qLower)) {
+          score += 16;
+        }
+        if (entry.id.includes(":home:") && /\b(hvem\s+er|who\s+is|kommersiell\s+leder)\b/i.test(qLower)) {
+          score += 12;
+        }
+      }
+      if (
+        entry.category === "article" &&
+        intent.tabHints.length > 0 &&
+        intent.bookOrHub !== "hub:articles"
+      ) {
+        score -= 6;
       }
       if (entry.category === "hub") score -= 2;
       if (entry.category === "legal") score -= 1;

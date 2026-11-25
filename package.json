@@ -8,7 +8,9 @@
     "start": "next start",
     "lint": "eslint",
     "test:knowledge": "npx tsx --test src/app/lib/assistant-knowledge/*.test.ts",
-    "test:assistant": "npx tsx --test src/app/lib/assistant-knowledge/assistant-api.test.ts"
+    "test:assistant": "npx tsx --test src/app/lib/assistant-knowledge/assistant-api.test.ts",
+    "test:eval": "npx tsx --test src/eval/assistant/assistant-eval.test.ts",
+    "eval:assistant": "npx tsx src/eval/assistant/run-eval.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^1.14.0",

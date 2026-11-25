@@ -5,6 +5,7 @@ import { callAnthropicModel, type ModelCallResult, parseModelJson } from "./anth
 import { fixedReply, contactPath } from "./fixed-replies";
 import { lookupKnowledgeSource } from "./lookup";
 import { buildSystemPrompt, buildUserPrompt } from "./model-prompt";
+import { shouldAnswerConservatively } from "./factual-answer-policy";
 import { classifyQuestionPreModel, detectQuestionLang, isNavigationQuestion } from "./question-policy";
 import { selectRelevantSourceIds } from "./source-selection";
 import { urlsForSourceIds, validateModelPayload, assertUrlsAllowed } from "./validate-response";
@@ -64,9 +65,35 @@ function loadSourceContexts(sourceIds: string[], lang: Lang): SourceContext[] {
   return contexts;
 }
 
-function navigationAnswer(lang: Lang, contexts: SourceContext[]): AssistantResponseBody | null {
+function pickNavigationContext(question: string, contexts: SourceContext[]): SourceContext {
+  const q = question.toLowerCase();
+  const rules: Array<{ hint: RegExp; idHint: RegExp }> = [
+    { hint: /\b(cv)\b/i, idHint: /:cv:/ },
+    { hint: /\b(kontakt|contact|skjema)\b/i, idHint: /:contact:/ },
+    { hint: /\b(erfaring|experience)\b/i, idHint: /:experience:/ },
+    { hint: /\b(resultat|results)\b/i, idHint: /:results:/ },
+    { hint: /\b(consulting|konsulent|rådgiv)\b/i, idHint: /:consulting:/ },
+    { hint: /\b(referanse|references)\b/i, idHint: /:references:/ },
+    { hint: /\b(faginnlegg|artikkel|articles)\b/i, idHint: /hub:articles:/ },
+    { hint: /\b(prosjekt|project)\b/i, idHint: /hub:projects:/ },
+    { hint: /\b(bok|book|verdiskiftet)\b/i, idHint: /:book:|book:/ },
+  ];
+  for (const rule of rules) {
+    if (rule.hint.test(q)) {
+      const hit = contexts.find((c) => rule.idHint.test(c.sourceId));
+      if (hit) return hit;
+    }
+  }
+  return contexts[0];
+}
+
+function navigationAnswer(
+  lang: Lang,
+  contexts: SourceContext[],
+  question: string
+): AssistantResponseBody | null {
   if (contexts.length === 0) return null;
-  const primary = contexts[0];
+  const primary = pickNavigationContext(question, contexts);
   const text =
     lang === "no"
       ? `Du finner dette på ${primary.title}: ${primary.url}. For kontakt med Marius, bruk ${contactPath(lang)}.`
@@ -111,12 +138,16 @@ export async function runAssistantQuery(
   const contexts = loadSourceContexts(sourceIds, lang);
 
   if (isNavigationQuestion(question)) {
-    const nav = navigationAnswer(lang, contexts);
+    const nav = navigationAnswer(lang, contexts, question);
     if (nav) return nav;
   }
 
   const substantive = contexts.filter((c) => c.suitableForFactualAnswer);
   if (substantive.length === 0) {
+    return buildResponse("NOT_ON_SITE", fixedReply("NOT_ON_SITE", lang), lang, []);
+  }
+
+  if (shouldAnswerConservatively(question)) {
     return buildResponse("NOT_ON_SITE", fixedReply("NOT_ON_SITE", lang), lang, []);
   }
 
