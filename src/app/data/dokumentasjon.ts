@@ -58,9 +58,9 @@ const data = {
       p1BetweenAtvrAndCt: ", ",
       p1PscPrefix: " og salgstreningsverktøyet ",
       p1End: ".",
-      p2BeforeRow: "Sammen med Thomas Holm utvikler jeg ",
+      p2BeforeRow: "Jeg driver ",
       p2AfterRow:
-        ", et kommersielt samarbeid rettet mot SMB-bedrifter. Vi arbeider med bedre flyt fra synlighet og kundereise til salg og oppfølging, gjennom strategi, metoder, tjenester og praktisk bruk av teknologi. Den publiserte nettsiden er én del av satsingen.",
+        " sammen med Thomas Holm, et aktivt kommersielt rådgivningssamarbeid rettet mot SMB-bedrifter. Vi arbeider med bedre flyt fra synlighet og kundereise til salg og oppfølging, gjennom strategi, metoder, tjenester og praktisk bruk av teknologi. Nettsiden rowsolutions.no er publisert og offentlig tilgjengelig.",
       p3BeforeValueLab: "Jeg har også tatt initiativ til ",
       p3AfterValueLab:
         ", en arena for tverrfaglig AI-læring og utforsking. I ",
@@ -123,9 +123,9 @@ const data = {
       p1BetweenAtvrAndCt: ", ",
       p1PscPrefix: " and the sales training tool ",
       p1End: ".",
-      p2BeforeRow: "Together with Thomas Holm I am developing ",
+      p2BeforeRow: "Together with Thomas Holm I co-lead ",
       p2AfterRow:
-        ", a commercial collaboration for SMB organisations. We work on better flow from visibility and customer journey to sales and follow-up, through strategy, methods, services and practical use of technology. The published website is one part of the initiative.",
+        ", an active commercial advisory collaboration for SMB organisations. We work on better flow from visibility and customer journey to sales and follow-up, through strategy, methods, services and practical use of technology. The website rowsolutions.no is published and publicly available.",
       p3BeforeValueLab: "I have also initiated ",
       p3AfterValueLab:
         ", an arena for cross-disciplinary AI learning and exploration. In ",

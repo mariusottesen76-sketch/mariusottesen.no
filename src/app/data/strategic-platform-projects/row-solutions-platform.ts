@@ -52,8 +52,8 @@ export const rowSolutionsPlatform: StrategicPlatformProject = {
         en: "Shows commercial development, transformation and AI-assisted execution capability.",
       },
       status: {
-        no: "rowsolutions.no er publisert og live i Production.",
-        en: "rowsolutions.no is published and live in production.",
+        no: "Publisert nettside og aktivt kommersielt samarbeid — rowsolutions.no er live.",
+        en: "Published website and active commercial collaboration — rowsolutions.no is live.",
       },
     },
     videreutvikling: {
@@ -63,8 +63,8 @@ export const rowSolutionsPlatform: StrategicPlatformProject = {
   },
   detail: {
     statusBadge: {
-      no: "Publisert og live",
-      en: "Published and live",
+      no: "Publisert nettside og aktivt kommersielt samarbeid",
+      en: "Published website and active commercial collaboration",
     },
     hero: {
       verdiforslag: {
@@ -83,8 +83,8 @@ export const rowSolutionsPlatform: StrategicPlatformProject = {
     kortFortalt: {
       heading: { no: "Hva Row Solutions er", en: "What Row Solutions is" },
       body: {
-        no: "Et kommersielt samarbeid mellom Marius Ottesen og Thomas Holm for SMB — med strategi, posisjonering, tjenester, leveranseformer, metoder, verktøy, salg, kundedialog og markedsutvikling. Initiativet er ikke et eget juridisk selskap. Den publiserte nettsiden rowsolutions.no er én synlig del av arbeidet, sammen med faglig formidling (bl.a. via AI-laget).",
-        en: "A commercial collaboration between Marius Ottesen and Thomas Holm for SMEs — covering strategy, positioning, services, delivery formats, methods, tools, sales, customer dialogue and market development. The initiative is not a separate legal entity. The published website rowsolutions.no is one visible part of the work, together with professional communication (including via AI-laget).",
+        no: "Row Solutions er et aktivt kommersielt rådgivningssamarbeid med offentlig tilgjengelig nettside på rowsolutions.no. Virksomheten kombinerer kompetanse innen kommersiell utvikling, B2B-salg, markedsføring, CRM, kundeoppfølging og praktisk KI for å hjelpe virksomheter med bedre sammenheng mellom strategi og gjennomføring.\n\nInitiativet er et samarbeid mellom Marius Ottesen og Thomas Holm — ikke et eget registrert selskap. På denne siden dokumenteres utviklingsarbeidet; rowsolutions.no er den live plattformen for tjenester, metoder og kontakt.",
+        en: "Row Solutions is an active commercial advisory collaboration with a publicly available website at rowsolutions.no. The initiative combines commercial development, B2B sales, marketing, CRM, customer follow-up and practical AI to help organisations connect strategy and execution more effectively.\n\nIt is a collaboration between Marius Ottesen and Thomas Holm — not a separate registered company. This page documents the development work; rowsolutions.no is the live platform for services, methods and contact.",
       },
     },
     utfordring: {

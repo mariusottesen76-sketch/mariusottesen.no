@@ -25,8 +25,8 @@ const translations: Translations = {
   "profil.row.case": { no: "Case: Row Solutions", en: "Case: Row Solutions" },
   "profil.row.live": { no: "rowsolutions.no", en: "rowsolutions.no" },
   "profil.selskap.desc": {
-    no: "Marius Ottesen Consulting samler erfaring, metoder og porteføljeprosjekter innen kommersiell utvikling, AI, arbeidsflyt og lederstøtte — relevant for lederroller, rekruttering og mulig fremtidig samarbeid.\n\nRow Solutions er kommersielt samarbeid med Thomas Holm for SMB; AI-laget er faglig samarbeid og podcast om praktisk AI.",
-    en: "Marius Ottesen Consulting brings together experience, methods and portfolio projects in commercial development, AI, workflow and leadership support — relevant for leadership roles, recruitment and possible future collaboration.\n\nRow Solutions is commercial collaboration with Thomas Holm for SMEs; AI-laget is professional collaboration and a podcast on practical AI.",
+    no: "Marius Ottesen Consulting samler erfaring, metoder og porteføljeprosjekter innen kommersiell utvikling, AI, arbeidsflyt og lederstøtte — relevant for lederroller, rekruttering og mulig fremtidig samarbeid.\n\nRow Solutions er aktivt kommersielt rådgivningssamarbeid med Thomas Holm for SMB — med offentlig tilgjengelig nettside på rowsolutions.no. AI-laget er faglig samarbeid og podcast om praktisk AI.",
+    en: "Marius Ottesen Consulting brings together experience, methods and portfolio projects in commercial development, AI, workflow and leadership support — relevant for leadership roles, recruitment and possible future collaboration.\n\nRow Solutions is active commercial advisory collaboration with Thomas Holm for SMEs — with a publicly available website at rowsolutions.no. AI-laget is professional collaboration and a podcast on practical AI.",
   },
   "profil.roller.title": { no: "Aktuell for roller innen", en: "Relevant for roles in" },
   "profil.proof.title": {
@@ -305,17 +305,17 @@ const translations: Translations = {
     en: "Direction. Power. Momentum. Results.",
   },
   "prosjekter.featured.row.intro": {
-    no: "Kommersielt samarbeid mellom Marius Ottesen og Thomas Holm for SMB — bedre sammenheng fra synlighet og salg til kundeoppfølging, med tjenester, metoder og rowsolutions.no.",
-    en: "Commercial collaboration between Marius Ottesen and Thomas Holm for SMEs — stronger flow from visibility and sales to customer follow-up, with services, methods and rowsolutions.no.",
+    no: "Aktivt kommersielt rådgivningssamarbeid mellom Marius Ottesen og Thomas Holm for SMB — bedre sammenheng fra synlighet og salg til kundeoppfølging, med tjenester, metoder og offentlig tilgjengelig nettside på rowsolutions.no.",
+    en: "Active commercial advisory collaboration between Marius Ottesen and Thomas Holm for SMEs — stronger flow from visibility and sales to customer follow-up, with services, methods and a publicly available website at rowsolutions.no.",
   },
   "prosjekter.featured.row.status": {
-    no: "Kommersielt samarbeid · Publisert nettside · Tjenester og metoder",
-    en: "Commercial collaboration · Published website · Services and methods",
+    no: "Publisert nettside og aktivt kommersielt samarbeid",
+    en: "Published website and active commercial collaboration",
   },
   "prosjekter.featured.row.box.what.label": { no: "Hva Row Solutions er", en: "What Row Solutions is" },
   "prosjekter.featured.row.box.what.body": {
-    no: "Rådgivningssamarbeid for SMB — fra kundeproblemer og salgsflyt til struktur, metoder og digital tilstedeværelse.",
-    en: "Advisory collaboration for SMEs — from customer problems and sales flow to structure, methods and digital presence.",
+    no: "Aktivt rådgivningssamarbeid for SMB — fra kundeproblemer og salgsflyt til struktur, metoder og publisert digital tilstedeværelse på rowsolutions.no.",
+    en: "Active advisory collaboration for SMEs — from customer problems and sales flow to structure, methods and published digital presence at rowsolutions.no.",
   },
   "prosjekter.featured.row.box.challenge.label": { no: "Utfordringene vi adresserer", en: "Challenges we address" },
   "prosjekter.featured.row.box.challenge.body": {
@@ -432,8 +432,8 @@ const translations: Translations = {
   },
   "prosjekter.intro.punkt.row-solutions.label": { no: "Row Solutions", en: "Row Solutions" },
   "prosjekter.intro.punkt.row-solutions.desc": {
-    no: "Kommersielt samarbeid med utviklet strategi, tjenester, metoder, verktøy og publisert digital plattform.",
-    en: "Commercial collaboration with developed strategy, services, methods, tools and a published digital platform.",
+    no: "Aktivt kommersielt rådgivningssamarbeid — strategi, tjenester, metoder, verktøy og publisert plattform på rowsolutions.no.",
+    en: "Active commercial advisory collaboration — strategy, services, methods, tools and published platform at rowsolutions.no.",
   },
   "prosjekter.intro.punkt.ai-laget.label": { no: "AI-laget", en: "AI-laget" },
   "prosjekter.intro.punkt.ai-laget.desc": {

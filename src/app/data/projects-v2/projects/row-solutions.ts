@@ -22,12 +22,12 @@ export const rowSolutionsV2: ProjectV2Record = {
     en: "Direction. Power. Momentum. Results.",
   },
   overviewMetadataLine: {
-    no: "Kommersielle initiativer · Publisert nettside · Tjenester og metoder",
-    en: "Commercial Initiatives · Published website · Services and methods",
+    no: "Kommersielle initiativer · Publisert nettside og aktivt samarbeid",
+    en: "Commercial Initiatives · Published website and active collaboration",
   },
   statusLabel: {
-    no: "Publisert og live",
-    en: "Published and live",
+    no: "Publisert nettside og aktivt kommersielt samarbeid",
+    en: "Published website and active commercial collaboration",
   },
   overviewIntroduction: {
     no: "Row Solutions er kommersielt samarbeid mellom Marius Ottesen og Thomas Holm for SMB — bedre sammenheng mellom synlighet, salg, kundedialog og oppfølging, med tjenester, metoder og rowsolutions.no.",
