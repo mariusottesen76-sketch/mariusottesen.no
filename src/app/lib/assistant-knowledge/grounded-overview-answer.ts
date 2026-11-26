@@ -9,7 +9,7 @@ import { stripHtmlToPlainText } from "./text-utils";
 export function isConsultingEngagementQuestion(question: string): boolean {
   const q = question.trim();
   return (
-    /\b(hjelpe|hjelper|bidra|bistå|help)\b.*\b(virksomhet|bedrift|business|selskap|organisasjon|company|us)\b/i.test(
+    /\b(hjelpe|hjelper|bidra|bistå|help)\b.*\b(virksomhet\w*|bedrift\w*|business|selskap|organisasjon|company|us)\b/i.test(
       q
     ) || /\bhow\s+can\s+marius\s+help\b/i.test(q)
   );
