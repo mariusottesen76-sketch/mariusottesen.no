@@ -45,20 +45,24 @@ function pushChunk(chunks: string[], text: string | undefined) {
 function buildStrategicPlatformSupplement(project: ProjectV2Record, lang: Lang): string[] {
   if (project.strategicPlatformSlug !== "row-solutions") return [];
   const platform = getStrategicPlatformByProsjektId(project.id);
-  if (!platform) return [];
+  if (!platform?.detail) return [];
 
-  const kort = platform.detail.kortFortalt.body[lang];
-  const team = platform.detail.contentSections.find((s) => s.heading[lang] === "Row-teamet" || s.heading.en === "The Row team");
-  const teamBody = team?.body[lang] ?? "";
-  const aiLaget = platform.detail.contentSections.find((s) => s.heading[lang] === "AI-laget" || s.heading.en === "AI-laget");
-  const aiLagetBody = aiLaget?.body[lang] ?? "";
+  const lines: string[] = [];
+  pushChunk(lines, platform.detail.kortFortalt?.body[lang]);
 
-  return [
-    kort,
-    teamBody,
-    aiLagetBody ? `AI-laget: ${aiLagetBody}` : "",
-    "Kilde: mariusottesen.no/row-solutions (porteføljedokumentasjon). Offentlig tjenesteinnhold: rowsolutions.no.",
-  ].filter(Boolean);
+  const sections = platform.detail.contentSections ?? [];
+  const team = sections.find((s) => s.heading[lang] === "Row-teamet" || s.heading.en === "The Row team");
+  pushChunk(lines, team?.body[lang]);
+
+  const aiLaget = sections.find((s) => s.heading[lang] === "AI-laget" || s.heading.en === "AI-laget");
+  const aiLagetBody = aiLaget?.body[lang]?.trim();
+  if (aiLagetBody) pushChunk(lines, `AI-laget: ${aiLagetBody}`);
+
+  pushChunk(
+    lines,
+    "Kilde: mariusottesen.no/row-solutions (porteføljedokumentasjon). Offentlig tjenesteinnhold: rowsolutions.no."
+  );
+  return lines;
 }
 
 export function buildPublicProjectExcerptChunks(project: ProjectV2Record, lang: Lang): string[] {
