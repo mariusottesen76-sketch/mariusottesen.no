@@ -3,6 +3,7 @@ import type { StrategicPlatformProject } from "./types";
 
 const ROW_METHOD_AI_DISCOVERY = "https://rowsolutions.no/metoder/ai-discovery";
 const ROW_METHOD_AI_READINESS = "https://rowsolutions.no/metoder/ai-readiness-scan";
+const ROW_METHOD_FRA_INNSIKT = "https://rowsolutions.no/metoder/fra-innsikt-til-resultater";
 const ROW_METHOD_PSC = "https://rowsolutions.no/metoder/predictive-sales-coach";
 const ROW_METHOD_SALGSFLYT = "https://rowsolutions.no/metoder/smb-salgsflyt-sjekken";
 
@@ -16,8 +17,8 @@ export const rowSolutionsPlatform: StrategicPlatformProject = {
       en: "Row Solutions | Marius Ottesen",
     },
     description: {
-      no: "Row Solutions — aktivt kommersielt rådgivningssamarbeid for SMB med Marius Ottesen, Thomas Holm og Gunnar Gundersen. Porteføljecase om utvikling av den publiserte plattformen rowsolutions.no.",
-      en: "Row Solutions — active commercial advisory collaboration for SMEs with Marius Ottesen, Thomas Holm and Gunnar Gundersen. Portfolio case on developing the published platform at rowsolutions.no.",
+      no: "Row Solutions — aktivt kommersielt rådgivningssamarbeid for SMB med Marius Ottesen, Thomas Holm og Gunnar Gundersen. Publisert plattform på rowsolutions.no. Denne siden dokumenterer Marius' porteføljebidrag — felles markedsnavn, ikke eget registrert AS.",
+      en: "Row Solutions — active commercial advisory collaboration for SMEs with Marius Ottesen, Thomas Holm and Gunnar Gundersen. Published platform at rowsolutions.no. This page documents Marius' portfolio contribution — shared brand name, not a separately registered company.",
     },
     ogImage: ROW_SOLUTIONS_HERO_IMAGE,
     canonicalPath: "/row-solutions",
@@ -65,8 +66,8 @@ export const rowSolutionsPlatform: StrategicPlatformProject = {
         en: "Direction. Power. Momentum. Results.",
       },
       executiveSummary: {
-        no: "Row Solutions er et kommersielt rådgivningssamarbeid som kombinerer kompetanse innen salg, markedsføring, forretningsutvikling og praktisk AI.\n\nJeg har utviklet nettstedet rowsolutions.no fra idé og struktur til publisert løsning. Prosjektet viser hvordan kommersiell forståelse, teknologi og AI-assistert utvikling kan omsettes til en fungerende digital plattform.",
-        en: "Row Solutions is a commercial advisory collaboration that combines expertise in sales, marketing, business development and practical AI.\n\nI developed the website rowsolutions.no from idea and structure to a published solution. The project shows how commercial understanding, technology and AI-assisted development can be turned into a working digital platform.",
+        no: "Row Solutions er et aktivt kommersielt rådgivningssamarbeid med Marius Ottesen, Thomas Holm og Gunnar Gundersen — et felles markedsnavn, ikke et eget registrert AS. rowsolutions.no er offentlig publisert og videreutvikles med tjenester, metoder og kontakt.\n\nDenne siden på mariusottesen.no dokumenterer mitt bidrag til posisjonering, informasjonsarkitektur, innhold og teknisk utvikling — fra idé til publisert løsning.",
+        en: "Row Solutions is an active commercial advisory collaboration with Marius Ottesen, Thomas Holm and Gunnar Gundersen — a shared brand name, not a separately registered company. rowsolutions.no is publicly published and continues to evolve with services, methods and contact.\n\nThis page on mariusottesen.no documents my contribution to positioning, information architecture, content and technical development — from idea to published solution.",
       },
       bildeAlt: {
         no: "Row Solutions – bedre kommersiell flyt fra synlighet til salg og oppfølging",
@@ -76,8 +77,8 @@ export const rowSolutionsPlatform: StrategicPlatformProject = {
     kortFortalt: {
       heading: { no: "Hva Row Solutions er", en: "What Row Solutions is" },
       body: {
-        no: "Row Solutions består av Marius Ottesen, Thomas Holm og Gunnar Gundersen. Vi kombinerer erfaring innen kommersiell utvikling, B2B-salg, markedsføring, kommunikasjon, teknologi og praktisk AI.\n\nVi hjelper virksomheter med å skape bedre sammenheng mellom strategi, mennesker, kunder og gjennomføring.",
-        en: "Row Solutions consists of Marius Ottesen, Thomas Holm and Gunnar Gundersen. We combine experience in commercial development, B2B sales, marketing, communication, technology and practical AI.\n\nWe help organisations create better alignment between strategy, people, customers and execution.",
+        no: "Row Solutions består av Marius Ottesen, Thomas Holm og Gunnar Gundersen. Vi kombinerer erfaring innen kommersiell utvikling, B2B-salg, markedsføring, kommunikasjon, teknologi og praktisk AI.\n\nVi hjelper virksomheter med å skape bedre sammenheng mellom strategi, mennesker, kunder og gjennomføring. Row Solutions er et felles markedsnavn, ikke et eget registrert AS — med offentlig publisert og videreutviklet nettsted på rowsolutions.no. Denne siden dokumenterer Marius' bidrag til utviklingen.\n\nMarius Ottesen Consulting (MOC) er Marius' egen konsulentvirksomhet — adskilt fra Row Solutions.",
+        en: "Row Solutions consists of Marius Ottesen, Thomas Holm and Gunnar Gundersen. We combine experience in commercial development, B2B sales, marketing, communication, technology and practical AI.\n\nWe help organisations create better alignment between strategy, people, customers and execution. Row Solutions is a shared brand name, not a separately registered company — with a publicly published, continuously evolving website at rowsolutions.no. This page documents Marius' contribution to the development.\n\nMarius Ottesen Consulting (MOC) is Marius' own consulting business — separate from Row Solutions.",
       },
       link: {
         href: "https://rowsolutions.no",
@@ -111,10 +112,19 @@ export const rowSolutionsPlatform: StrategicPlatformProject = {
       {
         heading: { no: "Metoder og verktøy", en: "Methods and tools" },
         body: {
-          no: "Row Solutions tilbyr digitale kartleggings- og treningsverktøy som hjelper virksomheter med å forstå utfordringer, prioritere tiltak og utvikle bedre arbeidsmåter.",
-          en: "Row Solutions offers digital mapping and training tools that help organisations understand challenges, prioritise initiatives and develop better ways of working.",
+          no: "Row Solutions tilbyr digitale kartleggings- og treningsverktøy som hjelper virksomheter med å forstå utfordringer, prioritere tiltak og utvikle bedre arbeidsmåter. Rådgivningsrammeverket «Fra innsikt til resultater» er beskrevet på rowsolutions.no/metoder.\n\nPredictive Sales Coach og SMB Salgsflyt-sjekken er utviklet av Marius Ottesen gjennom MOC. Verktøyene kan inngå i relevant rådgivning via Row Solutions, men eies av MOC — ikke av Row Solutions.",
+          en: "Row Solutions offers digital mapping and training tools that help organisations understand challenges, prioritise initiatives and develop better ways of working. The advisory framework «From insight to results» is described on rowsolutions.no/metoder.\n\nPredictive Sales Coach and the SMB Sales Flow Check were developed by Marius Ottesen through MOC. The tools can form part of relevant advisory work via Row Solutions, but are owned by MOC — not by Row Solutions.",
         },
         toolLinks: [
+          {
+            href: ROW_METHOD_FRA_INNSIKT,
+            name: { no: "Fra innsikt til resultater", en: "From insight to results" },
+            description: {
+              no: "Felles rådgivningsrammeverk i Row Solutions — brukt og videreutviklet i praktisk rådgivning.",
+              en: "Shared advisory framework in Row Solutions — used and evolved in practical advisory work.",
+            },
+            external: true,
+          },
           {
             href: ROW_METHOD_AI_DISCOVERY,
             name: { no: "AI Discovery", en: "AI Discovery" },
@@ -137,8 +147,8 @@ export const rowSolutionsPlatform: StrategicPlatformProject = {
             href: ROW_METHOD_PSC,
             name: { no: "Predictive Sales Coach", en: "Predictive Sales Coach" },
             description: {
-              no: "Støtter praktisk salgstrening, kundedialog og møteforberedelser.",
-              en: "Supports practical sales training, customer dialogue and meeting preparation.",
+              no: "Støtter praktisk salgstrening, kundedialog og møteforberedelser. Utviklet av Marius Ottesen gjennom MOC.",
+              en: "Supports practical sales training, customer dialogue and meeting preparation. Developed by Marius Ottesen through MOC.",
             },
             external: true,
           },
@@ -146,8 +156,8 @@ export const rowSolutionsPlatform: StrategicPlatformProject = {
             href: ROW_METHOD_SALGSFLYT,
             name: { no: "SMB Salgsflyt-sjekken", en: "SMB Sales Flow Check" },
             description: {
-              no: "Kartlegger friksjon i salgsprosesser, CRM og kundeoppfølging.",
-              en: "Maps friction in sales processes, CRM and customer follow-up.",
+              no: "Kartlegger friksjon i salgsprosesser, CRM og kundeoppfølging. Utviklet og eid av MOC.",
+              en: "Maps friction in sales processes, CRM and customer follow-up. Developed and owned by MOC.",
             },
             external: true,
           },
@@ -170,8 +180,8 @@ export const rowSolutionsPlatform: StrategicPlatformProject = {
       {
         heading: { no: "AI-laget", en: "AI-laget" },
         body: {
-          no: "Vi står også bak AI-laget, en podcast og praktisk arena for AI for folk flest. Her utforsker vi hvordan teknologien kan brukes i praksis, deler erfaringer fra egne prosjekter og snakker med mennesker som tar AI i bruk.",
-          en: "We also run AI-laget, a podcast and practical arena for AI for everyday people. Here we explore how the technology can be used in practice, share experience from our own projects and talk with people who are putting AI to work.",
+          no: "Row Solutions er et eget kommersielt rådgivningssamarbeid. AI-laget er en relatert podcast og praktisk arena for AI for folk flest — eget faglig samarbeid om utforsking, erfaring og formidling (ikke det samme som Rows kommersielle kjerne). Her utforskes hvordan teknologien kan brukes i praksis, med erfaringer fra egne prosjekter og samtaler med mennesker som tar AI i bruk.",
+          en: "Row Solutions is a separate commercial advisory collaboration. AI-laget is a related podcast and practical arena for AI for everyday people — a separate professional collaboration for exploration, experience and communication (not the same as Row's commercial core). Here we explore how the technology can be used in practice, with experience from our own projects and conversations with people putting AI to work.",
         },
         link: {
           href: "https://rowsolutions.no/ai-laget",
@@ -186,8 +196,8 @@ export const rowSolutionsPlatform: StrategicPlatformProject = {
     avslutning: {
       heading: { no: "Utforsk prosjektet videre", en: "Explore the project further" },
       body: {
-        no: "Besøk rowsolutions.no for tjenester, metoder og kontakt. Ta gjerne kontakt dersom du vil diskutere kommersiell utvikling eller digital plattformbygging.",
-        en: "Visit rowsolutions.no for services, methods and contact. Feel free to get in touch if you would like to discuss commercial development or digital platform work.",
+        no: "Besøk rowsolutions.no for tjenester, metoder og kontakt — eller gå direkte til tjenester og metoder på nettstedet. Ta gjerne kontakt dersom du vil diskutere kommersiell utvikling eller digital plattformbygging.",
+        en: "Visit rowsolutions.no for services, methods and contact — or go directly to services and methods on the site. Feel free to get in touch if you would like to discuss commercial development or digital platform work.",
       },
     },
   },

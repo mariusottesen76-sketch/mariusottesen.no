@@ -235,6 +235,18 @@ export const RELEVANT_VIDERE_BY_PROJECT_SLUG: Record<string, Link[]> = {
       no: "Besøk Row Solutions →",
       en: "Visit Row Solutions →",
     }),
+    ext("https://rowsolutions.no/tjenester", {
+      no: "Tjenester hos Row Solutions →",
+      en: "Services at Row Solutions →",
+    }),
+    ext("https://rowsolutions.no/metoder", {
+      no: "Metoder og verktøy →",
+      en: "Methods and tools →",
+    }),
+    ext("https://rowsolutions.no/metoder/fra-innsikt-til-resultater", {
+      no: "Fra innsikt til resultater →",
+      en: "From insight to results →",
+    }),
     proj("/ai-discovery", {
       no: "AI Discovery – metode og porteføljeoversikt →",
       en: "AI Discovery – method and portfolio overview →",

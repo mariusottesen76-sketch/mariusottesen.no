@@ -30,8 +30,8 @@ export const rowSolutionsV2: ProjectV2Record = {
     en: "Published website and active commercial collaboration",
   },
   overviewIntroduction: {
-    no: "Aktivt kommersielt rådgivningssamarbeid med publisert nettsted. Denne siden dokumenterer utviklingen av rowsolutions.no og mitt bidrag som plattformutvikler.",
-    en: "Active commercial advisory collaboration with a published website. This page documents the development of rowsolutions.no and my contribution as platform developer.",
+    no: "Aktivt kommersielt rådgivningssamarbeid med Marius Ottesen, Thomas Holm og Gunnar Gundersen — publisert plattform på rowsolutions.no. Denne siden dokumenterer mitt porteføljebidrag som plattformutvikler, ikke en upublisert prototype.",
+    en: "Active commercial advisory collaboration with Marius Ottesen, Thomas Holm and Gunnar Gundersen — published platform at rowsolutions.no. This page documents my portfolio contribution as platform developer, not an unpublished prototype.",
   },
   overview: {
     what: {
@@ -89,8 +89,8 @@ export const rowSolutionsV2: ProjectV2Record = {
       en: "Row Solutions — commercial SMB collaboration | Marius Ottesen",
     },
     description: {
-      no: "Row Solutions — aktivt kommersielt rådgivningssamarbeid og porteføljecase om utvikling av den publiserte plattformen rowsolutions.no.",
-      en: "Row Solutions — active commercial advisory collaboration and portfolio case on developing the published platform at rowsolutions.no.",
+      no: "Row Solutions — aktivt kommersielt rådgivningssamarbeid med Marius Ottesen, Thomas Holm og Gunnar Gundersen. Publisert rowsolutions.no og porteføljedokumentasjon av Marius' utviklingsbidrag.",
+      en: "Row Solutions — active commercial advisory collaboration with Marius Ottesen, Thomas Holm and Gunnar Gundersen. Published rowsolutions.no and portfolio documentation of Marius' development contribution.",
     },
     ogImage: ROW_SOLUTIONS_HERO_IMAGE,
     canonicalPath: "/row-solutions",

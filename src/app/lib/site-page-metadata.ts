@@ -107,6 +107,10 @@ const PAGE_META: Record<SitePageKey, Record<"no" | "en", PageMeta>> = {
   },
 };
 
+export function getSitePageMeta(page: SitePageKey, lang: "no" | "en"): PageMeta {
+  return PAGE_META[page][lang];
+}
+
 export function buildSitePageMetadata(page: SitePageKey, lang: "no" | "en"): Metadata {
   const meta = PAGE_META[page][lang];
   const pair = localePairForPage(page);

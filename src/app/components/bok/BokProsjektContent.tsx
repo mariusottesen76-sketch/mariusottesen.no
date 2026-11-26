@@ -176,6 +176,18 @@ function BokProsjektInner() {
               <BookRichText text={p} />
             </p>
           ))}
+          <p className={bookParagraphClass}>
+            <BookRichText text={copy.rowFrameworkBeforeLink} />
+            <a
+              href={copy.rowFrameworkHref}
+              className={linkClass}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {copy.rowFrameworkLink}
+            </a>
+            <BookRichText text={copy.rowFrameworkAfterLink} />
+          </p>
         </section>
 
         <section aria-labelledby="bok-status" className="min-w-0 pt-2 border-t border-slate-800/40">

@@ -22,11 +22,11 @@ const translations: Translations = {
     en: "Commercial leader | Growth, transformation and practical AI understanding",
   },
   "profil.direkte.label": { no: "Direkte kontakt", en: "Direct contact" },
-  "profil.row.case": { no: "Case: Row Solutions", en: "Case: Row Solutions" },
+  "profil.row.case": { no: "Portefølje: Row Solutions", en: "Portfolio: Row Solutions" },
   "profil.row.live": { no: "rowsolutions.no", en: "rowsolutions.no" },
   "profil.selskap.desc": {
-    no: "Marius Ottesen Consulting samler erfaring, metoder og porteføljeprosjekter innen kommersiell utvikling, AI, arbeidsflyt og lederstøtte — relevant for lederroller, rekruttering og mulig fremtidig samarbeid.\n\nRow Solutions er aktivt kommersielt rådgivningssamarbeid med Thomas Holm og Gunnar Gundersen for SMB — med offentlig tilgjengelig nettside på rowsolutions.no. AI-laget er faglig samarbeid og podcast om praktisk AI.",
-    en: "Marius Ottesen Consulting brings together experience, methods and portfolio projects in commercial development, AI, workflow and leadership support — relevant for leadership roles, recruitment and possible future collaboration.\n\nRow Solutions is active commercial advisory collaboration with Thomas Holm and Gunnar Gundersen for SMEs — with a publicly available website at rowsolutions.no. AI-laget is professional collaboration and a podcast on practical AI.",
+    no: "Marius Ottesen Consulting samler erfaring, metoder og porteføljeprosjekter innen kommersiell utvikling, AI, arbeidsflyt og lederstøtte — relevant for lederroller, rekruttering og mulig fremtidig samarbeid.\n\nRow Solutions er aktivt kommersielt rådgivningssamarbeid med Marius Ottesen, Thomas Holm og Gunnar Gundersen for SMB — med publisert nettsted på rowsolutions.no (felles markedsnavn, ikke eget registrert AS). AI-laget er faglig samarbeid og podcast om praktisk AI.",
+    en: "Marius Ottesen Consulting brings together experience, methods and portfolio projects in commercial development, AI, workflow and leadership support — relevant for leadership roles, recruitment and possible future collaboration.\n\nRow Solutions is active commercial advisory collaboration with Marius Ottesen, Thomas Holm and Gunnar Gundersen for SMEs — with the published website at rowsolutions.no (shared brand name, not a separately registered company). AI-laget is professional collaboration and a podcast on practical AI.",
   },
   "profil.roller.title": { no: "Aktuell for roller innen", en: "Relevant for roles in" },
   "profil.proof.title": {
@@ -305,8 +305,8 @@ const translations: Translations = {
     en: "Direction. Power. Momentum. Results.",
   },
   "prosjekter.featured.row.intro": {
-    no: "Aktivt kommersielt rådgivningssamarbeid mellom Marius Ottesen, Thomas Holm og Gunnar Gundersen — med tjenester, metoder og publisert nettsted på rowsolutions.no.",
-    en: "Active commercial advisory collaboration between Marius Ottesen, Thomas Holm and Gunnar Gundersen — with services, methods and a published website at rowsolutions.no.",
+    no: "Aktivt kommersielt rådgivningssamarbeid med Marius Ottesen, Thomas Holm og Gunnar Gundersen — publisert og videreutviklet plattform på rowsolutions.no.",
+    en: "Active commercial advisory collaboration with Marius Ottesen, Thomas Holm and Gunnar Gundersen — published, continuously evolving platform at rowsolutions.no.",
   },
   "prosjekter.featured.row.status": {
     no: "Publisert nettside og aktivt kommersielt samarbeid",
@@ -314,8 +314,8 @@ const translations: Translations = {
   },
   "prosjekter.featured.row.box.what.label": { no: "Hva Row Solutions er", en: "What Row Solutions is" },
   "prosjekter.featured.row.box.what.body": {
-    no: "Aktivt rådgivningssamarbeid for SMB med Marius Ottesen, Thomas Holm og Gunnar Gundersen. Publisert plattform på rowsolutions.no for tjenester, metoder og kontakt.",
-    en: "Active advisory collaboration for SMEs with Marius Ottesen, Thomas Holm and Gunnar Gundersen. Published platform at rowsolutions.no for services, methods and contact.",
+    no: "Aktivt rådgivningssamarbeid for SMB med Marius Ottesen, Thomas Holm og Gunnar Gundersen. rowsolutions.no er offentlig publisert — tjenester, metoder og kontakt.",
+    en: "Active advisory collaboration for SMEs with Marius Ottesen, Thomas Holm and Gunnar Gundersen. rowsolutions.no is publicly published — services, methods and contact.",
   },
   "prosjekter.featured.row.box.challenge.label": { no: "Utfordringene vi adresserer", en: "Challenges we address" },
   "prosjekter.featured.row.box.challenge.body": {
@@ -432,8 +432,8 @@ const translations: Translations = {
   },
   "prosjekter.intro.punkt.row-solutions.label": { no: "Row Solutions", en: "Row Solutions" },
   "prosjekter.intro.punkt.row-solutions.desc": {
-    no: "Aktivt kommersielt rådgivningssamarbeid med publisert plattform på rowsolutions.no — dokumentert som utviklingscase her.",
-    en: "Active commercial advisory collaboration with published platform at rowsolutions.no — documented here as a development case.",
+    no: "Aktivt kommersielt samarbeid med publisert plattform på rowsolutions.no. Denne siden dokumenterer Marius' porteføljebidrag til utviklingen — ikke en upublisert prototype.",
+    en: "Active commercial collaboration with a published platform at rowsolutions.no. This page documents Marius' portfolio contribution to the work — not an unpublished prototype.",
   },
   "prosjekter.intro.punkt.ai-laget.label": { no: "AI-laget", en: "AI-laget" },
   "prosjekter.intro.punkt.ai-laget.desc": {
