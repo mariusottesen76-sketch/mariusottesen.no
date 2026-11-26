@@ -23,8 +23,8 @@ describe("assistant chat UI logic", () => {
   });
 
   it("copy includes contact paths per language", () => {
-    assert.equal(getAssistantUiCopy("no").contactHref, "/consulting#cons-dialog-heading");
-    assert.equal(getAssistantUiCopy("en").contactHref, "/en/consulting#cons-dialog-heading");
+    assert.equal(getAssistantUiCopy("no").contactHref, "/consulting");
+    assert.equal(getAssistantUiCopy("en").contactHref, "/en/consulting");
     assert.equal(getAssistantUiCopy("no").launcherLabel, "Utforsk Marius");
     assert.equal(getAssistantUiCopy("en").launcherLabel, "Explore Marius");
     assert.deepEqual(getAssistantUiCopy("no").suggestions, [

@@ -146,7 +146,7 @@ describe("assistant API pipeline (mocked model)", () => {
 
   it("12. Timeout from model", async () => {
     const res = await runAssistantQuery(
-      { question: "Hvilke resultater dokumenterer nettsiden?", lang: "no" },
+      { question: "Hva er Marius sin erfaring fra salg i detalj?", lang: "no" },
       {
         config: enabledConfig,
         callModel: async () => ({ ok: false, code: "timeout", message: "timeout" }),
@@ -159,7 +159,7 @@ describe("assistant API pipeline (mocked model)", () => {
 
   it("13. Anthropic error", async () => {
     const res = await runAssistantQuery(
-      { question: "Hvilke resultater dokumenterer nettsiden?", lang: "no" },
+      { question: "Hva er Marius sin erfaring fra salg i detalj?", lang: "no" },
       {
         config: enabledConfig,
         callModel: async () => ({ ok: false, code: "model_error", message: "upstream" }),
@@ -172,7 +172,7 @@ describe("assistant API pipeline (mocked model)", () => {
 
   it("14. Invalid model JSON", async () => {
     const res = await runAssistantQuery(
-      { question: "Hvilke resultater dokumenterer nettsiden?", lang: "no" },
+      { question: "Hva er Marius sin erfaring fra salg i detalj?", lang: "no" },
       {
         config: enabledConfig,
         callModel: async () => ({ ok: false, code: "parse_error", message: "bad json" }),
@@ -183,7 +183,7 @@ describe("assistant API pipeline (mocked model)", () => {
 
   it("16. Invalid CHAT_MODEL skips API", async () => {
     const res = await runAssistantQuery(
-      { question: "Hvilke lederroller passer Marius til?", lang: "no" },
+      { question: "Hvordan beskriver nettsiden Marius som CRM-superbruker hos Norengros?", lang: "no" },
       {
         config: {
           ...enabledConfig,
@@ -201,7 +201,7 @@ describe("assistant API pipeline (mocked model)", () => {
   it("15. Mixed question — model answers only documented part", async () => {
     const res = await runAssistantQuery(
       {
-        question: "Hvilke resultater har Marius i Norengros, og er han ledig neste måned?",
+        question: "Hvordan omtaler nettsiden Marius som CRM-superbruker hos Norengros, og er han ledig neste måned?",
         lang: "no",
       },
       {

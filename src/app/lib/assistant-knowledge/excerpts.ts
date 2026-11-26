@@ -49,19 +49,38 @@ function sitePageExcerpt(ref: Extract<KnowledgeContentRef, { kind: "site-page" }
         lang,
         "partial",
         joinParagraphs(
-          [p.ingress, p.intro, ...p.lederprofil.map((c) => `${c.title}: ${c.text}`), p.aiSeksjon],
+          [
+            p.ingress,
+            p.intro,
+            ...p.proofPoints.map((pt) => `Dokumentert resultat: ${pt}`),
+            `Aktuelle lederroller (utvalg): ${p.roller.slice(0, 6).join(", ")}`,
+            `Utdanning og videreutdanning: ${stripHtmlToPlainText(p.utdanning)}`,
+            ...p.lederprofil.map((c) => `${c.title}: ${c.text}`),
+            p.aiSeksjon,
+          ],
           EXCERPT_MAX
         )
       );
     }
     case "experience": {
       const e = getErfaringData(lang);
+      const employerIndex = e.jobs.map((j) => `${j.company} (${j.period})`).join("; ");
       const jobSnippets = e.jobs.slice(0, 4).map((j) => {
         const mandate = "mandate" in j && typeof j.mandate === "string" ? j.mandate : "";
         const results = "results" in j && typeof j.results === "string" ? j.results : "";
         return `${j.title} (${j.company}, ${j.period}): ${stripHtmlToPlainText(mandate)} ${stripHtmlToPlainText(results)}`.trim();
       });
-      return excerpt(sourceId, lang, "partial", joinParagraphs([e.intro, ...jobSnippets], EXCERPT_MAX));
+      const tailJobs = e.jobs.slice(4).map((j) => `${j.title} (${j.company}, ${j.period})`);
+      const otherSnippets = e.others.map((o) => `${o.area}: ${o.desc}`);
+      return excerpt(
+        sourceId,
+        lang,
+        "partial",
+        joinParagraphs(
+          [e.intro, `Arbeidsgivere: ${employerIndex}`, ...jobSnippets, ...tailJobs, ...otherSnippets],
+          EXCERPT_MAX
+        )
+      );
     }
     case "results": {
       const punkter = getMocResultaterPunkter(lang).slice(0, 8).map((p) =>

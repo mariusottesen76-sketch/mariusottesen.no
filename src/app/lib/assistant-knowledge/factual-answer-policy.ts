@@ -44,7 +44,16 @@ export function assessFactualAnswerPolicy(question: string): FactualAnswerPolicy
     /\b(bekreft|confirm|sant|true|\?|økte|øker|increased|increase|\d+\s*(%|prosent|percent))/i.test(q);
   const privatePersonal = PRIVATE_PERSONAL.test(q) && !PROFESSIONAL_CONTACT.test(q);
 
-  if (/\b(antall\s+ansatte|mange\s+ansatte|how\s+many\s+employees|pmp|sertifisert\s+projektleder|administrerende\s+direktør|ceo\s+of)\b/i.test(q)) {
+  const headcountOnSite =
+    /\b(antall\s+ansatte|mange\s+ansatte|hvor\s+mange\s+ansatte|how\s+many\s+(people|employees)|team\s+size)\b/i.test(
+      q
+    ) && /\b(marius|han|ledet|lede\w*|team|salgsorganisasjon)\b/i.test(q);
+  if (
+    /\b(antall\s+ansatte|mange\s+ansatte|how\s+many\s+employees|pmp|sertifisert\s+projektleder|administrerende\s+direktør|ceo\s+of)\b/i.test(
+      q
+    ) &&
+    !headcountOnSite
+  ) {
     commercialUndocumented = true;
     reasons.push("precise_role_or_cert");
   }

@@ -83,6 +83,16 @@ const CATEGORY_KEYWORDS: Record<string, KnowledgeCategory[]> = {
   ai: ["project", "article", "results"],
   leder: ["profile", "experience", "cv"],
   rekrutt: ["cv", "profile", "contact"],
+  personalansvar: ["profile", "cv", "experience", "results"],
+  mundipharma: ["experience", "cv", "results"],
+  bransje: ["experience", "cv"],
+  bransjer: ["experience", "cv"],
+  industries: ["experience", "cv"],
+  gjenvinning: ["experience", "results"],
+  avfall: ["experience"],
+  undervist: ["profile", "cv"],
+  underviser: ["profile", "cv"],
+  handelshøyskolen: ["profile", "cv"],
 };
 
 function tokenize(question: string): string[] {

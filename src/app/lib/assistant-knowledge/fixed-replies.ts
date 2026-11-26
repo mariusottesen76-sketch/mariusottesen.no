@@ -1,7 +1,7 @@
 import type { Lang } from "../../LanguageContext";
 import type { AssistantAnswerCategory } from "./answer-categories";
 
-const CONTACT_PATH = { no: "/consulting#cons-dialog-heading", en: "/en/consulting#cons-dialog-heading" } as const;
+const CONTACT_PATH = { no: "/consulting", en: "/en/consulting" } as const;
 
 export function fixedReply(
   category: Exclude<AssistantAnswerCategory, "ANSWER">,

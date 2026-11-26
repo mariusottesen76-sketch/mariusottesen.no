@@ -20,6 +20,7 @@ export function isPortfolioOverviewQuestion(question: string): boolean {
   if (isConsultingEngagementQuestion(q)) return true;
   if (/\b(lederroller|roller.*passer|roles.*fit)\b/i.test(q)) return true;
   if (/\bresultat\w*/i.test(q) && /\b(oppnådd|levert|delivered|dokumentert)\b/i.test(q)) return true;
+  if (/\b(hvilke\s+resultater|what\s+results)\b/i.test(q)) return true;
   if (/\b(skaper\s+verdi|skaper\b.*\bverdi\b|creates?\s+value|verdiskaping|skaper\s+mest\s+verdi)\b/i.test(q))
     return true;
   if (

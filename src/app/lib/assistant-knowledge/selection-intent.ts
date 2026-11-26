@@ -24,6 +24,13 @@ export function isPortfolioListingQuestion(question: string): boolean {
   return asksInventory && portfolioNoun && creativeWork;
 }
 
+function isBiTeachingIntent(q: string): boolean {
+  return (
+    /\b(undervist|underviser|foreleser|forelesning|lectur|teaches|taught|teaching|faculty)\b/i.test(q) &&
+    /\b(bi\b|handelshøyskolen)/i.test(q)
+  );
+}
+
 const PROJECT_SLUG_PHRASES: Array<{ pattern: RegExp; slugParts: string[] }> = [
   { pattern: /\bpredictive\s+sales\s+coach\b/i, slugParts: ["predictive", "sales", "coach"] },
   { pattern: /\b(smb\s*)?salgsflyt/i, slugParts: ["smb", "salgsflyt"] },
@@ -92,8 +99,24 @@ export function inferSelectionIntent(question: string): SelectionIntent {
     tabHints.push("contact");
   }
   if (/\b(cv|stilling|rekrutt|education|utdanning|c-level|ceo\s+role)\b/i.test(q)) {
-    preferredCategories.push("cv", "experience");
-    tabHints.push("cv");
+    preferredCategories.push("cv", "experience", "profile");
+    tabHints.push("cv", "home");
+  }
+  if (/\b(personalansvar|personal\s+ansvar|people\s+(management|leadership|responsibility))\b/i.test(q)) {
+    preferredCategories.push("profile", "cv", "experience", "results");
+    tabHints.push("home", "cv", "experience");
+  }
+  if (/\b(bransje\w*|industr\w*|sirkulær|life\s+science|grossist|avfall|gjenvinning)\b/i.test(q)) {
+    preferredCategories.push("experience", "cv");
+    tabHints.push("experience", "cv");
+  }
+  if (/\bmundipharma\b/i.test(q)) {
+    preferredCategories.push("experience", "cv", "results");
+    tabHints.push("experience", "cv", "results");
+  }
+  if (isBiTeachingIntent(q)) {
+    preferredCategories.push("profile", "cv");
+    tabHints.push("home", "cv");
   }
   if (/\b(referanse|references|testimonial)\b/i.test(q)) {
     preferredCategories.push("references");

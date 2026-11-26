@@ -15,8 +15,10 @@ import {
 } from "./question-policy";
 import {
   isConsultingEngagementQuestion,
+  isPortfolioOverviewQuestion,
   tryGroundedOverviewAnswer,
 } from "./grounded-overview-answer";
+import { tryGroundedFactualAnswer } from "./grounded-factual-answer";
 import { selectRelevantSourceIds } from "./source-selection";
 import { urlsForSourceIds, validateModelPayload, assertUrlsAllowed } from "./validate-response";
 import {
@@ -186,11 +188,16 @@ export async function runAssistantQuery(
     return buildResponse("NOT_ON_SITE", fixedReply("NOT_ON_SITE", lang), lang, []);
   }
 
+  const groundedFactual = tryGroundedFactualAnswer(question, lang);
+  if (groundedFactual) {
+    return buildResponse("ANSWER", groundedFactual.answer, lang, groundedFactual.sourceIds.slice(0, 3));
+  }
+
   if (shouldAnswerConservatively(question)) {
     return buildResponse("NOT_ON_SITE", fixedReply("NOT_ON_SITE", lang), lang, []);
   }
 
-  if (isConsultingEngagementQuestion(question)) {
+  if (isConsultingEngagementQuestion(question) || isPortfolioOverviewQuestion(question)) {
     const excerptAnswer = tryGroundedOverviewAnswer(question, contexts, lang);
     if (excerptAnswer) {
       return buildResponse("ANSWER", excerptAnswer.answer, lang, [excerptAnswer.sourceId]);

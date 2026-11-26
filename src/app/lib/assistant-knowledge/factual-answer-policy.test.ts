@@ -24,4 +24,8 @@ describe("factual answer policy", () => {
   it("allows documented experience lookup questions", () => {
     assert.equal(shouldAnswerConservatively("Hva gjorde Marius hos Franzefoss?"), false);
   });
+
+  it("allows documented team-size questions (07H)", () => {
+    assert.equal(shouldAnswerConservatively("Hvor mange ansatte har Marius ledet?"), false);
+  });
 });
