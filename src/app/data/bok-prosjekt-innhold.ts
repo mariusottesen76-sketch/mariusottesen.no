@@ -35,6 +35,7 @@ export interface BokProsjektCopy {
   dramaParagraphs: string[];
   originTitle: string;
   originParagraphs: string[];
+  rowFrameworkHref: string;
   rowFrameworkLink: string;
   rowFrameworkBeforeLink: string;
   rowFrameworkAfterLink: string;
@@ -66,8 +67,6 @@ export const BOK_RELATED_INSIGHT_SLUGS = [
 ] as const;
 
 export const BOK_ROUTE = { no: "/bok", en: "/en/book" } as const;
-
-export const ROW_FRAMEWORK_HREF = "https://rowsolutions.no/metoder/fra-innsikt-til-resultater" as const;
 
 export const BOK_TITTEL = "VerdisKIftet" as const;
 
@@ -322,11 +321,12 @@ export const BOK_PROSJEKT_COPY: Record<BokProsjektLang, BokProsjektCopy> = {
       "Faginnleggene ble utgangspunktet, men boka er ikke en samling av dem. Erfaringer fra arbeidslivet, egne utviklingsprosjekter, fire master- og prosjektarbeider og ekstern forskning er bearbeidet til én sammenhengende fortelling.",
       "Målet har vært å skrive en fagbok som både utfordrer etablerte oppfatninger og gir ledere et bedre grunnlag for å forstå og utvikle virksomheten de har ansvar for.",
     ],
+    rowFrameworkHref: "https://rowsolutions.no/metoder/fra-innsikt-til-resultater",
     rowFrameworkBeforeLink:
-      "Perspektivene i *VerdisKIftet* har også vært en faglig inspirasjonskilde i utviklingen av Row Solutions' rådgivningsrammeverk ",
+      "Perspektivene i *VerdisKIftet* preger også hvordan jeg arbeider med kommersiell utvikling, ledelse og praktisk bruk av KI gjennom Marius Ottesen Consulting. De har samtidig inspirert deler av rådgivningsrammeverket «",
     rowFrameworkLink: "Fra innsikt til resultater",
     rowFrameworkAfterLink:
-      ". Rammeverket er en felles tilnærming som Thomas Holm og jeg bruker og videreutvikler i praktisk rådgivning, med virksomhetens utfordringer og mål som utgangspunkt.",
+      "» i Row Solutions. Felles er ambisjonen om å omsette innsikt og gode prioriteringer til praktisk gjennomføring og målbar verdi.",
     statusTitle: "Ferdigskrevet manus – til faglig testlesing",
     statusParagraphs: [
       "Manuskriptet består av 17 kapitler fordelt på syv deler og er i hovedsak ferdigskrevet. Boka er nå til faglig testlesing hos personer med erfaring og kompetanse innen ledelse, kunstig intelligens, endringsledelse og tilgrensende områder.",
@@ -388,11 +388,12 @@ export const BOK_PROSJEKT_COPY: Record<BokProsjektLang, BokProsjektCopy> = {
       "The articles were the starting point, but the book is not a collection of them. Experience from working life, development projects, four master’s and project theses and external research have been shaped into one coherent narrative.",
       "The aim has been to write a professional book that both challenges established views and gives leaders a stronger basis for understanding and developing the organisation they are responsible for.",
     ],
+    rowFrameworkHref: "https://rowsolutions.no/en/methods/from-insight-to-results",
     rowFrameworkBeforeLink:
-      "The perspectives in *VerdisKIftet* have also been a professional source of inspiration in developing Row Solutions' advisory framework ",
-    rowFrameworkLink: "From insight to results",
+      "The perspectives explored in *VerdisKIftet* also influence how I approach commercial development, leadership and the practical application of AI through Marius Ottesen Consulting. They have also inspired elements of Row Solutions' advisory framework, “",
+    rowFrameworkLink: "From Insight to Results",
     rowFrameworkAfterLink:
-      ". The framework is a shared approach that Thomas Holm and I use and evolve in practical advisory work, with the organisation's challenges and goals as the starting point.",
+      "”. Both approaches share the ambition of translating insight and clear priorities into practical execution and measurable value.",
     statusTitle: "Manuscript completed — expert review",
     statusParagraphs: [
       "The manuscript comprises 17 chapters across seven parts and is largely complete. The book is now with expert readers who have experience in leadership, artificial intelligence, change management and related fields.",

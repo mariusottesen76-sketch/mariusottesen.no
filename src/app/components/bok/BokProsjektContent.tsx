@@ -11,7 +11,6 @@ import {
   BOK_RELATED_INSIGHT_SLUGS,
   BOK_TESTLESER_MAILTO,
   BOK_VISUALISERING_3D,
-  ROW_FRAMEWORK_HREF,
 } from "../../data/bok-prosjekt-innhold";
 import { getFaginnleggBySlug } from "../../lib/faginnlegg-data";
 import { faginnleggDetailPath } from "../../lib/faginnlegg-types";
@@ -180,7 +179,7 @@ function BokProsjektInner() {
           <p className={bookParagraphClass}>
             <BookRichText text={copy.rowFrameworkBeforeLink} />
             <a
-              href={ROW_FRAMEWORK_HREF}
+              href={copy.rowFrameworkHref}
               className={linkClass}
               target="_blank"
               rel="noopener noreferrer"
