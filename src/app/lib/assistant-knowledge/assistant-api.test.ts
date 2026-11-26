@@ -120,6 +120,7 @@ describe("assistant API pipeline (mocked model)", () => {
       }
     );
     assert.equal(res.errorCode, "validation_failed");
+    assert.ok(!res.answer.includes("tilstrekkelig dokumentert"));
   });
 
   it("9. Question too long", async () => {
@@ -152,6 +153,8 @@ describe("assistant API pipeline (mocked model)", () => {
       }
     );
     assert.equal(res.errorCode, "timeout");
+    assert.match(res.answer, /lang tid/i);
+    assert.ok(!res.answer.includes("tilstrekkelig dokumentert"));
   });
 
   it("13. Anthropic error", async () => {
@@ -163,6 +166,8 @@ describe("assistant API pipeline (mocked model)", () => {
       }
     );
     assert.equal(res.errorCode, "model_error");
+    assert.match(res.answer, /midlertidig utilgjengelig/i);
+    assert.ok(!res.answer.includes("tilstrekkelig dokumentert"));
   });
 
   it("14. Invalid model JSON", async () => {
@@ -174,6 +179,23 @@ describe("assistant API pipeline (mocked model)", () => {
       }
     );
     assert.equal(res.errorCode, "validation_failed");
+  });
+
+  it("16. Invalid CHAT_MODEL skips API", async () => {
+    const res = await runAssistantQuery(
+      { question: "Hvilke lederroller passer Marius til?", lang: "no" },
+      {
+        config: {
+          ...enabledConfig,
+          model: "claude-haiku-4-5-20251001CHAT_UI_ENABLED=true",
+        },
+        callModel: async () => {
+          throw new Error("API must not be called");
+        },
+      }
+    );
+    assert.equal(res.errorCode, "model_error");
+    assert.match(res.answer, /midlertidig utilgjengelig/i);
   });
 
   it("15. Mixed question — model answers only documented part", async () => {

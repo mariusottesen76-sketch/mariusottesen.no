@@ -11,7 +11,8 @@
     "test:assistant": "npx tsx --test src/app/lib/assistant-knowledge/assistant-api.test.ts",
     "test:eval": "npx tsx --test src/eval/assistant/assistant-eval.test.ts",
     "eval:assistant": "npx tsx src/eval/assistant/run-eval.ts",
-    "test:precision-04d": "npx tsx --test src/eval/assistant/precision-04d.test.ts"
+    "test:precision-04d": "npx tsx --test src/eval/assistant/precision-04d.test.ts",
+    "test:assistant-ui": "npx tsx --test src/app/components/assistant/*.test.ts src/app/lib/assistant-ui-config.test.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^1.14.0",

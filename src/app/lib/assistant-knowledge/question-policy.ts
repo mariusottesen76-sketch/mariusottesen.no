@@ -115,7 +115,7 @@ export function classifyQuestionPreModel(question: string): PreModelClassificati
 }
 
 export function isContactGuidanceQuestion(question: string): boolean {
-  return /\b(hvor\s+kontakt\w*|hvordan\s+kontakt\w*|kontakt\w*\s+(jeg|meg)|profesjonell\s+kontakt|how\s+(can|do)\s+i\s+contact|get\s+in\s+touch|sende\s+en?\s+henvendelse|send\s+an?\s+(inquiry|message)|reach\s+(out\s+)?(to\s+)?marius|contact\s+marius|kan\s+jeg\s+kontakt\w*|about\s+sales\s+development)\b/i.test(
+  return /\b(hvor\s+kontakt\w*|hvordan\s+kontakt\w*|hvordan\s+kommer\s+jeg\s+i\s+kontakt|kommer\s+jeg\s+i\s+kontakt|kontakt\w*\s+(jeg|meg)|profesjonell\s+kontakt|how\s+(can|do)\s+i\s+contact|get\s+in\s+touch|sende\s+en?\s+henvendelse|send\s+an?\s+(inquiry|message)|reach\s+(out\s+)?(to\s+)?marius|contact\s+marius|kan\s+jeg\s+kontakt\w*|about\s+sales\s+development)\b/i.test(
     question
   );
 }

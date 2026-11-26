@@ -41,19 +41,43 @@ export function inferSelectionIntent(question: string): SelectionIntent {
     preferredCategories.push("experience", "cv", "results");
     tabHints.push("experience", "results", "cv");
   }
-  if (/\b(resultat|results|proof\s+point|salgsvekst|growth)\b/i.test(q)) {
+  if (/\b(resultat\w*|results?|proof\s+point|salgsvekst|growth)\b/i.test(q)) {
     preferredCategories.push("results", "experience");
     tabHints.push("results");
+  }
+  if (/\b(lederroller|roller|roles|stilling|stillinger)\b/i.test(q)) {
+    preferredCategories.push("cv", "profile", "experience");
+    tabHints.push("cv", "home");
+  }
+  if (/\b(skaper\s+verdi|creates?\s+value|verdiskaping|skaper\s+mest\s+verdi)\b/i.test(q)) {
+    preferredCategories.push("profile", "consulting", "results");
+    tabHints.push("home", "consulting", "results");
+  }
+  if (
+    /\b(hjelpe|hjelper|bidra|bistå|help)\b.*\b(virksomhet|bedrift|business|selskap|organisasjon|company|us)\b/i.test(
+      q
+    ) ||
+    /\bhow\s+can\s+marius\s+help\b/i.test(q)
+  ) {
+    preferredCategories.push("consulting", "profile");
+    tabHints.push("consulting", "home");
   }
   if (/\b(consulting|moc|rådgiv|advisory|coaching|workshop|crm|salgscoaching|konsulenttjenester|tjenester)\b/i.test(q)) {
     preferredCategories.push("consulting");
     tabHints.push("consulting");
   }
+  if (
+    /\b(praktiske?\s+ai|ai-løsninger|ai\s+solutions|practical\s+ai)\b/i.test(q) &&
+    /\b(utvikle|bygge|kan\s+marius|develop|build|lage)\b/i.test(q)
+  ) {
+    preferredCategories.push("consulting", "results", "project");
+    tabHints.push("consulting", "results", "projects");
+  }
   if (/\b(kontakt\w*|contact\w*|skjema|collaboration|samarbeid|nå\s+marius|henvendelse|get\s+in\s+touch)\b/i.test(q)) {
     preferredCategories.push("contact", "consulting");
     tabHints.push("contact");
   }
-  if (/\b(cv|stilling|roller|rekrutt|education|utdanning|c-level|ceo\s+role)\b/i.test(q)) {
+  if (/\b(cv|stilling|rekrutt|education|utdanning|c-level|ceo\s+role)\b/i.test(q)) {
     preferredCategories.push("cv", "experience");
     tabHints.push("cv");
   }

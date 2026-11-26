@@ -4,6 +4,7 @@ import React, { Suspense, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import { ConsentProvider } from "./ConsentContext";
 import CookieConsentBanner from "./CookieConsentBanner";
+import AssistantChatRoot from "../assistant/AssistantChatRoot";
 import AnalyticsPageView from "../analytics/AnalyticsPageView";
 import AnalyticsClickListener from "../analytics/AnalyticsClickListener";
 import { applyAnalyticsOptOutFromSearch } from "../../lib/analytics-opt-out";
@@ -34,6 +35,7 @@ export default function SiteConsentRoot({ children }: { children: React.ReactNod
       </Suspense>
       <AnalyticsClickListener />
       <CookieConsentBanner />
+      <AssistantChatRoot />
     </ConsentProvider>
   );
 }

@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { runAssistantQuery } from "../../lib/assistant-knowledge/assistant-service";
 import { ASSISTANT_LIMITS, getAssistantRuntimeConfig } from "../../lib/assistant-knowledge/assistant-config";
+import { isAssistantUiEnabled } from "../../lib/assistant-ui-config";
 import type { AssistantRequestBody } from "../../lib/assistant-knowledge/assistant-types";
 
 export const runtime = "nodejs";
@@ -42,7 +43,11 @@ export async function POST(req: Request) {
   const status =
     result.errorCode === "invalid_request" || result.errorCode === "question_too_long"
       ? 400
-      : result.errorCode === "ai_disabled" || result.errorCode === "ai_unconfigured"
+      : result.errorCode === "ai_disabled" ||
+          result.errorCode === "ai_unconfigured" ||
+          result.errorCode === "model_error" ||
+          result.errorCode === "timeout" ||
+          result.errorCode === "validation_failed"
         ? 503
         : 200;
 
@@ -53,6 +58,7 @@ export async function GET() {
   const config = getAssistantRuntimeConfig();
   return NextResponse.json({
     enabled: config.chatEnabled && config.apiKeyConfigured,
+    uiEnabled: isAssistantUiEnabled(),
     maxQuestionChars: ASSISTANT_LIMITS.maxQuestionChars,
     maxSources: ASSISTANT_LIMITS.maxSources,
     note: "POST JSON { question, lang? }. CHAT_ENABLED must be true with ANTHROPIC_API_KEY set.",

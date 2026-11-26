@@ -143,12 +143,23 @@ export function selectRelevantSourceIds(
         if (entry.id.includes(":experience:") && /\b(erfaring|experience|franzefoss|norengros)\b/i.test(qLower)) {
           score += 16;
         }
-        if (entry.id.includes(":results:") && /\b(resultat|results|proof)\b/i.test(qLower)) {
+        if (entry.id.includes(":results:") && /\bresultat\w*/i.test(qLower)) {
           score += 16;
+        }
+        if (entry.id.includes(":consulting:") && /\b(hjelpe|hjelper|bidra|bistå|virksomhet|bedrift|consulting)\b/i.test(qLower)) {
+          score += 18;
         }
         if (entry.id.includes(":home:") && /\b(hvem\s+er|who\s+is|kommersiell\s+leder)\b/i.test(qLower)) {
           score += 12;
         }
+      }
+      if (
+        entry.category === "project" &&
+        intent.tabHints.some((h) => h === "consulting" || h === "home" || h === "results") &&
+        intent.projectSlugHints.length === 0 &&
+        !/\b(prosjekter|projects|portefølje|portfolio|ai[-\s]?prosjekt)\b/i.test(qLower)
+      ) {
+        score -= 10;
       }
       if (
         entry.category === "article" &&

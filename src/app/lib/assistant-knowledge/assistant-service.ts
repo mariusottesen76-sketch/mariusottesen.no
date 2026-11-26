@@ -2,7 +2,7 @@ import type { Lang } from "../../LanguageContext";
 import type { AssistantAnswerCategory } from "./answer-categories";
 import { ASSISTANT_LIMITS, getAssistantRuntimeConfig, type AssistantRuntimeConfig } from "./assistant-config";
 import { callAnthropicModel, type ModelCallResult, parseModelJson } from "./anthropic-caller";
-import { fixedReply, contactPath } from "./fixed-replies";
+import { fixedReply } from "./fixed-replies";
 import { lookupKnowledgeSource } from "./lookup";
 import { buildSystemPrompt, buildUserPrompt } from "./model-prompt";
 import { shouldAnswerConservatively } from "./factual-answer-policy";
@@ -13,8 +13,16 @@ import {
   isNavigationQuestion,
   isUndocumentedAvailabilityQuestion,
 } from "./question-policy";
+import {
+  isConsultingEngagementQuestion,
+  tryGroundedOverviewAnswer,
+} from "./grounded-overview-answer";
 import { selectRelevantSourceIds } from "./source-selection";
 import { urlsForSourceIds, validateModelPayload, assertUrlsAllowed } from "./validate-response";
+import {
+  isPlausibleAnthropicModelId,
+  technicalFailureReply,
+} from "./technical-failure";
 import type {
   AssistantErrorCode,
   AssistantRequestBody,
@@ -34,6 +42,20 @@ export type AssistantServiceDeps = {
   }) => Promise<ModelCallResult>;
 };
 
+function buildTechnicalFailure(
+  lang: Lang,
+  errorCode: Extract<AssistantErrorCode, "model_error" | "timeout" | "validation_failed">
+): AssistantResponseBody {
+  return {
+    category: "NOT_ON_SITE",
+    answer: technicalFailureReply(errorCode, lang),
+    lang,
+    sourceIds: [],
+    urls: [],
+    errorCode,
+  };
+}
+
 function buildResponse(
   category: AssistantAnswerCategory,
   answer: string,
@@ -43,14 +65,7 @@ function buildResponse(
 ): AssistantResponseBody {
   const urls = urlsForSourceIds(sourceIds);
   if (!assertUrlsAllowed(urls)) {
-    return {
-      category: "NOT_ON_SITE",
-      answer: fixedReply("NOT_ON_SITE", lang),
-      lang,
-      sourceIds: [],
-      urls: [],
-      errorCode: "validation_failed",
-    };
+    return buildTechnicalFailure(lang, "validation_failed");
   }
   return { category, answer, lang, sourceIds, urls, errorCode };
 }
@@ -102,16 +117,16 @@ function navigationAnswer(
   const primary = pickNavigationContext(question, contexts);
   const text =
     lang === "no"
-      ? `Du finner dette på ${primary.title}: ${primary.url}. For kontakt med Marius, bruk ${contactPath(lang)}.`
-      : `You can find this on ${primary.title}: ${primary.url}. To contact Marius, use ${contactPath(lang)}.`;
+      ? `Du finner mer om dette under «${primary.title}» på nettsiden — se kildelenken under svaret. For kontakt med Marius, bruk lenken Kontakt i chatten.`
+      : `You can find more about this under "${primary.title}" on the site — see the source link below. To contact Marius, use the Contact link in the chat.`;
   return buildResponse("ANSWER", text, lang, [primary.sourceId]);
 }
 
 function contactGuidanceAnswer(lang: Lang, context: SourceContext): AssistantResponseBody {
   const text =
     lang === "no"
-      ? `Du finner kontaktinformasjon og veiledning på ${context.title}: ${context.url}. For profesjonell dialog og henvendelser, bruk skjemaet på Consulting-siden: ${contactPath(lang)}.`
-      : `You can find contact guidance on ${context.title}: ${context.url}. For professional enquiries, use the form on the Consulting page: ${contactPath(lang)}.`;
+      ? `Du finner kontaktinformasjon og veiledning under «${context.title}». For profesjonell dialog, bruk kontaktskjemaet på Consulting-siden (lenken Kontakt i chatten).`
+      : `You can find contact guidance under "${context.title}". For a professional enquiry, use the contact form on the Consulting page (Contact link in the chat).`;
   return buildResponse("ANSWER", text, lang, [context.sourceId]);
 }
 
@@ -175,6 +190,13 @@ export async function runAssistantQuery(
     return buildResponse("NOT_ON_SITE", fixedReply("NOT_ON_SITE", lang), lang, []);
   }
 
+  if (isConsultingEngagementQuestion(question)) {
+    const excerptAnswer = tryGroundedOverviewAnswer(question, contexts, lang);
+    if (excerptAnswer) {
+      return buildResponse("ANSWER", excerptAnswer.answer, lang, [excerptAnswer.sourceId]);
+    }
+  }
+
   const config = deps?.config ?? getAssistantRuntimeConfig();
   if (!config.chatEnabled) {
     return {
@@ -204,7 +226,11 @@ export async function runAssistantQuery(
   const system = buildSystemPrompt(lang);
   const userMessage = buildUserPrompt(question, contexts);
   if (userMessage.length > ASSISTANT_LIMITS.maxModelInputChars) {
-    return buildResponse("NOT_ON_SITE", fixedReply("NOT_ON_SITE", lang), lang, [], "validation_failed");
+    return buildTechnicalFailure(lang, "validation_failed");
+  }
+
+  if (!isPlausibleAnthropicModelId(config.model)) {
+    return buildTechnicalFailure(lang, "model_error");
   }
 
   const apiKey = process.env.ANTHROPIC_API_KEY?.trim() || "mock-key-not-used";
@@ -236,18 +262,32 @@ export async function runAssistantQuery(
   }
 
   if (!modelResult.ok) {
-    const code: AssistantErrorCode =
-      modelResult.code === "timeout" ? "timeout" : modelResult.code === "parse_error" ? "validation_failed" : "model_error";
-    return buildResponse("NOT_ON_SITE", fixedReply("NOT_ON_SITE", lang), lang, [], code);
+    const code: Extract<AssistantErrorCode, "model_error" | "timeout" | "validation_failed"> =
+      modelResult.code === "timeout"
+        ? "timeout"
+        : modelResult.code === "parse_error"
+          ? "validation_failed"
+          : "model_error";
+    return buildTechnicalFailure(lang, code);
   }
 
   const validated = validateModelPayload(modelResult.payload, contexts, lang);
   if (!validated.ok) {
-    return buildResponse("NOT_ON_SITE", fixedReply("NOT_ON_SITE", lang), lang, [], "validation_failed");
+    const excerptFallback = tryGroundedOverviewAnswer(question, contexts, lang);
+    if (excerptFallback) {
+      return buildResponse("ANSWER", excerptFallback.answer, lang, [excerptFallback.sourceId]);
+    }
+    return buildTechnicalFailure(lang, "validation_failed");
   }
 
   const payload: ModelReplyPayload = validated.payload;
   if (payload.category !== "ANSWER") {
+    if (payload.category === "NOT_ON_SITE") {
+      const excerptFallback = tryGroundedOverviewAnswer(question, contexts, lang);
+      if (excerptFallback) {
+        return buildResponse("ANSWER", excerptFallback.answer, lang, [excerptFallback.sourceId]);
+      }
+    }
     let category = payload.category;
     if (category === "RESTRICTED" && isUndocumentedAvailabilityQuestion(question)) {
       category = "NOT_ON_SITE";
