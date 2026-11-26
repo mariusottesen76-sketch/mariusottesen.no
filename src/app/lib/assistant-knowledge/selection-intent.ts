@@ -1,4 +1,6 @@
 import type { KnowledgeCategory } from "./types";
+import { resolveSiteTabIntent, siteTabKeyToSelectionHint, type SiteTabKey } from "./site-tab-intent";
+import type { Lang } from "../../LanguageContext";
 
 export type SelectionIntent = {
   preferredCategories: KnowledgeCategory[];
@@ -8,28 +10,7 @@ export type SelectionIntent = {
   projectSlugHints: string[];
   /** If set, boost exact manifest id prefix match. */
   bookOrHub?: "book" | "hub:articles" | "hub:projects";
-  /** Bredt opplistingsspørsmål om verktøy, apper eller prosjekter Marius har utviklet/jobbet med. */
-  portfolioListing?: boolean;
 };
-
-/** Portefølje-/opplistingsspørsmål — ikke én spesifikk prosjektside. */
-export function isPortfolioListingQuestion(question: string): boolean {
-  const q = question.toLowerCase();
-  const asksInventory = /\b(hvilke|which|what)\b/i.test(question);
-  const portfolioNoun =
-    /\b(ai[-\s]?verktøy|verktøy|tools|apper|apps|digitale\s+løsninger|løsninger|prosjekter|projects|portefølje|portfolio)\b/i.test(
-      q
-    );
-  const creativeWork = /\b(utviklet|laget|bygget|utvikle|jobbet|developed|built|created|worked)\b/i.test(q);
-  return asksInventory && portfolioNoun && creativeWork;
-}
-
-function isBiTeachingIntent(q: string): boolean {
-  return (
-    /\b(undervist|underviser|foreleser|forelesning|lectur|teaches|taught|teaching|faculty)\b/i.test(q) &&
-    /\b(bi\b|handelshøyskolen)/i.test(q)
-  );
-}
 
 const PROJECT_SLUG_PHRASES: Array<{ pattern: RegExp; slugParts: string[] }> = [
   { pattern: /\bpredictive\s+sales\s+coach\b/i, slugParts: ["predictive", "sales", "coach"] },
@@ -51,12 +32,42 @@ const PROJECT_SLUG_PHRASES: Array<{ pattern: RegExp; slugParts: string[] }> = [
   { pattern: /\b(innsiktsagent|opportunity\s+agent)\b/i, slugParts: ["innsikts", "opportunity"] },
 ];
 
-export function inferSelectionIntent(question: string): SelectionIntent {
+export function inferSelectionIntent(question: string, lang: Lang = "no"): SelectionIntent {
   const q = question.toLowerCase();
   const preferredCategories: KnowledgeCategory[] = [];
   const tabHints: string[] = [];
   let bookOrHub: SelectionIntent["bookOrHub"];
   const projectSlugHints: string[] = [];
+
+  const siteTab = resolveSiteTabIntent(question, lang);
+  if (siteTab) {
+    tabHints.push(siteTabKeyToSelectionHint(siteTab.key));
+    if (siteTab.key === "articles") {
+      preferredCategories.push("hub", "article");
+      bookOrHub = "hub:articles";
+    } else if (siteTab.key === "projects") {
+      preferredCategories.push("hub", "project");
+      bookOrHub = "hub:projects";
+    } else if (siteTab.key === "book") {
+      preferredCategories.push("book");
+      bookOrHub = "book";
+    } else if (siteTab.key === "references") {
+      preferredCategories.push("references");
+    } else if (siteTab.key === "cv") {
+      preferredCategories.push("cv");
+    } else {
+      const tabLike: SiteTabKey[] = [
+        "home",
+        "experience",
+        "results",
+        "consulting",
+        "contact",
+      ];
+      if (tabLike.includes(siteTab.key)) {
+        preferredCategories.push(siteTab.key === "home" ? "profile" : (siteTab.key as KnowledgeCategory));
+      }
+    }
+  }
 
   if (/\b(erfaring|experience|franzefoss|norengros|arbeidsgiver|employer|lede\w*|leder\w*|p\/l|teamutvikling)\b/i.test(q)) {
     preferredCategories.push("experience", "cv", "results");
@@ -69,6 +80,14 @@ export function inferSelectionIntent(question: string): SelectionIntent {
   if (/\b(lederroller|roller|roles|stilling|stillinger)\b/i.test(q)) {
     preferredCategories.push("cv", "profile", "experience");
     tabHints.push("cv", "home");
+  }
+  if (
+    /\b(personalansvar|personal\s+ansvar|people\s+(management|leadership|responsibility)|personal-\s*og\s+resultatansvar)\b/i.test(
+      q
+    )
+  ) {
+    preferredCategories.push("profile", "cv", "experience");
+    tabHints.push("home", "cv", "experience");
   }
   if (/\b(skaper\s+verdi|creates?\s+value|verdiskaping|skaper\s+mest\s+verdi)\b/i.test(q)) {
     preferredCategories.push("profile", "consulting", "results");
@@ -98,27 +117,11 @@ export function inferSelectionIntent(question: string): SelectionIntent {
     preferredCategories.push("contact", "consulting");
     tabHints.push("contact");
   }
-  if (/\b(cv|stilling|rekrutt|education|utdanning|c-level|ceo\s+role)\b/i.test(q)) {
-    preferredCategories.push("cv", "experience", "profile");
-    tabHints.push("cv", "home");
+  if (/\b(cv[\s-]?en|cven|cv\b|stilling|rekrutt|education|utdanning|c-level|ceo\s+role|curriculum|resume)\b/i.test(q)) {
+    preferredCategories.push("cv", "experience");
+    tabHints.push("cv");
   }
-  if (/\b(personalansvar|personal\s+ansvar|people\s+(management|leadership|responsibility))\b/i.test(q)) {
-    preferredCategories.push("profile", "cv", "experience", "results");
-    tabHints.push("home", "cv", "experience");
-  }
-  if (/\b(bransje\w*|industr\w*|sirkulær|life\s+science|grossist|avfall|gjenvinning)\b/i.test(q)) {
-    preferredCategories.push("experience", "cv");
-    tabHints.push("experience", "cv");
-  }
-  if (/\bmundipharma\b/i.test(q)) {
-    preferredCategories.push("experience", "cv", "results");
-    tabHints.push("experience", "cv", "results");
-  }
-  if (isBiTeachingIntent(q)) {
-    preferredCategories.push("profile", "cv");
-    tabHints.push("home", "cv");
-  }
-  if (/\b(referanse|references|testimonial)\b/i.test(q)) {
+  if (/\b(referanser|referanse(r|ne)?|references?|testimonials?|anbefaling(er)?|endorsements?)\b/i.test(q)) {
     preferredCategories.push("references");
     tabHints.push("references");
   }
@@ -126,7 +129,11 @@ export function inferSelectionIntent(question: string): SelectionIntent {
     preferredCategories.push("book");
     bookOrHub = "book";
   }
-  if (/\b(faginnlegg|articles?\b|artikkel\b.*\b(om|about)|governance)\b/i.test(q) && !/\bprosjekt/i.test(q)) {
+  if (
+    (/\b(faginnlegg|innsikt|insights|articles?\b|artikkel\b.*\b(om|about)|governance)\b/i.test(q) &&
+      !/\bprosjekt/i.test(q)) ||
+    tabHints.includes("articles")
+  ) {
     preferredCategories.push("article", "hub");
     bookOrHub = "hub:articles";
   }
@@ -134,17 +141,19 @@ export function inferSelectionIntent(question: string): SelectionIntent {
     preferredCategories.push("project", "hub");
     bookOrHub = bookOrHub ?? "hub:projects";
   }
-
-  const portfolioListing = isPortfolioListingQuestion(question);
-  if (portfolioListing) {
-    preferredCategories.push("project", "hub");
-    bookOrHub = "hub:projects";
+  if (
+    /\b(hvilke|which|what)\b/i.test(q) &&
+    /\b(ai|verktøy|tools|apper|apps|prosjekter|projects)\b/i.test(q) &&
+    /\b(utviklet|developed|bygget|built|laget|har\s+marius)\b/i.test(q)
+  ) {
+    preferredCategories.push("hub", "project");
+    tabHints.push("projects");
+    bookOrHub = bookOrHub ?? "hub:projects";
   }
-
   if (
     /\b(marius|hvem\s+er|who\s+is|kommersiell\s+leder|commercial\s+leadership)\b/i.test(q) &&
     tabHints.length === 0 &&
-    !portfolioListing
+  !/\b(hvilke|which)\b.*\b(ai|prosjekt|project|verktøy|tools)\b/i.test(q)
   ) {
     preferredCategories.push("profile", "experience", "cv");
     tabHints.push("home");
@@ -156,6 +165,7 @@ export function inferSelectionIntent(question: string): SelectionIntent {
 
   for (const rule of PROJECT_SLUG_PHRASES) {
     if (rule.pattern.test(question)) {
+      if (tabHints.includes("articles") && rule.slugParts.some((p) => /innsikt/i.test(p))) continue;
       preferredCategories.push("project");
       projectSlugHints.push(...rule.slugParts);
       if (/\bverdiskiftet\b/i.test(question)) bookOrHub = "book";
@@ -167,7 +177,6 @@ export function inferSelectionIntent(question: string): SelectionIntent {
     tabHints,
     projectSlugHints,
     bookOrHub,
-    portfolioListing: portfolioListing || undefined,
   };
 }
 

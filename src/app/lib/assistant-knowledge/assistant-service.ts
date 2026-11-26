@@ -20,6 +20,16 @@ import {
 } from "./grounded-overview-answer";
 import { tryGroundedFactualAnswer } from "./grounded-factual-answer";
 import { selectRelevantSourceIds } from "./source-selection";
+import { detectCvIntent, isSectionTabDiscoveryQuestion, resolveSiteTabIntent } from "./site-tab-intent";
+import { tryTabSectionOverviewAnswer } from "./tab-section-answer";
+import {
+  isSimpleConsultingOfferingQuestion,
+  trySimpleConsultingOfferingAnswer,
+} from "./simple-consulting-answer";
+import {
+  isReferencesPresenceQuestion,
+  tryReferencesBriefAnswer,
+} from "./references-brief-answer";
 import { urlsForSourceIds, validateModelPayload, assertUrlsAllowed } from "./validate-response";
 import {
   isPlausibleAnthropicModelId,
@@ -103,17 +113,37 @@ function loadSourceContexts(sourceIds: string[], lang: Lang): SourceContext[] {
   return contexts;
 }
 
-function pickNavigationContext(question: string, contexts: SourceContext[]): SourceContext {
+function contextFromSourceId(sourceId: string, lang: Lang, contexts: SourceContext[]): SourceContext | null {
+  const hit = contexts.find((c) => c.sourceId === sourceId);
+  if (hit) return hit;
+  const res = lookupKnowledgeSource(sourceId, lang);
+  if (!res.ok) return null;
+  return {
+    sourceId: res.entry.id,
+    title: res.entry.title,
+    url: res.entry.canonicalUrl,
+    excerptText: res.excerpt.text,
+    suitableForFactualAnswer: res.grounding.suitableForFactualAnswer,
+  };
+}
+
+function pickNavigationContext(question: string, contexts: SourceContext[], lang: Lang): SourceContext | null {
+  const tab = resolveSiteTabIntent(question, lang);
+  if (tab) {
+    const ctx = contextFromSourceId(tab.sourceId, lang, contexts);
+    if (ctx) return ctx;
+  }
+
   const q = question.toLowerCase();
   const rules: Array<{ hint: RegExp; idHint: RegExp }> = [
-    { hint: /\b(cv)\b/i, idHint: /:cv:/ },
+    { hint: /\b(cv[\s-]?en|cven|cv\b|curriculum|resume)\b/i, idHint: /:cv:/ },
     { hint: /\b(kontakt|contact|skjema)\b/i, idHint: /:contact:/ },
     { hint: /\b(erfaring|experience)\b/i, idHint: /:experience:/ },
     { hint: /\b(resultat|results)\b/i, idHint: /:results:/ },
     { hint: /\b(consulting|konsulent|rådgiv)\b/i, idHint: /:consulting:/ },
-    { hint: /\b(referanse|references)\b/i, idHint: /:references:/ },
-    { hint: /\b(faginnlegg|artikkel|articles)\b/i, idHint: /hub:articles:/ },
-    { hint: /\b(prosjekt|project)\b/i, idHint: /hub:projects:/ },
+    { hint: /\b(referanser|referanse|references|anbefaling)\b/i, idHint: /:references:/ },
+    { hint: /\b(faginnlegg|innsikt|artikkel|articles|insights)\b/i, idHint: /hub:articles:/ },
+    { hint: /\b(prosjekt|project|prosjekter|portfolio)\b/i, idHint: /hub:projects:/ },
     { hint: /\b(bok|book|verdiskiftet)\b/i, idHint: /:book:|book:/ },
   ];
   for (const rule of rules) {
@@ -122,7 +152,12 @@ function pickNavigationContext(question: string, contexts: SourceContext[]): Sou
       if (hit) return hit;
     }
   }
-  return contexts[0];
+  if (detectCvIntent(question)) {
+    const cv = contexts.find((c) => /:cv:/.test(c.sourceId));
+    if (cv) return cv;
+    return contextFromSourceId(lang === "no" ? "tab:cv:no" : "tab:cv:en", lang, contexts);
+  }
+  return contexts[0] ?? null;
 }
 
 function navigationAnswer(
@@ -130,12 +165,13 @@ function navigationAnswer(
   contexts: SourceContext[],
   question: string
 ): AssistantResponseBody | null {
-  if (contexts.length === 0) return null;
-  const primary = pickNavigationContext(question, contexts);
+  const primary = pickNavigationContext(question, contexts, lang);
+  if (!primary) return null;
+  const path = new URL(primary.url).pathname;
   const text =
     lang === "no"
-      ? `Du finner mer om dette under «${primary.title}» på nettsiden — se kildelenken under svaret. For kontakt med Marius, bruk lenken Kontakt i chatten.`
-      : `You can find more about this under "${primary.title}" on the site — see the source link below. To contact Marius, use the Contact link in the chat.`;
+      ? `${primary.title} finner du på ${path}. Bruk kildelenken under for direkte tilgang.`
+      : `${primary.title} is at ${path}. Use the source link below for direct access.`;
   return buildResponse("ANSWER", text, lang, [primary.sourceId]);
 }
 
@@ -182,6 +218,21 @@ export async function runAssistantQuery(
 
   const sourceIds = selectRelevantSourceIds(question, lang, ASSISTANT_LIMITS.maxSources);
   const contexts = loadSourceContexts(sourceIds, lang);
+
+  if (isSectionTabDiscoveryQuestion(question)) {
+    const section = tryTabSectionOverviewAnswer(question, lang);
+    if (section) return buildResponse("ANSWER", section.answer, lang, [section.sourceId]);
+  }
+
+  if (isReferencesPresenceQuestion(question)) {
+    const refs = tryReferencesBriefAnswer(lang);
+    if (refs) return buildResponse("ANSWER", refs.answer, lang, [refs.sourceId]);
+  }
+
+  if (isSimpleConsultingOfferingQuestion(question)) {
+    const consulting = trySimpleConsultingOfferingAnswer(lang);
+    if (consulting) return buildResponse("ANSWER", consulting.answer, lang, [consulting.sourceId]);
+  }
 
   if (isContactGuidanceQuestion(question)) {
     const contactId = lang === "no" ? "tab:contact:no" : "tab:contact:en";
