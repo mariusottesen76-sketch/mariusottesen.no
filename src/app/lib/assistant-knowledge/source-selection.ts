@@ -2,6 +2,7 @@ import type { Lang } from "../../LanguageContext";
 import type { KnowledgeCategory } from "./types";
 import { inferSelectionIntent, projectSlugMatches } from "./selection-intent";
 import { listKnowledgeManifestEntries } from "./manifest";
+import { resolveSiteTabIntent } from "./site-tab-intent";
 
 const STOP = new Set([
   "og",
@@ -32,7 +33,7 @@ const CATEGORY_KEYWORDS: Record<string, KnowledgeCategory[]> = {
   resultat: ["results", "experience"],
   results: ["results"],
   consulting: ["consulting"],
-  moc: ["consulting", "project"],
+  moc: ["consulting"],
   kontakt: ["contact", "consulting"],
   kontakter: ["contact", "consulting"],
   contact: ["contact", "consulting"],
@@ -41,7 +42,11 @@ const CATEGORY_KEYWORDS: Record<string, KnowledgeCategory[]> = {
   book: ["book", "book"],
   verdiskiftet: ["book"],
   faginnlegg: ["article", "hub"],
+  innsikt: ["hub", "article"],
+  insights: ["hub", "article"],
   article: ["article", "hub"],
+  referanser: ["references"],
+  anbefalinger: ["references"],
   prosjekt: ["project", "hub"],
   project: ["project", "hub"],
   rådgiv: ["consulting"],
@@ -75,24 +80,11 @@ const CATEGORY_KEYWORDS: Record<string, KnowledgeCategory[]> = {
   leadership: ["profile", "experience", "cv"],
   psc: ["project"],
   atvr: ["project"],
-  row: ["project", "external_reference"],
-  rowsolutions: ["external_reference", "project"],
-  tjenester: ["external_reference"],
-  metoder: ["external_reference", "project"],
-  innsikt: ["book", "external_reference", "project"],
+  row: ["project"],
   ai: ["project", "article", "results"],
   leder: ["profile", "experience", "cv"],
+  personalansvar: ["profile", "cv", "experience"],
   rekrutt: ["cv", "profile", "contact"],
-  personalansvar: ["profile", "cv", "experience", "results"],
-  mundipharma: ["experience", "cv", "results"],
-  bransje: ["experience", "cv"],
-  bransjer: ["experience", "cv"],
-  industries: ["experience", "cv"],
-  gjenvinning: ["experience", "results"],
-  avfall: ["experience"],
-  undervist: ["profile", "cv"],
-  underviser: ["profile", "cv"],
-  handelshøyskolen: ["profile", "cv"],
 };
 
 function tokenize(question: string): string[] {
@@ -110,7 +102,8 @@ export function selectRelevantSourceIds(
 ): string[] {
   const tokens = tokenize(question);
   const qLower = question.toLowerCase();
-  const intent = inferSelectionIntent(question);
+  const intent = inferSelectionIntent(question, lang);
+  const siteTab = resolveSiteTabIntent(question, lang);
   const entries = listKnowledgeManifestEntries().filter((e) => e.lang === lang);
 
   const scored = entries
@@ -142,17 +135,23 @@ export function selectRelevantSourceIds(
         score += 16;
       }
       if (intent.bookOrHub === "hub:projects" && entry.id === `hub:projects:${lang}`) {
-        score += intent.portfolioListing ? 34 : 16;
-      }
-      if (intent.portfolioListing) {
-        if (entry.id.startsWith("tab:")) score -= 16;
-        if (entry.category === "project") score += 6;
+        score += 16;
       }
       if (entry.id === `hub:articles:${lang}` && /\b(faginnlegg|articles?|artikkel)\b/i.test(qLower)) {
         score += 12;
       }
       if (entry.id === `hub:projects:${lang}` && /\b(prosjekter|projects|portefølje|portfolio)\b/i.test(qLower)) {
         score += 12;
+      }
+      if (siteTab && entry.id === siteTab.sourceId) {
+        score += 48;
+      }
+      if (siteTab && (entry.category === "project" || entry.category === "article") && intent.projectSlugHints.length === 0) {
+        if (siteTab.key !== "articles" && entry.category === "article") score -= 28;
+        if (siteTab.key !== "projects" && entry.category === "project") score -= 28;
+      }
+      if (entry.id === `hub:articles:${lang}` && /\binnsikt\b/i.test(qLower)) {
+        score += 24;
       }
       if (entry.id.startsWith("tab:")) {
         for (const hint of intent.tabHints) {
@@ -170,6 +169,18 @@ export function selectRelevantSourceIds(
         if (entry.id.includes(":home:") && /\b(hvem\s+er|who\s+is|kommersiell\s+leder)\b/i.test(qLower)) {
           score += 12;
         }
+        if (
+          /\b(personalansvar|personal\s+ansvar|people\s+(management|leadership))\b/i.test(qLower) &&
+          (entry.id.includes(":home:") || entry.id.includes(":cv:") || entry.id.includes(":experience:"))
+        ) {
+          score += 20;
+        }
+      }
+      if (
+        entry.category === "article" &&
+        /\b(personalansvar|personal\s+ansvar|people\s+(management|leadership))\b/i.test(qLower)
+      ) {
+        score -= 18;
       }
       if (
         entry.category === "project" &&
@@ -186,18 +197,6 @@ export function selectRelevantSourceIds(
       ) {
         score -= 6;
       }
-      if (entry.category === "external_reference" && entry.id.startsWith("external:rowsolutions:")) {
-        if (/\brow\s+solutions|rowsolutions\b/i.test(qLower)) score += 12;
-        if (/\bfra\s+innsikt|innsikt\s+til\s+resultat|from\s+insight\s+to\s+results/i.test(qLower)) {
-          if (entry.id.includes("fra-innsikt-til-resultater")) score += 22;
-        }
-        if (/\btjenester\b/i.test(qLower) && entry.id.includes(":tjenester:")) score += 18;
-        if (/\bmetoder\b/i.test(qLower) && entry.id.includes(":metoder:")) score += 16;
-        if (/\bai\s+discovery\b/i.test(qLower) && entry.id.includes("ai-discovery")) score += 20;
-        if (/\bsalgsflyt/i.test(qLower) && entry.id.includes("smb-salgsflyt")) score += 18;
-        if (/\breadiness\b/i.test(qLower) && entry.id.includes("ai-readiness")) score += 18;
-        if (/\bpredictive\s+sales|\bpsc\b/i.test(qLower) && entry.id.includes("predictive-sales")) score += 18;
-      }
       if (entry.category === "hub") score -= 2;
       if (entry.category === "legal") score -= 1;
       return { id: entry.id, score, category: entry.category };
@@ -205,7 +204,12 @@ export function selectRelevantSourceIds(
     .filter((x) => x.score > 0)
     .sort((a, b) => b.score - a.score || a.id.localeCompare(b.id));
 
-  const ids = scored.slice(0, limit).map((s) => s.id);
+  let ids = scored.slice(0, limit).map((s) => s.id);
+
+  if (siteTab) {
+    const rest = ids.filter((id) => id !== siteTab.sourceId);
+    ids = [siteTab.sourceId, ...rest].slice(0, limit);
+  }
 
   if (ids.length > 0) return ids;
 

@@ -21,6 +21,7 @@ import type {
 import { ARTICLE_SUBSTANTIVE_MIN_CHARS } from "./grounding";
 import { buildPublicProjectExcerptChunks } from "./project-excerpt-policy";
 import { getRowExternalSourceByKey } from "./row-external-knowledge";
+import { buildArticlesHubOverviewText } from "./hub-excerpt";
 import { buildPortfolioHubExcerpt } from "./portfolio-hub-excerpt";
 import { joinParagraphs, scrubSensitiveExcerptText, stripHtmlToPlainText, truncatePlainText } from "./text-utils";
 
@@ -183,11 +184,7 @@ export function buildExcerptForContentRef(
     if (contentRef.hub === "projects") {
       return excerpt(sourceId, lang, "partial", buildPortfolioHubExcerpt(lang));
     }
-    const text =
-      lang === "no"
-        ? "Faginnlegg og innsikt om kommersiell ledelse, salg, transformasjon og praktisk AI."
-        : "Articles and insights on commercial leadership, sales, transformation and practical AI.";
-    return excerpt(sourceId, lang, "metadata_only", text);
+    return excerpt(sourceId, lang, "partial", buildArticlesHubOverviewText(lang));
   }
 
   if (contentRef.kind === "article") {

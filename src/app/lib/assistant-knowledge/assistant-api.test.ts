@@ -12,6 +12,10 @@ const enabledConfig = {
   model: "claude-haiku-4-5-20251001",
 };
 
+/** Reaches the Anthropic mock path (not tab/factual short-circuit). See test 15–16. */
+const MODEL_PIPELINE_QUESTION =
+  "Hvordan beskriver nettsiden Marius som CRM-superbruker hos Norengros?";
+
 function mockModelReply(payload: {
   category: "ANSWER" | "NOT_ON_SITE";
   answer: string;
@@ -146,7 +150,7 @@ describe("assistant API pipeline (mocked model)", () => {
 
   it("12. Timeout from model", async () => {
     const res = await runAssistantQuery(
-      { question: "Hva er Marius sin erfaring fra salg i detalj?", lang: "no" },
+      { question: MODEL_PIPELINE_QUESTION, lang: "no" },
       {
         config: enabledConfig,
         callModel: async () => ({ ok: false, code: "timeout", message: "timeout" }),
@@ -159,7 +163,7 @@ describe("assistant API pipeline (mocked model)", () => {
 
   it("13. Anthropic error", async () => {
     const res = await runAssistantQuery(
-      { question: "Hva er Marius sin erfaring fra salg i detalj?", lang: "no" },
+      { question: MODEL_PIPELINE_QUESTION, lang: "no" },
       {
         config: enabledConfig,
         callModel: async () => ({ ok: false, code: "model_error", message: "upstream" }),
@@ -172,7 +176,7 @@ describe("assistant API pipeline (mocked model)", () => {
 
   it("14. Invalid model JSON", async () => {
     const res = await runAssistantQuery(
-      { question: "Hva er Marius sin erfaring fra salg i detalj?", lang: "no" },
+      { question: MODEL_PIPELINE_QUESTION, lang: "no" },
       {
         config: enabledConfig,
         callModel: async () => ({ ok: false, code: "parse_error", message: "bad json" }),

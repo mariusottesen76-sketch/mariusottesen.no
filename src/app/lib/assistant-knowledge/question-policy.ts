@@ -1,5 +1,6 @@
 import type { Lang } from "../../LanguageContext";
 import type { AssistantAnswerCategory } from "./answer-categories";
+import { isSectionTabDiscoveryQuestion } from "./site-tab-intent";
 
 export type PreModelClassification = {
   category: Exclude<AssistantAnswerCategory, "ANSWER">;
@@ -244,6 +245,7 @@ export function isContactGuidanceQuestion(question: string): boolean {
 
 export function isNavigationQuestion(question: string): boolean {
   if (isContactGuidanceQuestion(question)) return true;
+  if (isSectionTabDiscoveryQuestion(question)) return true;
   return /\b(hvor\s+finn(er|es)?|hvor\s+er|hvor\s+kan\s+jeg|where\s+(can\s+i\s+)?find|where\s+should\s+i\s+look|where\s+is|where\s+are|how\s+do\s+i\s+contact|lenke\s+til|link\s+(me\s+)?to)\b/i.test(
     question
   );
