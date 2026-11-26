@@ -1,6 +1,12 @@
 import type { KnowledgeCategory } from "./types";
 import { resolveSiteTabIntent, siteTabKeyToSelectionHint, type SiteTabKey } from "./site-tab-intent";
 import type { Lang } from "../../LanguageContext";
+import {
+  isAuthorshipQuestion,
+  isExplicitArticleTopicQuestion,
+  isHiringQuestion,
+  isValueCreationQuestion,
+} from "./information-needs";
 
 export type SelectionIntent = {
   preferredCategories: KnowledgeCategory[];
@@ -89,9 +95,26 @@ export function inferSelectionIntent(question: string, lang: Lang = "no"): Selec
     preferredCategories.push("profile", "cv", "experience");
     tabHints.push("home", "cv", "experience");
   }
-  if (/\b(skaper\s+verdi|creates?\s+value|verdiskaping|skaper\s+mest\s+verdi)\b/i.test(q)) {
-    preferredCategories.push("profile", "consulting", "results");
-    tabHints.push("home", "consulting", "results");
+  if (isValueCreationQuestion(question)) {
+    preferredCategories.push("profile", "results", "consulting", "experience");
+    tabHints.push("home", "results", "consulting", "experience");
+  }
+  if (isHiringQuestion(question)) {
+    preferredCategories.push("profile", "cv", "experience", "results", "references");
+    tabHints.push("home", "cv", "experience", "references");
+  }
+  if (isAuthorshipQuestion(question)) {
+    preferredCategories.push("hub", "article", "book");
+    tabHints.push("articles");
+    bookOrHub = "hub:articles";
+    if (/\bverdiskaping|verdiskiftet|value\s+creation\b/i.test(q)) {
+      preferredCategories.unshift("book");
+    }
+  }
+  if (isExplicitArticleTopicQuestion(question)) {
+    preferredCategories.push("hub", "article");
+    tabHints.push("articles");
+    bookOrHub = "hub:articles";
   }
   if (
     /\b(hjelpe|hjelper|bidra|bistå|help)\b.*\b(virksomhet|bedrift|business|selskap|organisasjon|company|us)\b/i.test(
