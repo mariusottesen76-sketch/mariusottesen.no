@@ -34,7 +34,7 @@ describe("assistant knowledge manifest", () => {
     const sitePaths = sitemapPaths();
 
     assert.deepEqual(manifestPaths, sitePaths, "Manifest paths must match sitemap.ts");
-    assert.equal(manifest.entries.length, 265);
+    assert.equal(manifest.entries.length, 281);
   });
 
   it("has unique source ids", () => {
@@ -44,6 +44,10 @@ describe("assistant knowledge manifest", () => {
 
   it("uses internal https URLs on production host", () => {
     for (const entry of listKnowledgeManifestEntries()) {
+      if (entry.category === "external_reference") {
+        assert.ok(entry.canonicalUrl.startsWith("https://rowsolutions.no"), entry.id);
+        continue;
+      }
       assert.ok(entry.url.startsWith(SITE), entry.id);
       assert.ok(entry.canonicalUrl.startsWith(SITE), entry.id);
       assert.ok(!entry.url.includes("/api/"), entry.id);
@@ -61,8 +65,8 @@ describe("assistant knowledge manifest", () => {
 
   it("classifies Norwegian and English entries", () => {
     const byLang = countBy(listKnowledgeManifestEntries(), (e) => e.lang);
-    assert.equal(byLang.no, 137);
-    assert.equal(byLang.en, 128);
+    assert.equal(byLang.no, 145);
+    assert.equal(byLang.en, 136);
   });
 
   it("wires locale pairs to existing ids", () => {
@@ -122,6 +126,7 @@ describe("assistant knowledge manifest", () => {
       "cv",
       "contact",
       "book",
+      "external_reference",
     ] as const) {
       assert.ok(categories.has(cat), `missing category ${cat}`);
     }

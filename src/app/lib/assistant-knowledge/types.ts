@@ -1,6 +1,7 @@
 import type { Lang } from "../../LanguageContext";
 import type { AccessMode } from "../../data/projects-v2/types";
 import type { SitePageKey } from "../locale-routes";
+import type { RowExternalSourceKey } from "./row-external-knowledge";
 
 /** ISO date YYYY-MM-DD when known from content registers. */
 export type KnowledgeIsoDate = string;
@@ -19,7 +20,8 @@ export type KnowledgeCategory =
   | "article"
   | "project"
   | "hub"
-  | "legal";
+  | "legal"
+  | "external_reference";
 
 export type KnowledgeExcerptLevel = "full" | "partial" | "metadata_only";
 
@@ -31,7 +33,8 @@ export type KnowledgeContentRef =
   | { kind: "hub"; hub: "projects" | "articles" }
   | { kind: "legal-privacy" }
   | { kind: "article"; slug: string }
-  | { kind: "project"; projectId: string };
+  | { kind: "project"; projectId: string }
+  | { kind: "external-row"; sourceKey: RowExternalSourceKey };
 
 export interface KnowledgeManifestEntry {
   /** Stable, unique id — used for lookup (`tab:home:no`, `article:{slug}:en`, …). */

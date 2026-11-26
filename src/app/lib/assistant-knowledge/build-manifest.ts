@@ -20,6 +20,7 @@ import type {
   KnowledgeManifest,
   KnowledgeManifestEntry,
 } from "./types";
+import { ROW_EXTERNAL_SOURCES, rowExternalManifestId } from "./row-external-knowledge";
 import type { Lang } from "../../LanguageContext";
 
 function abs(path: string): string {
@@ -201,6 +202,31 @@ function buildPrivacyEntries(siteDates: { updatedAt?: string }): KnowledgeManife
   });
 }
 
+function buildRowExternalEntries(): KnowledgeManifestEntry[] {
+  const entries: KnowledgeManifestEntry[] = [];
+  const langs: KnowledgeLang[] = ["no", "en"];
+  for (const def of ROW_EXTERNAL_SOURCES) {
+    const localePairId = `pair:external:rowsolutions:${def.key}`;
+    for (const lang of langs) {
+      const id = rowExternalManifestId(def.key, lang);
+      entries.push({
+        id,
+        title: def.title[lang],
+        url: def.url,
+        lang,
+        description: def.description[lang],
+        category: "external_reference",
+        canonicalUrl: def.url,
+        localePairId,
+        alternateSourceId: rowExternalManifestId(def.key, lang === "no" ? "en" : "no"),
+        contentRef: { kind: "external-row", sourceKey: def.key },
+        excerptLevel: "partial",
+      });
+    }
+  }
+  return entries;
+}
+
 function buildProjectEntries(): KnowledgeManifestEntry[] {
   const projects = getAllProjectV2Records();
   const indexableEn = new Set(getIndexableProjectRecords().map((p) => p.id));
@@ -352,6 +378,7 @@ export function buildKnowledgeManifest(fixedGeneratedAt?: string): KnowledgeMani
     ),
     ...buildPrivacyEntries({ updatedAt: siteDates.updatedAt }),
     ...buildProjectEntries(),
+    ...buildRowExternalEntries(),
     ...buildArticleEntries(faginnleggLastMod),
   ];
 
@@ -366,8 +393,10 @@ export function buildKnowledgeManifest(fixedGeneratedAt?: string): KnowledgeMani
 
 /** Path-only URLs from manifest for alignment checks with `sitemap.ts`. */
 export function manifestCanonicalPaths(manifest: KnowledgeManifest): string[] {
-  return manifest.entries.map((e) => {
-    const u = new URL(e.canonicalUrl);
-    return u.pathname;
-  });
+  return manifest.entries
+    .filter((e) => e.category !== "external_reference")
+    .map((e) => {
+      const u = new URL(e.canonicalUrl);
+      return u.pathname;
+    });
 }

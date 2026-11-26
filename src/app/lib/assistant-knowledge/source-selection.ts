@@ -75,7 +75,12 @@ const CATEGORY_KEYWORDS: Record<string, KnowledgeCategory[]> = {
   leadership: ["profile", "experience", "cv"],
   psc: ["project"],
   atvr: ["project"],
-  row: ["project"],
+  row: ["project", "external_reference"],
+  rowsolutions: ["external_reference", "project"],
+  tjenester: ["external_reference"],
+  metoder: ["external_reference", "project"],
+  innsikt: ["book", "external_reference", "project"],
+  moc: ["consulting", "project"],
   ai: ["project", "article", "results"],
   leder: ["profile", "experience", "cv"],
   rekrutt: ["cv", "profile", "contact"],
@@ -167,6 +172,18 @@ export function selectRelevantSourceIds(
         intent.bookOrHub !== "hub:articles"
       ) {
         score -= 6;
+      }
+      if (entry.category === "external_reference" && entry.id.startsWith("external:rowsolutions:")) {
+        if (/\brow\s+solutions|rowsolutions\b/i.test(qLower)) score += 12;
+        if (/\bfra\s+innsikt|innsikt\s+til\s+resultat|from\s+insight\s+to\s+results/i.test(qLower)) {
+          if (entry.id.includes("fra-innsikt-til-resultater")) score += 22;
+        }
+        if (/\btjenester\b/i.test(qLower) && entry.id.includes(":tjenester:")) score += 18;
+        if (/\bmetoder\b/i.test(qLower) && entry.id.includes(":metoder:")) score += 16;
+        if (/\bai\s+discovery\b/i.test(qLower) && entry.id.includes("ai-discovery")) score += 20;
+        if (/\bsalgsflyt/i.test(qLower) && entry.id.includes("smb-salgsflyt")) score += 18;
+        if (/\breadiness\b/i.test(qLower) && entry.id.includes("ai-readiness")) score += 18;
+        if (/\bpredictive\s+sales|\bpsc\b/i.test(qLower) && entry.id.includes("predictive-sales")) score += 18;
       }
       if (entry.category === "hub") score -= 2;
       if (entry.category === "legal") score -= 1;

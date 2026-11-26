@@ -20,6 +20,7 @@ import type {
 } from "./types";
 import { ARTICLE_SUBSTANTIVE_MIN_CHARS } from "./grounding";
 import { buildPublicProjectExcerptChunks } from "./project-excerpt-policy";
+import { getRowExternalSourceByKey } from "./row-external-knowledge";
 import { joinParagraphs, scrubSensitiveExcerptText, stripHtmlToPlainText, truncatePlainText } from "./text-utils";
 
 const EXCERPT_MAX = 2_400;
@@ -69,10 +70,11 @@ function sitePageExcerpt(ref: Extract<KnowledgeContentRef, { kind: "site-page" }
     }
     case "consulting": {
       const intro = [getTranslation("cons.intro.1", lang), getTranslation("cons.intro.2", lang)].join(" ");
+      const mocRow = getTranslation("profil.selskap.desc", lang);
       const pakker = getHovedpakker(lang)
         .slice(0, 4)
         .map((p) => `${p.tittel}: ${p.leveranseKort}`);
-      return excerpt(sourceId, lang, "partial", joinParagraphs([intro, ...pakker], EXCERPT_MAX));
+      return excerpt(sourceId, lang, "partial", joinParagraphs([intro, mocRow, ...pakker], EXCERPT_MAX));
     }
     case "cv": {
       const d = getDokumentasjonData(lang);
@@ -111,11 +113,44 @@ export function buildExcerptForContentRef(
 
   if (contentRef.kind === "book") {
     const copy = BOK_PROSJEKT_COPY[lang];
+    const rowFramework =
+      `${copy.rowFrameworkBeforeLink}${copy.rowFrameworkLink}${copy.rowFrameworkAfterLink}`;
     return excerpt(
       sourceId,
       lang,
       "partial",
-      joinParagraphs([copy.tagline, copy.heroIngress, copy.aboutParagraphs[0] ?? ""], EXCERPT_MAX)
+      joinParagraphs(
+        [
+          copy.heroAuthorLine,
+          copy.statusDateNote,
+          copy.tagline,
+          copy.heroIngress,
+          copy.aboutParagraphs[0] ?? "",
+          rowFramework,
+        ],
+        EXCERPT_MAX
+      )
+    );
+  }
+
+  if (contentRef.kind === "external-row") {
+    const def = getRowExternalSourceByKey(contentRef.sourceKey);
+    if (!def) {
+      return excerpt(sourceId, lang, "metadata_only", fallbackDescription);
+    }
+    return excerpt(
+      sourceId,
+      lang,
+      "partial",
+      joinParagraphs(
+        [
+          def.excerpt[lang],
+          lang === "no"
+            ? "Ekstern kilde (rowsolutions.no) — komplementær til prosjektdata på mariusottesen.no."
+            : "External source (rowsolutions.no) — complementary to project data on mariusottesen.no.",
+        ],
+        EXCERPT_MAX
+      )
     );
   }
 
