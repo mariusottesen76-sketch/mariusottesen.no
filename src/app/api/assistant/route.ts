@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
-import { runAssistantQuery } from "../../lib/assistant-knowledge/assistant-service";
+import { buildAiDisabledResponse, runAssistantQuery } from "../../lib/assistant-knowledge/assistant-service";
+import type { Lang } from "../../LanguageContext";
 import { ASSISTANT_LIMITS, getAssistantRuntimeConfig } from "../../lib/assistant-knowledge/assistant-config";
 import { isAssistantUiEnabled } from "../../lib/assistant-ui-config";
 import type { AssistantRequestBody } from "../../lib/assistant-knowledge/assistant-types";
@@ -23,21 +24,21 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Invalid JSON body." }, { status: 400 });
   }
 
-  const question =
-    typeof body === "object" && body !== null && "question" in body
-      ? String((body as AssistantRequestBody).question ?? "")
-      : "";
   const langRaw =
     typeof body === "object" && body !== null && "lang" in body
       ? (body as AssistantRequestBody).lang
       : undefined;
-  const lang = langRaw === "en" || langRaw === "no" ? langRaw : undefined;
+  const lang: Lang = langRaw === "en" ? "en" : "no";
 
   const config = getAssistantRuntimeConfig();
   if (!config.chatEnabled) {
-    const result = await runAssistantQuery({ question, lang });
-    return NextResponse.json(result, { status: 503 });
+    return NextResponse.json(buildAiDisabledResponse(lang), { status: 503 });
   }
+
+  const question =
+    typeof body === "object" && body !== null && "question" in body
+      ? String((body as AssistantRequestBody).question ?? "")
+      : "";
 
   const result = await runAssistantQuery({ question, lang });
   const status =
