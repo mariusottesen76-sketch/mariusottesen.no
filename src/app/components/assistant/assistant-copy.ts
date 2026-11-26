@@ -32,11 +32,12 @@ export type AssistantUiCopy = {
 
 const COPY: Record<Lang, Omit<AssistantUiCopy, "contactHref">> = {
   no: {
-    launcherLabel: "Spør om Marius",
-    title: "Marius' AI-assistent",
-    subtitle: "Finn erfaring, resultater, tjenester og prosjekter.",
+    launcherLabel: "Utforsk Marius",
+    title: "Marius' digitale assistent",
+    subtitle: "Kompetanse, rådgivning og AI-prosjekter",
     aiDisclaimer: "Dette er en AI-assistent. Svarene bygger på godkjent innhold på nettstedet.",
-    intro: "Hei! Spør om erfaring, resultater, tjenester eller prosjekter — eller velg et forslag nedenfor.",
+    intro:
+      "Hei! Jeg kan hjelpe deg å finne relevant informasjon om Marius' erfaring, resultater, rådgivning og AI-prosjekter. Hva ønsker du å utforske?",
     placeholder: "Skriv spørsmålet ditt …",
     send: "Send",
     sending: "Tenker …",
@@ -44,10 +45,10 @@ const COPY: Record<Lang, Omit<AssistantUiCopy, "contactHref">> = {
     contactCta: "Kontakt Marius",
     sourcesHeading: "Kilder på nettstedet",
     suggestions: [
+      "Hvordan kan Marius hjelpe virksomheten vår?",
       "Hvilke lederroller passer Marius til?",
-      "Hvilke resultater har han oppnådd?",
-      "Hvordan kan Marius hjelpe vår virksomhet?",
-      "Hvilke AI-prosjekter har han utviklet?",
+      "Hva tilbyr Marius Ottesen Consulting?",
+      "Hva er Row Solutions, og hvordan kan de hjelpe oss?",
     ],
     showMoreSuggestions: "Vis flere forslag",
     hideExtraSuggestions: "Skjul ekstra forslag",
@@ -67,11 +68,12 @@ const COPY: Record<Lang, Omit<AssistantUiCopy, "contactHref">> = {
     },
   },
   en: {
-    launcherLabel: "Ask about Marius",
-    title: "Marius' AI assistant",
-    subtitle: "Find experience, results, services and projects.",
+    launcherLabel: "Explore Marius",
+    title: "Marius' digital assistant",
+    subtitle: "Skills, advisory services and AI projects",
     aiDisclaimer: "This is an AI assistant. Answers are based on approved content on the site.",
-    intro: "Hi! Ask about experience, results, services or projects — or pick a suggestion below.",
+    intro:
+      "Hi! I can help you find relevant information about Marius' experience, results, advisory work and AI projects. What would you like to explore?",
     placeholder: "Type your question …",
     send: "Send",
     sending: "Thinking …",
@@ -79,10 +81,10 @@ const COPY: Record<Lang, Omit<AssistantUiCopy, "contactHref">> = {
     contactCta: "Contact Marius",
     sourcesHeading: "Sources on the site",
     suggestions: [
-      "Which leadership roles is Marius a strong fit for?",
-      "What results has he delivered?",
       "How can Marius help our business?",
-      "Which AI projects has he built?",
+      "Which leadership roles is Marius a strong fit for?",
+      "What does Marius Ottesen Consulting offer?",
+      "What is Row Solutions, and how can they help us?",
     ],
     showMoreSuggestions: "Show more suggestions",
     hideExtraSuggestions: "Hide extra suggestions",

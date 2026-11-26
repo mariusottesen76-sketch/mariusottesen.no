@@ -1,6 +1,6 @@
 import type { ChatMessage } from "./assistant-chat-logic";
 
-export const INITIAL_VISIBLE_SUGGESTIONS = 2;
+export const INITIAL_VISIBLE_SUGGESTIONS = 4;
 
 export function countUserMessages(messages: ChatMessage[]): number {
   return messages.filter((m) => m.role === "user").length;

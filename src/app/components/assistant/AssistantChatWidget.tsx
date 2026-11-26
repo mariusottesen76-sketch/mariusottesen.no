@@ -201,10 +201,10 @@ export default function AssistantChatWidget({ maxQuestionChars }: { maxQuestionC
         }
         aria-expanded={open}
         aria-controls="assistant-chat-panel"
+        aria-label={copy.launcherLabel}
       >
         <MessageCircle className="h-5 w-5 text-indigo-100 shrink-0" aria-hidden />
-        <span className={open ? "sr-only" : "hidden sm:inline"}>{copy.launcherLabel}</span>
-        {!open && <span className="sr-only sm:hidden">{copy.launcherLabel}</span>}
+        <span className={open ? "sr-only" : "text-xs sm:text-sm"}>{copy.launcherLabel}</span>
       </button>
 
       {open && (

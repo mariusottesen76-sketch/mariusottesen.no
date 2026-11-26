@@ -25,8 +25,14 @@ describe("assistant chat UI logic", () => {
   it("copy includes contact paths per language", () => {
     assert.equal(getAssistantUiCopy("no").contactHref, "/consulting#cons-dialog-heading");
     assert.equal(getAssistantUiCopy("en").contactHref, "/en/consulting#cons-dialog-heading");
-    assert.equal(getAssistantUiCopy("no").launcherLabel, "Spør om Marius");
-    assert.equal(getAssistantUiCopy("en").launcherLabel, "Ask about Marius");
+    assert.equal(getAssistantUiCopy("no").launcherLabel, "Utforsk Marius");
+    assert.equal(getAssistantUiCopy("en").launcherLabel, "Explore Marius");
+    assert.deepEqual(getAssistantUiCopy("no").suggestions, [
+      "Hvordan kan Marius hjelpe virksomheten vår?",
+      "Hvilke lederroller passer Marius til?",
+      "Hva tilbyr Marius Ottesen Consulting?",
+      "Hva er Row Solutions, og hvordan kan de hjelpe oss?",
+    ]);
   });
 
   it("maps API response to assistant message", () => {

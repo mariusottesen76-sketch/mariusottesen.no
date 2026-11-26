@@ -31,8 +31,8 @@ describe("assistant chat UI state (05D)", () => {
     assert.deepEqual(messagesForDisplay([intro]), [intro]);
   });
 
-  it("initial visible suggestion count is two", () => {
-    assert.equal(INITIAL_VISIBLE_SUGGESTIONS, 2);
+  it("initial visible suggestion count is four", () => {
+    assert.equal(INITIAL_VISIBLE_SUGGESTIONS, 4);
     assert.equal(countUserMessages([intro]), 0);
   });
 });
