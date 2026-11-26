@@ -58,6 +58,21 @@ function buildTechnicalFailure(
   };
 }
 
+/** HTTP/UI contract when CHAT_ENABLED is false — no sources or generated answers. */
+export function buildAiDisabledResponse(lang: Lang): AssistantResponseBody {
+  return {
+    category: "NOT_ON_SITE",
+    answer:
+      lang === "no"
+        ? "AI-assistenten er midlertidig deaktivert. Bruk lenkene på nettstedet eller kontaktskjemaet."
+        : "The AI assistant is temporarily disabled. Use the site links or the contact form.",
+    lang,
+    sourceIds: [],
+    urls: [],
+    errorCode: "ai_disabled",
+  };
+}
+
 function buildResponse(
   category: AssistantAnswerCategory,
   answer: string,
@@ -206,17 +221,7 @@ export async function runAssistantQuery(
 
   const config = deps?.config ?? getAssistantRuntimeConfig();
   if (!config.chatEnabled) {
-    return {
-      category: "NOT_ON_SITE",
-      answer:
-        lang === "no"
-          ? "AI-assistenten er midlertidig deaktivert. Bruk lenkene på nettstedet eller kontaktskjemaet."
-          : "The AI assistant is temporarily disabled. Use the site links or the contact form.",
-      lang,
-      sourceIds: [],
-      urls: [],
-      errorCode: "ai_disabled",
-    };
+    return buildAiDisabledResponse(lang);
   }
   const usingMock = Boolean(deps?.callModel);
   if (!config.apiKeyConfigured && !usingMock) {
