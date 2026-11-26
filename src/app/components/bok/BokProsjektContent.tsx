@@ -11,6 +11,7 @@ import {
   BOK_RELATED_INSIGHT_SLUGS,
   BOK_TESTLESER_MAILTO,
   BOK_VISUALISERING_3D,
+  ROW_FRAMEWORK_HREF,
 } from "../../data/bok-prosjekt-innhold";
 import { getFaginnleggBySlug } from "../../lib/faginnlegg-data";
 import { faginnleggDetailPath } from "../../lib/faginnlegg-types";
@@ -176,6 +177,18 @@ function BokProsjektInner() {
               <BookRichText text={p} />
             </p>
           ))}
+          <p className={bookParagraphClass}>
+            <BookRichText text={copy.rowFrameworkBeforeLink} />
+            <a
+              href={ROW_FRAMEWORK_HREF}
+              className={linkClass}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {copy.rowFrameworkLink}
+            </a>
+            <BookRichText text={copy.rowFrameworkAfterLink} />
+          </p>
         </section>
 
         <section aria-labelledby="bok-status" className="min-w-0 pt-2 border-t border-slate-800/40">

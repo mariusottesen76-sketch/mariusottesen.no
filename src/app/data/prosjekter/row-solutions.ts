@@ -9,8 +9,8 @@ export const rowSolutions: ProsjektType = {
     en: "Row Solutions – better commercial flow from visibility to sales and follow-up",
   },
   teaser: {
-    no: "Kommersielt samarbeid mellom Marius Ottesen og Thomas Holm — strategi, tjenester, metoder, verktøy og rowsolutions.no.",
-    en: "Commercial collaboration between Marius Ottesen and Thomas Holm — strategy, services, methods, tools and rowsolutions.no.",
+    no: "Kommersielt samarbeid med Marius Ottesen, Thomas Holm og Gunnar Gundersen — strategi, tjenester, metoder, verktøy og rowsolutions.no.",
+    en: "Commercial collaboration with Marius Ottesen, Thomas Holm and Gunnar Gundersen — strategy, services, methods, tools and rowsolutions.no.",
   },
   bildeUrl: ROW_SOLUTIONS_OVERVIEW_IMAGE,
   dato: "2026-08-28",
