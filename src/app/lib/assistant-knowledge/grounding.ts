@@ -45,6 +45,16 @@ export function assessGroundingFromExcerpt(
   ]);
 
   if (entry.category === "hub") {
+    const projectsHub =
+      entry.contentRef.kind === "hub" && entry.contentRef.hub === "projects";
+    if (projectsHub) {
+      const substantive = level === "partial" && len >= SUBSTANTIVE_MIN_CHARS;
+      return {
+        grounding: substantive ? "substantive" : "metadata_only",
+        suitableForFactualAnswer: substantive,
+        plainTextLength: len,
+      };
+    }
     return { grounding: "metadata_only", suitableForFactualAnswer: false, plainTextLength: len };
   }
 

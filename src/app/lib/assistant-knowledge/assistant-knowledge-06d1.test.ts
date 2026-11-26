@@ -59,4 +59,24 @@ describe("06D-1 row external allowlist", () => {
     const ids = selectRelevantSourceIds("Hva er rammeverket Fra innsikt til resultater?", "no", 5);
     assert.ok(ids.some((id) => id.includes("fra-innsikt-til-resultater")));
   });
+
+  it("prioritises projects hub for broad portfolio listing (06D-3)", () => {
+    const cases = [
+      "Hvilke AI-verktøy har Marius Ottesen utviklet?",
+      "Hvilke apper og digitale løsninger har Marius laget?",
+      "Hvilke prosjekter har Marius jobbet med?",
+    ];
+    for (const q of cases) {
+      const ids = selectRelevantSourceIds(q, "no", 3);
+      assert.ok(ids.includes("hub:projects:no"), q);
+      const hub = lookupKnowledgeSource("hub:projects:no");
+      assert.equal(hub.ok, true);
+      if (!hub.ok) continue;
+      assert.equal(hub.grounding.suitableForFactualAnswer, true);
+      assert.match(hub.excerpt.text.toLowerCase(), /predictive sales coach/);
+      assert.doesNotMatch(hub.excerpt.text.toLowerCase(), /ai discovery.*marius ottesen consulting/);
+    }
+    const roles = selectRelevantSourceIds("Hvilke lederroller passer Marius til?", "no", 3);
+    assert.ok(!roles.includes("hub:projects:no") || roles[0] !== "hub:projects:no");
+  });
 });

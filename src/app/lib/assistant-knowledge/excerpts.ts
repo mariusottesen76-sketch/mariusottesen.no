@@ -21,6 +21,7 @@ import type {
 import { ARTICLE_SUBSTANTIVE_MIN_CHARS } from "./grounding";
 import { buildPublicProjectExcerptChunks } from "./project-excerpt-policy";
 import { getRowExternalSourceByKey } from "./row-external-knowledge";
+import { buildPortfolioHubExcerpt } from "./portfolio-hub-excerpt";
 import { joinParagraphs, scrubSensitiveExcerptText, stripHtmlToPlainText, truncatePlainText } from "./text-utils";
 
 const EXCERPT_MAX = 2_400;
@@ -161,11 +162,7 @@ export function buildExcerptForContentRef(
 
   if (contentRef.kind === "hub") {
     if (contentRef.hub === "projects") {
-      const text =
-        lang === "no"
-          ? "Oversikt over AI-prosjekter, apper, plattformer og arbeidsflyter utviklet av Marius Ottesen — med lenker til offentlige prosjektsider."
-          : "Overview of AI projects, apps, platforms and workflows developed by Marius Ottesen — with links to public project pages.";
-      return excerpt(sourceId, lang, "metadata_only", text);
+      return excerpt(sourceId, lang, "partial", buildPortfolioHubExcerpt(lang));
     }
     const text =
       lang === "no"

@@ -133,7 +133,11 @@ export function selectRelevantSourceIds(
         score += 16;
       }
       if (intent.bookOrHub === "hub:projects" && entry.id === `hub:projects:${lang}`) {
-        score += 16;
+        score += intent.portfolioListing ? 34 : 16;
+      }
+      if (intent.portfolioListing) {
+        if (entry.id.startsWith("tab:")) score -= 16;
+        if (entry.category === "project") score += 6;
       }
       if (entry.id === `hub:articles:${lang}` && /\b(faginnlegg|articles?|artikkel)\b/i.test(qLower)) {
         score += 12;

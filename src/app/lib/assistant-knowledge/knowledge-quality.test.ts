@@ -65,12 +65,24 @@ describe("locale and URL integrity", () => {
 });
 
 describe("grounding vs metadata", () => {
-  it("treats hub entries as navigational-only", () => {
+  it("treats articles hub as navigational-only", () => {
     const res = lookupKnowledgeSource("hub:articles:no");
     assert.equal(res.ok, true);
     if (res.ok) {
       assert.equal(res.grounding.suitableForFactualAnswer, false);
       assert.equal(res.grounding.grounding, "metadata_only");
+    }
+  });
+
+  it("treats projects hub as substantive for portfolio listing", () => {
+    const res = lookupKnowledgeSource("hub:projects:no");
+    assert.equal(res.ok, true);
+    if (res.ok) {
+      assert.equal(res.excerpt.level, "partial");
+      assert.equal(res.grounding.suitableForFactualAnswer, true);
+      const t = res.excerpt.text.toLowerCase();
+      assert.match(t, /predictive sales coach/);
+      assert.match(t, /thomas holm/);
     }
   });
 

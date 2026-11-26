@@ -174,7 +174,7 @@ function buildHubEntries(
     localePairId,
     alternateSourceId: ids[lang === "no" ? "en" : "no"],
     contentRef: { kind: "hub", hub },
-    excerptLevel: "metadata_only" as const,
+    excerptLevel: (hub === "projects" ? "partial" : "metadata_only") as KnowledgeExcerptLevel,
   }));
 }
 

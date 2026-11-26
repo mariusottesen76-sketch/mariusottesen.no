@@ -8,7 +8,21 @@ export type SelectionIntent = {
   projectSlugHints: string[];
   /** If set, boost exact manifest id prefix match. */
   bookOrHub?: "book" | "hub:articles" | "hub:projects";
+  /** Bredt opplistingsspørsmål om verktøy, apper eller prosjekter Marius har utviklet/jobbet med. */
+  portfolioListing?: boolean;
 };
+
+/** Portefølje-/opplistingsspørsmål — ikke én spesifikk prosjektside. */
+export function isPortfolioListingQuestion(question: string): boolean {
+  const q = question.toLowerCase();
+  const asksInventory = /\b(hvilke|which|what)\b/i.test(question);
+  const portfolioNoun =
+    /\b(ai[-\s]?verktøy|verktøy|tools|apper|apps|digitale\s+løsninger|løsninger|prosjekter|projects|portefølje|portfolio)\b/i.test(
+      q
+    );
+  const creativeWork = /\b(utviklet|laget|bygget|utvikle|jobbet|developed|built|created|worked)\b/i.test(q);
+  return asksInventory && portfolioNoun && creativeWork;
+}
 
 const PROJECT_SLUG_PHRASES: Array<{ pattern: RegExp; slugParts: string[] }> = [
   { pattern: /\bpredictive\s+sales\s+coach\b/i, slugParts: ["predictive", "sales", "coach"] },
@@ -97,7 +111,18 @@ export function inferSelectionIntent(question: string): SelectionIntent {
     preferredCategories.push("project", "hub");
     bookOrHub = bookOrHub ?? "hub:projects";
   }
-  if (/\b(marius|hvem\s+er|who\s+is|kommersiell\s+leder|commercial\s+leadership)\b/i.test(q) && tabHints.length === 0) {
+
+  const portfolioListing = isPortfolioListingQuestion(question);
+  if (portfolioListing) {
+    preferredCategories.push("project", "hub");
+    bookOrHub = "hub:projects";
+  }
+
+  if (
+    /\b(marius|hvem\s+er|who\s+is|kommersiell\s+leder|commercial\s+leadership)\b/i.test(q) &&
+    tabHints.length === 0 &&
+    !portfolioListing
+  ) {
     preferredCategories.push("profile", "experience", "cv");
     tabHints.push("home");
   }
@@ -119,6 +144,7 @@ export function inferSelectionIntent(question: string): SelectionIntent {
     tabHints,
     projectSlugHints,
     bookOrHub,
+    portfolioListing: portfolioListing || undefined,
   };
 }
 
