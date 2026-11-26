@@ -170,7 +170,20 @@ export function tryGroundedFactualAnswer(
     return { answer: say(text, lang), sourceIds: [home, cv] };
   }
 
-  if (/\b(personalansvar|personal\s+ansvar|people\s+(management|leadership|responsibility))\b/i.test(q)) {
+  if (
+    /\b(can|could)\b/i.test(q) &&
+    /\b(do\s+sales|sell)\b/i.test(q) &&
+    /\b(marius|he)\b/i.test(q)
+  ) {
+    const p = getProfilData(lang);
+    const text =
+      lang === "no"
+        ? `Ja — nettsiden dokumenterer bred salgs- og kommersiell ledelseserfaring. ${p.intro} Profilen beskriver blant annet salgsledelse, salgsstrategi og P/L-ansvar i komplekse B2B-miljøer.`
+        : `Yes — the site documents broad sales and commercial leadership experience. ${p.intro} The profile describes sales leadership, sales strategy and P&L accountability in complex B2B settings.`;
+    return { answer: say(text, lang), sourceIds: [home, cv, experience] };
+  }
+
+  if (/\b(personalansvar|personal\s+ansvar|people\s+(management|leadership|responsibility)|managed\s+employees)\b/i.test(q)) {
     const p = getProfilData(lang);
     const d = getDokumentasjonData(lang);
     const proof = p.proofPoints.find((x) => /personalansvar|people leadership/i.test(x)) ?? p.proofPoints[1] ?? "";

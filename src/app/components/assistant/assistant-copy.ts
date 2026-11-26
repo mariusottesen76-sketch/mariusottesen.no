@@ -8,6 +8,8 @@ export type AssistantUiCopy = {
   aiDisclaimer: string;
   intro: string;
   placeholder: string;
+  /** Shown above the input — UI follows site lang; answers follow question lang. */
+  bilingualHint: string;
   send: string;
   sending: string;
   close: string;
@@ -39,6 +41,7 @@ const COPY: Record<Lang, Omit<AssistantUiCopy, "contactHref">> = {
     intro:
       "Hei! Jeg kan hjelpe deg å finne relevant informasjon om Marius' erfaring, resultater, rådgivning og AI-prosjekter. Hva ønsker du å utforske?",
     placeholder: "Skriv spørsmålet ditt …",
+    bilingualHint: "Still spørsmål på norsk eller engelsk.",
     send: "Send",
     sending: "Tenker …",
     close: "Lukk chat",
@@ -75,6 +78,7 @@ const COPY: Record<Lang, Omit<AssistantUiCopy, "contactHref">> = {
     intro:
       "Hi! I can help you find relevant information about Marius' experience, results, advisory work and AI projects. What would you like to explore?",
     placeholder: "Type your question …",
+    bilingualHint: "Ask in Norwegian or English.",
     send: "Send",
     sending: "Thinking …",
     close: "Close chat",

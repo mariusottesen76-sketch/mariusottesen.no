@@ -106,11 +106,100 @@ export function isUndocumentedAvailabilityQuestion(question: string): boolean {
   );
 }
 
-export function detectQuestionLang(question: string, hint?: Lang): Lang {
-  if (hint === "no" || hint === "en") return hint;
-  const enHits = (question.match(/\b(the|what|how|who|where|experience|results|consulting|projects)\b/gi) ?? []).length;
-  const noHits = (question.match(/\b(hva|hvordan|hvem|hvor|erfaring|resultater|prosjekt)\b/gi) ?? []).length;
-  return enHits > noHits ? "en" : "no";
+const EN_LANG_TOKENS = [
+  "the",
+  "what",
+  "how",
+  "who",
+  "where",
+  "when",
+  "why",
+  "which",
+  "can",
+  "could",
+  "has",
+  "have",
+  "had",
+  "does",
+  "do",
+  "did",
+  "is",
+  "are",
+  "was",
+  "were",
+  "will",
+  "experience",
+  "results",
+  "consulting",
+  "projects",
+  "managed",
+  "employees",
+  "offer",
+  "offers",
+  "help",
+  "sales",
+] as const;
+
+const NO_LANG_TOKENS = [
+  "hva",
+  "hvordan",
+  "hvem",
+  "hvor",
+  "når",
+  "hvilke",
+  "hvilken",
+  "hvilket",
+  "kan",
+  "har",
+  "hadde",
+  "er",
+  "var",
+  "vil",
+  "erfaring",
+  "resultater",
+  "prosjekt",
+  "prosjekter",
+  "personalansvar",
+  "virksomheten",
+  "tilbyr",
+  "lederroller",
+  "hjelp",
+  "hjelpe",
+  "hjele",
+  "salg",
+] as const;
+
+const NO_SPECIAL_CHARS = /[æøåÆØÅ]/;
+
+function countLangTokens(question: string, tokens: readonly string[]): number {
+  let hits = 0;
+  for (const token of tokens) {
+    if (new RegExp(`\\b${token.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`, "i").test(question)) {
+      hits++;
+    }
+  }
+  return hits;
+}
+
+/**
+ * Pick answer language: question wording wins when detectable; otherwise site UI language (`hint`).
+ */
+export function detectQuestionLang(question: string, siteLangHint?: Lang): Lang {
+  const fallback: Lang = siteLangHint === "en" || siteLangHint === "no" ? siteLangHint : "no";
+  const q = question.trim();
+  if (!q) return fallback;
+
+  if (NO_SPECIAL_CHARS.test(q)) return "no";
+
+  const enHits = countLangTokens(q, EN_LANG_TOKENS);
+  const noHits = countLangTokens(q, NO_LANG_TOKENS);
+  if (enHits > noHits) return "en";
+  if (noHits > enHits) return "no";
+
+  const words = q.split(/\s+/).filter(Boolean);
+  if (words.length <= 2) return fallback;
+
+  return fallback;
 }
 
 export function classifyQuestionPreModel(question: string): PreModelClassification {

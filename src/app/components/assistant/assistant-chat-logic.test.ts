@@ -27,6 +27,8 @@ describe("assistant chat UI logic", () => {
     assert.equal(getAssistantUiCopy("en").contactHref, "/en/consulting");
     assert.equal(getAssistantUiCopy("no").launcherLabel, "Utforsk Marius");
     assert.equal(getAssistantUiCopy("en").launcherLabel, "Explore Marius");
+    assert.equal(getAssistantUiCopy("no").bilingualHint, "Still spørsmål på norsk eller engelsk.");
+    assert.equal(getAssistantUiCopy("en").bilingualHint, "Ask in Norwegian or English.");
     assert.deepEqual(getAssistantUiCopy("no").suggestions, [
       "Hvordan kan Marius hjelpe virksomheten vår?",
       "Hvilke lederroller passer Marius til?",

@@ -310,6 +310,12 @@ export default function AssistantChatWidget({ maxQuestionChars }: { maxQuestionC
           )}
 
           <form onSubmit={onSubmit} className="shrink-0 border-t border-slate-800/60 p-3.5 space-y-2.5">
+            <p
+              id="assistant-bilingual-hint"
+              className="text-[11px] leading-snug text-slate-500"
+            >
+              {copy.bilingualHint}
+            </p>
             <label className="sr-only" htmlFor="assistant-chat-input">
               {copy.placeholder}
             </label>
