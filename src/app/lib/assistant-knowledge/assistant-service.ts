@@ -16,6 +16,8 @@ import {
 import {
   isConsultingEngagementQuestion,
   isPortfolioOverviewQuestion,
+  tryBookTopicAnswer,
+  tryGroundedAuthorshipAnswer,
   tryGroundedOverviewAnswer,
 } from "./grounded-overview-answer";
 import { tryGroundedFactualAnswer } from "./grounded-factual-answer";
@@ -261,6 +263,21 @@ export async function runAssistantQuery(
 
   if (shouldAnswerConservatively(question)) {
     return buildResponse("NOT_ON_SITE", fixedReply("NOT_ON_SITE", lang), lang, []);
+  }
+
+  const bookTopicAnswer = tryBookTopicAnswer(question, contexts, lang);
+  if (bookTopicAnswer) {
+    return buildResponse("ANSWER", bookTopicAnswer.answer, lang, bookTopicAnswer.sourceIds);
+  }
+
+  const authorshipAnswer = tryGroundedAuthorshipAnswer(question, contexts, lang);
+  if (authorshipAnswer) {
+    return buildResponse(
+      "ANSWER",
+      authorshipAnswer.answer,
+      lang,
+      authorshipAnswer.sourceIds.slice(0, ASSISTANT_LIMITS.maxSources)
+    );
   }
 
   if (isConsultingEngagementQuestion(question) || isPortfolioOverviewQuestion(question)) {

@@ -1,6 +1,7 @@
 import type { Lang } from "../../LanguageContext";
 import type { KnowledgeCategory } from "./types";
 import { inferSelectionIntent, projectSlugMatches } from "./selection-intent";
+import { isHiringQuestion, isValueCreationQuestion, isAuthorshipQuestion } from "./information-needs";
 import { listKnowledgeManifestEntries } from "./manifest";
 import { resolveSiteTabIntent } from "./site-tab-intent";
 
@@ -196,6 +197,30 @@ export function selectRelevantSourceIds(
         intent.bookOrHub !== "hub:articles"
       ) {
         score -= 6;
+      }
+      if (
+        entry.category === "article" &&
+        (isValueCreationQuestion(question) || isHiringQuestion(question)) &&
+        !isAuthorshipQuestion(question)
+      ) {
+        score -= 30;
+      }
+      if (isValueCreationQuestion(question) && entry.id.startsWith("tab:")) {
+        if (entry.id.includes(":home:") || entry.id.includes(":results:")) score += 22;
+        else if (entry.id.includes(":consulting:") || entry.id.includes(":experience:")) score += 14;
+      }
+      if (isAuthorshipQuestion(question) && entry.id === `hub:articles:${lang}`) {
+        score += 28;
+      }
+      if (
+        isAuthorshipQuestion(question) &&
+        /\bverdiskaping|verdiskiftet|value\s+creation\b/i.test(qLower) &&
+        entry.id.startsWith("book:")
+      ) {
+        score += 22;
+      }
+      if (isHiringQuestion(question) && entry.id.startsWith("tab:")) {
+        score += 12;
       }
       if (entry.category === "hub") score -= 2;
       if (entry.category === "legal") score -= 1;
