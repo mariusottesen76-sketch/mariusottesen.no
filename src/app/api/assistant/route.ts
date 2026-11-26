@@ -41,15 +41,17 @@ export async function POST(req: Request) {
 
   const result = await runAssistantQuery({ question, lang });
   const status =
-    result.errorCode === "invalid_request" || result.errorCode === "question_too_long"
-      ? 400
-      : result.errorCode === "ai_disabled" ||
-          result.errorCode === "ai_unconfigured" ||
-          result.errorCode === "model_error" ||
-          result.errorCode === "timeout" ||
-          result.errorCode === "validation_failed"
-        ? 503
-        : 200;
+    result.errorCode === "rate_limited"
+      ? 429
+      : result.errorCode === "invalid_request" || result.errorCode === "question_too_long"
+        ? 400
+        : result.errorCode === "ai_disabled" ||
+            result.errorCode === "ai_unconfigured" ||
+            result.errorCode === "model_error" ||
+            result.errorCode === "timeout" ||
+            result.errorCode === "validation_failed"
+          ? 503
+          : 200;
 
   return NextResponse.json(result, { status });
 }

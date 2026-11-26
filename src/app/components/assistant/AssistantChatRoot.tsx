@@ -1,10 +1,14 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import {
+  maxQuestionCharsFromGet,
+  shouldShowAssistantChat,
+  type AssistantGetConfig,
+} from "../../lib/assistant-ui-config";
 import AssistantChatWidget from "./AssistantChatWidget";
 
 type PublicAssistantConfig = {
-  uiEnabled: boolean;
   maxQuestionChars: number;
 };
 
@@ -15,12 +19,10 @@ export default function AssistantChatRoot() {
     let cancelled = false;
     fetch("/api/assistant", { method: "GET" })
       .then((r) => (r.ok ? r.json() : null))
-      .then((data) => {
-        if (cancelled || !data?.uiEnabled) return;
+      .then((data: AssistantGetConfig | null) => {
+        if (cancelled || !shouldShowAssistantChat(data)) return;
         setConfig({
-          uiEnabled: true,
-          maxQuestionChars:
-            typeof data.maxQuestionChars === "number" ? data.maxQuestionChars : 800,
+          maxQuestionChars: maxQuestionCharsFromGet(data),
         });
       })
       .catch(() => {
@@ -31,7 +33,7 @@ export default function AssistantChatRoot() {
     };
   }, []);
 
-  if (!config?.uiEnabled) return null;
+  if (!config) return null;
 
   return <AssistantChatWidget maxQuestionChars={config.maxQuestionChars} />;
 }

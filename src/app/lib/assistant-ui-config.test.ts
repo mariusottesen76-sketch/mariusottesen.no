@@ -1,6 +1,10 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
-import { isAssistantUiEnabled, getAssistantPublicConfig } from "./assistant-ui-config";
+import {
+  getAssistantPublicConfig,
+  isAssistantUiEnabled,
+  shouldShowAssistantChat,
+} from "./assistant-ui-config";
 
 const mockEnv = (partial: Record<string, string | undefined>): NodeJS.ProcessEnv =>
   partial as unknown as NodeJS.ProcessEnv;
@@ -18,5 +22,12 @@ describe("assistant UI config", () => {
     );
     assert.equal(cfg.uiEnabled, true);
     assert.equal(cfg.enabled, false);
+  });
+
+  it("shouldShowAssistantChat requires both ui and api from GET probe", () => {
+    assert.equal(shouldShowAssistantChat(null), false);
+    assert.equal(shouldShowAssistantChat({ uiEnabled: true, enabled: false }), false);
+    assert.equal(shouldShowAssistantChat({ uiEnabled: false, enabled: true }), false);
+    assert.equal(shouldShowAssistantChat({ uiEnabled: true, enabled: true }), true);
   });
 });

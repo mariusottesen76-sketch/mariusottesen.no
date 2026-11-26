@@ -149,4 +149,46 @@ describe("assistant chat UI logic", () => {
     assert.equal(shouldAcceptChatSubmit(q, false), true);
     assert.ok(q.length > 10);
   });
+
+  it("rate limit copy (NO/EN)", () => {
+    assert.match(getAssistantUiCopy("no").errors.rateLimited, /mange spørsmål/i);
+    assert.match(getAssistantUiCopy("en").errors.rateLimited, /several questions/i);
+  });
+
+  it("userFacingError maps HTTP 429 and rate_limited code", () => {
+    assert.match(userFacingError("no", 429), /mange spørsmål/i);
+    assert.match(userFacingError("en", 429), /several questions/i);
+    assert.match(userFacingError("no", 200, "rate_limited"), /mange spørsmål/i);
+  });
+
+  it("chatOutcomeFromResponse maps HTTP 429 with JSON", () => {
+    const out = chatOutcomeFromResponse(false, 429, { error: "Too Many Requests" }, "no", "rl1");
+    assert.equal(out.kind, "error");
+    assert.match(out.message.text, /mange spørsmål/i);
+    assert.ok(!out.message.text.includes("429"));
+  });
+
+  it("chatOutcomeFromResponse maps HTTP 429 without JSON body", () => {
+    const out = chatOutcomeFromResponse(false, 429, {}, "en", "rl2");
+    assert.equal(out.kind, "error");
+    assert.match(out.message.text, /several questions/i);
+  });
+
+  it("chatOutcomeFromResponse maps rate_limited errorCode on 200", () => {
+    const out = chatOutcomeFromResponse(
+      false,
+      429,
+      {
+        category: "NOT_ON_SITE",
+        answer: "",
+        lang: "no",
+        sourceIds: [],
+        urls: [],
+        errorCode: "rate_limited",
+      },
+      "no",
+      "rl3"
+    );
+    assert.match(out.message.text, /mange spørsmål/i);
+  });
 });

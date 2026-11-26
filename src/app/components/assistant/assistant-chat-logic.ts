@@ -20,6 +20,7 @@ export function userFacingError(
   errorCode?: AssistantErrorCode
 ): string {
   const c = getAssistantUiCopy(lang).errors;
+  if (errorCode === "rate_limited" || status === 429) return c.rateLimited;
   if (errorCode === "question_too_long" || status === 400) return c.tooLong;
   if (errorCode === "ai_disabled" || errorCode === "ai_unconfigured") return c.disabled;
   if (errorCode === "model_error") return c.modelUnavailable;
@@ -106,6 +107,18 @@ export function chatOutcomeFromResponse(
 ): ChatSubmitOutcome {
   const errCode =
     "errorCode" in body && body.errorCode ? (body.errorCode as AssistantErrorCode) : undefined;
+  const rateLimited = status === 429 || errCode === "rate_limited";
+
+  if (rateLimited) {
+    return {
+      kind: "error",
+      message: {
+        id: `${messageIdPrefix}-err`,
+        role: "assistant",
+        text: userFacingError(lang, status, "rate_limited"),
+      },
+    };
+  }
 
   if (!resOk || isTechnicalFailureCode(errCode)) {
     return {

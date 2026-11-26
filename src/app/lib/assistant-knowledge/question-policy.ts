@@ -59,6 +59,36 @@ const UNDOCUMENTED_AVAILABILITY_EXTENDED =
 
 const MARIUS_SUBJECT = /\b(marius|ottesen|han|he)\b/i;
 
+/** Documented professional relationship context — not private life. */
+const PROFESSIONAL_RELATIONSHIP =
+  /\b(kunde|samarbeids|arbeids|forretnings|business|customer|working|professional|employer|klient|client|stakeholder|leverandør|vendor)(forhold|relasjon\w*|relationships?)\b/i;
+
+const PROFESSIONAL_RELATIONSHIP_PHRASE =
+  /\b(kundeforhold|samarbeidsforhold|arbeidsforhold|lederrelasjon\w*|profesjonelle?\s+relasjon\w*|professional\s+relationships?|working\s+relationships?|customer\s+relationships?)\b/i;
+
+const PRIVATE_LIFE =
+  /\b(private|personlige?)\s+(forhold|liv|life|relasjoner?|relationships?)\b/i;
+
+const PRIVATE_LIFE_EXTRA =
+  /\b(privatliv|private\s+life|personal\s+life|love\s+life|private\s+relationships?|personal\s+relationships?)\b/i;
+
+const PRIVATE_PARTNERSHIP =
+  /\b(ektefelle|samboer|samliv|ekteskap|kjæreste|romantisk|spouse|domestic\s+partner|dating\s+life)\b/i;
+
+export function isPrivatePersonalLifeQuestion(question: string): boolean {
+  const q = question.trim();
+  if (PROFESSIONAL_RELATIONSHIP.test(q) || PROFESSIONAL_RELATIONSHIP_PHRASE.test(q)) {
+    return false;
+  }
+  if (PRIVATE_LIFE.test(q) || PRIVATE_LIFE_EXTRA.test(q) || PRIVATE_PARTNERSHIP.test(q)) {
+    return true;
+  }
+  if (MARIUS_SUBJECT.test(q) && /\bprivate\b/i.test(q) && /\bforhold\b/i.test(q)) {
+    return true;
+  }
+  return false;
+}
+
 export function hasInScopeSiteAnchor(question: string): boolean {
   const q = question.trim();
   return IN_SCOPE_HINT.test(q) || /\b(flowsignal|mixed:)\b/i.test(q);
@@ -89,6 +119,9 @@ export function classifyQuestionPreModel(question: string): PreModelClassificati
     if (pattern.test(q)) {
       return { category: "RESTRICTED", reason: "policy_restricted" };
     }
+  }
+  if (isPrivatePersonalLifeQuestion(q)) {
+    return { category: "RESTRICTED", reason: "policy_private_life" };
   }
   for (const pattern of OFF_TOPIC_PATTERNS) {
     if (pattern.test(q)) {

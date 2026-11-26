@@ -20,6 +20,7 @@ export type AssistantUiCopy = {
     errors: {
     tooLong: string;
     disabled: string;
+    rateLimited: string;
     generic: string;
     timeout: string;
     modelUnavailable: string;
@@ -54,6 +55,8 @@ const COPY: Record<Lang, Omit<AssistantUiCopy, "contactHref">> = {
     errors: {
       tooLong: "Spørsmålet er for langt. Kort det ned og prøv igjen.",
       disabled: "AI-assistenten er ikke tilgjengelig akkurat nå. Bruk kontaktskjemaet i stedet.",
+      rateLimited:
+        "Du har sendt mange spørsmål på kort tid. Vent litt før du prøver igjen.",
       generic: "Noe gikk galt. Prøv igjen om litt, eller kontakt Marius direkte.",
       timeout: "Det tar dessverre litt for lang tid å hente svaret. Prøv gjerne igjen.",
       modelUnavailable:
@@ -87,6 +90,8 @@ const COPY: Record<Lang, Omit<AssistantUiCopy, "contactHref">> = {
     errors: {
       tooLong: "Your question is too long. Please shorten it and try again.",
       disabled: "The AI assistant is not available right now. Please use the contact form instead.",
+      rateLimited:
+        "You've sent several questions in a short time. Please wait a moment before trying again.",
       generic: "Something went wrong. Try again shortly, or contact Marius directly.",
       timeout: "Unfortunately it is taking too long to fetch an answer. Please try again.",
       modelUnavailable:
