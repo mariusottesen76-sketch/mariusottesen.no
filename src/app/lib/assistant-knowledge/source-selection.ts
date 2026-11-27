@@ -54,13 +54,20 @@ const CATEGORY_KEYWORDS: Record<string, KnowledgeCategory[]> = {
   advisory: ["consulting"],
   workshop: ["consulting"],
   crm: ["consulting", "article"],
-  utdanning: ["cv", "experience"],
-  education: ["cv", "experience"],
+  utdanning: ["career", "cv", "experience"],
+  education: ["career", "cv", "experience"],
+  arbeidsgiver: ["career", "experience", "cv"],
+  employer: ["career", "experience", "cv"],
+  employers: ["career", "experience", "cv"],
+  pelagia: ["career", "experience"],
+  mundipharma: ["career", "experience", "cv"],
+  falck: ["career", "experience"],
+  assessit: ["career", "experience"],
   referanse: ["references"],
   references: ["references"],
   profil: ["profile"],
   profile: ["profile"],
-  stilling: ["cv", "profile"],
+  stilling: ["career", "cv", "profile"],
   roller: ["cv"],
   roles: ["cv"],
   kommersiell: ["profile", "consulting", "cv"],
@@ -118,6 +125,32 @@ export function selectRelevantSourceIds(
       }
       if (intent.preferredCategories.includes(entry.category)) {
         score += 5;
+      }
+      if (entry.category === "career" && intent.preferredCategories.includes("career")) {
+        score += 30;
+      }
+      if (entry.category === "open_application" && intent.preferredCategories.includes("open_application")) {
+        score += 26;
+      }
+      if (entry.category === "career" && /\barbeidsgiver\w*|employers?\b/i.test(qLower)) {
+        score += 45;
+      }
+      if (isAuthorshipQuestion(question)) {
+        if (entry.category === "open_application") score -= 90;
+        if (entry.id === `hub:articles:${lang}`) score += 45;
+        if (entry.id === `book:${lang}`) score += 42;
+      }
+      if (entry.category === "open_application" && isValueCreationQuestion(question)) {
+        score += 58;
+      }
+      if (entry.category === "open_application" && isHiringQuestion(question)) {
+        score += 52;
+      }
+      if (
+        entry.category === "open_application" &&
+        /\b(lederroller).*\bpasser\b|\bpasser\b.*\blederroller\b/i.test(qLower)
+      ) {
+        score += 62;
       }
       if (entry.category === "project") {
         const slugRaw = entry.id.replace(/^project:/, "").replace(/:(no|en)$/, "");

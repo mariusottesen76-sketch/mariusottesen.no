@@ -15,7 +15,7 @@ function say(text: string, lang: Lang): string {
 
 export function isBiTeachingQuestion(question: string): boolean {
   return (
-    /\b(undervist|underviser|foreleser|forelesning|lectur|teaches|taught|teaching|faculty|professor)\b/i.test(
+    /\b(undervist\w*|underviser|foreleser\w*|forelesning|lectur|teaches|taught|teaching|faculty|professor)\b/i.test(
       question
     ) && /\b(bi\b|handelshøyskolen)/i.test(question)
   );
@@ -240,7 +240,12 @@ export function tryGroundedFactualAnswer(
     return { answer: say(text, lang), sourceIds: [experience, cv] };
   }
 
-  if (/\b(lederroller|roller.*passer|which\s+leadership\s+roles|hvilke\s+roller)\b/i.test(q)) {
+  if (
+    /\b(aktuell\w*\s+for\s+roller|roller\s+.*\s+passer|which\s+roles\s+is\s+he\s+(suitable|fit)|hvilke\s+roller\s+er\s+han\s+aktuell)\b/i.test(
+      q
+    ) &&
+    !/\b(kjennetegner|kjennetegn|lederstil|leadership\s+style)\b/i.test(q)
+  ) {
     const p = getProfilData(lang);
     const roles = p.roller.join(", ");
     const text =

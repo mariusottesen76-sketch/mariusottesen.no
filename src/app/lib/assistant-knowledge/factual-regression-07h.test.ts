@@ -67,7 +67,7 @@ const REGRESSION = [
     q: "Hvilke lederroller passer han til?",
     mustMatch: [/kommersiell leder|salgsdirektør|transformasjonsleder|aktuell/i],
     mustNot: [/ikke dokumentert/i],
-    sourceHint: /:home:|tab:cv:/,
+    sourceHint: /:home:|tab:cv:|open-application:|document:open-application/,
   },
 ] as const;
 

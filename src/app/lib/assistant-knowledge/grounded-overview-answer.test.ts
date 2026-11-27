@@ -83,6 +83,9 @@ describe("assistant pipeline 05E — consulting help", () => {
       }
     );
     assert.equal(res.category, "ANSWER");
-    assert.ok(res.sourceIds.includes("tab:cv:no"));
+    assert.ok(
+      res.sourceIds.some((id) => /tab:cv:no|document:open-application:no/.test(id)),
+      res.sourceIds.join(",")
+    );
   });
 });

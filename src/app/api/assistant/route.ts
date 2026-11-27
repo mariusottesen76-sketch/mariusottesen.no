@@ -40,7 +40,12 @@ export async function POST(req: Request) {
       ? String((body as AssistantRequestBody).question ?? "")
       : "";
 
-  const result = await runAssistantQuery({ question, lang });
+  const contextRaw =
+    typeof body === "object" && body !== null && "context" in body
+      ? (body as AssistantRequestBody).context
+      : undefined;
+
+  const result = await runAssistantQuery({ question, lang, context: contextRaw });
   const status =
     result.errorCode === "rate_limited"
       ? 429
@@ -64,6 +69,6 @@ export async function GET() {
     uiEnabled: isAssistantUiEnabled(),
     maxQuestionChars: ASSISTANT_LIMITS.maxQuestionChars,
     maxSources: ASSISTANT_LIMITS.maxSources,
-    note: "POST JSON { question, lang? }. CHAT_ENABLED must be true with ANTHROPIC_API_KEY set.",
+    note: "POST JSON { question, lang?, context?: { employerKey? } }. CHAT_ENABLED must be true with ANTHROPIC_API_KEY set.",
   });
 }

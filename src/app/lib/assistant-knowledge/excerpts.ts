@@ -4,6 +4,9 @@ import { getErfaringData } from "../../data/erfaringInnhold";
 import { getMocResultaterPunkter } from "../../data/moc-consulting-resultater";
 import { getHovedpakker } from "../../data/consulting";
 import { getDokumentasjonData } from "../../data/dokumentasjon";
+import { formatCareerInventoryPlain } from "../../data/career-facts";
+import { formatOpenApplicationExcerpt } from "../../data/open-application-knowledge";
+import { getRekruttererVerdiData } from "../../data/rekrutterer-verdi";
 import { getTranslation } from "../../data/translations";
 import { BOK_PROSJEKT_COPY } from "../../data/bok-prosjekt-innhold";
 import { getPrivacyPageContent } from "../../data/privacy-content";
@@ -66,19 +69,23 @@ function sitePageExcerpt(ref: Extract<KnowledgeContentRef, { kind: "site-page" }
     case "experience": {
       const e = getErfaringData(lang);
       const employerIndex = e.jobs.map((j) => `${j.company} (${j.period})`).join("; ");
-      const jobSnippets = e.jobs.slice(0, 4).map((j) => {
+      const otherSnippets = e.others.map((o) => `${o.area}: ${o.desc}`);
+      const jobSnippets = e.jobs.slice(0, 3).map((j) => {
         const mandate = "mandate" in j && typeof j.mandate === "string" ? j.mandate : "";
         const results = "results" in j && typeof j.results === "string" ? j.results : "";
-        return `${j.title} (${j.company}, ${j.period}): ${stripHtmlToPlainText(mandate)} ${stripHtmlToPlainText(results)}`.trim();
+        return `${j.title} (${j.company}, ${j.period}): ${truncatePlainText(stripHtmlToPlainText(mandate), 200)} ${truncatePlainText(stripHtmlToPlainText(results), 160)}`.trim();
       });
-      const tailJobs = e.jobs.slice(4).map((j) => `${j.title} (${j.company}, ${j.period})`);
-      const otherSnippets = e.others.map((o) => `${o.area}: ${o.desc}`);
+      const tailJobs = e.jobs.slice(3).map((j) => `${j.title} (${j.company}, ${j.period})`);
+      const fullCvHint =
+        lang === "no"
+          ? "Komplett stillingshistorikk: godkjent CV på /cv (PDF), ikke bare utvalgte høydepunkter her."
+          : "Full career timeline: approved CV at /cv (PDF), not only the highlights below.";
       return excerpt(
         sourceId,
         lang,
         "partial",
         joinParagraphs(
-          [e.intro, `Arbeidsgivere: ${employerIndex}`, ...jobSnippets, ...tailJobs, ...otherSnippets],
+          [e.intro, fullCvHint, `Arbeidsgivere (utvalg): ${employerIndex}`, ...otherSnippets, ...tailJobs, ...jobSnippets],
           EXCERPT_MAX
         )
       );
@@ -99,11 +106,16 @@ function sitePageExcerpt(ref: Extract<KnowledgeContentRef, { kind: "site-page" }
     }
     case "cv": {
       const d = getDokumentasjonData(lang);
+      const rv = getRekruttererVerdiData(lang).verdiSituasjoner;
+      const valueCards = rv.kort.map((k) => `${k.title}: ${k.text}`);
       return excerpt(
         sourceId,
         lang,
         "partial",
-        joinParagraphs([d.intro, ...d.resultater, ...d.kompetanse.slice(0, 6)], EXCERPT_MAX)
+        joinParagraphs(
+          [d.intro, rv.ingress, ...valueCards, ...d.resultater, ...d.kompetanse.slice(0, 6)],
+          EXCERPT_MAX
+        )
       );
     }
     case "contact": {
@@ -202,6 +214,23 @@ export function buildExcerptForContentRef(
     const text = hasSubstantiveBody ? bodyPlain : teaserPlain;
     const level: KnowledgeExcerptLevel = hasSubstantiveBody ? "partial" : "metadata_only";
     return excerpt(sourceId, lang, level, text);
+  }
+
+  if (contentRef.kind === "career-registry") {
+    const header =
+      lang === "no"
+        ? "Autoritativ karriereoversikt fra godkjent CV (nov. 2026). /erfaring viser utvalgte høydepunkter."
+        : "Authoritative career overview from the approved CV (Nov 2026). /experience shows selected highlights only.";
+    return excerpt(
+      sourceId,
+      lang,
+      "partial",
+      joinParagraphs([header, formatCareerInventoryPlain(lang)], EXCERPT_MAX)
+    );
+  }
+
+  if (contentRef.kind === "open-application") {
+    return excerpt(sourceId, lang, "partial", joinParagraphs([formatOpenApplicationExcerpt(lang)], EXCERPT_MAX));
   }
 
   if (contentRef.kind === "project") {

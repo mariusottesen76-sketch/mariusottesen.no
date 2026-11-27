@@ -4,7 +4,10 @@ import React, { useCallback, useEffect, useId, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { MessageCircle, Send, X, ExternalLink } from "lucide-react";
-import type { AssistantResponseBody } from "../../lib/assistant-knowledge/assistant-types";
+import type {
+  AssistantConversationFocus,
+  AssistantResponseBody,
+} from "../../lib/assistant-knowledge/assistant-types";
 import { getAssistantUiCopy } from "./assistant-copy";
 import {
   type ChatMessage,
@@ -35,6 +38,7 @@ export default function AssistantChatWidget({ maxQuestionChars }: { maxQuestionC
   const liveRef = useRef<HTMLDivElement>(null);
   const inFlightRef = useRef(false);
   const stickToBottomRef = useRef(true);
+  const conversationFocusRef = useRef<AssistantConversationFocus | undefined>(undefined);
 
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<ChatMessage[]>([]);
@@ -148,7 +152,13 @@ export default function AssistantChatWidget({ maxQuestionChars }: { maxQuestionC
         const res = await fetch("/api/assistant", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ question: trimmed, lang }),
+          body: JSON.stringify({
+            question: trimmed,
+            lang,
+            ...(conversationFocusRef.current?.employerKey
+              ? { context: { employerKey: conversationFocusRef.current.employerKey } }
+              : {}),
+          }),
           signal: controller.signal,
         });
         let body: AssistantResponseBody | { error?: string } = { error: "unknown" };
@@ -158,6 +168,10 @@ export default function AssistantChatWidget({ maxQuestionChars }: { maxQuestionC
           /* keep fallback */
         }
         const outcome = chatOutcomeFromResponse(res.ok, res.status, body, lang, turnId);
+        if ("conversationFocus" in body && res.ok) {
+          const focus = (body as AssistantResponseBody).conversationFocus;
+          conversationFocusRef.current = focus?.employerKey ? { employerKey: focus.employerKey } : undefined;
+        }
         setMessages((prev) => [...prev, outcome.message]);
         if (outcome.kind === "assistant" && liveRef.current) {
           liveRef.current.textContent = outcome.message.text.slice(0, 120);

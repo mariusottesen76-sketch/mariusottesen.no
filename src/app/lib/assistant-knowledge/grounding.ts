@@ -42,6 +42,8 @@ export function assessGroundingFromExcerpt(
     "book",
     "legal",
     "external_reference",
+    "career",
+    "open_application",
   ]);
 
   if (entry.category === "hub") {
