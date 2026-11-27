@@ -6,6 +6,7 @@ import { isEnPath } from "./lib/locale-routes";
 import { serializeJsonLd } from "./lib/json-ld";
 import { getStructuredDataGraph } from "./lib/structured-data";
 import SiteConsentRoot from "./components/consent/SiteConsentRoot";
+import { getAssistantChatBootstrap } from "./components/assistant/assistant-chat-bootstrap";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -89,6 +90,7 @@ export default async function RootLayout({
   const lang = isEnPath(pathname) ? "en" : "no";
   const isProfileHome = pathname === "/" || pathname === "/en";
   const jsonLd = getStructuredDataGraph(lang, { includeProfilePage: isProfileHome });
+  const assistantChat = getAssistantChatBootstrap();
 
   return (
     <html lang={lang} suppressHydrationWarning>
@@ -108,7 +110,7 @@ export default async function RootLayout({
         className={`${inter.className} bg-slate-950 text-slate-200 min-h-screen selection:bg-indigo-500/30`}
       >
         <div className="fixed inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-indigo-900/10 via-transparent to-transparent pointer-events-none" />
-        <SiteConsentRoot>{children}</SiteConsentRoot>
+        <SiteConsentRoot assistantChat={assistantChat}>{children}</SiteConsentRoot>
       </body>
     </html>
   );

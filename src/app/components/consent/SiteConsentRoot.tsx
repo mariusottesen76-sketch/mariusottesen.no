@@ -5,6 +5,7 @@ import { useSearchParams } from "next/navigation";
 import { ConsentProvider } from "./ConsentContext";
 import CookieConsentBanner from "./CookieConsentBanner";
 import AssistantChatRoot from "../assistant/AssistantChatRoot";
+import type { AssistantChatBootstrap } from "../assistant/assistant-chat-bootstrap";
 import AnalyticsPageView from "../analytics/AnalyticsPageView";
 import AnalyticsClickListener from "../analytics/AnalyticsClickListener";
 import { applyAnalyticsOptOutFromSearch } from "../../lib/analytics-opt-out";
@@ -25,7 +26,13 @@ function OptOutQueryHandler() {
   return null;
 }
 
-export default function SiteConsentRoot({ children }: { children: React.ReactNode }) {
+export default function SiteConsentRoot({
+  children,
+  assistantChat,
+}: {
+  children: React.ReactNode;
+  assistantChat?: AssistantChatBootstrap;
+}) {
   return (
     <ConsentProvider>
       {children}
@@ -35,7 +42,7 @@ export default function SiteConsentRoot({ children }: { children: React.ReactNod
       </Suspense>
       <AnalyticsClickListener />
       <CookieConsentBanner />
-      <AssistantChatRoot />
+      <AssistantChatRoot bootstrap={assistantChat} />
     </ConsentProvider>
   );
 }
