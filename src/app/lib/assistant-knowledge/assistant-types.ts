@@ -11,9 +11,15 @@ export type AssistantErrorCode =
   | "timeout"
   | "rate_limited";
 
+export type AssistantConversationFocus = {
+  employerKey?: string;
+};
+
 export type AssistantRequestBody = {
   question: string;
   lang?: Lang;
+  /** Valgfri, allowlist-validert samtalekontekst fra klient (ingen historikk). */
+  context?: AssistantConversationFocus;
 };
 
 export type AssistantResponseBody = {
@@ -23,6 +29,8 @@ export type AssistantResponseBody = {
   sourceIds: string[];
   urls: string[];
   errorCode?: AssistantErrorCode;
+  /** Tillatt arbeidsgiverfokus for neste tur (allowlist). */
+  conversationFocus?: AssistantConversationFocus;
 };
 
 export type ModelReplyPayload = {

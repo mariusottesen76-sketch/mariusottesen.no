@@ -22,6 +22,20 @@ import {
 } from "./grounded-overview-answer";
 import { tryGroundedFactualAnswer } from "./grounded-factual-answer";
 import { tryGroundedCareerAnswer } from "./grounded-career-answer";
+import {
+  augmentQuestionForRetrieval,
+  resolveConversationFocus,
+  sanitizeClientContext,
+  sessionHintForModel,
+  type AssistantClientContext,
+  type ConversationFocus,
+} from "./conversation-context";
+import {
+  deriveFocusForResponse,
+  tryGroundedEmployerContextAnswer,
+  tryGroundedRoleFitAnswer,
+  tryGroundedRoleHistoryAnswer,
+} from "./grounded-context-answer";
 import { selectRelevantSourceIds } from "./source-selection";
 import { detectCvIntent, isSectionTabDiscoveryQuestion, resolveSiteTabIntent } from "./site-tab-intent";
 import { tryTabSectionOverviewAnswer } from "./tab-section-answer";
@@ -98,6 +112,17 @@ function buildResponse(
     return buildTechnicalFailure(lang, "validation_failed");
   }
   return { category, answer, lang, sourceIds, urls, errorCode };
+}
+
+function attachConversationFocus(
+  body: AssistantResponseBody,
+  question: string,
+  clientCtx?: AssistantClientContext,
+  explicitFocus?: ConversationFocus
+): AssistantResponseBody {
+  const focus = explicitFocus ?? deriveFocusForResponse(question, clientCtx);
+  if (!focus?.employerKey) return body;
+  return { ...body, conversationFocus: { employerKey: focus.employerKey } };
 }
 
 function loadSourceContexts(sourceIds: string[], lang: Lang): SourceContext[] {
@@ -214,27 +239,70 @@ export async function runAssistantQuery(
   }
 
   const lang = detectQuestionLang(question, body.lang);
+  const clientCtx = sanitizeClientContext(body.context);
+  const conversationFocus = resolveConversationFocus(question, clientCtx);
+
   const pre = classifyQuestionPreModel(question);
   if (pre) {
-    return buildResponse(pre.category, fixedReply(pre.category, lang), lang, []);
+    return attachConversationFocus(buildResponse(pre.category, fixedReply(pre.category, lang), lang, []), question, clientCtx);
   }
 
-  const sourceIds = selectRelevantSourceIds(question, lang, ASSISTANT_LIMITS.maxSources);
+  const roleHistory = tryGroundedRoleHistoryAnswer(question, lang);
+  if (roleHistory) {
+    return attachConversationFocus(
+      buildResponse("ANSWER", roleHistory.answer, lang, roleHistory.sourceIds.slice(0, 3)),
+      question,
+      clientCtx
+    );
+  }
+
+  const roleFit = tryGroundedRoleFitAnswer(question, lang);
+  if (roleFit) {
+    return attachConversationFocus(
+      buildResponse("ANSWER", roleFit.answer, lang, roleFit.sourceIds.slice(0, 3)),
+      question,
+      clientCtx
+    );
+  }
+
+  const employerContext = tryGroundedEmployerContextAnswer(question, lang, clientCtx);
+  if (employerContext) {
+    return attachConversationFocus(
+      buildResponse("ANSWER", employerContext.answer, lang, employerContext.sourceIds.slice(0, 3)),
+      question,
+      clientCtx,
+      employerContext.focus
+    );
+  }
+
+  const retrievalQuestion = augmentQuestionForRetrieval(
+    question,
+    conversationFocus,
+    lang,
+    ASSISTANT_LIMITS.maxQuestionChars
+  );
+  const sourceIds = selectRelevantSourceIds(retrievalQuestion, lang, ASSISTANT_LIMITS.maxSources);
   const contexts = loadSourceContexts(sourceIds, lang);
 
   if (isSectionTabDiscoveryQuestion(question)) {
     const section = tryTabSectionOverviewAnswer(question, lang);
-    if (section) return buildResponse("ANSWER", section.answer, lang, [section.sourceId]);
+    if (section) {
+      return attachConversationFocus(buildResponse("ANSWER", section.answer, lang, [section.sourceId]), question, clientCtx);
+    }
   }
 
   if (isReferencesPresenceQuestion(question)) {
     const refs = tryReferencesBriefAnswer(lang);
-    if (refs) return buildResponse("ANSWER", refs.answer, lang, [refs.sourceId]);
+    if (refs) {
+      return attachConversationFocus(buildResponse("ANSWER", refs.answer, lang, [refs.sourceId]), question, clientCtx);
+    }
   }
 
   if (isSimpleConsultingOfferingQuestion(question)) {
     const consulting = trySimpleConsultingOfferingAnswer(lang);
-    if (consulting) return buildResponse("ANSWER", consulting.answer, lang, [consulting.sourceId]);
+    if (consulting) {
+      return attachConversationFocus(buildResponse("ANSWER", consulting.answer, lang, [consulting.sourceId]), question, clientCtx);
+    }
   }
 
   if (isContactGuidanceQuestion(question)) {
@@ -244,52 +312,74 @@ export async function runAssistantQuery(
       lang
     );
     const contactCtx = contactContexts.find((c) => /:contact:/.test(c.sourceId));
-    if (contactCtx) return contactGuidanceAnswer(lang, contactCtx);
+    if (contactCtx) {
+      return attachConversationFocus(contactGuidanceAnswer(lang, contactCtx), question, clientCtx);
+    }
   }
 
   if (isNavigationQuestion(question)) {
     const nav = navigationAnswer(lang, contexts, question);
-    if (nav) return nav;
+    if (nav) return attachConversationFocus(nav, question, clientCtx);
   }
 
   const substantive = contexts.filter((c) => c.suitableForFactualAnswer);
   if (substantive.length === 0) {
-    return buildResponse("NOT_ON_SITE", fixedReply("NOT_ON_SITE", lang), lang, []);
+    return attachConversationFocus(buildResponse("NOT_ON_SITE", fixedReply("NOT_ON_SITE", lang), lang, []), question, clientCtx);
   }
 
   const groundedFactual = tryGroundedFactualAnswer(question, lang);
   if (groundedFactual) {
-    return buildResponse("ANSWER", groundedFactual.answer, lang, groundedFactual.sourceIds.slice(0, 3));
+    return attachConversationFocus(
+      buildResponse("ANSWER", groundedFactual.answer, lang, groundedFactual.sourceIds.slice(0, 3)),
+      question,
+      clientCtx
+    );
   }
 
   const groundedCareer = tryGroundedCareerAnswer(question, lang);
   if (groundedCareer) {
-    return buildResponse("ANSWER", groundedCareer.answer, lang, groundedCareer.sourceIds.slice(0, 3));
+    return attachConversationFocus(
+      buildResponse("ANSWER", groundedCareer.answer, lang, groundedCareer.sourceIds.slice(0, 3)),
+      question,
+      clientCtx
+    );
   }
 
   if (shouldAnswerConservatively(question)) {
-    return buildResponse("NOT_ON_SITE", fixedReply("NOT_ON_SITE", lang), lang, []);
+    return attachConversationFocus(buildResponse("NOT_ON_SITE", fixedReply("NOT_ON_SITE", lang), lang, []), question, clientCtx);
   }
 
   const bookTopicAnswer = tryBookTopicAnswer(question, contexts, lang);
   if (bookTopicAnswer) {
-    return buildResponse("ANSWER", bookTopicAnswer.answer, lang, bookTopicAnswer.sourceIds);
+    return attachConversationFocus(
+      buildResponse("ANSWER", bookTopicAnswer.answer, lang, bookTopicAnswer.sourceIds),
+      question,
+      clientCtx
+    );
   }
 
   const authorshipAnswer = tryGroundedAuthorshipAnswer(question, contexts, lang);
   if (authorshipAnswer) {
-    return buildResponse(
-      "ANSWER",
-      authorshipAnswer.answer,
-      lang,
-      authorshipAnswer.sourceIds.slice(0, ASSISTANT_LIMITS.maxSources)
+    return attachConversationFocus(
+      buildResponse(
+        "ANSWER",
+        authorshipAnswer.answer,
+        lang,
+        authorshipAnswer.sourceIds.slice(0, ASSISTANT_LIMITS.maxSources)
+      ),
+      question,
+      clientCtx
     );
   }
 
   if (isConsultingEngagementQuestion(question) || isPortfolioOverviewQuestion(question)) {
     const excerptAnswer = tryGroundedOverviewAnswer(question, contexts, lang);
     if (excerptAnswer) {
-      return buildResponse("ANSWER", excerptAnswer.answer, lang, [excerptAnswer.sourceId]);
+      return attachConversationFocus(
+        buildResponse("ANSWER", excerptAnswer.answer, lang, [excerptAnswer.sourceId]),
+        question,
+        clientCtx
+      );
     }
   }
 
@@ -310,7 +400,7 @@ export async function runAssistantQuery(
   }
 
   const system = buildSystemPrompt(lang);
-  const userMessage = buildUserPrompt(question, contexts);
+  const userMessage = buildUserPrompt(question, contexts, sessionHintForModel(conversationFocus, lang));
   if (userMessage.length > ASSISTANT_LIMITS.maxModelInputChars) {
     return buildTechnicalFailure(lang, "validation_failed");
   }
@@ -361,7 +451,11 @@ export async function runAssistantQuery(
   if (!validated.ok) {
     const excerptFallback = tryGroundedOverviewAnswer(question, contexts, lang);
     if (excerptFallback) {
-      return buildResponse("ANSWER", excerptFallback.answer, lang, [excerptFallback.sourceId]);
+      return attachConversationFocus(
+        buildResponse("ANSWER", excerptFallback.answer, lang, [excerptFallback.sourceId]),
+        question,
+        clientCtx
+      );
     }
     return buildTechnicalFailure(lang, "validation_failed");
   }
@@ -371,17 +465,29 @@ export async function runAssistantQuery(
     if (payload.category === "NOT_ON_SITE") {
       const excerptFallback = tryGroundedOverviewAnswer(question, contexts, lang);
       if (excerptFallback) {
-        return buildResponse("ANSWER", excerptFallback.answer, lang, [excerptFallback.sourceId]);
+        return attachConversationFocus(
+          buildResponse("ANSWER", excerptFallback.answer, lang, [excerptFallback.sourceId]),
+          question,
+          clientCtx
+        );
       }
     }
     let category = payload.category;
     if (category === "RESTRICTED" && isUndocumentedAvailabilityQuestion(question)) {
       category = "NOT_ON_SITE";
     }
-    return buildResponse(category, payload.answer.trim() || fixedReply(category, lang), lang, []);
+    return attachConversationFocus(
+      buildResponse(category, payload.answer.trim() || fixedReply(category, lang), lang, []),
+      question,
+      clientCtx
+    );
   }
 
-  return buildResponse("ANSWER", payload.answer.trim(), lang, payload.sourceIds);
+  return attachConversationFocus(
+    buildResponse("ANSWER", payload.answer.trim(), lang, payload.sourceIds),
+    question,
+    clientCtx
+  );
 }
 
 /** Exposed for tests — parse only. */

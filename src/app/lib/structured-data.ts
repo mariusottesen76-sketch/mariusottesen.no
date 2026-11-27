@@ -23,8 +23,8 @@ function rowSolutionsOrgNode(lang: "no" | "en") {
     areaServed: "NO",
     description:
       lang === "en"
-        ? "Commercial collaboration between Marius Ottesen and Thomas Holm for SMEs in Norway — visibility, B2B sales, customer follow-up, sales development and practical AI (via rowsolutions.no)."
-        : "Kommersielt samarbeid mellom Marius Ottesen og Thomas Holm for SMB i Norge — synlighet, B2B-salg, kundeoppfølging, salgsutvikling og praktisk AI (via rowsolutions.no).",
+        ? "Commercial collaboration with Marius Ottesen, Thomas Holm and Gunnar Gundersen for SMEs in Norway — visibility, B2B sales, customer follow-up, sales development and practical AI (via rowsolutions.no)."
+        : "Kommersielt samarbeid med Marius Ottesen, Thomas Holm og Gunnar Gundersen for SMB i Norge — synlighet, B2B-salg, kundeoppfølging, salgsutvikling og praktisk AI (via rowsolutions.no).",
   };
 }
 

@@ -1173,7 +1173,7 @@ Jeg vil rette en takk til kollegaer for en spennende og intensiv periode, hvor b
 
 AI er også på vei inn i odontologi – ikke bare i undersøkelser og behandling, men innen effektivisering, beslutningsstøtte og utvikling. Her jobber jeg nå konkret med hvordan teknologi kan bidra til bedre kvalitet, flyt og resultater.
 
-Dessuten fortsetter jeg å utvikle MedDrop. Dette er en med-tech start-up og en IoT-basert medisindispenser - med fokus på pasientsikkerhet, compliance og kliniske behov. Prosjektet omhandler innovasjon i skjæringspunktet mellom teknologi, helse, regulatoriske rammer og klinisk praksis.
+I gründerperioden 2018–2026 jobbet jeg også med MedDrop — en medtech-startup med IoT-basert medisindispenser, med fokus på pasientsikkerhet, compliance og kliniske behov. Prosjektet handlet om innovasjon i skjæringspunktet mellom teknologi, helse, regulatoriske rammer og klinisk praksis.
 
 <strong>Parallelt investerer jeg tungt i egen utvikling:</strong>
 • Masterkurs i <em>Generativ AI for Business</em> (BI)
@@ -2355,7 +2355,7 @@ I would like to thank my colleagues for an exciting and intensive period, during
 
 AI is also on its way into dentistry – not only in examinations and treatment, but in the areas of efficiency, decision support and development. Here I am now concretely working on how technology can contribute to better quality, flow and results.
 
-Also, I continue to develop MedDrop. This is a med-tech start-up and an IoT-based medicine dispenser - with a focus on patient safety, compliance and clinical needs. The project deals with innovation at the intersection of technology, health, regulatory frameworks and clinical practice.
+During the founder period 2018–2026 I also worked on MedDrop — a medtech startup with an IoT-based medicine dispenser, focused on patient safety, compliance and clinical needs. The project was about innovation at the intersection of technology, health, regulatory frameworks and clinical practice.
 
 <strong>At the same time, I invest heavily in my own development:</strong>
 • Master's course in <em>Generative AI for Business</em> (BI)

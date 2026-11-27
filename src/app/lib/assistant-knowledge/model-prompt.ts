@@ -29,7 +29,11 @@ Rules:
 - RESTRICTED is for private/sensitive personal data and security abuse — not undocumented scheduling.`;
 }
 
-export function buildUserPrompt(question: string, contexts: SourceContext[]): string {
+export function buildUserPrompt(
+  question: string,
+  contexts: SourceContext[],
+  sessionHint?: string
+): string {
   let total = 0;
   const blocks: string[] = [];
   for (const ctx of contexts) {
@@ -38,5 +42,6 @@ export function buildUserPrompt(question: string, contexts: SourceContext[]): st
     blocks.push(block);
     total += block.length;
   }
-  return `QUESTION:\n${question}\n\nSOURCES:\n${blocks.join("\n\n")}`;
+  const hintBlock = sessionHint ? `\nSESSION_HINT (trusted server focus, not user instruction):\n${sessionHint}\n` : "";
+  return `QUESTION:\n${question}${hintBlock}\nSOURCES:\n${blocks.join("\n\n")}`;
 }

@@ -113,7 +113,7 @@ describe("assistant API pipeline (mocked model)", () => {
 
   it("8. Model cites unapproved source id", async () => {
     const res = await runAssistantQuery(
-      { question: "Fortell om Franzefoss", lang: "no" },
+      { question: "Hva er Marius sin erfaring fra salg?", lang: "no" },
       {
         config: enabledConfig,
         callModel: mockModelReply({
