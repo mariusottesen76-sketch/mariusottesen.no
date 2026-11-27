@@ -37,6 +37,7 @@ import {
   tryGroundedRoleHistoryAnswer,
 } from "./grounded-context-answer";
 import { tryAuthoritativeGroundedAnswer } from "./authoritative-before-not-on-site";
+import { augmentForSiteSubjectRetrieval } from "./site-assistant-subject";
 import { tryGroundedPublicContactAnswer } from "./grounded-contact-answer";
 import { selectRelevantSourceIds } from "./source-selection";
 import { detectCvIntent, isSectionTabDiscoveryQuestion, resolveSiteTabIntent } from "./site-tab-intent";
@@ -286,12 +287,13 @@ export async function runAssistantQuery(
     );
   }
 
-  const retrievalQuestion = augmentQuestionForRetrieval(
+  let retrievalQuestion = augmentQuestionForRetrieval(
     question,
     conversationFocus,
     lang,
     ASSISTANT_LIMITS.maxQuestionChars
   );
+  retrievalQuestion = augmentForSiteSubjectRetrieval(retrievalQuestion, ASSISTANT_LIMITS.maxQuestionChars);
   const sourceIds = selectRelevantSourceIds(retrievalQuestion, lang, ASSISTANT_LIMITS.maxSources);
   const contexts = loadSourceContexts(sourceIds, lang);
 
@@ -375,6 +377,14 @@ export async function runAssistantQuery(
   }
 
   if (shouldAnswerConservatively(question)) {
+    const authoritativeLate = tryAuthoritativeGroundedAnswer(question, lang);
+    if (authoritativeLate) {
+      return attachConversationFocus(
+        buildResponse("ANSWER", authoritativeLate.answer, lang, authoritativeLate.sourceIds.slice(0, 3)),
+        question,
+        clientCtx
+      );
+    }
     return attachConversationFocus(buildResponse("NOT_ON_SITE", fixedReply("NOT_ON_SITE", lang), lang, []), question, clientCtx);
   }
 
@@ -492,6 +502,19 @@ export async function runAssistantQuery(
   const payload: ModelReplyPayload = validated.payload;
   if (payload.category !== "ANSWER") {
     if (payload.category === "NOT_ON_SITE") {
+      const authoritativeModelFallback = tryAuthoritativeGroundedAnswer(question, lang);
+      if (authoritativeModelFallback) {
+        return attachConversationFocus(
+          buildResponse(
+            "ANSWER",
+            authoritativeModelFallback.answer,
+            lang,
+            authoritativeModelFallback.sourceIds.slice(0, 3)
+          ),
+          question,
+          clientCtx
+        );
+      }
       const excerptFallback = tryGroundedOverviewAnswer(question, contexts, lang);
       if (excerptFallback) {
         return attachConversationFocus(

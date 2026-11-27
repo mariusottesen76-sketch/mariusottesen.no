@@ -2,11 +2,20 @@ import type { Lang } from "../../LanguageContext";
 import { getHovedpakker } from "../../data/consulting";
 import { getTranslation } from "../../data/translations";
 import { lookupKnowledgeSource } from "./lookup";
+import { isQuestionAboutMarius } from "./site-assistant-subject";
 
 /** Korte spørsmål om om Marius tilbyr consulting / MOC — uten full engasjementsmal. */
 export function isSimpleConsultingOfferingQuestion(question: string): boolean {
-  return /\b(gjør\s+(han|marius)\s+consulting|does\s+marius\s+(do\s+)?consulting|tilbyr\s+marius(\s+ottesen)?(\s+consulting)?|what\s+does\s+marius\s+ottesen\s+consulting|hva\s+tilbyr\s+marius\s+ottesen\s+consulting)\b/i.test(
-    question.trim()
+  const q = question.trim();
+  if (!isQuestionAboutMarius(q)) return false;
+  if (
+    /\b(consulting|moc\b|rådgivning|advisory)\b/i.test(q) &&
+    /\b(tilbyr|offer|tilbud|packages?|tjenester|services|gjennom)\b/i.test(q)
+  ) {
+    return true;
+  }
+  return /\b(gjør\s+(han|marius)\s+consulting|does\s+(he|marius)\s+(do\s+)?consulting|tilbyr\s+(han|hans|marius)(\s+ottesen)?(\s+consulting)?|what\s+does\s+(he|marius)\s+ottesen\s+consulting|hva\s+tilbyr\s+marius\s+ottesen\s+consulting)\b/i.test(
+    q
   );
 }
 

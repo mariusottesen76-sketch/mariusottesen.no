@@ -7,6 +7,19 @@ import {
   isHiringQuestion,
   isValueCreationQuestion,
 } from "./information-needs";
+import {
+  AI_PORTFOLIO_TOPIC,
+  BOOK_TOPIC,
+  CAREER_EMPLOYERS_TOPIC,
+  CONTACT_TOPIC,
+  EDUCATION_TOPIC,
+  INSIGHT_TOPIC,
+  MOC_TOPIC,
+  REFERENCES_TOPIC,
+  ROW_TOPIC,
+  TARGET_ROLES_TOPIC,
+} from "./information-theme";
+import { isQuestionAboutMarius } from "./site-assistant-subject";
 
 export type SelectionIntent = {
   preferredCategories: KnowledgeCategory[];
@@ -44,6 +57,41 @@ export function inferSelectionIntent(question: string, lang: Lang = "no"): Selec
   const tabHints: string[] = [];
   let bookOrHub: SelectionIntent["bookOrHub"];
   const projectSlugHints: string[] = [];
+
+  if (isQuestionAboutMarius(question) && !/\bmarius\b/i.test(question)) {
+    if (EDUCATION_TOPIC.test(question)) {
+      preferredCategories.unshift("career", "cv", "profile");
+      tabHints.unshift("career", "cv", "home");
+    } else if (CAREER_EMPLOYERS_TOPIC.test(question)) {
+      preferredCategories.unshift("career", "experience", "cv");
+      tabHints.unshift("career", "experience", "cv");
+    } else if (TARGET_ROLES_TOPIC.test(question)) {
+      preferredCategories.unshift("open_application", "profile", "cv");
+      tabHints.unshift("open-application", "home", "cv");
+    } else if (CONTACT_TOPIC.test(question)) {
+      preferredCategories.unshift("contact", "consulting");
+      tabHints.unshift("contact");
+    } else if (REFERENCES_TOPIC.test(question)) {
+      preferredCategories.unshift("references");
+      tabHints.unshift("references");
+    } else if (MOC_TOPIC.test(question)) {
+      preferredCategories.unshift("consulting");
+      tabHints.unshift("consulting");
+    } else if (ROW_TOPIC.test(question)) {
+      preferredCategories.unshift("project", "profile");
+      projectSlugHints.push("row", "solutions");
+    } else if (AI_PORTFOLIO_TOPIC.test(question)) {
+      preferredCategories.unshift("project", "profile");
+      tabHints.unshift("projects", "home");
+    } else if (INSIGHT_TOPIC.test(question)) {
+      preferredCategories.unshift("hub", "article");
+      tabHints.unshift("articles");
+      bookOrHub = "hub:articles";
+    } else if (BOOK_TOPIC.test(question)) {
+      preferredCategories.unshift("book");
+      bookOrHub = "book";
+    }
+  }
 
   const siteTab = resolveSiteTabIntent(question, lang);
   if (siteTab) {
@@ -180,7 +228,7 @@ export function inferSelectionIntent(question: string, lang: Lang = "no"): Selec
     preferredCategories.push("contact", "consulting");
     tabHints.push("contact");
   }
-  if (/\b(cv[\s-]?en|cven|cv\b|stilling|rekrutt|education|utdanning|c-level|ceo\s+role|curriculum|resume)\b/i.test(q)) {
+  if (/\b(cv[\s-]?en|cven|cv\b|stilling|rekrutt|education|utdanning|utdannelse|c-level|ceo\s+role|curriculum|resume)\b/i.test(q)) {
     preferredCategories.push("cv", "experience");
     tabHints.push("cv");
   }

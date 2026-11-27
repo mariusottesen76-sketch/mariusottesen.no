@@ -1,5 +1,7 @@
 import type { Lang } from "../../LanguageContext";
 import { getProfilData } from "../../data/profil";
+import { isEducationTopic } from "./information-theme";
+import { isQuestionAboutMarius } from "./site-assistant-subject";
 import { normalizeExcerptForAssistant } from "./excerpt-voice";
 
 export function isBiTeachingQuestion(question: string): boolean {
@@ -72,13 +74,8 @@ export function isEducationLookupQuestion(question: string): boolean {
   if (!q) return false;
   if (isBiTeachingQuestion(q)) return false;
   if (isGenerativeAiCourseLeadershipLinkQuestion(q)) return false;
-  if (/^\s*(utdanning|education)\s*\??\s*$/i.test(q)) return true;
-  if (/^\s*(utdanning\s+){2,}/i.test(q)) return true;
-  return (
-    /\b(utdanning|education|kvalifikasjon|qualifications?|studert|studerte|studies|studied|studie|degree)\b/i.test(
-      q
-    ) && !/\b(undervist|underviser|foreleser|lectur|teaching\s+at|taught\s+at)\b/i.test(q)
-  );
+  if (!isEducationTopic(q)) return false;
+  return isQuestionAboutMarius(q);
 }
 
 export function tryGroundedEducationAnswer(

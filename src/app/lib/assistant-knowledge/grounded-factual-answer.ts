@@ -4,6 +4,7 @@ import { getErfaringData } from "../../data/erfaringInnhold";
 import { getDokumentasjonData } from "../../data/dokumentasjon";
 import { normalizeExcerptForAssistant } from "./excerpt-voice";
 import { isBiTeachingQuestion, tryGroundedBiTeachingAnswer, tryGroundedEducationAnswer } from "./grounded-education-answer";
+import { isEducationTopic } from "./information-theme";
 import { stripHtmlToPlainText, truncatePlainText } from "./text-utils";
 
 function tabId(lang: Lang, key: string): string {
@@ -62,7 +63,7 @@ function detectFactualIntents(question: string): Set<FactualIntent> {
   if (/\b(overfør\w*|overføres|overføring|andre\s+bransjer|transferable|transfer\s+to\s+other)\b/i.test(q)) {
     intents.add("transferability");
   }
-  if (/\b(utdanning|education|kvalifikasjon|qualification|studert)\b/i.test(q)) {
+  if (isEducationTopic(q)) {
     intents.add("education");
   }
   if (/\b(ai-prosjekt\w*|ai\s+prosjekter|praktisk\s+ai|ai-portefølje)\b/i.test(q)) {
