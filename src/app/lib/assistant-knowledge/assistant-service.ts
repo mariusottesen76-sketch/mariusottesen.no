@@ -21,6 +21,7 @@ import {
   tryGroundedOverviewAnswer,
 } from "./grounded-overview-answer";
 import { tryGroundedFactualAnswer } from "./grounded-factual-answer";
+import { tryGroundedCareerAnswer } from "./grounded-career-answer";
 import { selectRelevantSourceIds } from "./source-selection";
 import { detectCvIntent, isSectionTabDiscoveryQuestion, resolveSiteTabIntent } from "./site-tab-intent";
 import { tryTabSectionOverviewAnswer } from "./tab-section-answer";
@@ -259,6 +260,11 @@ export async function runAssistantQuery(
   const groundedFactual = tryGroundedFactualAnswer(question, lang);
   if (groundedFactual) {
     return buildResponse("ANSWER", groundedFactual.answer, lang, groundedFactual.sourceIds.slice(0, 3));
+  }
+
+  const groundedCareer = tryGroundedCareerAnswer(question, lang);
+  if (groundedCareer) {
+    return buildResponse("ANSWER", groundedCareer.answer, lang, groundedCareer.sourceIds.slice(0, 3));
   }
 
   if (shouldAnswerConservatively(question)) {

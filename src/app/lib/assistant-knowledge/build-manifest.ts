@@ -21,6 +21,8 @@ import type {
   KnowledgeManifestEntry,
 } from "./types";
 import { ROW_EXTERNAL_SOURCES, rowExternalManifestId } from "./row-external-knowledge";
+import { APPROVED_DOCUMENTS } from "../../data/approved-documents-meta";
+import { CV_PDF_VERSJON } from "../../data/dokumentasjon";
 import type { Lang } from "../../LanguageContext";
 
 function abs(path: string): string {
@@ -202,6 +204,78 @@ function buildPrivacyEntries(siteDates: { updatedAt?: string }): KnowledgeManife
   });
 }
 
+function buildAuthoritativeDocumentEntries(cvVersion: string): KnowledgeManifestEntry[] {
+  const localeCareer = "pair:career:registry";
+  const localeOpen = "pair:document:open-application";
+    const cvPageNo = abs("/cv#karriere");
+    const cvPageEn = abs("/en/cv#karriere");
+    const openNo = abs("/cv#apen-soknad");
+    const openEn = abs("/en/cv#apen-soknad");
+    const dates = { publishedAt: undefined, updatedAt: `cv-pdf-${cvVersion}` };
+
+  return [
+    {
+      id: "career:cv-registry:no",
+      title: "Karriereoversikt (godkjent CV)",
+      url: cvPageNo,
+      lang: "no",
+      description:
+        "Strukturert stillingshistorikk fra godkjent CV PDF — arbeidsgivere, titler, perioder og ansvar.",
+      category: "career",
+      updatedAt: dates.updatedAt,
+      canonicalUrl: cvPageNo,
+      localePairId: localeCareer,
+      alternateSourceId: "career:cv-registry:en",
+      contentRef: { kind: "career-registry" },
+      excerptLevel: "partial",
+    },
+    {
+      id: "career:cv-registry:en",
+      title: "Career overview (approved CV)",
+      url: cvPageEn,
+      lang: "en",
+      description:
+        "Structured employment history from the approved CV PDF — employers, titles, periods and responsibilities.",
+      category: "career",
+      updatedAt: dates.updatedAt,
+      canonicalUrl: cvPageEn,
+      localePairId: localeCareer,
+      alternateSourceId: "career:cv-registry:no",
+      contentRef: { kind: "career-registry" },
+      excerptLevel: "partial",
+    },
+    {
+      id: "document:open-application:no",
+      title: "Åpen søknad (godkjent PDF)",
+      url: openNo,
+      lang: "no",
+      description: `Lederfilosofi, lederstil, verdiskaping og aktuelle roller — ${APPROVED_DOCUMENTS.openApplicationPdf.originalFilename}.`,
+      category: "open_application",
+      updatedAt: dates.updatedAt,
+      canonicalUrl: openNo,
+      localePairId: localeOpen,
+      alternateSourceId: "document:open-application:en",
+      contentRef: { kind: "open-application" },
+      excerptLevel: "partial",
+    },
+    {
+      id: "document:open-application:en",
+      title: "Open application (approved PDF)",
+      url: openEn,
+      lang: "en",
+      description:
+        "Leadership philosophy, style, value creation and target roles — approved open application PDF.",
+      category: "open_application",
+      updatedAt: dates.updatedAt,
+      canonicalUrl: openEn,
+      localePairId: localeOpen,
+      alternateSourceId: "document:open-application:no",
+      contentRef: { kind: "open-application" },
+      excerptLevel: "partial",
+    },
+  ];
+}
+
 function buildRowExternalEntries(): KnowledgeManifestEntry[] {
   const entries: KnowledgeManifestEntry[] = [];
   const langs: KnowledgeLang[] = ["no", "en"];
@@ -335,7 +409,7 @@ function buildArticleEntries(faginnleggHubDate: string): KnowledgeManifestEntry[
   return entries;
 }
 
-const MANIFEST_GENERATED_AT = "content-registers-v1";
+const MANIFEST_GENERATED_AT = "content-registers-v2-career";
 
 export function buildKnowledgeManifest(fixedGeneratedAt?: string): KnowledgeManifest {
   const projects = getAllProjectV2Records();
@@ -356,6 +430,7 @@ export function buildKnowledgeManifest(fixedGeneratedAt?: string): KnowledgeMani
 
   const entries: KnowledgeManifestEntry[] = [
     ...buildTabEntries(siteDates),
+    ...buildAuthoritativeDocumentEntries(CV_PDF_VERSJON),
     ...buildReferencesEntries(siteDates),
     ...buildBookEntries(hubArticleDates),
     ...buildHubEntries(
@@ -394,7 +469,9 @@ export function buildKnowledgeManifest(fixedGeneratedAt?: string): KnowledgeMani
 /** Path-only URLs from manifest for alignment checks with `sitemap.ts`. */
 export function manifestCanonicalPaths(manifest: KnowledgeManifest): string[] {
   return manifest.entries
-    .filter((e) => e.category !== "external_reference")
+    .filter(
+      (e) => e.category !== "external_reference" && e.category !== "career" && e.category !== "open_application"
+    )
     .map((e) => {
       const u = new URL(e.canonicalUrl);
       return u.pathname;

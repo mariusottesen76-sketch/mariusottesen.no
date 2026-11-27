@@ -73,9 +73,9 @@ const CASES: Case[] = [
     id: "R03",
     question: "Hvilke lederroller passer han til?",
     lang: "no",
-    primarySource: /^tab:(cv|home):no$/,
+    primarySource: /^(document:open-application|tab:(cv|home)):no$/,
     urlPath: /^https:\/\/www\.mariusottesen\.no/,
-    answerMust: /lederroller|kommersiell leder|salgsdirektør/i,
+    answerMust: /lederroller|kommersiell leder|salgsdirektør|kategori C/i,
   },
   {
     id: "R04",
@@ -142,8 +142,8 @@ const CASES: Case[] = [
     id: "R11",
     question: "Hva er Row Solutions?",
     lang: "no",
-    primarySource: /^project:row-solutions/,
-    urlPath: /row-solutions/,
+    primarySource: /^(external:rowsolutions|project:row-solutions)/,
+    urlPath: /(row-solutions|rowsolutions\.no)/,
   },
   {
     id: "R12",

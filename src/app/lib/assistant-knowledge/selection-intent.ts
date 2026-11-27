@@ -76,8 +76,20 @@ export function inferSelectionIntent(question: string, lang: Lang = "no"): Selec
   }
 
   if (/\b(erfaring|experience|franzefoss|norengros|arbeidsgiver|employer|lede\w*|leder\w*|p\/l|teamutvikling)\b/i.test(q)) {
-    preferredCategories.push("experience", "cv", "results");
-    tabHints.push("experience", "results", "cv");
+    preferredCategories.push("career", "experience", "cv", "results");
+    tabHints.push("career", "experience", "results", "cv");
+  }
+  if (
+    /\b(lederfilosofi|lederstil|åpen\s+søknad|open\s+application|motivasjon|verdiskaping|value\s+creation|hvordan\s+leder)\b/i.test(
+      q
+    )
+  ) {
+    preferredCategories.push("open_application", "career", "profile");
+    tabHints.push("open-application", "career", "home", "cv");
+  }
+  if (/\b(stilling\w*|period\w*|mundipharma|pelagia|falck|assessit|hydro\s+texaco)\b/i.test(q)) {
+    preferredCategories.unshift("career");
+    tabHints.unshift("career");
   }
   if (/\b(resultat\w*|results?|proof\s+point|salgsvekst|growth)\b/i.test(q)) {
     preferredCategories.push("results", "experience");

@@ -21,7 +21,9 @@ export type KnowledgeCategory =
   | "project"
   | "hub"
   | "legal"
-  | "external_reference";
+  | "external_reference"
+  | "career"
+  | "open_application";
 
 export type KnowledgeExcerptLevel = "full" | "partial" | "metadata_only";
 
@@ -34,7 +36,9 @@ export type KnowledgeContentRef =
   | { kind: "legal-privacy" }
   | { kind: "article"; slug: string }
   | { kind: "project"; projectId: string }
-  | { kind: "external-row"; sourceKey: RowExternalSourceKey };
+  | { kind: "external-row"; sourceKey: RowExternalSourceKey }
+  | { kind: "career-registry" }
+  | { kind: "open-application" };
 
 export interface KnowledgeManifestEntry {
   /** Stable, unique id — used for lookup (`tab:home:no`, `article:{slug}:en`, …). */

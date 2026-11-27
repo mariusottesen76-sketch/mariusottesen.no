@@ -34,7 +34,7 @@ describe("assistant knowledge manifest", () => {
     const sitePaths = sitemapPaths();
 
     assert.deepEqual(manifestPaths, sitePaths, "Manifest paths must match sitemap.ts");
-    assert.equal(manifest.entries.length, 281);
+    assert.equal(manifest.entries.length, 285);
   });
 
   it("has unique source ids", () => {
@@ -65,8 +65,8 @@ describe("assistant knowledge manifest", () => {
 
   it("classifies Norwegian and English entries", () => {
     const byLang = countBy(listKnowledgeManifestEntries(), (e) => e.lang);
-    assert.equal(byLang.no, 145);
-    assert.equal(byLang.en, 136);
+    assert.equal(byLang.no, 147);
+    assert.equal(byLang.en, 138);
   });
 
   it("wires locale pairs to existing ids", () => {

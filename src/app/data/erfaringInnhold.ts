@@ -58,7 +58,7 @@ const data = {
       {
         title: "Gründer & Utvikler",
         company: "MedDrop",
-        period: "2018 – Nå",
+        period: "2018 – 06.2026",
         mandate: "Identifisere og løse et kritisk gap i pasientsikkerhet ved legemiddelhåndtering gjennom utvikling av en smart, IoT-basert medisindispenser.",
         strategy: "Leder hele innovasjonsløpet fra idé til prototype. Navigerer i komplekse tekniske arkitekturer, IP-strategier og strengt regulerte medtech-rammeverk (MDR).",
         results: "Utviklet en funksjonell prototype klar for nasjonal og global skalering. Etablert dyp forståelse for skjæringspunktet mellom digital teknologi og kliniske behov.",
@@ -145,7 +145,7 @@ const data = {
       {
         title: "Founder & Product Developer",
         company: "MedDrop",
-        period: "2018 – Present",
+        period: "2018 – 06.2026",
         mandate: "Identify and address a critical gap in patient safety within medication management through the development of a smart, IoT-enabled medicine dispenser.",
         strategy: "Leading the full innovation lifecycle from concept through to functional prototype. Navigating complex technical architectures, intellectual property strategy, and stringent medtech regulatory frameworks (MDR).",
         results: "Developed a market-ready functional prototype positioned for national and international scale-up. Built deep domain expertise at the intersection of digital health technology and clinical needs.",
