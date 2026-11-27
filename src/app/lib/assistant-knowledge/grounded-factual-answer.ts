@@ -3,6 +3,7 @@ import { getProfilData } from "../../data/profil";
 import { getErfaringData } from "../../data/erfaringInnhold";
 import { getDokumentasjonData } from "../../data/dokumentasjon";
 import { normalizeExcerptForAssistant } from "./excerpt-voice";
+import { isBiTeachingQuestion, tryGroundedBiTeachingAnswer, tryGroundedEducationAnswer } from "./grounded-education-answer";
 import { stripHtmlToPlainText, truncatePlainText } from "./text-utils";
 
 function tabId(lang: Lang, key: string): string {
@@ -13,13 +14,7 @@ function say(text: string, lang: Lang): string {
   return normalizeExcerptForAssistant(text.trim(), lang);
 }
 
-export function isBiTeachingQuestion(question: string): boolean {
-  return (
-    /\b(undervist\w*|underviser|foreleser\w*|forelesning|lectur|teaches|taught|teaching|faculty|professor)\b/i.test(
-      question
-    ) && /\b(bi\b|handelshøyskolen)/i.test(question)
-  );
-}
+export { isBiTeachingQuestion } from "./grounded-education-answer";
 
 export function isDocumentedHeadcountQuestion(question: string): boolean {
   const q = question.trim();
@@ -148,27 +143,11 @@ export function tryGroundedFactualAnswer(
   const experience = tabId(lang, "experience");
   const results = tabId(lang, "results");
 
-  if (isBiTeachingQuestion(q)) {
-    const text =
-      lang === "no"
-        ? "Nei — nettsiden dokumenterer at Marius Ottesen har studert ved Handelshøyskolen BI, blant annet gjennom det fullførte masterkurset Generative AI for Business. Det står ikke at han har undervist eller vært foreleser der; det som er dokumentert er utdanning/kursdeltakelse og faglig arbeid knyttet til kurset og AI-satsingen."
-        : "No — the site documents that Marius Ottesen studied at BI Norwegian Business School, including the completed master's course Generative AI for Business. It does not state that he taught or lectured there; what is documented is education/course participation and professional work linked to the course and his AI practice.";
-    return { answer: say(text, lang), sourceIds: [home, cv] };
-  }
+  const education = tryGroundedEducationAnswer(q, lang);
+  if (education) return education;
 
-  if (
-    /\b(hvilken\s+utdanning|utdanning\s+har|hva\s+har\s+marius\s+studert|education\s+does|qualification|kvalifikasjon)\b/i.test(
-      q
-    )
-  ) {
-    const p = getProfilData(lang);
-    const edu = truncatePlainText(stripHtmlToPlainText(p.utdanning), 520);
-    const text =
-      lang === "no"
-        ? `Marius' utdanning og faglige videreutdanning som dokumentert på profilen omfatter blant annet: ${edu}`
-        : `Marius' education and continuing study as documented on the profile includes, among other things: ${edu}`;
-    return { answer: say(text, lang), sourceIds: [home, cv] };
-  }
+  const biTeach = tryGroundedBiTeachingAnswer(q, lang);
+  if (biTeach) return biTeach;
 
   if (
     /\b(can|could)\b/i.test(q) &&

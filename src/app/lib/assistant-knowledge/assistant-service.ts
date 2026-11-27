@@ -36,6 +36,8 @@ import {
   tryGroundedRoleFitAnswer,
   tryGroundedRoleHistoryAnswer,
 } from "./grounded-context-answer";
+import { tryAuthoritativeGroundedAnswer } from "./authoritative-before-not-on-site";
+import { tryGroundedPublicContactAnswer } from "./grounded-contact-answer";
 import { selectRelevantSourceIds } from "./source-selection";
 import { detectCvIntent, isSectionTabDiscoveryQuestion, resolveSiteTabIntent } from "./site-tab-intent";
 import { tryTabSectionOverviewAnswer } from "./tab-section-answer";
@@ -275,6 +277,15 @@ export async function runAssistantQuery(
     );
   }
 
+  const authoritativeEarly = tryAuthoritativeGroundedAnswer(question, lang);
+  if (authoritativeEarly) {
+    return attachConversationFocus(
+      buildResponse("ANSWER", authoritativeEarly.answer, lang, authoritativeEarly.sourceIds.slice(0, 3)),
+      question,
+      clientCtx
+    );
+  }
+
   const retrievalQuestion = augmentQuestionForRetrieval(
     question,
     conversationFocus,
@@ -306,24 +317,42 @@ export async function runAssistantQuery(
   }
 
   if (isContactGuidanceQuestion(question)) {
-    const contactId = lang === "no" ? "tab:contact:no" : "tab:contact:en";
-    const contactContexts = loadSourceContexts(
-      sourceIds.includes(contactId) ? sourceIds : [contactId, ...sourceIds],
-      lang
-    );
-    const contactCtx = contactContexts.find((c) => /:contact:/.test(c.sourceId));
-    if (contactCtx) {
-      return attachConversationFocus(contactGuidanceAnswer(lang, contactCtx), question, clientCtx);
+    const publicContact = tryGroundedPublicContactAnswer(question, lang);
+    if (publicContact) {
+      return attachConversationFocus(
+        buildResponse("ANSWER", publicContact.answer, lang, publicContact.sourceIds.slice(0, 3)),
+        question,
+        clientCtx
+      );
     }
   }
 
+  const substantive = contexts.filter((c) => c.suitableForFactualAnswer);
+
   if (isNavigationQuestion(question)) {
+    const groundedNav =
+      substantive.length > 0
+        ? (tryGroundedFactualAnswer(question, lang) ?? tryGroundedCareerAnswer(question, lang))
+        : null;
+    if (groundedNav) {
+      return attachConversationFocus(
+        buildResponse("ANSWER", groundedNav.answer, lang, groundedNav.sourceIds.slice(0, 3)),
+        question,
+        clientCtx
+      );
+    }
     const nav = navigationAnswer(lang, contexts, question);
     if (nav) return attachConversationFocus(nav, question, clientCtx);
   }
-
-  const substantive = contexts.filter((c) => c.suitableForFactualAnswer);
   if (substantive.length === 0) {
+    const authoritativeFallback = tryAuthoritativeGroundedAnswer(question, lang);
+    if (authoritativeFallback) {
+      return attachConversationFocus(
+        buildResponse("ANSWER", authoritativeFallback.answer, lang, authoritativeFallback.sourceIds.slice(0, 3)),
+        question,
+        clientCtx
+      );
+    }
     return attachConversationFocus(buildResponse("NOT_ON_SITE", fixedReply("NOT_ON_SITE", lang), lang, []), question, clientCtx);
   }
 

@@ -8,8 +8,13 @@ const WEBSITE_ID = `${SITE}/#website`;
 const ROW_SOLUTIONS_URL = "https://rowsolutions.no/";
 const BRREG_ENTITY_URL = "https://virksomhet.brreg.no/nb/oppslag/enheter/937102801";
 
-const CONTACT_EMAIL = "marius.ottesen.76@gmail.com";
-const CONTACT_PHONE_E164 = "+4747012005";
+import {
+  PUBLIC_CONTACT_EMAIL,
+  PUBLIC_CONTACT_PHONE_E164,
+} from "../data/public-contact-knowledge";
+
+const CONTACT_EMAIL = PUBLIC_CONTACT_EMAIL;
+const CONTACT_PHONE_E164 = PUBLIC_CONTACT_PHONE_E164;
 
 type StructuredDataOptions = {
   includeProfilePage?: boolean;

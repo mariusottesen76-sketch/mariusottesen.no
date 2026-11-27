@@ -87,6 +87,26 @@ export function inferSelectionIntent(question: string, lang: Lang = "no"): Selec
     preferredCategories.push("open_application", "career", "profile");
     tabHints.push("open-application", "career", "home", "cv");
   }
+  if (
+    /\b(superstyrk\w*|signature\s+strength\w*|personal\s+strength\w*|leadership\s+strength\w*|sterke\s+sider|styrkeside\w*|hva\s+kjennetegner|egenskaper|god\s+på|good\s+at)\b/i.test(
+      q
+    )
+  ) {
+    preferredCategories.unshift("profile");
+    tabHints.unshift("home");
+  }
+  if (/\b(kjernekompetanse|core\s+competenc\w*|kjerne\s+kompetanse|key\s+competenc\w*|leadership\s+competenc)\b/i.test(q)) {
+    preferredCategories.unshift("profile");
+    tabHints.unshift("home", "cv");
+  }
+  if (
+    /\b(leder\w*|leader\w*|ledelse|leadership)\b/i.test(q) &&
+    /\b(ai|ki|praktisk\s+ai|practical\s+ai)\b/i.test(q) &&
+    /\b(bruk\w*|use[sd]?\b|verktøy|tool|som\s+leder)\b/i.test(q)
+  ) {
+    preferredCategories.push("profile", "project");
+    tabHints.push("home", "projects");
+  }
   if (/\b(stilling\w*|period\w*|mundipharma|pelagia|falck|assessit|hydro\s+texaco)\b/i.test(q)) {
     preferredCategories.unshift("career");
     tabHints.unshift("career");
@@ -110,6 +130,14 @@ export function inferSelectionIntent(question: string, lang: Lang = "no"): Selec
   if (isValueCreationQuestion(question)) {
     preferredCategories.push("profile", "results", "consulting", "experience");
     tabHints.push("home", "results", "consulting", "experience");
+  }
+  if (/\b(skaper\s+resultat|creates?\s+results?)\b/i.test(q)) {
+    preferredCategories.unshift("profile", "results", "open_application");
+    tabHints.unshift("home", "results", "cv");
+  }
+  if (/\b(row\s+solutions).*\b(hjelpe|help)\b/i.test(q)) {
+    preferredCategories.unshift("project", "profile");
+    projectSlugHints.push("row", "solutions");
   }
   if (isHiringQuestion(question)) {
     preferredCategories.push("profile", "cv", "experience", "results", "references");

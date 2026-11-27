@@ -35,8 +35,8 @@ export const ROW_EXTERNAL_SOURCES: RowExternalSourceDef[] = [
       en: "Public website for Row Solutions — active SMB advisory collaboration.",
     },
     excerpt: {
-      no: "Row Solutions er et aktivt kommersielt rådgivningssamarbeid for SMB. Nettstedet rowsolutions.no er publisert med tjenester, metoder og kontakt. Row er felles markedsnavn, ikke eget registrert AS.",
-      en: "Row Solutions is an active commercial advisory collaboration for SMEs. The website rowsolutions.no is published with services, methods and contact. Row is a shared brand name, not a separately registered company.",
+      no: "Row Solutions – bedre kommersiell flyt fra synlighet til salg og oppfølging. Aktivt SMB-rådgivningssamarbeid (rowsolutions.no). Fire tjenesteområder: synlighet og posisjonering; salg og kundeoppfølging; arbeidsflyt og praktisk AI; forretningsutvikling og gjennomføring. Row er felles markedsnavn, ikke eget registrert AS — adskilt fra MOC.",
+      en: "Row Solutions – better commercial flow from visibility to sales and follow-up. Active SME advisory collaboration (rowsolutions.no). Four service areas: visibility and positioning; sales and customer follow-up; workflow and practical AI; business development and execution. Row is a shared brand name, not a separately registered company — separate from MOC.",
     },
   },
   {

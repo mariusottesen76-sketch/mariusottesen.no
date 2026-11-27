@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
 import { tryGroundedCareerAnswer } from "./grounded-career-answer";
+import { tryGroundedEducationAnswer } from "./grounded-education-answer";
 import { tryGroundedFactualAnswer } from "./grounded-factual-answer";
 import { selectRelevantSourceIds } from "./source-selection";
 import { getDistinctEmployers } from "../../data/career-facts";
@@ -33,7 +34,7 @@ describe("08E career & open-application regression", () => {
   it("E03: positions held category A", () => {
     const r = tryGroundedCareerAnswer("Hvilke stillinger har Marius hatt?", "no");
     assert.ok(r);
-    assert.match(r!.answer, /kategori A|faktiske stillinger/i);
+    assert.match(r!.answer, /dokumenterte stillinger|Nasjonal salgssjef/i);
     assert.match(r!.answer, /Nasjonal salgssjef|Business Unit Manager/i);
   });
 
@@ -46,7 +47,7 @@ describe("08E career & open-application regression", () => {
   it("E05: target roles category C", () => {
     const r = tryGroundedCareerAnswer("Hvilke roller er Marius aktuell for?", "no");
     assert.ok(r);
-    assert.match(r!.answer, /kategori C/i);
+    assert.match(r!.answer, /åpen søknad|aktuell for følgende lederroller/i);
     assert.match(r!.answer, /CCO|Salgsdirektør/i);
   });
 
@@ -95,9 +96,9 @@ describe("08E career & open-application regression", () => {
   });
 
   it("E13: education", () => {
-    const r = tryGroundedCareerAnswer("Hvilken utdanning har Marius?", "no");
+    const r = tryGroundedEducationAnswer("Hvilken utdanning har Marius?", "no");
     assert.ok(r);
-    assert.match(r!.answer, /Generative AI for Business|Siviløkonom/i);
+    assert.match(r!.answer, /Generative AI for Business|University of Utah/i);
   });
 
   it("E14: Mundipharma progression", () => {

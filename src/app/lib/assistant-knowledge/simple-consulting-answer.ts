@@ -1,8 +1,7 @@
 import type { Lang } from "../../LanguageContext";
+import { getHovedpakker } from "../../data/consulting";
 import { getTranslation } from "../../data/translations";
 import { lookupKnowledgeSource } from "./lookup";
-import { buildExcerptLedOverview } from "./grounded-overview-answer";
-import type { SourceContext } from "./assistant-types";
 
 /** Korte spørsmål om om Marius tilbyr consulting / MOC — uten full engasjementsmal. */
 export function isSimpleConsultingOfferingQuestion(question: string): boolean {
@@ -16,29 +15,19 @@ export function trySimpleConsultingOfferingAnswer(lang: Lang): { sourceId: strin
   const res = lookupKnowledgeSource(sourceId, lang);
   if (!res.ok) return null;
 
-  const mocLead =
-    lang === "no"
-      ? getTranslation("profil.selskap.desc", lang).split("\n")[0]?.trim()
-      : getTranslation("profil.selskap.desc", lang).split("\n")[0]?.trim();
-
-  const ctx: SourceContext = {
-    sourceId: res.entry.id,
-    title: res.entry.title,
-    url: res.entry.canonicalUrl,
-    excerptText: res.excerpt.text,
-    suitableForFactualAnswer: res.grounding.suitableForFactualAnswer,
-  };
-
-  const detail = buildExcerptLedOverview(ctx, lang);
+  const intro = [getTranslation("cons.intro.1", lang), getTranslation("cons.intro.2", lang)].join(" ");
+  const packages = getHovedpakker(lang)
+    .slice(0, 4)
+    .map((p) => `${p.tittel}: ${p.leveranseKort}`)
+    .join(" ");
   const path = new URL(res.entry.canonicalUrl).pathname;
+  const contactPath = lang === "no" ? "/kontakt" : "/en/contact";
 
-  const rowNote =
+  const brand = lang === "no" ? "Marius Ottesen Consulting (MOC)" : "Marius Ottesen Consulting (MOC)";
+  const text =
     lang === "no"
-      ? " Row Solutions er et eget kommersielt samarbeid (rowsolutions.no), ikke det samme som MOC."
-      : " Row Solutions is a separate commercial collaboration (rowsolutions.no), not the same as MOC.";
+      ? `${brand}: ${intro} MOC hjelper B2B-virksomheter med blant annet: ${packages} Leveransene kombinerer analyse, prioritering og praktisk gjennomføring innen salg, CRM, kundedialog, teamutvikling og målrettet AI der det gir verdi. Se ${path} for pakker og metoder, og ${contactPath} for dialog. Row Solutions er et eget kommersielt samarbeid (rowsolutions.no), ikke det samme som MOC.`
+      : `${brand}: ${intro} MOC helps B2B organisations with areas including: ${packages} Engagements combine analysis, prioritisation and practical execution in sales, CRM, customer dialogue, team development and targeted AI where it creates value. See ${path} for packages and methods, and ${contactPath} to get in touch. Row Solutions is a separate commercial collaboration (rowsolutions.no), not the same as MOC.`;
 
-  return {
-    sourceId,
-    answer: `${mocLead} ${lang === "no" ? "Consulting-siden" : "The Consulting page"} (${path}): ${detail}${rowNote}`,
-  };
+  return { sourceId, answer: text.trim() };
 }

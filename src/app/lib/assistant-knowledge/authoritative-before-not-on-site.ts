@@ -1,0 +1,26 @@
+import type { Lang } from "../../LanguageContext";
+import { tryGroundedCareerAnswer } from "./grounded-career-answer";
+import {
+  tryGroundedBiTeachingAnswer,
+  tryGroundedEducationAnswer,
+  tryGroundedGenerativeAiCourseLeadershipLinkAnswer,
+} from "./grounded-education-answer";
+import { tryGroundedFactualAnswer } from "./grounded-factual-answer";
+import { tryGroundedPublicContactAnswer } from "./grounded-contact-answer";
+import { tryGroundedProfileAnswer } from "./grounded-profile-answer";
+
+/** Begrenset sjekk mot autoritative kilder før NOT_ON_SITE — ingen modell, ingen full manifest-skanning. */
+export function tryAuthoritativeGroundedAnswer(
+  question: string,
+  lang: Lang
+): { answer: string; sourceIds: string[] } | null {
+  return (
+    tryGroundedGenerativeAiCourseLeadershipLinkAnswer(question, lang) ??
+    tryGroundedEducationAnswer(question, lang) ??
+    tryGroundedBiTeachingAnswer(question, lang) ??
+    tryGroundedPublicContactAnswer(question, lang) ??
+    tryGroundedProfileAnswer(question, lang) ??
+    tryGroundedCareerAnswer(question, lang) ??
+    tryGroundedFactualAnswer(question, lang)
+  );
+}

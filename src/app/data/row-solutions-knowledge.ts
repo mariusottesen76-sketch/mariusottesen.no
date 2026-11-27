@@ -1,4 +1,6 @@
 import type { Lang } from "../LanguageContext";
+import { getTranslation } from "./translations";
+import { rowSolutionsPlatform } from "./strategic-platform-projects/row-solutions-platform";
 
 /**
  * Godkjent fakta om Row Solutions for assistenten.
@@ -25,6 +27,57 @@ export function formatRowSolutionsWho(lang: Lang): string {
 /** Bakoverkompatibel full tekst — bruk kontekstspesifikke hjelpere først. */
 export function formatRowSolutionsKnowledge(lang: Lang): string {
   return formatRowSolutionsWho(lang);
+}
+
+/** Kjernebudskap og fire områder — autoritativ for «hva/hvorfor/hvordan» uten lenke-svar alene. */
+export function formatRowSolutionsCore(lang: Lang): string {
+  const tagline = getTranslation("prosjekter.featured.row.title", lang);
+  const intro = getTranslation("prosjekter.featured.row.intro", lang);
+  const challenge = getTranslation("prosjekter.featured.row.box.challenge.body", lang);
+  const areasShort = getTranslation("prosjekter.featured.row.box.areas.body", lang);
+  const fourAreas = stripRowAreaNumbers(rowSolutionsPlatform.detail.utfordring.body[lang]);
+
+  return lang === "no"
+    ? `${tagline} ${intro} Row hjelper SMB-bedrifter med å finne tap av synlighet, kunder og kommersiell effekt — typisk der ${challenge} Fire tjenesteområder: ${fourAreas} (${areasShort}). MOC (Marius Ottesen Consulting) er Marius' eget firma — adskilt fra Row Solutions.`
+    : `${tagline} ${intro} Row helps SME businesses identify loss of visibility, customers and commercial impact — typically where ${challenge} Four service areas: ${fourAreas} (${areasShort}). MOC (Marius Ottesen Consulting) is Marius' own firm — separate from Row Solutions.`;
+}
+
+function stripRowAreaNumbers(body: string): string {
+  return body
+    .replace(/Row Solutions er strukturert rundt fire områder[^:]*:\s*/i, "")
+    .replace(/Row Solutions is structured around four areas[^:]*:\s*/i, "")
+    .replace(/^\s*\d+\.\s*/gm, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+/** Spørsmål om Row som tilbud — ikke kun Marius' rolle eller MOC-sammenligning. */
+export function isRowCoreQuestion(question: string): boolean {
+  const q = question.trim();
+  if (!/\brow\s+solutions\b/i.test(q)) return false;
+  if (/\b(ai\s+discovery)\b/i.test(q)) return false;
+  if (/\b(hvem\s+står\s+bak|who\s+is\s+behind|who\s+are\s+the)\b/i.test(q)) return false;
+  if (/\b(sammenheng|henger\s+sammen|how\s+does.*fit|koble\w*|kombin\w*|together)\b/i.test(q)) return false;
+  if (
+    /\b(moc|marius\s+ottesen\s+consulting)\b/i.test(q) &&
+    /\b(forskjell|difference|versus|vs\.?|mellom)\b/i.test(q)
+  ) {
+    return false;
+  }
+  if (/\b(marius['']?\s+rolle|marius['']?\s+role|marius['']?\s+bidrag)\b/i.test(q)) return false;
+  if (/^\s*(hva|what)\s+er\s+row\s+solutions\s*\??\s*$/i.test(q)) return true;
+  const smbHelp =
+    /\brow\s+solutions\b/i.test(q) &&
+    /\b(hjelpe|help[s]?|hva\s+kan\s+row|what\s+can\s+row)\b/i.test(q) &&
+    /\b(bedrift|virksomhet|company|companies|business|smb|sme|oss|our|vår|kunder?|customers?)\b/i.test(q);
+
+  if (smbHelp) return true;
+
+  return (
+    /\b(kjerne|kjernen|essence|kjernebudskap|målgruppe|target\s+(market|audience)|smb|hvorfor|why|hvordan\s+hjelper|how\s+does\s+row\s+help)\b/i.test(
+      q
+    ) || /\b(hva\s+er\s+row|what\s+is\s+row)\b/i.test(q)
+  );
 }
 
 export function formatAiDiscoveryAttribution(lang: Lang): string {

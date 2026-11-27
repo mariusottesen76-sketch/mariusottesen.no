@@ -1,23 +1,29 @@
 import type { Lang } from "../../LanguageContext";
 import {
-  CAREER_EDUCATION,
   CAREER_EXPERIENCE_TYPES,
   getCareerPositions,
   getDistinctEmployers,
 } from "../../data/career-facts";
+import { getRekruttererVerdiData } from "../../data/rekrutterer-verdi";
 import {
   LEADERSHIP_PHILOSOPHY,
   LEADERSHIP_STYLE,
   MOTIVATION_AND_FIT,
   OPEN_APPLICATION_TARGET_ROLES,
-  VALUE_CREATION_THEMES,
 } from "../../data/open-application-knowledge";
 import {
   formatAiDiscoveryAttribution,
+  formatRowSolutionsCore,
   formatRowSolutionsMariusContext,
   formatRowSolutionsWho,
+  isRowCoreQuestion,
 } from "../../data/row-solutions-knowledge";
-import { isValueCreationQuestion } from "./information-needs";
+import { isHiringQuestion, isResultsImpactQuestion, isValueCreationQuestion } from "./information-needs";
+import {
+  filterCareerPositionsByQuestion,
+  isFilteredPastPositionsQuestion,
+} from "./career-position-intent";
+import { getProfilData } from "../../data/profil";
 import { normalizeExcerptForAssistant } from "./excerpt-voice";
 import { rowExternalManifestId } from "./row-external-knowledge";
 
@@ -48,12 +54,16 @@ export function isEmployerListQuestion(question: string): boolean {
 
 export function isPositionsHeldQuestion(question: string): boolean {
   const q = question.trim();
-  if (/\b(aktuell|relevant|passer|fit\s+for|vurdere\s+som)\b/i.test(q)) return false;
-  return (
-    /\b(stilling\w*|job\s+titles?|roles?\s+(has|had)|hatt\s+som|positions?\s+held|tidligere\s+roller)\b/i.test(
+  if (isTargetRolesQuestion(q)) return false;
+  if (/\b(aktuell|relevant|passer|fit\s+for|vurdere\s+som|going\s+forward)\b/i.test(q)) return false;
+  const asksPastRoles =
+    /\b(stilling\w*|job\s+titles?|positions?\s+held|tidligere\s+roller|jobbet\s+som|worked\s+as|lederstillinger)\b/i.test(
       q
-    ) && /\b(marius|han|hvilke|which|what)\b/i.test(q)
-  );
+    ) ||
+    (/\b(roller|roles|stillinger|positions)\b/i.test(q) &&
+      /\b(hatt|had|held|har\s+(han|marius)\s+(hatt|jobbet)|which\s+roles\s+has)\b/i.test(q)) ||
+    /\b(hva\s+har\s+(han|marius)\s+jobbet\s+som|what\s+did\s+(he|marius)\s+work\s+as)\b/i.test(q);
+  return asksPastRoles && /\b(marius|han|hvilke|which|what|he)\b/i.test(q);
 }
 
 export function isExperienceTypesQuestion(question: string): boolean {
@@ -116,18 +126,18 @@ export function isAiDiscoveryQuestion(question: string): boolean {
 export function isRowRoleQuestion(question: string): boolean {
   const q = question.trim();
   if (/\b(sammenheng|henger|hvordan\s+henger|how\s+does.*fit|koble\w*)\b/i.test(q)) return false;
-  if (isRowWhoBehindQuestion(q) || isAiDiscoveryQuestion(q)) return false;
-  if (/^\s*hva\s+er\s+row\s+solutions/i.test(q) || /^\s*what\s+is\s+row\s+solutions/i.test(q)) return true;
+  if (isRowWhoBehindQuestion(q) || isAiDiscoveryQuestion(q) || isRowCoreQuestion(q)) return false;
+  if (/\bmarius['']?\s*(rolle|role)\b/i.test(q) && /\brow(\s+solutions)?\b/i.test(q)) return true;
   return (
     /\brow\s+solutions\b/i.test(q) &&
-    /\b(marius|bidrag|rolle|forskjell|difference)\b/i.test(q)
+    /\b(marius|bidrag|rolle|role|forskjell|difference)\b/i.test(q)
   );
 }
 
 export function isMotivationQuestion(question: string): boolean {
-  return /\b(motivasjon|motiverer|why\s+(hire|consider)|hvorfor\b.*vurdere|bør\s+vi\s+ansette|hva\s+motiverer)\b/i.test(
-    question
-  );
+  const q = question.trim();
+  if (isHiringQuestion(q)) return true;
+  return /\b(motivasjon|motiverer|hvorfor\b.*vurdere|hva\s+motiverer|why\s+consider)\b/i.test(q);
 }
 
 /** Deterministic career / open-application answers — no LLM. */
@@ -157,6 +167,22 @@ export function tryGroundedCareerAnswer(
     return { answer: say(text, lang), sourceIds: [career, cv, experience] };
   }
 
+  if (isFilteredPastPositionsQuestion(q)) {
+    const all = getCareerPositions(lang);
+    const matched = filterCareerPositionsByQuestion(q, all);
+    if (matched.length > 0) {
+      const lines = matched.map((p) => {
+        const title = p.titleProgression ? p.titleProgression : p.title;
+        return `${title} hos ${p.employer} (${p.periodDisplay})`;
+      });
+      const text =
+        lang === "no"
+          ? `Dokumenterte stillinger i denne kategorien fra godkjent CV: ${lines.join("; ")}.`
+          : `Documented positions in this category from the approved CV: ${lines.join("; ")}.`;
+      return { answer: say(text, lang), sourceIds: [career, cv] };
+    }
+  }
+
   if (isPositionsHeldQuestion(q)) {
     const lines = getCareerPositions(lang).map((p) => {
       const title = p.titleProgression ? p.titleProgression : p.title;
@@ -164,8 +190,8 @@ export function tryGroundedCareerAnswer(
     });
     const text =
       lang === "no"
-        ? `Dette er dokumenterte stillinger Marius har hatt (kategori A — faktiske stillinger, fra godkjent CV): ${lines.join("; ")}.`
-        : `These are documented positions Marius has held (category A — actual roles, from the approved CV): ${lines.join("; ")}.`;
+        ? `Dokumenterte stillinger Marius har hatt (godkjent CV): ${lines.join("; ")}.`
+        : `Documented positions Marius has held (approved CV): ${lines.join("; ")}.`;
     return { answer: say(text, lang), sourceIds: [career, cv] };
   }
 
@@ -173,8 +199,8 @@ export function tryGroundedCareerAnswer(
     const types = CAREER_EXPERIENCE_TYPES[lang].join(", ");
     const text =
       lang === "no"
-        ? `Erfaringstyper Marius har dokumentert bakgrunn for (kategori B — ikke samme som formelle stillingstitler): ${types}. For konkrete titler og perioder, se faktiske stillinger i CV-registret.`
-        : `Experience types Marius has documented background in (category B — not the same as formal job titles): ${types}. For specific titles and dates, see actual positions in the CV registry.`;
+        ? `Marius har dokumentert bakgrunn for følgende erfaringstyper (utover enkeltstillingstitler): ${types}. Konkrete titler og perioder står i CV-registret.`
+        : `Marius has documented background in these experience types (beyond single job titles): ${types}. Specific titles and dates are in the CV registry.`;
     return { answer: say(text, lang), sourceIds: [career, cv] };
   }
 
@@ -182,8 +208,8 @@ export function tryGroundedCareerAnswer(
     const roles = OPEN_APPLICATION_TARGET_ROLES[lang].join(", ");
     const text =
       lang === "no"
-        ? `Marius er aktuell for følgende lederroller fremover (kategori C — fra åpen søknad og profil, ikke tidligere stillinger): ${roles}.`
-        : `Marius is relevant for the following leadership roles going forward (category C — from the open application and profile, not past positions): ${roles}.`;
+        ? `Marius er aktuell for følgende lederroller fremover (åpen søknad og profil — fremtidige mål, ikke tidligere stillinger): ${roles}.`
+        : `Marius is relevant for the following leadership roles going forward (open application and profile — future targets, not past jobs): ${roles}.`;
     return { answer: say(text, lang), sourceIds: [openApp, home, cv] };
   }
 
@@ -206,12 +232,25 @@ export function tryGroundedCareerAnswer(
   }
 
   if (isValueCreationQuestion(q)) {
-    const themes = VALUE_CREATION_THEMES[lang].slice(0, 4).join(" ");
+    const rv = getRekruttererVerdiData(lang).verdiSituasjoner;
     const text =
       lang === "no"
-        ? `Marius skaper verdi gjennom å omsette strategi til konkrete kommersielle resultater. Åpen søknad og dokumentert erfaring beskriver blant annet: ${themes} ${MOTIVATION_AND_FIT[lang].bestFit}`
-        : `Marius creates value by turning strategy into tangible commercial results. The open application and documented experience describe, among other things: ${themes} ${MOTIVATION_AND_FIT[lang].bestFit}`;
-    return { answer: say(text, lang), sourceIds: [openApp, career, tabId(lang, "results")] };
+        ? `Marius skaper verdi gjennom å omsette strategi til konkrete kommersielle resultater. ${rv.ingress} Dette viser seg når vekst krever bedre salgsstruktur og oppfølging, når strategi må bli operativ handling i KPI-er, CRM og lederrytme, og når salg, drift og teknologi skal spille bedre sammen — med praktisk AI der det gir målbar verdi.`
+        : `Marius creates value by turning strategy into tangible commercial results. ${rv.ingress} That shows up when growth needs stronger sales structure and follow-up, when strategy must become operational execution through KPIs, CRM and leadership rhythm, and when sales, operations and technology must work better together — with practical AI where it delivers measurable value.`;
+    return { answer: say(text, lang), sourceIds: [openApp, tabId(lang, "home"), tabId(lang, "cv")] };
+  }
+
+  if (isResultsImpactQuestion(q)) {
+    const rv = getRekruttererVerdiData(lang).verdiSituasjoner;
+    const proof = getProfilData(lang).proofPoints.slice(0, 3).join(" ");
+    const text =
+      lang === "no"
+        ? `Marius skaper resultater ved å omsette strategi til konkrete kommersielle resultater — i samme spor som verdiskaping på åpen søknad. ${rv.ingress} Dette kobles til målbar fremdrift i salg, CRM og lederrytme. Dokumenterte resultateksempler på profilen inkluderer blant annet: ${proof}`
+        : `Marius creates results by turning strategy into tangible commercial outcomes — aligned with value creation on the open application. ${rv.ingress} This connects to measurable progress in sales, CRM and leadership rhythm. Documented result examples on the profile include: ${proof}`;
+    return {
+      answer: say(text, lang),
+      sourceIds: [openApp, tabId(lang, "home"), tabId(lang, "results"), tabId(lang, "cv")],
+    };
   }
 
   if (isMotivationQuestion(q)) {
@@ -228,6 +267,16 @@ export function tryGroundedCareerAnswer(
     return {
       answer: say(text, lang),
       sourceIds: [extId, rowExternalManifestId("home", lang), tabId(lang, "consulting")],
+    };
+  }
+
+  if (isRowCoreQuestion(q)) {
+    const text = formatRowSolutionsCore(lang);
+    const rowHome = rowExternalManifestId("home", lang);
+    const projectId = lang === "no" ? "project:row-solutions:no" : "project:row-solutions:en";
+    return {
+      answer: say(text, lang),
+      sourceIds: [rowHome, projectId, tabId(lang, "projects")],
     };
   }
 
@@ -298,15 +347,6 @@ export function tryGroundedCareerAnswer(
         ? `Marius arbeider med strategi og gjennomføring ved å gjøre retning forståelig og operativ: ${phil}`
         : `Marius works with strategy and execution by making direction understandable and operational: ${phil}`;
     return { answer: say(text, lang), sourceIds: [openApp, career] };
-  }
-
-  if (/\b(utdanning|education)\b/i.test(q) && /\b(marius|hvilken|what|full)\b/i.test(q)) {
-    const edu = CAREER_EDUCATION[lang].join(" ");
-    const text =
-      lang === "no"
-        ? `Dokumentert utdanning og videreutdanning (godkjent CV): ${edu}`
-        : `Documented education and continuing study (approved CV): ${edu}`;
-    return { answer: say(text, lang), sourceIds: [career, home, cv] };
   }
 
   return null;

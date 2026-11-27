@@ -10,6 +10,18 @@ export function isValueCreationQuestion(question: string): boolean {
   );
 }
 
+/** Resultatskaping — kobles til verdiskaping og dokumenterte proof points. */
+export function isResultsImpactQuestion(question: string): boolean {
+  const q = question.trim();
+  if (/\b(skrevet|written|artikkel|article)\b/i.test(q)) return false;
+  if (isValueCreationQuestion(q)) return false;
+  return (
+    /\b((hvordan\s+)?skaper\s+(\w+\s+){0,2}resultat\w*|creates?\s+results?|create\s+results?|how\s+does\s+(he|marius)\s+create\s+results?)\b/i.test(
+      q
+    ) && /\b(marius|han|he|him|his)\b/i.test(q)
+  );
+}
+
 export function isAuthorshipQuestion(question: string): boolean {
   const q = question.trim();
   if (/\bprosjekter?\b/i.test(q) && !/\b(skrevet|written|artikkel|article|faginnlegg)\b/i.test(q)) return false;
@@ -20,7 +32,9 @@ export function isAuthorshipQuestion(question: string): boolean {
 
 export function isHiringQuestion(question: string): boolean {
   const q = question.trim();
-  return /\b(ansette|ansett|hire|hiring|rekruttere|why\s+(should|would)\s+we\s+hire|bør\s+vi\s+ansette)\b/i.test(q);
+  return /\b(ansette|ansett|rekruttere|bør\s+vi\s+ansette|vurdere\s+(han|marius)\s+som|hire|hiring|recruit|recruiting|why\s+(should|would)\s+we\s+hire|should\s+we\s+hire|worth\s+hiring|consider\s+(him|marius)\s+for|good\s+fit\s+for\s+(a\s+)?(leadership|commercial))\b/i.test(
+    q
+  );
 }
 
 export function isExplicitArticleTopicQuestion(question: string): boolean {

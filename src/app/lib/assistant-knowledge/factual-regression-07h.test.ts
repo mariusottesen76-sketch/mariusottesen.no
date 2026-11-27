@@ -12,8 +12,8 @@ const REGRESSION = [
   {
     q: "Hvilken utdanning har Marius?",
     mustMatch: [/generative ai for business|handelshøyskolen|bi/i],
-    mustNot: [/ikke dokumentert|undervist/i],
-    sourceHint: /:home:|tab:cv:/,
+    mustNot: [/ikke dokumentert|har undervist|undervist der som/i],
+    sourceHint: /:home:|tab:cv:|career:cv-registry:/,
   },
   {
     q: "Har Marius undervist på BI?",

@@ -60,6 +60,8 @@ function sitePageExcerpt(ref: Extract<KnowledgeContentRef, { kind: "site-page" }
             `Aktuelle lederroller (utvalg): ${p.roller.slice(0, 6).join(", ")}`,
             `Utdanning og videreutdanning: ${stripHtmlToPlainText(p.utdanning)}`,
             ...p.lederprofil.map((c) => `${c.title}: ${c.text}`),
+            `Personlige superstyrker: ${p.styrker.join(", ")}`,
+            `Kjernekompetanse (profil): ${p.kompetanse.join("; ")}`,
             p.aiSeksjon,
           ],
           EXCERPT_MAX
