@@ -100,6 +100,7 @@ export function isRowCoreQuestion(question: string): boolean {
   }
   if (/\b(marius['']?\s+rolle|marius['']?\s+role|marius['']?\s+bidrag)\b/i.test(q)) return false;
   if (/^\s*(hva|what)\s+er\s+row(\s+solutions|\s+consulting)?\s*\??\s*$/i.test(q)) return true;
+  if (mentionsRowBrand(q) && /\b(services?|tjenester)\b/i.test(q)) return true;
   if (/\b(row\s+consulting)\b/i.test(q) && /\b(hva|what|tilbyr|offer)\b/i.test(q)) return true;
   if (/\b(hva|what)\s+kan\s+(du|you)\s+si\s+om\s+row\b/i.test(q)) return true;
   if (/\b(hva|what)\s+tilbyr\s+row\b/i.test(q)) return true;
@@ -123,8 +124,14 @@ export function isRowCoreQuestion(question: string): boolean {
 export function isRowCollaboratorPersonQuestion(question: string): boolean {
   const q = question.trim();
   if (/\bmarius\b/i.test(q)) return false;
-  if (/\b(thomas\s+holm|gunnar\s+gundersen)\b/i.test(q) && /\b(hvem|who|hva|what)\b/i.test(q)) return true;
+  const personPrompt =
+    /\b(hvem|who|hva|what|fortell|tell|vite|know|bør|should|om\s+ham|about\s+him)\b/i.test(q);
+  if (/\b(thomas\s+holm|gunnar\s+gundersen)\b/i.test(q) && personPrompt) return true;
   if (/\b(hvem\s+er|who\s+is)\s+(thomas|gunnar)\b/i.test(q)) return true;
+  if (/\bgunnar\b/i.test(q) && personPrompt) return true;
+  if (/\bthomas\b/i.test(q) && personPrompt && !/\bai\s+discovery\b/i.test(q)) return true;
+  if (mentionsRowBrand(q) && /\bgunnar\b/i.test(q)) return true;
+  if (mentionsRowBrand(q) && /\b(partner|medgründer|co-?founder)\b/i.test(q)) return true;
   if (/^\s*(thomas|gunnar)(\s+holm|\s+gundersen)?\s*\??\s*$/i.test(q)) return true;
   return false;
 }

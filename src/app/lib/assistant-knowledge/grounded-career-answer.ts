@@ -106,10 +106,10 @@ export function isLeadershipStyleQuestion(question: string): boolean {
 }
 
 export function isMocVsRowQuestion(question: string): boolean {
-  return (
-    /\b(moc|marius\s+ottesen\s+consulting)\b/i.test(question) &&
-    mentionsRowBrand(question)
-  );
+  const q = question.trim();
+  if (!mentionsRowBrand(q) || !/\b(moc|marius\s+ottesen\s+consulting)\b/i.test(q)) return false;
+  if (/\b(forskjell|difference|versus|vs\.?|mellom)/i.test(q)) return true;
+  return /\b(sammenheng|relationship|sammenlign|compare|koble|adskilt|separate)\b/i.test(q);
 }
 
 export function isRowWhoBehindQuestion(question: string): boolean {

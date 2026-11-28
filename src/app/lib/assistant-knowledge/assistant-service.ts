@@ -38,6 +38,7 @@ import {
 } from "./grounded-context-answer";
 import { tryAuthoritativeGroundedAnswer } from "./authoritative-before-not-on-site";
 import { augmentForSiteSubjectRetrieval } from "./site-assistant-subject";
+import { normalizeAssistantQuestion } from "./assistant-question-normalize";
 import { tryGroundedPublicContactAnswer } from "./grounded-contact-answer";
 import { selectRelevantSourceIds } from "./source-selection";
 import { detectCvIntent, isSectionTabDiscoveryQuestion, resolveSiteTabIntent } from "./site-tab-intent";
@@ -218,7 +219,7 @@ export async function runAssistantQuery(
   body: AssistantRequestBody,
   deps?: Partial<AssistantServiceDeps>
 ): Promise<AssistantResponseBody> {
-  const question = typeof body.question === "string" ? body.question.trim() : "";
+  const question = typeof body.question === "string" ? normalizeAssistantQuestion(body.question) : "";
   if (!question) {
     return {
       category: "NOT_ON_SITE",

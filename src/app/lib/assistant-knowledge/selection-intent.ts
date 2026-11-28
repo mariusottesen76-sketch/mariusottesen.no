@@ -187,6 +187,18 @@ export function inferSelectionIntent(question: string, lang: Lang = "no"): Selec
     preferredCategories.unshift("project", "profile");
     projectSlugHints.push("row", "solutions");
   }
+  if (/\b(enk\b|enkeltmannsforetak|enkeltpersonforetak|sole\s+proprietor)\b/i.test(q)) {
+    preferredCategories.unshift("consulting");
+    tabHints.unshift("consulting", "home");
+  }
+  if (/\b(gunnar|thomas\s+holm)\b/i.test(q) && !/\bmarius\s+og\s+thomas\b/i.test(q)) {
+    preferredCategories.unshift("project");
+    projectSlugHints.push("row", "solutions");
+  }
+  if (/\b(samarbeid|collaborat)\b/i.test(q) && /\b(marius|thomas|row)\b/i.test(q)) {
+    preferredCategories.unshift("project", "consulting");
+    projectSlugHints.push("row", "solutions");
+  }
   if (/\b(kurs|foredrag|workshop|webinar|talk|presentation)\b/i.test(q)) {
     if (/\b(row(\s+solutions|\s+consulting)?)\b/i.test(q)) {
       preferredCategories.unshift("project");

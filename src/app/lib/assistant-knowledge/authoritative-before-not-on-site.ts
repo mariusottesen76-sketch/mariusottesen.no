@@ -9,6 +9,7 @@ import { tryGroundedFactualAnswer } from "./grounded-factual-answer";
 import { tryGroundedPublicContactAnswer } from "./grounded-contact-answer";
 import { tryGroundedProfileAnswer } from "./grounded-profile-answer";
 import { tryGroundedConsultingDeliveryAnswer } from "./grounded-consulting-delivery-answer";
+import { tryGroundedEntityRelationshipAnswer } from "./grounded-entity-relationship-answer";
 
 /** Begrenset sjekk mot autoritative kilder før NOT_ON_SITE — ingen modell, ingen full manifest-skanning. */
 export function tryAuthoritativeGroundedAnswer(
@@ -16,6 +17,7 @@ export function tryAuthoritativeGroundedAnswer(
   lang: Lang
 ): { answer: string; sourceIds: string[] } | null {
   return (
+    tryGroundedEntityRelationshipAnswer(question, lang) ??
     tryGroundedGenerativeAiCourseLeadershipLinkAnswer(question, lang) ??
     tryGroundedEducationAnswer(question, lang) ??
     tryGroundedBiTeachingAnswer(question, lang) ??

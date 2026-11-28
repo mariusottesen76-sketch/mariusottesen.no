@@ -2,7 +2,7 @@ import { refersToMariusOrHis } from "./profile-theme-intent";
 
 /** Named third parties the assistant may answer about explicitly — not default «hans». */
 const OTHER_PERSON_FOCUS =
-  /\b((thomas\s+holm|gunnar\s+gundersen)|ai\s+discovery.*holm|hvem\s+står\s+bak|who\s+is\s+behind\s+row|row\s+solutions\s+.*\b(team|founders?)|(hvem\s+er|who\s+is)\s+(thomas|gunnar))\b/i;
+  /\b((thomas\s+holm|gunnar\s+gundersen|gunnar\b)|ai\s+discovery.*holm|hvem\s+står\s+bak|who\s+is\s+behind\s+row|row\s+solutions\s+.*\b(team|founders?)|(hvem\s+er|who\s+is)\s+(thomas|gunnar|row))\b/i;
 
 /**
  * Spørsmål i Marius-assistenten uten tydelig annen referent → Marius som subjekt.
