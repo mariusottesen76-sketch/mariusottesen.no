@@ -183,9 +183,18 @@ export function inferSelectionIntent(question: string, lang: Lang = "no"): Selec
     preferredCategories.unshift("profile", "results", "open_application");
     tabHints.unshift("home", "results", "cv");
   }
-  if (/\b(row\s+solutions).*\b(hjelpe|help)\b/i.test(q)) {
+  if (/\b(row(\s+solutions|\s+consulting)?)\b/i.test(q) && /\b(hjelpe|help|hva|what|tilbyr|offer|si\s+om|say\s+about)\b/i.test(q)) {
     preferredCategories.unshift("project", "profile");
     projectSlugHints.push("row", "solutions");
+  }
+  if (/\b(kurs|foredrag|workshop|webinar|talk|presentation)\b/i.test(q)) {
+    if (/\b(row(\s+solutions|\s+consulting)?)\b/i.test(q)) {
+      preferredCategories.unshift("project");
+      projectSlugHints.push("row", "solutions");
+    } else if (/\b(marius|moc|han\b|he\b|holde|hold|kan\s+han)\b/i.test(q)) {
+      preferredCategories.unshift("consulting", "contact");
+      tabHints.unshift("consulting", "contact");
+    }
   }
   if (isHiringQuestion(question)) {
     preferredCategories.push("profile", "cv", "experience", "results", "references");

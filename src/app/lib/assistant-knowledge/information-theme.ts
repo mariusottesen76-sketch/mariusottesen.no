@@ -35,7 +35,8 @@ export const REFERENCES_TOPIC =
 export const MOC_TOPIC =
   /\b(moc\b|marius\s+ottesen\s+consulting|consulting-tjenester|consulting\s+packages?|rådgivning|advisory)\b/i;
 
-export const ROW_TOPIC = /\b(row\s+solutions|\brow\b.*\b(smb|solutions|hjelp|help))/i;
+export const ROW_TOPIC =
+  /\b(row\s+solutions|row\s+consulting|\brow\b.*\b(smb|solutions|consulting|hjelp|help|tilbyr|offer))|(?:hva|what)\s+(?:er|kan\s+du\s+si\s+om|tilbyr)\s+row\b/i;
 
 export const AI_PORTFOLIO_TOPIC =
   /\b(ai\s*[- ]?prosjekter|ai\s+projects|ai-verktøy|ai\s+tools|praktisk\s+ai|practical\s+ai|portfolio|prosjekter\s+.*\bai\b)/i;

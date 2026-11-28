@@ -13,10 +13,13 @@ import {
 } from "../../data/open-application-knowledge";
 import {
   formatAiDiscoveryAttribution,
+  formatRowCollaboratorAnswer,
   formatRowSolutionsCore,
   formatRowSolutionsMariusContext,
   formatRowSolutionsWho,
+  isRowCollaboratorPersonQuestion,
   isRowCoreQuestion,
+  mentionsRowBrand,
 } from "../../data/row-solutions-knowledge";
 import { isHiringQuestion, isResultsImpactQuestion, isValueCreationQuestion } from "./information-needs";
 import {
@@ -105,18 +108,18 @@ export function isLeadershipStyleQuestion(question: string): boolean {
 export function isMocVsRowQuestion(question: string): boolean {
   return (
     /\b(moc|marius\s+ottesen\s+consulting)\b/i.test(question) &&
-    /\brow\s+solutions\b/i.test(question)
+    mentionsRowBrand(question)
   );
 }
 
 export function isRowWhoBehindQuestion(question: string): boolean {
   const q = question.trim();
-  return (
-    /\brow\s+solutions\b/i.test(q) &&
+  const asksBehind =
     /\b(hvem\s+står\s+bak|hvem\s+er\s+med|who\s+is\s+behind|who\s+are\s+the\s+(people|partners)|hvilke\s+personer|samarbeidspartnere)\b/i.test(
       q
-    )
-  );
+    );
+  if (!asksBehind) return false;
+  return mentionsRowBrand(q) || /\b(hvem\s+står\s+bak|who\s+is\s+behind)\b.*\brow\b/i.test(q);
 }
 
 export function isAiDiscoveryQuestion(question: string): boolean {
@@ -127,11 +130,9 @@ export function isRowRoleQuestion(question: string): boolean {
   const q = question.trim();
   if (/\b(sammenheng|henger|hvordan\s+henger|how\s+does.*fit|koble\w*)\b/i.test(q)) return false;
   if (isRowWhoBehindQuestion(q) || isAiDiscoveryQuestion(q) || isRowCoreQuestion(q)) return false;
-  if (/\bmarius['']?\s*(rolle|role)\b/i.test(q) && /\brow(\s+solutions)?\b/i.test(q)) return true;
-  return (
-    /\brow\s+solutions\b/i.test(q) &&
-    /\b(marius|bidrag|rolle|role|forskjell|difference)\b/i.test(q)
-  );
+  if (isRowCollaboratorPersonQuestion(q)) return false;
+  if (/\bmarius['']?\s*(rolle|role)\b/i.test(q) && mentionsRowBrand(q)) return true;
+  return mentionsRowBrand(q) && /\b(marius|bidrag|rolle|role|forskjell|difference)\b/i.test(q);
 }
 
 export function isMotivationQuestion(question: string): boolean {
@@ -267,6 +268,24 @@ export function tryGroundedCareerAnswer(
     return {
       answer: say(text, lang),
       sourceIds: [extId, rowExternalManifestId("home", lang), tabId(lang, "consulting")],
+    };
+  }
+
+  if (isRowCollaboratorPersonQuestion(q)) {
+    const thomas = /\bthomas\b/i.test(q);
+    const gunnar = /\bgunnar\b/i.test(q);
+    const text =
+      thomas && !gunnar
+        ? formatRowCollaboratorAnswer("thomas", lang)
+        : gunnar && !thomas
+          ? formatRowCollaboratorAnswer("gunnar", lang)
+          : formatRowSolutionsWho(lang);
+    const rowHome = rowExternalManifestId("home", lang);
+    const projectId = lang === "no" ? "project:row-solutions:no" : "project:row-solutions:en";
+    const extra = thomas && !gunnar ? [rowExternalManifestId("ai-discovery", lang)] : [];
+    return {
+      answer: say(text, lang),
+      sourceIds: [projectId, rowHome, ...extra],
     };
   }
 

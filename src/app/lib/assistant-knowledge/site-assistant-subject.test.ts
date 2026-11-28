@@ -9,6 +9,8 @@ describe("site-assistant-subject", () => {
   });
   it("does not assume Marius for explicit third party", () => {
     assert.ok(!isQuestionAboutMarius("Who is Thomas Holm in AI Discovery?"));
+    assert.ok(!isQuestionAboutMarius("Hvem er Thomas?"));
+    assert.ok(!isQuestionAboutMarius("Who is Gunnar?"));
   });
   it("augments retrieval hint", () => {
     const aug = augmentForSiteSubjectRetrieval("Hva er hans utdannelse?", 200);

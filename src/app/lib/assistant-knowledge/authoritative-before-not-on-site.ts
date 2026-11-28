@@ -8,6 +8,7 @@ import {
 import { tryGroundedFactualAnswer } from "./grounded-factual-answer";
 import { tryGroundedPublicContactAnswer } from "./grounded-contact-answer";
 import { tryGroundedProfileAnswer } from "./grounded-profile-answer";
+import { tryGroundedConsultingDeliveryAnswer } from "./grounded-consulting-delivery-answer";
 
 /** Begrenset sjekk mot autoritative kilder før NOT_ON_SITE — ingen modell, ingen full manifest-skanning. */
 export function tryAuthoritativeGroundedAnswer(
@@ -19,6 +20,7 @@ export function tryAuthoritativeGroundedAnswer(
     tryGroundedEducationAnswer(question, lang) ??
     tryGroundedBiTeachingAnswer(question, lang) ??
     tryGroundedPublicContactAnswer(question, lang) ??
+    tryGroundedConsultingDeliveryAnswer(question, lang) ??
     tryGroundedProfileAnswer(question, lang) ??
     tryGroundedCareerAnswer(question, lang) ??
     tryGroundedFactualAnswer(question, lang)
